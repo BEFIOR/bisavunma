@@ -31,7 +31,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mt-1"
       >
         {item}
       </motion.p>
@@ -133,15 +133,14 @@ export const Navbar = () => {
   return (
     <div className="w-full flex items-center justify-center py-4 absolute z-10">
       <Menu setActive={setActive}>
-        <div className="flex items-center space-x-3">
-          <img src="/logo.webp" alt="BİSAVUNMA Logo" className="h-8 w-auto" />
+      <Image width={100} height={100} src="/logo.webp" alt="BİSAVUNMA Logo" className="h-8 w-auto rounded-2xl" />
           <motion.p
             transition={{ duration: 0.3 }}
-            className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+            className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mt-1"
           >
             Ana Sayfa
           </motion.p>
-        </div>
+        
         <MenuItem setActive={setActive} active={active} item="Kurumsal" >
           <div className="flex flex-col space-y-4">
             <HoveredLink href="/">Hakkımızda</HoveredLink>
@@ -191,7 +190,7 @@ export const Navbar = () => {
         </MenuItem>
         <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mt-1"
       >
         İletişim
       </motion.p>
