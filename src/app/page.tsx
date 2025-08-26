@@ -1,15 +1,12 @@
-import { Navbar } from "@/components/ui/navbar-menu";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
       
       {/* Hero Section with Video Background Only */}
       <section className="relative pt-24 overflow-hidden min-h-screen">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          <video
+           <video
             autoPlay
             loop
             muted
@@ -21,15 +18,15 @@ export default function Home() {
             <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4" />
             <source src="https://file-examples.com/storage/fe8c7eef0c6364f6c9504cc/2017/10/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </video> 
           
           {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+          <div className="absolute inset-0  bg-opacity-60"></div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
