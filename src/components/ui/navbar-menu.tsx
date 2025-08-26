@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,49 +20,29 @@ export const MenuItem = ({
       onMouseLeave={() => setActive(null)}
       className="relative group"
     >
-      <motion.div 
-        className="relative"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.2 }}
-      >
-        <div className="cursor-pointer text-gray-700 hover:text-gray-900 font-medium px-4 py-2 rounded-lg transition-all duration-300 relative">
+      <div className="relative">
+        <div className="cursor-pointer text-gray-700 hover:text-gray-900 font-medium px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 relative">
           <span>{item}</span>
-          <motion.div 
-            className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-800 rounded-full"
-            initial={{ scaleX: 0 }}
-            whileHover={{ scaleX: 1 }}
-            transition={{ duration: 0.3 }}
-          />
+          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-800 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
         </div>
-      </motion.div>
+      </div>
       
-      <AnimatePresence>
-        {active === item && (
-          <motion.div 
-            className="absolute top-full left-0 min-w-[280px] z-50"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            onMouseEnter={() => setActive(item)}
-            onMouseLeave={() => setActive(null)}
-          >
-            {/* Invisible bridge to prevent gap */}
-            <div className="h-2 bg-transparent"></div>
-            
-            <motion.div 
-              className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 overflow-hidden"
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="p-6 space-y-3">
-                {children}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {active === item && (
+        <div 
+          className="absolute top-full left-0 min-w-[280px] z-50 animate-fadeIn"
+          onMouseEnter={() => setActive(item)}
+          onMouseLeave={() => setActive(null)}
+        >
+          {/* Invisible bridge to prevent gap */}
+          <div className="h-2 bg-transparent"></div>
+          
+          <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 overflow-hidden">
+            <div className="p-6 space-y-3">
+              {children}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -78,15 +57,13 @@ export const HoveredLink = ({
   className?: string;
 }) => {
   return (
-    <motion.a
+    <a
       href={href}
-      className="block text-gray-600 hover:text-gray-900 font-medium py-2 px-3 rounded-lg hover:bg-gray-50"
-      whileHover={{ x: 5 }}
-      transition={{ duration: 0.2 }}
+      className="block text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 py-2 px-3 rounded-lg hover:bg-gray-50 hover:translate-x-1"
       {...rest}
     >
       {children}
-    </motion.a>
+    </a>
   );
 };
 
@@ -103,48 +80,33 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <motion.div
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <div
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 animate-slideDown ${
         scrolled 
           ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-200/50' 
           : 'bg-transparent'
       }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div 
-            className="flex-shrink-0"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
+          <div className="flex-shrink-0 transition-transform duration-300 hover:scale-105">
             <Link href="/" className="text-2xl font-bold text-gray-800">
               BİSAVUNMA
             </Link>
-          </motion.div>
+          </div>
 
           {/* Navigation Menu */}
-          <motion.nav 
-            className="hidden md:flex items-center space-x-1"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <nav className="hidden md:flex items-center space-x-1 animate-fadeIn">
             {/* Ana Sayfa */}
-            <motion.div 
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
+            <div className="transition-transform duration-300 hover:scale-105">
               <Link 
                 href="/"
                 className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2 rounded-lg transition-colors duration-200"
               >
                 Ana Sayfa
               </Link>
-            </motion.div>
+            </div>
 
             {/* Kurumsal */}
             <MenuItem setActive={setActive} active={active} item="Kurumsal">
@@ -194,32 +156,24 @@ export const Navbar = () => {
             </MenuItem>
 
             {/* İletişim */}
-            <motion.div 
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
+            <div className="transition-transform duration-300 hover:scale-105">
               <Link 
                 href="/iletisim"
                 className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2 rounded-lg transition-colors duration-200"
               >
                 İletişim
               </Link>
-            </motion.div>
-          </motion.nav>
+            </div>
+          </nav>
 
           {/* Mobile Menu Button */}
-          <motion.button 
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-          >
+          <button className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-all duration-300 hover:scale-105">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-          </motion.button>
+          </button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
