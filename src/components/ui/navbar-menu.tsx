@@ -133,12 +133,15 @@ export const Navbar = () => {
   return (
     <div className="w-full flex items-center justify-center py-4 absolute z-10">
       <Menu setActive={setActive}>
-      <motion.p
-        transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
-      >
-        Ana Sayfa
-      </motion.p>
+        <div className="flex items-center space-x-3">
+          <img src="/logo.webp" alt="BİSAVUNMA Logo" className="h-8 w-auto" />
+          <motion.p
+            transition={{ duration: 0.3 }}
+            className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+          >
+            Ana Sayfa
+          </motion.p>
+        </div>
         <MenuItem setActive={setActive} active={active} item="Kurumsal" >
           <div className="flex flex-col space-y-4">
             <HoveredLink href="/">Hakkımızda</HoveredLink>
