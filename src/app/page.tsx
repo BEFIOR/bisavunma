@@ -14,9 +14,7 @@ export default function Home() {
             className="w-full h-full object-cover"
             style={{ filter: 'brightness(0.3) contrast(1.2)' }}
           >
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4" />
-            <source src="https://file-examples.com/storage/fe8c7eef0c6364f6c9504cc/2017/10/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video> 
           
