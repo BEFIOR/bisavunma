@@ -1,20 +1,7 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";
 import Image from "next/image";
-import type { Transition } from "motion";
 import Link from "next/link";
-
-
-
-const transition: Transition = {
-  type: "spring",
-  mass: 0.5,
-  damping: 11.5,
-  stiffness: 100,
-  restDelta: 0.001,
-  restSpeed: 0.001,
-};
 
 export const MenuItem = ({
   setActive,
@@ -22,106 +9,58 @@ export const MenuItem = ({
   item,
   children,
 }: {
-  setActive: (item: string) => void;
+  setActive: (item: string | null) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative ">
-      <motion.p
-        transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
-      >
-        {item}
-      </motion.p>
-      {active !== null && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={transition}
+    <div 
+      onMouseEnter={() => setActive(item)} 
+      onMouseLeave={() => setActive(null)}
+      className="relative group"
+    >
+      <div className="relative">
+        <div className="cursor-pointer text-gray-700 hover:text-gray-900 font-medium px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 relative">
+          <span>{item}</span>
+          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-800 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+        </div>
+      </div>
+      
+      {active === item && (
+        <div 
+          className="absolute top-full left-0 min-w-[280px] z-50 animate-fadeIn"
+          onMouseEnter={() => setActive(item)}
+          onMouseLeave={() => setActive(null)}
         >
-          {active === item && (
-            <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
-              <motion.div
-                transition={transition}
-                layoutId="active" // layoutId ensures smooth animation
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
-              >
-                <motion.div
-                  layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
-                >
-                  {children}
-                </motion.div>
-              </motion.div>
+          {/* Invisible bridge to prevent gap */}
+          <div className="h-2 bg-transparent"></div>
+          
+          <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 overflow-hidden">
+            <div className="p-6 space-y-3">
+              {children}
             </div>
-          )}
-        </motion.div>
+          </div>
+        </div>
       )}
     </div>
   );
 };
 
-export const Menu = ({
-  setActive,
+export const HoveredLink = ({
   children,
-}: {
-  setActive: (item: string | null) => void;
-  children: React.ReactNode;
-}) => {
-  return (
-    <nav
-      onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
-    >
-      {children}
-    </nav>
-  );
-};
-
-export const ProductItem = ({
-  title,
-  description,
   href,
-  src,
+  ...rest
 }: {
-  title: string;
-  description: string;
+  children: React.ReactNode;
   href: string;
-  src: string;
+  className?: string;
 }) => {
-  return (
-    <a href={href} className="flex space-x-2">
-      <Image
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="shrink-0 rounded-md shadow-2xl"
-      />
-      <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
-          {title}
-        </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
-          {description}
-        </p>
-      </div>
-    </a>
-  );
-};
-
-export const HoveredLink = (
-  {
-    children,
-    ...rest
-  }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { children: React.ReactNode }
-) => {
   return (
     <a
+      href={href}
+      className="block text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 py-2 px-3 rounded-lg hover:bg-gray-50 hover:translate-x-1"
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
     >
       {children}
     </a>
@@ -130,69 +69,111 @@ export const HoveredLink = (
 
 export const Navbar = () => {
   const [active, setActive] = React.useState<string | null>(null);
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="w-full flex items-center justify-center py-4">
-      <Menu setActive={setActive}>
-      <motion.p
-        transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
-      >
-        Ana Sayfa
-      </motion.p>
-        <MenuItem setActive={setActive} active={active} item="Kurumsal" >
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Hakkımızda</HoveredLink>
-          <HoveredLink href="/">Referanslarımız</HoveredLink>
-          <HoveredLink href="/">İş Ortaklarımız</HoveredLink>
+    <div
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 animate-slideDown ${
+        scrolled 
+          ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-200/50' 
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0 transition-transform duration-300 hover:scale-105">
+            <Link href="/" className="text-2xl font-bold text-gray-800">
+              BİSAVUNMA
+            </Link>
           </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Ürünlerimiz" >
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">RF Sistemleri</HoveredLink>
-            <HoveredLink href="/">Sinyal İstihbarat (SIGINT)</HoveredLink>
-            <HoveredLink href="/">Radar Sistemleri</HoveredLink>
-            <HoveredLink href="/">Elektro-Optik & Termal Sistemler</HoveredLink>
-            <HoveredLink href="/">Jammer & RF Efektörler</HoveredLink>
-            <HoveredLink href="/">DJI Türkiye Enterprise</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Çözümlerimiz" >
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Sistem Konfigürasyonu</HoveredLink>
-            <HoveredLink href="/">İhtiyaca Yönelik Savunma Çözümleri</HoveredLink>
-            <HoveredLink href="/">Entegre Güvenlik Yaklaşımları</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Sektörlere Göre" >
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Askeri Tesisler</HoveredLink>
-            <HoveredLink href="/">Enerji & Kritik Altyapılar</HoveredLink>
-            <HoveredLink href="/">Liman & Tersaneler</HoveredLink>
-            <HoveredLink href="/">Sınır Güvenliği</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Hizmetlerimiz" >
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Saha Keşfi & Konumlandırma</HoveredLink>
-            <HoveredLink href="/">Kurulum & Entegrasyon</HoveredLink>
-            <HoveredLink href="/">Eğitim & Teknik Destek</HoveredLink>
-            <HoveredLink href="/">Yazılım Çözümleri</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Destek" >
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Destek Talebi</HoveredLink>
-            <HoveredLink href="/">Yazılım İndirme</HoveredLink>
-            <HoveredLink href="/">7/24 Teknik Destek</HoveredLink>
-          </div>
-        </MenuItem>
-        <motion.p
-        transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
-      >
-        İletişim
-      </motion.p>
-      </Menu>
+
+          {/* Navigation Menu */}
+          <nav className="hidden md:flex items-center space-x-1 animate-fadeIn">
+            {/* Ana Sayfa */}
+            <div className="transition-transform duration-300 hover:scale-105">
+              <Link 
+                href="/"
+                className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2 rounded-lg transition-colors duration-200"
+              >
+                Ana Sayfa
+              </Link>
+            </div>
+
+            {/* Kurumsal */}
+            <MenuItem setActive={setActive} active={active} item="Kurumsal">
+              <HoveredLink href="/hakkimizda">Hakkımızda</HoveredLink>
+              <HoveredLink href="/referanslarimiz">Referanslarımız</HoveredLink>
+              <HoveredLink href="/is-ortaklarimiz">İş Ortaklarımız</HoveredLink>
+            </MenuItem>
+
+            {/* Ürünlerimiz */}
+            <MenuItem setActive={setActive} active={active} item="Ürünlerimiz">
+              <HoveredLink href="/rf-sistemleri">RF Sistemleri</HoveredLink>
+              <HoveredLink href="/sinyal-istihbarat">Sinyal İstihbaratı (SIGINT)</HoveredLink>
+              <HoveredLink href="/radar-sistemleri">Radar Sistemleri</HoveredLink>
+              <HoveredLink href="/elektro-optik">Elektro-Optik & Termal Sistemler</HoveredLink>
+              <HoveredLink href="/jammer-rf">Jammer & RF Efektörler</HoveredLink>
+              <HoveredLink href="/dji-enterprise">DJI Türkiye Enterprise</HoveredLink>
+            </MenuItem>
+
+            {/* Çözümlerimiz */}
+            <MenuItem setActive={setActive} active={active} item="Çözümlerimiz">
+              <HoveredLink href="/sistem-konfigurasyonu">Sistem Konfigürasyonu</HoveredLink>
+              <HoveredLink href="/savunma-cozumleri">İhtiyaca Yönelik Savunma Çözümleri</HoveredLink>
+              <HoveredLink href="/entegre-guvenlik">Entegre Güvenlik Yaklaşımları</HoveredLink>
+            </MenuItem>
+
+            {/* Sektörlere Göre */}
+            <MenuItem setActive={setActive} active={active} item="Sektörlere Göre">
+              <HoveredLink href="/askeri-tesisler">Askeri Tesisler</HoveredLink>
+              <HoveredLink href="/enerji-altyapi">Enerji & Kritik Altyapılar</HoveredLink>
+              <HoveredLink href="/liman-tersane">Liman & Tersaneler</HoveredLink>
+              <HoveredLink href="/sinir-guvenligi">Sınır Güvenliği</HoveredLink>
+            </MenuItem>
+
+            {/* Hizmetlerimiz */}
+            <MenuItem setActive={setActive} active={active} item="Hizmetlerimiz">
+              <HoveredLink href="/saha-kesfi">Saha Keşfi & Konumlandırma</HoveredLink>
+              <HoveredLink href="/kurulum-entegrasyon">Kurulum & Entegrasyon</HoveredLink>
+              <HoveredLink href="/egitim-destek">Eğitim & Teknik Destek</HoveredLink>
+              <HoveredLink href="/yazilim-cozumleri">Yazılım Çözümleri</HoveredLink>
+            </MenuItem>
+
+            {/* Destek */}
+            <MenuItem setActive={setActive} active={active} item="Destek">
+              <HoveredLink href="/destek-talebi">Destek Talebi</HoveredLink>
+              <HoveredLink href="/yazilim-indirme">Yazılım İndirme</HoveredLink>
+              <HoveredLink href="/teknik-destek">7/24 Teknik Destek</HoveredLink>
+            </MenuItem>
+
+            {/* İletişim */}
+            <div className="transition-transform duration-300 hover:scale-105">
+              <Link 
+                href="/iletisim"
+                className="text-gray-700 hover:text-gray-900 font-medium px-4 py-2 rounded-lg transition-colors duration-200"
+              >
+                İletişim
+              </Link>
+            </div>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-all duration-300 hover:scale-105">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
