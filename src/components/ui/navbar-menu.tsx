@@ -141,13 +141,6 @@ export const Navbar = () => {
             Ana Sayfa
           </motion.p>
         
-        <MenuItem setActive={setActive} active={active} item="Kurumsal" >
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Hakkımızda</HoveredLink>
-          <HoveredLink href="/">Referanslarımız</HoveredLink>
-          <HoveredLink href="/">İş Ortaklarımız</HoveredLink>
-          </div>
-        </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Ürünlerimiz" >
           <div className="flex flex-col space-y-4">
             <HoveredLink href="/">RF Sistemleri</HoveredLink>
