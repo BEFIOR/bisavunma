@@ -147,8 +147,7 @@ export const Navbar = () => {
       type: "group",
       title: "Ürünlerimiz",
       items: [
-        { title: "RF Sistemleri", href: "/" },
-        { title: "Sinyal İstihbarat (SIGINT)", href: "/" },
+        { title: "RF Sistemleri ve Sinyal İstihbarat (SIGINT)", href: "/" },
         { title: "Radar Sistemleri", href: "/" },
         { title: "Elektro-Optik & Termal Sistemler", href: "/" },
         { title: "Jammer & RF Efektörler", href: "/" },
