@@ -245,8 +245,7 @@ export const Navbar = () => {
 
         <MenuItem setActive={setActive} active={active} item="Ürünlerimiz">
           <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">RF Sistemleri</HoveredLink>
-            <HoveredLink href="/">Sinyal İstihbarat (SIGINT)</HoveredLink>
+            <HoveredLink href="/">RF Sistemleri Sinyal İstihbarat (SIGINT) </HoveredLink>
             <HoveredLink href="/">Radar Sistemleri</HoveredLink>
             <HoveredLink href="/">Elektro-Optik & Termal Sistemler</HoveredLink>
             <HoveredLink href="/">Jammer & RF Efektörler</HoveredLink>
