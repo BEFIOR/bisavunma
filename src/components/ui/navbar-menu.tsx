@@ -287,7 +287,7 @@ export const Navbar = () => {
               active={active}
               item={s.title}
             >
-              <div className="grid grid-cols-2 gap-4">
+              <div className={`grid gap-4 ${s.title === "Ürünlerimiz" ? "grid-cols-2" : "grid-cols-1"}`}>
                 {s.items.map((item) => (
                   <div key={item.title} className="space-y-2">
                     <Link
