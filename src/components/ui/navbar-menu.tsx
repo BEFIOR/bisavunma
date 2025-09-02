@@ -139,7 +139,11 @@ export const Navbar = () => {
     | {
         type: "group";
         title: string;
-        items: Array<{ title: string; href: string }>;
+        items: Array<{
+          title: string;
+          href: string;
+          urunler?: Array<{ title: string; href: string }>;
+        }>;
       }
   > = [
     { type: "link", title: "Ana Sayfa", href: "/" },
@@ -147,52 +151,80 @@ export const Navbar = () => {
       type: "group",
       title: "Ürünlerimiz",
       items: [
-        { title: "RF Sistemleri ve Sinyal İstihbarat (SIGINT)", href: "/" },
-        { title: "Radar Sistemleri", href: "/" },
-        { title: "Elektro-Optik & Termal Sistemler", href: "/" },
-        { title: "Jammer & RF Efektörler", href: "/" },
-        { title: "DJI Türkiye Enterprise", href: "/" },
+        { title: "RF Sistemleri ve Sinyal İstihbarat (SIGINT)", href: "/urunler/rf-sistemleri" ,urunler: [
+          { title: "Urun 1", href: "/urunler/rf-sistemleri-urun-1" },
+          { title: "Urun 2", href: "/urunler/rf-sistemleri-urun-2" },
+          { title: "Urun 3", href: "/urunler/rf-sistemleri-urun-3" },  
+          { title: "Urun 4", href: "/urunler/rf-sistemleri-urun-4" },  
+          { title: "Urun 5", href: "/urunler/rf-sistemleri-urun-5" },  
+          { title: "Urun 6", href: "/urunler/rf-sistemleri-urun-6" },  
+          { title: "Urun 7", href: "/urunler/rf-sistemleri-urun-7" },  
+        ]},
+        { title: "Radar Sistemleri", href: "/urunler/radar-sistemleri" ,urunler: [
+          { title: "Urun 1", href: "/urunler/radar-sistemleri-urun-1" },
+          { title: "Urun 2", href: "/urunler/radar-sistemleri-urun-2" },
+          { title: "Urun 3", href: "/urunler/radar-sistemleri-urun-3" },
+          { title: "Urun 4", href: "/urunler/radar-sistemleri-urun-4" },
+          { title: "Urun 5", href: "/urunler/radar-sistemleri-urun-5" },
+          { title: "Urun 6", href: "/urunler/radar-sistemleri-urun-6" },
+          { title: "Urun 7", href: "/urunler/radar-sistemleri-urun-7" },
+        ]},
+        { title: "Elektro-Optik & Termal Sistemler", href: "/urunler/elektro-optik-ve-termal-sistemler",urunler: [
+          { title: "Urun 1", href: "/urunler/elektro-optik-termal-urun-1" },
+          { title: "Urun 2", href: "/urunler/elektro-optik-termal-urun-2" },
+          { title: "Urun 3", href: "/urunler/elektro-optik-termal-urun-3" },
+        ]},
+        { title: "Jammer & RF Efektörler", href: "/urunler/jammer-ve-rf-efektorler",urunler: [
+          { title: "Urun 1", href: "/urunler/jammer-ve-rf-efektorler-urun-1" },
+          { title: "Urun 2", href: "/urunler/jammer-ve-rf-efektorler-urun-2" },
+          { title: "Urun 3", href: "/urunler/jammer-ve-rf-efektorler-urun-3" },
+        ]},
+        { title: "DJI Türkiye Enterprise", href: "/urunler/dji-turkiye-enterprise",urunler: [
+          { title: "Urun 1", href: "/urunler/dji-turkiye-enterprise-urun-1" },
+          { title: "Urun 2", href: "/urunler/dji-turkiye-enterprise-urun-2" },
+          { title: "Urun 3", href: "/urunler/dji-turkiye-enterprise-urun-3" },
+        ]},
       ],
     },
     {
       type: "group",
       title: "Çözümlerimiz",
       items: [
-        { title: "Sistem Konfigürasyonu", href: "/" },
-        { title: "İhtiyaca Yönelik Savunma Çözümleri", href: "/" },
-        { title: "Entegre Güvenlik Yaklaşımları", href: "/" },
+        { title: "Sistem Konfigürasyonu", href: "/cozumler/sistem-konfigurasyonu" },
+        { title: "İhtiyaca Yönelik Savunma Çözümleri", href: "/cozumler/ihityaç-yonelik-savunma-cozumleri" },
+        { title: "Entegre Güvenlik Yaklaşımları", href: "/cozumler/entegre-guvenlik-yaklasimlari" },
       ],
     },
     {
       type: "group",
       title: "Sektörlere Göre",
       items: [
-        { title: "Askeri Tesisler", href: "/" },
-        { title: "Enerji & Kritik Altyapılar", href: "/" },
-        { title: "Liman & Tersaneler", href: "/" },
-        { title: "Sınır Güvenliği", href: "/" },
+        { title: "Askeri Tesisler", href: "/sektorler/askeri-tesisler" },
+        { title: "Enerji & Kritik Altyapılar", href: "/sektorler/enerji-ve-kritik-altyapi" },
+        { title: "Liman & Tersaneler", href: "/sektorler/liman-ve-tersaneler" },
+        { title: "Sınır Güvenliği", href: "/sektorler/sinir-guvenligi" },
       ],
     },
     {
       type: "group",
       title: "Hizmetlerimiz",
       items: [
-        { title: "Saha Keşfi & Konumlandırma", href: "/" },
-        { title: "Kurulum & Entegrasyon", href: "/" },
-        { title: "Eğitim & Teknik Destek", href: "/" },
-        { title: "Yazılım Çözümleri", href: "/" },
+        { title: "Saha Keşfi & Konumlandırma", href: "/hizmetler/saha-kesfi-ve-konumlandirma" },
+        { title: "Kurulum & Entegrasyon", href: "/hizmetler/kurulum-ve-entegrasyon" },
+        { title: "Eğitim & Teknik Destek", href: "/hizmetler/egitim-ve-teknik-destek" },
+        { title: "Yazılım Çözümleri", href: "/hizmetler/yazilim-cozumleri" },
       ],
     },
     {
       type: "group",
       title: "Destek",
       items: [
-        { title: "Destek Talebi", href: "/" },
-        { title: "Yazılım İndirme", href: "/" },
-        { title: "7/24 Teknik Destek", href: "/" },
+        { title: "Destek Talebi", href: "/destek/destek-talebi" },
+        { title: "Yazılım İndirme", href: "/destek/yazilim-indirme" },
+        { title: "7/24 Teknik Destek", href: "/destek/7-24-teknik-destek" },
       ],
     },
-    { type: "link", title: "İletişim", href: "/" },
+    { type: "link", title: "İletişim", href: "/iletisim" },
   ];
 
   const [openSection, setOpenSection] = React.useState<string | null>(null);
@@ -227,7 +259,7 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Desktop menu */}
+      {/* Desktop menu (generated from sections) */}
       <Menu setActive={setActive}>
         <Image
           width={100}
@@ -236,60 +268,53 @@ export const Navbar = () => {
           alt="BİSAVUNMA Logo"
           className="h-8 w-auto rounded-2xl"
         />
-        <motion.p
-          transition={{ duration: 0.3 }}
-          className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mt-1"
-        >
-          Ana Sayfa
-        </motion.p>
-
-        <MenuItem setActive={setActive} active={active} item="Ürünlerimiz">
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">RF Sistemleri Sinyal İstihbarat (SIGINT) </HoveredLink>
-            <HoveredLink href="/">Radar Sistemleri</HoveredLink>
-            <HoveredLink href="/">Elektro-Optik & Termal Sistemler</HoveredLink>
-            <HoveredLink href="/">Jammer & RF Efektörler</HoveredLink>
-            <HoveredLink href="/">DJI Türkiye Enterprise</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Çözümlerimiz">
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Sistem Konfigürasyonu</HoveredLink>
-            <HoveredLink href="/">
-              İhtiyaca Yönelik Savunma Çözümleri
-            </HoveredLink>
-            <HoveredLink href="/">Entegre Güvenlik Yaklaşımları</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Sektörlere Göre">
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Askeri Tesisler</HoveredLink>
-            <HoveredLink href="/">Enerji & Kritik Altyapılar</HoveredLink>
-            <HoveredLink href="/">Liman & Tersaneler</HoveredLink>
-            <HoveredLink href="/">Sınır Güvenliği</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Hizmetlerimiz">
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Saha Keşfi & Konumlandırma</HoveredLink>
-            <HoveredLink href="/">Kurulum & Entegrasyon</HoveredLink>
-            <HoveredLink href="/">Eğitim & Teknik Destek</HoveredLink>
-            <HoveredLink href="/">Yazılım Çözümleri</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Destek">
-          <div className="flex flex-col space-y-4">
-            <HoveredLink href="/">Destek Talebi</HoveredLink>
-            <HoveredLink href="/">Yazılım İndirme</HoveredLink>
-            <HoveredLink href="/">7/24 Teknik Destek</HoveredLink>
-          </div>
-        </MenuItem>
-        <motion.p
-          transition={{ duration: 0.3 }}
-          className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mt-1"
-        >
-          İletişim
-        </motion.p>
+        {sections.map((s) => {
+          if (s.type === "link") {
+            return (
+              <motion.p
+                key={s.title}
+                transition={{ duration: 0.3 }}
+                className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mt-1"
+              >
+                <Link href={s.href}>{s.title}</Link>
+              </motion.p>
+            );
+          }
+          return (
+            <MenuItem
+              key={s.title}
+              setActive={setActive}
+              active={active}
+              item={s.title}
+            >
+              <div className="grid grid-cols-2 gap-4">
+                {s.items.map((item) => (
+                  <div key={item.title} className="space-y-2">
+                    <Link
+                      href={item.href}
+                      className="block text-black hover:opacity-70 dark:text-white font-medium transition-all duration-300"
+                    >
+                      {item.title}
+                    </Link>
+                    {item.urunler && item.urunler.length > 0 && (
+                      <div className="pl-3 border-l border-black/10 dark:border-white/10 space-y-1 col-span-2">
+                        {item.urunler.map((u) => (
+                          <Link
+                            key={u.title}
+                            href={u.href}
+                            className="block text-sm text-neutral-700 dark:text-neutral-200 hover:text-gray-500"
+                          >
+                            {u.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </MenuItem>
+          );
+        })}
       </Menu>
 
       {/* Mobile drawer + overlay */}
@@ -381,14 +406,29 @@ export const Navbar = () => {
                           >
                             <div className="pl-3 pb-3 space-y-2">
                               {s.items.map((item) => (
-                                <Link
-                                  key={item.title}
-                                  href={item.href}
-                                  onClick={close}
-                                  className="block text-sm text-neutral-700 dark:text-neutral-200 hover:text-gray-500"
-                                >
-                                  {item.title}
-                                </Link>
+                                <div key={item.title} className="space-y-1">
+                                  <Link
+                                    href={item.href}
+                                    onClick={close}
+                                    className="block text-sm text-white hover:text-gray-300"
+                                  >
+                                    {item.title}
+                                  </Link>
+                                  {item.urunler && item.urunler.length > 0 && (
+                                    <div className="pl-3 space-y-1">
+                                      {item.urunler.map((u) => (
+                                        <Link
+                                          key={u.title}
+                                          href={u.href}
+                                          onClick={close}
+                                          className="block text-sm text-neutral-400 hover:text-neutral-300"
+                                        >
+                                          {u.title}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
                               ))}
                             </div>
                           </motion.div>
