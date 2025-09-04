@@ -142,7 +142,6 @@ export const Navbar = () => {
         items: Array<{
           title: string;
           href: string;
-          urunler?: Array<{ title: string; href: string }>;
         }>;
       }
   > = [
@@ -151,39 +150,11 @@ export const Navbar = () => {
       type: "group",
       title: "Ürünlerimiz",
       items: [
-        { title: "RF Sistemleri ve Sinyal İstihbarat (SIGINT)", href: "/urunler/rf-sistemleri" ,urunler: [
-          { title: "Urun 1", href: "/urunler/rf-sistemleri-urun-1" },
-          { title: "Urun 2", href: "/urunler/rf-sistemleri-urun-2" },
-          { title: "Urun 3", href: "/urunler/rf-sistemleri-urun-3" },  
-          { title: "Urun 4", href: "/urunler/rf-sistemleri-urun-4" },  
-          { title: "Urun 5", href: "/urunler/rf-sistemleri-urun-5" },  
-          { title: "Urun 6", href: "/urunler/rf-sistemleri-urun-6" },  
-          { title: "Urun 7", href: "/urunler/rf-sistemleri-urun-7" },  
-        ]},
-        { title: "Radar Sistemleri", href: "/urunler/radar-sistemleri" ,urunler: [
-          { title: "Urun 1", href: "/urunler/radar-sistemleri-urun-1" },
-          { title: "Urun 2", href: "/urunler/radar-sistemleri-urun-2" },
-          { title: "Urun 3", href: "/urunler/radar-sistemleri-urun-3" },
-          { title: "Urun 4", href: "/urunler/radar-sistemleri-urun-4" },
-          { title: "Urun 5", href: "/urunler/radar-sistemleri-urun-5" },
-          { title: "Urun 6", href: "/urunler/radar-sistemleri-urun-6" },
-          { title: "Urun 7", href: "/urunler/radar-sistemleri-urun-7" },
-        ]},
-        { title: "Elektro-Optik & Termal Sistemler", href: "/urunler/elektro-optik-ve-termal-sistemler",urunler: [
-          { title: "Urun 1", href: "/urunler/elektro-optik-termal-urun-1" },
-          { title: "Urun 2", href: "/urunler/elektro-optik-termal-urun-2" },
-          { title: "Urun 3", href: "/urunler/elektro-optik-termal-urun-3" },
-        ]},
-        { title: "Jammer & RF Efektörler", href: "/urunler/jammer-ve-rf-efektorler",urunler: [
-          { title: "Urun 1", href: "/urunler/jammer-ve-rf-efektorler-urun-1" },
-          { title: "Urun 2", href: "/urunler/jammer-ve-rf-efektorler-urun-2" },
-          { title: "Urun 3", href: "/urunler/jammer-ve-rf-efektorler-urun-3" },
-        ]},
-        { title: "DJI Türkiye Enterprise", href: "/urunler/dji-turkiye-enterprise",urunler: [
-          { title: "Urun 1", href: "/urunler/dji-turkiye-enterprise-urun-1" },
-          { title: "Urun 2", href: "/urunler/dji-turkiye-enterprise-urun-2" },
-          { title: "Urun 3", href: "/urunler/dji-turkiye-enterprise-urun-3" },
-        ]},
+        { title: "RF Sistemleri ve Sinyal İstihbarat (SIGINT)", href: "/urunler/rf-sistemleri"},
+        { title: "Radar Sistemleri", href: "/urunler/radar-sistemleri" },
+        { title: "Elektro-Optik & Termal Sistemler", href: "/urunler/elektro-optik-termal-sistemler"},
+        { title: "Jammer & RF Efektörler", href: "/urunler/jammer-rf-efektorler"},
+        { title: "DJI Türkiye Enterprise", href: "/urunler/dji-turkiye-enterprise"},
       ],
     },
     {
@@ -287,7 +258,7 @@ export const Navbar = () => {
               active={active}
               item={s.title}
             >
-              <div className={`grid gap-4 ${s.title === "Ürünlerimiz" ? "grid-cols-2" : "grid-cols-1"}`}>
+              <div className={`flex flex-col space-y-6`}>
                 {s.items.map((item) => (
                   <div key={item.title} className="space-y-2">
                     <Link
@@ -296,19 +267,7 @@ export const Navbar = () => {
                     >
                       {item.title}
                     </Link>
-                    {item.urunler && item.urunler.length > 0 && (
-                      <div className="pl-3 border-l border-black/10 dark:border-white/10 space-y-1 col-span-2">
-                        {item.urunler.map((u) => (
-                          <Link
-                            key={u.title}
-                            href={u.href}
-                            className="block text-sm text-neutral-700 dark:text-neutral-200 hover:text-gray-500"
-                          >
-                            {u.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                   
                   </div>
                 ))}
               </div>
@@ -414,20 +373,7 @@ export const Navbar = () => {
                                   >
                                     {item.title}
                                   </Link>
-                                  {item.urunler && item.urunler.length > 0 && (
-                                    <div className="pl-3 space-y-1">
-                                      {item.urunler.map((u) => (
-                                        <Link
-                                          key={u.title}
-                                          href={u.href}
-                                          onClick={close}
-                                          className="block text-sm text-neutral-400 hover:text-neutral-300"
-                                        >
-                                          {u.title}
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  )}
+                                 
                                 </div>
                               ))}
                             </div>

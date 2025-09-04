@@ -1,82 +1,5 @@
 import { notFound } from "next/navigation";
-
-type Product = {
-  title: string;
-  description: string;
-  features?: string[];
-  image?: string;
-};
-
-// Simple in-file product registry. Replace with API/DB later.
-const PRODUCTS: Record<string, Product> = {
-  "rf-sistemleri-urun-1": {
-    title: "RF Sistemleri - Ürün 1",
-    description:
-      "Gelişmiş RF sinyal tespiti ve analiz yetenekleri sunan modüler çözüm.",
-    features: ["GENİŞ bant tarama", "Gerçek zamanlı analiz", "Uzaktan yönetim"],
-  },
-  "rf-sistemleri-urun-2": {
-    title: "RF Sistemleri - Ürün 2",
-    description: "Taşınabilir RF keşif sistemi.",
-    features: ["Hafif tasarım", "Uzun pil ömrü", "Dayanıklı yapı"],
-  },
-  "rf-sistemleri-urun-3": {
-    title: "RF Sistemleri - Ürün 3",
-    description: "Sabit istasyon RF izleme platformu.",
-  },
-
-  "radar-sistemleri-urun-1": {
-    title: "Radar Sistemleri - Ürün 1",
-    description: "Yüksek çözünürlüklü hedef tespit radarı.",
-  },
-  "radar-sistemleri-urun-2": {
-    title: "Radar Sistemleri - Ürün 2",
-    description: "Uzun menzil gözetleme radarı.",
-  },
-  "radar-sistemleri-urun-3": {
-    title: "Radar Sistemleri - Ürün 3",
-    description: "Çok modlu taktik radar.",
-  },
-
-  "elektro-optik-termal-urun-1": {
-    title: "Elektro-Optik & Termal - Ürün 1",
-    description: "Çok spektrumlu EO/IR görüntüleme sistemi.",
-  },
-  "elektro-optik-termal-urun-2": {
-    title: "Elektro-Optik & Termal - Ürün 2",
-    description: "Uzun menzil termal kamera.",
-  },
-  "elektro-optik-termal-urun-3": {
-    title: "Elektro-Optik & Termal - Ürün 3",
-    description: "Stabilize elektro-optik gimbal.",
-  },
-
-  "jammer-ve-rf-efektorler-urun-1": {
-    title: "Jammer & RF Efektörler - Ürün 1",
-    description: "Geniş bant frekans karıştırma sistemi.",
-  },
-  "jammer-ve-rf-efektorler-urun-2": {
-    title: "Jammer & RF Efektörler - Ürün 2",
-    description: "Taşınabilir jammer platformu.",
-  },
-  "jammer-ve-rf-efektorler-urun-3": {
-    title: "Jammer & RF Efektörler - Ürün 3",
-    description: "Sabit tesis koruma çözümleri.",
-  },
-
-  "dji-turkiye-enterprise-urun-1": {
-    title: "DJI Enterprise - Ürün 1",
-    description: "Endüstriyel drone platformu.",
-  },
-  "dji-turkiye-enterprise-urun-2": {
-    title: "DJI Enterprise - Ürün 2",
-    description: "Çoklu sensör entegrasyonu.",
-  },
-  "dji-turkiye-enterprise-urun-3": {
-    title: "DJI Enterprise - Ürün 3",
-    description: "Gelişmiş görev planlama yetenekleri.",
-  },
-};
+import { getProductBySlug } from "@/lib/products";
 
 function formatSlug(slug: string) {
   return slug
@@ -84,23 +7,24 @@ function formatSlug(slug: string) {
     .replace(/\b\w/g, (m) => m.toUpperCase());
 }
 
-export default function ProductDetail({
+export default async function ProductDetail({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
-  const product = PRODUCTS[slug];
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
 
-  const title = product?.title ?? formatSlug(slug);
+  if (!product) {
+    notFound();
+  }
+
+  const title = product.title ?? formatSlug(slug);
   const description =
-    product?.description ??
-    "Bu ürün için detaylı açıklama henüz eklenmedi.";
-  const features = product?.features ?? [
-    "Örnek özellik A",
-    "Örnek özellik B",
-    "Örnek özellik C",
-  ];
+    product.description ?? "Bu ürün için detaylı açıklama henüz eklenmedi.";
+  const features = product.features && product.features.length > 0
+    ? product.features
+    : ["Örnek özellik A", "Örnek özellik B", "Örnek özellik C"];
 
   return (
     <div className="min-h-screen bg-white">
@@ -144,4 +68,3 @@ export default function ProductDetail({
     </div>
   );
 }
-
