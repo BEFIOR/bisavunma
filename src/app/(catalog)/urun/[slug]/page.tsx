@@ -1,17 +1,30 @@
 import { notFound } from "next/navigation";
-import { getProductBySlug } from "@/lib/products";
+import { getAllProductSlugs, getProductBySlug } from "@/lib/products";
 
 function formatSlug(slug: string) {
-  return slug
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (m) => m.toUpperCase());
+  return slug.replace(/-/g, " ").replace(/\b\w/g, (m) => m.toUpperCase());
 }
 
-export default async function ProductDetail({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export const revalidate = 60;
+
+type Params = { slug: string };
+
+export async function generateStaticParams() {
+  const slugs = await getAllProductSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
+  if (!product) return { title: "Ürün Bulunamadı" };
+  return {
+    title: product.title,
+    description: product.description ?? undefined,
+  };
+}
+
+export default async function ProductDetail({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
 
@@ -22,9 +35,10 @@ export default async function ProductDetail({
   const title = product.title ?? formatSlug(slug);
   const description =
     product.description ?? "Bu ürün için detaylı açıklama henüz eklenmedi.";
-  const features = product.features && product.features.length > 0
-    ? product.features
-    : ["Örnek özellik A", "Örnek özellik B", "Örnek özellik C"];
+  const features =
+    product.features && product.features.length > 0
+      ? product.features
+      : ["Örnek özellik A", "Örnek özellik B", "Örnek özellik C"];
 
   return (
     <div className="min-h-screen bg-white">

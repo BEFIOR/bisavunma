@@ -5,6 +5,8 @@ import Image from "next/image";
 import type { Transition } from "motion";
 import Link from "next/link";
 import { Menu as MenuIcon, X } from "lucide-react";
+import navigationSections from "@/config/navigation";
+import type { NavSection } from "@/types/navigation";
 
 const transition: Transition = {
   type: "spring",
@@ -19,11 +21,13 @@ export const MenuItem = ({
   setActive,
   active,
   item,
+  href,
   children,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
+  href?: string;
   children?: React.ReactNode;
 }) => {
   return (
@@ -32,7 +36,7 @@ export const MenuItem = ({
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mt-1"
       >
-        {item}
+        {href ? <Link href={href}>{item}</Link> : item}
       </motion.p>
       {active !== null && (
         <motion.div
@@ -134,69 +138,7 @@ export const Navbar = () => {
   const toggle = () => setOpen((v) => !v);
   const close = () => setOpen(false);
 
-  const sections: Array<
-    | { type: "link"; title: string; href: string }
-    | {
-        type: "group";
-        title: string;
-        items: Array<{
-          title: string;
-          href: string;
-        }>;
-      }
-  > = [
-    { type: "link", title: "Ana Sayfa", href: "/" },
-    {
-      type: "group",
-      title: "Ürünlerimiz",
-      items: [
-        { title: "RF Sistemleri ve Sinyal İstihbarat (SIGINT)", href: "/urunler/rf-sistemleri"},
-        { title: "Radar Sistemleri", href: "/urunler/radar-sistemleri" },
-        { title: "Elektro-Optik & Termal Sistemler", href: "/urunler/elektro-optik-termal-sistemler"},
-        { title: "Jammer & RF Efektörler", href: "/urunler/jammer-rf-efektorler"},
-        { title: "DJI Türkiye Enterprise", href: "/urunler/dji-turkiye-enterprise"},
-      ],
-    },
-    {
-      type: "group",
-      title: "Çözümlerimiz",
-      items: [
-        { title: "Sistem Konfigürasyonu", href: "/cozumler/sistem-konfigurasyonu" },
-        { title: "İhtiyaca Yönelik Savunma Çözümleri", href: "/cozumler/ihityaç-yonelik-savunma-cozumleri" },
-        { title: "Entegre Güvenlik Yaklaşımları", href: "/cozumler/entegre-guvenlik-yaklasimlari" },
-      ],
-    },
-    {
-      type: "group",
-      title: "Sektörlere Göre",
-      items: [
-        { title: "Askeri Tesisler", href: "/sektorler/askeri-tesisler" },
-        { title: "Enerji & Kritik Altyapılar", href: "/sektorler/enerji-ve-kritik-altyapi" },
-        { title: "Liman & Tersaneler", href: "/sektorler/liman-ve-tersaneler" },
-        { title: "Sınır Güvenliği", href: "/sektorler/sinir-guvenligi" },
-      ],
-    },
-    {
-      type: "group",
-      title: "Hizmetlerimiz",
-      items: [
-        { title: "Saha Keşfi & Konumlandırma", href: "/hizmetler/saha-kesfi-ve-konumlandirma" },
-        { title: "Kurulum & Entegrasyon", href: "/hizmetler/kurulum-ve-entegrasyon" },
-        { title: "Eğitim & Teknik Destek", href: "/hizmetler/egitim-ve-teknik-destek" },
-        { title: "Yazılım Çözümleri", href: "/hizmetler/yazilim-cozumleri" },
-      ],
-    },
-    {
-      type: "group",
-      title: "Destek",
-      items: [
-        { title: "Destek Talebi", href: "/destek/destek-talebi" },
-        { title: "Yazılım İndirme", href: "/destek/yazilim-indirme" },
-        { title: "7/24 Teknik Destek", href: "/destek/7-24-teknik-destek" },
-      ],
-    },
-    { type: "link", title: "İletişim", href: "/iletisim" },
-  ];
+  const sections: NavSection[] = navigationSections;
 
   const [openSection, setOpenSection] = React.useState<string | null>(null);
   const toggleSection = (title: string) =>
@@ -257,6 +199,7 @@ export const Navbar = () => {
               setActive={setActive}
               active={active}
               item={s.title}
+              href={s.href}
             >
               <div className={`flex flex-col space-y-6`}>
                 {s.items.map((item) => (
@@ -267,7 +210,6 @@ export const Navbar = () => {
                     >
                       {item.title}
                     </Link>
-                   
                   </div>
                 ))}
               </div>
@@ -340,20 +282,29 @@ export const Navbar = () => {
                       key={s.title}
                       className="border-b border-white/5 dark:border-white/5"
                     >
-                      <button
-                        className="w-full py-3 text-left text-base text-white dark:text-white flex items-center justify-between"
-                        onClick={() => toggleSection(s.title)}
-                      >
-                        <span>{s.title}</span>
-                        <motion.span
-                          initial={false}
-                          animate={{ rotate: isOpen ? 180 : 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="inline-block"
+                      <div className="w-full py-3 text-left text-base text-white dark:text-white flex items-center justify-between">
+                        <Link
+                          href={s.href}
+                          onClick={close}
+                          className="hover:text-gray-300"
                         >
-                          ▾
-                        </motion.span>
-                      </button>
+                          {s.title}
+                        </Link>
+                        <button
+                          aria-label="Alt menüyü aç/kapat"
+                          className="p-1"
+                          onClick={() => toggleSection(s.title)}
+                        >
+                          <motion.span
+                            initial={false}
+                            animate={{ rotate: isOpen ? 180 : 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="inline-block"
+                          >
+                            ▾
+                          </motion.span>
+                        </button>
+                      </div>
                       <AnimatePresence initial={false}>
                         {isOpen && (
                           <motion.div
@@ -373,7 +324,6 @@ export const Navbar = () => {
                                   >
                                     {item.title}
                                   </Link>
-                                 
                                 </div>
                               ))}
                             </div>

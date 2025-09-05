@@ -1,4 +1,4 @@
-import { getDb } from "@/lib/db";
+import prisma from "@/lib/prisma";
 
 export type DbProduct = {
   slug: string;
@@ -9,64 +9,42 @@ export type DbProduct = {
 };
 
 export async function getProductBySlug(slug: string): Promise<DbProduct | null> {
-  const db = getDb();
+  const product = await prisma.product.findUnique({
+    where: { slug },
+    include: {
+      features: { orderBy: { position: "asc" } },
+    },
+  });
 
-  const [rows] = await db.execute(
-    `SELECT slug, title, description, image
-     FROM products
-     WHERE slug = ?
-     LIMIT 1`,
-    [slug]
-  );
-
-  const productRows = rows as Array<{
-    slug: string;
-    title: string;
-    description: string | null;
-    image: string | null;
-  }>;
-
-  if (productRows.length === 0) return null;
-
-  const product = productRows[0];
-
-  const [featureRows] = await db.execute(
-    `SELECT feature
-     FROM product_features
-     WHERE product_slug = ?
-     ORDER BY position ASC`,
-    [slug]
-  );
-
-  const features = (featureRows as Array<{ feature: string }>).map((r) => r.feature);
+  if (!product) return null;
 
   return {
-    ...product,
-    features,
+    slug: product.slug,
+    title: product.title,
+    description: product.description,
+    image: product.image,
+    features: product.features?.map((f) => f.feature) ?? [],
   };
 }
 
 export async function getProductsByCategorySlug(
   categorySlug: string
 ): Promise<DbProduct[]> {
-  const db = getDb();
+  const rows = await prisma.productCategory.findMany({
+    where: { category: { slug: categorySlug } },
+    include: { product: true },
+    orderBy: [{ position: "asc" }, { product: { title: "asc" } }],
+  });
 
-  const [rows] = await db.execute(
-    `SELECT p.slug, p.title, p.description, p.image
-     FROM products p
-     JOIN product_categories pc ON pc.product_slug = p.slug
-     JOIN categories c ON c.id = pc.category_id
-     WHERE c.slug = ?
-     ORDER BY pc.position ASC, p.title ASC`,
-    [categorySlug]
-  );
+  return rows.map(({ product }) => ({
+    slug: product.slug,
+    title: product.title,
+    description: product.description,
+    image: product.image,
+  }));
+}
 
-  const products = rows as Array<{
-    slug: string;
-    title: string;
-    description: string | null;
-    image: string | null;
-  }>;
-
-  return products.map((p) => ({ ...p }));
+export async function getAllProductSlugs(): Promise<string[]> {
+  const rows = await prisma.product.findMany({ select: { slug: true } });
+  return rows.map((r) => r.slug);
 }
