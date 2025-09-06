@@ -41,40 +41,40 @@ export default async function NewProductPage() {
       <h1 className="text-xl font-semibold mb-4">Yeni Ürün</h1>
       <form action={createAction} className="space-y-4">
         <div>
-          <label className="block text-sm mb-1">Başlık</label>
+          <label className="block text-sm mb-1 text-gray-300">Başlık</label>
           <input
             name="title"
-            className="w-full border rounded px-3 py-2"
+            className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500"
             required
           />
         </div>
         <div>
-          <label className="block text-sm mb-1">Slug (opsiyonel)</label>
+          <label className="block text-sm mb-1 text-gray-300">Slug (opsiyonel)</label>
           <input
             name="slug"
-            className="w-full border rounded px-3 py-2"
+            className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500"
             placeholder="bos bırakırsan otomatik"
           />
         </div>
         <div>
-          <label className="block text-sm mb-1">Açıklama</label>
+          <label className="block text-sm mb-1 text-gray-300">Açıklama</label>
           <textarea
             name="description"
-            className="w-full border rounded px-3 py-2"
+            className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500"
             rows={4}
           />
         </div>
         <div>
-          <label className="block text-sm mb-1">Görsel URL</label>
+          <label className="block text-sm mb-1 text-gray-300">Görsel URL</label>
           <input
             name="image"
-            className="w-full border rounded px-3 py-2"
+            className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500"
             placeholder="https://..."
           />
         </div>
         <div>
-          <label className="block text-sm mb-2">Kategori</label>
-          <select name="categoryId" className="w-full border rounded px-3 py-2">
+          <label className="block text-sm mb-2 text-gray-300">Kategori</label>
+          <select name="categoryId" className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100">
             <option value="">Seçiniz</option>
             {categories.map((c) => (
               <option key={c.id} value={c.id}>
@@ -84,9 +84,7 @@ export default async function NewProductPage() {
           </select>
         </div>
         <div className="flex gap-2">
-          <button className="bg-black text-white px-4 py-2 rounded">
-            Kaydet
-          </button>
+          <button className="rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2">Kaydet</button>
         </div>
       </form>
     </div>

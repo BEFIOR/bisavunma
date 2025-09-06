@@ -54,25 +54,25 @@ export default async function EditProductPage({ params }: { params: Promise<Para
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold">Ürün Düzenle</h1>
         <form action={removeAction}>
-          <button className="text-red-600" aria-label="Sil">Sil</button>
+          <button className="text-red-400 hover:text-red-300" aria-label="Sil">Sil</button>
         </form>
       </div>
       <form action={saveAction} className="space-y-4">
         <div>
-          <label className="block text-sm mb-1">Başlık</label>
-          <input name="title" defaultValue={product.title} className="w-full border rounded px-3 py-2" required />
+          <label className="block text-sm mb-1 text-gray-300">Başlık</label>
+          <input name="title" defaultValue={product.title} className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500" required />
         </div>
         <div>
-          <label className="block text-sm mb-1">Açıklama</label>
-          <textarea name="description" defaultValue={product.description ?? ""} className="w-full border rounded px-3 py-2" rows={4} />
+          <label className="block text-sm mb-1 text-gray-300">Açıklama</label>
+          <textarea name="description" defaultValue={product.description ?? ""} className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500" rows={4} />
         </div>
         <div>
-          <label className="block text-sm mb-1">Görsel URL</label>
-          <input name="image" defaultValue={product.image ?? ""} className="w-full border rounded px-3 py-2" />
+          <label className="block text-sm mb-1 text-gray-300">Görsel URL</label>
+          <input name="image" defaultValue={product.image ?? ""} className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500" />
         </div>
         <div>
-          <label className="block text-sm mb-2">Kategori</label>
-          <select name="categoryId" defaultValue={selected ?? ""} className="w-full border rounded px-3 py-2">
+          <label className="block text-sm mb-2 text-gray-300">Kategori</label>
+          <select name="categoryId" defaultValue={selected ?? ""} className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100">
             <option value="">Seçiniz</option>
             {categories.map((c) => (
               <option key={c.id} value={c.id}>{c.title}</option>
@@ -80,7 +80,7 @@ export default async function EditProductPage({ params }: { params: Promise<Para
           </select>
         </div>
         <div className="flex gap-2">
-          <button className="bg-black text-white px-4 py-2 rounded">Kaydet</button>
+          <button className="rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2">Kaydet</button>
         </div>
       </form>
     </div>

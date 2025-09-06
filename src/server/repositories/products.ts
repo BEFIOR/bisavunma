@@ -19,6 +19,7 @@ function slugify(input: string) {
   return s;
 }
 
+
 export async function listProducts(params: { q?: string; skip?: number; take?: number } = {}) {
   const { q, skip = 0, take = 20 } = params;
   return prisma.product.findMany({

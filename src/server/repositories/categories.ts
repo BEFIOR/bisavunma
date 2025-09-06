@@ -15,4 +15,6 @@ export async function getProductCategoryIds(productSlug: string): Promise<number
   });
   return rows.map((r) => r.categoryId);
 }
-
+export async function createCategory() {
+  
+}

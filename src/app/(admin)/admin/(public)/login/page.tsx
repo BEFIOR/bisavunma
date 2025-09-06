@@ -28,7 +28,13 @@ export default async function LoginPage({
   async function loginAction(formData: FormData) {
     "use server";
     const hdrs = await headers();
-    const ip = (hdrs.get("x-forwarded-for") || hdrs.get("x-real-ip") || "unknown").split(",")[0].trim();
+    const ip = (
+      hdrs.get("x-forwarded-for") ||
+      hdrs.get("x-real-ip") ||
+      "unknown"
+    )
+      .split(",")[0]
+      .trim();
     const ipKey = `ip:${ip}`;
 
     // Quick IP-based gate before any heavy work
@@ -71,45 +77,46 @@ export default async function LoginPage({
   }
 
   return (
-    <div className="min-h-[60vh] flex items-center justify-center p-4">
+    <div className="h-screen flex items-center justify-center p-4 bg-gray-950 text-gray-100">
       <form
         action={loginAction}
-        className="w-full max-w-sm space-y-4 border p-6 rounded-md"
+        className="w-full max-w-sm space-y-4 rounded-xl border border-gray-800 bg-gray-950/60 p-6"
       >
         <h1 className="text-xl font-semibold">Admin Giriş</h1>
         {hasError && (
-          <div className="text-red-600 text-sm">E‑posta veya şifre hatalı</div>
+          <div className="text-red-400 text-sm">E‑posta veya şifre hatalı</div>
         )}
         {sp?.error === "rate_limited" && (
-          <div className="text-red-600 text-sm">
-            Çok fazla deneme yapıldı. Lütfen {RATE_LIMIT_WINDOW_MINUTES} dakika içinde en fazla {RATE_LIMIT_MAX_ATTEMPTS} kez deneyin.
+          <div className="text-red-400 text-sm">
+            Çok fazla deneme yapıldı. Lütfen {RATE_LIMIT_WINDOW_MINUTES} dakika
+            içinde en fazla {RATE_LIMIT_MAX_ATTEMPTS} kez deneyin.
           </div>
         )}
         <div className="space-y-1">
-          <label className="text-sm" htmlFor="email">
+          <label className="text-sm text-gray-300" htmlFor="email">
             E‑posta
           </label>
           <input
             id="email"
             name="email"
             type="email"
-            className="w-full border rounded px-3 py-2"
+            className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500"
             required
           />
         </div>
         <div className="space-y-1">
-          <label className="text-sm" htmlFor="password">
+          <label className="text-sm text-gray-300" htmlFor="password">
             Şifre
           </label>
           <input
             id="password"
             name="password"
             type="password"
-            className="w-full border rounded px-3 py-2"
+            className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500"
             required
           />
         </div>
-        <button className="w-full bg-black text-white py-2 rounded">
+        <button className="w-full rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white py-2">
           Giriş Yap
         </button>
       </form>
