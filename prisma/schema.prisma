@@ -19,6 +19,33 @@ model Product {
   @@map("products")
 }
 
+model User {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  name         String?
+  passwordHash String    @map("password_hash")
+  passwordSalt String    @map("password_salt")
+  role         String    @default("admin")
+  createdAt    DateTime  @map("created_at") @default(now())
+  updatedAt    DateTime  @map("updated_at") @updatedAt
+
+  sessions Session[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id
+  userId    Int      @map("user_id")
+  createdAt DateTime @map("created_at") @default(now())
+  expiresAt DateTime @map("expires_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("sessions")
+}
+
 model ProductFeature {
   productSlug String @map("product_slug")
   position    Int

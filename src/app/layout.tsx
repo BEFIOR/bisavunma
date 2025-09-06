@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/layout/navbar";
 
 export const metadata: Metadata = {
   title: "Bi Savunma",
@@ -14,12 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body>
-        <header>
-          <Navbar />
-        </header>
-        <main>{children}</main>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

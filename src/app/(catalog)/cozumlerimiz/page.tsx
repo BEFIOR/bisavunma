@@ -1,7 +1,7 @@
 export default async function Cozumlerimiz() {
   return (
-    <>
-      <h1>COZUMLERIMIZ</h1>
-    </>
+    <div className="text-center">
+      <h1>Cozumlerimiz</h1>
+    </div>
   );
 }
