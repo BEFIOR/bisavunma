@@ -1,14 +1,16 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { categories, categoryMap } from "@/config/categories";
 import { getProductsByCategorySlug } from "@/lib/products";
+import { getCategoryBySlug, listCategories } from "@/server/repositories/categories";
 
 export const revalidate = 60;
 
 type Params = { category: string };
 
+export const dynamicParams = true;
 export async function generateStaticParams() {
-  return categories.map((c) => ({ category: c.slug }));
+  const cats = await listCategories();
+  return cats.map((c) => ({ category: c.slug }));
 }
 
 export async function generateMetadata({
@@ -17,10 +19,9 @@ export async function generateMetadata({
   params: Promise<Params>;
 }) {
   const { category: categorySlug } = await params;
-  const category = categoryMap.get(categorySlug);
+  const category = await getCategoryBySlug(categorySlug);
   const title = category ? `${category.title} | Ürünler` : "Kategori";
-  const description =
-    category?.description ?? `${categorySlug} kategorisi ürünleri`;
+  const description = category?.description ?? `${categorySlug} kategorisi ürünleri`;
   return { title, description };
 }
 
@@ -30,10 +31,8 @@ export default async function CategoryPage({
   params: Promise<Params>;
 }) {
   const { category } = await params;
-  const cat = categoryMap.get(category);
-  if (!cat) {
-    notFound();
-  }
+  const cat = await getCategoryBySlug(category);
+  if (!cat) notFound();
 
   const products = await getProductsByCategorySlug(category);
 

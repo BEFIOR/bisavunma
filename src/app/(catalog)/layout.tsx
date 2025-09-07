@@ -1,13 +1,12 @@
-import { Navbar } from "@/components/layout/navbar";
+import NavbarServer from "@/components/layout/navbar.server";
 
 export default function CatalogLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <header>
-        <Navbar />
+        <NavbarServer />
       </header>
       <main>{children}</main>
     </>
   );
 }
-

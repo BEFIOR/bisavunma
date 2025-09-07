@@ -131,14 +131,14 @@ export const HoveredLink = ({
   );
 };
 
-export const Navbar = () => {
+export const Navbar = ({ sections: providedSections }: { sections?: NavSection[] }) => {
   const [active, setActive] = React.useState<string | null>(null);
   const [open, setOpen] = React.useState(false);
 
   const toggle = () => setOpen((v) => !v);
   const close = () => setOpen(false);
 
-  const sections: NavSection[] = navigationSections;
+  const sections: NavSection[] = providedSections ?? navigationSections;
 
   const [openSection, setOpenSection] = React.useState<string | null>(null);
   const toggleSection = (title: string) =>
