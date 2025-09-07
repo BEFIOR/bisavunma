@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getAllProductSlugs, getProductBySlug } from "@/lib/products";
+import Image from "next/image";
 
 function formatSlug(slug: string) {
   return slug.replace(/-/g, " ").replace(/\b\w/g, (m) => m.toUpperCase());
@@ -14,7 +15,11 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<Params> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   if (!product) return { title: "Ürün Bulunamadı" };
@@ -24,7 +29,11 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
   };
 }
 
-export default async function ProductDetail({ params }: { params: Promise<Params> }) {
+export default async function ProductDetail({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
 
@@ -53,7 +62,12 @@ export default async function ProductDetail({ params }: { params: Promise<Params
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="aspect-video w-full rounded-lg bg-gray-200 flex items-center justify-center text-gray-500">
-              Ürün Görseli
+              <Image
+                src={product.image || "/logo.webp"}
+                width={1000}
+                height={1000}
+                alt={product.title || "Urun"}
+              />
             </div>
             <div className="mt-6">
               <h2 className="text-xl font-semibold text-gray-900 mb-2">

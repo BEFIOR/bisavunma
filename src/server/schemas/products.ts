@@ -2,8 +2,22 @@ import { z } from "zod";
 
 export const ProductBaseSchema = z.object({
   title: z.string().min(2).max(191),
-  description: z.string().max(10_000).optional().or(z.literal("")).transform(v => (v === "" ? undefined : v)),
-  image: z.string().url().optional().or(z.literal("")).transform(v => (v === "" ? undefined : v)),
+  description: z
+    .string()
+    .max(10_000)
+    .optional()
+    .or(z.literal(""))
+    .transform((v) => (v === "" ? undefined : v)),
+  // Accept either absolute URL (http/https) or site-relative path like /uploads/abc.jpg
+  image: z
+    .string()
+    .optional()
+    .or(z.literal(""))
+    .transform((v) => (v === "" ? undefined : v))
+    .refine(
+      (v) => v === undefined || /^https?:\/\//.test(v) || v.startsWith("/"),
+      { message: "Image must be a URL or /relative/path" }
+    ),
 });
 
 export const ProductCreateSchema = ProductBaseSchema.extend({
