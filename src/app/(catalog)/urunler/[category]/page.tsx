@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getProductsByCategorySlug } from "@/lib/products";
-import { getCategoryBySlug, listCategories } from "@/server/repositories/categories";
+import {
+  getCategoryBySlug,
+  listCategories,
+} from "@/server/repositories/categories";
 
 export const revalidate = 60;
 
@@ -21,7 +24,8 @@ export async function generateMetadata({
   const { category: categorySlug } = await params;
   const category = await getCategoryBySlug(categorySlug);
   const title = category ? `${category.title} | Ürünler` : "Kategori";
-  const description = category?.description ?? `${categorySlug} kategorisi ürünleri`;
+  const description =
+    category?.description ?? `${categorySlug} kategorisi ürünleri`;
   return { title, description };
 }
 
@@ -37,11 +41,11 @@ export default async function CategoryPage({
   const products = await getProductsByCategorySlug(category);
 
   return (
-    <div className="min-h-screen bg-white">
-      <section className="pt-28 pb-8 px-4 bg-gray-50 border-b border-gray-100">
+    <div className="min-h-screen bg-black text-gray-200">
+      <section className="pt-28 pb-8 px-4 bg-neutral-950 border-b border-neutral-900">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900">{cat.title}</h1>
-          <p className="mt-2 text-gray-600">/urunler/{category}</p>
+          <h1 className="text-3xl font-bold text-white">{cat.title}</h1>
+          <p className="mt-2 text-gray-400">/urunler/{category}</p>
         </div>
       </section>
 
@@ -50,17 +54,17 @@ export default async function CategoryPage({
           {products.map((p) => (
             <Link
               key={p.slug}
-              href={`/urun/${p.slug}`}
-              className="rounded-lg border border-gray-200 p-4 hover:shadow-md transition"
+              href={`/urunler/${category}/${p.slug}`}
+              className="rounded-lg border border-neutral-800 p-4 hover:bg-neutral-900 transition"
             >
-              <h3 className="text-lg font-semibold text-gray-900">{p.title}</h3>
-              <p className="text-sm text-gray-600 line-clamp-2 mt-1">
+              <h3 className="text-lg font-semibold text-white">{p.title}</h3>
+              <p className="text-sm text-gray-400 line-clamp-2 mt-1">
                 {p.description}
               </p>
             </Link>
           ))}
           {products.length === 0 && (
-            <div className="text-gray-600">Bu kategoride ürün bulunamadı.</div>
+            <div className="text-gray-400">Bu kategoride ürün bulunamadı.</div>
           )}
         </div>
       </section>

@@ -9,14 +9,14 @@ export const navigationSections: NavSection[] = [
     items: [
       {
         title: "RF Sistemleri ve Sinyal İstihbarat (SIGINT)",
-        href: "/urunler/rf-sistemleri",
+        href: "/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint",
       },
       { title: "Radar Sistemleri", href: "/urunler/radar-sistemleri" },
       {
         title: "Elektro-Optik & Termal Sistemler",
         href: "/urunler/elektro-optik-ve-termal-sistemler",
       },
-      { title: "Jammer & RF Efektörler", href: "/urunler/jammer-ve-rf-efektorler" },
+      { title: "Jammer & RF Efektörler", href: "/urunler/jammer-rf-efektorler" },
       { title: "DJI Türkiye Enterprise", href: "/urunler/dji-turkiye-enterprise" },
     ],
   },
@@ -78,4 +78,3 @@ export const navigationSections: NavSection[] = [
 ];
 
 export default navigationSections;
-

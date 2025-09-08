@@ -12,6 +12,7 @@ model Product {
   title       String
   description String?
   image       String?
+  altCategory String?           @map("alt_kategori")
 
   features   ProductFeature[]
   categories ProductCategory[]
