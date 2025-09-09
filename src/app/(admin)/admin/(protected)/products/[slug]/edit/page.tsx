@@ -29,6 +29,7 @@ export default async function EditProductPage({ params }: { params: Promise<Para
       description: formData.get("description") ?? undefined,
       image: formData.get("image") ?? undefined,
       categoryId,
+      altCategory: formData.get("altCategory") ?? undefined,
     });
     if (!parsed.success) {
       redirect(`/admin/products/${slug}/edit?error=validation`);
@@ -69,6 +70,19 @@ export default async function EditProductPage({ params }: { params: Promise<Para
         <div>
           <label className="block text-sm mb-1 text-gray-300">Görsel URL</label>
           <input name="image" defaultValue={product.image ?? ""} className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100 placeholder-gray-500" />
+        </div>
+        <div>
+          <label className="block text-sm mb-2 text-gray-300">Alt Kategori (opsiyonel)</label>
+          <select name="altCategory" defaultValue={(product as any).altCategory ?? ""} className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100">
+            <option value="">Seçiniz</option>
+            <option>RF Sensörleri</option>
+            <option>Yön Bulma</option>
+            <option>Platform Entegrasyonları</option>
+            <option>TSCM (Dinlemeye Karşı Önlemler)</option>
+            <option>RF Kayıt (I/Q)</option>
+            <option>RFeye Suite (Yazılım)</option>
+          </select>
+          <p className="mt-1 text-xs text-gray-500">Boş bırakırsanız veritabanında null olarak saklanır.</p>
         </div>
         <div>
           <label className="block text-sm mb-2 text-gray-300">Kategori</label>

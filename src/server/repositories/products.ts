@@ -39,10 +39,23 @@ export async function listProducts(params: { q?: string; skip?: number; take?: n
 }
 
 export async function getProduct(slug: string) {
-  return prisma.product.findUnique({ where: { slug }, include: { features: { orderBy: { position: "asc" } } } });
+  const product = await prisma.product.findUnique({ where: { slug }, include: { features: { orderBy: { position: "asc" } } } });
+  if (!product) return null as any;
+  // Try to read alt_kategori via raw SQL (column may not exist in Prisma schema)
+  let altCategory: string | null = null;
+  try {
+    const rows: Array<{ altCategory: string | null }> = await (prisma as any).$queryRawUnsafe(
+      "SELECT alt_kategori AS altCategory FROM products WHERE slug = ? LIMIT 1",
+      slug
+    );
+    if (rows && rows[0]) altCategory = rows[0].altCategory;
+  } catch {
+    // ignore if column missing
+  }
+  return { ...product, altCategory } as any;
 }
 
-export async function createProduct(input: { slug?: string; title: string; description?: string; image?: string; categoryId?: number }) {
+export async function createProduct(input: { slug?: string; title: string; description?: string; image?: string; categoryId?: number; altCategory?: string | null }) {
   const desired = input.slug && input.slug.trim() !== "" ? input.slug : slugify(input.title);
 
   return prisma.$transaction(async (tx) => {
@@ -79,6 +92,16 @@ export async function createProduct(input: { slug?: string; title: string; descr
       data: { slug: uniqueSlug, title: input.title, description: input.description, image: input.image },
       select: { slug: true },
     });
+    // Persist optional alt_kategori via raw SQL (nullable)
+    try {
+      await (tx as any).$executeRawUnsafe(
+        "UPDATE products SET alt_kategori = ? WHERE slug = ?",
+        input.altCategory ?? null,
+        p.slug
+      );
+    } catch {
+      // ignore if column doesn't exist
+    }
     if (input.categoryId) {
       await tx.productCategory.create({
         data: { productSlug: p.slug, categoryId: input.categoryId, position: 0 },
@@ -88,13 +111,23 @@ export async function createProduct(input: { slug?: string; title: string; descr
   });
 }
 
-export async function updateProduct(slug: string, input: { title: string; description?: string; image?: string; categoryId?: number }) {
+export async function updateProduct(slug: string, input: { title: string; description?: string; image?: string; categoryId?: number; altCategory?: string | null }) {
   return prisma.$transaction(async (tx) => {
     const p = await tx.product.update({
       where: { slug },
       data: { title: input.title, description: input.description, image: input.image },
       select: { slug: true },
     });
+    // Update alt_kategori via raw SQL
+    try {
+      await (tx as any).$executeRawUnsafe(
+        "UPDATE products SET alt_kategori = ? WHERE slug = ?",
+        input.altCategory ?? null,
+        slug
+      );
+    } catch {
+      // ignore
+    }
     if (input.categoryId !== undefined) {
       await tx.productCategory.deleteMany({ where: { productSlug: slug } });
       if (input.categoryId) {

@@ -56,6 +56,7 @@ export default async function NewProductPage() {
       image: imageFromUrl ?? uploadedImagePath ?? undefined,
       slug: formData.get("slug") ?? undefined,
       categoryId,
+      altCategory: formData.get("altCategory") ?? undefined,
     });
     if (!parsed.success) {
       redirect("/admin/products/new?error=validation");
@@ -103,6 +104,19 @@ export default async function NewProductPage() {
             placeholder="https://..."
           />
           <p className="mt-1 text-xs text-gray-500">İstersen URL gir veya aşağıdan dosya yükle.</p>
+        </div>
+        <div>
+          <label className="block text-sm mb-2 text-gray-300">Alt Kategori (opsiyonel)</label>
+          <select name="altCategory" className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100">
+            <option value="">Seçiniz</option>
+            <option>RF Sensörleri</option>
+            <option>Yön Bulma</option>
+            <option>Platform Entegrasyonları</option>
+            <option>TSCM (Dinlemeye Karşı Önlemler)</option>
+            <option>RF Kayıt (I/Q)</option>
+            <option>RFeye Suite (Yazılım)</option>
+          </select>
+          <p className="mt-1 text-xs text-gray-500">Boş bırakırsanız veritabanında null olarak saklanır.</p>
         </div>
         <div>
           <label className="block text-sm mb-1 text-gray-300">Görsel Yükle</label>

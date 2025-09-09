@@ -31,11 +31,27 @@ export const ProductCreateSchema = ProductBaseSchema.extend({
     .or(z.literal(""))
     .transform((v) => (v === "" ? undefined : v)),
   categoryId: z.coerce.number().int().positive().optional(),
+  altCategory: z
+    .string()
+    .optional()
+    .or(z.literal(""))
+    .transform((v) => {
+      const s = typeof v === "string" ? v.trim() : "";
+      return s === "" ? null : s;
+    }),
 });
 
 export const ProductUpdateSchema = ProductBaseSchema.extend({
   slug: z.string().min(2).max(191).regex(/^[a-z0-9-]+$/),
   categoryId: z.coerce.number().int().positive().optional(),
+  altCategory: z
+    .string()
+    .optional()
+    .or(z.literal(""))
+    .transform((v) => {
+      const s = typeof v === "string" ? v.trim() : "";
+      return s === "" ? null : s;
+    }),
 });
 
 export type ProductCreateInput = z.infer<typeof ProductCreateSchema>;

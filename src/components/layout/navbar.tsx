@@ -31,10 +31,10 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative ">
+    <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
-        transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mt-1"
+        transition={{ duration: 0.2 }}
+        className="cursor-pointer mt-1 text-white/80 hover:text-white tracking-wide"
       >
         {href ? <Link href={href}>{item}</Link> : item}
       </motion.p>
@@ -49,11 +49,11 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-white dark:bg-black/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                className="bg-neutral-900/90 text-white backdrop-blur-xl rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl"
               >
                 <motion.div
                   layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
+                  className="w-max h-full p-5"
                 >
                   {children}
                 </motion.div>
@@ -76,7 +76,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input md:flex hidden justify-center space-x-4 px-32 py-6 "
+      className="relative lg:flex hidden items-center gap-6 px-8 py-4 rounded-2xl bg-neutral-900/80 text-white backdrop-blur-lg ring-1 ring-white/10 shadow-[0_6px_20px_-4px_rgba(0,0,0,0.45)]"
     >
       {children}
     </nav>
@@ -101,15 +101,11 @@ export const ProductItem = ({
         width={140}
         height={70}
         alt={title}
-        className="shrink-0 rounded-md shadow-2xl"
+        className="shrink-0 rounded-lg shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
-          {title}
-        </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
-          {description}
-        </p>
+        <h4 className="text-xl font-bold mb-1 text-white">{title}</h4>
+        <p className="text-neutral-300 text-sm max-w-[10rem]">{description}</p>
       </div>
     </a>
   );
@@ -122,16 +118,17 @@ export const HoveredLink = ({
   children: React.ReactNode;
 }) => {
   return (
-    <a
-      {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-gray-400 "
-    >
+    <a {...rest} className="text-neutral-300 hover:text-white">
       {children}
     </a>
   );
 };
 
-export const Navbar = ({ sections: providedSections }: { sections?: NavSection[] }) => {
+export const Navbar = ({
+  sections: providedSections,
+}: {
+  sections?: NavSection[];
+}) => {
   const [active, setActive] = React.useState<string | null>(null);
   const [open, setOpen] = React.useState(false);
 
@@ -147,8 +144,8 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
   return (
     <div className="w-full flex items-center justify-center py-4 absolute z-50">
       {/* Mobile top bar */}
-      <div className="w-full px-4 md:hidden">
-        <div className="flex items-center justify-between rounded-2xl border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input px-4 py-3">
+      <div className="w-full px-4 lg:hidden">
+        <div className="flex items-center justify-between rounded-2xl bg-neutral-900/85 backdrop-blur-lg ring-1 ring-white/10 px-4 py-3 text-white">
           <Link href="/" onClick={close} className="flex items-center gap-2">
             <Image
               width={100}
@@ -161,7 +158,7 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
           <button
             aria-label="Menüyü aç/kapat"
             onClick={toggle}
-            className="p-2 rounded-md bg-white text-black border border-black/10 shadow-sm hover:bg-white"
+            className="p-2 rounded-lg bg-white/10 text-white ring-1 ring-white/15 shadow-sm hover:bg-white/15"
           >
             {open ? (
               <X className="h-6 w-6" />
@@ -186,8 +183,8 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
             return (
               <motion.p
                 key={s.title}
-                transition={{ duration: 0.3 }}
-                className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mt-1"
+                transition={{ duration: 0.2 }}
+                className="cursor-pointer mt-1 text-white/80 hover:text-white tracking-wide"
               >
                 <Link href={s.href}>{s.title}</Link>
               </motion.p>
@@ -201,12 +198,12 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
               item={s.title}
               href={s.href}
             >
-              <div className={`flex flex-col space-y-6`}>
+              <div className={`flex flex-col space-y-4`}>
                 {s.items.map((item) => (
                   <div key={item.title} className="space-y-2">
                     <Link
                       href={item.href}
-                      className="block text-black hover:opacity-70 dark:text-white font-medium transition-all duration-300"
+                      className="block text-white/90 hover:text-white font-medium transition-colors duration-200"
                     >
                       {item.title}
                     </Link>
@@ -229,7 +226,7 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={close}
-              className="fixed inset-0 bg-black/40 md:hidden"
+              className="fixed inset-0 bg-black/40 lg:hidden"
             />
             <motion.aside
               key="drawer"
@@ -237,7 +234,7 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 220, damping: 26 }}
-              className="fixed right-0 top-0 h-[100dvh] w-full max-w-[20rem] md:hidden bg-black border-l border-black/10 dark:border-white/10 shadow-2xl z-50 p-4 flex flex-col"
+              className="fixed right-0 top-0 h-[100dvh] w-full max-w-[20rem] lg:hidden bg-neutral-950 ring-1 ring-white/10 shadow-2xl z-50 p-4 flex flex-col"
             >
               <div className="flex items-center justify-between mb-2">
                 <Link
@@ -256,7 +253,7 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
                 <button
                   aria-label="Kapat"
                   onClick={close}
-                  className="p-2 rounded-md bg-white text-black border border-black/10 shadow-sm hover:bg-white"
+                  className="p-2 rounded-lg bg-white/10 text-white ring-1 ring-white/15 shadow-sm hover:bg-white/15"
                 >
                   <X className="h-6 w-6" />
                 </button>
@@ -270,7 +267,7 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
                         key={s.title}
                         href={s.href}
                         onClick={close}
-                        className="block py-3 text-base text-white border-b border-black/5 dark:border-white/5"
+                        className="block py-3 text-base text-white/90 hover:text-white border-b border-white/5"
                       >
                         {s.title}
                       </Link>
@@ -278,21 +275,18 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
                   }
                   const isOpen = openSection === s.title;
                   return (
-                    <div
-                      key={s.title}
-                      className="border-b border-white/5 dark:border-white/5"
-                    >
-                      <div className="w-full py-3 text-left text-base text-white dark:text-white flex items-center justify-between">
+                    <div key={s.title} className="border-b border-white/5">
+                      <div className="w-full py-3 text-left text-base text-white flex items-center justify-between">
                         <Link
                           href={s.href}
                           onClick={close}
-                          className="hover:text-gray-300"
+                          className="hover:text-white"
                         >
                           {s.title}
                         </Link>
                         <button
                           aria-label="Alt menüyü aç/kapat"
-                          className="p-1"
+                          className="p-1 text-white/80 hover:text-white"
                           onClick={() => toggleSection(s.title)}
                         >
                           <motion.span
@@ -320,7 +314,7 @@ export const Navbar = ({ sections: providedSections }: { sections?: NavSection[]
                                   <Link
                                     href={item.href}
                                     onClick={close}
-                                    className="block text-sm text-white hover:text-gray-300"
+                                    className="block text-sm text-white/90 hover:text-white"
                                   >
                                     {item.title}
                                   </Link>

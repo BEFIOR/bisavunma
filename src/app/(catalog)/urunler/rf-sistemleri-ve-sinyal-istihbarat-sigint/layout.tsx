@@ -1,5 +1,6 @@
 import Image from "next/image";
 import RfSidebar from "./RfSidebar.client";
+import RfMobileSidebar from "./RfMobileSidebar.client";
 import { getProductsByCategorySlug } from "@/lib/products";
 
 export const revalidate = 60;
@@ -29,7 +30,10 @@ export default async function RfLayout({
         <RfSidebar products={products} />
       </aside>
 
-      <div className="flex-1">{children}</div>
+      <div className="flex-1">
+        <RfMobileSidebar products={products} />
+        {children}
+      </div>
     </div>
   );
 }
