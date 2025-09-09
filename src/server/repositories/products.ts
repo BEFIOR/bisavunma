@@ -1,4 +1,5 @@
 import prisma from "@/server/db/client";
+import type { Prisma } from "@prisma/client";
 
 function slugify(input: string) {
   const trMap: Record<string, string> = {
@@ -38,13 +39,19 @@ export async function listProducts(params: { q?: string; skip?: number; take?: n
   });
 }
 
-export async function getProduct(slug: string) {
-  const product = await prisma.product.findUnique({ where: { slug }, include: { features: { orderBy: { position: "asc" } } } });
-  if (!product) return null as any;
+type ProductWithFeatures = Prisma.ProductGetPayload<{ include: { features: true } }>;
+export type ProductWithAlt = ProductWithFeatures & { altCategory: string | null };
+
+export async function getProduct(slug: string): Promise<ProductWithAlt | null> {
+  const product = await prisma.product.findUnique({
+    where: { slug },
+    include: { features: { orderBy: { position: "asc" } } },
+  });
+  if (!product) return null;
   // Try to read alt_kategori via raw SQL (column may not exist in Prisma schema)
   let altCategory: string | null = null;
   try {
-    const rows: Array<{ altCategory: string | null }> = await (prisma as any).$queryRawUnsafe(
+    const rows: Array<{ altCategory: string | null }> = await prisma.$queryRawUnsafe(
       "SELECT alt_kategori AS altCategory FROM products WHERE slug = ? LIMIT 1",
       slug
     );
@@ -52,7 +59,7 @@ export async function getProduct(slug: string) {
   } catch {
     // ignore if column missing
   }
-  return { ...product, altCategory } as any;
+  return { ...product, altCategory };
 }
 
 export async function createProduct(input: { slug?: string; title: string; description?: string; image?: string; categoryId?: number; altCategory?: string | null }) {
@@ -94,7 +101,7 @@ export async function createProduct(input: { slug?: string; title: string; descr
     });
     // Persist optional alt_kategori via raw SQL (nullable)
     try {
-      await (tx as any).$executeRawUnsafe(
+      await tx.$executeRawUnsafe(
         "UPDATE products SET alt_kategori = ? WHERE slug = ?",
         input.altCategory ?? null,
         p.slug
@@ -120,7 +127,7 @@ export async function updateProduct(slug: string, input: { title: string; descri
     });
     // Update alt_kategori via raw SQL
     try {
-      await (tx as any).$executeRawUnsafe(
+      await tx.$executeRawUnsafe(
         "UPDATE products SET alt_kategori = ? WHERE slug = ?",
         input.altCategory ?? null,
         slug

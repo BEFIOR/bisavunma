@@ -21,7 +21,7 @@ export async function getProductBySlug(slug: string): Promise<DbProduct | null> 
 
   let altCategory: string | null = null;
   try {
-    const rows: Array<{ altCategory: string | null }> = await (prisma as any).$queryRawUnsafe(
+    const rows: Array<{ altCategory: string | null }> = await prisma.$queryRawUnsafe(
       "SELECT alt_kategori AS altCategory FROM products WHERE slug = ? LIMIT 1",
       slug
     );
@@ -58,7 +58,7 @@ export async function getProductsByCategorySlug(categorySlug: string): Promise<D
     try {
       const placeholders = slugs.map(() => "?").join(",");
       const sql = `SELECT slug, alt_kategori AS altCategory FROM products WHERE slug IN (${placeholders})`;
-      const list: Array<{ slug: string; altCategory: string | null }> = await (prisma as any).$queryRawUnsafe(
+      const list: Array<{ slug: string; altCategory: string | null }> = await prisma.$queryRawUnsafe(
         sql,
         ...slugs
       );

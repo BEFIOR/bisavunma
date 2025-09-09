@@ -73,7 +73,7 @@ export default async function EditProductPage({ params }: { params: Promise<Para
         </div>
         <div>
           <label className="block text-sm mb-2 text-gray-300">Alt Kategori (opsiyonel)</label>
-          <select name="altCategory" defaultValue={(product as any).altCategory ?? ""} className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100">
+          <select name="altCategory" defaultValue={product.altCategory ?? ""} className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100">
             <option value="">Seçiniz</option>
             <option>RF Sensörleri</option>
             <option>Yön Bulma</option>

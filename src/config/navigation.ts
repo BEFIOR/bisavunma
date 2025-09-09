@@ -39,7 +39,7 @@ export const navigationSections: NavSection[] = [
   {
     type: "group",
     title: "Sektörlere Göre",
-    href : "/urunler",
+    href : "/sektorler",
     items: [
       { title: "Askeri Tesisler", href: "/sektorler/askeri-tesisler" },
       {
@@ -53,7 +53,7 @@ export const navigationSections: NavSection[] = [
   {
     type: "group",
     title: "Hizmetlerimiz",
-    href : "/urunler",
+    href : "/hizmetler",
     items: [
       {
         title: "Saha Keşfi & Konumlandırma",
@@ -67,7 +67,7 @@ export const navigationSections: NavSection[] = [
   {
     type: "group",
     title: "Destek",
-    href : "/urunler",
+    href : "/destek",
     items: [
       { title: "Destek Talebi", href: "/destek/destek-talebi" },
       { title: "Yazılım İndirme", href: "/destek/yazilim-indirme" },
