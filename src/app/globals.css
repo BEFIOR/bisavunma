@@ -2,6 +2,11 @@
 @import "tw-animate-css";
 
 /* Custom keyframes and animation used by FlowingMenu */
+html, body, #__next {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 @keyframes marquee {
   from { transform: translateX(0%); }
   to { transform: translateX(-50%); }

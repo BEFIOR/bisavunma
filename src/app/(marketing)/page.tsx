@@ -114,7 +114,7 @@ export default function Home() {
                 description: "Operasyonel süreklilik için kesintisiz destek.",
                 Icon: Satellite,
               },
-            ].map((f, idx) => (
+            ].map((f) => (
               <div
                 key={f.title}
                 className="group relative rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 will-change-transform overflow-hidden"
@@ -196,7 +196,7 @@ export default function Home() {
               { title: "DJI Enterprise", Icon: Satellite },
               { title: "Sistem Entegrasyonu", Icon: Cog },
               { title: "Teknik Destek", Icon: Headset },
-            ].map((svc, index) => (
+            ].map((svc) => (
               <div
                 key={svc.title}
                 className="group relative rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden"
@@ -358,7 +358,7 @@ export default function Home() {
                 author: "Kamu Kurumu",
                 role: "Proje Sorumlusu",
               },
-            ].map((t, i) => (
+            ].map((t) => (
               <div
                 key={t.author}
                 className="relative h-full p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition overflow-hidden"
@@ -398,7 +398,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center">
             {["ASELSAN", "HAVELSAN", "TAI", "ROKETSAN", "DJI", "X"].map(
-              (brand, i) => (
+              (brand) => (
                 <div
                   key={brand}
                   className="group relative h-16 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex items-center justify-center overflow-hidden transition hover:shadow-md"
