@@ -34,9 +34,13 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.2 }}
-        className="cursor-pointer mt-1 text-white/80 hover:text-white tracking-wide"
+        className="cursor-pointer mt-1 text-white/90 hover:text-white tracking-wide font-medium relative group"
       >
         {href ? <Link href={href}>{item}</Link> : item}
+        <motion.div
+          className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 group-hover:w-full transition-all duration-300"
+          whileHover={{ width: "100%" }}
+        />
       </motion.p>
       {active !== null && (
         <motion.div
@@ -49,11 +53,11 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-neutral-900/90 text-white backdrop-blur-xl rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl"
+                className="bg-white/10 backdrop-blur-2xl text-white rounded-3xl overflow-hidden ring-1 ring-white/20 shadow-2xl border border-white/10"
               >
                 <motion.div
                   layout // layout ensures smooth animation
-                  className="w-max h-full p-5"
+                  className="w-max h-full p-6"
                 >
                   {children}
                 </motion.div>
@@ -76,7 +80,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative lg:flex hidden items-center gap-6 px-8 py-4 rounded-2xl bg-neutral-900/80 text-white backdrop-blur-lg ring-1 ring-white/10 shadow-[0_6px_20px_-4px_rgba(0,0,0,0.45)]"
+      className="relative lg:flex hidden items-center gap-8 px-10 py-5 rounded-3xl bg-white/10 backdrop-blur-2xl text-white ring-1 ring-white/20 shadow-2xl border border-white/10 hover:bg-white/15 transition-all duration-300"
     >
       {children}
     </nav>
@@ -118,7 +122,7 @@ export const HoveredLink = ({
   children: React.ReactNode;
 }) => {
   return (
-    <a {...rest} className="text-neutral-300 hover:text-white">
+    <a {...rest} className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
       {children}
     </a>
   );
@@ -142,23 +146,23 @@ export const Navbar = ({
     setOpenSection((prev) => (prev === title ? null : title));
 
   return (
-    <div className="w-full flex items-center justify-center py-4 absolute z-50">
+    <div className="w-full flex items-center justify-center py-6 absolute z-50">
       {/* Mobile top bar */}
       <div className="w-full px-4 lg:hidden">
-        <div className="flex items-center justify-between rounded-2xl bg-neutral-900/85 backdrop-blur-lg ring-1 ring-white/10 px-4 py-3 text-white">
-          <Link href="/" onClick={close} className="flex items-center gap-2">
+        <div className="flex items-center justify-between rounded-3xl bg-white/10 backdrop-blur-2xl ring-1 ring-white/20 px-6 py-4 text-white shadow-2xl border border-white/10">
+          <Link href="/" onClick={close} className="flex items-center gap-3">
             <Image
               width={100}
               height={100}
               src="/logo.webp"
               alt="BİSAVUNMA Logo"
-              className="h-8 w-auto rounded-2xl"
+              className="h-10 w-auto rounded-2xl"
             />
           </Link>
           <button
             aria-label="Menüyü aç/kapat"
             onClick={toggle}
-            className="p-2 rounded-lg bg-white/10 text-white ring-1 ring-white/15 shadow-sm hover:bg-white/15"
+            className="p-3 rounded-2xl bg-white/10 text-white ring-1 ring-white/20 shadow-lg hover:bg-white/20 transition-all duration-200"
           >
             {open ? (
               <X className="h-6 w-6" />
@@ -171,22 +175,28 @@ export const Navbar = ({
 
       {/* Desktop menu (generated from sections) */}
       <Menu setActive={setActive}>
-        <Image
-          width={100}
-          height={100}
-          src="/logo.webp"
-          alt="BİSAVUNMA Logo"
-          className="h-8 w-auto rounded-2xl"
-        />
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            width={100}
+            height={100}
+            src="/logo.webp"
+            alt="BİSAVUNMA Logo"
+            className="h-10 w-auto rounded-2xl"
+          />
+        </Link>
         {sections.map((s) => {
           if (s.type === "link") {
             return (
               <motion.p
                 key={s.title}
                 transition={{ duration: 0.2 }}
-                className="cursor-pointer mt-1 text-white/80 hover:text-white tracking-wide"
+                className="cursor-pointer mt-1 text-white/90 hover:text-white tracking-wide font-medium relative group"
               >
                 <Link href={s.href}>{s.title}</Link>
+                <motion.div
+                  className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 group-hover:w-full transition-all duration-300"
+                  whileHover={{ width: "100%" }}
+                />
               </motion.p>
             );
           }
@@ -203,7 +213,7 @@ export const Navbar = ({
                   <div key={item.title} className="space-y-2">
                     <Link
                       href={item.href}
-                      className="block text-white/90 hover:text-white font-medium transition-colors duration-200"
+                      className="block text-white/90 hover:text-white font-semibold transition-colors duration-200 hover:translate-x-1 transform"
                     >
                       {item.title}
                     </Link>
@@ -234,26 +244,26 @@ export const Navbar = ({
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 220, damping: 26 }}
-              className="fixed right-0 top-0 h-[100dvh] w-full max-w-[20rem] lg:hidden bg-neutral-950 ring-1 ring-white/10 shadow-2xl z-50 p-4 flex flex-col"
+              className="fixed right-0 top-0 h-[100dvh] w-full max-w-[22rem] lg:hidden bg-white/10 backdrop-blur-2xl ring-1 ring-white/20 shadow-2xl z-50 p-6 flex flex-col border border-white/10"
             >
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between mb-6">
                 <Link
                   href="/"
                   onClick={close}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-3"
                 >
                   <Image
                     width={100}
                     height={100}
                     src="/logo.webp"
                     alt="BİSAVUNMA Logo"
-                    className="h-8 w-auto rounded-2xl"
+                    className="h-10 w-auto rounded-2xl"
                   />
                 </Link>
                 <button
                   aria-label="Kapat"
                   onClick={close}
-                  className="p-2 rounded-lg bg-white/10 text-white ring-1 ring-white/15 shadow-sm hover:bg-white/15"
+                  className="p-3 rounded-2xl bg-white/10 text-white ring-1 ring-white/20 shadow-lg hover:bg-white/20 transition-all duration-200"
                 >
                   <X className="h-6 w-6" />
                 </button>
@@ -267,7 +277,7 @@ export const Navbar = ({
                         key={s.title}
                         href={s.href}
                         onClick={close}
-                        className="block py-3 text-base text-white/90 hover:text-white border-b border-white/5"
+                        className="block py-4 text-lg font-medium text-white/90 hover:text-white border-b border-white/10 transition-colors duration-200"
                       >
                         {s.title}
                       </Link>
@@ -275,25 +285,25 @@ export const Navbar = ({
                   }
                   const isOpen = openSection === s.title;
                   return (
-                    <div key={s.title} className="border-b border-white/5">
-                      <div className="w-full py-3 text-left text-base text-white flex items-center justify-between">
+                    <div key={s.title} className="border-b border-white/10">
+                      <div className="w-full py-4 text-left text-lg font-medium text-white flex items-center justify-between">
                         <Link
                           href={s.href}
                           onClick={close}
-                          className="hover:text-white"
+                          className="hover:text-white transition-colors duration-200"
                         >
                           {s.title}
                         </Link>
                         <button
                           aria-label="Alt menüyü aç/kapat"
-                          className="p-1 text-white/80 hover:text-white"
+                          className="p-2 text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all duration-200"
                           onClick={() => toggleSection(s.title)}
                         >
                           <motion.span
                             initial={false}
                             animate={{ rotate: isOpen ? 180 : 0 }}
                             transition={{ duration: 0.2 }}
-                            className="inline-block"
+                            className="inline-block text-xl"
                           >
                             ▾
                           </motion.span>
@@ -308,13 +318,13 @@ export const Navbar = ({
                             transition={{ duration: 0.25 }}
                             className="overflow-hidden"
                           >
-                            <div className="pl-3 pb-3 space-y-2">
+                            <div className="pl-4 pb-4 space-y-3">
                               {s.items.map((item) => (
                                 <div key={item.title} className="space-y-1">
                                   <Link
                                     href={item.href}
                                     onClick={close}
-                                    className="block text-sm text-white/90 hover:text-white"
+                                    className="block text-base text-white/80 hover:text-white transition-colors duration-200 hover:translate-x-1 transform"
                                   >
                                     {item.title}
                                   </Link>
