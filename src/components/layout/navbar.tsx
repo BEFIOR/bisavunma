@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import type { Transition } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu as MenuIcon, X } from "lucide-react";
 import navigationSections from "@/config/navigation";
 import type { NavSection } from "@/types/navigation";
@@ -23,25 +24,31 @@ export const MenuItem = ({
   item,
   href,
   children,
+  isCurrentPage = false,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
   href?: string;
   children?: React.ReactNode;
+  isCurrentPage?: boolean;
 }) => {
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
-      <motion.p
+      <motion.div
         transition={{ duration: 0.2 }}
-        className="cursor-pointer mt-1 text-white/90 hover:text-white tracking-wide font-medium relative group"
+        className={`cursor-pointer mt-1 tracking-wide font-medium relative group ${
+          isCurrentPage ? "text-white" : "text-white/90 hover:text-white"
+        }`}
       >
         {href ? <Link href={href}>{item}</Link> : item}
         <motion.div
-          className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 group-hover:w-full transition-all duration-300"
+          className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-300"
+          initial={{ width: isCurrentPage ? "100%" : "0%" }}
+          animate={{ width: isCurrentPage ? "100%" : "0%" }}
           whileHover={{ width: "100%" }}
         />
-      </motion.p>
+      </motion.div>
       {active !== null && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
@@ -53,7 +60,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-white/10 backdrop-blur-2xl text-white rounded-3xl overflow-hidden ring-1 ring-white/20 shadow-2xl border border-white/10"
+                className="bg-black/90  text-white rounded-3xl  overflow-hidden ring-1 ring-white/20 shadow-2xl border border-white/10 "
               >
                 <motion.div
                   layout // layout ensures smooth animation
@@ -122,7 +129,10 @@ export const HoveredLink = ({
   children: React.ReactNode;
 }) => {
   return (
-    <a {...rest} className="text-white/80 hover:text-white transition-colors duration-200 font-medium">
+    <a
+      {...rest}
+      className="text-white/80 hover:text-white transition-colors duration-200 font-medium"
+    >
       {children}
     </a>
   );
@@ -135,6 +145,7 @@ export const Navbar = ({
 }) => {
   const [active, setActive] = React.useState<string | null>(null);
   const [open, setOpen] = React.useState(false);
+  const pathname = usePathname();
 
   const toggle = () => setOpen((v) => !v);
   const close = () => setOpen(false);
@@ -144,6 +155,13 @@ export const Navbar = ({
   const [openSection, setOpenSection] = React.useState<string | null>(null);
   const toggleSection = (title: string) =>
     setOpenSection((prev) => (prev === title ? null : title));
+
+  // Check if current path matches the section
+  const isActive = (href: string) => {
+    if (href === "/" && pathname === "/") return true;
+    if (href !== "/" && pathname.startsWith(href)) return true;
+    return false;
+  };
 
   return (
     <div className="w-full flex items-center justify-center py-6 absolute z-50">
@@ -186,18 +204,25 @@ export const Navbar = ({
         </Link>
         {sections.map((s) => {
           if (s.type === "link") {
+            const isCurrentPage = isActive(s.href);
             return (
-              <motion.p
+              <motion.div
                 key={s.title}
                 transition={{ duration: 0.2 }}
-                className="cursor-pointer mt-1 text-white/90 hover:text-white tracking-wide font-medium relative group"
+                className={`cursor-pointer mt-1 tracking-wide font-medium relative group ${
+                  isCurrentPage
+                    ? "text-white"
+                    : "text-white/90 hover:text-white"
+                }`}
               >
                 <Link href={s.href}>{s.title}</Link>
                 <motion.div
-                  className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 group-hover:w-full transition-all duration-300"
+                  className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-300"
+                  initial={{ width: isCurrentPage ? "100%" : "0%" }}
+                  animate={{ width: isCurrentPage ? "100%" : "0%" }}
                   whileHover={{ width: "100%" }}
                 />
-              </motion.p>
+              </motion.div>
             );
           }
           return (
@@ -207,6 +232,7 @@ export const Navbar = ({
               active={active}
               item={s.title}
               href={s.href}
+              isCurrentPage={isActive(s.href)}
             >
               <div className={`flex flex-col space-y-4`}>
                 {s.items.map((item) => (

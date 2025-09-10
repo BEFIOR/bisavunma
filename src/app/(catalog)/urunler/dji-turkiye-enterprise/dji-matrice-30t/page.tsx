@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CheckCircle, Shield, Radio } from "lucide-react";
 
 export const metadata = {
   title: "DJI Matrice 30T | Termal Kameralı Profesyonel Drone | Bisavunma",
@@ -134,7 +135,7 @@ export default function DJIMatrice30TPage() {
               <div className="space-y-4">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sky-400">✓</span>
+                    <CheckCircle className="w-5 h-5 text-sky-400" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">
@@ -149,7 +150,7 @@ export default function DJIMatrice30TPage() {
 
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sky-400">✓</span>
+                    <CheckCircle className="w-5 h-5 text-sky-400" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">
@@ -164,7 +165,7 @@ export default function DJIMatrice30TPage() {
 
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sky-400">✓</span>
+                    <CheckCircle className="w-5 h-5 text-sky-400" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">

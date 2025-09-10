@@ -1,28 +1,20 @@
 import { notFound } from "next/navigation";
-<<<<<<< Updated upstream:src/app/(catalog)/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint/[slug]/page.tsx
-import { getProductBySlug } from "@/lib/products";
-import Image from "next/image";
-=======
 import { getAllProductSlugs, getProductBySlug } from "@/lib/products";
 import Image from "next/image";
 
 function formatSlug(slug: string) {
   return slug.replace(/-/g, " ").replace(/\b\w/g, (m) => m.toUpperCase());
 }
->>>>>>> Stashed changes:src/app/(catalog)/urun/[slug]/page.tsx
 
 export const revalidate = 60;
 
 type Params = { slug: string };
 
-<<<<<<< Updated upstream:src/app/(catalog)/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint/[slug]/page.tsx
-=======
 export async function generateStaticParams() {
   const slugs = await getAllProductSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
->>>>>>> Stashed changes:src/app/(catalog)/urun/[slug]/page.tsx
 export async function generateMetadata({
   params,
 }: {
@@ -37,11 +29,7 @@ export async function generateMetadata({
   };
 }
 
-<<<<<<< Updated upstream:src/app/(catalog)/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint/[slug]/page.tsx
 export default async function ProductInRf({
-=======
-export default async function ProductDetail({
->>>>>>> Stashed changes:src/app/(catalog)/urun/[slug]/page.tsx
   params,
 }: {
   params: Promise<Params>;
@@ -74,11 +62,7 @@ export default async function ProductDetail({
       <section className="py-10 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-<<<<<<< Updated upstream:src/app/(catalog)/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint/[slug]/page.tsx
             <div className="aspect-video w-full rounded-lg bg-neutral-800 flex items-center justify-center text-gray-400">
-=======
-            <div className="aspect-video w-full rounded-lg bg-gray-200 flex items-center justify-center text-gray-500">
->>>>>>> Stashed changes:src/app/(catalog)/urun/[slug]/page.tsx
               <Image
                 src={product.image || "/logo.webp"}
                 width={1000}
