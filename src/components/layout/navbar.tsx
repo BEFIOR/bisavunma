@@ -2,7 +2,7 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import type { Transition } from "motion";
+import type { Transition } from "framer-motion";
 import Link from "next/link";
 import { Menu as MenuIcon, X } from "lucide-react";
 import navigationSections from "@/config/navigation";

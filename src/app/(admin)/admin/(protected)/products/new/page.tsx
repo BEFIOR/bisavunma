@@ -106,6 +106,7 @@ export default async function NewProductPage() {
           <p className="mt-1 text-xs text-gray-500">İstersen URL gir veya aşağıdan dosya yükle.</p>
         </div>
         <div>
+<<<<<<< Updated upstream
           <label className="block text-sm mb-2 text-gray-300">Alt Kategori (opsiyonel)</label>
           <select name="altCategory" className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100">
             <option value="">Seçiniz</option>
@@ -119,6 +120,8 @@ export default async function NewProductPage() {
           <p className="mt-1 text-xs text-gray-500">Boş bırakırsanız veritabanında null olarak saklanır.</p>
         </div>
         <div>
+=======
+>>>>>>> Stashed changes
           <label className="block text-sm mb-1 text-gray-300">Görsel Yükle</label>
           <input
             type="file"

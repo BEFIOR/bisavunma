@@ -109,7 +109,7 @@ export default function EnterpriseClient({
               </h2>
               <div className="h-px flex-1 ml-6 bg-neutral-800" />
             </div>
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6">
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-6">
               {g.items.map((p) => (
                 <Link
                   key={p.slug}
@@ -118,13 +118,13 @@ export default function EnterpriseClient({
                   aria-label={`${p.title} ürününü incele`}
                 >
                   <SpotlightCard className="h-full p-4 hover:shadow-lg transition-shadow">
-                    <div className="w-full aspect-[16/9] relative rounded-xl overflow-hidden bg-neutral-950 ring-1 ring-neutral-800">
+                    <div className="w-full aspect-[4/3] relative rounded-xl overflow-hidden bg-neutral-950 ring-1 ring-neutral-800">
                       <Image
                         src={p.image ?? "/logo.webp"}
                         alt={p.title}
                         fill
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                        className="object-contain"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover object-center"
                         priority={false}
                       />
                     </div>
