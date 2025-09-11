@@ -25,14 +25,14 @@ export const navigationSections: NavSection[] = [
     title: "Çözümlerimiz",
     href : "/cozumlerimiz",
     items: [
-      { title: "Sistem Konfigürasyonu", href: "/cozumler/sistem-konfigurasyonu" },
+      { title: "Sistem Konfigürasyonu", href: "/cozumlerimiz#sistem-konfigurasyonu" },
       {
         title: "İhtiyaca Yönelik Savunma Çözümleri",
-        href: "/cozumler/ihityaç-yonelik-savunma-cozumleri",
+        href: "/cozumlerimiz#savunma-cozumleri",
       },
       {
         title: "Entegre Güvenlik Yaklaşımları",
-        href: "/cozumler/entegre-guvenlik-yaklasimlari",
+        href: "/cozumlerimiz#entegre-guvenlik",
       },
     ],
   },
@@ -41,13 +41,13 @@ export const navigationSections: NavSection[] = [
     title: "Sektörlere Göre",
     href : "/sektorler",
     items: [
-      { title: "Askeri Tesisler", href: "/sektorler/askeri-tesisler" },
+      { title: "Askeri Tesisler", href: "/sektorler#askeri-tesisler" },
       {
         title: "Enerji & Kritik Altyapılar",
-        href: "/sektorler/enerji-ve-kritik-altyapi",
+        href: "/sektorler#enerji-altyapi",
       },
-      { title: "Liman & Tersaneler", href: "/sektorler/liman-ve-tersaneler" },
-      { title: "Sınır Güvenliği", href: "/sektorler/sinir-guvenligi" },
+      { title: "Liman & Tersaneler", href: "/sektorler#liman-tersaneler" },
+      { title: "Sınır Güvenliği", href: "/sektorler#sinir-guvenligi" },
     ],
   },
   {

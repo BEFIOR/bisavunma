@@ -11,7 +11,9 @@ html, body, #__next {
   from { transform: translateX(0%); }
   to { transform: translateX(-50%); }
 }
-
+html {
+  background-color: #000;
+}
 .animate-marquee {
   animation: marquee 15s linear infinite;
 }
