@@ -1,10 +1,12 @@
 import { Shield, Building, Globe, Target, ChevronDown } from "lucide-react";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default async function Sektorler() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-24 overflow-hidden min-h-screen bg-white dark:bg-gray-950">
+        <BackgroundBeams />
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">

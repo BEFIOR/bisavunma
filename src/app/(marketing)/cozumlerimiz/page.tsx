@@ -33,7 +33,7 @@ export default async function Cozumlerimiz() {
         <div className="absolute inset-0 -z-20">
           <DotGrid
             dotSize={5}
-            gap={15}
+            gap={25}
             baseColor="#3d3d3d"
             activeColor="#7daaf5"
             proximity={120}

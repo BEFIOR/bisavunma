@@ -14,30 +14,9 @@ import {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen ">
       {/* Hero Section with Video Background Only */}
-      <section className="relative pt-24 overflow-hidden min-h-screen">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            style={{ filter: "brightness(0.3) contrast(1.2)" }}
-          >
-            <source
-              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0  bg-opacity-60"></div>
-        </div>
-      </section>
+      <section className="relative pt-24 overflow-hidden min-h-screen"></section>
 
       {/* Features Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white dark:bg-gray-950">
