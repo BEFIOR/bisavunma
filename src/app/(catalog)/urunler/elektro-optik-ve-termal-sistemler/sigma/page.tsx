@@ -1,0 +1,688 @@
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Eye,
+  Shield,
+  Zap,
+  Target,
+  Camera,
+  Wifi,
+  Battery,
+  Settings,
+  Anchor,
+  Compass,
+  Search,
+  Telescope,
+} from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  HeroAnimation,
+  HeroStaggerContainer,
+  HeroScaleAnimation,
+} from "@/components/animations/ScrollAnimations";
+
+export const metadata = {
+  title:
+    "SIGMA Her Hava Koşulunda Uzun Menzilli PTZ Kamera Sistemi | Bisavunma",
+  description:
+    "SIGMA özelleştirilebilir çoklu sensörlü PTZ sistemi. 2075mm uzun menzilli HD kamera, 1400mm termal kamera, 5km ZLID aydınlatma ve IP66 koruması.",
+};
+
+export default function SigmaPage() {
+  return (
+    <div className="min-h-screen bg-black text-gray-200">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-black to-neutral-900" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.1),transparent_50%)]" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <HeroStaggerContainer className="space-y-8">
+              <HeroAnimation direction="up" delay={0.2}>
+                <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                  <span>Elektro-Optik & Termal Sistemler</span>
+                  <span>/</span>
+                  <span className="text-white">SIGMA</span>
+                </div>
+              </HeroAnimation>
+
+              <HeroAnimation direction="up" delay={0.4}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Her Hava Koşulunda
+                  <br />
+                  <span className="text-sky-400">Uzun Menzilli PTZ</span>
+                </h1>
+              </HeroAnimation>
+
+              <HeroAnimation direction="up" delay={0.6}>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  SIGMA özelleştirilebilir çoklu sensörlü PTZ sistemi. 2075mm
+                  uzun menzilli HD kamera, 1400mm termal kamera, 5km ZLID
+                  aydınlatma ve IP66 koruması ile en zorlu iklim koşullarında
+                  güvenilir performans.
+                </p>
+              </HeroAnimation>
+
+              <HeroAnimation direction="up" delay={0.8}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/iletisim"
+                    className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+                  >
+                    Teklif Al
+                  </Link>
+                  <Link
+                    href="#ozellikler"
+                    className="border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors"
+                  >
+                    Özellikleri İncele
+                  </Link>
+                </div>
+              </HeroAnimation>
+            </HeroStaggerContainer>
+
+            <HeroAnimation direction="right" delay={1.0}>
+              <div className="relative h-[400px] lg:h-[500px] flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-600/20 to-blue-600/20 rounded-2xl blur-3xl" />
+                <div className="relative z-10 w-full h-full flex items-center justify-center p-8">
+                  <Image
+                    src="/products/elektro-optik/sigma.png"
+                    alt="SIGMA Elektro-Optik Sistem"
+                    width={600}
+                    height={400}
+                    className="object-contain max-w-full max-h-full rounded-2xl brightness-150"
+                  />
+                </div>
+              </div>
+            </HeroAnimation>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section
+        id="ozellikler"
+        className="py-20 px-4 bg-neutral-950 border-t border-neutral-900"
+      >
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation direction="up" className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              SIGMA ile Uzun Menzilli Üstün Performans
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              SIGMA ile uzun menzilli tasarımda üstün kalite
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <Telescope className="w-6 h-6 text-sky-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    2075mm Uzun Menzil
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  Aşırı uzun menzilli HD görünür kamera seçenekleri
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <Eye className="w-6 h-6 text-sky-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    50km Termal Algılama
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  1400mm termal kamera ile 50km algılama menzili
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <Zap className="w-6 h-6 text-sky-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    5km ZLID Aydınlatma
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  5km ZLID aydınlatma ile gece görüş performansı
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <Shield className="w-6 h-6 text-sky-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    IP66 Koruması
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  Güçlendirilmiş alüminyum alaşım ile anti-korozif kaplama
+                </p>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Camera Options Section */}
+      <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Kamera Seçenekleri
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Görünür ışık, termal ve IR aydınlatma seçenekleri
+            </p>
+          </ScrollAnimation>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Visible/NIR Camera Options */}
+            <div className="space-y-6">
+              <ScrollAnimation direction="left">
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Görünür/NIR Kamera Seçenekleri
+                </h3>
+              </ScrollAnimation>
+
+              <StaggerContainer className="space-y-4">
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">61X Ultra HD</h4>
+                      <span className="text-sky-400 text-sm">8MP</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      20–1225mm lens, 21.7° - 0.36° görüş açısı
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">95X Ultra HD</h4>
+                      <span className="text-sky-400 text-sm">8MP</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      10.6–1015mm lens, 95X zoom
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">53X Ultra HD</h4>
+                      <span className="text-sky-400 text-sm">8MP</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      15–800mm lens, 53X zoom
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">
+                        79X Long-Range
+                      </h4>
+                      <span className="text-sky-400 text-sm">2MP</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      15.5–1235mm lens, 79X zoom
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">
+                        95X High Resolution
+                      </h4>
+                      <span className="text-sky-400 text-sm">4MP</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      10–955mm lens, 95X zoom
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">
+                        53X High Resolution
+                      </h4>
+                      <span className="text-sky-400 text-sm">4MP</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      15–800mm lens, 53X zoom
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">
+                        59X Long-Range
+                      </h4>
+                      <span className="text-sky-400 text-sm">2MP</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      14.8–875mm lens, 59X zoom
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">49X Ultra HD</h4>
+                      <span className="text-sky-400 text-sm">8MP</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      5.6–272mm lens, 49X zoom
+                    </p>
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
+            </div>
+
+            {/* Thermal Camera Options */}
+            <div className="space-y-6">
+              <ScrollAnimation direction="up">
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Termal Kamera Seçenekleri
+                </h3>
+              </ScrollAnimation>
+
+              <StaggerContainer className="space-y-4">
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">
+                        1200mm Cooled Thermal
+                      </h4>
+                      <span className="text-sky-400 text-sm">1200CTZ-HD</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      50km algılama menzili, 7.96° - 0.61° görüş açısı
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">1400mm MWIR</h4>
+                      <span className="text-sky-400 text-sm">1400MWIR</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      85mm–1400mm lens, MWIR
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">1100mm MWIR</h4>
+                      <span className="text-sky-400 text-sm">1100MWIR</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      46–1100mm lens, MWIR
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">
+                        1015mm MWIR HD
+                      </h4>
+                      <span className="text-sky-400 text-sm">1015MWIR-HD</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      55–1015mm lens, MWIR HD
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">875mm MWIR</h4>
+                      <span className="text-sky-400 text-sm">875MWIR</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">38–875mm lens, MWIR</p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">430mm MWIR</h4>
+                      <span className="text-sky-400 text-sm">430MWIR</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">30–430mm lens, MWIR</p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">310mm LWIR</h4>
+                      <span className="text-sky-400 text-sm">310LWIR</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">31–310mm lens, LWIR</p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">
+                        410mm MWIR HD
+                      </h4>
+                      <span className="text-sky-400 text-sm">410MWIR-HD</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      18–410mm lens, MWIR HD
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">230mm LWIR</h4>
+                      <span className="text-sky-400 text-sm">230LWIR</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">26–230mm lens, LWIR</p>
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
+            </div>
+
+            {/* IR Illumination Options */}
+            <div className="space-y-6">
+              <ScrollAnimation direction="right">
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  IR Aydınlatma Seçenekleri
+                </h3>
+              </ScrollAnimation>
+
+              <StaggerContainer className="space-y-4">
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">5km ZLID</h4>
+                      <span className="text-sky-400 text-sm">5000M-ZLID</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      5000m aydınlatma menzili, 808nm dalga boyu
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">4km ZLID</h4>
+                      <span className="text-sky-400 text-sm">4000M-ZLID</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      4000m aydınlatma menzili
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">3km ZLID</h4>
+                      <span className="text-sky-400 text-sm">3000M-ZLID</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      3000m aydınlatma menzili
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">2km ZLID</h4>
+                      <span className="text-sky-400 text-sm">2000M-ZLID</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      2000m aydınlatma menzili
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">1.5km ZLID</h4>
+                      <span className="text-sky-400 text-sm">1500M-ZLID</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      1500m aydınlatma menzili
+                    </p>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="text-white font-semibold">1km ZLID</h4>
+                      <span className="text-sky-400 text-sm">1000M-ZLID</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      1000m aydınlatma menzili
+                    </p>
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Specifications */}
+      <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 gap-12 items-center">
+            <div className="space-y-6">
+              <ScrollAnimation direction="right">
+                <h2 className="text-3xl font-bold text-white">
+                  Teknik Özellikler
+                </h2>
+              </ScrollAnimation>
+
+              <ScrollAnimation direction="right" delay={0.2}>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center py-3 border-b border-neutral-800">
+                    <span className="text-gray-300">Uzun Menzil Kamera</span>
+                    <span className="text-white font-medium">2075mm</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-neutral-800">
+                    <span className="text-gray-300">Çözünürlük</span>
+                    <span className="text-white font-medium">
+                      2MP - 8MP (4K)
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-neutral-800">
+                    <span className="text-gray-300">Koruma Sınıfı</span>
+                    <span className="text-white font-medium">IP66</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-neutral-800">
+                    <span className="text-gray-300">Kasa Malzemesi</span>
+                    <span className="text-white font-medium">
+                      Güçlendirilmiş Alüminyum Alaşım
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-neutral-800">
+                    <span className="text-gray-300">Termal Algılama</span>
+                    <span className="text-white font-medium">
+                      50km (1200mm)
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-neutral-800">
+                    <span className="text-gray-300">IR Aydınlatma</span>
+                    <span className="text-white font-medium">5km ZLID</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-neutral-800">
+                    <span className="text-gray-300">Kaplama</span>
+                    <span className="text-white font-medium">Anti-Korozif</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-gray-300">Bağlantı</span>
+                    <span className="text-white font-medium">Askeri Sınıf</span>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications */}
+      <section className="py-20 px-4 border-t border-neutral-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 order-2 lg:order-1">
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Kullanım Alanları
+                </h2>
+              </ScrollAnimation>
+
+              <ScrollAnimation direction="left" delay={0.2}>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-white font-medium mb-1">
+                        Çevre Güvenliği
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        Çevre güvenliği operasyonları için güvenilir çözüm
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-white font-medium mb-1">
+                        Vatan Savunması
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        Vatan savunması operasyonlarında kritik rol
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-white font-medium mb-1">
+                        Kıyı Koruması
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        Kıyı koruma operasyonlarında güvenilir gözetleme
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-white font-medium mb-1">
+                        Tehdit Tespit & Tanıma
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        Tehditleri tespit eder, tanır ve kimliklendirir
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-white font-medium mb-1">
+                        Zorlu İklim Koşulları
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        En zorlu iklim koşullarında güvenilir performans
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            </div>
+
+            <ScrollAnimation direction="right" className="order-1 lg:order-2">
+              <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
+                <Image
+                  src="/products/elektro-optik/sigma-1.png"
+                  alt="SIGMA Kullanım Alanları"
+                  width={600}
+                  height={400}
+                  className="object-contain max-w-full max-h-full rounded-xl relative z-10 brightness-150"
+                />
+              </div>
+            </ScrollAnimation>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 border-t border-neutral-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              SIGMA ile Uzun Menzilli Güvenlik
+            </h2>
+            <p className="text-gray-400 text-lg mb-8">
+              SIGMA'nın uzun menzilli tasarımı ile tehditleri tespit edin,
+              tanıyın ve kimliklendirin. Detaylı bilgi için bizimle iletişime
+              geçin.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/iletisim"
+                className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+              >
+                Teklif Al
+              </Link>
+              <Link
+                href="/urunler/elektro-optik-ve-termal-sistemler"
+                className="border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors"
+              >
+                Diğer Ürünleri İncele
+              </Link>
+            </div>
+          </ScrollAnimation>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -45,7 +45,7 @@ export default async function ProductInRf({
 }) {
   const { slug } = await params;
   const product = await getRfSystemBySlug(slug);
-  if (!product) return { title: "RF Sistemleri Bulunamadı" };
+  if (!product) notFound();
 
   const category = "rf-sistemleri-ve-sinyal-istihbarat-sigint";
 
