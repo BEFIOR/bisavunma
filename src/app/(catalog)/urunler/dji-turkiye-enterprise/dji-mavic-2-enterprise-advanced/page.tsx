@@ -9,8 +9,6 @@ import {
   Shield,
   Zap,
   Settings,
-  CheckCircle,
-  Target,
   Lock,
   Gauge,
   Radar,
@@ -19,7 +17,6 @@ import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
@@ -77,7 +74,7 @@ export default function DJIMavic2EnterpriseAdvancedPage() {
                   Mavic 2 Enterprise Advanced ile her görevde doğru detayları
                   yakalayın – çok sayıda performans yükseltmesi içeren, son
                   derece çok yönlü ama kompakt bir araç. Yüksek çözünürlüklü
-                  termal ve görsel kameralarla, M2EA 32× dijital zoom'u
+                  termal ve görsel kameralarla, M2EA 32× dijital zoom&apos;u
                   destekler ve RTK modülü ile santimetre düzeyinde konumlandırma
                   doğruluğuna sahiptir.
                 </p>
@@ -256,7 +253,7 @@ export default function DJIMavic2EnterpriseAdvancedPage() {
 
               <ScrollAnimation direction="up" delay={0.2}>
                 <p className="text-gray-300">
-                  M2EA'nın entegre yüksek çözünürlüklü termal sensörünü
+                  M2EA&apos;nın entegre yüksek çözünürlüklü termal sensörünü
                   kullanarak sahada nesneleri hızlı bir şekilde tanımlayarak
                   bilinçli kararlar verin. Nokta Ölçer ve Alan Ölçümü
                   özelliklerini destekler.
@@ -322,8 +319,8 @@ export default function DJIMavic2EnterpriseAdvancedPage() {
               <ScrollAnimation direction="right" delay={0.2}>
                 <p className="text-gray-300">
                   Güvenli bir mesafeden net görüntüler ve videolar yakalayın.
-                  M2EA'nın yüksek çözünürlüklü görsel kamerası ultra zoom'u
-                  destekler, böylece hiçbir detay kaçmaz.
+                  M2EA&apos;nın yüksek çözünürlüklü görsel kamerası ultra
+                  zoom&apos;u destekler, böylece hiçbir detay kaçmaz.
                 </p>
               </ScrollAnimation>
 
@@ -341,7 +338,9 @@ export default function DJIMavic2EnterpriseAdvancedPage() {
                 </StaggerItem>
                 <StaggerItem>
                   <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                    <div className="text-2xl font-bold text-blue-400">1/2"</div>
+                    <div className="text-2xl font-bold text-blue-400">
+                      1/2&quot;
+                    </div>
                     <div className="text-sm text-gray-400">CMOS Sensör</div>
                   </div>
                 </StaggerItem>
@@ -470,9 +469,10 @@ export default function DJIMavic2EnterpriseAdvancedPage() {
                   </h3>
                 </div>
                 <p className="text-gray-400 mb-4">
-                  M2EA'yı RTK Modülü ile kullanarak santimetre düzeyinde
+                  M2EA&apos;yı RTK Modülü ile kullanarak santimetre düzeyinde
                   doğruluk elde edin. Karmaşık ortamlarda otomatik, detaylı
-                  inceleme görevleri yapmak için 240'a kadar waypoint oluşturun.
+                  inceleme görevleri yapmak için 240&apos;a kadar waypoint
+                  oluşturun.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-neutral-900/50 backdrop-blur border border-neutral-700 rounded-lg p-3">
@@ -716,7 +716,9 @@ export default function DJIMavic2EnterpriseAdvancedPage() {
                     <div className="px-4 py-3 border-b border-neutral-800 text-white font-medium">
                       Sensör
                     </div>
-                    <div className="px-4 py-3 text-gray-300">1/2" CMOS</div>
+                    <div className="px-4 py-3 text-gray-300">
+                      1/2&quot; CMOS
+                    </div>
                   </div>
                   <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl">
                     <div className="px-4 py-3 border-b border-neutral-800 text-white font-medium">

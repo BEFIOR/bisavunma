@@ -1,12 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Brain,
   Target,
   Zap,
   Eye,
   Map,
-  Camera,
   Radar,
   Shield,
   Settings,
@@ -18,7 +16,6 @@ import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
@@ -337,7 +334,7 @@ export default function DJIMatrice4TPage() {
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               O4 Enterprise video iletim sistemi, zorlu ortamlar için yeni bir
-              endüstri standardı belirliyor. Matrice 4 Serisi'ndeki 8 anten
+              endüstri standardı belirliyor. Matrice 4 Serisi&apos;ndeki 8 anten
               sistemi ve uzaktan kumandadaki yüksek kazançlı anten sayesinde,
               iletim menzili 25 kilometreye kadar ulaşabilir.
             </p>
@@ -391,9 +388,9 @@ export default function DJIMatrice4TPage() {
               <ScrollAnimation direction="right">
                 <p className="text-lg text-gray-300 leading-relaxed">
                   Sistem, 20MB/s indirme bant genişliği ile görüntü iletimini
-                  iyileştirir; bu, Mavic 3 Enterprise Serisi'nin bit hızının iki
-                  katından fazla olup, rota yüklemeleri ve materyal indirmeleri
-                  için daha hassas ve stabil görüntüler sağlar.
+                  iyileştirir; bu, Mavic 3 Enterprise Serisi&apos;nin bit
+                  hızının iki katından fazla olup, rota yüklemeleri ve materyal
+                  indirmeleri için daha hassas ve stabil görüntüler sağlar.
                 </p>
               </ScrollAnimation>
 

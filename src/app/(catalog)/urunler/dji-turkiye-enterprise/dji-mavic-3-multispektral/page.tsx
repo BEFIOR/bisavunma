@@ -8,7 +8,6 @@ import {
   Camera,
   Sun,
   MapPin,
-  Monitor,
   CheckCircle,
   Settings,
   Radar,
@@ -17,7 +16,6 @@ import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
@@ -457,9 +455,10 @@ export default function DJIMavic3MultispektralPage() {
                 Kararlı Sinyal, Pürüzsüz Görüntü Aktarımı
               </h2>
               <p className="text-gray-300">
-                O3 iletimi, 15 km'lik ultra uzun iletim mesafelerini desteklemek
-                için iki verici sinyali ve dört alıcı sinyali entegre eder.
-                Güçlü sinyal kalitesi ile kesintisiz veri aktarımı sağlar.
+                O3 iletimi, 15 km&apos;lik ultra uzun iletim mesafelerini
+                desteklemek için iki verici sinyali ve dört alıcı sinyali
+                entegre eder. Güçlü sinyal kalitesi ile kesintisiz veri aktarımı
+                sağlar.
               </p>
 
               <div className="grid grid-cols-2 gap-4">

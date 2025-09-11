@@ -11,7 +11,6 @@ import {
   CheckCircle,
   Video,
   Map,
-  Bot,
 } from "lucide-react";
 import {
   ScrollAnimation,
@@ -307,7 +306,7 @@ export default function DJIMavic3EPage() {
                     kareye kadar araştırma
                   </li>
                   <li>• 100 W şarj aleti ile hızlı şarj imkanı</li>
-                  <li>• 88 W hızlı şarj ile drone'u doğrudan şarj</li>
+                  <li>• 88 W hızlı şarj ile drone&apos;u doğrudan şarj</li>
                   <li>• 5000 mAh LiPo 4S pil kapasitesi</li>
                 </ul>
               </div>
@@ -435,10 +434,10 @@ export default function DJIMavic3EPage() {
                   </h3>
                 </div>
                 <p className="text-gray-400">
-                  Mavic 3 E'nin çok yönlü algılama özelliği sayesinde, yükseklik
-                  farklılıkları olan alanları haritalandırırken, yüksekliği
-                  harici yükseklik verilerini içe aktarmaya gerek kalmadan
-                  otomatik olarak ayarlarsınız.
+                  Mavic 3 E&apos;nin çok yönlü algılama özelliği sayesinde,
+                  yükseklik farklılıkları olan alanları haritalandırırken,
+                  yüksekliği harici yükseklik verilerini içe aktarmaya gerek
+                  kalmadan otomatik olarak ayarlarsınız.
                 </p>
               </div>
             </StaggerItem>
@@ -546,7 +545,7 @@ export default function DJIMavic3EPage() {
                   Multispektral
                 </h3>
                 <p className="text-sm text-gray-400">
-                  DJI Mavic 3 Multispectral'den elde edilen çok spektral
+                  DJI Mavic 3 Multispectral&apos;den elde edilen çok spektral
                   veriler, bitki büyümesi ve sağlığı hakkında bilgi sağlar.
                 </p>
               </div>

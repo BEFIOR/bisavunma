@@ -10,18 +10,15 @@ import {
   Video,
   Bot,
   Eye,
-  MapPin,
 } from "lucide-react";
 import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
-import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Matrice 300 RTK | Endüstriyel Drone Platformu | Bisavunma",
@@ -310,7 +307,7 @@ export default function DJIMatrice300RTKPage() {
             className="text-center mb-12"
           >
             <p className="text-gray-300 max-w-4xl mx-auto">
-              M300 RTK endüstriyel drone'u, görev gereksinimlerinize uyacak
+              M300 RTK endüstriyel drone&apos;u, görev gereksinimlerinize uyacak
               şekilde yapılandırabilirsiniz. Max. 2,7 kg taşıma kapasitesi ile
               aynı anda 3 adede kadar faydalı yük monte edebilirsiniz.
             </p>
@@ -505,10 +502,11 @@ export default function DJIMatrice300RTKPage() {
 
               <ScrollAnimation direction="left" delay={0.2}>
                 <p className="text-gray-300">
-                  Faydalı yük yapılandırmasına göre M300 RTK'nızın uçuş süresini
-                  tahmin edebilirsiniz. Farklı gimbal konfigürasyonları ile
-                  optimize edilmiş performans elde edin. Bu grafik size hangi
-                  yük ile ne kadar uçuş süresi elde edebileceğinizi gösterir.
+                  Faydalı yük yapılandırmasına göre M300 RTK&apos;nızın uçuş
+                  süresini tahmin edebilirsiniz. Farklı gimbal konfigürasyonları
+                  ile optimize edilmiş performans elde edin. Bu grafik size
+                  hangi yük ile ne kadar uçuş süresi elde edebileceğinizi
+                  gösterir.
                 </p>
               </ScrollAnimation>
 

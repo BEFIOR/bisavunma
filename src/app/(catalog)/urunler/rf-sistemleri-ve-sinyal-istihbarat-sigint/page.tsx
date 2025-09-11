@@ -1,143 +1,161 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getProductsByCategorySlug } from "@/lib/products";
-import { getCategoryBySlug } from "@/server/repositories/categories";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  HeroAnimation,
+} from "@/components/animations/ScrollAnimations";
+import { Radio, Eye, Settings, ChevronDown } from "lucide-react";
+import { rfSystems } from "@/data/rf-systems";
 
-export const metadata = {
-  title: "RF Sistemleri ve Sinyal İstihbarat (SIGINT) | Ürünler",
-  description:
-    "RF sistemleri, sinyal istihbaratı (SIGINT) ve ilgili çözümler için ürün kataloğu.",
-};
-
-export const revalidate = 60;
-
-export default async function Page() {
-  const slug = "rf-sistemleri-ve-sinyal-istihbarat-sigint";
-  const cat = await getCategoryBySlug(slug);
-  const products = await getProductsByCategorySlug(cat?.slug ?? slug);
-
+export default function RfSystemsPage() {
   return (
     <div className="min-h-screen bg-black text-gray-200">
-      {/* Hero */}
-      <section className="pt-28 pb-10 px-4 bg-neutral-950 border-b border-neutral-900">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white">
-              RF Sistemleri ve Sinyal İstihbarat (SIGINT)
-            </h1>
-            <p className="mt-4 text-neutral-300 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              posuere, sapien vitae rhoncus pulvinar, dolor urna luctus ante,
-              non pulvinar neque ipsum vitae lectus. Integer vehicula, metus at
-              fringilla cursus, tortor ligula varius nunc, sit amet dignissim mi
-              orci a lectus.
+      {/* Hero Section */}
+      <section className="relative pt-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 to-black" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
+          <div className="text-center">
+            <HeroAnimation direction="fade" delay={0.2}>
+              <div className="inline-flex items-center gap-2 text-sm text-gray-400 mb-4">
+                <Radio className="w-4 h-4" />
+                <span>RF Sistemleri ve Sinyal İstihbarat</span>
+              </div>
+            </HeroAnimation>
+            <HeroAnimation direction="up" delay={0.4}>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                RF Sensörleri
+              </h1>
+            </HeroAnimation>
+
+            <HeroAnimation direction="up" delay={0.6}>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Gelişmiş spektrum analizi ve sinyal istihbarat sistemleri ile RF
+                ortamınızı tam kontrol altında tutun.
+              </p>
+            </HeroAnimation>
+          </div>
+        </div>
+      </section>
+      {/* Products Grid */}
+      <section className="py-8 px-4">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation direction="up" className="text-center mb-6">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              RFeye Node Ürün Ailesi
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Farklı frekans aralıkları ve uygulama ihtiyaçları için optimize
+              edilmiş RF sensör çözümleri
             </p>
-            <div className="mt-6 flex gap-3">
-              <Link
-                href="#preview"
-                className="px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white"
-              >
-                Ürünleri Keşfet
-              </Link>
-              <Link
-                href="/iletisim"
-                className="px-4 py-2 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white"
-              >
-                İletişime Geç
-              </Link>
-            </div>
-          </div>
-          <div className="relative aspect-[4/3] w-full rounded-xl bg-neutral-900/50 ring-1 ring-white/5 overflow-hidden">
-            <Image
-              src="/logo.webp"
-              alt="RF Sistemleri"
-              fill
-              className="object-contain p-6"
-            />
-          </div>
-        </div>
-      </section>
+          </ScrollAnimation>
 
-      {/* Highlights */}
-      <section className="px-4 py-10 border-b border-neutral-900 bg-black">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="rounded-xl bg-neutral-900/40 ring-1 ring-white/5 p-5"
-            >
-              <div className="text-white font-semibold">Öne Çıkan {i}</div>
-              <p className="mt-2 text-sm text-neutral-400 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
-                luctus, tristique id, elit. Aenean ut ultrices magna.
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {rfSystems.map((product, index) => (
+              <StaggerItem key={product.slug}>
+                <Link
+                  href={`/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint/${product.slug}`}
+                >
+                  <div className="group bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-all duration-300 hover:-translate-y-1">
+                    <div className="aspect-video w-full rounded-lg bg-neutral-800 mb-4 overflow-hidden">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
 
-      {/* Product preview */}
-      <section id="preview" className="px-4 py-10">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-xl font-semibold text-white">Ürün Önizlemesi</h2>
-          <p className="mt-1 text-neutral-400 text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.slice(0, 6).map((p) => (
-              <Link
-                key={p.slug}
-                href={`/urunler/${slug}/${p.slug}`}
-                className="group rounded-xl overflow-hidden ring-1 ring-white/5 bg-neutral-900/40 hover:ring-sky-600/40 transition"
-              >
-                <div className="relative aspect-[4/3] w-full bg-neutral-900">
-                  <Image
-                    src={p.image || "/logo.webp"}
-                    alt={p.title}
-                    fill
-                    className="object-contain p-6"
-                  />
-                </div>
-                <div className="p-4">
-                  <div className="text-white font-medium line-clamp-1">
-                    {p.title}
+                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-sky-400 transition-colors">
+                      {product.title}
+                    </h3>
+
+                    <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                      {product.description}
+                    </p>
+
+                    <div className="space-y-1">
+                      {product.features.slice(0, 2).map((feature, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center gap-2 text-xs text-gray-500"
+                        >
+                          <div className="w-1 h-1 rounded-full bg-sky-400" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-4 flex items-center text-sky-400 text-sm font-medium group-hover:gap-2 transition-all">
+                      Detayları Görüntüle
+                      <ChevronDown className="w-4 h-4 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-                  <div className="mt-1 text-sm text-neutral-400 line-clamp-2">
-                    {p.description ||
-                      "Lorem ipsum dolor sit amet, consectetur."}
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </StaggerItem>
             ))}
-            {products.length === 0 && (
-              <div className="col-span-full text-neutral-400">
-                Şu an için ürün bulunamadı.
-              </div>
-            )}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-4 pb-16">
-        <div className="max-w-6xl mx-auto rounded-2xl bg-gradient-to-r from-sky-700 to-sky-500 p-6 md:p-8">
-          <div className="md:flex items-center justify-between gap-6">
-            <div>
-              <div className="text-white text-lg font-semibold">
-                Danışmanlık alın
+      {/* Features Section */}
+      <section className="py-12 px-4 bg-neutral-950">
+        <div className="max-w-7xl mx-auto">
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              RFeye Node Özellikleri
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Profesyonel spektrum analizi için gerekli tüm özellikler
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6">
+                <div className="w-12 h-12 bg-sky-600/20 rounded-lg flex items-center justify-center mb-4">
+                  <Radio className="w-6 h-6 text-sky-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Geniş Frekans Aralığı
+                </h3>
+                <p className="text-gray-400">
+                  100 MHz'den 40 GHz'e kadar geniş frekans aralığında spektrum
+                  analizi
+                </p>
               </div>
-              <p className="text-white/90 max-w-xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                sed risus non neque rhoncus congue.
-              </p>
-            </div>
-            <Link
-              href="/iletisim"
-              className="mt-4 md:mt-0 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white text-sky-700 font-medium hover:bg-white/90"
-            >
-              İletişim Kur
-            </Link>
-          </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6">
+                <div className="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center mb-4">
+                  <Eye className="w-6 h-6 text-green-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Gerçek Zamanlı İzleme
+                </h3>
+                <p className="text-gray-400">
+                  Sürekli spektrum izleme ve otomatik sinyal tespiti
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6">
+                <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mb-4">
+                  <Settings className="w-6 h-6 text-purple-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Gelişmiş Analiz
+                </h3>
+                <p className="text-gray-400">
+                  DSP algoritmaları ve otomatik sinyal sınıflandırma
+                </p>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
     </div>

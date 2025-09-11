@@ -14,7 +14,6 @@ import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
@@ -227,7 +226,7 @@ export default function DJIAgrasT40Page() {
                   DJI Agras T40, maksimum 50 kg yük ile taşıma kapasitesini %30
                   artıran bir koaksiyel ikiz rotor tasarımına sahip olarak
                   üretilmiştir. Katlanabilir tasarımı, daha fazla taşınabilirlik
-                  için drone'un boyutunu %70 kadar azaltmıştır.
+                  için drone&apos;un boyutunu %70 kadar azaltmıştır.
                 </p>
               </ScrollAnimation>
 
@@ -461,9 +460,9 @@ export default function DJIAgrasT40Page() {
             <p className="text-gray-300 max-w-4xl mx-auto">
               Aktif Faz Dizili Radar, 360 derece yatay, çok yönlü engel algılama
               sağlamak için bir binoküler görüş sensörü sistemi ile
-              birleştirildi ve bu sayede optimum güvenlik sunuyor. 50 m'ye kadar
-              algılama mesafesi, düzgün ölçeklendirmeye, akıllı arazi takibine
-              ve birden fazla engelin atlanmasına izin verir.
+              birleştirildi ve bu sayede optimum güvenlik sunuyor. 50 m&apos;ye
+              kadar algılama mesafesi, düzgün ölçeklendirmeye, akıllı arazi
+              takibine ve birden fazla engelin atlanmasına izin verir.
             </p>
           </ScrollAnimation>
 
@@ -577,7 +576,9 @@ export default function DJIAgrasT40Page() {
                 </StaggerItem>
                 <StaggerItem>
                   <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                    <div className="text-lg font-bold text-blue-400">7"</div>
+                    <div className="text-lg font-bold text-blue-400">
+                      7&quot;
+                    </div>
                     <div className="text-sm text-gray-400">
                       Yüksek Parlaklık Ekran
                     </div>

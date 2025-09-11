@@ -1,16 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, Shield, Radio } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
-import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Matrice 30T | Termal Kameralı Profesyonel Drone | Bisavunma",

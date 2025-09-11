@@ -9,17 +9,8 @@ import {
   HeroStaggerContainer,
   HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
-import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
-import {
-  Thermometer,
-  AlertTriangle,
-  Palette,
-  Camera,
-  Eye,
-  Shield,
-  Home,
-  Radar,
-} from "lucide-react";
+import { LazyVideo } from "@/components/animations/LazyVideo";
+import { Thermometer, AlertTriangle, Palette } from "lucide-react";
 
 export const metadata = {
   title: "DJI Mavic 3T | Termal Kameralı Enterprise Drone | Bisavunma",
@@ -215,7 +206,7 @@ export default function DJIMavic3TPage() {
                   DJI Mavic 3 T
                 </h3>
                 <ul className="text-gray-400 space-y-2">
-                  <li>• 48 MP 1/2" CMOS sensör</li>
+                  <li>• 48 MP 1/2&quot; CMOS sensör</li>
                   <li>• 640×512 termal kamera</li>
                   <li>• Sıcaklık ölçümü ve uyarıları</li>
                   <li>• 920 gr ağırlık</li>
@@ -471,7 +462,7 @@ export default function DJIMavic3TPage() {
                     kareye kadar araştırma
                   </li>
                   <li>• 100 W şarj aleti ile hızlı şarj imkanı</li>
-                  <li>• 88 W hızlı şarj ile drone'u doğrudan şarj</li>
+                  <li>• 88 W hızlı şarj ile drone&apos;u doğrudan şarj</li>
                   <li>• 5000 mAh @ 7.2V Li-ion pil kapasitesi</li>
                 </ul>
               </div>
@@ -585,10 +576,10 @@ export default function DJIMavic3TPage() {
                   Gerçek Zamanlı Arazi Takibi
                 </h3>
                 <p className="text-gray-400">
-                  Mavic 3 E'nin çok yönlü algılama özelliği sayesinde, yükseklik
-                  farklılıkları olan alanları haritalandırırken, yüksekliği
-                  harici yükseklik verilerini içe aktarmaya gerek kalmadan
-                  otomatik olarak ayarlarsınız.
+                  Mavic 3 E&apos;nin çok yönlü algılama özelliği sayesinde,
+                  yükseklik farklılıkları olan alanları haritalandırırken,
+                  yüksekliği harici yükseklik verilerini içe aktarmaya gerek
+                  kalmadan otomatik olarak ayarlarsınız.
                 </p>
               </div>
             </StaggerItem>
@@ -687,7 +678,7 @@ export default function DJIMavic3TPage() {
                   Multispektral
                 </h3>
                 <p className="text-sm text-gray-400">
-                  DJI Mavic 3 Multispectral'den elde edilen çok spektral
+                  DJI Mavic 3 Multispectral&apos;den elde edilen çok spektral
                   veriler, bitki büyümesi ve sağlığı hakkında bilgi sağlar.
                 </p>
               </div>

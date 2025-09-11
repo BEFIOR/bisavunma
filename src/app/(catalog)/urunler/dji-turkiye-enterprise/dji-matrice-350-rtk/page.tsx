@@ -17,7 +17,6 @@ import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
@@ -252,10 +251,10 @@ export default function DJIMatrice350RTKPage() {
               <p className="text-gray-300">
                 DJI Matrice 350 RTK, üç kanallı 1080p HD canlı yayınları ve
                 maksimum 20 km iletim mesafesini destekleyen DJI O3 Enterprise
-                Transmission'ı kullanmaktadır. Hem uzaktan kumanda hem de hava
-                taşıtı, sinyalleri iletmek için en uygun iki anteni akıllıca
-                seçebilen ve dört anteni aynı anda sinyalleri alan, dört antenli
-                bir alıcı-verici sistemine sahiptir.
+                Transmission&apos;ı kullanmaktadır. Hem uzaktan kumanda hem de
+                hava taşıtı, sinyalleri iletmek için en uygun iki anteni
+                akıllıca seçebilen ve dört anteni aynı anda sinyalleri alan,
+                dört antenli bir alıcı-verici sistemine sahiptir.
               </p>
 
               <div className="space-y-4">
@@ -386,7 +385,9 @@ export default function DJIMatrice350RTKPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-green-400">7"</div>
+                  <div className="text-lg font-bold text-green-400">
+                    7&quot;
+                  </div>
                   <div className="text-sm text-gray-400">
                     Yüksek Parlaklık Ekran
                   </div>
@@ -811,9 +812,9 @@ export default function DJIMatrice350RTKPage() {
                 Multispektral
               </h3>
               <p className="text-sm text-gray-400">
-                DJI Mavic 3 Multispectral ve P4 Multispectral'den elde edilen
-                çok spektral veriler, bitki büyümesi ve sağlığı hakkında bilgi
-                sağlar.
+                DJI Mavic 3 Multispectral ve P4 Multispectral&apos;den elde
+                edilen çok spektral veriler, bitki büyümesi ve sağlığı hakkında
+                bilgi sağlar.
               </p>
             </div>
           </div>
@@ -870,7 +871,7 @@ export default function DJIMatrice350RTKPage() {
                 düğmeye sahiptir.
               </p>
               <ul className="text-sm text-gray-400 space-y-1">
-                <li>• 7" LCD dokunmatik ekran</li>
+                <li>• 7&quot; LCD dokunmatik ekran</li>
                 <li>• WB37 harici pil desteği</li>
                 <li>• 6 saate kadar çalışma süresi</li>
               </ul>
@@ -882,7 +883,8 @@ export default function DJIMatrice350RTKPage() {
               </h3>
               <p className="text-gray-400 mb-4">
                 CSM Radarı, uçuş güvenliğini daha da sağlamak için dronun üstüne
-                monte edilebilir. Etkili algılama aralığı 30 m'ye ulaşabilir.
+                monte edilebilir. Etkili algılama aralığı 30 m&apos;ye
+                ulaşabilir.
               </p>
               <ul className="text-sm text-gray-400 space-y-1">
                 <li>• 30m etkili algılama aralığı</li>
@@ -1124,7 +1126,7 @@ export default function DJIMatrice350RTKPage() {
                       Ekran
                     </div>
                     <div className="px-4 py-3 text-gray-300">
-                      7,02" LCD dokunmatik, 1920×1200, 1200 nit
+                      7,02&quot; LCD dokunmatik, 1920×1200, 1200 nit
                     </div>
                   </div>
                   <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl">

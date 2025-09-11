@@ -18,7 +18,6 @@ import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
@@ -69,9 +68,9 @@ export default function DJIMatrice4EPage() {
 
               <HeroAnimation direction="up" delay={0.8}>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  DJI Matrice 4 Serisi'ni tanıtıyoruz: Yeni, kompakt ve akıllı
-                  çok sensörlü amiral gemisi drone serisi, kurumsal endüstriler
-                  için tasarlandı. Uçuş operasyonları, önemli ölçüde
+                  DJI Matrice 4 Serisi&apos;ni tanıtıyoruz: Yeni, kompakt ve
+                  akıllı çok sensörlü amiral gemisi drone serisi, kurumsal
+                  endüstriler için tasarlandı. Uçuş operasyonları, önemli ölçüde
                   geliştirilmiş algılama yetenekleri ile artık daha güvenli ve
                   daha güvenilir hale geldi.
                 </p>
@@ -661,7 +660,7 @@ export default function DJIMatrice4EPage() {
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
-            DJI Matrice 4'ün Akıllı İzleme Özelliği
+            DJI Matrice 4&apos;ün Akıllı İzleme Özelliği
           </h2>
           <p className="text-gray-300 mb-8 max-w-4xl mx-auto">
             Gelişmiş AI teknolojisi ile hedef takibi ve akıllı izleme
@@ -677,9 +676,10 @@ export default function DJIMatrice4EPage() {
               </h3>
             </div>
             <p className="text-gray-400">
-              YouTube kanalımızda DJI Matrice 4'ün akıllı izleme özelliklerini
-              detaylı olarak inceleyebilirsiniz. Gerçek zamanlı test videoları
-              ve uygulama örnekleri ile ürünün kapasitelerini keşfedin.
+              YouTube kanalımızda DJI Matrice 4&apos;ün akıllı izleme
+              özelliklerini detaylı olarak inceleyebilirsiniz. Gerçek zamanlı
+              test videoları ve uygulama örnekleri ile ürünün kapasitelerini
+              keşfedin.
             </p>
           </div>
         </div>
@@ -756,7 +756,7 @@ export default function DJIMatrice4EPage() {
                       Haritalama Hızı
                     </div>
                     <div className="px-4 py-3 text-gray-300">
-                      21 m/h'ye kadar
+                      21 m/h&apos;ye kadar
                     </div>
                   </div>
                   <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl">

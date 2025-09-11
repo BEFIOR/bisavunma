@@ -4,12 +4,10 @@ import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
-import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Matrice 30 | Profesyonel Enterprise Drone | Bisavunma",
@@ -281,7 +279,7 @@ export default function DJIMatrice30Page() {
                 Dört yerleşik anten, üç kanallı 1080p video aktarımını destekler
                 ve karmaşık ortamlarda bile giriş beslemeleri arasında
                 kesintisiz geçiş yapılmasına imkan tanır. Bu özellikler, OcuSync
-                3 Enterprise'ı destekler.
+                3 Enterprise&apos;ı destekler.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

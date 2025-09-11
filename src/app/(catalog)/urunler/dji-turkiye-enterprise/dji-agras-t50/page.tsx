@@ -1,10 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
@@ -14,7 +12,7 @@ import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 export const metadata = {
   title: "DJI Agras T50 | Tarımsal İlaçlama Dronu | Bisavunma",
   description:
-    "DJI Agras T50 profesyonel tarımsal drone. 40kg püskürtme, 50kg yayma kapasitesi. Çift atomize püskürtme sistemi, çok yönlü engel algılama ve 50°'ye kadar arazi takibi.",
+    "DJI Agras T50 profesyonel tarımsal drone. 40kg püskürtme, 50kg yayma kapasitesi. Çift atomize püskürtme sistemi, çok yönlü engel algılama ve 50°&apos;ye kadar arazi takibi.",
 };
 
 export default function DJIAgrasT50Page() {
@@ -186,7 +184,7 @@ export default function DJIAgrasT50Page() {
                 </h3>
                 <ul className="text-gray-400 list-disc list-inside space-y-2">
                   <li>Çok yönlü engellerden kaçınma</li>
-                  <li>50°'ye kadar arazi takibi</li>
+                  <li>50°&apos;ye kadar arazi takibi</li>
                 </ul>
               </div>
             </StaggerItem>
@@ -219,15 +217,15 @@ export default function DJIAgrasT50Page() {
 
               <ScrollAnimation direction="left" delay={0.2}>
                 <p className="text-gray-300">
-                  DJI AGRAS T50'nin Çift Atomize Püskürtme Sistemi, dakikada 16
-                  litreye kadar ultra yüksek akış hızı sağlar (2 yağmurlama
-                  püskürtme). Bu sistem, ince ve düzgün sprey damlacıkları
-                  üretir ve sızıntı yapmaz. Yüksek uygulama hacmi gerektiren
-                  işlemler için DJI AGRAS T50, akış hızını dakikada 24 litreye
-                  (4 sprinkler püskürtme) çıkaran ek bir çift santrifüj
-                  sprinkler ile donatılabilir. Manuel uçuş sırasında, dört
-                  sprinklerli Ters Yönlü Püskürtme kullanarak dönüş yapmadan
-                  işlemleri kolaylaştırabilirsiniz.
+                  DJI AGRAS T50&apos;nin Çift Atomize Püskürtme Sistemi,
+                  dakikada 16 litreye kadar ultra yüksek akış hızı sağlar (2
+                  yağmurlama püskürtme). Bu sistem, ince ve düzgün sprey
+                  damlacıkları üretir ve sızıntı yapmaz. Yüksek uygulama hacmi
+                  gerektiren işlemler için DJI AGRAS T50, akış hızını dakikada
+                  24 litreye (4 sprinkler püskürtme) çıkaran ek bir çift
+                  santrifüj sprinkler ile donatılabilir. Manuel uçuş sırasında,
+                  dört sprinklerli Ters Yönlü Püskürtme kullanarak dönüş
+                  yapmadan işlemleri kolaylaştırabilirsiniz.
                 </p>
               </ScrollAnimation>
 

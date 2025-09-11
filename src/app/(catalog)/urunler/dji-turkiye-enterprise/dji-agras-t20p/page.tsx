@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, Scale, Wrench, MapPin, Map, Bot } from "lucide-react";
+import { Scale, Wrench, MapPin, Map, Bot } from "lucide-react";
 import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
-  ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
   HeroScaleAnimation,
@@ -134,10 +133,10 @@ export default function DJIAgrasT20PPage() {
           >
             <p className="text-gray-300 max-w-4xl mx-auto">
               AGRAS T20P, güçlü performansıyla birlikte hafif ve çevik bir
-              özellik taşır. Bu araç, 20 kg'a kadar püskürtme yükünü taşıyabilme
-              özelliği ile dikkat çeker. Çift Atomize Püskürtme Sistemi, DJI
-              Terra, Aktif Faz Dizili Radar ve Binoküler Görüş gibi özelliklerle
-              donatılmıştır.
+              özellik taşır. Bu araç, 20 kg&apos;a kadar püskürtme yükünü
+              taşıyabilme özelliği ile dikkat çeker. Çift Atomize Püskürtme
+              Sistemi, DJI Terra, Aktif Faz Dizili Radar ve Binoküler Görüş gibi
+              özelliklerle donatılmıştır.
             </p>
           </ScrollAnimation>
 
@@ -298,8 +297,8 @@ export default function DJIAgrasT20PPage() {
               <ScrollAnimation direction="right" delay={0.2}>
                 <p className="text-gray-300">
                   T20P Yayma Sistemi, artık daha büyük yük ağırlıklarını
-                  başarıyla taşıma kapasitesine sahiptir ve 25 kg'a kadar ve 35
-                  litrelik kapasiteyi destekleyebilmektedir.
+                  başarıyla taşıma kapasitesine sahiptir ve 25 kg&apos;a kadar
+                  ve 35 litrelik kapasiteyi destekleyebilmektedir.
                 </p>
               </ScrollAnimation>
 
@@ -552,7 +551,9 @@ export default function DJIAgrasT20PPage() {
                 </StaggerItem>
                 <StaggerItem>
                   <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                    <div className="text-lg font-bold text-blue-400">7"</div>
+                    <div className="text-lg font-bold text-blue-400">
+                      7&quot;
+                    </div>
                     <div className="text-sm text-gray-400">
                       Yüksek Parlaklık Ekran
                     </div>
@@ -1071,7 +1072,7 @@ export default function DJIAgrasT20PPage() {
                       Ekran
                     </div>
                     <div className="px-4 py-3 text-gray-300">
-                      7,02" LCD dokunmatik, 1920×1200, 1200 cd/m²
+                      7,02&quot; LCD dokunmatik, 1920×1200, 1200 cd/m²
                     </div>
                   </div>
                   <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl">
