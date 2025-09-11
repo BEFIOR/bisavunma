@@ -13,6 +13,16 @@ import {
   Settings,
   Radar,
 } from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  ScaleAnimation,
+  HeroAnimation,
+  HeroStaggerContainer,
+  HeroScaleAnimation,
+} from "@/components/animations/ScrollAnimations";
+import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Mavic 3 Multispektral | Tarımsal Analiz Dronu | Bisavunma",
@@ -29,67 +39,94 @@ export default function DJIMavic3MultispektralPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-sm text-gray-400">
-                <Link
-                  href="/urunler/dji-turkiye-enterprise"
-                  className="hover:text-white transition-colors"
-                >
-                  DJI Enterprise
-                </Link>
-                <span>/</span>
-                <span className="text-white">DJI Mavic 3 Multispektral</span>
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                DJI Mavic 3 Multispektral
-              </h1>
-
-              <div className="text-2xl font-bold text-green-400 mb-4">
-                DAHA FAZLASINI GÖRÜP, DAHA AKILLICA ÇALIŞIR
-              </div>
-
-              <p className="text-lg text-gray-300 leading-relaxed">
-                En iyi havadan ölçümlerin görünmeyeni görmesi gerekmektedir. Bu
-                sebeple DJI Mavic 3 Multispektral iki adet görüş biçimine
-                sahiptir. Ürün büyümesini tam bir netlikle taramak ve analiz
-                etmek için bir RGB kamerayı multispektral bir kamerayla
-                birleştirir.
-              </p>
-
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-green-400">43 dk</div>
-                  <div className="text-sm text-gray-400">Uçuş Süresi</div>
+              <HeroAnimation direction="fade" delay={0.2}>
+                <div className="inline-flex items-center gap-2 text-sm text-gray-400">
+                  <Link
+                    href="/urunler/dji-turkiye-enterprise"
+                    className="hover:text-white transition-colors"
+                  >
+                    DJI Enterprise
+                  </Link>
+                  <span>/</span>
+                  <span className="text-white">DJI Mavic 3 Multispektral</span>
                 </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-green-400">
-                    200 ha
-                  </div>
-                  <div className="text-sm text-gray-400">
-                    Uçuş Başına Kapsama
-                  </div>
-                </div>
-              </div>
+              </HeroAnimation>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/iletisim"
-                  className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
-                >
-                  Teklif Al
-                </Link>
-              </div>
+              <HeroAnimation direction="up" delay={0.4}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Bisavunma Güvencesiyle
+                  <br />
+                  <span className="text-green-400">
+                    DJI Mavic 3 Multispektral
+                  </span>
+                </h1>
+              </HeroAnimation>
+
+              <HeroAnimation direction="up" delay={0.6}>
+                <div className="text-2xl font-bold text-green-400 mb-4">
+                  DAHA FAZLASINI GÖRÜP, DAHA AKILLICA ÇALIŞIR
+                </div>
+              </HeroAnimation>
+
+              <HeroAnimation direction="up" delay={0.8}>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  En iyi havadan ölçümlerin görünmeyeni görmesi gerekmektedir.
+                  Bu sebeple DJI Mavic 3 Multispektral iki adet görüş biçimine
+                  sahiptir. Ürün büyümesini tam bir netlikle taramak ve analiz
+                  etmek için bir RGB kamerayı multispektral bir kamerayla
+                  birleştirir.
+                </p>
+              </HeroAnimation>
+
+              <HeroStaggerContainer
+                className="grid grid-cols-2 gap-4 pt-4"
+                staggerDelay={0.2}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-green-400">
+                      43 dk
+                    </div>
+                    <div className="text-sm text-gray-400">Uçuş Süresi</div>
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-green-400">
+                      200 ha
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Uçuş Başına Kapsama
+                    </div>
+                  </div>
+                </StaggerItem>
+              </HeroStaggerContainer>
+
+              <HeroAnimation direction="up" delay={1.4}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/iletisim"
+                    className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
+                  >
+                    Teklif Al
+                  </Link>
+                </div>
+              </HeroAnimation>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px]">
+            <HeroScaleAnimation
+              delay={0.8}
+              className="relative h-[400px] lg:h-[500px]"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-2xl blur-3xl" />
               <Image
                 src="/products/dji-enterprise/dji-mavic-3-multispektral/hero.webp"
                 alt="DJI Mavic 3 Multispektral"
                 fill
                 className="object-contain relative z-10 rounded-2xl"
+                priority
               />
-            </div>
+            </HeroScaleAnimation>
           </div>
         </div>
       </section>
@@ -97,85 +134,102 @@ export default function DJIMavic3MultispektralPage() {
       {/* Öne Çıkan Özellikler */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Öne Çıkan Özellikler
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Öne Çıkan Özellikler
+            </h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <div className="flex items-center gap-3 mb-3">
-                <Settings className="w-6 h-6 text-green-400" />
-                <h3 className="text-xl font-semibold text-white">
-                  Kompakt ve Taşınabilir
-                </h3>
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <Settings className="w-6 h-6 text-green-400" />
+                  <h3 className="text-xl font-semibold text-white">
+                    Kompakt ve Taşınabilir
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  Kolay saklama için katlanabilir tasarım ile her yere
+                  taşınabilirlik
+                </p>
               </div>
-              <p className="text-gray-400">
-                Kolay saklama için katlanabilir tasarım ile her yere
-                taşınabilirlik
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <div className="flex items-center gap-3 mb-3">
-                <Shield className="w-6 h-6 text-blue-400" />
-                <h3 className="text-xl font-semibold text-white">
-                  Güvenli ve Kararlı
-                </h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <Shield className="w-6 h-6 text-blue-400" />
+                  <h3 className="text-xl font-semibold text-white">
+                    Güvenli ve Kararlı
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  Çok yönlü engellerden kaçınma ile güvenli operasyonlar
+                </p>
               </div>
-              <p className="text-gray-400">
-                Çok yönlü engellerden kaçınma ile güvenli operasyonlar
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <div className="flex items-center gap-3 mb-3">
-                <Radio className="w-6 h-6 text-sky-400" />
-                <h3 className="text-xl font-semibold text-white">
-                  15km İletim Mesafesi
-                </h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <Radio className="w-6 h-6 text-sky-400" />
+                  <h3 className="text-xl font-semibold text-white">
+                    15km İletim Mesafesi
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  O3 iletimi ile ultra uzun mesafe kapasitesi
+                </p>
               </div>
-              <p className="text-gray-400">
-                O3 iletimi ile ultra uzun mesafe kapasitesi
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <div className="flex items-center gap-3 mb-3">
-                <Camera className="w-6 h-6 text-purple-400" />
-                <h3 className="text-xl font-semibold text-white">
-                  Multispektral Kamera
-                </h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <Camera className="w-6 h-6 text-purple-400" />
+                  <h3 className="text-xl font-semibold text-white">
+                    Multispektral Kamera
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  4 × 5MP G/R/RE/NIR spektral görüntüleme
+                </p>
               </div>
-              <p className="text-gray-400">
-                4 × 5MP G/R/RE/NIR spektral görüntüleme
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <div className="flex items-center gap-3 mb-3">
-                <MapPin className="w-6 h-6 text-orange-400" />
-                <h3 className="text-xl font-semibold text-white">
-                  Hassas Konumlandırma
-                </h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <MapPin className="w-6 h-6 text-orange-400" />
+                  <h3 className="text-xl font-semibold text-white">
+                    Hassas Konumlandırma
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  Santimetre düzeyinde RTK konumlandırma ve mikrosaniye
+                  senkronizasyon
+                </p>
               </div>
-              <p className="text-gray-400">
-                Santimetre düzeyinde RTK konumlandırma ve mikrosaniye
-                senkronizasyon
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <div className="flex items-center gap-3 mb-3">
-                <Eye className="w-6 h-6 text-red-400" />
-                <h3 className="text-xl font-semibold text-white">
-                  Verimli Havadan Ölçüm
-                </h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <Eye className="w-6 h-6 text-red-400" />
+                  <h3 className="text-xl font-semibold text-white">
+                    Verimli Havadan Ölçüm
+                  </h3>
+                </div>
+                <p className="text-gray-400">
+                  Uçuş başına 200 hektara kadar kapsama alanı
+                </p>
               </div>
-              <p className="text-gray-400">
-                Uçuş başına 200 hektara kadar kapsama alanı
-              </p>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -224,16 +278,14 @@ export default function DJIMavic3MultispektralPage() {
               </div>
             </div>
 
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-mavic-3-multispektral/cok-yonlu.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <ScrollAnimation direction="right">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-mavic-3-multispektral/cok-yonlu.mp4"
+                  className="object-cover w-full h-full"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -442,15 +494,20 @@ export default function DJIMavic3MultispektralPage() {
       {/* Çok Yönlü Engel Algılama */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Çok Yönlü Engel Algılama, Araziyi Takip Eden Havadan Ölçüm
-          </h2>
-          <p className="text-gray-300 mb-12">
-            Uçak, çok yönlü engellerden kaçınmak için her yöndeki engelleri
-            doğru bir şekilde algılayan birden fazla geniş FOV görüş sensörüne
-            sahiptir. Arazi takipli havadan ölçüm, dik eğimli arazilerde
-            kolaylıkla gerçekleştirilebilir.
-          </p>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Çok Yönlü Engel Algılama, Araziyi Takip Eden Havadan Ölçüm
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-12">
+              Uçak, çok yönlü engellerden kaçınmak için her yöndeki engelleri
+              doğru bir şekilde algılayan birden fazla geniş FOV görüş sensörüne
+              sahiptir. Arazi takipli havadan ölçüm, dik eğimli arazilerde
+              kolaylıkla gerçekleştirilebilir.
+            </p>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
@@ -495,13 +552,18 @@ export default function DJIMavic3MultispektralPage() {
       {/* DJI Terra */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">DJI TERRA</h2>
-          <p className="text-gray-300 mb-8">
-            DJI Terra is a 3D modeling software based on photogrammetry
-            technology. It supports the accurate and efficient reconstruction of
-            various data and visible light using DJI LiDAR. DJI Terra is an
-            ideal option for DJI Enterprise drones and accessories.
-          </p>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">DJI TERRA</h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              DJI Terra is a 3D modeling software based on photogrammetry
+              technology. It supports the accurate and efficient reconstruction
+              of various data and visible light using DJI LiDAR. DJI Terra is an
+              ideal option for DJI Enterprise drones and accessories.
+            </p>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
@@ -559,9 +621,9 @@ export default function DJIMavic3MultispektralPage() {
       {/* Kutu İçerikleri */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Kutu İçerikleri
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">Kutu İçerikleri</h2>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
@@ -856,28 +918,54 @@ export default function DJIMavic3MultispektralPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            DJI Mavic 3 Multispektral ile Tarımsal Analizi Güçlendirin
-          </h2>
-          <p className="text-gray-300 mb-8">
-            RGB ve multispektral görüntüleme, RTK hassasiyeti ve gelişmiş veri
-            analizi ile tarımsal üretim yönetiminizi optimize edin. Uzman
-            ekibimiz size en uygun çözümü sunmak için hazır.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Hemen Teklif Alın
-            </Link>
-            <Link
-              href="/urunler/dji-turkiye-enterprise"
-              className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Tüm DJI Ürünleri
-            </Link>
-          </div>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Bisavunma Güvencesiyle DJI Mavic 3 Multispektral
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              RGB ve multispektral görüntüleme, RTK hassasiyeti ve gelişmiş veri
+              analizi ile tarımsal üretim yönetiminizi optimize edin. Uzman
+              ekibimiz size en uygun çözümü sunmak için hazır.
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer
+            className="flex flex-wrap gap-4 justify-center"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Hemen Teklif Alın
+              </Link>
+            </StaggerItem>
+
+            <StaggerItem>
+              <Link
+                href="/urunler/dji-turkiye-enterprise"
+                className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Tüm DJI Enterprise Ürünleri
+              </Link>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <ScrollAnimation direction="up" delay={0.6}>
+            <div className="mt-8 p-6 bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl">
+              <p className="text-gray-300">
+                <span className="text-green-400 font-semibold">
+                  Bisavunma güvencesi
+                </span>{" "}
+                ile profesyonel destek, teknik servis ve eğitim hizmetlerinden
+                faydalanın.
+              </p>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
     </div>

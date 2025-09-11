@@ -13,6 +13,16 @@ import {
   RotateCcw,
   Bot,
 } from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  ScaleAnimation,
+  HeroAnimation,
+  HeroStaggerContainer,
+  HeroScaleAnimation,
+} from "@/components/animations/ScrollAnimations";
+import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Matrice 350 RTK | Profesyonel Enterprise Drone | Bisavunma",
@@ -29,66 +39,93 @@ export default function DJIMatrice350RTKPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-sm text-gray-400">
-                <Link
-                  href="/urunler/dji-turkiye-enterprise"
-                  className="hover:text-white transition-colors"
-                >
-                  DJI Enterprise
-                </Link>
-                <span>/</span>
-                <span className="text-white">DJI Matrice 350 RTK</span>
-              </div>
+              <HeroAnimation direction="fade" delay={0.2}>
+                <div className="inline-flex items-center gap-2 text-sm text-gray-400">
+                  <Link
+                    href="/urunler/dji-turkiye-enterprise"
+                    className="hover:text-white transition-colors"
+                  >
+                    DJI Enterprise
+                  </Link>
+                  <span>/</span>
+                  <span className="text-white">DJI Matrice 350 RTK</span>
+                </div>
+              </HeroAnimation>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                DJI Matrice 350 RTK
-              </h1>
+              <HeroAnimation direction="up" delay={0.4}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Bisavunma Güvencesiyle
+                  <br />
+                  <span className="text-purple-400">DJI Matrice 350 RTK</span>
+                </h1>
+              </HeroAnimation>
 
-              <div className="text-2xl font-bold text-sky-400 mb-4">
-                TAM GÜÇ İLE İLERLER
-              </div>
+              <HeroAnimation direction="up" delay={0.6}>
+                <div className="text-2xl font-bold text-purple-400 mb-4">
+                  TAM GÜÇ İLE İLERLER
+                </div>
+              </HeroAnimation>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
-                DJI Matrice 350 RTK, sektör için en yeni ölçütü belirliyor. Yeni
-                nesil drone platformu, tamamen yenilenmiş bir video iletim
-                sistemi ve kontrol deneyimi, daha verimli bir pil sistemi ve
-                daha kapsamlı güvenlik özelliklerinin yanında, sağlam genişletme
-                ve yük özelliklerine de sahiptir.
-              </p>
+              <HeroAnimation direction="up" delay={0.8}>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  DJI Matrice 350 RTK, sektör için en yeni ölçütü belirliyor.
+                  Yeni nesil drone platformu, tamamen yenilenmiş bir video
+                  iletim sistemi ve kontrol deneyimi, daha verimli bir pil
+                  sistemi ve daha kapsamlı güvenlik özelliklerinin yanında,
+                  sağlam genişletme ve yük özelliklerine de sahiptir.
+                </p>
+              </HeroAnimation>
 
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">55 dk</div>
-                  <div className="text-sm text-gray-400">
-                    Maksimum Uçuş Süresi
+              <HeroStaggerContainer
+                className="grid grid-cols-2 gap-4 pt-4"
+                staggerDelay={0.2}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-purple-400">
+                      55 dk
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Maksimum Uçuş Süresi
+                    </div>
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">2.7 kg</div>
-                  <div className="text-sm text-gray-400">Azami Yük</div>
-                </div>
-              </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-purple-400">
+                      2.7 kg
+                    </div>
+                    <div className="text-sm text-gray-400">Azami Yük</div>
+                  </div>
+                </StaggerItem>
+              </HeroStaggerContainer>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/iletisim"
-                  className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
-                >
-                  Teklif Al
-                </Link>
-              </div>
+              <HeroAnimation direction="up" delay={1.4}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/iletisim"
+                    className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
+                  >
+                    Teklif Al
+                  </Link>
+                </div>
+              </HeroAnimation>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-sky-600/20 to-purple-600/20 rounded-2xl blur-3xl" />
+            <HeroScaleAnimation
+              delay={0.8}
+              className="relative h-[400px] lg:h-[500px]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-2xl blur-3xl" />
               <Image
                 src="/products/dji-enterprise/dji-matrice-350rtk/hero.jpg"
                 alt="DJI Matrice 350 RTK"
                 width={500}
                 height={500}
                 className="object-contain relative z-10 rounded-2xl"
+                priority
               />
-            </div>
+            </HeroScaleAnimation>
           </div>
         </div>
       </section>
@@ -96,81 +133,107 @@ export default function DJIMatrice350RTKPage() {
       {/* Zahmetsiz ve Güçlü Uçuş Performansı */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Zahmetsiz ve Güçlü Uçuş Performansı
-          </h2>
-          <p className="text-gray-300 mb-12 text-center max-w-4xl mx-auto">
-            Sağlam bir yapıda olan DJI Matrice 350 RTK, gelişmiş koruma
-            derecesine, güçlü itiş gücüne ve mükemmel uçuş performansına
-            sahiptir. Bu sayede çok çeşitli zorlukların zahmetsizce üstesinden
-            gelmenize olanak tanır.
-          </p>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Zahmetsiz ve Güçlü Uçuş Performansı
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation
+            direction="up"
+            delay={0.2}
+            className="text-center mb-12"
+          >
+            <p className="text-gray-300 max-w-4xl mx-auto">
+              Sağlam bir yapıda olan DJI Matrice 350 RTK, gelişmiş koruma
+              derecesine, güçlü itiş gücüne ve mükemmel uçuş performansına
+              sahiptir. Bu sayede çok çeşitli zorlukların zahmetsizce üstesinden
+              gelmenize olanak tanır.
+            </p>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-                  <div className="text-3xl font-bold text-sky-400 mb-2">55</div>
-                  <div className="text-lg font-semibold text-white mb-1">
-                    Dakika
+              <StaggerContainer
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                staggerDelay={0.1}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                    <div className="text-3xl font-bold text-sky-400 mb-2">
+                      55
+                    </div>
+                    <div className="text-lg font-semibold text-white mb-1">
+                      Dakika
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Maksimum Uçuş Süresi
+                    </div>
                   </div>
-                  <div className="text-sm text-gray-400">
-                    Maksimum Uçuş Süresi
-                  </div>
-                </div>
+                </StaggerItem>
 
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-                  <div className="text-3xl font-bold text-green-400 mb-2">
-                    IP55
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                    <div className="text-3xl font-bold text-green-400 mb-2">
+                      IP55
+                    </div>
+                    <div className="text-lg font-semibold text-white mb-1">
+                      Koruma
+                    </div>
+                    <div className="text-sm text-gray-400">Koruma Derecesi</div>
                   </div>
-                  <div className="text-lg font-semibold text-white mb-1">
-                    Koruma
-                  </div>
-                  <div className="text-sm text-gray-400">Koruma Derecesi</div>
-                </div>
+                </StaggerItem>
 
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-                  <div className="text-3xl font-bold text-purple-400 mb-2">
-                    2,7
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                    <div className="text-3xl font-bold text-purple-400 mb-2">
+                      2,7
+                    </div>
+                    <div className="text-lg font-semibold text-white mb-1">
+                      kilo
+                    </div>
+                    <div className="text-sm text-gray-400">Azami Yük</div>
                   </div>
-                  <div className="text-lg font-semibold text-white mb-1">
-                    kilo
-                  </div>
-                  <div className="text-sm text-gray-400">Azami Yük</div>
-                </div>
+                </StaggerItem>
 
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-                  <div className="text-3xl font-bold text-orange-400 mb-2">
-                    7000
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                    <div className="text-3xl font-bold text-orange-400 mb-2">
+                      7000
+                    </div>
+                    <div className="text-lg font-semibold text-white mb-1">
+                      m
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Maksimum Uçuş İrtifası
+                    </div>
                   </div>
-                  <div className="text-lg font-semibold text-white mb-1">m</div>
-                  <div className="text-sm text-gray-400">
-                    Maksimum Uçuş İrtifası
-                  </div>
-                </div>
+                </StaggerItem>
 
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors md:col-span-2 lg:col-span-1">
-                  <div className="text-3xl font-bold text-red-400 mb-2">12</div>
-                  <div className="text-lg font-semibold text-white mb-1">
-                    m/s
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors md:col-span-2 lg:col-span-1">
+                    <div className="text-3xl font-bold text-red-400 mb-2">
+                      12
+                    </div>
+                    <div className="text-lg font-semibold text-white mb-1">
+                      m/s
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Maksimum Rüzgar Hızı Direnci
+                    </div>
                   </div>
-                  <div className="text-sm text-gray-400">
-                    Maksimum Rüzgar Hızı Direnci
-                  </div>
-                </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
 
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-600/10 to-purple-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-matrice-350rtk/zahmetsiz-guclu.webm"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full rounded-xl"
-              />
-            </div>
+            <ScrollAnimation direction="right">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-matrice-350rtk/zahmetsiz-guclu.webm"
+                  className="object-cover w-full h-full rounded-xl"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -341,9 +404,11 @@ export default function DJIMatrice350RTKPage() {
       {/* Yükseltilmiş Pil Sistemi */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Yükseltilmiş Pil Sistemi
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Yükseltilmiş Pil Sistemi
+            </h2>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6">
@@ -401,9 +466,11 @@ export default function DJIMatrice350RTKPage() {
       {/* Gelişmiş Uçuş Güvenliği */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Gelişmiş Uçuş Güvenliği
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Gelişmiş Uçuş Güvenliği
+            </h2>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
@@ -705,12 +772,18 @@ export default function DJIMatrice350RTKPage() {
       {/* DJI Terra */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">DJI TERRA</h2>
-          <p className="text-gray-300 mb-8">
-            DJI Terra, fotogrametri teknolojisine dayalı bir 3D model oluşturma
-            yazılımıdır. DJI LiDAR kullanarak görünür ışığın ve verinin çeşitli
-            doğru ve verimli 2D ve 3D yeniden yapılandırmasını destekler.
-          </p>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">DJI TERRA</h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              DJI Terra, fotogrametri teknolojisine dayalı bir 3D model
+              oluşturma yazılımıdır. DJI LiDAR kullanarak görünür ışığın ve
+              verinin çeşitli doğru ve verimli 2D ve 3D yeniden yapılandırmasını
+              destekler.
+            </p>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
@@ -766,9 +839,9 @@ export default function DJIMatrice350RTKPage() {
       {/* Aksesuarlar */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Aksesuarlar
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">Aksesuarlar</h2>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
@@ -1122,28 +1195,54 @@ export default function DJIMatrice350RTKPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            DJI Matrice 350 RTK ile Tam Güç İlerleyin
-          </h2>
-          <p className="text-gray-300 mb-8">
-            Yeni nesil drone platformu, gelişmiş iletim sistemi ve kapsamlı
-            güvenlik özellikleri ile herhangi bir hava operasyonuna yenilikçi
-            güç katın. Uzman ekibimiz size en uygun çözümü sunmak için hazır.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Hemen Teklif Alın
-            </Link>
-            <Link
-              href="/urunler/dji-turkiye-enterprise"
-              className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Tüm DJI Ürünleri
-            </Link>
-          </div>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Bisavunma Güvencesiyle DJI Matrice 350 RTK
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              Yeni nesil drone platformu, gelişmiş iletim sistemi ve kapsamlı
+              güvenlik özellikleri ile herhangi bir hava operasyonuna yenilikçi
+              güç katın. Uzman ekibimiz size en uygun çözümü sunmak için hazır.
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer
+            className="flex flex-wrap gap-4 justify-center"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Hemen Teklif Alın
+              </Link>
+            </StaggerItem>
+
+            <StaggerItem>
+              <Link
+                href="/urunler/dji-turkiye-enterprise"
+                className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Tüm DJI Enterprise Ürünleri
+              </Link>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <ScrollAnimation direction="up" delay={0.6}>
+            <div className="mt-8 p-6 bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl">
+              <p className="text-gray-300">
+                <span className="text-purple-400 font-semibold">
+                  Bisavunma güvencesi
+                </span>{" "}
+                ile profesyonel destek, teknik servis ve eğitim hizmetlerinden
+                faydalanın.
+              </p>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
     </div>

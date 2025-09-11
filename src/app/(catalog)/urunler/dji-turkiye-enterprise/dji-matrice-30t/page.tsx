@@ -1,6 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle, Shield, Radio } from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  ScaleAnimation,
+  HeroAnimation,
+  HeroStaggerContainer,
+  HeroScaleAnimation,
+} from "@/components/animations/ScrollAnimations";
+import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Matrice 30T | Termal Kameralı Profesyonel Drone | Bisavunma",
@@ -17,61 +27,93 @@ export default function DJIMatrice30TPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-sm text-gray-400">
-                <Link
-                  href="/urunler/dji-turkiye-enterprise"
-                  className="hover:text-white transition-colors"
-                >
-                  DJI Enterprise
-                </Link>
-                <span>/</span>
-                <span className="text-white">DJI Matrice 30T</span>
-              </div>
+              <HeroAnimation direction="fade" delay={0.2}>
+                <div className="inline-flex items-center gap-2 text-sm text-gray-400">
+                  <Link
+                    href="/urunler/dji-turkiye-enterprise"
+                    className="hover:text-white transition-colors"
+                  >
+                    DJI Enterprise
+                  </Link>
+                  <span>/</span>
+                  <span className="text-white">DJI Matrice 30T</span>
+                </div>
+              </HeroAnimation>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                DJI Matrice 30T
-              </h1>
+              <HeroAnimation direction="up" delay={0.4}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Bisavunma Güvencesiyle
+                  <br />
+                  <span className="text-orange-400">DJI Matrice 30T</span>
+                </h1>
+              </HeroAnimation>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
-                DJI Matrice 30T, üçlü kamera sistemi ile güçlü uçuş performansı
-                sunar. Güç ile taşınabilirlik arasındaki dengeyi koruyarak
-                operasyonel verimliliği artırır. Termal görüntüleme, geniş
-                kamera ve yakınlaştırma kamerası ile profesyonel çözümler
-                sağlar.
-              </p>
+              <HeroAnimation direction="up" delay={0.6}>
+                <div className="text-2xl font-bold text-orange-400 mb-4">
+                  Termal Görüntüleme Uzmanı
+                </div>
+              </HeroAnimation>
 
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">41 dk</div>
-                  <div className="text-sm text-gray-400">
-                    Maksimum Uçuş Süresi
+              <HeroAnimation direction="up" delay={0.8}>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  DJI Matrice 30T, üçlü kamera sistemi ile güçlü uçuş
+                  performansı sunar. Güç ile taşınabilirlik arasındaki dengeyi
+                  koruyarak operasyonel verimliliği artırır. Termal görüntüleme,
+                  geniş kamera ve yakınlaştırma kamerası ile profesyonel
+                  çözümler sağlar.
+                </p>
+              </HeroAnimation>
+
+              <HeroStaggerContainer
+                className="grid grid-cols-2 gap-4 pt-4"
+                staggerDelay={0.2}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-orange-400">
+                      41 dk
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Maksimum Uçuş Süresi
+                    </div>
+                    https://www.istinye.edu.tr/tr/duyurular/mevcut-ogrencilerimiz-icin-2025-2026-kayit-yenileme
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">7000 m</div>
-                  <div className="text-sm text-gray-400">Maksimum İrtifa</div>
-                </div>
-              </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-orange-400">
+                      7000 m
+                    </div>
+                    <div className="text-sm text-gray-400">Maksimum İrtifa</div>
+                  </div>
+                </StaggerItem>
+              </HeroStaggerContainer>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/iletisim"
-                  className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
-                >
-                  Teklif Al
-                </Link>
-              </div>
+              <HeroAnimation direction="up" delay={1.4}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/iletisim"
+                    className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
+                  >
+                    Teklif Al
+                  </Link>
+                </div>
+              </HeroAnimation>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-sky-600/20 to-purple-600/20 rounded-2xl blur-3xl" />
+            <HeroScaleAnimation
+              delay={0.8}
+              className="relative h-[400px] lg:h-[500px]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-2xl blur-3xl" />
               <Image
                 src="/products/dji-enterprise/dji-matrice-30t/dji-matrice-30t.jpg"
                 alt="DJI Matrice 30T"
                 fill
-                className="object-contain relative z-10 rounded-2xl"
+                className="w-full h-full object-contain relative z-10 rounded-2xl"
+                priority
               />
-            </div>
+            </HeroScaleAnimation>
           </div>
         </div>
       </section>
@@ -79,41 +121,52 @@ export default function DJIMatrice30TPage() {
       {/* Güçlü Uçuş Performansı */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Güçlü Uçuş Performansı
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Güçlü Uçuş Performansı
+            </h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Uzun Uçuş Süresi
-              </h3>
-              <ul className="text-gray-400 list-disc list-inside space-y-2">
-                <li>41 dakikaya kadar uçuş süresi</li>
-                <li>Maksimum 1 saat uçuş kapasitesi</li>
-              </ul>
-            </div>
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Uzun Uçuş Süresi
+                </h3>
+                <ul className="text-gray-400 list-disc list-inside space-y-2">
+                  <li>41 dakikaya kadar uçuş süresi</li>
+                  <li>Maksimum 1 saat uçuş kapasitesi</li>
+                </ul>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Yüksek Hız Performansı
-              </h3>
-              <ul className="text-gray-400 list-disc list-inside space-y-2">
-                <li>12 m/s normal hareket hızı</li>
-                <li>Maksimum 23 m/s hıza erişim</li>
-              </ul>
-            </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Yüksek Hız Performansı
+                </h3>
+                <ul className="text-gray-400 list-disc list-inside space-y-2">
+                  <li>12 m/s normal hareket hızı</li>
+                  <li>Maksimum 23 m/s hıza erişim</li>
+                </ul>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Yüksek İrtifa Kapasitesi
-              </h3>
-              <ul className="text-gray-400 list-disc list-inside space-y-2">
-                <li>7000 metre irtifada uçabilir</li>
-                <li>Rüzgar direncine karşı dayanıklılık</li>
-              </ul>
-            </div>
-          </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Yüksek İrtifa Kapasitesi
+                </h3>
+                <ul className="text-gray-400 list-disc list-inside space-y-2">
+                  <li>7000 metre irtifada uçabilir</li>
+                  <li>Rüzgar direncine karşı dayanıklılık</li>
+                </ul>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -122,15 +175,20 @@ export default function DJIMatrice30TPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Uyumlu, Güvenli, Güvenilir
-              </h2>
-              <p className="text-gray-300">
-                DJI Matrice 30T, çevresel uyumluluk açısından IP55 korumasıyla
-                donatılmıştır. Bu özellik, olumsuz hava koşullarına ve -20°C ila
-                50°C arasındaki sıcaklıklara kolaylıkla dayanabileceği anlamına
-                gelir.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Uyumlu, Güvenli, Güvenilir
+                </h2>
+              </ScrollAnimation>
+
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  DJI Matrice 30T, çevresel uyumluluk açısından IP55 korumasıyla
+                  donatılmıştır. Bu özellik, olumsuz hava koşullarına ve -20°C
+                  ila 50°C arasındaki sıcaklıklara kolaylıkla dayanabileceği
+                  anlamına gelir.
+                </p>
+              </ScrollAnimation>
 
               <div className="space-y-4">
                 <div className="flex gap-4">
@@ -239,14 +297,23 @@ export default function DJIMatrice30TPage() {
       {/* Kamera Sistemleri */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Üçlü Kamera Sistemi
-          </h2>
-          <p className="text-gray-300 mb-12 text-center max-w-4xl mx-auto">
-            DJI Matrice 30T geniş, yakınlaştırma ve termal kameraları bir araya
-            getirir ve ihtiyacınız olan hava verilerini istediğiniz anda
-            yakalayabilen bir lazer telemetreyle entegre edilmiştir.
-          </p>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Üçlü Kamera Sistemi
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation
+            direction="up"
+            delay={0.2}
+            className="text-center mb-12"
+          >
+            <p className="text-gray-300 max-w-4xl mx-auto">
+              DJI Matrice 30T geniş, yakınlaştırma ve termal kameraları bir
+              araya getirir ve ihtiyacınız olan hava verilerini istediğiniz anda
+              yakalayabilen bir lazer telemetreyle entegre edilmiştir.
+            </p>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Geniş Kamera */}
@@ -307,12 +374,18 @@ export default function DJIMatrice30TPage() {
       {/* DJI Terra */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">DJI TERRA</h2>
-          <p className="text-gray-300 mb-8">
-            DJI Terra, fotogrametri teknolojisine dayalı bir 3D model oluşturma
-            yazılımıdır. DJI LiDAR kullanarak görünür ışığın ve verinin çeşitli
-            doğru ve verimli 2D ve 3D yeniden yapılandırmasını destekler.
-          </p>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">DJI TERRA</h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              DJI Terra, fotogrametri teknolojisine dayalı bir 3D model
+              oluşturma yazılımıdır. DJI LiDAR kullanarak görünür ışığın ve
+              verinin çeşitli doğru ve verimli 2D ve 3D yeniden yapılandırmasını
+              destekler.
+            </p>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
@@ -599,9 +672,9 @@ export default function DJIMatrice30TPage() {
       {/* Kutu İçerikleri */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Kutu İçerikleri
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">Kutu İçerikleri</h2>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
@@ -643,28 +716,54 @@ export default function DJIMatrice30TPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            DJI Matrice 30T ile Profesyonel Çözümler
-          </h2>
-          <p className="text-gray-300 mb-8">
-            Termal görüntüleme ve gelişmiş kamera teknolojileri ile
-            operasyonlarınızı bir üst seviyeye taşıyın. Uzman ekibimiz size en
-            uygun çözümü sunmak için hazır.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Hemen Teklif Alın
-            </Link>
-            <Link
-              href="/urunler/dji-turkiye-enterprise"
-              className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Tüm DJI Ürünleri
-            </Link>
-          </div>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Bisavunma Güvencesiyle DJI Matrice 30T
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              Termal görüntüleme ve gelişmiş kamera teknolojileri ile
+              operasyonlarınızı bir üst seviyeye taşıyın. Uzman ekibimiz size en
+              uygun çözümü sunmak için hazır.
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer
+            className="flex flex-wrap gap-4 justify-center"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Hemen Teklif Alın
+              </Link>
+            </StaggerItem>
+
+            <StaggerItem>
+              <Link
+                href="/urunler/dji-turkiye-enterprise"
+                className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Tüm DJI Enterprise Ürünleri
+              </Link>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <ScrollAnimation direction="up" delay={0.6}>
+            <div className="mt-8 p-6 bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl">
+              <p className="text-gray-300">
+                <span className="text-orange-400 font-semibold">
+                  Bisavunma güvencesi
+                </span>{" "}
+                ile profesyonel destek, teknik servis ve eğitim hizmetlerinden
+                faydalanın.
+              </p>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
     </div>

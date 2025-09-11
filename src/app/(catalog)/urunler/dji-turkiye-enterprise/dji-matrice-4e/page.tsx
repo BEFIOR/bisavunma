@@ -14,6 +14,16 @@ import {
   Search,
   Bot,
 } from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  ScaleAnimation,
+  HeroAnimation,
+  HeroStaggerContainer,
+  HeroScaleAnimation,
+} from "@/components/animations/ScrollAnimations";
+import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Matrice 4E | Akıllı Çok Sensörlü Drone | Bisavunma",
@@ -30,63 +40,87 @@ export default function DJIMatrice4EPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-sm text-gray-400">
-                <Link
-                  href="/urunler/dji-turkiye-enterprise"
-                  className="hover:text-white transition-colors"
-                >
-                  DJI Enterprise
-                </Link>
-                <span>/</span>
-                <span className="text-white">DJI Matrice 4E</span>
-              </div>
+              <HeroAnimation direction="fade" delay={0.2}>
+                <div className="inline-flex items-center gap-2 text-sm text-gray-400">
+                  <Link
+                    href="/urunler/dji-turkiye-enterprise"
+                    className="hover:text-white transition-colors"
+                  >
+                    DJI Enterprise
+                  </Link>
+                  <span>/</span>
+                  <span className="text-white">DJI Matrice 4E</span>
+                </div>
+              </HeroAnimation>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                DJI Matrice 4E
-              </h1>
+              <HeroAnimation direction="up" delay={0.4}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Bisavunma Güvencesiyle
+                  <br />
+                  <span className="text-cyan-400">DJI Matrice 4E</span>
+                </h1>
+              </HeroAnimation>
 
-              <div className="text-2xl font-bold text-cyan-400 mb-4">
-                AKILLI UÇUŞ ÇAĞI BAŞLIYOR!
-              </div>
+              <HeroAnimation direction="up" delay={0.6}>
+                <div className="text-2xl font-bold text-cyan-400 mb-4">
+                  AKILLI UÇUŞ ÇAĞI BAŞLIYOR!
+                </div>
+              </HeroAnimation>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
-                DJI Matrice 4 Serisi'ni tanıtıyoruz: Yeni, kompakt ve akıllı çok
-                sensörlü amiral gemisi drone serisi, kurumsal endüstriler için
-                tasarlandı. Uçuş operasyonları, önemli ölçüde geliştirilmiş
-                algılama yetenekleri ile artık daha güvenli ve daha güvenilir
-                hale geldi.
-              </p>
+              <HeroAnimation direction="up" delay={0.8}>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  DJI Matrice 4 Serisi'ni tanıtıyoruz: Yeni, kompakt ve akıllı
+                  çok sensörlü amiral gemisi drone serisi, kurumsal endüstriler
+                  için tasarlandı. Uçuş operasyonları, önemli ölçüde
+                  geliştirilmiş algılama yetenekleri ile artık daha güvenli ve
+                  daha güvenilir hale geldi.
+                </p>
+              </HeroAnimation>
 
-              <p className="text-gray-300">
-                Matrice 4E, harita yapımı, inşaat ve madencilik gibi coğrafi
-                uygulamalar için tasarlanmıştır. Akıllı hava operasyonlarında
-                yeni bir dönem başlıyor!
-              </p>
+              <HeroAnimation direction="up" delay={1.0}>
+                <p className="text-gray-300">
+                  Matrice 4E, harita yapımı, inşaat ve madencilik gibi coğrafi
+                  uygulamalar için tasarlanmıştır. Akıllı hava operasyonlarında
+                  yeni bir dönem başlıyor!
+                </p>
+              </HeroAnimation>
 
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-cyan-400">AI</div>
-                  <div className="text-sm text-gray-400">
-                    Akıllı Algılama Sistemi
+              <HeroStaggerContainer
+                className="grid grid-cols-2 gap-4 pt-4"
+                staggerDelay={0.2}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-cyan-400">AI</div>
+                    <div className="text-sm text-gray-400">
+                      Akıllı Algılama Sistemi
+                    </div>
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-cyan-400">0.5s</div>
-                  <div className="text-sm text-gray-400">Aralıklı Çekim</div>
-                </div>
-              </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-cyan-400">0.5s</div>
+                    <div className="text-sm text-gray-400">Aralıklı Çekim</div>
+                  </div>
+                </StaggerItem>
+              </HeroStaggerContainer>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/iletisim"
-                  className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
-                >
-                  Teklif Al
-                </Link>
-              </div>
+              <HeroAnimation direction="up" delay={1.4}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/iletisim"
+                    className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
+                  >
+                    Teklif Al
+                  </Link>
+                </div>
+              </HeroAnimation>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px]">
+            <HeroScaleAnimation
+              delay={0.8}
+              className="relative h-[400px] lg:h-[500px]"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-2xl blur-3xl" />
               <Image
                 src="/products/dji-enterprise/dji-matrice-4e/hero.png"
@@ -94,8 +128,9 @@ export default function DJIMatrice4EPage() {
                 width={500}
                 height={500}
                 className="object-contain relative z-10 rounded-2xl"
+                priority
               />
-            </div>
+            </HeroScaleAnimation>
           </div>
         </div>
       </section>
@@ -105,71 +140,80 @@ export default function DJIMatrice4EPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Akıllı Operasyonlar
-              </h2>
-              <p className="text-gray-300">
-                Dahili model, arama ve kurtarma operasyonları veya rutin uçuşlar
-                sırasında araçları, gemileri ve hedefleri tespit edebilir.
-                Ayrıca, diğer modellere geçiş yapmayı destekler, bu da uygulama
-                senaryolarının genişletilmesini sağlar.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Akıllı Operasyonlar
+                </h2>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-cyan-600/20 rounded-lg flex items-center justify-center">
-                    <Brain className="w-5 h-5 text-cyan-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      AI Hedef Tespiti
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Araçlar, gemiler ve hedefleri otomatik tespit
-                    </p>
-                  </div>
-                </div>
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  Dahili model, arama ve kurtarma operasyonları veya rutin
+                  uçuşlar sırasında araçları, gemileri ve hedefleri tespit
+                  edebilir. Ayrıca, diğer modellere geçiş yapmayı destekler, bu
+                  da uygulama senaryolarının genişletilmesini sağlar.
+                </p>
+              </ScrollAnimation>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-cyan-600/20 rounded-lg flex items-center justify-center">
-                    <Search className="w-5 h-5 text-cyan-400" />
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-cyan-600/20 rounded-lg flex items-center justify-center">
+                      <Brain className="w-5 h-5 text-cyan-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        AI Hedef Tespiti
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Araçlar, gemiler ve hedefleri otomatik tespit
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Arama ve Kurtarma
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Arama kurtarma operasyonları için optimize edilmiş AI
-                    </p>
-                  </div>
-                </div>
+                </StaggerItem>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-cyan-600/20 rounded-lg flex items-center justify-center">
-                    <Bot className="w-5 h-5 text-cyan-400" />
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-cyan-600/20 rounded-lg flex items-center justify-center">
+                      <Search className="w-5 h-5 text-cyan-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Arama ve Kurtarma
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Arama kurtarma operasyonları için optimize edilmiş AI
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Güçlü Takip Yetenekleri
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Yüksek çözünürlüklü ızgara fotoğrafları ve takip sistemi
-                    </p>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-cyan-600/20 rounded-lg flex items-center justify-center">
+                      <Bot className="w-5 h-5 text-cyan-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Güçlü Takip Yetenekleri
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Yüksek çözünürlüklü ızgara fotoğrafları ve takip sistemi
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
 
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 to-blue-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-matrice-4e/akilli-operasyonlar.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full rounded-xl"
-              />
-            </div>
+            <ScrollAnimation direction="right">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-matrice-4e/akilli-operasyonlar.mp4"
+                  className="object-cover w-full h-full rounded-xl"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -178,71 +222,81 @@ export default function DJIMatrice4EPage() {
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative rounded-xl overflow-hidden">
-              <div className="absolute inset-0" />
-              <video
-                src="/products/dji-enterprise/dji-matrice-4e/lazer-mesafe.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full rounded-xl"
-              />
-            </div>
+            <ScrollAnimation direction="left">
+              <VideoContainer className="relative rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-matrice-4e/lazer-mesafe.mp4"
+                  className="object-cover w-full h-full rounded-xl"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
 
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Lazer Mesafe Ölçer, Hassas Ölçüm
-              </h2>
-              <p className="text-gray-300">
-                Lazer mesafe ölçer, gerçek zamanlı hassas ölçüm yapmayı sağlar.
-                Nokta belirleme, çizgi çizme ve alan hesaplama gibi basit
-                işlemlerle, denetim amacıyla hedef konumları işaretleme veya
-                orman yangını alanını hesaplama gibi görevler tamamlanabilir.
-              </p>
+              <ScrollAnimation direction="right">
+                <h2 className="text-3xl font-bold text-white">
+                  Lazer Mesafe Ölçer, Hassas Ölçüm
+                </h2>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-red-600/20 rounded-lg flex items-center justify-center">
-                    <Target className="w-5 h-5 text-red-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Nokta Belirleme
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Hassas nokta belirleme ve hedef konumu işaretleme
-                    </p>
-                  </div>
-                </div>
+              <ScrollAnimation direction="right" delay={0.2}>
+                <p className="text-gray-300">
+                  Lazer mesafe ölçer, gerçek zamanlı hassas ölçüm yapmayı
+                  sağlar. Nokta belirleme, çizgi çizme ve alan hesaplama gibi
+                  basit işlemlerle, denetim amacıyla hedef konumları işaretleme
+                  veya orman yangını alanını hesaplama gibi görevler
+                  tamamlanabilir.
+                </p>
+              </ScrollAnimation>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-red-600/20 rounded-lg flex items-center justify-center">
-                    <Settings className="w-5 h-5 text-red-400" />
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-red-600/20 rounded-lg flex items-center justify-center">
+                      <Target className="w-5 h-5 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Nokta Belirleme
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Hassas nokta belirleme ve hedef konumu işaretleme
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Alan Hesaplama
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Çizgi çizme ve alan hesaplama ile detaylı ölçümler
-                    </p>
-                  </div>
-                </div>
+                </StaggerItem>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-red-600/20 rounded-lg flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-red-400" />
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-red-600/20 rounded-lg flex items-center justify-center">
+                      <Settings className="w-5 h-5 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Alan Hesaplama
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Çizgi çizme ve alan hesaplama ile detaylı ölçümler
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Bilgi Paylaşımı
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      DJI Pilot QR kodu ve FlightHub 2 üzerinden işbirliği
-                    </p>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-red-600/20 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Bilgi Paylaşımı
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        DJI Pilot QR kodu ve FlightHub 2 üzerinden işbirliği
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
           </div>
         </div>
@@ -253,16 +307,21 @@ export default function DJIMatrice4EPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Gözlem Aralığı Kaydı
-              </h2>
-              <p className="text-gray-300">
-                DJI Pilot 2, kamera çerçevesinin merkez konumunu ve gözlemlenen
-                yer yüzü alanını vurgulayabilir. Harita üzerinde incelenen alanı
-                gösterebilir, bu da özellikle belirgin işaretler olmayan dağlık
-                arazilerde devriye ve kurtarma operasyonları için son derece
-                kullanışlıdır.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Gözlem Aralığı Kaydı
+                </h2>
+              </ScrollAnimation>
+
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  DJI Pilot 2, kamera çerçevesinin merkez konumunu ve
+                  gözlemlenen yer yüzü alanını vurgulayabilir. Harita üzerinde
+                  incelenen alanı gösterebilir, bu da özellikle belirgin
+                  işaretler olmayan dağlık arazilerde devriye ve kurtarma
+                  operasyonları için son derece kullanışlıdır.
+                </p>
+              </ScrollAnimation>
 
               <div className="space-y-4">
                 <div className="flex gap-4">
@@ -309,16 +368,14 @@ export default function DJIMatrice4EPage() {
               </div>
             </div>
 
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-matrice-4e/gozlem-araligi.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full rounded-xl"
-              />
-            </div>
+            <ScrollAnimation direction="right">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-matrice-4e/gozlem-araligi.mp4"
+                  className="object-cover w-full h-full rounded-xl"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -327,74 +384,93 @@ export default function DJIMatrice4EPage() {
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-matrice-4e/hassas-haritalama.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full rounded-xl"
-              />
-            </div>
+            <ScrollAnimation direction="left">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-matrice-4e/hassas-haritalama.mp4"
+                  className="object-cover w-full h-full rounded-xl"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
 
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Hassas Haritalama, Zamandan Tasarruf ve Zahmetsiz
-              </h2>
-              <div className="text-xl font-semibold text-purple-400">
-                Hızlı 0.5 Saniye Aralıklı Çekim
-              </div>
-              <p className="text-gray-300">
-                Matrice 4E geniş açı kamerası, hem ortofoto hem de eğik
-                fotoğrafçılık modlarında hızlı 0.5 saniye aralıklı çekim yapmayı
-                destekler, bu da çoklu açılardan yüksek hızlı hava taraması
-                yapmayı mümkün kılar. Haritalama uçuş hızı saatte 21 metreye
-                kadar çıkabilir.
-              </p>
+              <ScrollAnimation direction="right">
+                <h2 className="text-3xl font-bold text-white">
+                  Hassas Haritalama, Zamandan Tasarruf ve Zahmetsiz
+                </h2>
+              </ScrollAnimation>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-purple-400">0.5s</div>
-                  <div className="text-sm text-gray-400">Aralıklı Çekim</div>
+              <ScrollAnimation direction="right" delay={0.2}>
+                <div className="text-xl font-semibold text-purple-400">
+                  Hızlı 0.5 Saniye Aralıklı Çekim
                 </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-purple-400">
-                    21 m/h
-                  </div>
-                  <div className="text-sm text-gray-400">Haritalama Hızı</div>
-                </div>
-              </div>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-purple-600/20 rounded-lg flex items-center justify-center">
-                    <Camera className="w-5 h-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Ortofoto + Eğik Fotoğrafçılık
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Çoklu açılardan yüksek hızlı hava taraması
-                    </p>
-                  </div>
-                </div>
+              <ScrollAnimation direction="right" delay={0.3}>
+                <p className="text-gray-300">
+                  Matrice 4E geniş açı kamerası, hem ortofoto hem de eğik
+                  fotoğrafçılık modlarında hızlı 0.5 saniye aralıklı çekim
+                  yapmayı destekler, bu da çoklu açılardan yüksek hızlı hava
+                  taraması yapmayı mümkün kılar. Haritalama uçuş hızı saate 21
+                  metreye kadar çıkabilir.
+                </p>
+              </ScrollAnimation>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-purple-600/20 rounded-lg flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-purple-400" />
+              <StaggerContainer
+                className="grid grid-cols-2 gap-4"
+                staggerDelay={0.1}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-purple-400">
+                      0.5s
+                    </div>
+                    <div className="text-sm text-gray-400">Aralıklı Çekim</div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Çalışma Verimliliği
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Önemli ölçüde artırılmış operasyon verimliliği
-                    </p>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-purple-400">
+                      21 m/h
+                    </div>
+                    <div className="text-sm text-gray-400">Haritalama Hızı</div>
                   </div>
-                </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
+
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-purple-600/20 rounded-lg flex items-center justify-center">
+                      <Camera className="w-5 h-5 text-purple-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Ortofoto + Eğik Fotoğrafçılık
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Çoklu açılardan yüksek hızlı hava taraması
+                      </p>
+                    </div>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-purple-600/20 rounded-lg flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-purple-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Çalışma Verimliliği
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Önemli ölçüde artırılmış operasyon verimliliği
+                      </p>
+                    </div>
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
           </div>
         </div>
@@ -405,73 +481,82 @@ export default function DJIMatrice4EPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Akıllı 3D Yakalama, Hassas Modelleme
-              </h2>
-              <p className="text-gray-300">
-                DJI Matrice 4E, Akıllı 3D Yakalamayı destekler, bu sayede
-                uzaktan kumanda üzerinden kaba bir model oluşturabilir ve
-                yakalayabilirsiniz. Bu kaba modele dayanarak, yapı yüzeyine
-                yakın hassas haritalama rotalarını hızla oluşturabilir, düzensiz
-                binaların detaylı ölçümlerini ve modellemelerini
-                tamamlayabilirsiniz.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Akıllı 3D Yakalama, Hassas Modelleme
+                </h2>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                    <Brain className="w-5 h-5 text-blue-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Kaba Model Oluşturma
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Uzaktan kumanda üzerinden hızlı model oluşturma
-                    </p>
-                  </div>
-                </div>
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  DJI Matrice 4E, Akıllı 3D Yakalamayı destekler, bu sayede
+                  uzaktan kumanda üzerinden kaba bir model oluşturabilir ve
+                  yakalayabilirsiniz. Bu kaba modele dayanarak, yapı yüzeyine
+                  yakın hassas haritalama rotalarını hızla oluşturabilir,
+                  düzensiz binaların detaylı ölçümlerini ve modellemelerini
+                  tamamlayabilirsiniz.
+                </p>
+              </ScrollAnimation>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                    <Map className="w-5 h-5 text-blue-400" />
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                      <Brain className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Kaba Model Oluşturma
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Uzaktan kumanda üzerinden hızlı model oluşturma
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Hassas Haritalama Rotaları
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Yapı yüzeyine yakın otomatik rota planlama
-                    </p>
-                  </div>
-                </div>
+                </StaggerItem>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                    <Shield className="w-5 h-5 text-blue-400" />
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                      <Map className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Hassas Haritalama Rotaları
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Yapı yüzeyine yakın otomatik rota planlama
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Güvenlik Değerlendirmesi
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Sanal alan rotaları ile uçuş güvenliği analizi
-                    </p>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Güvenlik Değerlendirmesi
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Sanal alan rotaları ile uçuş güvenliği analizi
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
 
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-matrice-4e/akilli-3d.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full rounded-xl"
-              />
-            </div>
+            <ScrollAnimation direction="right">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-matrice-4e/akilli-3d.mp4"
+                  className="object-cover w-full h-full rounded-xl"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -479,77 +564,96 @@ export default function DJIMatrice4EPage() {
       {/* Uygulama Alanları */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Coğrafi Uygulamalar
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Coğrafi Uygulamalar
+            </h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Map className="w-6 h-6 text-cyan-400" />
-                <h3 className="text-lg font-semibold text-white">
-                  Harita Yapımı
-                </h3>
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Map className="w-6 h-6 text-cyan-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    Harita Yapımı
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-400">
+                  Yüksek hassasiyetli haritalama ve surveying operasyonları
+                </p>
               </div>
-              <p className="text-sm text-gray-400">
-                Yüksek hassasiyetli haritalama ve surveying operasyonları
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Settings className="w-6 h-6 text-blue-400" />
-                <h3 className="text-lg font-semibold text-white">İnşaat</h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Settings className="w-6 h-6 text-blue-400" />
+                  <h3 className="text-lg font-semibold text-white">İnşaat</h3>
+                </div>
+                <p className="text-sm text-gray-400">
+                  İnşaat projelerinde ilerleme izleme ve ölçüm
+                </p>
               </div>
-              <p className="text-sm text-gray-400">
-                İnşaat projelerinde ilerleme izleme ve ölçüm
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Target className="w-6 h-6 text-orange-400" />
-                <h3 className="text-lg font-semibold text-white">Madencilik</h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Target className="w-6 h-6 text-orange-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    Madencilik
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-400">
+                  Maden sahalarında güvenli ve hassas ölçümler
+                </p>
               </div>
-              <p className="text-sm text-gray-400">
-                Maden sahalarında güvenli ve hassas ölçümler
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Search className="w-6 h-6 text-red-400" />
-                <h3 className="text-lg font-semibold text-white">
-                  Arama Kurtarma
-                </h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Search className="w-6 h-6 text-red-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    Arama Kurtarma
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-400">
+                  AI destekli hedef tespiti ile arama kurtarma operasyonları
+                </p>
               </div>
-              <p className="text-sm text-gray-400">
-                AI destekli hedef tespiti ile arama kurtarma operasyonları
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Radar className="w-6 h-6 text-green-400" />
-                <h3 className="text-lg font-semibold text-white">Denetim</h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Radar className="w-6 h-6 text-green-400" />
+                  <h3 className="text-lg font-semibold text-white">Denetim</h3>
+                </div>
+                <p className="text-sm text-gray-400">
+                  Rutin denetim ve inceleme operasyonları
+                </p>
               </div>
-              <p className="text-sm text-gray-400">
-                Rutin denetim ve inceleme operasyonları
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Brain className="w-6 h-6 text-purple-400" />
-                <h3 className="text-lg font-semibold text-white">
-                  Akıllı Analiz
-                </h3>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Brain className="w-6 h-6 text-purple-400" />
+                  <h3 className="text-lg font-semibold text-white">
+                    Akıllı Analiz
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-400">
+                  AI destekli veri analizi ve raporlama
+                </p>
               </div>
-              <p className="text-sm text-gray-400">
-                AI destekli veri analizi ve raporlama
-              </p>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -714,29 +818,55 @@ export default function DJIMatrice4EPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            DJI Matrice 4E ile Akıllı Uçuş Çağına Adım Atın
-          </h2>
-          <p className="text-gray-300 mb-8">
-            Akıllı operasyonlar, hassas ölçüm ve gelişmiş AI yetenekleri ile
-            coğrafi uygulamalarınızı, inşaat projelerinizi ve madencilik
-            operasyonlarınızı yeni bir seviyeye taşıyın. Uzman ekibimiz size en
-            uygun çözümü sunmak için hazır.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Hemen Teklif Alın
-            </Link>
-            <Link
-              href="/urunler/dji-turkiye-enterprise"
-              className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Tüm DJI Ürünleri
-            </Link>
-          </div>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Bisavunma Güvencesiyle DJI Matrice 4E
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              Akıllı operasyonlar, hassas ölçüm ve gelişmiş AI yetenekleri ile
+              coğrafi uygulamalarınızı, inşaat projelerinizi ve madencilik
+              operasyonlarınızı yeni bir seviyeye taşıyın. Uzman ekibimiz size
+              en uygun çözümü sunmak için hazır.
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer
+            className="flex flex-wrap gap-4 justify-center"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Hemen Teklif Alın
+              </Link>
+            </StaggerItem>
+
+            <StaggerItem>
+              <Link
+                href="/urunler/dji-turkiye-enterprise"
+                className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Tüm DJI Enterprise Ürünleri
+              </Link>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <ScrollAnimation direction="up" delay={0.6}>
+            <div className="mt-8 p-6 bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl">
+              <p className="text-gray-300">
+                <span className="text-cyan-400 font-semibold">
+                  Bisavunma güvencesi
+                </span>{" "}
+                ile profesyonel destek, teknik servis ve eğitim hizmetlerinden
+                faydalanın.
+              </p>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
     </div>

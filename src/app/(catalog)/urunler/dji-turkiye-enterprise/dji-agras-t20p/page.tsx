@@ -1,6 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle, Scale, Wrench, MapPin, Map, Bot } from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  ScaleAnimation,
+  HeroAnimation,
+  HeroStaggerContainer,
+  HeroScaleAnimation,
+} from "@/components/animations/ScrollAnimations";
+import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Agras T20P | Tarımsal İlaçlama Dronu | Bisavunma",
@@ -17,62 +27,95 @@ export default function DJIAgrasT20PPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-sm text-gray-400">
-                <Link
-                  href="/urunler/dji-turkiye-enterprise"
-                  className="hover:text-white transition-colors"
-                >
-                  DJI Enterprise
-                </Link>
-                <span>/</span>
-                <span className="text-white">DJI Agras T20P</span>
-              </div>
+              <HeroAnimation direction="fade" delay={0.2}>
+                <div className="inline-flex items-center gap-2 text-sm text-gray-400">
+                  <Link
+                    href="/urunler/dji-turkiye-enterprise"
+                    className="hover:text-white transition-colors"
+                  >
+                    DJI Enterprise
+                  </Link>
+                  <span>/</span>
+                  <span className="text-white">DJI Agras T20P</span>
+                </div>
+              </HeroAnimation>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                DJI Agras T20P
-              </h1>
+              <HeroAnimation direction="up" delay={0.4}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Bisavunma Güvencesiyle
+                  <br />
+                  <span className="text-green-400">DJI Agras T20P</span>
+                </h1>
+              </HeroAnimation>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
-                DJI Agras T20P, tarımsal ilaçlama ve tohumlama işlemlerinde
-                yüksek hassasiyet ve verimlilik sağlayan yeni nesil bir drone
-                çözümüdür. Kompakt tasarımı, otomatik uçuş planlama ve akıllı
-                püskürtme sistemiyle küçük ve orta ölçekli tarım arazilerinde
-                etkin çözümler sunar.
-              </p>
+              <HeroAnimation direction="up" delay={0.6}>
+                <div className="text-2xl font-bold text-green-400 mb-4">
+                  Tarımsal Verimlilik Çözümü
+                </div>
+              </HeroAnimation>
 
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">20 kg</div>
-                  <div className="text-sm text-gray-400">
-                    Püskürtme Kapasitesi
+              <HeroAnimation direction="up" delay={0.8}>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  DJI Agras T20P, tarımsal ilaçlama ve tohumlama işlemlerinde
+                  yüksek hassasiyet ve verimlilik sağlayan yeni nesil bir drone
+                  çözümüdür. Kompakt tasarımı, otomatik uçuş planlama ve akıllı
+                  püskürtme sistemiyle küçük ve orta ölçekli tarım arazilerinde
+                  etkin çözümler sunar.
+                </p>
+              </HeroAnimation>
+
+              <HeroStaggerContainer
+                className="grid grid-cols-2 gap-4 pt-4"
+                staggerDelay={0.2}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-green-400">
+                      20 kg
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Püskürtme Kapasitesi
+                    </div>
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">25 kg</div>
-                  <div className="text-sm text-gray-400">Yayma Kapasitesi</div>
-                </div>
-              </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-green-400">
+                      25 kg
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Yayma Kapasitesi
+                    </div>
+                  </div>
+                </StaggerItem>
+              </HeroStaggerContainer>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/iletisim"
-                  className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
-                >
-                  Teklif Al
-                </Link>
-              </div>
+              <HeroAnimation direction="up" delay={1.4}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/iletisim"
+                    className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
+                  >
+                    Teklif Al
+                  </Link>
+                </div>
+              </HeroAnimation>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-sky-600/20 to-purple-600/20 rounded-2xl blur-3xl" />
+            <HeroScaleAnimation
+              delay={0.8}
+              className="relative h-[400px] lg:h-[500px]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-sky-600/20 rounded-2xl blur-3xl" />
               <Image
                 src="/products/dji-enterprise/dji-agras-t20p/hero.jpg"
                 alt="DJI Agras T20P"
                 width={1000}
                 height={1000}
                 className="object-contain relative z-10 rounded-2xl"
+                priority
               />
-            </div>
+            </HeroScaleAnimation>
           </div>
         </div>
       </section>
@@ -80,53 +123,70 @@ export default function DJIAgrasT20PPage() {
       {/* Hafif ve Çevik */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Hafif ve Çevik
-          </h2>
-          <p className="text-gray-300 mb-12 text-center max-w-4xl mx-auto">
-            AGRAS T20P, güçlü performansıyla birlikte hafif ve çevik bir özellik
-            taşır. Bu araç, 20 kg'a kadar püskürtme yükünü taşıyabilme özelliği
-            ile dikkat çeker. Çift Atomize Püskürtme Sistemi, DJI Terra, Aktif
-            Faz Dizili Radar ve Binoküler Görüş gibi özelliklerle donatılmıştır.
-          </p>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">Hafif ve Çevik</h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Tarım Arazisi
-              </h3>
-              <div className="text-2xl font-bold text-green-400 mb-2">
-                12 ha/saat
-              </div>
-              <p className="text-gray-400">
-                Saat başına 12 hektarlık tarım arazisinde etkili çalışma
-              </p>
-            </div>
+          <ScrollAnimation
+            direction="up"
+            delay={0.2}
+            className="text-center mb-12"
+          >
+            <p className="text-gray-300 max-w-4xl mx-auto">
+              AGRAS T20P, güçlü performansıyla birlikte hafif ve çevik bir
+              özellik taşır. Bu araç, 20 kg'a kadar püskürtme yükünü taşıyabilme
+              özelliği ile dikkat çeker. Çift Atomize Püskürtme Sistemi, DJI
+              Terra, Aktif Faz Dizili Radar ve Binoküler Görüş gibi özelliklerle
+              donatılmıştır.
+            </p>
+          </ScrollAnimation>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Meyve Bahçesi
-              </h3>
-              <div className="text-2xl font-bold text-green-400 mb-2">
-                2.6 ha/saat
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Tarım Arazisi
+                </h3>
+                <div className="text-2xl font-bold text-green-400 mb-2">
+                  12 ha/saat
+                </div>
+                <p className="text-gray-400">
+                  Saat başına 12 hektarlık tarım arazisinde etkili çalışma
+                </p>
               </div>
-              <p className="text-gray-400">
-                Saat başına 2.6 hektarlık meyve bahçesinde hassas işlem
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Gübreleme
-              </h3>
-              <div className="text-2xl font-bold text-green-400 mb-2">
-                1 ton/saat
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Meyve Bahçesi
+                </h3>
+                <div className="text-2xl font-bold text-green-400 mb-2">
+                  2.6 ha/saat
+                </div>
+                <p className="text-gray-400">
+                  Saat başına 2.6 hektarlık meyve bahçesinde hassas işlem
+                </p>
               </div>
-              <p className="text-gray-400">
-                Saat başına 1 ton gübre ile verimli yayma işlemi
-              </p>
-            </div>
-          </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Gübreleme
+                </h3>
+                <div className="text-2xl font-bold text-green-400 mb-2">
+                  1 ton/saat
+                </div>
+                <p className="text-gray-400">
+                  Saat başına 1 ton gübre ile verimli yayma işlemi
+                </p>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -135,72 +195,82 @@ export default function DJIAgrasT20PPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Eşit Püskürtme için Çift Atomizasyon
-              </h2>
-              <p className="text-gray-300">
-                Manyetik Tahrikli Çark Pompası, yeni manyetik iletim tasarımı
-                sayesinde pestisiti motordan tamamen izole ederek uçağı
-                korozyona dayanıklı ve son derece dayanıklı hale getirir.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Eşit Püskürtme için Çift Atomizasyon
+                </h2>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sky-400">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Manyetik Tahrikli Çark Pompası
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Pestisiti motordan tamamen izole ederek korozyona
-                      dayanıklılık sağlar
-                    </p>
-                  </div>
-                </div>
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  Manyetik Tahrikli Çark Pompası, yeni manyetik iletim tasarımı
+                  sayesinde pestisiti motordan tamamen izole ederek uçağı
+                  korozyona dayanıklı ve son derece dayanıklı hale getirir.
+                </p>
+              </ScrollAnimation>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sky-400">✓</span>
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-sky-400">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Manyetik Tahrikli Çark Pompası
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Pestisiti motordan tamamen izole ederek korozyona
+                        dayanıklılık sağlar
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Çift Atomize Santrifüj Sprinkler
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Çift atomize püskürtme diski ile eşit damlacıklar
-                      oluşturarak verimli pestisit kullanımı
-                    </p>
-                  </div>
-                </div>
+                </StaggerItem>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sky-400">✓</span>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-sky-400">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Çift Atomize Santrifüj Sprinkler
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Çift atomize püskürtme diski ile eşit damlacıklar
+                        oluşturarak verimli pestisit kullanımı
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Hızlı Sökme Özelliği
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Elle hızlı sökme özelliği sayesinde kolay temizlik imkanı
-                    </p>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-sky-400">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Hızlı Sökme Özelliği
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Elle hızlı sökme özelliği sayesinde kolay temizlik
+                        imkanı
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
 
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-600/10 to-purple-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-agras-t20p/esit-puskurtme.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <ScrollAnimation direction="right">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-agras-t20p/esit-puskurtme.mp4"
+                  className="object-cover w-full h-full"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -209,65 +279,74 @@ export default function DJIAgrasT20PPage() {
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-agras-t20p/hizli-sokme.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <ScrollAnimation direction="left">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-agras-t20p/hizli-sokme.mp4"
+                  className="object-cover w-full h-full"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
 
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Saatte 1 Ton Gübre
-              </h2>
-              <p className="text-gray-300">
-                T20P Yayma Sistemi, artık daha büyük yük ağırlıklarını başarıyla
-                taşıma kapasitesine sahiptir ve 25 kg'a kadar ve 35 litrelik
-                kapasiteyi destekleyebilmektedir.
-              </p>
+              <ScrollAnimation direction="right">
+                <h2 className="text-3xl font-bold text-white">
+                  Saatte 1 Ton Gübre
+                </h2>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-green-600/20 rounded-lg flex items-center justify-center">
-                    <Scale className="w-5 h-5 text-green-400" />
+              <ScrollAnimation direction="right" delay={0.2}>
+                <p className="text-gray-300">
+                  T20P Yayma Sistemi, artık daha büyük yük ağırlıklarını
+                  başarıyla taşıma kapasitesine sahiptir ve 25 kg'a kadar ve 35
+                  litrelik kapasiteyi destekleyebilmektedir.
+                </p>
+              </ScrollAnimation>
+
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-green-600/20 rounded-lg flex items-center justify-center">
+                      <Scale className="w-5 h-5 text-green-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Gerçek Zamanlı Tartım
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Serpme miktarını ve kalan taşıma yükünü izleyen tartım
+                        sensörü
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Gerçek Zamanlı Tartım
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Serpme miktarını ve kalan taşıma yükünü izleyen tartım
-                      sensörü
-                    </p>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-green-600/20 rounded-lg flex items-center justify-center">
+                      <Wrench className="w-5 h-5 text-green-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Hızlı Sökme ve Temizleme
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Yayma aparatı sadece 3 dakika içinde çıkarılabilir ve su
+                        ile yıkanabilir
+                      </p>
+                    </div>
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
+
+              <ScrollAnimation direction="right" delay={0.4}>
+                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                  <div className="text-lg font-bold text-green-400">25 kg</div>
+                  <div className="text-sm text-gray-400">
+                    Maksimum Yayma Kapasitesi (35L)
                   </div>
                 </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-green-600/20 rounded-lg flex items-center justify-center">
-                    <Wrench className="w-5 h-5 text-green-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Hızlı Sökme ve Temizleme
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Yayma aparatı sadece 3 dakika içinde çıkarılabilir ve su
-                      ile yıkanabilir
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                <div className="text-lg font-bold text-green-400">25 kg</div>
-                <div className="text-sm text-gray-400">
-                  Maksimum Yayma Kapasitesi (35L)
-                </div>
-              </div>
+              </ScrollAnimation>
             </div>
           </div>
         </div>
@@ -276,51 +355,69 @@ export default function DJIAgrasT20PPage() {
       {/* Çok Yönlü Engel Algılama */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Çok Yönlü Engel Algılama
-          </h2>
-          <p className="text-gray-300 mb-12 text-center max-w-4xl mx-auto">
-            Aktif Faz Dizili Radar + Binoküler Görüş sistemi ile 360 derecelik
-            çok yönlü engel algılama sağlar ve optimum güvenlik sunar.
-          </p>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Çok Yönlü Engel Algılama
+            </h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Aktif Faz Dizili Radar
-              </h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>• 360 derece algılama</li>
-                <li>• 50 metreye kadar algılama mesafesi</li>
-                <li>• Akıllı arazi takibi</li>
-                <li>• Çoklu engel aşma</li>
-              </ul>
-            </div>
+          <ScrollAnimation
+            direction="up"
+            delay={0.2}
+            className="text-center mb-12"
+          >
+            <p className="text-gray-300 max-w-4xl mx-auto">
+              Aktif Faz Dizili Radar + Binoküler Görüş sistemi ile 360 derecelik
+              çok yönlü engel algılama sağlar ve optimum güvenlik sunar.
+            </p>
+          </ScrollAnimation>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Binoküler Görüş
-              </h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>• Ölçüm aralığı: 0.4-25m</li>
-                <li>• Etkili algılama hızı: &lt;10 m/s</li>
-                <li>• FOV: Yatay 90°, Dikey 106°</li>
-                <li>• Yeterli ışık ortamında çalışma</li>
-              </ul>
-            </div>
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Aktif Faz Dizili Radar
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-400">
+                  <li>• 360 derece algılama</li>
+                  <li>• 50 metreye kadar algılama mesafesi</li>
+                  <li>• Akıllı arazi takibi</li>
+                  <li>• Çoklu engel aşma</li>
+                </ul>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Karmaşık Arazi Uyumu
-              </h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>• Engebeli meyve bahçelerinde çalışma</li>
-                <li>• Düzgün ölçeklendirme</li>
-                <li>• Optimum güvenlik</li>
-                <li>• Zorlu arazi koşullarında dayanıklılık</li>
-              </ul>
-            </div>
-          </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Binoküler Görüş
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-400">
+                  <li>• Ölçüm aralığı: 0.4-25m</li>
+                  <li>• Etkili algılama hızı: &lt;10 m/s</li>
+                  <li>• FOV: Yatay 90°, Dikey 106°</li>
+                  <li>• Yeterli ışık ortamında çalışma</li>
+                </ul>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Karmaşık Arazi Uyumu
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-400">
+                  <li>• Engebeli meyve bahçelerinde çalışma</li>
+                  <li>• Düzgün ölçeklendirme</li>
+                  <li>• Optimum güvenlik</li>
+                  <li>• Zorlu arazi koşullarında dayanıklılık</li>
+                </ul>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -329,15 +426,20 @@ export default function DJIAgrasT20PPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Haritalama, püskürtme ve yayma, hepsi bir arada
-              </h2>
-              <p className="text-gray-300">
-                AGRAS T20P, haritalama (D-RTK 2 mobil istasyonuyla), püskürtme
-                ve yayma işlevlerini başarıyla birleştirir. UHD kamerası ve
-                ayarlanabilir gimbal sayesinde istenilen görünümü kolayca
-                yakalamanıza olanak tanır.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Haritalama, püskürtme ve yayma, hepsi bir arada
+                </h2>
+              </ScrollAnimation>
+
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  AGRAS T20P, haritalama (D-RTK 2 mobil istasyonuyla), püskürtme
+                  ve yayma işlevlerini başarıyla birleştirir. UHD kamerası ve
+                  ayarlanabilir gimbal sayesinde istenilen görünümü kolayca
+                  yakalamanıza olanak tanır.
+                </p>
+              </ScrollAnimation>
 
               <div className="space-y-4">
                 <div className="flex gap-4">
@@ -387,16 +489,14 @@ export default function DJIAgrasT20PPage() {
               </div>
             </div>
 
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-agras-t20p/haritalama.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <ScrollAnimation direction="right">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-agras-t20p/haritalama.mp4"
+                  className="object-cover w-full h-full"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -405,54 +505,70 @@ export default function DJIAgrasT20PPage() {
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-cyan-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-agras-t20p/zahmetsiz.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <ScrollAnimation direction="left">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-agras-t20p/zahmetsiz.mp4"
+                  className="object-cover w-full h-full"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
 
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Zahmetsiz haritalama için turbo şarjlı uzaktan kumanda
-              </h2>
-              <p className="text-gray-300">
-                8 çekirdekli işlemci, 6,67 hektarlık bir alanın haritalanmasını
-                sadece 10 dakikada mümkün kılar. Daha fazla verimlilik için her
-                uçuşta taşınan yük, akıllı rota planlamasıyla maksimum düzeye
-                çıkarılır.
-              </p>
+              <ScrollAnimation direction="right">
+                <h2 className="text-3xl font-bold text-white">
+                  Zahmetsiz haritalama için turbo şarjlı uzaktan kumanda
+                </h2>
+              </ScrollAnimation>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-blue-400">
-                    8 Çekirdek
+              <ScrollAnimation direction="right" delay={0.2}>
+                <p className="text-gray-300">
+                  8 çekirdekli işlemci, 6,67 hektarlık bir alanın
+                  haritalanmasını sadece 10 dakikada mümkün kılar. Daha fazla
+                  verimlilik için her uçuşta taşınan yük, akıllı rota
+                  planlamasıyla maksimum düzeye çıkarılır.
+                </p>
+              </ScrollAnimation>
+
+              <StaggerContainer
+                className="grid grid-cols-2 gap-4"
+                staggerDelay={0.1}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-blue-400">
+                      8 Çekirdek
+                    </div>
+                    <div className="text-sm text-gray-400">İşlemci Gücü</div>
                   </div>
-                  <div className="text-sm text-gray-400">İşlemci Gücü</div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-blue-400">10 dk</div>
-                  <div className="text-sm text-gray-400">
-                    6,67 ha Haritalama
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-blue-400">10 dk</div>
+                    <div className="text-sm text-gray-400">
+                      6,67 ha Haritalama
+                    </div>
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-blue-400">7"</div>
-                  <div className="text-sm text-gray-400">
-                    Yüksek Parlaklık Ekran
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-blue-400">7"</div>
+                    <div className="text-sm text-gray-400">
+                      Yüksek Parlaklık Ekran
+                    </div>
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-blue-400">
-                    1200 cd/m²
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-blue-400">
+                      1200 cd/m²
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Ekran Parlaklığı
+                    </div>
                   </div>
-                  <div className="text-sm text-gray-400">Ekran Parlaklığı</div>
-                </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
           </div>
         </div>
@@ -461,53 +577,69 @@ export default function DJIAgrasT20PPage() {
       {/* Güvenilirlik */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Üstün güvenilirlik için sağlam bir şekilde test edilmiştir
-          </h2>
-          <p className="text-gray-300 mb-12">
-            Temel bileşenler, karmaşık ve zorlu tarım arazisi ortamlarına
-            dayanacak şekilde özel olarak tasarlanmıştır. Kullanıcının
-            güvenliğini sağlamak adına bir dizi zorlu testten başarıyla
-            geçmiştir.
-          </p>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Üstün güvenilirlik için sağlam bir şekilde test edilmiştir
+            </h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Su Geçirmezlik
-              </h3>
-              <p className="text-sm text-gray-400">
-                Yağmurlu hava koşullarında güvenilir çalışma
-              </p>
-            </div>
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-12">
+              Temel bileşenler, karmaşık ve zorlu tarım arazisi ortamlarına
+              dayanacak şekilde özel olarak tasarlanmıştır. Kullanıcının
+              güvenliğini sağlamak adına bir dizi zorlu testten başarıyla
+              geçmiştir.
+            </p>
+          </ScrollAnimation>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Toz Önleme
-              </h3>
-              <p className="text-sm text-gray-400">
-                Tozlu tarım ortamlarında koruma
-              </p>
-            </div>
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Su Geçirmezlik
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Yağmurlu hava koşullarında güvenilir çalışma
+                </p>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Korozyon Önleme
-              </h3>
-              <p className="text-sm text-gray-400">
-                Kimyasal maddelere karşı dayanıklılık
-              </p>
-            </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Toz Önleme
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Tozlu tarım ortamlarında koruma
+                </p>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Sıcaklık Dayanımı
-              </h3>
-              <p className="text-sm text-gray-400">
-                0°C - 45°C arasında güvenilir çalışma
-              </p>
-            </div>
-          </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Korozyon Önleme
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Kimyasal maddelere karşı dayanıklılık
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Sıcaklık Dayanımı
+                </h3>
+                <p className="text-sm text-gray-400">
+                  0°C - 45°C arasında güvenilir çalışma
+                </p>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -516,38 +648,66 @@ export default function DJIAgrasT20PPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Ultra hızlı şarj
-              </h2>
-              <p className="text-gray-300">
-                6000 W Çok Fonksiyonlu İnverter Jeneratör, çıkarılabilir bir
-                şarj modülünü içerir ve şebeke güç girişinin yanı sıra çeşitli
-                şarj senaryolarına uyumludur. 13000mAh Akıllı Uçuş Pili ile iki
-                pilin 9 dakikada hızlı bir şekilde şarj edilmesini sağlar.
-              </p>
+              <ScrollAnimation direction="up">
+                <h2 className="text-3xl font-bold text-white">
+                  Ultra hızlı şarj
+                </h2>
+              </ScrollAnimation>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-yellow-400">6000W</div>
-                  <div className="text-sm text-gray-400">
-                    İnverter Jeneratör
+              <ScrollAnimation direction="up" delay={0.2}>
+                <p className="text-gray-300">
+                  6000 W Çok Fonksiyonlu İnverter Jeneratör, çıkarılabilir bir
+                  şarj modülünü içerir ve şebeke güç girişinin yanı sıra çeşitli
+                  şarj senaryolarına uyumludur. 13000mAh Akıllı Uçuş Pili ile
+                  iki pilin 9 dakikada hızlı bir şekilde şarj edilmesini sağlar.
+                </p>
+              </ScrollAnimation>
+
+              <StaggerContainer
+                className="grid grid-cols-2 gap-4"
+                staggerDelay={0.1}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-yellow-400">
+                      6000W
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      İnverter Jeneratör
+                    </div>
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-yellow-400">9 dk</div>
-                  <div className="text-sm text-gray-400">
-                    İki Pil Şarj Süresi
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-yellow-400">
+                      9 dk
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      İki Pil Şarj Süresi
+                    </div>
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-yellow-400">13Ah</div>
-                  <div className="text-sm text-gray-400">Akıllı Uçuş Pili</div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-yellow-400">Çoklu</div>
-                  <div className="text-sm text-gray-400">Şarj Senaryoları</div>
-                </div>
-              </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-yellow-400">
+                      13Ah
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Akıllı Uçuş Pili
+                    </div>
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-yellow-400">
+                      Çoklu
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Şarj Senaryoları
+                    </div>
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
           </div>
         </div>
@@ -556,72 +716,92 @@ export default function DJIAgrasT20PPage() {
       {/* DJI Agras Akıllı Bulut */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            DJI Agras Akıllı Bulut
-          </h2>
-          <p className="text-gray-300 mb-12">
-            Kullanıcılar, DJI Tarımsal Bulut Platformu ve P4 Multispectra,
-            PHANTOM 4 RTK veya AGRAS uçakları ile reçete haritalarını kullanarak
-            tarla devriyeleri, arazi tesviye izleme, fide tanımlama, uzun vadeli
-            büyüme analizi ve değişken ilaçlama/serpme işlemlerini
-            gerçekleştirebilmektedir.
-          </p>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              DJI Agras Akıllı Bulut
+            </h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Tarla Devriyeleri
-              </h3>
-              <p className="text-sm text-gray-400">
-                Düzenli tarla kontrolü ve izleme işlemleri
-              </p>
-            </div>
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-12">
+              Kullanıcılar, DJI Tarımsal Bulut Platformu ve P4 Multispectra,
+              PHANTOM 4 RTK veya AGRAS uçakları ile reçete haritalarını
+              kullanarak tarla devriyeleri, arazi tesviye izleme, fide
+              tanımlama, uzun vadeli büyüme analizi ve değişken ilaçlama/serpme
+              işlemlerini gerçekleştirebilmektedir.
+            </p>
+          </ScrollAnimation>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Büyüme Analizi
-              </h3>
-              <p className="text-sm text-gray-400">
-                Uzun vadeli büyüme analizi ve fide tanımlama
-              </p>
-            </div>
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Tarla Devriyeleri
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Düzenli tarla kontrolü ve izleme işlemleri
+                </p>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Değişken Uygulama
-              </h3>
-              <p className="text-sm text-gray-400">
-                Reçete haritalarına dayalı hassas ilaçlama ve serpme
-              </p>
-            </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Büyüme Analizi
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Uzun vadeli büyüme analizi ve fide tanımlama
+                </p>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Mahsul Uygulamaları
-              </h3>
-              <p className="text-sm text-gray-400">
-                Pirinç, pamuk, soya fasulyesi ve mısır için özel uygulamalar
-              </p>
-            </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Değişken Uygulama
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Reçete haritalarına dayalı hassas ilaçlama ve serpme
+                </p>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Arazi Tesviye
-              </h3>
-              <p className="text-sm text-gray-400">
-                Arazi tesviye izleme ve optimizasyon
-              </p>
-            </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Mahsul Uygulamaları
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Pirinç, pamuk, soya fasulyesi ve mısır için özel uygulamalar
+                </p>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Entegre Platform
-              </h3>
-              <p className="text-sm text-gray-400">
-                P4 Multispectral, PHANTOM 4 RTK ile tam entegrasyon
-              </p>
-            </div>
-          </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Arazi Tesviye
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Arazi tesviye izleme ve optimizasyon
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Entegre Platform
+                </h3>
+                <p className="text-sm text-gray-400">
+                  P4 Multispectral, PHANTOM 4 RTK ile tam entegrasyon
+                </p>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -957,29 +1137,55 @@ export default function DJIAgrasT20PPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            DJI Agras T20P ile Tarımsal Verimliliğinizi Artırın
-          </h2>
-          <p className="text-gray-300 mb-8">
-            Kompakt tasarım, akıllı püskürtme sistemi ve çok yönlü engel
-            algılama ile küçük ve orta ölçekli tarım arazilerinde maksimum
-            verimlilik elde edin. Uzman ekibimiz size en uygun çözümü sunmak
-            için hazır.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Hemen Teklif Alın
-            </Link>
-            <Link
-              href="/urunler/dji-turkiye-enterprise"
-              className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Tüm DJI Ürünleri
-            </Link>
-          </div>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Bisavunma Güvencesiyle DJI Agras T20P
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              Kompakt tasarım, akıllı püskürtme sistemi ve çok yönlü engel
+              algılama ile küçük ve orta ölçekli tarım arazilerinde maksimum
+              verimlilik elde edin. Uzman ekibimiz size en uygun çözümü sunmak
+              için hazır.
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer
+            className="flex flex-wrap gap-4 justify-center"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Hemen Teklif Alın
+              </Link>
+            </StaggerItem>
+
+            <StaggerItem>
+              <Link
+                href="/urunler/dji-turkiye-enterprise"
+                className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Tüm DJI Enterprise Ürünleri
+              </Link>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <ScrollAnimation direction="up" delay={0.6}>
+            <div className="mt-8 p-6 bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl">
+              <p className="text-gray-300">
+                <span className="text-green-400 font-semibold">
+                  Bisavunma güvencesi
+                </span>{" "}
+                ile profesyonel destek, teknik servis ve eğitim hizmetlerinden
+                faydalanın.
+              </p>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
     </div>

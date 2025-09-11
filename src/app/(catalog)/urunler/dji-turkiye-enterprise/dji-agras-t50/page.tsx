@@ -1,5 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  ScaleAnimation,
+  HeroAnimation,
+  HeroStaggerContainer,
+  HeroScaleAnimation,
+} from "@/components/animations/ScrollAnimations";
+import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Agras T50 | Tarımsal İlaçlama Dronu | Bisavunma",
@@ -16,61 +26,92 @@ export default function DJIAgrasT50Page() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-sm text-gray-400">
-                <Link
-                  href="/urunler/dji-turkiye-enterprise"
-                  className="hover:text-white transition-colors"
-                >
-                  DJI Enterprise
-                </Link>
-                <span>/</span>
-                <span className="text-white">DJI Agras T50</span>
-              </div>
+              <HeroAnimation direction="fade" delay={0.2}>
+                <div className="inline-flex items-center gap-2 text-sm text-gray-400">
+                  <Link
+                    href="/urunler/dji-turkiye-enterprise"
+                    className="hover:text-white transition-colors"
+                  >
+                    DJI Enterprise
+                  </Link>
+                  <span>/</span>
+                  <span className="text-white">DJI Agras T50</span>
+                </div>
+              </HeroAnimation>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                DJI Agras T50
-              </h1>
+              <HeroAnimation direction="up" delay={0.4}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Bisavunma Güvencesiyle
+                  <br />
+                  <span className="text-green-400">DJI Agras T50</span>
+                </h1>
+              </HeroAnimation>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
-                DJI AGRAS T50 drone, tarım operasyonlarını yeni bir seviyeye
-                taşıyor. 40 kg&apos;lık püskürtme veya 50 kg&apos;lık yayma
-                yüklerini taşıyabilen güçlü bir koaksiyel çift rotorlu tahrik
-                sistemi ve torka dayanıklı bölünmüş yapıya sahiptir.
-              </p>
+              <HeroAnimation direction="up" delay={0.6}>
+                <div className="text-2xl font-bold text-green-400 mb-4">
+                  Profesyonel Tarımsal Çözüm
+                </div>
+              </HeroAnimation>
 
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">40 kg</div>
-                  <div className="text-sm text-gray-400">
-                    Püskürtme Kapasitesi
+              <HeroAnimation direction="up" delay={0.8}>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  DJI AGRAS T50 drone, tarım operasyonlarını yeni bir seviyeye
+                  taşıyor. 40 kg&apos;lık püskürtme veya 50 kg&apos;lık yayma
+                  yüklerini taşıyabilen güçlü bir koaksiyel çift rotorlu tahrik
+                  sistemi ve torka dayanıklı bölünmüş yapıya sahiptir.
+                </p>
+              </HeroAnimation>
+
+              <HeroStaggerContainer
+                className="grid grid-cols-2 gap-4 pt-4"
+                staggerDelay={0.2}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-green-400">
+                      40 kg
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Püskürtme Kapasitesi
+                    </div>
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">50 kg</div>
-                  <div className="text-sm text-gray-400">Yayma Kapasitesi</div>
-                </div>
-              </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-green-400">
+                      50 kg
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Yayma Kapasitesi
+                    </div>
+                  </div>
+                </StaggerItem>
+              </HeroStaggerContainer>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/iletisim"
-                  className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
-                >
-                  Teklif Al
-                </Link>
-              </div>
+              <HeroAnimation direction="up" delay={1.4}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/iletisim"
+                    className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
+                  >
+                    Teklif Al
+                  </Link>
+                </div>
+              </HeroAnimation>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-sky-600/20 to-purple-600/20 rounded-2xl blur-3xl" />
-              <video
-                src="/products/dji-enterprise/dji-agras-t50/agras.webm"
-                autoPlay
-                loop
-                muted
-                className="object-contain relative z-10 w-full h-full rounded-2xl"
-              />
-            </div>
+            <HeroScaleAnimation
+              delay={0.8}
+              className="relative h-[400px] lg:h-[500px]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-sky-600/20 rounded-2xl blur-3xl" />
+              <VideoContainer>
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-agras-t50/agras.webm"
+                  className="object-contain relative z-10 w-full h-full rounded-2xl"
+                />
+              </VideoContainer>
+            </HeroScaleAnimation>
           </div>
         </div>
       </section>
@@ -78,74 +119,90 @@ export default function DJIAgrasT50Page() {
       {/* Key Features Grid */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Öne Çıkan Özellikler
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Öne Çıkan Özellikler
+            </h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Ağır Yük Kapasitesi
-              </h3>
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Ağır Yük Kapasitesi
+                </h3>
+                <ul className="text-gray-400 list-disc list-inside space-y-2">
+                  <li>40 kg püskürtme</li>
+                  <li>50 kg yayma</li>
+                </ul>
+              </div>
+            </StaggerItem>
 
-              <ul className="text-gray-400 list-disc list-inside space-y-2">
-                <li>40 kg püskürtme</li>
-                <li>50 kg yayma</li>
-              </ul>
-            </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Yüksek Akış Hızı
+                </h3>
+                <ul className="text-gray-400 list-disc list-inside space-y-2">
+                  <li>Püskürtme: 16 L/dk</li>
+                  <li>Yayma: 108 kg/dk</li>
+                </ul>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Yüksek Akış Hızı
-              </h3>
-              <ul className="text-gray-400 list-disc list-inside space-y-2">
-                <li>Püskürtme: 16 L/dk</li>
-                <li>Yayma: 108 kg/dk</li>
-              </ul>
-            </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Sinyal İstikrarı
+                </h3>
+                <ul className="text-gray-400 list-disc list-inside space-y-2">
+                  <li>Çevrimdışı işlemler</li>
+                  <li>2 km O3 İletimi</li>
+                  <li>Opsiyonel DJI Rölesi desteği</li>
+                </ul>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Sinyal İstikrarı
-              </h3>
-              <ul className="text-gray-400 list-disc list-inside space-y-2">
-                <li>Çevrimdışı işlemler</li>
-                <li>2 km O3 İletimi</li>
-                <li>Opsiyonel DJI Rölesi desteği</li>
-              </ul>
-            </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Tüm Senaryolara Uyum
+                </h3>
+                <ul className="text-gray-400 list-disc list-inside space-y-2">
+                  <li>Tam otomatik ve manuel çalışma</li>
+                  <li>Meyve Bahçesi Modu</li>
+                  <li>Değişken Oranlı Uygulama</li>
+                </ul>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Tüm Senaryolara Uyum
-              </h3>
-              <ul className="text-gray-400 list-disc list-inside space-y-2">
-                <li>Tam otomatik ve manuel çalışma</li>
-                <li>Meyve Bahçesi Modu</li>
-                <li>Değişken Oranlı Uygulama</li>
-              </ul>
-            </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Çok Yönlü Engel Algılama
+                </h3>
+                <ul className="text-gray-400 list-disc list-inside space-y-2">
+                  <li>Çok yönlü engellerden kaçınma</li>
+                  <li>50°'ye kadar arazi takibi</li>
+                </ul>
+              </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Çok Yönlü Engel Algılama
-              </h3>
-              <ul className="text-gray-400 list-disc list-inside space-y-2">
-                <li>Çok yönlü engellerden kaçınma</li>
-                <li>50°'ye kadar arazi takibi</li>
-              </ul>
-            </div>
-
-            <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Dörtlü Yağmurlama (Opsiyonel)
-              </h3>
-              <ul className="text-gray-400 list-disc list-inside space-y-2">
-                <li>Uçuş sırasında ters yönlü püskürtme</li>
-                <li>4 sprinkler püskürtme, akış hızı 24 L/dak </li>
-              </ul>
-            </div>
-          </div>
+            <StaggerItem>
+              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Dörtlü Yağmurlama (Opsiyonel)
+                </h3>
+                <ul className="text-gray-400 list-disc list-inside space-y-2">
+                  <li>Uçuş sırasında ters yönlü püskürtme</li>
+                  <li>4 sprinkler püskürtme, akış hızı 24 L/dak </li>
+                </ul>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -154,77 +211,86 @@ export default function DJIAgrasT50Page() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Çift Atomize Püskürtme Sistemi
-              </h2>
-              <p className="text-gray-300">
-                DJI AGRAS T50’nin Çift Atomize Püskürtme Sistemi, dakikada 16
-                litreye kadar ultra yüksek akış hızı sağlar (2 yağmurlama
-                püskürtme). Bu sistem, ince ve düzgün sprey damlacıkları üretir
-                ve sızıntı yapmaz. Yüksek uygulama hacmi gerektiren işlemler
-                için DJI AGRAS T50, akış hızını dakikada 24 litreye (4 sprinkler
-                püskürtme) çıkaran ek bir çift santrifüj sprinkler ile
-                donatılabilir. Manuel uçuş sırasında, dört sprinklerli Ters
-                Yönlü Püskürtme kullanarak dönüş yapmadan işlemleri
-                kolaylaştırabilirsiniz.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Çift Atomize Püskürtme Sistemi
+                </h2>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sky-400">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Manyetik Tahrikli Çark Pompası
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Çift pompalı akış hızı 24 L/dak&apos;ya kadar, önceki
-                      nesle göre %100 artış
-                    </p>
-                  </div>
-                </div>
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  DJI AGRAS T50'nin Çift Atomize Püskürtme Sistemi, dakikada 16
+                  litreye kadar ultra yüksek akış hızı sağlar (2 yağmurlama
+                  püskürtme). Bu sistem, ince ve düzgün sprey damlacıkları
+                  üretir ve sızıntı yapmaz. Yüksek uygulama hacmi gerektiren
+                  işlemler için DJI AGRAS T50, akış hızını dakikada 24 litreye
+                  (4 sprinkler püskürtme) çıkaran ek bir çift santrifüj
+                  sprinkler ile donatılabilir. Manuel uçuş sırasında, dört
+                  sprinklerli Ters Yönlü Püskürtme kullanarak dönüş yapmadan
+                  işlemleri kolaylaştırabilirsiniz.
+                </p>
+              </ScrollAnimation>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sky-400">✓</span>
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-sky-400">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Manyetik Tahrikli Çark Pompası
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Çift pompalı akış hızı 24 L/dak&apos;ya kadar, önceki
+                        nesle göre %100 artış
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Çift Atomize Santrifüjlü Sistemler
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Damlacık boyutu 50-500 μm arasında ayarlanabilir
-                    </p>
-                  </div>
-                </div>
+                </StaggerItem>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sky-400">✓</span>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-sky-400">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Çift Atomize Santrifüjlü Sistemler
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Damlacık boyutu 50-500 μm arasında ayarlanabilir
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Yepyeni Solenoid Vanalar
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Hassas başlatma ve durdurma işlevi, sızıntıyı önler
-                    </p>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <span className="text-sky-400">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Yepyeni Solenoid Vanalar
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Hassas başlatma ve durdurma işlevi, sızıntıyı önler
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
 
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-600/10 to-purple-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-agras-t50/cift-atomize.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <ScrollAnimation direction="right">
+              <VideoContainer className="relative h-[400px] rounded-xl overflow-hidden">
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-agras-t50/cift-atomize.mp4"
+                  className="object-cover w-full h-full"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -261,23 +327,30 @@ export default function DJIAgrasT50Page() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 order-1 lg:order-1">
-              <h2 className="text-3xl font-bold text-white">
-                Yepyeni Solenoid Vanalar
-              </h2>
-              <p className="text-gray-300">
-                Hassas başlatma ve durdurma işlevi, sızıntıyı önler.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Yepyeni Solenoid Vanalar
+                </h2>
+              </ScrollAnimation>
+
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  Hassas başlatma ve durdurma işlevi, sızıntıyı önler.
+                </p>
+              </ScrollAnimation>
             </div>
-            <div className="relative h-[400px] rounded-xl overflow-hidden order-2 lg:order-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
-              <video
-                src="/products/dji-enterprise/dji-agras-t50/solenoid-vana.mp4"
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full"
-              />
-            </div>
+
+            <ScrollAnimation
+              direction="right"
+              className="relative h-[400px] rounded-xl overflow-hidden order-2 lg:order-2"
+            >
+              <VideoContainer>
+                <LazyVideo
+                  src="/products/dji-enterprise/dji-agras-t50/solenoid-vana.mp4"
+                  className="object-cover w-full h-full"
+                />
+              </VideoContainer>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -285,9 +358,11 @@ export default function DJIAgrasT50Page() {
       {/* Güvenlik ve Dayanıklılık */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Güvenilirlik ve Güvenlik
-          </h2>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Güvenilirlik ve Güvenlik
+            </h2>
+          </ScrollAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6">
@@ -320,9 +395,11 @@ export default function DJIAgrasT50Page() {
       {/* DJI AGRAS T50 Yayma Sistemi */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            DJI AGRAS T50 Yayma Sistemi
-          </h2>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              DJI AGRAS T50 Yayma Sistemi
+            </h2>
+          </ScrollAnimation>
           <p className="text-gray-300">
             Saatte 1.500 kg yayma kapasitesine sahiptir. DJI AGRAS T50’nin yeni
             yayıcı ve spiral kanallı eğirme diski, yayma verimliliğini ve
@@ -388,9 +465,11 @@ export default function DJIAgrasT50Page() {
       {/* Güvenilirlik, Dayanıklılık ve Güvenlik */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Güvenilirlik, dayanıklılık ve güvenlik açısından test edildi.
-          </h2>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Güvenilirlik, dayanıklılık ve güvenlik açısından test edildi.
+            </h2>
+          </ScrollAnimation>
           <p className="text-gray-300">
             Püskürtme ve yayma işlemleri sık ve yoğun bir şekilde
             gerçekleştirilir ve karmaşık ortamlarda kullanılır. Drone, yüzlerce
@@ -1218,28 +1297,54 @@ export default function DJIAgrasT50Page() {
       {/* CTA Section */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            DJI Agras T50 ile Tarımsal Verimliliğinizi Artırın
-          </h2>
-          <p className="text-gray-300 mb-8">
-            Profesyonel tarımsal ilaçlama ve yayma çözümleri için bizimle
-            iletişime geçin. Uzman ekibimiz size en uygun çözümü sunmak için
-            hazır.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Hemen Teklif Alın
-            </Link>
-            <Link
-              href="/urunler/dji-turkiye-enterprise"
-              className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Tüm DJI Ürünleri
-            </Link>
-          </div>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Bisavunma Güvencesiyle DJI Agras T50
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              Profesyonel tarımsal ilaçlama ve yayma çözümleri için bizimle
+              iletişime geçin. Uzman ekibimiz size en uygun çözümü sunmak için
+              hazır.
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer
+            className="flex flex-wrap gap-4 justify-center"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Hemen Teklif Alın
+              </Link>
+            </StaggerItem>
+
+            <StaggerItem>
+              <Link
+                href="/urunler/dji-turkiye-enterprise"
+                className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Tüm DJI Enterprise Ürünleri
+              </Link>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <ScrollAnimation direction="up" delay={0.6}>
+            <div className="mt-8 p-6 bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl">
+              <p className="text-gray-300">
+                <span className="text-green-400 font-semibold">
+                  Bisavunma güvencesi
+                </span>{" "}
+                ile profesyonel destek, teknik servis ve eğitim hizmetlerinden
+                faydalanın.
+              </p>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
     </div>

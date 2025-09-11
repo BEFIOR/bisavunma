@@ -12,6 +12,16 @@ import {
   Eye,
   MapPin,
 } from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  ScaleAnimation,
+  HeroAnimation,
+  HeroStaggerContainer,
+  HeroScaleAnimation,
+} from "@/components/animations/ScrollAnimations";
+import { LazyVideo, VideoContainer } from "@/components/animations/LazyVideo";
 
 export const metadata = {
   title: "DJI Matrice 300 RTK | Endüstriyel Drone Platformu | Bisavunma",
@@ -28,57 +38,81 @@ export default function DJIMatrice300RTKPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 text-sm text-gray-400">
-                <Link
-                  href="/urunler/dji-turkiye-enterprise"
-                  className="hover:text-white transition-colors"
-                >
-                  DJI Enterprise
-                </Link>
-                <span>/</span>
-                <span className="text-white">DJI Matrice 300 RTK</span>
-              </div>
+              <HeroAnimation direction="fade" delay={0.2}>
+                <div className="inline-flex items-center gap-2 text-sm text-gray-400">
+                  <Link
+                    href="/urunler/dji-turkiye-enterprise"
+                    className="hover:text-white transition-colors"
+                  >
+                    DJI Enterprise
+                  </Link>
+                  <span>/</span>
+                  <span className="text-white">DJI Matrice 300 RTK</span>
+                </div>
+              </HeroAnimation>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                DJI Matrice 300 RTK
-              </h1>
+              <HeroAnimation direction="up" delay={0.4}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Bisavunma Güvencesiyle
+                  <br />
+                  <span className="text-sky-400">DJI Matrice 300 RTK</span>
+                </h1>
+              </HeroAnimation>
 
-              <div className="text-2xl font-bold text-sky-400 mb-4">
-                ÜSTÜN PERFORMANS
-              </div>
+              <HeroAnimation direction="up" delay={0.6}>
+                <div className="text-2xl font-bold text-sky-400 mb-4">
+                  ÜSTÜN PERFORMANS
+                </div>
+              </HeroAnimation>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
-                DJI Matrice 300 RTK endüstriyel drone, modern havacılık
-                sistemlerinden ilham alınarak tasarlanmıştır. Yeni bir
-                endüstriyel drone platformudur. 55 dakikaya kadar uçuş süresi
-                vardır. Gelişmiş AI yetenekleri, konumlandırma, 6 yönlü algılama
-                ve daha fazlasını sizlere sunar.
-              </p>
+              <HeroAnimation direction="up" delay={0.8}>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  DJI Matrice 300 RTK endüstriyel drone, modern havacılık
+                  sistemlerinden ilham alınarak tasarlanmıştır. Yeni bir
+                  endüstriyel drone platformudur. 55 dakikaya kadar uçuş süresi
+                  vardır. Gelişmiş AI yetenekleri, konumlandırma, 6 yönlü
+                  algılama ve daha fazlasını sizlere sunar.
+                </p>
+              </HeroAnimation>
 
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">55 dk</div>
-                  <div className="text-sm text-gray-400">
-                    Maksimum Uçuş Süresi
+              <HeroStaggerContainer
+                className="grid grid-cols-2 gap-4 pt-4"
+                staggerDelay={0.2}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-sky-400">55 dk</div>
+                    <div className="text-sm text-gray-400">
+                      Maksimum Uçuş Süresi
+                    </div>
                   </div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-sky-400">2.7 kg</div>
-                  <div className="text-sm text-gray-400">Maksimum Yük</div>
-                </div>
-              </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-sky-400">
+                      2.7 kg
+                    </div>
+                    <div className="text-sm text-gray-400">Maksimum Yük</div>
+                  </div>
+                </StaggerItem>
+              </HeroStaggerContainer>
 
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/iletisim"
-                  className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
-                >
-                  Teklif Al
-                </Link>
-              </div>
+              <HeroAnimation direction="up" delay={1.4}>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/iletisim"
+                    className="inline-flex items-center px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors"
+                  >
+                    Teklif Al
+                  </Link>
+                </div>
+              </HeroAnimation>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px]">
+            <HeroScaleAnimation
+              delay={0.8}
+              className="relative h-[400px] lg:h-[500px]"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-sky-600/20 to-purple-600/20 rounded-2xl blur-3xl" />
               <Image
                 src="/products/dji-enterprise/dji-matrice-300rtk/hero.jpg"
@@ -86,8 +120,9 @@ export default function DJIMatrice300RTKPage() {
                 width={500}
                 height={500}
                 className="object-contain relative z-10 rounded-2xl"
+                priority
               />
-            </div>
+            </HeroScaleAnimation>
           </div>
         </div>
       </section>
@@ -97,78 +132,93 @@ export default function DJIMatrice300RTKPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Geliştirilmiş İletim Sistemi
-              </h2>
-              <p className="text-gray-300">
-                Yeni OcuSync Enterprise, 15 km uzaklığa kadar iletim sağlar. Üç
-                kanallı 1080p videoyu destekler. 2,4 GHz ve 5,8 GHz arasında
-                gerçek zamanlı otomatik geçiş, yüksek parazitli ortamların
-                yakınında güvenilir uçuş sağlarken, AES-256 şifreleme güvenli
-                veri iletimi sunar.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Geliştirilmiş İletim Sistemi
+                </h2>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <Radio className="w-5 h-5 text-sky-400" />
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  Yeni OcuSync Enterprise, 15 km uzaklığa kadar iletim sağlar.
+                  Üç kanallı 1080p videoyu destekler. 2,4 GHz ve 5,8 GHz
+                  arasında gerçek zamanlı otomatik geçiş, yüksek parazitli
+                  ortamların yakınında güvenilir uçuş sağlarken, AES-256
+                  şifreleme güvenli veri iletimi sunar.
+                </p>
+              </ScrollAnimation>
+
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <Radio className="w-5 h-5 text-sky-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        OcuSync Enterprise
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        15 km uzaklığa kadar güvenilir iletim
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      OcuSync Enterprise
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      15 km uzaklığa kadar güvenilir iletim
-                    </p>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <Monitor className="w-5 h-5 text-sky-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        3 Kanallı 1080p Video
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Yüksek kaliteli çoklu video akışı
+                      </p>
+                    </div>
+                  </div>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-sky-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        AES-256 Şifreleme
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Güvenli veri iletimi ve koruma
+                      </p>
+                    </div>
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
+
+              <ScrollAnimation direction="left" delay={0.4}>
+                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                  <div className="text-lg font-bold text-sky-400">15 km</div>
+                  <div className="text-sm text-gray-400">
+                    Maksimum İletim Mesafesi
                   </div>
                 </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <Monitor className="w-5 h-5 text-sky-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      3 Kanallı 1080p Video
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Yüksek kaliteli çoklu video akışı
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <Shield className="w-5 h-5 text-sky-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      AES-256 Şifreleme
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Güvenli veri iletimi ve koruma
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                <div className="text-lg font-bold text-sky-400">15 km</div>
-                <div className="text-sm text-gray-400">
-                  Maksimum İletim Mesafesi
-                </div>
-              </div>
+              </ScrollAnimation>
             </div>
 
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-600/10 to-cyan-600/10" />
-              <Image
-                src="/products/dji-enterprise/dji-matrice-300rtk/gelistirilmis.jpg"
-                alt="DJI Matrice 300 RTK İletim"
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
+            <ScrollAnimation direction="right">
+              <div className="relative h-[400px] rounded-xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-600/10 to-cyan-600/10" />
+                <Image
+                  src="/products/dji-enterprise/dji-matrice-300rtk/gelistirilmis.jpg"
+                  alt="DJI Matrice 300 RTK İletim"
+                  fill
+                  className="object-cover rounded-xl"
+                />
+              </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -177,45 +227,69 @@ export default function DJIMatrice300RTKPage() {
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
-              <Image
-                src="/products/dji-enterprise/dji-matrice-300rtk/coklu-yuk.jpg"
-                alt="DJI Matrice 300 RTK Performans"
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
+            <ScrollAnimation direction="left">
+              <div className="relative h-[400px] rounded-xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
+                <Image
+                  src="/products/dji-enterprise/dji-matrice-300rtk/coklu-yuk.jpg"
+                  alt="DJI Matrice 300 RTK Performans"
+                  fill
+                  className="object-cover rounded-xl"
+                />
+              </div>
+            </ScrollAnimation>
 
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Gelişmiş Uçuş Performansı
-              </h2>
-              <p className="text-gray-300">
-                İyileştirilmiş ve geliştirilmiş gövde sistemi tasarımı, zorlu
-                koşullarda dahi size daha verimli ve istikrarlı bir uçuş
-                sağlayacaktır. Modern havacılık sistemlerinden ilham alan
-                tasarım ile üstün performans sunar.
-              </p>
+              <ScrollAnimation direction="right">
+                <h2 className="text-3xl font-bold text-white">
+                  Gelişmiş Uçuş Performansı
+                </h2>
+              </ScrollAnimation>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-green-400">23 m/s</div>
-                  <div className="text-sm text-gray-400">Maksimum Hız</div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-green-400">15 m/s</div>
-                  <div className="text-sm text-gray-400">Rüzgar Direnci</div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-green-400">7000 m</div>
-                  <div className="text-sm text-gray-400">Maksimum İrtifa</div>
-                </div>
-                <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
-                  <div className="text-lg font-bold text-green-400">IP45</div>
-                  <div className="text-sm text-gray-400">Koruma Derecesi</div>
-                </div>
-              </div>
+              <ScrollAnimation direction="right" delay={0.2}>
+                <p className="text-gray-300">
+                  İyileştirilmiş ve geliştirilmiş gövde sistemi tasarımı, zorlu
+                  koşullarda dahi size daha verimli ve istikrarlı bir uçuş
+                  sağlayacaktır. Modern havacılık sistemlerinden ilham alan
+                  tasarım ile üstün performans sunar.
+                </p>
+              </ScrollAnimation>
+
+              <StaggerContainer
+                className="grid grid-cols-2 gap-4"
+                staggerDelay={0.1}
+              >
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-green-400">
+                      23 m/s
+                    </div>
+                    <div className="text-sm text-gray-400">Maksimum Hız</div>
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-green-400">
+                      15 m/s
+                    </div>
+                    <div className="text-sm text-gray-400">Rüzgar Direnci</div>
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-green-400">
+                      7000 m
+                    </div>
+                    <div className="text-sm text-gray-400">Maksimum İrtifa</div>
+                  </div>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-4">
+                    <div className="text-lg font-bold text-green-400">IP45</div>
+                    <div className="text-sm text-gray-400">Koruma Derecesi</div>
+                  </div>
+                </StaggerItem>
+              </StaggerContainer>
             </div>
           </div>
         </div>
@@ -224,78 +298,104 @@ export default function DJIMatrice300RTKPage() {
       {/* Çoklu Yük Yapılandırmaları */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Çoklu Yük Yapılandırmaları
-          </h2>
-          <p className="text-gray-300 mb-12 text-center max-w-4xl mx-auto">
-            M300 RTK endüstriyel drone'u, görev gereksinimlerinize uyacak
-            şekilde yapılandırabilirsiniz. Max. 2,7 kg taşıma kapasitesi ile
-            aynı anda 3 adede kadar faydalı yük monte edebilirsiniz.
-          </p>
+          <ScrollAnimation direction="up" className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white">
+              Çoklu Yük Yapılandırmaları
+            </h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <div className="flex justify-center mb-3">
-                <Camera className="w-8 h-8 text-sky-400" />
+          <ScrollAnimation
+            direction="up"
+            delay={0.2}
+            className="text-center mb-12"
+          >
+            <p className="text-gray-300 max-w-4xl mx-auto">
+              M300 RTK endüstriyel drone'u, görev gereksinimlerinize uyacak
+              şekilde yapılandırabilirsiniz. Max. 2,7 kg taşıma kapasitesi ile
+              aynı anda 3 adede kadar faydalı yük monte edebilirsiniz.
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <div className="flex justify-center mb-3">
+                  <Camera className="w-8 h-8 text-sky-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Tekli Aşağı Gimbal
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Tek kamera ile standart operasyonlar
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Tekli Aşağı Gimbal
-              </h3>
-              <p className="text-sm text-gray-400">
-                Tek kamera ile standart operasyonlar
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <div className="flex justify-center mb-3">
-                <Camera className="w-8 h-8 text-green-400" />
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <div className="flex justify-center mb-3">
+                  <Camera className="w-8 h-8 text-green-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Çift Aşağı Gimbal
+                </h3>
+                <p className="text-sm text-gray-400">
+                  İki kamera ile gelişmiş görüntüleme
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Çift Aşağı Gimbal
-              </h3>
-              <p className="text-sm text-gray-400">
-                İki kamera ile gelişmiş görüntüleme
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <div className="flex justify-center mb-3">
-                <Camera className="w-8 h-8 text-purple-400" />
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <div className="flex justify-center mb-3">
+                  <Camera className="w-8 h-8 text-purple-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Tek Yukarı Gimbal
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Üst görüş açısı için özel kamera
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Tek Yukarı Gimbal
-              </h3>
-              <p className="text-sm text-gray-400">
-                Üst görüş açısı için özel kamera
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <div className="flex justify-center mb-3">
-                <Settings className="w-8 h-8 text-orange-400" />
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <div className="flex justify-center mb-3">
+                  <Settings className="w-8 h-8 text-orange-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Yukarı ve Aşağı Gimbal
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Çift yönlü görüntüleme sistemi
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Yukarı ve Aşağı Gimbal
-              </h3>
-              <p className="text-sm text-gray-400">
-                Çift yönlü görüntüleme sistemi
-              </p>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <div className="flex justify-center mb-3">
-                <Eye className="w-8 h-8 text-red-400" />
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <div className="flex justify-center mb-3">
+                  <Eye className="w-8 h-8 text-red-400" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  Üçlü Gimbal
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Maksimum görüntüleme kapasitesi
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Üçlü Gimbal
-              </h3>
-              <p className="text-sm text-gray-400">
-                Maksimum görüntüleme kapasitesi
-              </p>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
 
-          <div className="mt-12 text-center">
+          <ScrollAnimation
+            direction="up"
+            delay={0.4}
+            className="mt-12 text-center"
+          >
             <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-lg p-6 inline-block">
               <div className="text-2xl font-bold text-purple-400 mb-2">
                 2.7 kg
@@ -304,7 +404,7 @@ export default function DJIMatrice300RTKPage() {
                 Maksimum Tek Gimbal Yükü: 930g
               </div>
             </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </section>
 
@@ -313,70 +413,83 @@ export default function DJIMatrice300RTKPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">
-                Akıllı Canlı Görev Kaydı
-              </h2>
-              <p className="text-gray-300">
-                Gelecekteki otomatik denetimleriniz için örnek görev dosyaları
-                oluşturmak üzere gimbal oryantasyonu, drone hareketi, fotoğraf
-                çekimi ve yakınlaştırma düzeyi gibi görev eylemlerini
-                kaydedecektir.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">
+                  Akıllı Canlı Görev Kaydı
+                </h2>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                    <Video className="w-5 h-5 text-blue-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Görev Kaydı
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Gimbal oryantasyonu ve drone hareketi kaydı
-                    </p>
-                  </div>
-                </div>
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  Gelecekteki otomatik denetimleriniz için örnek görev dosyaları
+                  oluşturmak üzere gimbal oryantasyonu, drone hareketi, fotoğraf
+                  çekimi ve yakınlaştırma düzeyi gibi görev eylemlerini
+                  kaydedecektir.
+                </p>
+              </ScrollAnimation>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                    <Camera className="w-5 h-5 text-blue-400" />
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                      <Video className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Görev Kaydı
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Gimbal oryantasyonu ve drone hareketi kaydı
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Fotoğraf Çekimi
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Otomatik fotoğraf çekimi ve yakınlaştırma kaydı
-                    </p>
-                  </div>
-                </div>
+                </StaggerItem>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
-                    <Bot className="w-5 h-5 text-blue-400" />
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                      <Camera className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Fotoğraf Çekimi
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Otomatik fotoğraf çekimi ve yakınlaştırma kaydı
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Otomatik Denetim
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Gelecekteki otomatik denetimler için örnek dosyalar
-                    </p>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center">
+                      <Bot className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Otomatik Denetim
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Gelecekteki otomatik denetimler için örnek dosyalar
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </StaggerItem>
+              </StaggerContainer>
+            </div>
+
+            <ScrollAnimation direction="right">
+              <div className="relative h-[400px] rounded-xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10" />
+                <Image
+                  src="/products/dji-enterprise/dji-matrice-300rtk/akilli.jpg"
+                  alt="DJI Matrice 300 RTK Görev Kaydı"
+                  fill
+                  className="object-cover rounded-xl"
+                />
               </div>
-            </div>
-
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10" />
-              <Image
-                src="/products/dji-enterprise/dji-matrice-300rtk/akilli.jpg"
-                alt="DJI Matrice 300 RTK Görev Kaydı"
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -386,158 +499,198 @@ export default function DJIMatrice300RTKPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-white">Uçuş Süresi</h2>
-              <p className="text-gray-300">
-                Faydalı yük yapılandırmasına göre M300 RTK'nızın uçuş süresini
-                tahmin edebilirsiniz. Farklı gimbal konfigürasyonları ile
-                optimize edilmiş performans elde edin. Bu grafik size hangi yük
-                ile ne kadar uçuş süresi elde edebileceğinizi gösterir.
-              </p>
+              <ScrollAnimation direction="left">
+                <h2 className="text-3xl font-bold text-white">Uçuş Süresi</h2>
+              </ScrollAnimation>
 
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-sky-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Yük Bazlı Hesaplama
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Gimbal ağırlığına göre otomatik uçuş süresi tahmini
-                    </p>
-                  </div>
-                </div>
+              <ScrollAnimation direction="left" delay={0.2}>
+                <p className="text-gray-300">
+                  Faydalı yük yapılandırmasına göre M300 RTK'nızın uçuş süresini
+                  tahmin edebilirsiniz. Farklı gimbal konfigürasyonları ile
+                  optimize edilmiş performans elde edin. Bu grafik size hangi
+                  yük ile ne kadar uçuş süresi elde edebileceğinizi gösterir.
+                </p>
+              </ScrollAnimation>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
-                    <Settings className="w-5 h-5 text-sky-400" />
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-sky-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Yük Bazlı Hesaplama
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Gimbal ağırlığına göre otomatik uçuş süresi tahmini
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">
-                      Optimize Edilmiş Performans
-                    </h4>
-                    <p className="text-sm text-gray-400">
-                      Farklı konfigürasyonlar ile maksimum verimlilik
-                    </p>
+                </StaggerItem>
+
+                <StaggerItem>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 bg-sky-600/20 rounded-lg flex items-center justify-center">
+                      <Settings className="w-5 h-5 text-sky-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">
+                        Optimize Edilmiş Performans
+                      </h4>
+                      <p className="text-sm text-gray-400">
+                        Farklı konfigürasyonlar ile maksimum verimlilik
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </StaggerItem>
+              </StaggerContainer>
+            </div>
+
+            <ScrollAnimation direction="right">
+              <div className="relative h-[400px] rounded-xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/10 to-orange-600/10" />
+                <Image
+                  src="/products/dji-enterprise/dji-matrice-300rtk/ucus-suresi.png"
+                  alt="DJI Matrice 300 RTK Uçuş Süresi Grafiği"
+                  fill
+                  className="object-contain rounded-xl"
+                />
               </div>
-            </div>
-
-            <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/10 to-orange-600/10" />
-              <Image
-                src="/products/dji-enterprise/dji-matrice-300rtk/ucus-suresi.png"
-                alt="DJI Matrice 300 RTK Uçuş Süresi Grafiği"
-                fill
-                className="object-contain rounded-xl"
-              />
-            </div>
+            </ScrollAnimation>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <div className="text-2xl font-bold text-sky-400 mb-2">55 dk</div>
-              <div className="text-white font-semibold mb-2">Yük Olmadan</div>
-              <div className="text-sm text-gray-400">
-                Maksimum uçuş süresi kapasitesi
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <div className="text-2xl font-bold text-sky-400 mb-2">
+                  55 dk
+                </div>
+                <div className="text-white font-semibold mb-2">Yük Olmadan</div>
+                <div className="text-sm text-gray-400">
+                  Maksimum uçuş süresi kapasitesi
+                </div>
               </div>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <div className="text-2xl font-bold text-green-400 mb-2">
-                45+ dk
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <div className="text-2xl font-bold text-green-400 mb-2">
+                  45+ dk
+                </div>
+                <div className="text-white font-semibold mb-2">Tek Gimbal</div>
+                <div className="text-sm text-gray-400">
+                  Tek gimbal ile uzun süreli operasyon
+                </div>
               </div>
-              <div className="text-white font-semibold mb-2">Tek Gimbal</div>
-              <div className="text-sm text-gray-400">
-                Tek gimbal ile uzun süreli operasyon
-              </div>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <div className="text-2xl font-bold text-purple-400 mb-2">
-                35+ dk
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <div className="text-2xl font-bold text-purple-400 mb-2">
+                  35+ dk
+                </div>
+                <div className="text-white font-semibold mb-2">Çift Gimbal</div>
+                <div className="text-sm text-gray-400">
+                  İki gimbal ile gelişmiş görüntüleme
+                </div>
               </div>
-              <div className="text-white font-semibold mb-2">Çift Gimbal</div>
-              <div className="text-sm text-gray-400">
-                İki gimbal ile gelişmiş görüntüleme
-              </div>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
-              <div className="text-2xl font-bold text-orange-400 mb-2">
-                25+ dk
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 text-center">
+                <div className="text-2xl font-bold text-orange-400 mb-2">
+                  25+ dk
+                </div>
+                <div className="text-white font-semibold mb-2">Üçlü Gimbal</div>
+                <div className="text-sm text-gray-400">
+                  Maksimum yük ile profesyonel operasyon
+                </div>
               </div>
-              <div className="text-white font-semibold mb-2">Üçlü Gimbal</div>
-              <div className="text-sm text-gray-400">
-                Maksimum yük ile profesyonel operasyon
-              </div>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* DJI Terra */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">DJI TERRA</h2>
-          <p className="text-gray-300 mb-8">
-            DJI Terra is a 3D modeling software based on photogrammetry
-            technology. It supports the accurate and efficient reconstruction of
-            various data and visible light using DJI LiDAR. DJI Terra is an
-            ideal option for DJI Enterprise drones and accessories.
-          </p>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">DJI TERRA</h2>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              DJI Terra is a 3D modeling software based on photogrammetry
+              technology. It supports the accurate and efficient reconstruction
+              of various data and visible light using DJI LiDAR. DJI Terra is an
+              ideal option for DJI Enterprise drones and accessories.
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  3D Modelleme
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Realistic 3D models can be created in three different
+                  resolutions (high, medium, and low) with DJI Terra. Water
+                  surfaces are automatically optimized using artificial
+                  intelligence technology.
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">LiDAR</h3>
+                <p className="text-sm text-gray-400">
+                  With just a single click, DJI Terra facilitates the
+                  high-accuracy processing of point cloud data captured by
+                  Zenmuse LiDAR.
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Multispektral
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Multispectral data obtained from DJI Mavic 3 Multispectral and
+                  P4 Multispectral can be utilized to provide insights into
+                  plant growth and health.
+                </p>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <ScrollAnimation direction="up" delay={0.4}>
             <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                3D Modelleme
+              <h3 className="text-xl font-semibold text-white mb-4">
+                Uygulama Alanları
               </h3>
-              <p className="text-sm text-gray-400">
-                Realistic 3D models can be created in three different
-                resolutions (high, medium, and low) with DJI Terra. Water
-                surfaces are automatically optimized using artificial
-                intelligence technology.
-              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-400">
+                <div>• Soil analysis</div>
+                <div>• Mapping</div>
+                <div>• Energy transmission</div>
+                <div>• Emergency services</div>
+                <div>• Construction</div>
+                <div>• Transportation</div>
+                <div>• Agriculture</div>
+                <div>• Accident scenes</div>
+              </div>
             </div>
-
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">LiDAR</h3>
-              <p className="text-sm text-gray-400">
-                With just a single click, DJI Terra facilitates the
-                high-accuracy processing of point cloud data captured by Zenmuse
-                LiDAR.
-              </p>
-            </div>
-
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Multispektral
-              </h3>
-              <p className="text-sm text-gray-400">
-                Multispectral data obtained from DJI Mavic 3 Multispectral and
-                P4 Multispectral can be utilized to provide insights into plant
-                growth and health.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-white mb-4">
-              Uygulama Alanları
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-400">
-              <div>• Soil analysis</div>
-              <div>• Mapping</div>
-              <div>• Energy transmission</div>
-              <div>• Emergency services</div>
-              <div>• Construction</div>
-              <div>• Transportation</div>
-              <div>• Agriculture</div>
-              <div>• Accident scenes</div>
-            </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </section>
 
@@ -771,29 +924,55 @@ export default function DJIMatrice300RTKPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            DJI Matrice 300 RTK ile Endüstriyel Çözümler
-          </h2>
-          <p className="text-gray-300 mb-8">
-            Modern havacılık sistemlerinden ilham alan tasarım, gelişmiş AI
-            yetenekleri ve çoklu gimbal desteği ile endüstriyel
-            operasyonlarınızı yeni bir seviyeye taşıyın. Uzman ekibimiz size en
-            uygun çözümü sunmak için hazır.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Hemen Teklif Alın
-            </Link>
-            <Link
-              href="/urunler/dji-turkiye-enterprise"
-              className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
-            >
-              Tüm DJI Ürünleri
-            </Link>
-          </div>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Bisavunma Güvencesiyle DJI Matrice 300 RTK
+            </h2>
+          </ScrollAnimation>
+
+          <ScrollAnimation direction="up" delay={0.2}>
+            <p className="text-gray-300 mb-8">
+              Modern havacılık sistemlerinden ilham alan tasarım, gelişmiş AI
+              yetenekleri ve çoklu gimbal desteği ile endüstriyel
+              operasyonlarınızı yeni bir seviyeye taşıyın. Uzman ekibimiz size
+              en uygun çözümü sunmak için hazır.
+            </p>
+          </ScrollAnimation>
+
+          <StaggerContainer
+            className="flex flex-wrap gap-4 justify-center"
+            staggerDelay={0.1}
+          >
+            <StaggerItem>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Hemen Teklif Alın
+              </Link>
+            </StaggerItem>
+
+            <StaggerItem>
+              <Link
+                href="/urunler/dji-turkiye-enterprise"
+                className="inline-flex items-center px-8 py-4 border border-gray-700 hover:border-gray-600 text-white font-medium rounded-lg transition-colors text-lg"
+              >
+                Tüm DJI Enterprise Ürünleri
+              </Link>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <ScrollAnimation direction="up" delay={0.6}>
+            <div className="mt-8 p-6 bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl">
+              <p className="text-gray-300">
+                <span className="text-sky-400 font-semibold">
+                  Bisavunma güvencesi
+                </span>{" "}
+                ile profesyonel destek, teknik servis ve eğitim hizmetlerinden
+                faydalanın.
+              </p>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
     </div>

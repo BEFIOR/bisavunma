@@ -71,6 +71,7 @@ function Hero({ title, image }: { title: string; image: string | null }) {
       )}
       <div className="relative max-w-6xl mx-auto px-4 pt-28 pb-10">
         <div className="flex items-center gap-3">
+          \{" "}
           <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             {title}
           </h1>
