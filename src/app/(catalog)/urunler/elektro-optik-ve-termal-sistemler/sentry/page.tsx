@@ -1,25 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Eye,
-  Shield,
-  Zap,
-  Target,
-  Camera,
-  Wifi,
-  Battery,
-  Settings,
-  Anchor,
-  Compass,
-  Search,
-} from "lucide-react";
+import { Eye, Shield, Zap, Camera } from "lucide-react";
 import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
   HeroAnimation,
   HeroStaggerContainer,
-  HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
 
 export const metadata = {
@@ -734,8 +721,8 @@ export default function SentryPage() {
               SENTRY ile Çoklu Sensörlü Güvenlik
             </h2>
             <p className="text-gray-400 text-lg mb-8">
-              SENTRY'nin çoklu sensörlü tasarımı ile tehditleri tespit edin,
-              tanıyın ve etkisiz hale getirin. Detaylı bilgi için bizimle
+              SENTRY&apos;nin çoklu sensörlü tasarımı ile tehditleri tespit
+              edin, tanıyın ve etkisiz hale getirin. Detaylı bilgi için bizimle
               iletişime geçin.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

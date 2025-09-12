@@ -6,8 +6,6 @@ import {
   Zap,
   Target,
   Camera,
-  Wifi,
-  Battery,
   Settings,
   Anchor,
   Compass,
@@ -19,7 +17,6 @@ import {
   StaggerItem,
   HeroAnimation,
   HeroStaggerContainer,
-  HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
 
 export const metadata = {
@@ -236,7 +233,7 @@ export default function VegaPage() {
                       20–1225mm 61X Long-Range Visible/NIR 8MP Camera
                     </p>
                     <p className="text-xs text-gray-500">
-                      8MP 1/1.8" sensor, 4K resolution, 21.7° to 0.36° FOV
+                      8MP 1/1.8&quot; sensor, 4K resolution, 21.7° to 0.36° FOV
                     </p>
                   </div>
                   <div className="border-l-2 border-sky-400 pl-3">

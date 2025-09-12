@@ -102,6 +102,11 @@ export function LazyVideo({
       initial={{ opacity: 0 }}
       animate={{ opacity: isLoaded ? 1 : 0 }}
       transition={{ duration: 0.3 }}
+      style={{
+        minHeight: "inherit",
+        width: "100%",
+        height: "100%",
+      }}
     >
       <video
         ref={videoRef}
@@ -115,6 +120,14 @@ export function LazyVideo({
         onLoadedData={handleLoadedData}
         onError={() => {
           console.warn(`Video yüklenemedi: ${src}`);
+        }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
         }}
       />
 

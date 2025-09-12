@@ -6,8 +6,6 @@ import {
   Zap,
   Target,
   Camera,
-  Wifi,
-  Battery,
   Settings,
   Anchor,
 } from "lucide-react";
@@ -16,8 +14,6 @@ import {
   StaggerContainer,
   StaggerItem,
   HeroAnimation,
-  HeroStaggerContainer,
-  HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
 
 export const metadata = {
@@ -125,7 +121,7 @@ export default function RoguePage() {
                   </h3>
                 </div>
                 <p className="text-gray-400">
-                  2MP'den 8MP (4K)'ya kadar çözünürlük seçenekleri
+                  2MP&apos;den 8MP (4K)&apos;ya kadar çözünürlük seçenekleri
                 </p>
               </div>
             </StaggerItem>
@@ -484,7 +480,7 @@ export default function RoguePage() {
               Kullanım Alanları
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              ROGUE'un çok yönlü tasarımı sayesinde geniş bir uygulama
+              ROGUE&apos;un çok yönlü tasarımı sayesinde geniş bir uygulama
               yelpazesinde kullanılabilir
             </p>
           </ScrollAnimation>

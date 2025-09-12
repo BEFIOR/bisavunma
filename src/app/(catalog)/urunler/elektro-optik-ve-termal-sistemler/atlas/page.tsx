@@ -1,23 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Eye,
-  Shield,
-  Zap,
-  Target,
-  Camera,
-  Wifi,
-  Battery,
-  Settings,
-  Anchor,
-} from "lucide-react";
+import { Eye, Shield, Camera, Anchor } from "lucide-react";
 import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
   HeroAnimation,
-  HeroStaggerContainer,
-  HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
 
 export const metadata = {
@@ -126,7 +114,7 @@ export default function AtlasPage() {
                   </h3>
                 </div>
                 <p className="text-gray-400">
-                  2MP'den 8MP (4K)'ya kadar çözünürlük seçenekleri
+                  2MP&apos;den 8MP (4K)&apos;ya kadar çözünürlük seçenekleri
                 </p>
               </div>
             </StaggerItem>

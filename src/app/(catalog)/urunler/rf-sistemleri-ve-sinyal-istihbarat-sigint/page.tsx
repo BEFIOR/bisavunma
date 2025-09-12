@@ -52,7 +52,7 @@ export default function RfSystemsPage() {
           </ScrollAnimation>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {rfSystems.map((product, index) => (
+            {rfSystems.map((product) => (
               <StaggerItem key={product.slug}>
                 <Link
                   href={`/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint/${product.slug}`}
@@ -122,8 +122,8 @@ export default function RfSystemsPage() {
                   Geniş Frekans Aralığı
                 </h3>
                 <p className="text-gray-400">
-                  100 MHz'den 40 GHz'e kadar geniş frekans aralığında spektrum
-                  analizi
+                  100 MHz&apos;den 40 GHz&apos;e kadar geniş frekans aralığında
+                  spektrum analizi
                 </p>
               </div>
             </StaggerItem>

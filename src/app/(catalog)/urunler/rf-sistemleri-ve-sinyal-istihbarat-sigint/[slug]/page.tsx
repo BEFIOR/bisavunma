@@ -6,8 +6,6 @@ import {
   StaggerContainer,
   StaggerItem,
   HeroAnimation,
-  HeroStaggerContainer,
-  HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
 import { Radio, ArrowLeft, CheckCircle } from "lucide-react";
 import { getRfSystemBySlug } from "@/data/rf-systems";
@@ -46,8 +44,6 @@ export default async function ProductInRf({
   const { slug } = await params;
   const product = await getRfSystemBySlug(slug);
   if (!product) notFound();
-
-  const category = "rf-sistemleri-ve-sinyal-istihbarat-sigint";
 
   return (
     <div className="min-h-screen bg-black text-gray-200">

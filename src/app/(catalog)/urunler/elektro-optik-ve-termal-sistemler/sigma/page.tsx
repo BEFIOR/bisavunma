@@ -1,26 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Eye,
-  Shield,
-  Zap,
-  Target,
-  Camera,
-  Wifi,
-  Battery,
-  Settings,
-  Anchor,
-  Compass,
-  Search,
-  Telescope,
-} from "lucide-react";
+import { Eye, Shield, Zap, Telescope } from "lucide-react";
 import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
   HeroAnimation,
   HeroStaggerContainer,
-  HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
 
 export const metadata = {
@@ -662,7 +648,7 @@ export default function SigmaPage() {
               SIGMA ile Uzun Menzilli Güvenlik
             </h2>
             <p className="text-gray-400 text-lg mb-8">
-              SIGMA'nın uzun menzilli tasarımı ile tehditleri tespit edin,
+              SIGMA&apos;nın uzun menzilli tasarımı ile tehditleri tespit edin,
               tanıyın ve kimliklendirin. Detaylı bilgi için bizimle iletişime
               geçin.
             </p>

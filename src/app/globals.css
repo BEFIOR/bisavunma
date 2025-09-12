@@ -1,5 +1,121 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Font Variables */
+:root {
+  --font-poppins-thin: 'Poppins', sans-serif;
+  --font-poppins-extralight: 'Poppins', sans-serif;
+  --font-poppins-light: 'Poppins', sans-serif;
+  --font-poppins-regular: 'Poppins', sans-serif;
+  --font-poppins-medium: 'Poppins', sans-serif;
+  --font-poppins-semibold: 'Poppins', sans-serif;
+  --font-poppins-bold: 'Poppins', sans-serif;
+  --font-poppins-extrabold: 'Poppins', sans-serif;
+  --font-poppins-black: 'Poppins', sans-serif;
+  
+  --font-inter-thin: 'Inter', sans-serif;
+  --font-inter-extralight: 'Inter', sans-serif;
+  --font-inter-light: 'Inter', sans-serif;
+  --font-inter-regular: 'Inter', sans-serif;
+  --font-inter-medium: 'Inter', sans-serif;
+  --font-inter-semibold: 'Inter', sans-serif;
+  --font-inter-bold: 'Inter', sans-serif;
+  --font-inter-extrabold: 'Inter', sans-serif;
+  --font-inter-black: 'Inter', sans-serif;
+}
+
+/* Poppins Font Utility Classes */
+.font-poppins-thin {
+  font-family: var(--font-poppins-thin);
+  font-weight: 100;
+}
+
+.font-poppins-extralight {
+  font-family: var(--font-poppins-extralight);
+  font-weight: 200;
+}
+
+.font-poppins-light {
+  font-family: var(--font-poppins-light);
+  font-weight: 300;
+}
+
+.font-poppins-regular {
+  font-family: var(--font-poppins-regular);
+  font-weight: 400;
+}
+
+.font-poppins-medium {
+  font-family: var(--font-poppins-medium);
+  font-weight: 500;
+}
+
+.font-poppins-semibold {
+  font-family: var(--font-poppins-semibold);
+  font-weight: 600;
+}
+
+.font-poppins-bold {
+  font-family: var(--font-poppins-bold);
+  font-weight: 700;
+}
+
+.font-poppins-extrabold {
+  font-family: var(--font-poppins-extrabold);
+  font-weight: 800;
+}
+
+.font-poppins-black {
+  font-family: var(--font-poppins-black);
+  font-weight: 900;
+}
+
+/* Inter Font Utility Classes */
+.font-inter-thin {
+  font-family: var(--font-inter-thin);
+  font-weight: 100;
+}
+
+.font-inter-extralight {
+  font-family: var(--font-inter-extralight);
+  font-weight: 200;
+}
+
+.font-inter-light {
+  font-family: var(--font-inter-light);
+  font-weight: 300;
+}
+
+.font-inter-regular {
+  font-family: var(--font-inter-regular);
+  font-weight: 400;
+}
+
+.font-inter-medium {
+  font-family: var(--font-inter-medium);
+  font-weight: 500;
+}
+
+.font-inter-semibold {
+  font-family: var(--font-inter-semibold);
+  font-weight: 600;
+}
+
+.font-inter-bold {
+  font-family: var(--font-inter-bold);
+  font-weight: 700;
+}
+
+.font-inter-extrabold {
+  font-family: var(--font-inter-extrabold);
+  font-weight: 800;
+}
+
+.font-inter-black {
+  font-family: var(--font-inter-black);
+  font-weight: 900;
+}
 
 /* Custom keyframes and animation used by FlowingMenu */
 html, body, #__next {
@@ -11,9 +127,18 @@ html, body, #__next {
   from { transform: translateX(0%); }
   to { transform: translateX(-50%); }
 }
+
+@keyframes shine {
+  0% { background-position: 100%; }
+  100% { background-position: -100%; }
+}
 html {
   background-color: #000;
 }
 .animate-marquee {
   animation: marquee 15s linear infinite;
+}
+
+.animate-shine {
+  animation: shine 5s linear infinite;
 }

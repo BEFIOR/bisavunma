@@ -1,24 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Eye,
-  Shield,
-  Zap,
-  Target,
-  Camera,
-  Wifi,
-  Battery,
-  Settings,
-  Anchor,
-  Compass,
-} from "lucide-react";
+import { Eye, Shield, Camera, Compass } from "lucide-react";
 import {
   ScrollAnimation,
   StaggerContainer,
   StaggerItem,
   HeroAnimation,
-  HeroStaggerContainer,
-  HeroScaleAnimation,
 } from "@/components/animations/ScrollAnimations";
 
 export const metadata = {
