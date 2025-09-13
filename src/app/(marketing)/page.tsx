@@ -480,7 +480,7 @@ export default function Home() {
                 <div className="relative h-full p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition overflow-hidden">
                   <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity" />
                   <p className="text-gray-700 dark:text-gray-300 italic mb-4 font-inter-regular">
-                    "{t.quote}"
+                    &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="text-sm text-gray-500 dark:text-gray-400 font-inter-regular">
                     <span className="font-poppins-semibold text-gray-900 dark:text-white">

@@ -5,6 +5,7 @@ import {
   getCategoryBySlug,
   listCategories,
 } from "@/server/repositories/categories";
+import { WobbleCard } from "@/components/ui/wobble-card";
 
 export const revalidate = 60;
 
@@ -55,12 +56,20 @@ export default async function CategoryPage({
             <Link
               key={p.slug}
               href={`/urunler/${category}/${p.slug}`}
-              className="rounded-lg border border-neutral-800 p-4 hover:bg-neutral-900 transition"
+              className="group block"
             >
-              <h3 className="text-lg font-semibold text-white">{p.title}</h3>
-              <p className="text-sm text-gray-400 line-clamp-2 mt-1">
-                {p.description}
-              </p>
+              <WobbleCard
+                containerClassName="h-full bg-neutral-900 border border-neutral-800"
+                className="p-4 h-full flex flex-col"
+              >
+                <h3 className="text-lg font-semibold text-white">{p.title}</h3>
+                <p className="text-sm text-gray-400 line-clamp-2 mt-1 flex-1">
+                  {p.description}
+                </p>
+                <div className="mt-3 text-sky-400 group-hover:text-sky-300 font-medium">
+                  İncele →
+                </div>
+              </WobbleCard>
             </Link>
           ))}
           {products.length === 0 && (

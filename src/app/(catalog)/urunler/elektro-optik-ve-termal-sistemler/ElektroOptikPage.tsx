@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import SpotlightCard from "@/components/SpotlightCard";
+import { WobbleCard } from "@/components/ui/wobble-card";
 import { ChevronRight, Filter } from "lucide-react";
 
 interface Product {
@@ -137,7 +137,10 @@ export default function ElektroOptikPage({
                       href={href}
                       className="group block"
                     >
-                      <SpotlightCard className="h-full p-4 transition-transform duration-200 group-hover:-translate-y-0.5">
+                      <WobbleCard
+                        containerClassName="h-full bg-neutral-900 border border-neutral-600"
+                        className="p-4 h-full flex flex-col"
+                      >
                         <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-neutral-800 flex items-center justify-center">
                           <Image
                             src={product.image || "/logo.webp"}
@@ -147,7 +150,7 @@ export default function ElektroOptikPage({
                             className="object-contain transition-transform duration-300 group-hover:scale-[1.03] p-2"
                           />
                         </div>
-                        <div className="mt-4">
+                        <div className="mt-4 flex-1">
                           <h3 className="text-lg font-semibold text-white tracking-tight">
                             {product.title}
                           </h3>
@@ -170,7 +173,7 @@ export default function ElektroOptikPage({
                             </span>
                           )}
                         </div>
-                      </SpotlightCard>
+                      </WobbleCard>
                     </Link>
                   );
                 })}
