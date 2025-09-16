@@ -9,6 +9,7 @@ export interface RfSystem {
   title: string;
   description: string;
   image: string;
+  images?: string[];
   features: string[];
   section1: RfSystemSection;
   section2: RfSystemSection;
@@ -156,7 +157,7 @@ export const rfSystems: RfSystem[] = [
       title: "Dar Bant Odaklı Tasarım",
       content:
         "The RFeye 40-8 is a high-performance RF sensor with a 9 kHz – 8 GHz frequency range and a 40 MHz instantaneous bandwidth. The RFeye 40-8 provides operators with precise spectrum monitoring, geolocation, reporting, and advanced signal intercept capabilities by incorporating the latest superheterodyne receiver technology.",
-        image: "/products/rf-sistemleri/rfeye-node-40-8-section1.webp",
+      image: "/products/rf-sistemleri/rfeye-node-40-8-section1.webp",
     },
     section2: {
       title: "Yüksek Hassasiyet",
@@ -366,7 +367,12 @@ export const rfSystems: RfSystem[] = [
     slug: "integrated-drones",
     title: "Integrated Drones",
     description: "Entegre drone sistemleri",
-    image: "/products/rf-sistemleri/integrated-drones.jpg",
+    image: "/products/rf-sistemleri/integrated-drones-1.webp",
+    images: [
+      "/products/rf-sistemleri/integrated-drones-1.webp",
+      "/products/rf-sistemleri/integrated-drones-2.webp",
+      "/products/rf-sistemleri/integrated-drones-3.webp",
+    ],
     features: [
       "Drone entegrasyonu",
       "Havadan spektrum analizi",
@@ -397,7 +403,12 @@ export const rfSystems: RfSystem[] = [
     slug: "integrated-vehicles",
     title: "Integrated Vehicles",
     description: "Entegre araç sistemleri",
-    image: "/products/rf-sistemleri/integrated-vehicles.jpg",
+    image: "/products/rf-sistemleri/integrated-vehicles-1.webp",
+    images: [
+      "/products/rf-sistemleri/integrated-vehicles-1.webp",
+      "/products/rf-sistemleri/integrated-vehicles-2.webp",
+      "/products/rf-sistemleri/integrated-vehicles-3.webp",
+    ],
     features: [
       "Araç entegrasyonu",
       "Mobil platform",
@@ -407,19 +418,19 @@ export const rfSystems: RfSystem[] = [
       title: "Araç Entegrasyonu",
       content:
         "Integrated Vehicles, RF sensörlerini araç sistemleri ile entegre ederek mobil spektrum analizi imkanı sağlar.",
-      image: "/products/rf-sistemleri/integrated-vehicles-section1.jpg",
+      image: "/products/rf-sistemleri/integrated-vehicles-1.webp",
     },
     section2: {
       title: "Mobil Platform",
       content:
         "Araç tabanlı mobil platform ile geniş alanlarda spektrum analizi ve sinyal tespiti yapabilir.",
-      image: "/products/rf-sistemleri/integrated-vehicles-section2.jpg",
+      image: "/products/rf-sistemleri/integrated-vehicles-2.webp",
     },
     section3: {
       title: "Saha Operasyonları",
       content:
         "Saha operasyonlarında hızlı konuşlanma ve etkili spektrum analizi imkanı sunar.",
-      image: "/products/rf-sistemleri/integrated-vehicles-section3.jpg",
+      image: "/products/rf-sistemleri/integrated-vehicles-3.webp",
     },
     category: "rf-sistemleri-ve-sinyal-istihbarat-sigint",
     subcategory: "platform-entegrasyonlari",
@@ -428,7 +439,11 @@ export const rfSystems: RfSystem[] = [
     slug: "mini-outdoor-system-kit",
     title: "Mini Outdoor System Kit",
     description: "Kompakt açık hava sistem kiti",
-    image: "/products/rf-sistemleri/mini-outdoor-system-kit.jpg",
+    image: "/products/rf-sistemleri/mini-outdoor-kit-1.webp",
+    images: [
+      "/products/rf-sistemleri/mini-outdoor-kit-1.webp",
+      "/products/rf-sistemleri/mini-outdoor-kit-2.webp",
+    ],
     features: [
       "Kompakt tasarım",
       "Açık hava uyumlu",
@@ -438,19 +453,19 @@ export const rfSystems: RfSystem[] = [
       title: "Kompakt Tasarım",
       content:
         "Mini Outdoor System Kit, kompakt tasarımı ile sahada hızlı kurulum ve taşıma imkanı sağlar.",
-      image: "/products/rf-sistemleri/mini-outdoor-system-kit-section1.jpg",
+      image: "/products/rf-sistemleri/mini-outdoor-kit-1.webp",
     },
     section2: {
       title: "Açık Hava Uyumlu",
       content:
         "Zorlu açık hava koşullarında güvenilir performans sağlayan dayanıklı tasarım.",
-      image: "/products/rf-sistemleri/mini-outdoor-system-kit-section2.jpg",
+      image: "/products/rf-sistemleri/mini-outdoor-kit-2.webp",
     },
     section3: {
       title: "Hızlı Kurulum",
       content:
         "Sahada hızlı kurulum ve operasyona geçiş imkanı ile taktik avantaj sağlar.",
-      image: "/products/rf-sistemleri/mini-outdoor-system-kit-section3.jpg",
+      image: "/products/rf-sistemleri/mini-outdoor-kit-1.webp",
     },
     category: "rf-sistemleri-ve-sinyal-istihbarat-sigint",
     subcategory: "platform-entegrasyonlari",
@@ -459,7 +474,11 @@ export const rfSystems: RfSystem[] = [
     slug: "outdoor-system-kit",
     title: "Outdoor System Kit",
     description: "Kapsamlı açık hava sistem kiti",
-    image: "/products/rf-sistemleri/outdoor-system-kit.jpg",
+    image: "/products/rf-sistemleri/mini-outdoor-kit-2.webp",
+    images: [
+      "/products/rf-sistemleri/mini-outdoor-kit-1.webp",
+      "/products/rf-sistemleri/mini-outdoor-kit-2.webp",
+    ],
     features: [
       "Kapsamlı sistem",
       "Açık hava uyumlu",
@@ -469,19 +488,19 @@ export const rfSystems: RfSystem[] = [
       title: "Kapsamlı Sistem",
       content:
         "Outdoor System Kit, kapsamlı RF analiz sistemi ile profesyonel spektrum analizi imkanı sağlar.",
-      image: "/products/rf-sistemleri/outdoor-system-kit-section1.jpg",
+      image: "/products/rf-sistemleri/mini-outdoor-kit-1.webp",
     },
     section2: {
       title: "Açık Hava Uyumlu",
       content:
         "Zorlu açık hava koşullarında uzun süreli güvenilir operasyon sağlayan dayanıklı tasarım.",
-      image: "/products/rf-sistemleri/outdoor-system-kit-section2.jpg",
+      image: "/products/rf-sistemleri/mini-outdoor-kit-2.webp",
     },
     section3: {
       title: "Profesyonel Kullanım",
       content:
         "Profesyonel güvenlik ve askeri operasyonlarda üstün performans ve güvenilirlik sağlar.",
-      image: "/products/rf-sistemleri/outdoor-system-kit-section3.jpg",
+      image: "/products/rf-sistemleri/mini-outdoor-kit-1.webp",
     },
     category: "rf-sistemleri-ve-sinyal-istihbarat-sigint",
     subcategory: "platform-entegrasyonlari",
@@ -490,7 +509,11 @@ export const rfSystems: RfSystem[] = [
     slug: "rfeye-stormcase",
     title: "RFeye Stormcase",
     description: "Dayanıklı taşıma ve koruma kutusu",
-    image: "/products/rf-sistemleri/rfeye-stormcase.jpg",
+    image: "/products/rf-sistemleri/rfeye-stormcase-1.webp",
+    images: [
+      "/products/rf-sistemleri/rfeye-stormcase-1.webp",
+      "/products/rf-sistemleri/rfeye-stormcase-2.webp",
+    ],
     features: [
       "Dayanıklı tasarım",
       "Koruma kutusu",
@@ -500,19 +523,19 @@ export const rfSystems: RfSystem[] = [
       title: "Dayanıklı Tasarım",
       content:
         "RFeye Stormcase, zorlu çevre koşullarında RF ekipmanlarını koruyan dayanıklı tasarım.",
-      image: "/products/rf-sistemleri/rfeye-stormcase-section1.jpg",
+      image: "/products/rf-sistemleri/rfeye-stormcase-1.webp",
     },
     section2: {
       title: "Koruma Kutusu",
       content:
         "Hassas RF ekipmanlarını darbelerden, nemden ve diğer çevresel faktörlerden korur.",
-      image: "/products/rf-sistemleri/rfeye-stormcase-section2.jpg",
+      image: "/products/rf-sistemleri/rfeye-stormcase-2.webp",
     },
     section3: {
       title: "Taşıma Kolaylığı",
       content:
         "Sahada kolay taşıma ve güvenli depolama imkanı ile operasyonel verimlilik sağlar.",
-      image: "/products/rf-sistemleri/rfeye-stormcase-section3.jpg",
+      image: "/products/rf-sistemleri/rfeye-stormcase-1.webp",
     },
     category: "rf-sistemleri-ve-sinyal-istihbarat-sigint",
     subcategory: "platform-entegrasyonlari",
@@ -554,7 +577,7 @@ export const rfSystems: RfSystem[] = [
     slug: "rfeye-deepview",
     title: "RFeye DeepView",
     description: "Gelişmiş spektrum analizi yazılımı",
-    image: "/products/rf-sistemleri/rfeye-deepview.jpg",
+    image: "/products/rf-sistemleri/rfeye-deepview.webp",
     features: [
       "Spektrum analizi",
       "Gelişmiş görselleştirme",
@@ -585,7 +608,7 @@ export const rfSystems: RfSystem[] = [
     slug: "rfeye-mission-manager",
     title: "RFeye Mission Manager",
     description: "Operasyon yönetimi yazılımı",
-    image: "/products/rf-sistemleri/rfeye-mission-manager.jpg",
+    image: "/products/rf-sistemleri/rfeye-mission-manager.webp",
     features: [
       "Operasyon yönetimi",
       "Görev planlama",
@@ -595,19 +618,19 @@ export const rfSystems: RfSystem[] = [
       title: "Operasyon Yönetimi",
       content:
         "RFeye Mission Manager, RF operasyonlarını planlar, yönetir ve koordine eder.",
-      image: "/products/rf-sistemleri/rfeye-mission-manager-section1.jpg",
+      image: "/products/rf-sistemleri/rfeye-mission-manager.webp",
     },
     section2: {
       title: "Görev Planlama",
       content:
         "Detaylı görev planlama ve operasyonel süreç yönetimi imkanı sağlar.",
-      image: "/products/rf-sistemleri/rfeye-mission-manager-section2.jpg",
+      image: "/products/rf-sistemleri/rfeye-mission-manager.webp",
     },
     section3: {
       title: "Koordinasyon",
       content:
         "Çoklu ekip ve sistem koordinasyonu ile operasyonel verimlilik sağlar.",
-      image: "/products/rf-sistemleri/rfeye-mission-manager-section3.jpg",
+      image: "/products/rf-sistemleri/rfeye-mission-manager.webp",
     },
     category: "rf-sistemleri-ve-sinyal-istihbarat-sigint",
     subcategory: "rfeye-suite",
@@ -616,7 +639,7 @@ export const rfSystems: RfSystem[] = [
     slug: "rfeye-site",
     title: "RFeye Site",
     description: "Saha operasyon yazılımı",
-    image: "/products/rf-sistemleri/rfeye-site.jpg",
+    image: "/products/rf-sistemleri/rfeye-site.webp",
     features: [
       "Saha operasyonları",
       "Mobil kullanım",
@@ -626,19 +649,19 @@ export const rfSystems: RfSystem[] = [
       title: "Saha Operasyonları",
       content:
         "RFeye Site, sahada RF operasyonları için optimize edilmiş mobil yazılım çözümü.",
-      image: "/products/rf-sistemleri/rfeye-site-section1.jpg",
+      image: "/products/rf-sistemleri/rfeye-site.webp",
     },
     section2: {
       title: "Mobil Kullanım",
       content:
         "Tablet ve mobil cihazlarda kullanım için optimize edilmiş kullanıcı arayüzü.",
-      image: "/products/rf-sistemleri/rfeye-site-section2.jpg",
+      image: "/products/rf-sistemleri/rfeye-site.webp",
     },
     section3: {
       title: "Gerçek Zamanlı Analiz",
       content:
         "Sahada gerçek zamanlı spektrum analizi ve sinyal tespiti imkanı sağlar.",
-        image: "/products/rf-sistemleri/rfeye-site-section3.jpg", 
+      image: "/products/rf-sistemleri/rfeye-site.webp",
     },
     category: "rf-sistemleri-ve-sinyal-istihbarat-sigint",
     subcategory: "rfeye-suite",
