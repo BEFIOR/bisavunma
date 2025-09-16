@@ -23,6 +23,7 @@ import {
   StaggerItem,
   HeroAnimation,
 } from "@/components/animations/ScrollAnimations";
+import { LazyVideo } from "@/components/animations/LazyVideo";
 
 export default async function Cozumlerimiz() {
   return (
@@ -193,6 +194,18 @@ export default async function Cozumlerimiz() {
             ))}
           </StaggerContainer>
         </div>
+        <div className="relative rounded-xl overflow-hidden bg-neutral-800 my-12 p-12 max-w-5xl mx-auto">
+            <div className="aspect-video w-full">
+              <LazyVideo 
+                src="/cozumler/cozumlerimiz.mp4" 
+                autoPlay 
+                muted 
+                loop 
+                className="w-full h-full rounded-xl object-cover" 
+              />
+            </div>
+          </div>
+      
       </section>
 
       {/* İhtiyaca Yönelik Savunma Çözümleri */}
@@ -283,6 +296,17 @@ export default async function Cozumlerimiz() {
             ))}
           </StaggerContainer>
         </div>
+        <div className="relative rounded-xl overflow-hidden bg-neutral-800 my-12 p-12 max-w-5xl mx-auto">
+            <div className="aspect-video w-full">
+              <LazyVideo 
+                src="/cozumler/cozumler-ihtiyac.mp4" 
+                autoPlay 
+                muted 
+                loop 
+                className="w-full h-full rounded-xl object-cover" 
+              />
+            </div>
+          </div>
       </section>
 
       {/* Entegre Güvenlik Yaklaşımları */}
