@@ -16,16 +16,16 @@ export default async function Sektorler() {
             </span>
             <div className="overflow-hidden">
               <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700">
-                Her Sektöre{" "}
+                Sektörlere{" "}
                 <span className="text-gray-700 dark:text-gray-300">
-                  Özel Çözümler
+                  Göre
                 </span>
               </h1>
             </div>
             <div className="overflow-hidden">
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700 delay-300">
-                Savunma, güvenlik ve teknoloji alanlarında farklı sektörlerin
-                ihtiyaçlarına yönelik kapsamlı çözümler sunuyoruz.
+                Her sektörün kendine özgü güvenlik ihtiyaçlarına yönelik 
+                Anti-Drone ve C-UAS çözümleri ile kapsamlı koruma sağlıyoruz.
               </p>
             </div>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -71,11 +71,11 @@ export default async function Sektorler() {
               Askeri Tesisler
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-              Askeri Tesisler İçin Güvenlik Çözümleri
+              Askeri Tesisler
             </h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Askeri üsler, eğitim merkezleri ve savunma tesisleri için kapsamlı
-              güvenlik ve izleme çözümleri.
+              Askeri üsler, harekât merkezleri, radar istasyonları ve havaalanları; 
+              bir devletin ulusal güvenlik yapısının omurgasını oluşturur.
             </p>
           </div>
         </div>
@@ -113,14 +113,19 @@ export default async function Sektorler() {
                   Askeri Tesisler
                 </span>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                  Güvenlik ve İzleme Çözümleri
+                  Anti-Drone Güvenlik Doktrini
                 </h2>
               </div>
 
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                Askeri tesisler için gelişmiş güvenlik ve izleme sistemleri
-                sunuyoruz. RF sinyal istihbarat, elektro-optik sistemler ve
-                radar teknolojileri ile kapsamlı koruma sağlıyoruz.
+                Bu kritik tesisler, günümüzde yalnızca konvansiyonel tehditlere değil, 
+                aynı zamanda küçük boyutlu dronelar, sürü drone saldırıları ve izinsiz 
+                uçak uçuşları gibi modern ve asimetrik tehditlere de maruz kalmaktadır.
+              </p>
+
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                BİSAVUNMA, bu kritik alanları korumak için Anti-Drone teknolojilerini 
+                merkeze alan, çok katmanlı ve entegre bir güvenlik doktrini sunar:
               </p>
 
               <div className="space-y-4">
@@ -130,10 +135,10 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      RF Sinyal İstihbarat
+                      Radar Tabanlı Erken Uyarı
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Spektrum analizi ve sinyal çözümleme sistemleri
+                      En küçük hedefleri dahi düşük irtifada ve düşük radar kesit alanıyla tespit eder
                     </p>
                   </div>
                 </div>
@@ -144,10 +149,10 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Elektro-Optik Sistemler
+                      RF Tespit ve Sinyal İstihbaratı
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Görüntüleme, izleme ve hedefleme teknolojileri
+                      Drone ve kumanda arasındaki iletişim linkini belirler, frekans analizi ile operatörün konumunu ortaya çıkarır
                     </p>
                   </div>
                 </div>
@@ -158,14 +163,50 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Radar Teknolojileri
+                      Elektro-Optik ve Termal Sistemler
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Durumsal farkındalık ve hedef tespiti
+                      Gündüz/gece koşullarında görsel teşhis ve doğrulama yapar
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-blue-600 dark:text-blue-400"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      Soft-Kill Anti-Drone Çözümleri
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Yalnızca ihtiyaç halinde devreye alınarak hedef droneları yön kaybına uğratır veya güvenli şekilde düşmelerini sağlar
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-blue-600 dark:text-blue-400"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      Hard-Kill Anti-Drone Sistemleri
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Otomatik silah entegrasyonları ile tehdit unsurlarını doğrudan imha eder
                     </p>
                   </div>
                 </div>
               </div>
+
+              <p className="text-lg text-gray-600 dark:text-gray-300 mt-6">
+                Tüm bu unsurlar, C2 komuta kontrol altyapısı ile entegre çalışır. 
+                Radarın belirlediği hedef, RF tespitiyle doğrulanır, elektro-optik 
+                sistemlerle teşhis edilir, ardından soft-kill ve hard-kill sistemleriyle 
+                etkisiz hale getirilir. Böylece askeri tesisler, 7/24 uçtan uca Anti-Drone 
+                ve hava güvenlik sistemi ile korunur.
+              </p>
 
               <div className="pt-4">
                 <a
@@ -193,11 +234,12 @@ export default async function Sektorler() {
               Enerji & Kritik Altyapılar
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-              Kritik Altyapı Güvenliği
+              Enerji & Kritik Altyapılar
             </h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Enerji santralleri, iletim hatları ve kritik altyapı tesisleri
-              için güvenlik ve koruma sistemleri.
+              Enerji santralleri, barajlar, petrol ve doğalgaz altyapıları, 
+              nükleer tesisler ve telekomünikasyon merkezleri, bir ülkenin 
+              ekonomik ve stratejik güvenliği için hayati öneme sahiptir.
             </p>
           </div>
         </div>
@@ -235,14 +277,19 @@ export default async function Sektorler() {
                   Enerji & Kritik Altyapılar
                 </span>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                  Kritik Altyapı Koruma Sistemleri
+                  Anti-Drone ve C-UAS Çözümleri
                 </h2>
               </div>
 
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                Enerji santralleri, iletim hatları ve kritik altyapı tesisleri
-                için güvenlik ve koruma sistemleri. 7/24 izleme, acil müdahale
-                ve operasyonel verimlilik sağlıyoruz.
+                Bu alanlara yapılacak bir saldırı ya da sabotaj, yalnızca ulusal değil, 
+                küresel ölçekte krizlere yol açabilir.
+              </p>
+
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                BİSAVUNMA, bu altyapılar için geliştirdiği Anti-Drone ve C-UAS 
+                (Counter-Unmanned Aerial Systems) çözümleri ile tesis güvenliğini 
+                en üst düzeye çıkarır:
               </p>
 
               <div className="space-y-4">
@@ -252,10 +299,10 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Tesis Güvenliği
+                      Çok Bantlı RF Tespit
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Kritik altyapı koruma sistemleri
+                      Farklı frekanslarda çalışan droneların tespiti yapılır
                     </p>
                   </div>
                 </div>
@@ -266,10 +313,10 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Uzaktan İzleme
+                      Spektrum Analizi
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      7/24 tesis izleme ve kontrol
+                      Wrapped spektrum ve waterfall analizleri, elektromanyetik yoğunluğu anlık ve geçmiş verilerle operatöre sunar
                     </p>
                   </div>
                 </div>
@@ -280,14 +327,48 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Acil Müdahale
+                      Elektro-Optik & Termal Doğrulama
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Hızlı müdahale ve alarm sistemleri
+                      Görsel teyit sağlar
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-green-600 dark:text-green-400"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      Soft-Kill Jammer Çözümleri
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Droneları anında kontrol dışı bırakır
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-green-600 dark:text-green-400"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      Hard-Kill Entegrasyonu
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Kritik altyapıya yaklaşan dronelar doğrudan imha edilir
                     </p>
                   </div>
                 </div>
               </div>
+
+              <p className="text-lg text-gray-600 dark:text-gray-300 mt-6">
+                Tüm bu süreç, mevcut güvenlik altyapısıyla tam uyumlu entegre bir 
+                sistem halinde çalışır. Böylece enerji ve kritik altyapılar, 
+                Anti-Drone çözümleriyle güçlendirilmiş kesintisiz güvenlik zırhına sahip olur.
+              </p>
 
               <div className="pt-4">
                 <a
@@ -315,11 +396,11 @@ export default async function Sektorler() {
               Liman & Tersaneler
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-              Denizcilik Endüstrisi Çözümleri
+              Liman & Tersaneler
             </h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Denizcilik endüstrisi ve liman tesisleri için özelleştirilmiş
-              güvenlik ve operasyonel çözümler.
+              Limanlar ve tersaneler, hem uluslararası ticaretin güvenliği hem de 
+              askeri deniz gücünün korunması açısından stratejik öneme sahiptir.
             </p>
           </div>
         </div>
@@ -357,14 +438,19 @@ export default async function Sektorler() {
                   Liman & Tersaneler
                 </span>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                  Denizcilik Endüstrisi Çözümleri
+                  Anti-Drone Odaklı Entegre Savunma
                 </h2>
               </div>
 
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                Denizcilik endüstrisi ve liman tesisleri için özelleştirilmiş
-                güvenlik ve operasyonel çözümler. Gemi izleme, liman güvenliği
-                ve operasyonel verimlilik sağlıyoruz.
+                Bu tesisler, deniz, kara ve hava kaynaklı hibrit tehditlere maruz kalırken; 
+                son yıllarda özellikle drone tabanlı istihbarat, sabotaj ve saldırı 
+                girişimleri artış göstermektedir.
+              </p>
+
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                BİSAVUNMA, liman ve tersaneler için Anti-Drone odaklı entegre 
+                savunma sistemleri geliştirir:
               </p>
 
               <div className="space-y-4">
@@ -374,10 +460,10 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Liman Güvenliği
+                      Radar Gözetim Sistemleri
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Denizcilik tesisleri güvenlik sistemleri
+                      Hava ve deniz trafiğini eşzamanlı takip eder
                     </p>
                   </div>
                 </div>
@@ -388,10 +474,10 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Gemi İzleme
+                      RF İstihbarat Çözümleri
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Gemi takibi ve liman trafiği yönetimi
+                      Kontrol sinyallerini analiz ederek tehdit kaynaklarını belirler
                     </p>
                   </div>
                 </div>
@@ -402,14 +488,48 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Operasyonel Verimlilik
+                      Elektro-Optik ve Termal Sensörler
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Liman operasyonları optimizasyonu
+                      Droneları görsel olarak teşhis eder
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-purple-600 dark:text-purple-400"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      Soft-Kill Jammer Çözümleri
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      İzinsiz droneları güvenli bir şekilde devre dışı bırakır
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-purple-600 dark:text-purple-400"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      Hard-Kill Anti-Drone Sistemleri
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Yüksek hassasiyetli otomatik silahlarla tehditleri doğrudan imha eder
                     </p>
                   </div>
                 </div>
               </div>
+
+              <p className="text-lg text-gray-600 dark:text-gray-300 mt-6">
+                Bu sayede liman sahası, yalnızca klasik tehditlere karşı değil, 
+                aynı zamanda drone ve insansız hava aracı saldırılarına karşı da 
+                çok katmanlı bir koruma ile emniyet altına alınır.
+              </p>
 
               <div className="pt-4">
                 <a
@@ -437,11 +557,11 @@ export default async function Sektorler() {
               Sınır Güvenliği
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-              Ulusal Güvenlik Çözümleri
+              Sınır Güvenliği
             </h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Sınır kontrolü, göçmen takibi ve ulusal güvenlik için gelişmiş
-              teknoloji çözümleri.
+              Sınır güvenliği, artık yalnızca kara hattının korunması değil, 
+              aynı zamanda hava sahasının kontrol altına alınmasını da gerektirmektedir.
             </p>
           </div>
         </div>
@@ -479,14 +599,18 @@ export default async function Sektorler() {
                   Sınır Güvenliği
                 </span>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                  Ulusal Güvenlik Çözümleri
+                  Anti-Drone ve C-UAS Çözümleri
                 </h2>
               </div>
 
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                Sınır kontrolü, göçmen takibi ve ulusal güvenlik için gelişmiş
-                teknoloji çözümleri. Sınır izleme, göçmen tespiti ve
-                uluslararası işbirlikleri sağlıyoruz.
+                Özellikle küçük dronelar, izinsiz uçuş yapan hafif uçaklar ve hibrit 
+                tehditler, sınır güvenliğini karmaşık bir hale getirmiştir.
+              </p>
+
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                BİSAVUNMA, sınır güvenliği için geliştirdiği Anti-Drone ve C-UAS 
+                çözümleri ile en ileri seviyede güvenlik sağlar:
               </p>
 
               <div className="space-y-4">
@@ -496,10 +620,10 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Sınır İzleme
+                      Radar ve RF Tespit Sistemleri
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Sınır hattı izleme ve kontrol sistemleri
+                      Sınır hattı boyunca kesintisiz gözetim sunar
                     </p>
                   </div>
                 </div>
@@ -510,10 +634,10 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Göçmen Tespiti
+                      Elektro-Optik & Termal Sistemler
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Kaçak göçmen tespit ve takip sistemleri
+                      Sınır bölgesinde tehdit teşhisinde en yüksek doğruluk sağlar
                     </p>
                   </div>
                 </div>
@@ -524,14 +648,47 @@ export default async function Sektorler() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">
-                      Uluslararası İşbirlikleri
+                      Soft-Kill Jammer Çözümleri
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Sınır ötesi güvenlik işbirlikleri
+                      Droneları ve uçakları anında kontrol dışı bırakır
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-orange-600 dark:text-orange-400"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      Hard-Kill Anti-Drone Silah Sistemleri
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Kritik tehditleri imha ederek sınır güvenliğini garanti altına alır
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-orange-600 dark:text-orange-400"></div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      C2 Entegrasyonu
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Radar, RF, jammer, elektro-optik ve hard-kill sistemleri arasında gerçek zamanlı veri paylaşımı yapılır
                     </p>
                   </div>
                 </div>
               </div>
+
+              <p className="text-lg text-gray-600 dark:text-gray-300 mt-6">
+                Bu sayede sınır hattı, yalnızca bir gözetim hattı değil; aynı zamanda 
+                tam entegre, Anti-Drone odaklı, dinamik bir savunma ekosistemine dönüşür.
+              </p>
 
               <div className="pt-4">
                 <a

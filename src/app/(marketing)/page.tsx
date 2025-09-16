@@ -290,18 +290,58 @@ export default function Home() {
           </ScrollAnimation>
 
           <StaggerContainer
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             staggerDelay={0.1}
           >
             {[
-              { title: "RF Sistemleri", Icon: Radio },
-              { title: "Radar Sistemleri", Icon: Target },
-              { title: "Sinyal İstihbarat", Icon: Search },
-              { title: "Elektro-Optik", Icon: Eye },
-              { title: "Jammer Sistemleri", Icon: Shield },
-              { title: "DJI Enterprise", Icon: Satellite },
-              { title: "Sistem Entegrasyonu", Icon: Cog },
-              { title: "Teknik Destek", Icon: Headset },
+              { 
+                title: "RF Sistemleri", 
+                summary: "Geniş bant RF çözümleri ile sahada elektromanyetik üstünlük.",
+                description: "BİSAVUNMA'nın RF çözümleri, 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak sinyal toplama, analiz etme ve yön bulma (DF) kabiliyeti sunar. Bu sayede drone kontrol frekanslarından düşman haberleşme sinyallerine kadar tüm elektromanyetik aktiviteler tespit edilir. Gelişmiş spektrum analizi, waterfall ve wrapped spectrum görselleştirmeleri ile tehditler hızlıca teşhis edilir. RF sistemlerimiz sınır güvenliği, üs bölgeleri, enerji altyapısı ve VIP korumada kritik avantaj sağlar.",
+                Icon: Radio 
+              },
+              { 
+                title: "Radar Sistemleri", 
+                summary: "360° kapsama, düşük görünürlüklü hedef tespiti.",
+                description: "Radar sistemlerimiz, modern tehditlere karşı tam alan gözetleme sağlar. AESA radarlar ve döner antenli çözümler küçük dronelardan hava araçlarına kadar geniş bir hedef yelpazesini tespit edebilir. Çoklu hedef takibi, dost-düşman tanıma (IFF) ve yüksek çözünürlüklü haritalama kabiliyetiyle üs bölgeleri, havaalanları ve kritik tesislerin güvenliği sağlanır.",
+                Icon: Target 
+              },
+              { 
+                title: "Sinyal İstihbarat (SIGINT)", 
+                summary: "Geniş bant sinyal istihbaratı ile düşman haberleşme ağı takibi.",
+                description: "SIGINT çözümlerimiz 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak geniş bant toplama ve çözümleme kapasitesi sunar. Bu sistemler düşman komuta-kontrol sinyallerini analiz eder, yön bulma (DF) ile kaynaklarını konumlandırır ve yapay zekâ destekli tehdit sınıflandırması yapar. Hibrit tehditlere karşı güvenlik güçlerine proaktif üstünlük sağlar.",
+                Icon: Search 
+              },
+              { 
+                title: "Elektro-Optik & Termal", 
+                summary: "Gece-gündüz, her hava koşulunda hedef teşhisi.",
+                description: "EO/IR sistemlerimiz yüksek çözünürlüklü kameralar, termal sensörler ve lazer mesafe ölçerlerle gündüz-gece kesintisiz gözetleme sağlar. Radar ve RF sistemleriyle entegre edilerek hedefin görsel teşhisi yapılır, yanlış alarm riski en aza indirilir. Özellikle sınır güvenliği ve kritik tesislerde etkin kullanılır.",
+                Icon: Eye 
+              },
+              { 
+                title: "Jammer Sistemleri", 
+                summary: "Soft-kill elektronik harp çözümleri.",
+                description: "BİSAVUNMA'nın jammer sistemleri 9 kHz – 8 / 18 / 40 GHz frekans aralığında çalışır. Drone kontrol sinyallerini, GNSS/GPS bağlantılarını ve düşman haberleşme ağlarını etkisiz hale getirir. Sabit, mobil ve taşınabilir modelleri mevcuttur. Tehdit odaklı aktif çalışma prensibi ile enerji verimliliği sağlanır. Radar, RF ve EO/IR entegrasyonu ile çok katmanlı Anti-Drone mimarisi oluşturur.",
+                Icon: Shield 
+              },
+              { 
+                title: "DJI Enterprise", 
+                summary: "Endüstriyel dronelar ile çok boyutlu gözetleme.",
+                description: "DJI Enterprise çözümleri keşif, arama-kurtarma, sınır güvenliği ve kritik altyapı denetimleri için geliştirilmiştir. Termal kameralar, RTK uydu desteği, uzun uçuş süreleri ve yüksek taşıma kapasitesi ile güvenlik güçlerine avantaj sağlar. BİSAVUNMA entegrasyonu ile radar ve RF sistemleriyle tek ekranda yönetilebilir.",
+                Icon: Satellite 
+              },
+              { 
+                title: "Sistem Entegrasyonu", 
+                summary: "Tüm sistemler tek bir C2 yazılımında birleşir.",
+                description: "Radar, RF, SIGINT, EO/IR, jammer ve hard-kill sistemleri özel geliştirilmiş C2 komuta kontrol yazılımı üzerinde entegre edilir. Böylece radar tespit eder, RF doğrular, EO/IR teşhis yapar, jammer engeller, hard-kill imha eder. Tüm süreç tek ekrandan yönetilerek karar verme süresi minimuma indirilir.",
+                Icon: Cog 
+              },
+              { 
+                title: "Teknik Destek", 
+                summary: "7/24 destek ve uzun vadeli güven ortaklığı.",
+                description: "BİSAVUNMA, sistemlerin her zaman en yüksek performansla çalışması için 7/24 teknik destek sağlar. Yazılım güncellemeleri, bakım planlamaları, arıza tespiti, hızlı müdahale ve operatör eğitimleri ile müşterilerimiz daima desteklenir.",
+                Icon: Headset 
+              },
             ].map((svc) => (
               <StaggerItem key={svc.title} direction="up">
                 <div className="group relative rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
@@ -312,8 +352,11 @@ export default function Home() {
                     {svc.title}
                   </h3>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 font-inter-regular">
-                    Profesyonel çözümler ve uzman destek
+                    {svc.summary}
                   </p>
+                  <div className="mt-3 text-xs text-gray-500 dark:text-gray-400 font-inter-regular leading-relaxed">
+                    {svc.description}
+                  </div>
 
                   <div
                     className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
