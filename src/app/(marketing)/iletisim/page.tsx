@@ -1,51 +1,78 @@
 import { Mail, Phone, Clock, Send, MessageCircle } from "lucide-react";
+import DotGrid from "@/components/DotGrid";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+  HeroAnimation,
+} from "@/components/animations/ScrollAnimations";
 
 export default async function Iletisim() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-24 overflow-hidden min-h-screen bg-white dark:bg-gray-950">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
+      <section className="relative pt-24 overflow-hidden min-h-screen">
+        {/* Background DotGrid - only for hero section */}
+        <div className="absolute inset-0 -z-20">
+          <DotGrid
+            dotSize={5}
+            gap={25}
+            baseColor="#3d3d3d"
+            activeColor="#7daaf5"
+            proximity={120}
+            shockRadius={250}
+            shockStrength={5}
+            resistance={750}
+            returnDuration={1.5}
+          />
+        </div>
+
+        {/* Background Overlay - only for hero section */}
+        <div className="absolute inset-0 -z-10 bg-white/90 dark:bg-gray-950/50" />
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
-              İletişim
-            </span>
-            <div className="overflow-hidden">
-              <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700">
+            <HeroAnimation direction="fade" delay={0.2}>
+              <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
+                İletişim
+              </span>
+            </HeroAnimation>
+            <HeroAnimation direction="up" delay={0.4}>
+              <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Bizimle{" "}
                 <span className="text-gray-700 dark:text-gray-300">
                   İletişime Geçin
                 </span>
               </h1>
-            </div>
-            <div className="overflow-hidden">
-              <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700 delay-300">
+            </HeroAnimation>
+            <HeroAnimation direction="up" delay={0.6}>
+              <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Savunma ve güvenlik çözümleriniz için uzman ekibimizle iletişime
                 geçin. Size en uygun çözümü birlikte bulalım.
               </p>
-            </div>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="#iletisim-formu"
-                className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
-              >
-                İletişim Formu
-              </a>
-              <a
-                href="#iletisim-bilgileri"
-                className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
-              >
-                İletişim Bilgileri
-              </a>
-              <a
-                href="#ofis-lokasyonlari"
-                className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
-              >
-                Ofis Lokasyonları
-              </a>
-            </div>
+            </HeroAnimation>
+            <HeroAnimation direction="up" delay={0.8}>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <a
+                  href="#iletisim-formu"
+                  className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
+                >
+                  İletişim Formu
+                </a>
+                <a
+                  href="#iletisim-bilgileri"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                >
+                  İletişim Bilgileri
+                </a>
+                <a
+                  href="#ofis-lokasyonlari"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                >
+                  Ofis Lokasyonları
+                </a>
+              </div>
+            </HeroAnimation>
           </div>
         </div>
       </section>
