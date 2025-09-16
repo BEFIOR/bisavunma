@@ -53,7 +53,7 @@ export default function DJIZenmuseH20TPage() {
 
               <HeroAnimation direction="up" delay={0.8}>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  DJI Zenmuse H20T, DJI'nin ilk hibrit sensör çözümüdür.
+                  DJI Zenmuse H20T, DJI&apos;nin ilk hibrit sensör çözümüdür.
                   Quad-sensor payload ile 20MP zoom kamera, 12MP geniş açılı
                   kamera, 640×512 termal kamera ve 1200m lazer mesafe ölçer bir
                   arada. Görev verimliliğine yeni anlam kazandırır.

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type ImageItem = { src: string; alt?: string } | string;
@@ -34,24 +34,26 @@ export default function HeroSlider({
   const [index, setIndex] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const next = () => {
+  const totalSlides = slides.length;
+
+  const next = useCallback(() => {
     setIndex((i) => {
-      const last = slides.length - 1;
+      const last = totalSlides - 1;
       if (i === last) return loop ? 0 : last;
       return i + 1;
     });
-  };
+  }, [loop, totalSlides]);
 
-  const prev = () => {
+  const prev = useCallback(() => {
     setIndex((i) => {
-      const last = slides.length - 1;
+      const last = totalSlides - 1;
       if (i === 0) return loop ? last : 0;
       return i - 1;
     });
-  };
+  }, [loop, totalSlides]);
 
   useEffect(() => {
-    if (!autoplay || slides.length <= 1) return;
+    if (!autoplay || totalSlides <= 1) return;
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       next();
@@ -59,9 +61,9 @@ export default function HeroSlider({
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [autoplay, interval, slides.length]);
+  }, [autoplay, interval, next, totalSlides]);
 
-  const showControls = slides.length > 1;
+  const showControls = totalSlides > 1;
 
   return (
     <div className={"relative w-full h-full " + (className ?? "")}
@@ -133,4 +135,3 @@ export default function HeroSlider({
     </div>
   );
 }
-

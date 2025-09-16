@@ -9,7 +9,6 @@ import {
   Gauge,
   Layers,
   Shield,
-  Map as MapIcon,
   Network,
   Wrench,
 } from "lucide-react";

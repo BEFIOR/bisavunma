@@ -62,6 +62,26 @@ const getAnchorAndDir = (
   }
 };
 
+type ShaderUniform<T> = { value: T };
+
+interface LightRaysUniforms {
+  iTime: ShaderUniform<number>;
+  iResolution: ShaderUniform<[number, number]>;
+  rayPos: ShaderUniform<[number, number]>;
+  rayDir: ShaderUniform<[number, number]>;
+  raysColor: ShaderUniform<[number, number, number]>;
+  raysSpeed: ShaderUniform<number>;
+  lightSpread: ShaderUniform<number>;
+  rayLength: ShaderUniform<number>;
+  pulsating: ShaderUniform<number>;
+  fadeDistance: ShaderUniform<number>;
+  saturation: ShaderUniform<number>;
+  mousePos: ShaderUniform<[number, number]>;
+  mouseInfluence: ShaderUniform<number>;
+  noiseAmount: ShaderUniform<number>;
+  distortion: ShaderUniform<number>;
+}
+
 const LightRays: React.FC<LightRaysProps> = ({
   raysOrigin = 'top-center',
   raysColor = DEFAULT_COLOR,
@@ -78,12 +98,12 @@ const LightRays: React.FC<LightRaysProps> = ({
   className = ''
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const uniformsRef = useRef<any>(null);
+  const uniformsRef = useRef<LightRaysUniforms | null>(null);
   const rendererRef = useRef<Renderer | null>(null);
   const mouseRef = useRef({ x: 0.5, y: 0.5 });
   const smoothMouseRef = useRef({ x: 0.5, y: 0.5 });
   const animationIdRef = useRef<number | null>(null);
-  const meshRef = useRef<any>(null);
+  const meshRef = useRef<Mesh | null>(null);
   const cleanupFunctionRef = useRef<(() => void) | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -241,12 +261,12 @@ void main() {
   gl_FragColor  = color;
 }`;
 
-      const uniforms = {
+      const uniforms: LightRaysUniforms = {
         iTime: { value: 0 },
-        iResolution: { value: [1, 1] },
+        iResolution: { value: [1, 1] as [number, number] },
 
-        rayPos: { value: [0, 0] },
-        rayDir: { value: [0, 1] },
+        rayPos: { value: [0, 0] as [number, number] },
+        rayDir: { value: [0, 1] as [number, number] },
 
         raysColor: { value: hexToRgb(raysColor) },
         raysSpeed: { value: raysSpeed },
@@ -255,7 +275,7 @@ void main() {
         pulsating: { value: pulsating ? 1.0 : 0.0 },
         fadeDistance: { value: fadeDistance },
         saturation: { value: saturation },
-        mousePos: { value: [0.5, 0.5] },
+        mousePos: { value: [0.5, 0.5] as [number, number] },
         mouseInfluence: { value: mouseInfluence },
         noiseAmount: { value: noiseAmount },
         distortion: { value: distortion }

@@ -5,9 +5,7 @@ import {
   Phone, 
   Mail, 
   Download, 
-  Search,
   ChevronDown,
-  ChevronUp,
   FileText,
   Video,
   Users,
@@ -16,12 +14,7 @@ import {
   AlertCircle
 } from "lucide-react";
 import DotGrid from "@/components/DotGrid";
-import {
-  ScrollAnimation,
-  StaggerContainer,
-  StaggerItem,
-  HeroAnimation,
-} from "@/components/animations/ScrollAnimations";
+import { HeroAnimation } from "@/components/animations/ScrollAnimations";
 
 export default async function Destek() {
   return (

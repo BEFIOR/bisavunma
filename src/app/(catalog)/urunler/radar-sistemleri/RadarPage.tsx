@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Filter } from "lucide-react";
+import { Filter, Radar as RadarIcon, Crosshair, Satellite } from "lucide-react";
 import { 
   HeroAnimation, 
   HeroStaggerContainer, 
@@ -33,6 +33,30 @@ export default function RadarPage({
 }: PageProps) {
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>("all");
 
+  const heroHighlights = [
+    {
+      title: "360° Durumsal Farkındalık",
+      description: "Döner anten ve AESA mimarileriyle kesintisiz kapsama.",
+      Icon: RadarIcon,
+    },
+    {
+      title: "Uyarlanabilir İzleme",
+      description: "Düşük görünürlüklü hedeflerde bile akıllı sınıflandırma.",
+      Icon: Crosshair,
+    },
+    {
+      title: "Ağ Merkezli Operasyon",
+      description: "Sensör füzyonu ve bağlantılı komuta-kontrol altyapısı.",
+      Icon: Satellite,
+    },
+  ] as const;
+
+  const heroStats = [
+    { label: "Azami Menzil", value: "120 km" },
+    { label: "Eş Zamanlı Takip", value: "256 hedef" },
+    { label: "Tepki Süresi", value: "< 1 sn" },
+  ] as const;
+
   const subcategories = useMemo(() => {
     const unique = Array.from(
       new Set(products.map((p) => p.altCategory).filter(Boolean))
@@ -55,26 +79,71 @@ export default function RadarPage({
   return (
     <div className="min-h-screen bg-black text-gray-200">
       {/* Header Section */}
-      <section className="relative pt-28 pb-10 px-4 bg-neutral-950 border-b border-neutral-900 overflow-hidden">
-        <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-gradient-to-br from-sky-700/30 via-fuchsia-600/10 to-transparent blur-3xl" />
-        <div className="max-w-7xl mx-auto relative">
-          <HeroStaggerContainer staggerDelay={0.2}>
-            <HeroAnimation direction="up" delay={0}>
-              <h1 className="text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-                Radar Sistemleri
+      <section className="relative pt-28 pb-12 px-4 bg-neutral-950 border-b border-neutral-900 overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(15,118,110,0.18),_transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.03] via-sky-500/5 to-transparent" />
+        <div className="max-w-7xl mx-auto relative mt-12">
+          <HeroStaggerContainer staggerDelay={0.15} className="space-y-6">
+            <HeroAnimation direction="fade">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs uppercase tracking-wider text-emerald-200">
+                Radar Command Suite
+              </span>
+            </HeroAnimation>
+            <HeroAnimation direction="up">
+              <h1 className="text-3xl lg:text-5xl font-bold text-white">
+                Her Koşulda Erken Uyarı ve Hedef Tespiti
               </h1>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.2}>
-              <p className="mt-2 text-gray-400">/urunler/{effectiveSlug}</p>
+            <HeroAnimation direction="up" delay={0.1}>
+              <p className="text-gray-300 max-w-3xl leading-relaxed">
+                {categoryDescription ??
+                  "Saha konuşlu taktik radar sistemlerinden stratejik menzile kadar görev odaklı çözümler sunuyoruz."}
+              </p>
             </HeroAnimation>
-            {categoryDescription && (
-              <HeroAnimation direction="up" delay={0.4}>
-                <p className="mt-3 text-gray-300 max-w-3xl leading-relaxed">
-                  {categoryDescription}
-                </p>
-              </HeroAnimation>
-            )}
+            <HeroAnimation direction="up" delay={0.2}>
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                  {heroStats.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3"
+                    >
+                      <p className="text-lg font-semibold text-white">
+                        {stat.value}
+                      </p>
+                      <p className="text-xs uppercase tracking-wider text-gray-400 mt-1">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </HeroAnimation>
           </HeroStaggerContainer>
+
+          <HeroAnimation direction="up" delay={0.3}>
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {heroHighlights.map(({ title, description, Icon }) => (
+                <div
+                  key={title}
+                  className="relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/80 p-6 backdrop-blur transition-transform duration-200 hover:-translate-y-1"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent" />
+                  <div className="relative">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-200">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="mt-4 text-lg font-semibold text-white">
+                      {title}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-300 leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </HeroAnimation>
         </div>
       </section>
 
@@ -153,7 +222,7 @@ export default function RadarPage({
             {filteredProducts.length > 0 ? (
               <StaggerContainer staggerDelay={0.1}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {filteredProducts.map((product, index) => {
+                  {filteredProducts.map((product) => {
                     const href = `/urunler/${effectiveSlug}/${product.slug}`;
                     return (
                       <StaggerItem key={product.slug} direction="up" className="h-full">

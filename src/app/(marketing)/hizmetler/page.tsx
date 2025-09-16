@@ -8,17 +8,11 @@ import {
   Shield,
   Eye,
   Radio,
-  Satellite,
   Wrench,
   ChevronDown,
 } from "lucide-react";
 import DotGrid from "@/components/DotGrid";
-import {
-  ScrollAnimation,
-  StaggerContainer,
-  StaggerItem,
-  HeroAnimation,
-} from "@/components/animations/ScrollAnimations";
+import { ScrollAnimation, HeroAnimation } from "@/components/animations/ScrollAnimations";
 
 export default function Hizmetler() {
   return (
@@ -246,7 +240,7 @@ export default function Hizmetler() {
                           kabiliyeti kazandırır.
                         </p>
                         <p>
-                          Bu sayede BİSAVUNMA'nın çözümleri yalnızca reaktif değil, proaktif 
+                          Bu sayede BİSAVUNMA&apos;nın çözümleri yalnızca reaktif değil, proaktif 
                           savunma yetenekleri sunar.
                         </p>
                       </div>
@@ -403,7 +397,7 @@ export default function Hizmetler() {
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
                 Modern savunma mimarisinde donanım kadar yazılım da hayati öneme sahiptir. 
-                BİSAVUNMA'nın geliştirdiği özgün C2 yazılım platformu ile karar üstünlüğü sağlıyoruz.
+                BİSAVUNMA&apos;nın geliştirdiği özgün C2 yazılım platformu ile karar üstünlüğü sağlıyoruz.
               </p>
             </ScrollAnimation>
           </div>
@@ -424,7 +418,7 @@ export default function Hizmetler() {
                       </div>
                       <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                         <p>
-                          BİSAVUNMA'nın geliştirdiği özgün C2 yazılım platformu, tüm donanımları 
+                          BİSAVUNMA&apos;nın geliştirdiği özgün C2 yazılım platformu, tüm donanımları 
                           tek bir çatı altında toplayarak karar üstünlüğü sağlar.
                         </p>
                         <p>

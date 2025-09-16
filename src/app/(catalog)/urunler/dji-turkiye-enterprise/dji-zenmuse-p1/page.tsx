@@ -166,7 +166,7 @@ export default function DJIZenmuseP1Page() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    0.7s'de bir fotoğraf
+                    0.7s&apos;de bir fotoğraf
                   </li>
                 </ul>
               </div>
@@ -193,7 +193,7 @@ export default function DJIZenmuseP1Page() {
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    GCP'siz doğruluk
+                    GCP&apos;siz doğruluk
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />

@@ -53,7 +53,7 @@ export default function DJIZenmuseH20Page() {
 
               <HeroAnimation direction="up" delay={0.8}>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  DJI Zenmuse H20, DJI'nin ilk hibrit sensör çözümüdür.
+                  DJI Zenmuse H20, DJI&apos;nin ilk hibrit sensör çözümüdür.
                   Triple-sensor payload ile 20MP zoom kamera, 12MP geniş açılı
                   kamera ve 1200m lazer mesafe ölçer bir arada. Görev
                   verimliliğine yeni anlam kazandırır.
@@ -147,7 +147,7 @@ export default function DJIZenmuseH20Page() {
                 <ul className="space-y-2 text-gray-300">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    20MP 1/1.7" CMOS sensör
+                    20MP 1/1.7&quot; CMOS sensör
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
@@ -178,7 +178,7 @@ export default function DJIZenmuseH20Page() {
                 <ul className="space-y-2 text-gray-300">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    12MP 1/2.3" CMOS sensör
+                    12MP 1/2.3&quot; CMOS sensör
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />

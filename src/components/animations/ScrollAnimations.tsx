@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { motion, useInView } from "framer-motion";
+import { ReactNode, useRef } from "react";
 
 interface ScrollAnimationProps {
   children: ReactNode;
@@ -42,12 +42,18 @@ export function ScrollAnimation({
   duration = 0.6,
   direction = "up",
 }: ScrollAnimationProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px 0px -100px 0px",
+  });
+
   return (
     <motion.div
       className={className}
+      ref={ref}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      animate={isInView ? "visible" : "hidden"}
       variants={variants[direction]}
       transition={{
         duration,
@@ -72,12 +78,18 @@ export function StaggerContainer({
   className = "",
   staggerDelay = 0.1,
 }: StaggerContainerProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px 0px -100px 0px",
+  });
+
   return (
     <motion.div
       className={className}
+      ref={ref}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      animate={isInView ? "visible" : "hidden"}
       variants={{
         hidden: {},
         visible: {
@@ -132,12 +144,18 @@ export function ScaleAnimation({
   delay = 0,
   scale = 0.8,
 }: ScaleAnimationProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px 0px -100px 0px",
+  });
+
   return (
     <motion.div
       className={className}
+      ref={ref}
       initial={{ opacity: 0, scale }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
+      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale }}
       transition={{
         duration: 0.6,
         delay,
