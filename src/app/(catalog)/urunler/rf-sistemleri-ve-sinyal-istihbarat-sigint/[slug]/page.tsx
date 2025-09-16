@@ -10,7 +10,6 @@ import {
 import { Radio, ArrowLeft, CheckCircle } from "lucide-react";
 import { getRfSystemBySlug } from "@/data/rf-systems";
 import { getProductsByCategorySlug } from "@/lib/products";
-import HeroSlider from "@/components/HeroSlider";
 
 export const revalidate = 60;
 
@@ -104,12 +103,13 @@ export default async function ProductInRf({
             <HeroAnimation direction="right" delay={1.0}>
               <div className="relative h-[400px] lg:h-[500px] flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-r from-sky-600/20 to-blue-600/20 rounded-2xl blur-3xl" />
-                <div className="relative z-10 w-full h-full p-4 sm:p-6 md:p-8">
-                  <HeroSlider
-                    images={(product.images && product.images.length > 0) ? product.images : [product.image]}
-                    className=""
-                    autoplay={false}
-                    loop={true}
+                <div className="relative z-10 w-full h-full flex items-center justify-center p-8">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    width={600}
+                    height={400}
+                    className="object-contain max-w-full max-h-full rounded-2xl"
                   />
                 </div>
               </div>

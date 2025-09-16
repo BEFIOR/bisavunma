@@ -8,7 +8,6 @@ import {
 } from "@/components/animations/ScrollAnimations";
 import { Radio, Eye, Settings, ChevronDown } from "lucide-react";
 import { rfSystems } from "@/data/rf-systems";
-import { LazyVideo } from "@/components/animations/LazyVideo";
 
 export default function RfSystemsPage() {
   return (
@@ -52,19 +51,6 @@ export default function RfSystemsPage() {
             </p>
           </ScrollAnimation>
 
-        <StaggerContainer>  
-          <div className="relative rounded-xl overflow-hidden bg-neutral-800 my-12 p-12">
-            <div className="aspect-video w-full">
-              <LazyVideo 
-                src="/products/rf-sistemleri/rf.mp4" 
-                autoPlay 
-                muted 
-                loop 
-                className="w-full h-full rounded-xl" 
-              />
-            </div>
-          </div>
-        </StaggerContainer>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {rfSystems.map((product) => (
               <StaggerItem key={product.slug}>
