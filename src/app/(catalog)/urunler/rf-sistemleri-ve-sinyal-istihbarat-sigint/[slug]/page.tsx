@@ -108,8 +108,10 @@ export default async function ProductInRf({
                   <HeroSlider
                     images={(product.images && product.images.length > 0) ? product.images : [product.image]}
                     className=""
-                    autoplay={false}
+                    autoplay={true}
+                    autoplayInterval={3000}
                     loop={true}
+                    slideClassName="bg-transparent"
                   />
                 </div>
               </div>
@@ -156,8 +158,8 @@ export default async function ProductInRf({
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ScrollAnimation direction="left">
-              <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-600/10 to-blue-600/10" />
+              <div className="relative h-[400px] rounded-xl overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 " />
                 <Image
                   src={product.section1.image}
                   alt={product.section1.title}
@@ -206,8 +208,8 @@ export default async function ProductInRf({
             </div>
 
             <ScrollAnimation direction="right" className="order-1 lg:order-2">
-              <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
+              <div className="relative h-[400px] rounded-xl overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 " />
                 <Image
                   src={product.section2.image}
                   alt={product.section2.title}
@@ -226,8 +228,8 @@ export default async function ProductInRf({
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ScrollAnimation direction="left">
-              <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10" />
+              <div className="relative h-[400px] rounded-xl overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 " />
                 <Image
                   src={product.section3.image}
                   alt={product.section3.title}
