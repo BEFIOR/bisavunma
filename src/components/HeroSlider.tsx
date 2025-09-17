@@ -10,22 +10,18 @@ type Props = {
   images: ImageItem[];
   className?: string;
   autoplay?: boolean;
-  autoplayInterval?: number; // ms
   interval?: number; // ms
   loop?: boolean;
   priorityFirst?: boolean;
-  slideClassName?: string;
 };
 
 export default function HeroSlider({
   images,
   className,
-  autoplay = true,
-  autoplayInterval = 3000,
+  autoplay = false,
   interval = 5000,
   loop = true,
   priorityFirst = true,
-  slideClassName,
 }: Props) {
   const slides = useMemo(
     () =>
@@ -61,11 +57,11 @@ export default function HeroSlider({
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       next();
-    }, Math.max(autoplayInterval, interval));
+    }, Math.max(2000, interval));
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [autoplay, autoplayInterval, interval, next, totalSlides]);
+  }, [autoplay, interval, next, totalSlides]);
 
   const showControls = totalSlides > 1;
 
@@ -84,11 +80,7 @@ export default function HeroSlider({
         >
           {slides.map((img, i) => (
             <div key={img.src + i} className="w-full h-full flex-shrink-0">
-              <div
-                className={`relative w-full h-full flex items-center justify-center ${
-                  slideClassName ?? "bg-neutral-800"
-                }`}
-              >
+              <div className="relative w-full h-full flex items-center justify-center bg-neutral-800">
                 <Image
                   src={img.src}
                   alt={img.alt || `Görsel ${i + 1}`}

@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma";
-import { Prisma } from "@prisma/client";
 
 export type DbProduct = {
   slug: string;
@@ -22,13 +21,9 @@ export async function getProductBySlug(slug: string): Promise<DbProduct | null> 
 
   let altCategory: string | null = null;
   try {
-    const rows = await prisma.$queryRaw<Array<{ altCategory: string | null }>>(
-      Prisma.sql`
-        SELECT alt_kategori AS altCategory
-        FROM products
-        WHERE slug = ${slug}
-        LIMIT 1
-      `
+    const rows: Array<{ altCategory: string | null }> = await prisma.$queryRawUnsafe(
+      "SELECT alt_kategori AS altCategory FROM products WHERE slug = ? LIMIT 1",
+      slug
     );
     if (rows && rows[0]) altCategory = rows[0].altCategory;
   } catch {
@@ -61,14 +56,11 @@ export async function getProductsByCategorySlug(categorySlug: string): Promise<D
   const altMap = new Map<string, string | null>();
   if (slugs.length > 0) {
     try {
-      const list = await prisma.$queryRaw<
-        Array<{ slug: string; altCategory: string | null }>
-      >(
-        Prisma.sql`
-          SELECT slug, alt_kategori AS altCategory
-          FROM products
-          WHERE slug IN (${Prisma.join(slugs)})
-        `
+      const placeholders = slugs.map(() => "?").join(",");
+      const sql = `SELECT slug, alt_kategori AS altCategory FROM products WHERE slug IN (${placeholders})`;
+      const list: Array<{ slug: string; altCategory: string | null }> = await prisma.$queryRawUnsafe(
+        sql,
+        ...slugs
       );
       for (const r of list) altMap.set(r.slug, r.altCategory);
     } catch {
