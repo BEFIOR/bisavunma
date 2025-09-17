@@ -46,25 +46,25 @@ export default async function Cozumlerimiz() {
         </div>
 
         {/* Background Overlay - only for hero section */}
-        <div className="absolute inset-0 -z-10 bg-white/90 dark:bg-gray-950/50" />
+        <div className="absolute inset-0 -z-10 bg-gray-950/80" />
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <HeroAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
                 Çözümlerimiz
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.4}>
-              <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
                 Operasyonel Üstünlük İçin{" "}
-                <span className="text-gray-700 dark:text-gray-300">
+                <span className="text-gray-300">
                   Tasarlandı
                 </span>
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.6}>
-              <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
                 RF&apos;den elektro-optik sistemlere, entegrasyondan saha
                 desteğine kadar uçtan uca çözümler sunuyoruz.
               </p>
@@ -79,13 +79,13 @@ export default async function Cozumlerimiz() {
                 </a>
                 <a
                   href="#savunma-cozumleri"
-                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   Savunma Çözümleri
                 </a>
                 <a
                   href="#entegre-guvenlik"
-                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   Entegre Güvenlik
                 </a>
@@ -98,9 +98,9 @@ export default async function Cozumlerimiz() {
       {/* Sistem Konfigürasyonu */}
       <section
         id="sistem-konfigurasyonu"
-        className="relative z-10 min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white dark:bg-gray-950"
+        className="relative z-10 min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-950"
       >
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-transparent to-transparent" />
         {/* Parallax layer */}
         <div
           aria-hidden
@@ -115,21 +115,21 @@ export default async function Cozumlerimiz() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <ScrollAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-1.5 text-xs font-medium text-blue-600 dark:bg-blue-800 dark:text-blue-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-blue-900/20 px-4 py-1.5 text-xs font-medium text-blue-300">
                 <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />{" "}
                 Sistem Konfigürasyonu
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Altyapı ve{" "}
-                <span className="text-blue-700 dark:text-blue-300">
+                <span className="text-blue-300">
                   Mimari Çözümleri
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
                 Modüler, ölçeklenebilir ve güvenilir sistem mimarileri
               </p>
             </ScrollAnimation>
@@ -168,14 +168,14 @@ export default async function Cozumlerimiz() {
               },
             ].map((s) => (
               <StaggerItem key={s.title}>
-                <div className="group relative rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-900/20 dark:text-blue-300">
+                <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-900/20 text-blue-300">
                     <s.Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-white">
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  <p className="mt-2 text-sm text-gray-300">
                     {s.desc}
                   </p>
                   <div
@@ -211,27 +211,27 @@ export default async function Cozumlerimiz() {
       {/* İhtiyaca Yönelik Savunma Çözümleri */}
       <section
         id="savunma-cozumleri"
-        className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950 overflow-hidden"
+        className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden"
       >
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-transparent to-transparent dark:from-gray-900" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <ScrollAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-xs font-medium text-emerald-600 dark:bg-emerald-800 dark:text-emerald-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-900/20 px-4 py-1.5 text-xs font-medium text-emerald-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
                 İhtiyaca Yönelik Savunma Çözümleri
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Operasyonel{" "}
-                <span className="text-emerald-700 dark:text-emerald-300">
+                <span className="text-emerald-300">
                   Gereksinimler
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
                 Saha koşullarına uygun, özelleştirilmiş savunma sistemleri
               </p>
             </ScrollAnimation>
@@ -270,14 +270,14 @@ export default async function Cozumlerimiz() {
               },
             ].map((s) => (
               <StaggerItem key={s.title}>
-                <div className="group relative rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-300">
+                <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-900/20 text-emerald-300">
                     <s.Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-white">
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  <p className="mt-2 text-sm text-gray-300">
                     {s.desc}
                   </p>
                   <div
@@ -312,27 +312,27 @@ export default async function Cozumlerimiz() {
       {/* Entegre Güvenlik Yaklaşımları */}
       <section
         id="entegre-guvenlik"
-        className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 overflow-hidden"
+        className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden"
       >
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <ScrollAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5 text-xs font-medium text-purple-600 dark:bg-purple-800 dark:text-purple-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-purple-900/20 px-4 py-1.5 text-xs font-medium text-purple-300">
                 <span className="h-2 w-2 rounded-full bg-purple-500 animate-pulse" />{" "}
                 Entegre Güvenlik Yaklaşımları
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Kapsamlı{" "}
-                <span className="text-purple-700 dark:text-purple-300">
+                <span className="text-purple-300">
                   Güvenlik Stratejileri
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
                 Çok katmanlı güvenlik mimarileri ve risk yönetimi
               </p>
             </ScrollAnimation>
@@ -371,14 +371,14 @@ export default async function Cozumlerimiz() {
               },
             ].map((s) => (
               <StaggerItem key={s.title}>
-                <div className="group relative rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 text-purple-600 dark:bg-purple-900/20 dark:text-purple-300">
+                <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-900/20 text-purple-300">
                     <s.Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-white">
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  <p className="mt-2 text-sm text-gray-300">
                     {s.desc}
                   </p>
                   <div
@@ -400,7 +400,7 @@ export default async function Cozumlerimiz() {
       </section>
 
       {/* CTA Inline */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-black overflow-hidden">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-gray-900 to-black" />
         <div className="max-w-4xl mx-auto text-center">
           <ScrollAnimation direction="fade" delay={0.2}>
@@ -449,7 +449,7 @@ export default async function Cozumlerimiz() {
       </div>
 
       {/* Footer */}
-      <footer className="relative px-4 sm:px-6 lg:px-8 py-14 bg-gray-900 dark:bg-black text-gray-300 overflow-hidden">
+      <footer className="relative px-4 sm:px-6 lg:px-8 py-14 bg-black text-gray-300 overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-gray-900 to-black" />
         <div className="absolute inset-0 -z-20 bg-[url('data:image/svg+xml,%3Csvg width=\'160\' height=\'160\' viewBox=\'0 0 160 160\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' stroke=\'%23222\' stroke-width=\'0.5\'%3E%3Cpath d=\'M0 80h160M80 0v160\'/%3E%3C/g%3E%3C/svg%3E')] opacity-10" />
         <div className="max-w-7xl mx-auto">

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { ShinyText } from "@/components/ShinyText";
 import {
@@ -14,6 +17,8 @@ import {
   Headset,
   Play,
   ArrowRight,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import Link from "next/link";
 import { LazyVideo } from "@/components/animations/LazyVideo";
@@ -26,14 +31,21 @@ import {
   HeroStaggerContainer,
 } from "@/components/animations/ScrollAnimations";
 export default function Home() {
+  const [expandedService, setExpandedService] = useState<number | null>(null);
+
+  const toggleService = (index: number) => {
+    console.log('Toggling service:', index, 'Current expanded:', expandedService);
+    setExpandedService(expandedService === index ? null : index);
+  };
+
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="pt-36 min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <HeroStaggerContainer className="space-y-12" staggerDelay={0.2}>
+      <section className="pt-24 pb-16 md:pt-36 md:pb-0 min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <HeroStaggerContainer className="space-y-10 md:space-y-12" staggerDelay={0.2}>
             {/* Main Headlines */}
-            <div className="space-y-8 pt-16">
+            <div className="space-y-8 pt-6 md:pt-16">
               <HeroAnimation direction="fade" delay={0.2}>
                 <div className="hidden md:block">
                   <TextHoverEffect text="BİSAVUNMA" />
@@ -41,12 +53,12 @@ export default function Home() {
                 <div className="block md:hidden">
                   <ShinyText
                     text="BİSAVUNMA"
-                    className="text-6xl font-poppins-bold"
+                    className="text-[clamp(2.5rem,_12vw,_4rem)] font-poppins-bold"
                   />
                 </div>
               </HeroAnimation>
               <HeroAnimation direction="up" delay={0.4}>
-                <h2 className="text-md md:text-2xl text-gray-300 font-poppins-light max-w-4xl mx-auto">
+                <h2 className="text-base md:text-2xl text-gray-300 font-poppins-light max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-12">
                   DÜNYA ÇAPINDA YENİLİKÇİ MODÜLER SAVUNMA SİSTEMLERİ
                   <br />
                   <span className="text-sky-400 font-poppins-medium">
@@ -66,7 +78,7 @@ export default function Home() {
               </HeroAnimation>
 
               <HeroAnimation direction="up" delay={0.6}>
-                <p className="text-sm md:text-lg  text-gray-400 max-w-5xl mx-auto leading-relaxed font-inter-regular">
+                <p className="text-sm md:text-lg text-gray-400 max-w-3xl md:max-w-5xl mx-auto leading-relaxed font-inter-regular px-12">
                   1996&apos;dan beri kamera sistemleri sektöründe faaliyet
                   gösteren, 2018&apos;de yeniden yapılanan Bisavunma,
                   <span className="text-sky-400 font-inter-medium">
@@ -86,7 +98,7 @@ export default function Home() {
 
             {/* Key Features */}
             <HeroAnimation direction="up" delay={0.8}>
-              <div className="flex flex-wrap justify-center gap-8 text-gray-300 font-inter-medium">
+              <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-gray-300 font-inter-medium text-sm sm:text-base">
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-sky-400" />
                   <span>25+ Yıl Deneyim</span>
@@ -108,15 +120,15 @@ export default function Home() {
 
             {/* Call to Action */}
             <HeroAnimation direction="up" delay={1.0}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 px-12">
                 <Link
                   href="/urunler"
-                  className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-4 rounded-lg font-poppins-medium transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                  className="bg-sky-600 hover:bg-sky-700 text-white w-full sm:w-auto px-6 sm:px-8 py-4 rounded-lg font-poppins-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                 >
                   Ürünleri İncele
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <button className="border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-4 rounded-lg font-poppins-medium transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                <button className="border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white w-full sm:w-auto px-6 sm:px-8 py-4 rounded-lg font-poppins-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
                   <Play className="w-4 h-4" />
                   Tanıtım Videosu
                 </button>
@@ -124,8 +136,8 @@ export default function Home() {
             </HeroAnimation>
           </HeroStaggerContainer>
           <HeroAnimation direction="fade" delay={1.2}>
-            <div className="bg-gradient-to-br from-red-600/10 to-purple-600/10 rounded-xl overflow-hidden p-12 my-12">
-              <div className="relative aspect-video w-full h-[400px] md:h-[500px]">
+            <div className="bg-gradient-to-br from-red-600/10 to-purple-600/10 rounded-xl overflow-hidden p-6 sm:p-12 my-10 md:my-12">
+              <div className="relative aspect-video w-full h-60 sm:h-[400px] md:h-[500px] px-3">
                 <LazyVideo
                   src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
                   autoPlay
@@ -140,8 +152,8 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white dark:bg-gray-950">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
+      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-950">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-transparent to-transparent" />
         {/* Parallax layer */}
         <div
           aria-hidden
@@ -157,21 +169,21 @@ export default function Home() {
           <ScrollAnimation direction="up">
             <div className="text-center mb-14">
               <div>
-                <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+                <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
                   Özellikler
                 </span>
                 <div className="overflow-hidden">
-                  <h2 className="mt-4 text-3xl md:text-4xl font-poppins-bold tracking-tight text-gray-900 dark:text-white">
+                  <h2 className="mt-4 text-3xl md:text-4xl font-poppins-bold tracking-tight text-white">
                     Neden{" "}
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <span className="text-gray-300">
                       BİSAVUNMA
                     </span>
                     ?
                   </h2>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-inter-regular">
+                  <p className="mt-4 text-gray-300 max-w-2xl mx-auto font-inter-regular">
                     Operasyonel üstünlük için tasarlanmış, yüksek etkili ve
                     güvenilir yetenek seti.
                   </p>
@@ -221,14 +233,14 @@ export default function Home() {
               },
             ].map((f) => (
               <StaggerItem key={f.title} direction="up">
-                <div className="group relative rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 will-change-transform overflow-hidden">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 will-change-transform overflow-hidden">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gray-800 text-gray-200">
                     <f.Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-poppins-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-poppins-semibold text-white">
                     {f.title}
                   </h3>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 font-inter-regular">
+                  <p className="mt-2 text-sm text-gray-300 font-inter-regular">
                     {f.description}
                   </p>
 
@@ -275,22 +287,24 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-transparent to-transparent dark:from-gray-900" />
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation direction="up">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-poppins-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-3xl font-poppins-bold text-white mb-4">
                 Hizmetlerimiz
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-inter-regular">
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto font-inter-regular">
                 Savunma sektöründe kapsamlı çözümler sunuyoruz
               </p>
+             
+             
             </div>
           </ScrollAnimation>
 
           <StaggerContainer
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6"
             staggerDelay={0.1}
           >
             {[
@@ -342,24 +356,61 @@ export default function Home() {
                 description: "BİSAVUNMA, sistemlerin her zaman en yüksek performansla çalışması için 7/24 teknik destek sağlar. Yazılım güncellemeleri, bakım planlamaları, arıza tespiti, hızlı müdahale ve operatör eğitimleri ile müşterilerimiz daima desteklenir.",
                 Icon: Headset 
               },
-            ].map((svc) => (
+            ].map((svc, index) => (
               <StaggerItem key={svc.title} direction="up">
-                <div className="group relative rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
-                    <svc.Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-lg font-poppins-semibold text-gray-900 dark:text-white">
-                    {svc.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 font-inter-regular">
-                    {svc.summary}
-                  </p>
-                  <div className="mt-3 text-xs text-gray-500 dark:text-gray-400 font-inter-regular leading-relaxed">
-                    {svc.description}
+                <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                  {/* Header - Clickable */}
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toggleService(index);
+                    }}
+                    className="w-full p-4 sm:p-6 text-left hover:bg-gray-800 transition-colors duration-200 focus:outline-none relative z-10"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3 sm:space-x-4 flex-1 min-w-0">
+                        <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gray-800 text-gray-200 flex-shrink-0">
+                          <svc.Icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h3 className="text-base sm:text-lg font-poppins-semibold text-white truncate">
+                            {svc.title}
+                          </h3>
+                          <p className="mt-1 text-xs sm:text-sm text-gray-300 font-inter-regular line-clamp-2">
+                            {svc.summary}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex-shrink-0 ml-2">
+                        {expandedService === index ? (
+                          <ChevronUp className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 transition-transform duration-200" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 transition-transform duration-200" />
+                        )}
+                      </div>
+                    </div>
+                  </button>
+
+                  {/* Expandable Content */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      expandedService === index 
+                        ? "max-h-96 sm:max-h-80 opacity-100" 
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                      <div className="border-t border-gray-700 pt-3 sm:pt-4">
+                        <p className="text-xs sm:text-sm text-gray-300 font-inter-regular leading-relaxed">
+                          {svc.description}
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
+                  {/* Hover Effects */}
                   <div
-                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
                     style={{
                       boxShadow:
                         "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
@@ -367,11 +418,11 @@ export default function Home() {
                   />
                   <div
                     aria-hidden
-                    className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity"
+                    className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity z-0"
                   />
                   <div
                     aria-hidden
-                    className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+                    className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0"
                     style={{
                       background:
                         "linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%)",
@@ -386,22 +437,22 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <ScrollAnimation direction="up">
-              <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-3 py-1 text-xs font-medium text-gray-300">
                 Hakkımızda
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.2}>
-              <h2 className="mt-4 text-3xl md:text-4xl font-poppins-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="mt-4 text-3xl md:text-4xl font-poppins-bold tracking-tight text-white">
                 Sahada Kanıtlanmış Güvenilir Çözümler
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl font-inter-regular">
+              <p className="mt-4 text-lg text-gray-300 max-w-2xl font-inter-regular">
                 BİSAVUNMA, savunma teknolojilerinde uzman kadrosu ve mühendislik
                 yetkinlikleriyle kurumların operasyonel üstünlük elde etmesini
                 sağlar.
@@ -430,14 +481,14 @@ export default function Home() {
                 },
               ].map((i) => (
                 <StaggerItem key={i.title} direction="up">
-                  <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 shadow-sm hover:shadow-md transition">
-                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                  <div className="rounded-2xl border border-gray-800 bg-gray-900 p-5 shadow-sm hover:shadow-md transition">
+                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-800 text-gray-200">
                       <i.Icon className="h-5 w-5" />
                     </div>
-                    <div className="text-sm font-poppins-semibold text-gray-900 dark:text-white">
+                    <div className="text-sm font-poppins-semibold text-white">
                       {i.title}
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-300 font-inter-regular">
+                    <div className="text-sm text-gray-300 font-inter-regular">
                       {i.desc}
                     </div>
                   </div>
@@ -455,7 +506,7 @@ export default function Home() {
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-5 py-3 text-sm font-poppins-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-5 py-3 text-sm font-poppins-semibold text-white hover:bg-gray-800 transition"
                 >
                   İletişime Geç
                 </a>
@@ -466,7 +517,7 @@ export default function Home() {
             <ScaleAnimation delay={0.8}>
               <div className="relative">
                 <div className="absolute left-1/2 top-6 h-px w-2/3 -translate-x-1/2" />
-                <div className="relative aspect-[4/3] rounded-2xl border border-gray-200 dark:border-gray-800 bg-black shadow-sm overflow-hidden">
+                <div className="relative aspect-[4/3] rounded-2xl border border-gray-800 bg-black shadow-sm overflow-hidden">
                   <Image
                     src="/main/ana-sayfa-hakkimizda.jpeg"
                     alt="BİSAVUNMA Hakkımızda"
@@ -480,109 +531,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-transparent to-transparent dark:from-gray-900" />
-        <div className="max-w-7xl mx-auto">
-          <ScrollAnimation direction="up">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-poppins-bold text-gray-900 dark:text-white mb-4">
-                Referanslar
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-inter-regular">
-                Müşterilerimizin bizimle çalışma deneyimleri
-              </p>
-            </div>
-          </ScrollAnimation>
-
-          <StaggerContainer
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            staggerDelay={0.2}
-          >
-            {[
-              {
-                quote:
-                  "Operasyonel verimliliğimizi ciddi şekilde artırdılar. Destek çok hızlı.",
-                author: "Savunma Sanayi Müşterisi",
-                role: "Operasyon Yöneticisi",
-              },
-              {
-                quote:
-                  "Güvenilir ve ölçeklenebilir çözümlerle ihtiyaçlarımıza nokta atışı yaklaştılar.",
-                author: "Kurumsal İş Ortağı",
-                role: "Teknoloji Direktörü",
-              },
-              {
-                quote:
-                  "Saha koşullarında test edilen ürünler ile fark yarattılar.",
-                author: "Kamu Kurumu",
-                role: "Proje Sorumlusu",
-              },
-            ].map((t) => (
-              <StaggerItem key={t.author} direction="up">
-                <div className="relative h-full p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition overflow-hidden">
-                  <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity" />
-                  <p className="text-gray-700 dark:text-gray-300 italic mb-4 font-inter-regular">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div className="text-sm text-gray-500 dark:text-gray-400 font-inter-regular">
-                    <span className="font-poppins-semibold text-gray-900 dark:text-white">
-                      {t.author}
-                    </span>{" "}
-                    · {t.role}
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Partners / Brands Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
-        <div className="max-w-7xl mx-auto">
-          <ScrollAnimation direction="up">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-poppins-bold text-gray-900 dark:text-white mb-3">
-                İş Ortaklarımız
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 font-inter-regular">
-                Birlikte değer ürettiğimiz markalar
-              </p>
-              <div
-                aria-hidden
-                className="mx-auto mt-6 h-px w-2/3 bg-gradient-to-r from-transparent via-emerald-300/50 to-transparent"
-              />
-            </div>
-          </ScrollAnimation>
-
-          <StaggerContainer
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center"
-            staggerDelay={0.1}
-          >
-            {["ASELSAN", "HAVELSAN", "TAI", "ROKETSAN", "DJI", "X"].map(
-              (brand) => (
-                <StaggerItem key={brand} direction="up">
-                  <div
-                    className="group relative h-16 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex items-center justify-center overflow-hidden transition hover:shadow-md"
-                    style={{ willChange: "transform" }}
-                    aria-label={brand}
-                  >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-emerald-500 to-cyan-500" />
-                    <span className="text-sm font-poppins-medium text-gray-500 dark:text-gray-300 tracking-wide group-hover:text-gray-800 dark:group-hover:text-white transition">
-                      {brand}
-                    </span>
-                  </div>
-                </StaggerItem>
-              )
-            )}
-          </StaggerContainer>
-        </div>
-      </section>
+     
 
       {/* CTA Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 dark:bg-black overflow-hidden">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-gray-900 to-black" />
         <div className="absolute inset-0 -z-20 bg-[url('data:image/svg+xml,%3Csvg width=\'160\' height=\'160\' viewBox=\'0 0 160 160\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' stroke=\'%23222\' stroke-width=\'0.5\'%3E%3Cpath d=\'M0 80h160M80 0v160\'/%3E%3C/g%3E%3C/svg%3E')] opacity-10" />
         <div className="max-w-4xl mx-auto text-center">
@@ -628,7 +580,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative px-4 sm:px-6 lg:px-8 py-14 bg-gray-900 dark:bg-black text-gray-300 overflow-hidden">
+      <footer className="relative px-4 sm:px-6 lg:px-8 py-14 bg-black text-gray-300 overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-gray-900 to-black" />
         <div className="absolute inset-0 -z-20 bg-[url('data:image/svg+xml,%3Csvg width=\'160\' height=\'160\' viewBox=\'0 0 160 160\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' stroke=\'%23222\' stroke-width=\'0.5\'%3E%3Cpath d=\'M0 80h160M80 0v160\'/%3E%3C/g%3E%3C/svg%3E')] opacity-10" />
         <div className="max-w-7xl mx-auto">

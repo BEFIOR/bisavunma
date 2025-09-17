@@ -164,7 +164,7 @@ export const Navbar = ({
   };
 
   return (
-    <div className="w-full flex items-center justify-center py-6 absolute z-50">
+    <div className="w-full flex items-center justify-center py-6 fixed top-0 left-0 right-0 z-50">
       {/* Mobile top bar */}
       <div className="w-full px-4 lg:hidden">
         <div className="flex items-center justify-between rounded-3xl bg-white/10 backdrop-blur-2xl ring-1 ring-white/20 px-6 py-4 text-white shadow-2xl border border-white/10">

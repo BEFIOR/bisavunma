@@ -39,25 +39,25 @@ export default function Hizmetler() {
         </div>
 
         {/* Background Overlay - only for hero section */}
-        <div className="absolute inset-0 -z-10 bg-white/90 dark:bg-gray-950/50" />
+        <div className="absolute inset-0 -z-10 bg-gray-950/80" />
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <HeroAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
                 Hizmetlerimiz
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.4}>
-              <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
                 Kapsamlı{" "}
-                <span className="text-gray-700 dark:text-gray-300">
+                <span className="text-gray-300">
                   Savunma Çözümleri
                 </span>
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.6}>
-              <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
                 Saha keşfinden yazılım çözümlerine, kurulumdan eğitime kadar 
                 savunma teknolojilerinde tam kapsamlı hizmetler sunuyoruz.
               </p>
@@ -72,13 +72,13 @@ export default function Hizmetler() {
                 </a>
                 <a
                   href="#kurulum-entegrasyon"
-                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   Kurulum & Entegrasyon
                 </a>
                 <a
                   href="#egitim-destek"
-                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   Eğitim & Destek
                 </a>
@@ -91,27 +91,27 @@ export default function Hizmetler() {
       {/* Saha Keşfi & Konumlandırma */}
       <section
         id="saha-kesfi"
-        className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white dark:bg-gray-950"
+        className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-950"
       >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <ScrollAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-1.5 text-xs font-medium text-blue-600 dark:bg-blue-800 dark:text-blue-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-blue-900/20 px-4 py-1.5 text-xs font-medium text-blue-300">
                 <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />{" "}
                 Saha Keşfi & Konumlandırma
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Stratejik{" "}
-                <span className="text-blue-700 dark:text-blue-300">
+                <span className="text-blue-300">
                   Konumlandırma
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+              <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
                 Her operasyon sahası benzersizdir. Uzman mühendis ekibimizle gerçekleştirdiğimiz 
                 ayrıntılı keşif ve analiz çalışmaları ile 360° kesintisiz koruma sağlıyoruz.
               </p>
@@ -120,7 +120,7 @@ export default function Hizmetler() {
           
           <div className="max-w-6xl mx-auto">
             <ScrollAnimation direction="up" delay={0.8}>
-              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+              <div className="bg-gray-900 rounded-2xl border border-gray-800 p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                   <div className="space-y-6">
                     <ScrollAnimation direction="left" delay={1.0}>
@@ -128,13 +128,13 @@ export default function Hizmetler() {
                         <div className="p-3 bg-blue-100 dark:bg-blue-800 rounded-xl hover:scale-110 transition-transform duration-300">
                           <MapPin className="h-8 w-8 text-blue-600 dark:text-blue-300 animate-pulse" />
                         </div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                        <h3 className="text-2xl font-semibold text-white">
                           Saha Keşfi & Konumlandırma
                         </h3>
                       </div>
                     </ScrollAnimation>
                     <ScrollAnimation direction="up" delay={1.2}>
-                      <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <div className="space-y-4 text-gray-300 leading-relaxed">
                         <p>
                           Her operasyon sahası, yalnızca bulunduğu coğrafya ile değil; iklim koşulları, 
                           arazi yapısı, elektromanyetik yoğunluğu, çevresel gürültü seviyeleri, sivil yerleşim 
@@ -150,32 +150,32 @@ export default function Hizmetler() {
                   </div>
                   <ScrollAnimation direction="right" delay={1.0}>
                     <div className="space-y-4">
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Target className="h-5 w-5 text-blue-600" />
                           Radar Yerleşimi
                         </h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-gray-300">
                           Her radarın kapsama alanı, menzili, açısal hassasiyeti ve coğrafi engeller 
                           dikkate alınarak en verimli noktalar belirlenir.
                         </p>
                       </div>
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Radio className="h-5 w-5 text-blue-600" />
                           RF Tespit & Sinyal İstihbaratı
                         </h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-gray-300">
                           Sahadaki elektromanyetik spektrum analiz edilir, kritik frekans bantları 
                           incelenir, düşman iletişim sinyalleri için yön bulma noktaları seçilir.
                         </p>
                       </div>
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Shield className="h-5 w-5 text-blue-600" />
                           Drone Tespit Sistemleri
                         </h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-gray-300">
                           Sürü drone saldırılarına, alçak irtifa uçuşlarına ve GPS spoofing gibi 
                           elektronik harp senaryolarına karşı çok katmanlı yerleşim planı.
                         </p>
@@ -192,27 +192,27 @@ export default function Hizmetler() {
       {/* Kurulum & Entegrasyon */}
       <section
         id="kurulum-entegrasyon"
-        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950 overflow-hidden"
+        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden"
       >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-transparent to-transparent dark:from-gray-900" />
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <ScrollAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-xs font-medium text-emerald-600 dark:bg-emerald-800 dark:text-emerald-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-900/20 px-4 py-1.5 text-xs font-medium text-emerald-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
                 Kurulum & Entegrasyon
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Birleşik{" "}
-                <span className="text-emerald-700 dark:text-emerald-300">
+                <span className="text-emerald-300">
                   Savunma Ağı
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+              <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
                 Kurulum süreci, sadece cihazların montajı değildir; aynı zamanda birleşik bir 
                 savunma ağı inşasıdır. Tek C2 platformunda tam entegrasyon.
               </p>
@@ -221,19 +221,19 @@ export default function Hizmetler() {
           
           <div className="max-w-6xl mx-auto">
             <ScrollAnimation direction="up" delay={0.8}>
-              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+              <div className="bg-gray-900 rounded-2xl border border-gray-800 p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                   <ScrollAnimation direction="left" delay={1.0}>
                     <div className="space-y-6">
                       <div className="flex items-center gap-4">
-                        <div className="p-3 bg-emerald-100 dark:bg-emerald-800 rounded-xl hover:scale-110 transition-transform duration-300">
-                          <Cog className="h-8 w-8 text-emerald-600 dark:text-emerald-300 animate-spin" />
+                        <div className="p-3 bg-emerald-900/20 rounded-xl hover:scale-110 transition-transform duration-300">
+                          <Cog className="h-8 w-8 text-emerald-300 animate-spin" />
                   </div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                        <h3 className="text-2xl font-semibold text-white">
                           Kurulum & Entegrasyon
                   </h3>
                       </div>
-                      <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <div className="space-y-4 text-gray-300 leading-relaxed">
                         <p>
                           BİSAVUNMA, her bir alt sistemi tek bir C2 (Command & Control) yazılım 
                           platformunda birleştirerek, kullanıcıya tam entegrasyonlu bir operasyon 
@@ -248,24 +248,24 @@ export default function Hizmetler() {
                   </ScrollAnimation>
                   <ScrollAnimation direction="right" delay={1.0}>
                     <div className="space-y-4">
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Radio className="h-5 w-5 text-emerald-600" />
                           Entegre Sistemler
                         </h4>
-                        <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <ul className="text-sm text-gray-300 space-y-1">
                           <li>• Radar + RF Tespit + Sinyal İstihbarat</li>
                           <li>• Drone Tespit & Anti-Drone Jammer</li>
                           <li>• Elektro-Optik & Termal Sensörler</li>
                           <li>• Hard-Kill Otomatik Silah Sistemleri</li>
                         </ul>
                       </div>
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Target className="h-5 w-5 text-emerald-600" />
                           Entegrasyon Faydaları
                         </h4>
-                        <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <ul className="text-sm text-gray-300 space-y-1">
                           <li>• Anlık veri paylaşımı</li>
                           <li>• Tek ekran üzerinden yönetim</li>
                           <li>• Hibrit tehditlere karşı koordinasyon</li>
@@ -284,27 +284,27 @@ export default function Hizmetler() {
       {/* Eğitim & Teknik Destek */}
       <section
         id="egitim-destek"
-        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 overflow-hidden"
+        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden"
       >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <ScrollAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5 text-xs font-medium text-purple-600 dark:bg-purple-800 dark:text-purple-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-purple-900/20 px-4 py-1.5 text-xs font-medium text-purple-300">
                 <span className="h-2 w-2 rounded-full bg-purple-500 animate-pulse" />{" "}
                 Eğitim & Teknik Destek
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Uzmanlık{" "}
-                <span className="text-purple-700 dark:text-purple-300">
+                <span className="text-purple-300">
                   Transferi
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+              <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
                 BİSAVUNMA, teslim ettiği sistemlerle birlikte kullanıcılarına uzmanlık transferi yapar. 
                 Gerçek operasyonel senaryolar üzerinden uygulamalı eğitimler ve 7/24 teknik destek.
               </p>
@@ -313,21 +313,21 @@ export default function Hizmetler() {
           
           <div className="max-w-6xl mx-auto">
             <ScrollAnimation direction="up" delay={0.8}>
-              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+              <div className="bg-gray-900 rounded-2xl border border-gray-800 p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                   <div className="space-y-6">
                     <ScrollAnimation direction="left" delay={1.0}>
                       <div className="flex items-center gap-4">
-                        <div className="p-3 bg-purple-100 dark:bg-purple-800 rounded-xl hover:scale-110 transition-transform duration-300">
-                          <GraduationCap className="h-8 w-8 text-purple-600 dark:text-purple-300 animate-bounce" />
+                        <div className="p-3 bg-purple-900/20 rounded-xl hover:scale-110 transition-transform duration-300">
+                          <GraduationCap className="h-8 w-8 text-purple-300 animate-bounce" />
                         </div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                        <h3 className="text-2xl font-semibold text-white">
                           Eğitim & Teknik Destek
                         </h3>
                       </div>
                     </ScrollAnimation>
                     <ScrollAnimation direction="up" delay={1.2}>
-                      <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <div className="space-y-4 text-gray-300 leading-relaxed">
                         <p>
                           Eğitimler, gerçek operasyonel senaryolar üzerinden uygulamalı olarak verilir. 
                           Sistemlerin her zaman en yüksek verimle çalışabilmesi için 7/24 teknik destek sağlarız.
@@ -337,12 +337,12 @@ export default function Hizmetler() {
                   </div>
                   <ScrollAnimation direction="right" delay={1.0}>
                     <div className="space-y-4">
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Search className="h-5 w-5 text-purple-600" />
                           Eğitim Konuları
                         </h4>
-                        <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <ul className="text-sm text-gray-300 space-y-1">
                           <li>• RF Spektrum Analizi & Yön Bulma</li>
                           <li>• Drone Tespit ve Anti-Drone Operasyon</li>
                           <li>• Jammer Kullanımı & Soft-Kill Stratejileri</li>
@@ -351,12 +351,12 @@ export default function Hizmetler() {
                           <li>• Senaryo Bazlı Simülasyon Eğitimleri</li>
                         </ul>
                       </div>
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Wrench className="h-5 w-5 text-purple-600" />
                           7/24 Teknik Destek
                         </h4>
-                        <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <ul className="text-sm text-gray-300 space-y-1">
                           <li>• Uzaktan yazılım güncellemeleri</li>
                           <li>• Arıza tespiti ve hızlı müdahale</li>
                           <li>• Düzenli bakım ve performans kontrolleri</li>
@@ -375,27 +375,27 @@ export default function Hizmetler() {
       {/* Yazılım Çözümleri */}
       <section
         id="yazilim-cozumleri"
-        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950 overflow-hidden"
+        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden"
       >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-transparent to-transparent dark:from-gray-900" />
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <ScrollAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1.5 text-xs font-medium text-orange-600 dark:bg-orange-800 dark:text-orange-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-orange-900/20 px-4 py-1.5 text-xs font-medium text-orange-300">
                 <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />{" "}
                 Yazılım Çözümleri
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Özgün C2{" "}
-                <span className="text-orange-700 dark:text-orange-300">
+                <span className="text-orange-300">
                   Yazılım Platformu
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+              <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
                 Modern savunma mimarisinde donanım kadar yazılım da hayati öneme sahiptir. 
                 BİSAVUNMA&apos;nın geliştirdiği özgün C2 yazılım platformu ile karar üstünlüğü sağlıyoruz.
               </p>
@@ -404,7 +404,7 @@ export default function Hizmetler() {
           
           <div className="max-w-6xl mx-auto">
             <ScrollAnimation direction="up" delay={0.8}>
-              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+              <div className="bg-gray-900 rounded-2xl border border-gray-800 p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                   <ScrollAnimation direction="left" delay={1.0}>
                     <div className="space-y-6">
@@ -412,11 +412,11 @@ export default function Hizmetler() {
                         <div className="p-3 bg-orange-100 dark:bg-orange-800 rounded-xl hover:scale-110 transition-transform duration-300">
                           <Code className="h-8 w-8 text-orange-600 dark:text-orange-300 animate-pulse" />
                   </div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                        <h3 className="text-2xl font-semibold text-white">
                           Yazılım Çözümleri
                   </h3>
                       </div>
-                      <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <div className="space-y-4 text-gray-300 leading-relaxed">
                         <p>
                           BİSAVUNMA&apos;nın geliştirdiği özgün C2 yazılım platformu, tüm donanımları 
                           tek bir çatı altında toplayarak karar üstünlüğü sağlar.
@@ -430,24 +430,24 @@ export default function Hizmetler() {
             </ScrollAnimation>
                   <ScrollAnimation direction="right" delay={1.0}>
                     <div className="space-y-4">
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Eye className="h-5 w-5 text-orange-600" />
                           Platform Özellikleri
                         </h4>
-                        <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <ul className="text-sm text-gray-300 space-y-1">
                           <li>• Tek ekran üzerinde entegrasyon</li>
                           <li>• Gerçek zamanlı RF spektrum analizi</li>
                           <li>• Yapay zekâ destekli algoritmalar</li>
                           <li>• Proaktif savunma altyapısı</li>
                         </ul>
           </div>
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Shield className="h-5 w-5 text-orange-600" />
                           Güvenlik & Raporlama
                         </h4>
-                        <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <ul className="text-sm text-gray-300 space-y-1">
                           <li>• Siber güvenlik protokolleri</li>
                           <li>• Dış müdahalelere karşı güvenlik</li>
                           <li>• Raporlama & Arşivleme Modülü</li>

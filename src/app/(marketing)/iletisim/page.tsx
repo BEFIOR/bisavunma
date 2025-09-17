@@ -23,25 +23,25 @@ export default async function Iletisim() {
         </div>
 
         {/* Background Overlay - only for hero section */}
-        <div className="absolute inset-0 -z-10 bg-white/90 dark:bg-gray-950/50" />
+        <div className="absolute inset-0 -z-10 bg-gray-950/80" />
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <HeroAnimation direction="fade" delay={0.2}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+              <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
                 İletişim
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.4}>
-              <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
                 Bizimle{" "}
-                <span className="text-gray-700 dark:text-gray-300">
+                <span className="text-gray-300">
                   İletişime Geçin
                 </span>
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.6}>
-              <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
                 Savunma ve güvenlik çözümleriniz için uzman ekibimizle iletişime
                 geçin. Size en uygun çözümü birlikte bulalım.
               </p>
@@ -56,13 +56,13 @@ export default async function Iletisim() {
                 </a>
                 <a
                   href="#iletisim-bilgileri"
-                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   İletişim Bilgileri
                 </a>
                 <a
                   href="#ofis-lokasyonlari"
-                  className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-4 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+                  className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   Ofis Lokasyonları
                 </a>
@@ -75,9 +75,9 @@ export default async function Iletisim() {
       {/* İletişim Formu */}
       <section
         id="iletisim-formu"
-        className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white dark:bg-gray-950"
+        className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-950"
       >
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-transparent to-transparent" />
         {/* Parallax layer */}
         <div
           aria-hidden
@@ -91,14 +91,14 @@ export default async function Iletisim() {
 
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-1.5 text-xs font-medium text-blue-600 dark:bg-blue-800 dark:text-blue-300">
+            <span className="inline-flex items-center gap-2 rounded-full bg-blue-900/20 px-4 py-1.5 text-xs font-medium text-blue-300">
               <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />{" "}
               İletişim Formu
             </span>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Projenizi Birlikte Planlayalım
             </h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
               İhtiyaçlarınızı detaylı olarak paylaşın, size özel çözüm
               önerilerimizi sunalım.
             </p>
@@ -106,13 +106,13 @@ export default async function Iletisim() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Form */}
-            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8 shadow-lg">
+            <div className="bg-gray-900 rounded-2xl border border-gray-800 p-8 shadow-lg">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label
                       htmlFor="firstName"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Ad
                     </label>
@@ -120,14 +120,14 @@ export default async function Iletisim() {
                       type="text"
                       id="firstName"
                       name="firstName"
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
+                      className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
                       placeholder="Adınız"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="lastName"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Soyad
                     </label>
@@ -135,7 +135,7 @@ export default async function Iletisim() {
                       type="text"
                       id="lastName"
                       name="lastName"
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
+                      className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
                       placeholder="Soyadınız"
                     />
                   </div>
@@ -144,7 +144,7 @@ export default async function Iletisim() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-gray-300 mb-2"
                   >
                     E-posta
                   </label>
@@ -152,7 +152,7 @@ export default async function Iletisim() {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
                     placeholder="ornek@email.com"
                   />
                 </div>
@@ -160,7 +160,7 @@ export default async function Iletisim() {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-gray-300 mb-2"
                   >
                     Telefon
                   </label>
@@ -168,7 +168,7 @@ export default async function Iletisim() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
                     placeholder="+90 5XX XXX XX XX"
                   />
                 </div>
@@ -176,7 +176,7 @@ export default async function Iletisim() {
                 <div>
                   <label
                     htmlFor="company"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-gray-300 mb-2"
                   >
                     Şirket/Kurum
                   </label>
@@ -184,7 +184,7 @@ export default async function Iletisim() {
                     type="text"
                     id="company"
                     name="company"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
                     placeholder="Şirket veya kurum adınız"
                   />
                 </div>
@@ -192,14 +192,14 @@ export default async function Iletisim() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-gray-300 mb-2"
                   >
                     Konu
                   </label>
                   <select
                     id="subject"
                     name="subject"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
                   >
                     <option value="">Konu seçiniz</option>
                     <option value="rf-sistemleri">RF Sistemleri</option>
@@ -217,7 +217,7 @@ export default async function Iletisim() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-gray-300 mb-2"
                   >
                     Mesaj
                   </label>
@@ -225,7 +225,7 @@ export default async function Iletisim() {
                     id="message"
                     name="message"
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors resize-none"
+                    className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors resize-none"
                     placeholder="Projeniz hakkında detaylı bilgi veriniz..."
                   />
                 </div>
@@ -242,72 +242,72 @@ export default async function Iletisim() {
 
             {/* Contact Info Cards */}
             <div className="space-y-6">
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-8">
+              <div className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 rounded-2xl border border-blue-800 p-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-blue-100 dark:bg-blue-800 rounded-xl">
-                    <MessageCircle className="h-6 w-6 text-blue-600 dark:text-blue-300" />
+                  <div className="p-3 bg-blue-900/20 rounded-xl">
+                    <MessageCircle className="h-6 w-6 text-blue-300" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-white">
                       Hızlı İletişim
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                    <p className="text-sm text-gray-300">
                       7/24 destek hattımız
                     </p>
                   </div>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 text-blue-600 dark:text-blue-300" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <Phone className="h-4 w-4 text-blue-300" />
+                    <span className="text-gray-300">
                       +90 212 XXX XX XX
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 text-blue-600 dark:text-blue-300" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <Mail className="h-4 w-4 text-blue-300" />
+                    <span className="text-gray-300">
                       info@bisavunma.com
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-emerald-50 to-green-100 dark:from-emerald-900/20 dark:to-green-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-8">
+              <div className="bg-gradient-to-br from-emerald-900/20 to-green-900/20 rounded-2xl border border-emerald-800 p-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-emerald-100 dark:bg-emerald-800 rounded-xl">
-                    <Clock className="h-6 w-6 text-emerald-600 dark:text-emerald-300" />
+                  <div className="p-3 bg-emerald-900/20 rounded-xl">
+                    <Clock className="h-6 w-6 text-emerald-300" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-white">
                       Çalışma Saatleri
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                    <p className="text-sm text-gray-300">
                       Pazartesi - Cuma
                     </p>
                   </div>
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-300">
+                    <span className="text-gray-300">
                       Pazartesi - Cuma
                     </span>
-                    <span className="text-gray-900 dark:text-white font-medium">
+                    <span className="text-white font-medium">
                       09:00 - 18:00
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-300">
+                    <span className="text-gray-300">
                       Cumartesi
                     </span>
-                    <span className="text-gray-900 dark:text-white font-medium">
+                    <span className="text-white font-medium">
                       10:00 - 16:00
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600 dark:text-gray-300">
+                    <span className="text-gray-300">
                       Pazar
                     </span>
-                    <span className="text-gray-900 dark:text-white font-medium">
+                    <span className="text-white font-medium">
                       Kapalı
                     </span>
                   </div>
@@ -354,7 +354,7 @@ export default async function Iletisim() {
       </section>
 
       {/* Footer */}
-      <footer className="relative px-4 sm:px-6 lg:px-8 py-14 bg-gray-900 dark:bg-black text-gray-300 overflow-hidden">
+      <footer className="relative px-4 sm:px-6 lg:px-8 py-14 bg-black text-gray-300 overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-gray-900 to-black" />
         <div className="absolute inset-0 -z-20 bg-[url('data:image/svg+xml,%3Csvg width=\'160\' height=\'160\' viewBox=\'0 0 160 160\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' stroke=\'%23222\' stroke-width=\'0.5\'%3E%3Cpath d=\'M0 80h160M80 0v160\'/%3E%3C/g%3E%3C/svg%3E')] opacity-10" />
         <div className="max-w-7xl mx-auto">
