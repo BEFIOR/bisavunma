@@ -10,6 +10,7 @@ import {
 import { Radio, ArrowLeft, CheckCircle } from "lucide-react";
 import { getRfSystemBySlug } from "@/data/rf-systems";
 import { getProductsByCategorySlug } from "@/lib/products";
+import { sanitizeHtml } from "@/lib/sanitize";
 import HeroSlider from "@/components/HeroSlider";
 
 export const revalidate = 60;
@@ -180,7 +181,9 @@ export default async function ProductInRf({
               <ScrollAnimation direction="right" delay={0.2}>
                 <div
                   className="text-lg text-gray-300 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: product.section1.content }}
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(product.section1.content),
+                  }}
                 />
               </ScrollAnimation>
             </div>
@@ -202,7 +205,9 @@ export default async function ProductInRf({
               <ScrollAnimation direction="left" delay={0.2}>
                 <div
                   className="text-lg text-gray-300 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: product.section2.content }}
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(product.section2.content),
+                  }}
                 />
               </ScrollAnimation>
             </div>
@@ -250,7 +255,9 @@ export default async function ProductInRf({
               <ScrollAnimation direction="right" delay={0.2}>
                 <div
                   className="text-lg text-gray-300 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: product.section3.content }}
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(product.section3.content),
+                  }}
                 />
               </ScrollAnimation>
             </div>
