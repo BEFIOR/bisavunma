@@ -36,17 +36,22 @@ export const MenuItem = ({
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.div
-        transition={{ duration: 0.2 }}
-        className={`cursor-pointer mt-1 tracking-wide font-medium relative group ${
-          isCurrentPage ? "text-white" : "text-white/90 hover:text-white"
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className={`cursor-pointer tracking-wide font-medium relative group px-3 py-2 rounded-xl transition-all duration-200 ${
+          isCurrentPage 
+            ? "text-white bg-white/10 shadow-lg" 
+            : "text-white/85 hover:text-white hover:bg-white/6"
         }`}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
       >
         {href ? <Link href={href}>{item}</Link> : item}
         <motion.div
-          className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-300"
-          initial={{ width: isCurrentPage ? "100%" : "0%" }}
-          animate={{ width: isCurrentPage ? "100%" : "0%" }}
-          whileHover={{ width: "100%" }}
+          className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 rounded-full"
+          initial={{ width: isCurrentPage ? "70%" : "0%" }}
+          animate={{ width: isCurrentPage ? "70%" : "0%" }}
+          whileHover={{ width: "70%" }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         />
       </motion.div>
       {active !== null && (
@@ -60,11 +65,14 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-black/90  text-white rounded-3xl  overflow-hidden ring-1 ring-white/20 shadow-2xl border border-white/10 "
+                className="bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-xl text-white rounded-2xl overflow-hidden ring-1 ring-white/20 shadow-xl border border-white/10"
               >
+                {/* Animated background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/8 via-purple-500/8 to-emerald-500/8" />
+                
                 <motion.div
                   layout // layout ensures smooth animation
-                  className="w-max h-full p-6"
+                  className="relative w-max h-full p-4"
                 >
                   {children}
                 </motion.div>
@@ -87,8 +95,14 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative lg:flex hidden items-center gap-8 px-10 py-5 rounded-3xl bg-white/10 backdrop-blur-2xl text-white ring-1 ring-white/20 shadow-2xl border border-white/10 hover:bg-white/15 transition-all duration-300"
+      className="relative lg:flex hidden items-center gap-7 px-7 py-4 rounded-2xl bg-gradient-to-r from-white/6 via-white/10 to-white/6 backdrop-blur-md text-white ring-1 ring-white/15 shadow-xl border border-white/8 hover:bg-gradient-to-r hover:from-white/10 hover:via-white/15 hover:to-white/10 hover:ring-white/25 hover:shadow-2xl transition-all duration-300 group"
     >
+      {/* Animated background gradient */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Subtle border glow */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-emerald-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+      
       {children}
     </nav>
   );
@@ -131,9 +145,12 @@ export const HoveredLink = ({
   return (
     <a
       {...rest}
-      className="text-white/80 hover:text-white transition-colors duration-200 font-medium"
+      className="text-white/80 hover:text-white transition-all duration-300 font-medium hover:translate-x-1 transform group"
     >
-      {children}
+      <span className="relative">
+        {children}
+        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-300 group-hover:w-full" />
+      </span>
     </a>
   );
 };
@@ -164,89 +181,142 @@ export const Navbar = ({
   };
 
   return (
-    <div className="w-full flex items-center justify-center py-6 fixed top-0 left-0 right-0 z-50">
+    <div className="w-full flex items-center justify-center py-5 fixed top-0 left-0 right-0 z-50">
       {/* Mobile top bar */}
       <div className="w-full px-4 lg:hidden">
-        <div className="flex items-center justify-between rounded-3xl bg-white/10 backdrop-blur-2xl ring-1 ring-white/20 px-6 py-4 text-white shadow-2xl border border-white/10">
-          <Link href="/" onClick={close} className="flex items-center gap-3">
-            <Image
-              width={100}
-              height={100}
-              src="/logo.webp"
-              alt="BİSAVUNMA Logo"
-              className="h-10 w-auto rounded-2xl"
-            />
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-between rounded-2xl bg-gradient-to-r from-white/6 via-white/10 to-white/6 backdrop-blur-md ring-1 ring-white/15 px-6 py-4 text-white shadow-xl border border-white/8 group"
+        >
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          <Link href="/" onClick={close} className="flex items-center gap-3 relative z-10">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Image
+                width={100}
+                height={100}
+                src="/logo.webp"
+                alt="BİSAVUNMA Logo"
+                className="h-9 w-auto rounded-2xl shadow-lg"
+              />
+            </motion.div>
           </Link>
-          <button
+          <motion.button
             aria-label="Menüyü aç/kapat"
             onClick={toggle}
-            className="p-3 rounded-2xl bg-white/10 text-white ring-1 ring-white/20 shadow-lg hover:bg-white/20 transition-all duration-200"
+            className="p-2.5 rounded-xl bg-white/10 text-white ring-1 ring-white/15 shadow-lg hover:bg-white/15 transition-all duration-200 relative z-10"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            {open ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <MenuIcon className="h-6 w-6" />
-            )}
-          </button>
-        </div>
+            <motion.div
+              animate={{ rotate: open ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {open ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <MenuIcon className="h-6 w-6" />
+              )}
+            </motion.div>
+          </motion.button>
+        </motion.div>
       </div>
 
       {/* Desktop menu (generated from sections) */}
       <Menu setActive={setActive}>
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            width={100}
-            height={100}
-            src="/logo.webp"
-            alt="BİSAVUNMA Logo"
-            className="h-10 w-auto rounded-2xl"
-          />
-        </Link>
-        {sections.map((s) => {
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <Link href="/" className="flex items-center gap-3 group">
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Image
+                width={100}
+                height={100}
+                src="/logo.webp"
+                alt="BİSAVUNMA Logo"
+                className="h-9 w-auto rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-200"
+              />
+            </motion.div>
+          </Link>
+        </motion.div>
+        {sections.map((s, index) => {
           if (s.type === "link") {
             const isCurrentPage = isActive(s.href);
             return (
               <motion.div
                 key={s.title}
-                transition={{ duration: 0.2 }}
-                className={`cursor-pointer mt-1 tracking-wide font-medium relative group ${
-                  isCurrentPage
-                    ? "text-white"
-                    : "text-white/90 hover:text-white"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 + index * 0.1, ease: "easeOut" }}
+                className={`cursor-pointer tracking-wide font-medium relative group px-3 py-2 rounded-xl transition-all duration-200 ${
+                  isCurrentPage 
+                    ? "text-white bg-white/10 shadow-lg" 
+                    : "text-white/85 hover:text-white hover:bg-white/6"
                 }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Link href={s.href}>{s.title}</Link>
                 <motion.div
-                  className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-300"
-                  initial={{ width: isCurrentPage ? "100%" : "0%" }}
-                  animate={{ width: isCurrentPage ? "100%" : "0%" }}
-                  whileHover={{ width: "100%" }}
+                  className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 rounded-full"
+                  initial={{ width: isCurrentPage ? "70%" : "0%" }}
+                  animate={{ width: isCurrentPage ? "70%" : "0%" }}
+                  whileHover={{ width: "70%" }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                 />
               </motion.div>
             );
           }
           return (
-            <MenuItem
+            <motion.div
               key={s.title}
-              setActive={setActive}
-              active={active}
-              item={s.title}
-              href={s.href}
-              isCurrentPage={isActive(s.href)}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 + sections.length * 0.1 }}
             >
-              <div className={`flex flex-col space-y-4`}>
-                {s.items.map((item) => (
-                  <div key={item.title} className="space-y-2">
-                    <Link
-                      href={item.href}
-                      className="block text-white/90 hover:text-white font-semibold transition-colors duration-200 hover:translate-x-1 transform"
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item={s.title}
+                href={s.href}
+                isCurrentPage={isActive(s.href)}
+              >
+                <div className={`flex flex-col space-y-4`}>
+                  {s.items.map((item, itemIndex) => (
+                    <motion.div 
+                      key={item.title} 
+                      className="space-y-2"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: itemIndex * 0.1 }}
                     >
-                      {item.title}
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </MenuItem>
+                      <Link
+                        href={item.href}
+                        className="block text-white/90 hover:text-white font-semibold transition-all duration-300 hover:translate-x-1 transform group relative"
+                      >
+                        <span className="relative">
+                          {item.title}
+                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-300 group-hover:w-full" />
+                        </span>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+              </MenuItem>
+            </motion.div>
           );
         })}
       </Menu>
@@ -270,70 +340,105 @@ export const Navbar = ({
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 220, damping: 26 }}
-              className="fixed right-0 top-0 h-[100dvh] w-full max-w-[22rem] lg:hidden bg-white/10 backdrop-blur-2xl ring-1 ring-white/20 shadow-2xl z-50 p-6 flex flex-col border border-white/10"
+              className="fixed right-0 top-0 h-[100dvh] w-full max-w-[22rem] lg:hidden bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-xl ring-1 ring-white/15 shadow-xl z-50 p-6 flex flex-col border border-white/8"
             >
-              <div className="flex items-center justify-between mb-6">
+              {/* Animated background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-emerald-500/5" />
+              <div className="flex items-center justify-between mb-6 relative z-10">
                 <Link
                   href="/"
                   onClick={close}
-                  className="flex items-center gap-3"
+                  className="flex items-center gap-3 group"
                 >
-                  <Image
-                    width={100}
-                    height={100}
-                    src="/logo.webp"
-                    alt="BİSAVUNMA Logo"
-                    className="h-10 w-auto rounded-2xl"
-                  />
+                  <motion.div
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Image
+                      width={100}
+                      height={100}
+                      src="/logo.webp"
+                      alt="BİSAVUNMA Logo"
+                      className="h-9 w-auto rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-200"
+                    />
+                  </motion.div>
                 </Link>
-                <button
+                <motion.button
                   aria-label="Kapat"
                   onClick={close}
-                  className="p-3 rounded-2xl bg-white/10 text-white ring-1 ring-white/20 shadow-lg hover:bg-white/20 transition-all duration-200"
+                  className="p-2.5 rounded-xl bg-white/10 text-white ring-1 ring-white/15 shadow-lg hover:bg-white/15 transition-all duration-200"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <X className="h-6 w-6" />
-                </button>
+                  <motion.div
+                    animate={{ rotate: 180 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <X className="h-6 w-6" />
+                  </motion.div>
+                </motion.button>
               </div>
 
-              <div className="overflow-y-auto pr-1">
-                {sections.map((s) => {
+              <div className="overflow-y-auto pr-1 relative z-10">
+                {sections.map((s, index) => {
                   if (s.type === "link") {
                     return (
-                      <Link
+                      <motion.div
                         key={s.title}
-                        href={s.href}
-                        onClick={close}
-                        className="block py-4 text-lg font-medium text-white/90 hover:text-white border-b border-white/10 transition-colors duration-200"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
                       >
-                        {s.title}
-                      </Link>
+                        <Link
+                          href={s.href}
+                          onClick={close}
+                          className="block py-4 text-lg font-medium text-white/85 hover:text-white border-b border-white/8 transition-all duration-200 hover:translate-x-1 transform group relative"
+                        >
+                          <span className="relative">
+                            {s.title}
+                            <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-200 group-hover:w-full" />
+                          </span>
+                        </Link>
+                      </motion.div>
                     );
                   }
                   const isOpen = openSection === s.title;
                   return (
-                    <div key={s.title} className="border-b border-white/10">
-                      <div className="w-full py-4 text-left text-lg font-medium text-white flex items-center justify-between">
+                    <motion.div 
+                      key={s.title} 
+                      className="border-b border-white/10"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
+                      <div className="w-full py-4 text-left text-lg font-medium text-white flex items-center justify-between group">
                         <Link
                           href={s.href}
                           onClick={close}
-                          className="hover:text-white transition-colors duration-200"
+                          className="hover:text-white transition-all duration-200 hover:translate-x-1 transform relative"
                         >
-                          {s.title}
+                          <span className="relative">
+                            {s.title}
+                            <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-200 group-hover:w-full" />
+                          </span>
                         </Link>
-                        <button
+                        <motion.button
                           aria-label="Alt menüyü aç/kapat"
                           className="p-2 text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all duration-200"
                           onClick={() => toggleSection(s.title)}
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
                         >
                           <motion.span
                             initial={false}
                             animate={{ rotate: isOpen ? 180 : 0 }}
-                            transition={{ duration: 0.2 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
                             className="inline-block text-xl"
                           >
                             ▾
                           </motion.span>
-                        </button>
+                        </motion.button>
                       </div>
                       <AnimatePresence initial={false}>
                         {isOpen && (
@@ -345,22 +450,31 @@ export const Navbar = ({
                             className="overflow-hidden"
                           >
                             <div className="pl-4 pb-4 space-y-3">
-                              {s.items.map((item) => (
-                                <div key={item.title} className="space-y-1">
+                              {s.items.map((item, itemIndex) => (
+                                <motion.div 
+                                  key={item.title} 
+                                  className="space-y-1"
+                                  initial={{ opacity: 0, x: 10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.2, delay: itemIndex * 0.05 }}
+                                >
                                   <Link
                                     href={item.href}
                                     onClick={close}
-                                    className="block text-base text-white/80 hover:text-white transition-colors duration-200 hover:translate-x-1 transform"
+                                    className="block text-base text-white/80 hover:text-white transition-all duration-200 hover:translate-x-1 transform group relative"
                                   >
-                                    {item.title}
+                                    <span className="relative">
+                                      {item.title}
+                                      <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-200 group-hover:w-full" />
+                                    </span>
                                   </Link>
-                                </div>
+                                </motion.div>
                               ))}
                             </div>
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>

@@ -15,6 +15,10 @@ import {
   Globe,
   Wrench,
   ChevronDown,
+  Layers,
+  Network,
+  Cpu,
+  Activity,
 } from "lucide-react";
 import DotGrid from "@/components/DotGrid";
 import {
@@ -57,16 +61,15 @@ export default async function Cozumlerimiz() {
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.4}>
               <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
-                Operasyonel Üstünlük İçin{" "}
+                Sistem{" "}
                 <span className="text-gray-300">
-                  Tasarlandı
+                  Konfigürasyonu
                 </span>
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.6}>
-              <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
-                RF&apos;den elektro-optik sistemlere, entegrasyondan saha
-                desteğine kadar uçtan uca çözümler sunuyoruz.
+              <p className="mt-6 text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                BİSAVUNMA olarak geliştirdiğimiz çözümler, hava, kara ve deniz kuvvetleri, sahil güvenlik ve sınır güvenliği birimlerinin yanı sıra endüstriyel tesisler, enerji santralleri ve kritik altyapılar için özel olarak tasarlanmakta ve konfigüre edilmektedir.
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.8}>
@@ -122,77 +125,92 @@ export default async function Cozumlerimiz() {
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Altyapı ve{" "}
+                BİSAVUNMA{" "}
                 <span className="text-blue-300">
-                  Mimari Çözümleri
+                  Çözümleri
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-                Modüler, ölçeklenebilir ve güvenilir sistem mimarileri
+              <p className="mt-4 text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Sistemlerimiz, farklı görev sahalarının gereksinimlerine uyum sağlayacak şekilde özelleştirilebilir; bu sayede operasyonel etkinlik, her koşulda en üst seviyede tutulur.
               </p>
             </ScrollAnimation>
           </div>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "RF Sistemleri",
-                desc: "Algılama, takip ve haberleşme çözümleri",
-                Icon: Radio,
-              },
-              {
-                title: "Radar Sistemleri",
-                desc: "Durumsal farkındalık ve hedef tespiti",
-                Icon: Target,
-              },
-              {
-                title: "Sinyal İstihbarat",
-                desc: "Spektrum analizi ve sinyal çözümleme",
-                Icon: Search,
-              },
-              {
-                title: "Elektro-Optik",
-                desc: "Görüntüleme, izleme ve hedefleme",
-                Icon: Eye,
-              },
-              {
-                title: "Sistem Entegrasyonu",
-                desc: "Modüler, ölçeklenebilir mimari",
-                Icon: Cog,
-              },
-              {
-                title: "Teknik Destek",
-                desc: "Saha kurulumu, eğitim ve bakım",
-                Icon: Headset,
-              },
-            ].map((s) => (
-              <StaggerItem key={s.title}>
-                <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-900/20 text-blue-300">
-                    <s.Icon className="h-6 w-6" />
+
+          {/* Ana İçerik */}
+          <div className="max-w-6xl mx-auto">
+            <ScrollAnimation direction="up" delay={0.8}>
+              <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 mb-12">
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  Geliştirdiğimiz araç entegre çözümleri, platformlara RF entegrasyonu, radar sistemleri, elektro-optik (EO/IR) sensörler ve jammer teknolojilerinin eklenmesi ile şekillenir. Bu çok katmanlı yapı sayesinde, ister yüksek hareket kabiliyeti gerektiren sahil güvenlik operasyonları olsun, ister sınır hattında sürekli gözetim gerektiren görevler olsun, her alanda sürdürülebilir güvenlik üstünlüğü sağlanır.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Sistemlerimiz ihtiyaca yönelik olarak her ortama uygun özelleştirilir ve esnek modüler yapısı sayesinde mobil veya sabit konuşlanmalara entegre edilebilir.
+                </p>
+              </div>
+            </ScrollAnimation>
+
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "RF Entegrasyonu",
+                  desc: "Platformlara RF entegrasyonu ve spektrum yönetimi",
+                  Icon: Radio,
+                },
+                {
+                  title: "Radar Sistemleri",
+                  desc: "Durumsal farkındalık ve hedef tespiti",
+                  Icon: Target,
+                },
+                {
+                  title: "Elektro-Optik Sensörler",
+                  desc: "EO/IR sensörler ve görüntüleme sistemleri",
+                  Icon: Eye,
+                },
+                {
+                  title: "Jammer Teknolojileri",
+                  desc: "Elektronik harp ve karıştırma sistemleri",
+                  Icon: Zap,
+                },
+                {
+                  title: "Modüler Yapı",
+                  desc: "Esnek ve ölçeklenebilir sistem mimarisi",
+                  Icon: Layers,
+                },
+                {
+                  title: "Mobil Entegrasyon",
+                  desc: "Sabit ve mobil konuşlanma çözümleri",
+                  Icon: Network,
+                },
+              ].map((s) => (
+                <StaggerItem key={s.title}>
+                  <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-900/20 text-blue-300">
+                      <s.Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">
+                      {s.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-300">
+                      {s.desc}
+                    </p>
+                    <div
+                      className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        boxShadow:
+                          "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
+                      }}
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute -inset-px rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity"
+                    />
                   </div>
-                  <h3 className="text-lg font-semibold text-white">
-                    {s.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-300">
-                    {s.desc}
-                  </p>
-                  <div
-                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
-                    }}
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute -inset-px rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity"
-                  />
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
         <div className="relative rounded-xl overflow-hidden bg-neutral-800 my-12 p-12 max-w-5xl mx-auto">
             <div className="aspect-video w-full">
@@ -224,77 +242,92 @@ export default async function Cozumlerimiz() {
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Operasyonel{" "}
+                Modern Tehdit{" "}
                 <span className="text-emerald-300">
-                  Gereksinimler
+                  Ortamında Çözümler
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-                Saha koşullarına uygun, özelleştirilmiş savunma sistemleri
+              <p className="mt-4 text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Modern tehdit ortamında her operasyon farklı riskler barındırır. BİSAVUNMA, bu nedenle çözümlerini son kullanıcı isterleri ve saha ihtiyaçları doğrultusunda özelleştirmektedir.
               </p>
             </ScrollAnimation>
           </div>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Korumalı Sistemler",
-                desc: "Elektronik harp ve jammer çözümleri",
-                Icon: Shield,
-              },
-              {
-                title: "DJI Enterprise",
-                desc: "Kurumsal UAV entegrasyon ve destek",
-                Icon: Satellite,
-              },
-              {
-                title: "Hızlı Müdahale",
-                desc: "Acil durum ve kritik operasyonlar",
-                Icon: Zap,
-              },
-              {
-                title: "Saha Testi",
-                desc: "Gerçek koşullarda doğrulama",
-                Icon: Wrench,
-              },
-              {
-                title: "Özel Projeler",
-                desc: "İhtiyaca özel Ar-Ge ve teslimat",
-                Icon: Settings,
-              },
-              {
-                title: "Eğitim Programları",
-                desc: "Operatör eğitimi ve sertifikasyon",
-                Icon: Users,
-              },
-            ].map((s) => (
-              <StaggerItem key={s.title}>
-                <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-900/20 text-emerald-300">
-                    <s.Icon className="h-6 w-6" />
+
+          {/* Ana İçerik */}
+          <div className="max-w-6xl mx-auto">
+            <ScrollAnimation direction="up" delay={0.8}>
+              <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 mb-12">
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  İster yüksek yoğunluklu elektronik harp tehdidiyle karşılaşılan bir bölge, ister deniz trafiği yüksek bir sahil güvenlik hattı, isterse de sabotaj riskinin bulunduğu bir enerji tesisi olsun; çözümlerimiz, her bir görev için özel olarak uyarlanır.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  RF spektrum yönetiminden radar kapsama optimizasyonuna, elektro-optik sensör hassasiyetinden jammer menzil ayarına kadar tüm kritik parametreler, kullanıcı ihtiyaçlarına göre ölçeklendirilir. Böylece sahadaki birlikler maksimum operasyonel esneklik, kurumlar ise kesintisiz güvenlik elde eder.
+                </p>
+              </div>
+            </ScrollAnimation>
+
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Elektronik Harp Tehdidi",
+                  desc: "Yüksek yoğunluklu elektronik harp ortamları için çözümler",
+                  Icon: Shield,
+                },
+                {
+                  title: "Sahil Güvenlik",
+                  desc: "Deniz trafiği yüksek bölgeler için özel sistemler",
+                  Icon: Satellite,
+                },
+                {
+                  title: "Enerji Tesisleri",
+                  desc: "Sabotaj riski bulunan kritik altyapı koruması",
+                  Icon: Zap,
+                },
+                {
+                  title: "RF Spektrum Yönetimi",
+                  desc: "Spektrum analizi ve optimizasyon çözümleri",
+                  Icon: Radio,
+                },
+                {
+                  title: "Radar Optimizasyonu",
+                  desc: "Kapsama alanı ve hassasiyet optimizasyonu",
+                  Icon: Target,
+                },
+                {
+                  title: "Sensör Hassasiyeti",
+                  desc: "Elektro-optik sensör ayarlama ve kalibrasyon",
+                  Icon: Eye,
+                },
+              ].map((s) => (
+                <StaggerItem key={s.title}>
+                  <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-900/20 text-emerald-300">
+                      <s.Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">
+                      {s.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-300">
+                      {s.desc}
+                    </p>
+                    <div
+                      className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        boxShadow:
+                          "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
+                      }}
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity"
+                    />
                   </div>
-                  <h3 className="text-lg font-semibold text-white">
-                    {s.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-300">
-                    {s.desc}
-                  </p>
-                  <div
-                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
-                    }}
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity"
-                  />
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
         <div className="relative rounded-xl overflow-hidden bg-neutral-800 my-12 p-12 max-w-5xl mx-auto">
             <div className="aspect-video w-full">
@@ -325,77 +358,92 @@ export default async function Cozumlerimiz() {
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Kapsamlı{" "}
+                Çok Katmanlı{" "}
                 <span className="text-purple-300">
-                  Güvenlik Stratejileri
+                  Güvenlik Mimarisi
                 </span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
-              <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-                Çok katmanlı güvenlik mimarileri ve risk yönetimi
+              <p className="mt-4 text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Tekil sistemler artık günümüzün karmaşık tehditlerine karşı yeterli değildir. Bu noktada BİSAVUNMA, entegre güvenlik yaklaşımı ile farklı sensörleri ve savunma bileşenlerini tek bir ağ üzerinde birleştirir.
               </p>
             </ScrollAnimation>
           </div>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Siber Güvenlik",
-                desc: "Ağ koruması ve veri güvenliği",
-                Icon: Lock,
-              },
-              {
-                title: "Fiziksel Güvenlik",
-                desc: "Erişim kontrolü ve izleme sistemleri",
-                Icon: Building,
-              },
-              {
-                title: "Operasyonel Güvenlik",
-                desc: "Prosedür ve protokol yönetimi",
-                Icon: Users,
-              },
-              {
-                title: "İletişim Güvenliği",
-                desc: "Şifreli haberleşme ve veri aktarımı",
-                Icon: Globe,
-              },
-              {
-                title: "Risk Analizi",
-                desc: "Tehdit değerlendirme ve azaltma",
-                Icon: Search,
-              },
-              {
-                title: "Süreklilik Planlaması",
-                desc: "İş sürekliliği ve felaket kurtarma",
-                Icon: Shield,
-              },
-            ].map((s) => (
-              <StaggerItem key={s.title}>
-                <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-900/20 text-purple-300">
-                    <s.Icon className="h-6 w-6" />
+
+          {/* Ana İçerik */}
+          <div className="max-w-6xl mx-auto">
+            <ScrollAnimation direction="up" delay={0.8}>
+              <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 mb-12">
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  Radar, RF algılama, elektro-optik/IR ve jammer çözümlerinin koordineli çalışması sayesinde tehditler yalnızca tespit edilmekle kalmaz, aynı zamanda doğru şekilde sınıflandırılır, takip edilir ve etkisiz hale getirilir.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Bu entegrasyon, askeri birliklere operasyonel üstünlük kazandırırken, sahil ve sınır güvenliği için durumsal farkındalık oluşturur, kritik altyapı ve enerji sahaları için ise tam koruma sağlar. Sonuç olarak, sistemlerimiz yalnızca bugünün tehditlerine değil, aynı zamanda geleceğin gelişen risklerine karşı da ölçeklenebilir ve sürdürülebilir bir güvenlik çözümü sunar.
+                </p>
+              </div>
+            </ScrollAnimation>
+
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Radar Koordinasyonu",
+                  desc: "Çoklu radar sistemlerinin entegre çalışması",
+                  Icon: Target,
+                },
+                {
+                  title: "RF Algılama Ağı",
+                  desc: "Spektrum analizi ve sinyal istihbaratı",
+                  Icon: Radio,
+                },
+                {
+                  title: "Elektro-Optik/IR",
+                  desc: "Görüntüleme ve termal algılama sistemleri",
+                  Icon: Eye,
+                },
+                {
+                  title: "Jammer Koordinasyonu",
+                  desc: "Elektronik karıştırma ve karşı önlemler",
+                  Icon: Zap,
+                },
+                {
+                  title: "Durumsal Farkındalık",
+                  desc: "Gerçek zamanlı tehdit değerlendirme",
+                  Icon: Activity,
+                },
+                {
+                  title: "Gelecek Odaklı",
+                  desc: "Gelişen tehditlere karşı ölçeklenebilir çözümler",
+                  Icon: Cpu,
+                },
+              ].map((s) => (
+                <StaggerItem key={s.title}>
+                  <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-900/20 text-purple-300">
+                      <s.Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">
+                      {s.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-300">
+                      {s.desc}
+                    </p>
+                    <div
+                      className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        boxShadow:
+                          "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
+                      }}
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity"
+                    />
                   </div>
-                  <h3 className="text-lg font-semibold text-white">
-                    {s.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-300">
-                    {s.desc}
-                  </p>
-                  <div
-                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
-                    }}
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity"
-                  />
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
       </section>
 
