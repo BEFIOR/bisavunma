@@ -282,15 +282,15 @@ export default function JammerPage({
                     return (
                       <StaggerItem key={product.slug} direction="up" className="h-full">
                         <Link href={href} className="group block h-full">
-                          <div className="h-full overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 backdrop-blur-sm transition-all duration-200 hover:border-amber-500/40 hover:bg-neutral-900">
+                          <div className="relative h-full overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 backdrop-blur-sm transition-all duration-300 hover:border-amber-500/40 hover:bg-neutral-900 hover:shadow-md hover:-translate-y-1 will-change-transform">
                             <div className="p-4 h-full flex flex-col">
-                              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-neutral-800 flex items-center justify-center">
+                            <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-800 flex items-center justify-center">
                                 <Image
                                   src={product.image || "/logo.webp"}
                                   alt={product.title}
                                   fill
                                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                  className="object-contain p-3 transition-transform duration-300 group-hover:scale-[1.03]"
+                                  className="object-cover transition-transform w-full h-full duration-300 group-hover:scale-[1.03]"
                                 />
                               </div>
                               <div className="mt-4 flex-1">
@@ -304,7 +304,7 @@ export default function JammerPage({
                                 )}
                               </div>
                               <div className="mt-4 flex items-center justify-between text-sm">
-                                <span className="inline-flex items-center text-amber-300 transition-transform duration-200 group-hover:translate-x-0.5">
+                                <span className="inline-flex items-center text-amber-300 group-hover:text-amber-200 transition-transform duration-200 group-hover:translate-x-0.5">
                                   İncele →
                                 </span>
                                 {product.altCategory && (
@@ -314,6 +314,26 @@ export default function JammerPage({
                                 )}
                               </div>
                             </div>
+                            <div
+                              className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                              style={{
+                                boxShadow:
+                                  "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
+                              }}
+                            />
+                            <div
+                              aria-hidden
+                              className="absolute -inset-px rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 opacity-0 group-hover:opacity-10 transition-opacity"
+                            />
+                            <div
+                              aria-hidden
+                              className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+                              style={{
+                                background:
+                                  "linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%)",
+                                transform: "translateX(-20%)",
+                              }}
+                            />
                           </div>
                         </Link>
                       </StaggerItem>

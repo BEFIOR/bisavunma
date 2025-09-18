@@ -5,7 +5,7 @@ export const navigationSections: NavSection[] = [
   {
     type: "group",
     title: "Ürünlerimiz",
-    href : "/urunler",
+    href: "/urunler",
     items: [
       {
         title: "RF Sistemleri ve Sinyal İstihbarat (SIGINT)",
@@ -23,7 +23,7 @@ export const navigationSections: NavSection[] = [
   {
     type: "group",
     title: "Çözümlerimiz",
-    href : "/cozumlerimiz",
+    href: "/cozumlerimiz",
     items: [
       { title: "Sistem Konfigürasyonu", href: "/cozumlerimiz#sistem-konfigurasyonu" },
       {
@@ -39,7 +39,7 @@ export const navigationSections: NavSection[] = [
   {
     type: "group",
     title: "Sektörlere Göre",
-    href : "/sektorler",
+    href: "/sektorler",
     items: [
       { title: "Askeri Tesisler", href: "/sektorler#askeri-tesisler" },
       {
@@ -53,7 +53,7 @@ export const navigationSections: NavSection[] = [
   {
     type: "group",
     title: "Hizmetlerimiz",
-    href : "/hizmetler",
+    href: "/hizmetler",
     items: [
       {
         title: "Saha Keşfi & Konumlandırma",
@@ -64,16 +64,7 @@ export const navigationSections: NavSection[] = [
       { title: "Yazılım Çözümleri", href: "/hizmetler/yazilim-cozumleri" },
     ],
   },
-  {
-    type: "group",
-    title: "Destek",
-    href : "/destek",
-    items: [
-      { title: "Destek Talebi", href: "/destek/destek-talebi" },
-      { title: "Yazılım İndirme", href: "/destek/yazilim-indirme" },
-      { title: "7/24 Teknik Destek", href: "/destek/7-24-teknik-destek" },
-    ],
-  },
+  { type: "link", title: "Anket", href: "/anket" },
   { type: "link", title: "İletişim", href: "/iletisim" },
 ];
 

@@ -59,10 +59,10 @@ export default async function RadarProductPage({
       <section className="py-10 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <div className="aspect-video w-full rounded-lg bg-neutral-800 flex items-center justify-center text-gray-400 overflow-hidden">
+            <div className="aspect-auto w-full rounded-lg bg-neutral-800 flex items-center justify-center text-gray-400 overflow-hidden">
               <Image
                 src={product.image || "/logo.webp"}
-                width={1200}
+                width={1300}
                 height={675}
                 alt={title}
                 className="w-full h-full object-cover"

@@ -1,5 +1,6 @@
-import { Shield, Building, Globe, Target, ChevronDown } from "lucide-react";
+import {  Building, Globe, Target, ChevronDown } from "lucide-react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import Link from "next/link";
 
 export default async function Sektorler() {
   return (
@@ -29,30 +30,30 @@ export default async function Sektorler() {
               </p>
             </div>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="#askeri-tesisler"
+              <Link
+                href="/sektorler#askeri-tesisler"
                 className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
               >
                 Askeri Tesisler
-              </a>
-              <a
-                href="#enerji-altyapi"
+              </Link>
+              <Link
+                href="/sektorler#enerji-altyapi"
                 className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
               >
                 Enerji & Altyapı
-              </a>
-              <a
-                href="#liman-tersaneler"
+              </Link>
+              <Link
+                href="/sektorler#liman-tersaneler"
                 className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
               >
                 Liman & Tersaneler
-              </a>
-              <a
-                href="#sinir-guvenligi"
+              </Link>
+              <Link
+                href="/sektorler#sinir-guvenligi"
                 className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
               >
                 Sınır Güvenliği
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -82,32 +83,14 @@ export default async function Sektorler() {
       </section>
 
       {/* Askeri Tesisler Detay */}
-      <section className="relative py-10 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Sol taraf - Fotoğraf */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-900/20 to-blue-800/20 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <Shield className="w-24 h-24 text-blue-400 mx-auto mb-4" />
-                    <p className="text-blue-400 font-medium">
-                      Askeri Tesis Görseli
-                    </p>
-                    <p className="text-sm text-blue-500 mt-2">
-                      Güvenlik ve izleme sistemleri
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* Dekoratif elementler */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-400/10 rounded-full blur-xl"></div>
-            </div>
-
-            {/* Sağ taraf - Yazı */}
-            <div className="space-y-6">
-              <div>
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16 items-center">
+            {/* Sol taraf - Görsel ve İçerik */}
+            <div className="space-y-8">
+              {/* Ana Başlık */}
+              <div className="text-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-blue-900/20 px-4 py-1.5 text-xs font-medium text-blue-300">
                   <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />{" "}
                   Askeri Tesisler
@@ -117,104 +100,140 @@ export default async function Sektorler() {
                 </h2>
               </div>
 
-              <p className="text-lg text-gray-300">
-                Bu kritik tesisler, günümüzde yalnızca konvansiyonel tehditlere değil, 
-                aynı zamanda küçük boyutlu dronelar, sürü drone saldırıları ve izinsiz 
-                uçak uçuşları gibi modern ve asimetrik tehditlere de maruz kalmaktadır.
-              </p>
-
-              <p className="text-lg text-gray-300">
-                BİSAVUNMA, bu kritik alanları korumak için Anti-Drone teknolojilerini 
-                merkeze alan, çok katmanlı ve entegre bir güvenlik doktrini sunar:
-              </p>
-
+              {/* Açıklama */}
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
-                      Radar Tabanlı Erken Uyarı
-                    </h3>
-                    <p className="text-sm text-gray-300">
-                      En küçük hedefleri dahi düşük irtifada ve düşük radar kesit alanıyla tespit eder
-                    </p>
+                <p className="text-lg text-gray-300">
+                  Bu kritik tesisler, günümüzde yalnızca konvansiyonel tehditlere değil, 
+                  aynı zamanda küçük boyutlu dronelar, sürü drone saldırıları ve izinsiz 
+                  uçak uçuşları gibi modern ve asimetrik tehditlere de maruz kalmaktadır.
+                </p>
+
+                <p className="text-lg text-gray-300">
+                  BİSAVUNMA, bu kritik alanları korumak için Anti-Drone teknolojilerini 
+                  merkeze alan, çok katmanlı ve entegre bir güvenlik doktrini sunar.
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  href="/iletisim"
+                  className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white px-8 py-4 text-base font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-blue-600/25"
+                >
+                  Detaylı Bilgi Al
+                </Link>
+              </div>
+            </div>
+
+            {/* Sağ taraf - Sistem Özellikleri */}
+            <div className="space-y-6">
+              {/* Sistem Kartları */}
+              <div className="grid grid-cols-3 gap-6">
+                {/* Radar Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-blue-800/10 border border-blue-800/20 hover:border-blue-700/30 transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-900/30 flex items-center justify-center group-hover:bg-blue-800/40 transition-colors">
+                      <div className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-blue-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-white text-lg mb-2">
+                        Radar Tabanlı Erken Uyarı
+                      </h3>
+                      <p className="text-sm text-gray-300 leading-relaxed">
+                        En küçük hedefleri dahi düşük irtifada ve düşük radar kesit alanıyla tespit eder
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
-                      RF Tespit ve Sinyal İstihbaratı
-                    </h3>
-                    <p className="text-sm text-gray-300">
-                      Drone ve kumanda arasındaki iletişim linkini belirler, frekans analizi ile operatörün konumunu ortaya çıkarır
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
-                      Elektro-Optik ve Termal Sistemler
-                    </h3>
-                    <p className="text-sm text-gray-300">
-                      Gündüz/gece koşullarında görsel teşhis ve doğrulama yapar
-                    </p>
+                {/* RF Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-blue-800/10 border border-blue-800/20 hover:border-blue-700/30 transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-900/30 flex items-center justify-center group-hover:bg-blue-800/40 transition-colors">
+                      <div className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-blue-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-white text-lg mb-2">
+                        RF Tespit ve Sinyal İstihbaratı
+                      </h3>
+                      <p className="text-sm text-gray-300 leading-relaxed">
+                        Drone ve kumanda arasındaki iletişim linkini belirler, frekans analizi ile operatörün konumunu ortaya çıkarır
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
-                      Soft-Kill Anti-Drone Çözümleri
-                    </h3>
-                    <p className="text-sm text-gray-300">
-                      Yalnızca ihtiyaç halinde devreye alınarak hedef droneları yön kaybına uğratır veya güvenli şekilde düşmelerini sağlar
-                    </p>
+                {/* Elektro-Optik Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-blue-800/10 border border-blue-800/20 hover:border-blue-700/30 transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-900/30 flex items-center justify-center group-hover:bg-blue-800/40 transition-colors">
+                      <div className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-blue-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-white text-lg mb-2">
+                        Elektro-Optik ve Termal Sistemler
+                      </h3>
+                      <p className="text-sm text-gray-300 leading-relaxed">
+                        Gündüz/gece koşullarında görsel teşhis ve doğrulama yapar
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                {/* Soft-Kill Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-blue-800/10 border border-blue-800/20 hover:border-blue-700/30 transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-900/30 flex items-center justify-center group-hover:bg-blue-800/40 transition-colors">
+                      <div className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-blue-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-white text-lg mb-2">
+                        Soft-Kill Anti-Drone Çözümleri
+                      </h3>
+                      <p className="text-sm text-gray-300 leading-relaxed">
+                        Yalnızca ihtiyaç halinde devreye alınarak hedef droneları yön kaybına uğratır veya güvenli şekilde düşmelerini sağlar
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
-                      Hard-Kill Anti-Drone Sistemleri
-                    </h3>
-                    <p className="text-sm text-gray-300">
-                      Otomatik silah entegrasyonları ile tehdit unsurlarını doğrudan imha eder
-                    </p>
+                </div>
+
+                {/* Hard-Kill Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-blue-800/10 border border-blue-800/20 hover:border-blue-700/30 transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-900/30 flex items-center justify-center group-hover:bg-blue-800/40 transition-colors">
+                      <div className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-blue-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-white text-lg mb-2">
+                        Hard-Kill Anti-Drone Sistemleri
+                      </h3>
+                      <p className="text-sm text-gray-300 leading-relaxed">
+                        Otomatik silah entegrasyonları ile tehdit unsurlarını doğrudan imha eder
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <p className="text-lg text-gray-300 mt-6">
-                Tüm bu unsurlar, C2 komuta kontrol altyapısı ile entegre çalışır. 
-                Radarın belirlediği hedef, RF tespitiyle doğrulanır, elektro-optik 
-                sistemlerle teşhis edilir, ardından soft-kill ve hard-kill sistemleriyle 
-                etkisiz hale getirilir. Böylece askeri tesisler, 7/24 uçtan uca Anti-Drone 
-                ve hava güvenlik sistemi ile korunur.
-              </p>
-
-              <div className="pt-4">
-                <a
-                  href="#iletisim"
-                  className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white px-6 py-3 text-sm font-semibold hover:bg-blue-700 transition-colors"
-                >
-                  Detaylı Bilgi Al
-                </a>
+              {/* Entegrasyon Açıklaması */}
+              <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-blue-900/10 to-blue-800/5 border border-blue-800/20">
+                <p className="text-base text-gray-300 leading-relaxed">
+                  Tüm bu unsurlar, C2 komuta kontrol altyapısı ile entegre çalışır. 
+                  Radarın belirlediği hedef, RF tespitiyle doğrulanır, elektro-optik 
+                  sistemlerle teşhis edilir, ardından soft-kill ve hard-kill sistemleriyle 
+                  etkisiz hale getirilir. Böylece askeri tesisler, 7/24 uçtan uca Anti-Drone 
+                  ve hava güvenlik sistemi ile korunur.
+                </p>
               </div>
             </div>
           </div>
@@ -246,32 +265,14 @@ export default async function Sektorler() {
       </section>
 
       {/* Enerji & Kritik Altyapılar Detay */}
-      <section className="relative py-10 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-900/10 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Sol taraf - Fotoğraf */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-green-900/20 to-green-800/20 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <Building className="w-24 h-24 text-green-400 mx-auto mb-4" />
-                    <p className="text-green-400 font-medium">
-                      Enerji Tesisleri Görseli
-                    </p>
-                    <p className="text-sm text-green-500 mt-2">
-                      Kritik altyapı güvenliği
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* Dekoratif elementler */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-green-500/10 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-green-400/10 rounded-full blur-xl"></div>
-            </div>
-
-            {/* Sağ taraf - Yazı */}
-            <div className="space-y-6">
-              <div>
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16 items-center">
+            {/* Sol taraf - Görsel ve İçerik */}
+            <div className="space-y-8">
+              {/* Ana Başlık */}
+              <div className="text-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-green-900/20 px-4 py-1.5 text-xs font-medium text-green-300">
                   <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />{" "}
                   Enerji & Kritik Altyapılar
@@ -281,102 +282,128 @@ export default async function Sektorler() {
                 </h2>
               </div>
 
-              <p className="text-lg text-gray-300">
-                Bu alanlara yapılacak bir saldırı ya da sabotaj, yalnızca ulusal değil, 
-                küresel ölçekte krizlere yol açabilir.
-              </p>
-
-              <p className="text-lg text-gray-300">
-                BİSAVUNMA, bu altyapılar için geliştirdiği Anti-Drone ve C-UAS 
-                (Counter-Unmanned Aerial Systems) çözümleri ile tesis güvenliğini 
-                en üst düzeye çıkarır:
-              </p>
-
+              {/* Açıklama */}
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                <p className="text-lg text-gray-300">
+                  Bu alanlara yapılacak bir saldırı ya da sabotaj, yalnızca ulusal değil, 
+                  küresel ölçekte krizlere yol açabilir.
+                </p>
+
+                <p className="text-lg text-gray-300">
+                  BİSAVUNMA, bu altyapılar için geliştirdiği Anti-Drone ve C-UAS 
+                  (Counter-Unmanned Aerial Systems) çözümleri ile tesis güvenliğini 
+                  en üst düzeye çıkarır.
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  href="/iletisim"
+                  className="inline-flex items-center justify-center rounded-lg bg-green-600 text-white px-8 py-4 text-base font-semibold hover:bg-green-700 transition-colors shadow-lg hover:shadow-green-600/25"
+                >
+                  Detaylı Bilgi Al
+                </Link>
+              </div>
+            </div>
+
+            {/* Sağ taraf - Sistem Özellikleri */}
+            <div className="space-y-6">
+              {/* Sistem Kartları */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* RF Tespit Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-green-900/20 to-green-800/10 border border-green-800/20 hover:border-green-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-green-900/30 flex items-center justify-center group-hover:bg-green-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-green-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-green-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Çok Bantlı RF Tespit
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Farklı frekanslarda çalışan droneların tespiti yapılır
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Spektrum Analizi Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-green-900/20 to-green-800/10 border border-green-800/20 hover:border-green-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-green-900/30 flex items-center justify-center group-hover:bg-green-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-green-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-green-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Spektrum Analizi
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Wrapped spektrum ve waterfall analizleri, elektromanyetik yoğunluğu anlık ve geçmiş verilerle operatöre sunar
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Elektro-Optik Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-green-900/20 to-green-800/10 border border-green-800/20 hover:border-green-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-green-900/30 flex items-center justify-center group-hover:bg-green-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-green-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-green-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Elektro-Optik & Termal Doğrulama
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Görsel teyit sağlar
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Soft-Kill Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-green-900/20 to-green-800/10 border border-green-800/20 hover:border-green-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-green-900/30 flex items-center justify-center group-hover:bg-green-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-green-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-green-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Soft-Kill Jammer Çözümleri
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Droneları anında kontrol dışı bırakır
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Hard-Kill Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-green-900/20 to-green-800/10 border border-green-800/20 hover:border-green-700/30 transition-all duration-300 group md:col-span-2 lg:col-span-1">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-green-900/30 flex items-center justify-center group-hover:bg-green-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-green-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-green-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Hard-Kill Entegrasyonu
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Kritik altyapıya yaklaşan dronelar doğrudan imha edilir
                     </p>
                   </div>
                 </div>
               </div>
 
-              <p className="text-lg text-gray-300 mt-6">
-                Tüm bu süreç, mevcut güvenlik altyapısıyla tam uyumlu entegre bir 
-                sistem halinde çalışır. Böylece enerji ve kritik altyapılar, 
-                Anti-Drone çözümleriyle güçlendirilmiş kesintisiz güvenlik zırhına sahip olur.
-              </p>
-
-              <div className="pt-4">
-                <a
-                  href="#iletisim"
-                  className="inline-flex items-center justify-center rounded-lg bg-green-600 text-white px-6 py-3 text-sm font-semibold hover:bg-green-700 transition-colors"
-                >
-                  Detaylı Bilgi Al
-                </a>
+              {/* Entegrasyon Açıklaması */}
+              <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-green-900/10 to-green-800/5 border border-green-800/20">
+                <p className="text-base text-gray-300 leading-relaxed">
+                  Tüm bu süreç, mevcut güvenlik altyapısıyla tam uyumlu entegre bir 
+                  sistem halinde çalışır. Böylece enerji ve kritik altyapılar, 
+                  Anti-Drone çözümleriyle güçlendirilmiş kesintisiz güvenlik zırhına sahip olur.
+                </p>
               </div>
             </div>
           </div>
@@ -407,32 +434,14 @@ export default async function Sektorler() {
       </section>
 
       {/* Liman & Tersaneler Detay */}
-      <section className="relative py-10 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/10 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Sol taraf - Fotoğraf */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-purple-900/20 to-purple-800/20 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <Globe className="w-24 h-24 text-purple-400 mx-auto mb-4" />
-                    <p className="text-purple-400 font-medium">
-                      Liman Tesisleri Görseli
-                    </p>
-                    <p className="text-sm text-purple-500 mt-2">
-                      Denizcilik güvenliği
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* Dekoratif elementler */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-500/10 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-400/10 rounded-full blur-xl"></div>
-            </div>
-
-            {/* Sağ taraf - Yazı */}
-            <div className="space-y-6">
-              <div>
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16 items-center">
+            {/* Sol taraf - Görsel ve İçerik */}
+            <div className="space-y-8">
+              {/* Ana Başlık */}
+              <div className="text-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-purple-900/20 px-4 py-1.5 text-xs font-medium text-purple-300">
                   <span className="h-2 w-2 rounded-full bg-purple-500 animate-pulse" />{" "}
                   Liman & Tersaneler
@@ -442,102 +451,128 @@ export default async function Sektorler() {
                 </h2>
               </div>
 
-              <p className="text-lg text-gray-300">
-                Bu tesisler, deniz, kara ve hava kaynaklı hibrit tehditlere maruz kalırken; 
-                son yıllarda özellikle drone tabanlı istihbarat, sabotaj ve saldırı 
-                girişimleri artış göstermektedir.
-              </p>
-
-              <p className="text-lg text-gray-300">
-                BİSAVUNMA, liman ve tersaneler için Anti-Drone odaklı entegre 
-                savunma sistemleri geliştirir:
-              </p>
-
+              {/* Açıklama */}
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                <p className="text-lg text-gray-300">
+                  Bu tesisler, deniz, kara ve hava kaynaklı hibrit tehditlere maruz kalırken; 
+                  son yıllarda özellikle drone tabanlı istihbarat, sabotaj ve saldırı 
+                  girişimleri artış göstermektedir.
+                </p>
+
+                <p className="text-lg text-gray-300">
+                  BİSAVUNMA, liman ve tersaneler için Anti-Drone odaklı entegre 
+                  savunma sistemleri geliştirir.
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  href="/iletisim"
+                  className="inline-flex items-center justify-center rounded-lg bg-purple-600 text-white px-8 py-4 text-base font-semibold hover:bg-purple-700 transition-colors shadow-lg hover:shadow-purple-600/25"
+                >
+                  Detaylı Bilgi Al
+                </Link>
+              </div>
+            </div>
+
+            {/* Sağ taraf - Sistem Özellikleri */}
+            <div className="space-y-6">
+              {/* Sistem Kartları */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Radar Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-purple-800/10 border border-purple-800/20 hover:border-purple-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-900/30 flex items-center justify-center group-hover:bg-purple-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-purple-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Radar Gözetim Sistemleri
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Hava ve deniz trafiğini eşzamanlı takip eder
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* RF İstihbarat Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-purple-800/10 border border-purple-800/20 hover:border-purple-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-900/30 flex items-center justify-center group-hover:bg-purple-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-purple-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       RF İstihbarat Çözümleri
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Kontrol sinyallerini analiz ederek tehdit kaynaklarını belirler
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Elektro-Optik Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-purple-800/10 border border-purple-800/20 hover:border-purple-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-900/30 flex items-center justify-center group-hover:bg-purple-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-purple-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Elektro-Optik ve Termal Sensörler
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Droneları görsel olarak teşhis eder
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Soft-Kill Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-purple-800/10 border border-purple-800/20 hover:border-purple-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-900/30 flex items-center justify-center group-hover:bg-purple-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-purple-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Soft-Kill Jammer Çözümleri
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       İzinsiz droneları güvenli bir şekilde devre dışı bırakır
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Hard-Kill Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-purple-800/10 border border-purple-800/20 hover:border-purple-700/30 transition-all duration-300 group md:col-span-2 lg:col-span-1">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-900/30 flex items-center justify-center group-hover:bg-purple-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-purple-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Hard-Kill Anti-Drone Sistemleri
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Yüksek hassasiyetli otomatik silahlarla tehditleri doğrudan imha eder
                     </p>
                   </div>
                 </div>
               </div>
 
-              <p className="text-lg text-gray-300 mt-6">
-                Bu sayede liman sahası, yalnızca klasik tehditlere karşı değil, 
-                aynı zamanda drone ve insansız hava aracı saldırılarına karşı da 
-                çok katmanlı bir koruma ile emniyet altına alınır.
-              </p>
-
-              <div className="pt-4">
-                <a
-                  href="#iletisim"
-                  className="inline-flex items-center justify-center rounded-lg bg-purple-600 text-white px-6 py-3 text-sm font-semibold hover:bg-purple-700 transition-colors"
-                >
-                  Detaylı Bilgi Al
-                </a>
+              {/* Entegrasyon Açıklaması */}
+              <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-purple-900/10 to-purple-800/5 border border-purple-800/20">
+                <p className="text-base text-gray-300 leading-relaxed">
+                  Bu sayede liman sahası, yalnızca klasik tehditlere karşı değil, 
+                  aynı zamanda drone ve insansız hava aracı saldırılarına karşı da 
+                  çok katmanlı bir koruma ile emniyet altına alınır.
+                </p>
               </div>
             </div>
           </div>
@@ -568,32 +603,14 @@ export default async function Sektorler() {
       </section>
 
       {/* Sınır Güvenliği Detay */}
-      <section className="relative py-10 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-900/10 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Sol taraf - Fotoğraf */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-800/20 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <Target className="w-24 h-24 text-orange-400 mx-auto mb-4" />
-                    <p className="text-orange-400 font-medium">
-                      Sınır Güvenliği Görseli
-                    </p>
-                    <p className="text-sm text-orange-500 mt-2">
-                      Ulusal güvenlik sistemleri
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* Dekoratif elementler */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange-500/10 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange-400/10 rounded-full blur-xl"></div>
-            </div>
-
-            {/* Sağ taraf - Yazı */}
-            <div className="space-y-6">
-              <div>
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16 items-center">
+            {/* Sol taraf - Görsel ve İçerik */}
+            <div className="space-y-8">
+              {/* Ana Başlık */}
+              <div className="text-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-orange-900/20 px-4 py-1.5 text-xs font-medium text-orange-300">
                   <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />{" "}
                   Sınır Güvenliği
@@ -603,100 +620,126 @@ export default async function Sektorler() {
                 </h2>
               </div>
 
-              <p className="text-lg text-gray-300">
-                Özellikle küçük dronelar, izinsiz uçuş yapan hafif uçaklar ve hibrit 
-                tehditler, sınır güvenliğini karmaşık bir hale getirmiştir.
-              </p>
-
-              <p className="text-lg text-gray-300">
-                BİSAVUNMA, sınır güvenliği için geliştirdiği Anti-Drone ve C-UAS 
-                çözümleri ile en ileri seviyede güvenlik sağlar:
-              </p>
-
+              {/* Açıklama */}
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                <p className="text-lg text-gray-300">
+                  Özellikle küçük dronelar, izinsiz uçuş yapan hafif uçaklar ve hibrit 
+                  tehditler, sınır güvenliğini karmaşık bir hale getirmiştir.
+                </p>
+
+                <p className="text-lg text-gray-300">
+                  BİSAVUNMA, sınır güvenliği için geliştirdiği Anti-Drone ve C-UAS 
+                  çözümleri ile en ileri seviyede güvenlik sağlar.
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  href="/iletisim"
+                  className="inline-flex items-center justify-center rounded-lg bg-orange-600 text-white px-8 py-4 text-base font-semibold hover:bg-orange-700 transition-colors shadow-lg hover:shadow-orange-600/25"
+                >
+                  Detaylı Bilgi Al
+                </Link>
+              </div>
+            </div>
+
+            {/* Sağ taraf - Sistem Özellikleri */}
+            <div className="space-y-6">
+              {/* Sistem Kartları */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Radar ve RF Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-800/10 border border-orange-800/20 hover:border-orange-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-900/30 flex items-center justify-center group-hover:bg-orange-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-orange-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Radar ve RF Tespit Sistemleri
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Sınır hattı boyunca kesintisiz gözetim sunar
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Elektro-Optik Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-800/10 border border-orange-800/20 hover:border-orange-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-900/30 flex items-center justify-center group-hover:bg-orange-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-orange-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Elektro-Optik & Termal Sistemler
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Sınır bölgesinde tehdit teşhisinde en yüksek doğruluk sağlar
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Soft-Kill Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-800/10 border border-orange-800/20 hover:border-orange-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-900/30 flex items-center justify-center group-hover:bg-orange-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-orange-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Soft-Kill Jammer Çözümleri
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Droneları ve uçakları anında kontrol dışı bırakır
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* Hard-Kill Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-800/10 border border-orange-800/20 hover:border-orange-700/30 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-900/30 flex items-center justify-center group-hover:bg-orange-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-orange-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       Hard-Kill Anti-Drone Silah Sistemleri
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Kritik tehditleri imha ederek sınır güvenliğini garanti altına alır
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-900/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">
+                {/* C2 Entegrasyonu Kartı */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-800/10 border border-orange-800/20 hover:border-orange-700/30 transition-all duration-300 group md:col-span-2 lg:col-span-1">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-900/30 flex items-center justify-center group-hover:bg-orange-800/40 transition-colors mb-4">
+                      <div className="w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-orange-200 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       C2 Entegrasyonu
                     </h3>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       Radar, RF, jammer, elektro-optik ve hard-kill sistemleri arasında gerçek zamanlı veri paylaşımı yapılır
                     </p>
                   </div>
                 </div>
               </div>
 
-              <p className="text-lg text-gray-300 mt-6">
-                Bu sayede sınır hattı, yalnızca bir gözetim hattı değil; aynı zamanda 
-                tam entegre, Anti-Drone odaklı, dinamik bir savunma ekosistemine dönüşür.
-              </p>
-
-              <div className="pt-4">
-                <a
-                  href="#iletisim"
-                  className="inline-flex items-center justify-center rounded-lg bg-orange-600 text-white px-6 py-3 text-sm font-semibold hover:bg-orange-700 transition-colors"
-                >
-                  Detaylı Bilgi Al
-                </a>
+              {/* Entegrasyon Açıklaması */}
+              <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-orange-900/10 to-orange-800/5 border border-orange-800/20">
+                <p className="text-base text-gray-300 leading-relaxed">
+                  Bu sayede sınır hattı, yalnızca bir gözetim hattı değil; aynı zamanda 
+                  tam entegre, Anti-Drone odaklı, dinamik bir savunma ekosistemine dönüşür.
+                </p>
               </div>
             </div>
           </div>
@@ -716,18 +759,18 @@ export default async function Sektorler() {
             sunuyoruz.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#iletisim"
+            <Link
+              href="/iletisim"
               className="inline-flex items-center justify-center rounded-lg bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-100 transition-colors"
             >
               İletişime Geç
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/iletisim"
               className="inline-flex items-center justify-center rounded-lg border border-white/20 text-white px-8 py-4 text-base font-semibold hover:bg-white/10 transition-colors"
             >
               Teklif Al
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -766,9 +809,9 @@ export default async function Sektorler() {
                   "Elektro-Optik",
                 ].map((i) => (
                   <li key={i}>
-                    <a href="#" className="hover:text-white transition-colors">
+                    <Link href="/urunler" className="hover:text-white transition-colors">
                       {i}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -785,9 +828,9 @@ export default async function Sektorler() {
                   "Danışmanlık",
                 ].map((i) => (
                   <li key={i}>
-                    <a href="#" className="hover:text-white transition-colors">
+                    <Link href="/hizmetler" className="hover:text-white transition-colors">
                       {i}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -798,20 +841,20 @@ export default async function Sektorler() {
               </h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <a
+                  <Link
                     href="mailto:info@bisavunma.com"
                     className="hover:text-white transition-colors"
                   >
                     info@bisavunma.com
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="tel:+90212XXXXXXX"
                     className="hover:text-white transition-colors"
                   >
                     +90 212 XXX XX XX
-                  </a>
+                  </Link>
                 </li>
                 <li>İstanbul, Türkiye</li>
               </ul>
@@ -820,15 +863,15 @@ export default async function Sektorler() {
           <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6 text-sm text-gray-400">
             <p>© 2024 BİSAVUNMA. Tüm hakları saklıdır.</p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors">
+              <Link href="/kvkk" className="hover:text-white transition-colors">
                 KVKK
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
+              </Link>
+              <Link href="/cerezler" className="hover:text-white transition-colors">
                 Çerezler
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
+              </Link>
+              <Link href="/sartlar" className="hover:text-white transition-colors">
                 Şartlar
-              </a>
+              </Link>
             </div>
           </div>
         </div>

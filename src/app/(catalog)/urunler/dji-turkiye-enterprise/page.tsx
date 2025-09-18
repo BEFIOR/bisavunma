@@ -72,14 +72,18 @@ export default async function Page() {
         <div className="max-w-6xl mx-auto">
           <HeroStaggerContainer className="space-y-8">
             <HeroScaleAnimation>
-              <Image
-                alt="yetkili"
-                src="/products/dji-enterprise/dji-istanbul-yetkili-saticisi.webp"
-                width={1000}
-                height={560}
-                className="w-full max-w-screen rounded-xl ring-1 ring-white/10"
-                priority
-              />
+              <div className="w-full max-w-screen rounded-xl ring-1 ring-white/10 aspect-video">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/1z6X9NpmjHk?si=94HakE3l1uB2y7he"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </HeroScaleAnimation>
             <HeroAnimation direction="up" delay={0.1}>
               <div className="flex flex-col items-center gap-3 text-center">
@@ -100,9 +104,9 @@ export default async function Page() {
             <HeroAnimation direction="up" delay={0.2}>
               <p className="text-gray-300 max-w-3xl mx-auto">
                 Bisavunma olarak, DJI Enterprise yetkili satıcısı olmanın
-                güvencesiyle; geniş ürün yelpazemiz, eğitim ve yazılım desteğimiz ve
-                kesintisiz teknik servis çözümlerimiz ile her sektörden firmaya özel
-                çözümler sunuyoruz.
+                güvencesiyle; geniş ürün yelpazemiz, eğitim ve yazılım
+                desteğimiz ve kesintisiz teknik servis çözümlerimiz ile her
+                sektörden firmaya özel çözümler sunuyoruz.
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.3}>
@@ -119,15 +123,16 @@ export default async function Page() {
                     Eğitim ve Yazılım Desteği:
                   </span>{" "}
                   DJI Enterprise drone’larınızı en verimli şekilde kullanmayı
-                  öğrenin. Bisavunma’nın uzman ekibi tarafından sunulan eğitim ve
-                  yazılım desteği ile drone’larınızdan en iyi performansı alın.
+                  öğrenin. Bisavunma’nın uzman ekibi tarafından sunulan eğitim
+                  ve yazılım desteği ile drone’larınızdan en iyi performansı
+                  alın.
                 </li>
                 <li>
                   <span className="font-medium text-white">
                     Kesintisiz Teknik Servis Çözümleri:
                   </span>{" "}
-                  Bisavunma’nın deneyimli teknik servis ekibi, drone’larınızın her
-                  zaman en iyi durumda kalması için kesintisiz destek sunar.
+                  Bisavunma’nın deneyimli teknik servis ekibi, drone’larınızın
+                  her zaman en iyi durumda kalması için kesintisiz destek sunar.
                 </li>
               </ul>
             </HeroAnimation>
@@ -135,11 +140,19 @@ export default async function Page() {
         </div>
         <ScrollAnimation direction="up" delay={0.2}>
           <div className="-mx-2 overflow-x-auto pb-2 mt-12">
-            <StaggerContainer className="flex flex-col lg:flex-row gap-4 px-2 justify-center items-center" staggerDelay={0.1}>
+            <StaggerContainer
+              className="flex flex-col lg:flex-row gap-4 px-2 justify-center items-center"
+              staggerDelay={0.1}
+            >
               {usageHighlights.map(({ src, alt, label }) => (
                 <StaggerItem key={label} direction="up">
                   <div className="relative w-[260px] h-[180px] md:w-[320px] md:h-[200px] rounded-xl overflow-hidden ring-1 ring-white/10 bg-neutral-900/60">
-                    <Image src={src} alt={alt} fill className="object-cover object-center" />
+                    <Image
+                      src={src}
+                      alt={alt}
+                      fill
+                      className="object-cover object-center"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-2 left-2 md:bottom-3 md:left-3">
                       <span className="inline-flex items-center rounded-md bg-black/60 backdrop-blur px-2.5 py-1 text-xs md:text-sm font-medium text-white ring-1 ring-white/10">
