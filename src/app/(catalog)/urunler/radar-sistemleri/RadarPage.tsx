@@ -4,12 +4,12 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Filter, Radar as RadarIcon, Crosshair, Satellite } from "lucide-react";
-import { 
-  HeroAnimation, 
-  HeroStaggerContainer, 
-  ScrollAnimation, 
-  StaggerContainer, 
-  StaggerItem 
+import {
+  HeroAnimation,
+  HeroStaggerContainer,
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
 } from "@/components/animations/ScrollAnimations";
 
 interface Product {
@@ -35,26 +35,26 @@ export default function RadarPage({
 
   const heroHighlights = [
     {
-      title: "360° Durumsal Farkındalık",
-      description: "Döner anten ve AESA mimarileriyle kesintisiz kapsama.",
+      title: "360° Durum Bilinci",
+      description: "Döner anten ve AESA mimarileriyle sürekli kapsama alanı.",
       Icon: RadarIcon,
     },
     {
-      title: "Uyarlanabilir İzleme",
-      description: "Düşük görünürlüklü hedeflerde bile akıllı sınıflandırma.",
+      title: "Esnek Takip Sistemi",
+      description: "Düşük görünürlüklü nesnelerde bile zeki kategorilendirme.",
       Icon: Crosshair,
     },
     {
-      title: "Ağ Merkezli Operasyon",
-      description: "Sensör füzyonu ve bağlantılı komuta-kontrol altyapısı.",
+      title: "Ağ Odaklı Operasyon",
+      description: "Sensör birleştirme ve entegre komuta-kontrol altyapısı.",
       Icon: Satellite,
     },
   ] as const;
 
   const heroStats = [
-    { label: "Azami Menzil", value: "120 km" },
-    { label: "Eş Zamanlı Takip", value: "256 hedef" },
-    { label: "Tepki Süresi", value: "< 1 sn" },
+    { label: "Maksimum Uzaklık", value: "120 km" },
+    { label: "Eş Zamanlı İzleme", value: "1100 max nesne" },
+    { label: "Yanıt Süresi", value: "< 1 sn" },
   ] as const;
 
   const subcategories = useMemo(() => {
@@ -62,7 +62,7 @@ export default function RadarPage({
       new Set(products.map((p) => p.altCategory).filter(Boolean))
     );
     return [
-      { slug: "all", title: "Tüm Ürünler", count: products.length },
+      { slug: "all", title: "Bütün Ürünler", count: products.length },
       ...unique.map((sub) => ({
         slug: sub!,
         title: sub!,
@@ -86,18 +86,18 @@ export default function RadarPage({
           <HeroStaggerContainer staggerDelay={0.15} className="space-y-6">
             <HeroAnimation direction="fade">
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs uppercase tracking-wider text-emerald-200">
-                Radar Command Suite
+                Radar Komuta Sistemi
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up">
               <h1 className="text-3xl lg:text-5xl font-bold text-white">
-                Her Koşulda Erken Uyarı ve Hedef Tespiti
+                Tüm Hava Koşullarında Önceden Uyarı ve Nesne Algılama
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.1}>
               <p className="text-gray-300 max-w-3xl leading-relaxed">
                 {categoryDescription ??
-                  "Saha konuşlu taktik radar sistemlerinden stratejik menzile kadar görev odaklı çözümler sunuyoruz."}
+                  "Arazide konumlandırılmış taktik radar sistemlerinden stratejik menzile kadar misyon odaklı çözümler sunuyoruz."}
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.2}>
@@ -158,14 +158,16 @@ export default function RadarPage({
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
                       <Filter className="w-5 h-5 text-sky-400" />
-                      <h2 className="text-lg font-semibold text-white">Alt Kategoriler</h2>
+                      <h2 className="text-lg font-semibold text-white">
+                        Alt Sınıflandırmalar
+                      </h2>
                     </div>
                     {selectedSubcategory !== "all" && (
                       <button
                         onClick={() => setSelectedSubcategory("all")}
                         className="text-xs text-gray-400 hover:text-sky-300 underline-offset-2 hover:underline"
                       >
-                        Sıfırla
+                        Temizle
                       </button>
                     )}
                   </div>
@@ -173,11 +175,14 @@ export default function RadarPage({
                   <StaggerContainer staggerDelay={0.1}>
                     <div className="flex flex-wrap gap-2">
                       {subcategories.map((subcategory) => {
-                        const selected = selectedSubcategory === subcategory.slug;
+                        const selected =
+                          selectedSubcategory === subcategory.slug;
                         return (
                           <StaggerItem key={subcategory.slug} direction="fade">
                             <button
-                              onClick={() => setSelectedSubcategory(subcategory.slug)}
+                              onClick={() =>
+                                setSelectedSubcategory(subcategory.slug)
+                              }
                               className={`px-3 py-1.5 rounded-full border text-sm transition-colors ${
                                 selected
                                   ? "bg-sky-600 text-white border-sky-500"
@@ -212,10 +217,13 @@ export default function RadarPage({
               <div className="mb-6">
                 <h2 className="text-xl font-semibold text-white mb-2">
                   {selectedSubcategory === "all"
-                    ? "Tüm Ürünler"
-                    : subcategories.find((s) => s.slug === selectedSubcategory)?.title}
+                    ? "Bütün Ürünler"
+                    : subcategories.find((s) => s.slug === selectedSubcategory)
+                        ?.title}
                 </h2>
-                <p className="text-gray-400">{filteredProducts.length} ürün gösteriliyor</p>
+                <p className="text-gray-400">
+                  {filteredProducts.length} ürün listeleniyor
+                </p>
               </div>
             </ScrollAnimation>
 
@@ -225,7 +233,11 @@ export default function RadarPage({
                   {filteredProducts.map((product) => {
                     const href = `/urunler/${effectiveSlug}/${product.slug}`;
                     return (
-                      <StaggerItem key={product.slug} direction="up" className="h-full">
+                      <StaggerItem
+                        key={product.slug}
+                        direction="up"
+                        className="h-full"
+                      >
                         <Link href={href} className="block group h-full">
                           <div className="rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 will-change-transform overflow-hidden hover:bg-neutral-900">
                             <div className="p-4 h-full flex flex-col">
@@ -250,7 +262,7 @@ export default function RadarPage({
                               </div>
                               <div className="mt-4 flex items-center justify-between">
                                 <span className="inline-flex items-center text-sm text-sky-400 group-hover:text-sky-300">
-                                  İncele
+                                  Detay
                                   <span className="ml-1 transition-transform duration-200 group-hover:translate-x-0.5">
                                     →
                                   </span>
@@ -263,25 +275,25 @@ export default function RadarPage({
                               </div>
                             </div>
                             <div
-                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
-                    }}
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity"
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                    style={{
-                      background:
-                        "linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%)",
-                      transform: "translateX(-20%)",
-                    }}
-                  />
+                              className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                              style={{
+                                boxShadow:
+                                  "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
+                              }}
+                            />
+                            <div
+                              aria-hidden
+                              className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity"
+                            />
+                            <div
+                              aria-hidden
+                              className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+                              style={{
+                                background:
+                                  "linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%)",
+                                transform: "translateX(-20%)",
+                              }}
+                            />
                           </div>
                         </Link>
                       </StaggerItem>
@@ -294,8 +306,12 @@ export default function RadarPage({
                 <div className="text-center py-12">
                   <div className="text-gray-400 mb-4">
                     <Filter className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                    <p className="text-lg">Bu alt kategoride ürün bulunamadı.</p>
-                    <p className="text-sm mt-2">Farklı bir alt kategori seçmeyi deneyin.</p>
+                    <p className="text-lg">
+                      Bu alt sınıflandırmada ürün mevcut değil.
+                    </p>
+                    <p className="text-sm mt-2">
+                      Başka bir alt sınıflandırma seçmeyi deneyin.
+                    </p>
                   </div>
                 </div>
               </ScrollAnimation>

@@ -21,19 +21,22 @@ export default function RfSystemsPage() {
             <HeroAnimation direction="fade" delay={0.2}>
               <div className="inline-flex items-center gap-2 text-sm text-gray-400 mb-4">
                 <Radio className="w-4 h-4" />
-                <span>RF Sistemleri ve Sinyal İstihbarat</span>
+                <span>
+                  Radyo Frekans Sistemleri ve Elektromanyetik İstihbarat
+                </span>
               </div>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.4}>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                RF Sensörleri
+                Radyo Frekans Algılayıcıları
               </h1>
             </HeroAnimation>
 
             <HeroAnimation direction="up" delay={0.6}>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Gelişmiş spektrum analizi ve sinyal istihbarat sistemleri ile RF
-                ortamınızı tam kontrol altında tutun.
+                İleri düzey frekans analizi ve elektromanyetik istihbarat
+                çözümleri ile radyo frekans alanınızı mutlak denetim altında
+                yönetin.
               </p>
             </HeroAnimation>
           </div>
@@ -44,27 +47,27 @@ export default function RfSystemsPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation direction="up" className="text-center mb-6">
             <h2 className="text-3xl font-bold text-white mb-4">
-              RFeye Node Ürün Ailesi
+              RFeye Node Ürün Serisi
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Farklı frekans aralıkları ve uygulama ihtiyaçları için optimize
-              edilmiş RF sensör çözümleri
+              Çeşitli frekans bantları ve kullanım gereksinimleri için özel
+              olarak tasarlanmış radyo frekans algılayıcı sistemleri
             </p>
           </ScrollAnimation>
 
-        <StaggerContainer>  
-          <div className="relative rounded-xl overflow-hidden bg-neutral-800 my-12 p-12">
-            <div className="aspect-video w-full">
-              <LazyVideo 
-                src="/products/rf-sistemleri/rf.mp4" 
-                autoPlay 
-                muted 
-                loop 
-                className="w-full h-full rounded-xl" 
-              />
+          <StaggerContainer>
+            <div className="relative rounded-xl overflow-hidden bg-neutral-800 my-12 p-12">
+              <div className="aspect-video w-full">
+                <LazyVideo
+                  src="/products/rf-sistemleri/rf.mp4"
+                  autoPlay
+                  controls
+                  loop
+                  className="w-full h-full rounded-xl"
+                />
+              </div>
             </div>
-          </div>
-        </StaggerContainer>
+          </StaggerContainer>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {rfSystems.map((product) => (
               <StaggerItem key={product.slug}>
@@ -103,7 +106,7 @@ export default function RfSystemsPage() {
                     </div>
 
                     <div className="mt-4 flex items-center text-sky-400 text-sm font-medium group-hover:gap-2 transition-all">
-                      Detayları Görüntüle
+                      Ayrıntıları İncele
                       <ChevronDown className="w-4 h-4 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -119,10 +122,10 @@ export default function RfSystemsPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation direction="up" className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
-              RFeye Node Özellikleri
+              RFeye Node Kabiliyetleri
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Profesyonel spektrum analizi için gerekli tüm özellikler
+              Uzman seviye frekans analizi için ihtiyaç duyulan tüm fonksiyonlar
             </p>
           </ScrollAnimation>
 
@@ -133,11 +136,11 @@ export default function RfSystemsPage() {
                   <Radio className="w-6 h-6 text-sky-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
-                  Geniş Frekans Aralığı
+                  Kapsamlı Frekans Bandı
                 </h3>
                 <p className="text-gray-400">
-                  100 MHz&apos;den 40 GHz&apos;e kadar geniş frekans aralığında
-                  spektrum analizi
+                  100 MHz&apos;den 40 GHz&apos;e kadar geniş frekans
+                  spektrumunda analiz yapabilme
                 </p>
               </div>
             </StaggerItem>
@@ -148,10 +151,11 @@ export default function RfSystemsPage() {
                   <Eye className="w-6 h-6 text-green-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
-                  Gerçek Zamanlı İzleme
+                  Anlık Spektrum Takibi
                 </h3>
                 <p className="text-gray-400">
-                  Sürekli spektrum izleme ve otomatik sinyal tespiti
+                  Kesintisiz frekans spektrumu gözlemi ve otomatik sinyal
+                  algılama
                 </p>
               </div>
             </StaggerItem>
@@ -162,10 +166,11 @@ export default function RfSystemsPage() {
                   <Settings className="w-6 h-6 text-purple-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
-                  Gelişmiş Analiz
+                  İleri Seviye İşleme
                 </h3>
                 <p className="text-gray-400">
-                  DSP algoritmaları ve otomatik sinyal sınıflandırma
+                  Dijital sinyal işleme algoritmaları ve otomatik sinyal
+                  kategorilendirme
                 </p>
               </div>
             </StaggerItem>

@@ -37,21 +37,21 @@ interface PageProps {
 
 const capabilityHighlights = [
   {
-    title: "Frekans Spektrum Yönetimi",
+    title: "Frekans Spektrum Kontrolü",
     description:
-      "Çok bantlı bastırma, seçici filtreleme ve adaptif güç kontrolü ile karmaşık tehditlere anında yanıt.",
+      "Çok bantlı engelleme, seçici süzme ve uyarlanabilir güç yönetimi ile karmaşık tehditlere anlık tepki.",
     Icon: Waves,
   },
   {
-    title: "Platform Entegrasyonu",
+    title: "Platform Bütünleştirme",
     description:
-      "Sabit tesislerden mobil araçlara kadar farklı platformlarda hızlı konuşlandırma ve enerji optimizasyonu.",
+      "Sabit tesislerden hareketli araçlara kadar farklı platformlarda hızlı yerleştirme ve enerji verimliliği.",
     Icon: Shield,
   },
   {
-    title: "Operasyonel Süreklilik",
+    title: "Operasyonel Devamlılık",
     description:
-      "Uzaktan yönetim, sağlık izleme ve yedekli bileşenlerle 7/24 hazır kuvvet koruması.",
+      "Uzaktan kontrol, durum izleme ve yedekli parçalarla 7/24 hazır güç koruması.",
     Icon: ShieldCheck,
   },
 ];
@@ -60,19 +60,19 @@ const deploymentScenarios = [
   {
     title: "Kritik Altyapı",
     description:
-      "Havalimanı, enerji santrali ve kamu tesislerinde izinsiz drone faaliyetlerine karşı etkin bariyer.",
+      "Havalimanı, enerji santrali ve kamu tesislerinde yetkisiz drone etkinliklerine karşı etkili engel.",
     Icon: WifiOff,
   },
   {
-    title: "Mobil Operasyon",
+    title: "Hareketli Operasyon",
     description:
-      "Konvoy, VIP koruma ve taktik birlikler için araç üstü veya sırt çantalı jammer çözümleri.",
+      "Konvoy, VIP koruma ve taktik birlikler için araç üstü veya sırt çantalı karıştırıcı sistemleri.",
     Icon: Radio,
   },
   {
     title: "Sınır Güvenliği",
     description:
-      "Uyarlanabilir anten sistemleriyle uzun menzilde düşman iletişim ağlarını bozan saha konfigürasyonları.",
+      "Uyarlanabilir anten sistemleriyle uzun menzilde düşman haberleşme ağlarını bozan alan düzenlemeleri.",
     Icon: Satellite,
   },
 ];
@@ -89,7 +89,7 @@ export default function JammerPage({
       new Set(products.map((p) => p.altCategory).filter(Boolean))
     );
     return [
-      { slug: "all", title: "Tüm Ürünler", count: products.length },
+      { slug: "all", title: "Bütün Ürünler", count: products.length },
       ...unique.map((sub) => ({
         slug: sub!,
         title: sub!,
@@ -112,12 +112,12 @@ export default function JammerPage({
           <HeroStaggerContainer staggerDelay={0.2}>
             <HeroAnimation direction="fade" delay={0}>
               <span className="inline-flex items-center gap-2 rounded-full border border-amber-600/30 bg-amber-500/10 px-4 py-1 text-xs uppercase tracking-widest text-amber-300">
-                RF Counter-Measure
+                RF Karşı Önlem
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.1}>
               <h1 className="mt-6 text-4xl lg:text-5xl font-bold text-white">
-                Jammer & RF Efektör Çözümleri
+                Karıştırıcı ve RF Etkileyici Sistemleri
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.2}>
@@ -125,7 +125,9 @@ export default function JammerPage({
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.3}>
               <p className="mt-6 max-w-3xl text-lg text-gray-300 leading-relaxed">
-                Uçtan uca elektronik harp kabiliyetleri; taktik sahada, kritik altyapıda ve yüksek tehdit ortamlarında iletişim ve drone tehditlerini bastırmak için tasarlandı.
+                Baştan sona elektronik savaş yetenekleri; taktik alanda, kritik
+                altyapıda ve yüksek risk ortamlarında haberleşme ve drone
+                tehditlerini engellemek için geliştirildi.
               </p>
             </HeroAnimation>
             {categoryDescription && (
@@ -168,14 +170,16 @@ export default function JammerPage({
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
                     <Filter className="w-5 h-5 text-amber-300" />
-                    <h2 className="text-lg font-semibold text-white">Alt Kategoriler</h2>
+                    <h2 className="text-lg font-semibold text-white">
+                      Alt Sınıflandırmalar
+                    </h2>
                   </div>
                   {selectedSubcategory !== "all" && (
                     <button
                       onClick={() => setSelectedSubcategory("all")}
                       className="text-xs text-gray-400 hover:text-amber-200 underline-offset-2 hover:underline"
                     >
-                      Sıfırla
+                      Temizle
                     </button>
                   )}
                 </div>
@@ -187,7 +191,9 @@ export default function JammerPage({
                       return (
                         <StaggerItem key={subcategory.slug} direction="fade">
                           <button
-                            onClick={() => setSelectedSubcategory(subcategory.slug)}
+                            onClick={() =>
+                              setSelectedSubcategory(subcategory.slug)
+                            }
                             className={`px-3 py-1.5 rounded-full border text-sm transition-colors ${
                               selected
                                 ? "bg-amber-500/20 text-amber-100 border-amber-400/60"
@@ -223,7 +229,9 @@ export default function JammerPage({
                   Operasyon Hazırlığı
                 </h3>
                 <p className="mt-2 text-sm text-gray-400 leading-relaxed">
-                  Sahadaki jammer konfigürasyonları için keşif, RF spektrum analizi ve test yayınlarıyla teslimat öncesi doğrulama sağlıyoruz.
+                  Sahadaki karıştırıcı düzenlemeleri için keşif, RF spektrum
+                  analizi ve test yayınlarıyla teslimat öncesi doğrulama
+                  sağlıyoruz.
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-gray-300">
                   <li>• Uyarlanabilir anten ve güç modülleri</li>
@@ -261,15 +269,18 @@ export default function JammerPage({
                 <div>
                   <h2 className="text-2xl font-semibold text-white">
                     {selectedSubcategory === "all"
-                      ? "Tüm Ürünler"
-                      : subcategories.find((s) => s.slug === selectedSubcategory)?.title}
+                      ? "Bütün Ürünler"
+                      : subcategories.find(
+                          (s) => s.slug === selectedSubcategory
+                        )?.title}
                   </h2>
                   <p className="text-sm text-gray-400">
-                    {filteredProducts.length} ürün gösteriliyor
+                    {filteredProducts.length} ürün listeleniyor
                   </p>
                 </div>
                 <p className="text-sm text-gray-500 max-w-2xl">
-                  Elektronik harp ihtiyaçlarınıza göre bant, güç ve platform seçimi yapabileceğiniz jammer portföyümüz.
+                  Elektronik savaş gereksinimlerinize göre bant, güç ve platform
+                  seçimi yapabileceğiniz karıştırıcı portföyümüz.
                 </p>
               </div>
             </ScrollAnimation>
@@ -280,11 +291,15 @@ export default function JammerPage({
                   {filteredProducts.map((product) => {
                     const href = `/urunler/${effectiveSlug}/${product.slug}`;
                     return (
-                      <StaggerItem key={product.slug} direction="up" className="h-full">
+                      <StaggerItem
+                        key={product.slug}
+                        direction="up"
+                        className="h-full"
+                      >
                         <Link href={href} className="group block h-full">
                           <div className="relative h-full overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 backdrop-blur-sm transition-all duration-300 hover:border-amber-500/40 hover:bg-neutral-900 hover:shadow-md hover:-translate-y-1 will-change-transform">
                             <div className="p-4 h-full flex flex-col">
-                            <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-800 flex items-center justify-center">
+                              <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-800 flex items-center justify-center">
                                 <Image
                                   src={product.image || "/logo.webp"}
                                   alt={product.title}
@@ -305,7 +320,7 @@ export default function JammerPage({
                               </div>
                               <div className="mt-4 flex items-center justify-between text-sm">
                                 <span className="inline-flex items-center text-amber-300 group-hover:text-amber-200 transition-transform duration-200 group-hover:translate-x-0.5">
-                                  İncele →
+                                  Detay →
                                 </span>
                                 {product.altCategory && (
                                   <span className="rounded-full border border-neutral-700 px-2 py-0.5 text-[11px] text-gray-400">
@@ -345,9 +360,12 @@ export default function JammerPage({
               <ScrollAnimation direction="fade" delay={0.4}>
                 <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 py-12 text-center">
                   <Filter className="w-12 h-12 mx-auto text-amber-200/60 mb-4" />
-                  <p className="text-lg text-gray-300">Bu alt kategoride ürün bulunamadı.</p>
+                  <p className="text-lg text-gray-300">
+                    Bu alt sınıflandırmada ürün mevcut değil.
+                  </p>
                   <p className="mt-2 text-sm text-gray-500">
-                    Farklı bir alt kategori seçmeyi veya filtreyi sıfırlamayı deneyin.
+                    Başka bir alt sınıflandırma seçmeyi veya filtreyi
+                    temizlemeyi deneyin.
                   </p>
                 </div>
               </ScrollAnimation>

@@ -27,7 +27,7 @@ export default async function Page() {
     {
       src: "/products/dji-enterprise/askeri-kullanim.webp",
       alt: "askeri",
-      label: "Askeri Kullanım",
+      label: "Askeri Uygulama",
     },
     {
       src: "/products/dji-enterprise/sivil-kullanim.webp",
@@ -91,48 +91,48 @@ export default async function Page() {
                   DJI Türkiye Enterprise
                 </h1>
                 <span className="inline-flex items-center rounded-full border border-emerald-600/40 bg-emerald-600/10 px-2.5 py-0.5 text-xs text-emerald-300">
-                  Yetkili Satıcı
+                  Resmi Bayi
                 </span>
                 <Link
                   href="/iletisim"
                   className="inline-flex rounded-lg bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 text-sm font-medium transition-colors"
                 >
-                  Teklif Al
+                  Fiyat Al
                 </Link>
               </div>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.2}>
               <p className="text-gray-300 max-w-3xl mx-auto">
-                Bisavunma olarak, DJI Enterprise yetkili satıcısı olmanın
-                güvencesiyle; geniş ürün yelpazemiz, eğitim ve yazılım
-                desteğimiz ve kesintisiz teknik servis çözümlerimiz ile her
-                sektörden firmaya özel çözümler sunuyoruz.
+                Bisavunma olarak, DJI Enterprise resmi bayisi olmanın
+                güvencesiyle; kapsamlı ürün portföyümüz, eğitim ve yazılım
+                desteğimiz ve sürekli teknik servis çözümlerimiz ile her
+                sektörden firmaya özel sistemler sunuyoruz.
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.3}>
               <ul className="space-y-2 list-disc pl-6 marker:text-blue-400 text-left text-sm sm:text-base">
                 <li>
                   <span className="font-medium text-white">
-                    Geniş Ürün Yelpazesi:
+                    Kapsamlı Ürün Portföyü:
                   </span>{" "}
-                  İhtiyaçlarınıza en uygun DJI Enterprise drone’unu bulmak için
-                  Bisavunma’nın geniş ürün yelpazesine göz atın.
+                  Gereksinimlerinize en uygun DJI Enterprise drone'unu bulmak
+                  için Bisavunma'nın kapsamlı ürün portföyüne göz atın.
                 </li>
                 <li>
                   <span className="font-medium text-white">
                     Eğitim ve Yazılım Desteği:
                   </span>{" "}
-                  DJI Enterprise drone’larınızı en verimli şekilde kullanmayı
-                  öğrenin. Bisavunma’nın uzman ekibi tarafından sunulan eğitim
-                  ve yazılım desteği ile drone’larınızdan en iyi performansı
-                  alın.
+                  DJI Enterprise drone'larınızı en etkili şekilde kullanmayı
+                  öğrenin. Bisavunma'nın uzman ekibi tarafından sunulan eğitim
+                  ve yazılım desteği ile drone'larınızdan en iyi performansı
+                  elde edin.
                 </li>
                 <li>
                   <span className="font-medium text-white">
-                    Kesintisiz Teknik Servis Çözümleri:
+                    Sürekli Teknik Servis Çözümleri:
                   </span>{" "}
-                  Bisavunma’nın deneyimli teknik servis ekibi, drone’larınızın
-                  her zaman en iyi durumda kalması için kesintisiz destek sunar.
+                  Bisavunma'nın deneyimli teknik servis ekibi, drone'larınızın
+                  her zaman en iyi durumda kalması için sürekli destek sunar.
                 </li>
               </ul>
             </HeroAnimation>
@@ -174,7 +174,7 @@ export default async function Page() {
         />
         {products.length === 0 && (
           <div className="max-w-6xl mx-auto text-gray-400 mt-6">
-            Bu kategoride ürün bulunamadı.
+            Bu kategoride ürün mevcut değil.
           </div>
         )}
       </section>

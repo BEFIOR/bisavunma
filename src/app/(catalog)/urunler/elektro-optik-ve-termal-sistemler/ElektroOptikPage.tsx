@@ -36,26 +36,26 @@ export default function ElektroOptikPage({
 
   const heroHighlights = [
     {
-      title: "Çok Spektral Gözetim",
+      title: "Çok Spektral İzleme",
       description: "UV'den uzun dalga IR'a kadar geniş bantta keşif.",
       Icon: Sun,
     },
     {
-      title: "Uzun Menzil Tespit",
+      title: "Uzun Menzil Algılama",
       description: "Stabilize optikler ve akıllı izleme algoritmaları.",
       Icon: Crosshair,
     },
     {
-      title: "Operasyonel Uyum",
+      title: "Operasyonel Uyumluluk",
       description: "Araç, kule ve sabit tesisler için modüler entegrasyon.",
       Icon: Camera,
     },
   ] as const;
 
   const heroStats = [
-    { label: "Spektral Kapsam", value: "400 nm – 14 µm" },
-    { label: "Zoom Faktörü", value: "120x hibrit" },
-    { label: "Platform", value: "Sabit & mobil" },
+    { label: "Spektral Alan", value: "400 nm – 14 µm" },
+    { label: "Büyütme Oranı", value: "120x hibrit" },
+    { label: "Platform", value: "Sabit & hareketli" },
   ] as const;
 
   // Get unique subcategories from products
@@ -64,7 +64,7 @@ export default function ElektroOptikPage({
       new Set(products.map((p) => p.altCategory).filter(Boolean))
     );
     return [
-      { slug: "all", title: "Tüm Ürünler", count: products.length },
+      { slug: "all", title: "Bütün Ürünler", count: products.length },
       ...unique.map((sub) => ({
         slug: sub!,
         title: sub!,
@@ -90,18 +90,18 @@ export default function ElektroOptikPage({
           <HeroStaggerContainer className="space-y-6">
             <HeroAnimation direction="fade">
               <span className="inline-flex items-center gap-2 rounded-full border border-sky-500/40 bg-sky-500/10 px-3 py-1 text-xs uppercase tracking-wider text-sky-200">
-                Elektro-Optik Suite
+                Elektro-Optik Sistem Paketi
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up">
               <h1 className="text-3xl lg:text-5xl font-bold text-white">
-                Çok Bantlı Sensörlerle Anlık Durumsal Farkındalık
+                Çok Bantlı Algılayıcılarla Anlık Durum Bilinci
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.1}>
               <p className="text-gray-300 max-w-3xl leading-relaxed">
                 {categoryDescription ??
-                  "Elektro-optik ve termal algılama çözümleriyle düşük görünürlüklü tehditleri tespit, takip ve teşhis edin."}
+                  "Elektro-optik ve termal algılama sistemleriyle düşük görünürlüklü tehditleri algıla, izle ve tanımla."}
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.2}>
@@ -163,18 +163,17 @@ export default function ElektroOptikPage({
                     <div className="flex items-center gap-2 mb-6">
                       <Filter className="w-5 h-5 text-sky-400" />
                       <h2 className="text-lg font-semibold text-white">
-                        Alt Kategoriler
+                        Alt Sınıflandırmalar
                       </h2>
                     </div>
 
-                    <StaggerContainer
-                      className="space-y-2"
-                      staggerDelay={0.08}
-                    >
+                    <StaggerContainer className="space-y-2" staggerDelay={0.08}>
                       {subcategories.map((subcategory) => (
                         <StaggerItem key={subcategory.slug} direction="up">
                           <button
-                            onClick={() => setSelectedSubcategory(subcategory.slug)}
+                            onClick={() =>
+                              setSelectedSubcategory(subcategory.slug)
+                            }
                             className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 text-left group ${
                               selectedSubcategory === subcategory.slug
                                 ? "bg-sky-600/20 border border-sky-500/30 text-sky-300"
@@ -182,7 +181,9 @@ export default function ElektroOptikPage({
                             }`}
                           >
                             <div className="flex items-center gap-3">
-                              <span className="font-medium">{subcategory.title}</span>
+                              <span className="font-medium">
+                                {subcategory.title}
+                              </span>
                             </div>
                             <div className="flex items-center gap-2">
                               <span className="text-xs px-2 py-1 rounded-full bg-neutral-700 text-gray-400">
@@ -211,12 +212,13 @@ export default function ElektroOptikPage({
                 <div className="mb-6">
                   <h2 className="text-xl font-semibold text-white mb-2">
                     {selectedSubcategory === "all"
-                      ? "Tüm Ürünler"
-                      : subcategories.find((s) => s.slug === selectedSubcategory)
-                          ?.title}
+                      ? "Bütün Ürünler"
+                      : subcategories.find(
+                          (s) => s.slug === selectedSubcategory
+                        )?.title}
                   </h2>
                   <p className="text-gray-400">
-                    {filteredProducts.length} ürün gösteriliyor
+                    {filteredProducts.length} ürün listeleniyor
                   </p>
                 </div>
               </ScrollAnimation>
@@ -256,7 +258,7 @@ export default function ElektroOptikPage({
                             </div>
                             <div className="mt-4 flex items-center justify-between">
                               <span className="inline-flex items-center text-sm text-sky-400 group-hover:text-sky-300">
-                                İncele
+                                Detay
                                 <span className="ml-1 transition-transform duration-200 group-hover:translate-x-0.5">
                                   →
                                 </span>
@@ -278,9 +280,11 @@ export default function ElektroOptikPage({
                   <div className="text-center py-12">
                     <div className="text-gray-400 mb-4">
                       <Filter className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                      <p className="text-lg">Bu alt kategoride ürün bulunamadı.</p>
+                      <p className="text-lg">
+                        Bu alt sınıflandırmada ürün mevcut değil.
+                      </p>
                       <p className="text-sm mt-2">
-                        Farklı bir alt kategori seçmeyi deneyin.
+                        Başka bir alt sınıflandırma seçmeyi deneyin.
                       </p>
                     </div>
                   </div>
