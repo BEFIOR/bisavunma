@@ -112,8 +112,10 @@ export default function Hizmetler() {
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
-                Her operasyon sahası benzersizdir. Uzman mühendis ekibimizle gerçekleştirdiğimiz 
-                ayrıntılı keşif ve analiz çalışmaları ile 360° kesintisiz koruma sağlıyoruz.
+                Her operasyon sahası, yalnızca bulunduğu coğrafya ile değil; iklim koşulları, arazi yapısı, 
+                elektromanyetik yoğunluğu, çevresel gürültü seviyeleri, sivil yerleşim yakınlığı ve tehdit 
+                profilleri açısından da benzersizdir. Bu nedenle, güvenlik sistemlerinin planlanması basit bir 
+                "cihaz yerleştirme" sürecinden ibaret değildir; çok boyutlu analiz ve mühendislik yaklaşımı gerektirir.
               </p>
             </ScrollAnimation>
           </div>
@@ -136,14 +138,14 @@ export default function Hizmetler() {
                     <ScrollAnimation direction="up" delay={1.2}>
                       <div className="space-y-4 text-gray-300 leading-relaxed">
                         <p>
-                          Her operasyon sahası, yalnızca bulunduğu coğrafya ile değil; iklim koşulları, 
-                          arazi yapısı, elektromanyetik yoğunluğu, çevresel gürültü seviyeleri, sivil yerleşim 
-                          yakınlığı ve tehdit profilleri açısından da benzersizdir.
-                        </p>
-                        <p>
                           BİSAVUNMA, uzman mühendis ekibiyle sahada gerçekleştirdiği ayrıntılı keşif ve 
                           analiz çalışmaları sayesinde, operasyon sahasının tüm güvenlik açıklarını ve 
-                          potansiyel tehditlerini ortaya koyar.
+                          potansiyel tehditlerini ortaya koyar. Bu analizler yalnızca mevcut tehlikelere karşı değil, 
+                          gelecekteki hibrit tehdit senaryolarına karşı da planlama yapılmasını sağlar.
+                        </p>
+                        <p>
+                          Sonuç olarak, BİSAVUNMA'nın saha keşif çalışmaları, kör noktasız 360° kapsama sağlayarak 
+                          savunma zincirini en güçlü hale getirir.
                         </p>
                       </div>
                     </ScrollAnimation>
@@ -157,7 +159,7 @@ export default function Hizmetler() {
                         </h4>
                         <p className="text-sm text-gray-300">
                           Her radarın kapsama alanı, menzili, açısal hassasiyeti ve coğrafi engeller 
-                          dikkate alınarak en verimli noktalar belirlenir.
+                          dikkate alınarak en verimli noktalar belirlenir. Kör noktaların ortadan kaldırılmasıyla 360° kesintisiz koruma sağlanır.
                         </p>
                       </div>
                       <div className="bg-gray-800 rounded-xl p-6">
@@ -167,7 +169,7 @@ export default function Hizmetler() {
                         </h4>
                         <p className="text-sm text-gray-300">
                           Sahadaki elektromanyetik spektrum analiz edilir, kritik frekans bantları 
-                          incelenir, düşman iletişim sinyalleri için yön bulma noktaları seçilir.
+                          incelenir, düşman iletişim ve kontrol sinyalleri için yön bulma noktaları seçilir.
                         </p>
                       </div>
                       <div className="bg-gray-800 rounded-xl p-6">
@@ -176,8 +178,28 @@ export default function Hizmetler() {
                           Drone Tespit Sistemleri
                         </h4>
                         <p className="text-sm text-gray-300">
-                          Sürü drone saldırılarına, alçak irtifa uçuşlarına ve GPS spoofing gibi 
-                          elektronik harp senaryolarına karşı çok katmanlı yerleşim planı.
+                          Özellikle sürü drone saldırılarına, alçak irtifa uçuşlarına ve GPS spoofing gibi 
+                          elektronik harp senaryolarına karşı çok katmanlı bir yerleşim planı hazırlanır.
+                        </p>
+                      </div>
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                          <Eye className="h-5 w-5 text-blue-600" />
+                          Elektro-Optik & Termal Sensörler
+                        </h4>
+                        <p className="text-sm text-gray-300">
+                          Gündüz-gece, tüm hava koşullarında net teşhis sağlayacak şekilde stratejik konumlandırma yapılır. 
+                          Radar ve RF sistemlerini tamamlayıcı bir katman oluşturur.
+                        </p>
+                      </div>
+                      <div className="bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                          <MapPin className="h-5 w-5 text-blue-600" />
+                          Kritik Altyapı Analizi
+                        </h4>
+                        <p className="text-sm text-gray-300">
+                          Askeri üs bölgeleri, sınır karakolları, havaalanları, enerji santralleri ve devlet binaları 
+                          gibi stratejik bölgeler için risk haritaları çıkarılır.
                         </p>
                       </div>
                     </div>
@@ -213,8 +235,9 @@ export default function Hizmetler() {
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
-                Kurulum süreci, sadece cihazların montajı değildir; aynı zamanda birleşik bir 
-                savunma ağı inşasıdır. Tek C2 platformunda tam entegrasyon.
+                Kurulum süreci, sadece cihazların montajı değildir; aynı zamanda birleşik bir savunma ağı inşasıdır.
+                BİSAVUNMA, her bir alt sistemi tek bir C2 (Command & Control) yazılım platformunda birleştirerek, 
+                kullanıcıya tam entegrasyonlu bir operasyon kabiliyeti kazandırır.
               </p>
             </ScrollAnimation>
           </div>
@@ -235,10 +258,14 @@ export default function Hizmetler() {
                       </div>
                       <div className="space-y-4 text-gray-300 leading-relaxed">
                         <p>
-                          BİSAVUNMA, her bir alt sistemi tek bir C2 (Command & Control) yazılım 
-                          platformunda birleştirerek, kullanıcıya tam entegrasyonlu bir operasyon 
-                          kabiliyeti kazandırır.
+                          Entegre edilen sistemler:
                         </p>
+                        <ul className="list-disc list-inside space-y-1 text-sm">
+                          <li>Radar + RF Tespit + Sinyal İstihbarat Modülleri</li>
+                          <li>Drone Tespit & Anti-Drone Jammer Çözümleri</li>
+                          <li>Elektro-Optik & Termal Sensörler</li>
+                          <li>Hard-Kill Otomatik Silah Sistemleri</li>
+                        </ul>
                         <p>
                           Bu sayede BİSAVUNMA&apos;nın çözümleri yalnızca reaktif değil, proaktif 
                           savunma yetenekleri sunar.
@@ -250,26 +277,14 @@ export default function Hizmetler() {
                     <div className="space-y-4">
                       <div className="bg-gray-800 rounded-xl p-6">
                         <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
-                          <Radio className="h-5 w-5 text-emerald-600" />
-                          Entegre Sistemler
-                        </h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Radar + RF Tespit + Sinyal İstihbarat</li>
-                          <li>• Drone Tespit & Anti-Drone Jammer</li>
-                          <li>• Elektro-Optik & Termal Sensörler</li>
-                          <li>• Hard-Kill Otomatik Silah Sistemleri</li>
-                        </ul>
-                      </div>
-                      <div className="bg-gray-800 rounded-xl p-6">
-                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Target className="h-5 w-5 text-emerald-600" />
-                          Entegrasyon Faydaları
+                          Entegrasyonun Sağladığı Faydalar
                         </h4>
                         <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Anlık veri paylaşımı</li>
-                          <li>• Tek ekran üzerinden yönetim</li>
-                          <li>• Hibrit tehditlere karşı koordinasyon</li>
-                          <li>• Siber güvenli entegrasyon</li>
+                          <li>• Anlık veri paylaşımı sayesinde, bir sistemin tespit ettiği hedef diğerine otomatik aktarılır.</li>
+                          <li>• Tek ekran üzerinden yönetim: Operatör, tüm tehditleri tek merkezden takip eder.</li>
+                          <li>• Hibrit tehditlere karşı koordinasyon: Örneğin, radar bir hedefi tespit eder, RF sistemleri frekansı doğrular, EO/IR görüntüyle kimlik doğrulaması yapılır, jammer bağlantıyı keser ve gerekirse hard-kill sistem imhayı gerçekleştirir.</li>
+                          <li>• Siber güvenli entegrasyon: Tüm sistemler, şifreli iletişim protokolleriyle dış müdahalelere kapalı şekilde çalışır.</li>
                         </ul>
                       </div>
                     </div>
@@ -306,7 +321,8 @@ export default function Hizmetler() {
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
                 BİSAVUNMA, teslim ettiği sistemlerle birlikte kullanıcılarına uzmanlık transferi yapar. 
-                Gerçek operasyonel senaryolar üzerinden uygulamalı eğitimler ve 7/24 teknik destek.
+                Eğitimler, gerçek operasyonel senaryolar üzerinden uygulamalı olarak verilir. Ayrıca BİSAVUNMA, 
+                sistemlerinin her zaman en yüksek verimle çalışabilmesi için 7/24 teknik destek sağlar.
               </p>
             </ScrollAnimation>
           </div>
@@ -329,9 +345,25 @@ export default function Hizmetler() {
                     <ScrollAnimation direction="up" delay={1.2}>
                       <div className="space-y-4 text-gray-300 leading-relaxed">
                         <p>
-                          Eğitimler, gerçek operasyonel senaryolar üzerinden uygulamalı olarak verilir. 
-                          Sistemlerin her zaman en yüksek verimle çalışabilmesi için 7/24 teknik destek sağlarız.
+                          Eğitimler, gerçek operasyonel senaryolar üzerinden uygulamalı olarak verilir:
                         </p>
+                        <ul className="list-disc list-inside space-y-1 text-sm">
+                          <li>RF Spektrum Analizi & Yön Bulma (DF)</li>
+                          <li>Drone Tespit ve Anti-Drone Operasyon Prosedürleri</li>
+                          <li>Jammer Kullanımı & Soft-Kill Stratejileri</li>
+                          <li>Elektro-Optik & Termal Sistemlerle Hedef Teşhisi ve takibi</li>
+                          <li>Hard-Kill Silah Sistemleri Kullanımı</li>
+                          <li>Senaryo Bazlı Simülasyon Eğitimleri (havaalanı güvenliği, sınır hattı, üs bölgesi vb.)</li>
+                        </ul>
+                        <p>
+                          Ayrıca BİSAVUNMA, sistemlerinin her zaman en yüksek verimle çalışabilmesi için 7/24 teknik destek sağlar:
+                        </p>
+                        <ul className="list-disc list-inside space-y-1 text-sm">
+                          <li>Uzaktan yazılım güncellemeleri,</li>
+                          <li>Arıza tespiti ve hızlı müdahale,</li>
+                          <li>Düzenli bakım ve performans kontrolleri,</li>
+                          <li>Operasyonel danışmanlık hizmetleri.</li>
+                        </ul>
                       </div>
                     </ScrollAnimation>
                   </div>
@@ -339,29 +371,23 @@ export default function Hizmetler() {
                     <div className="space-y-4">
                       <div className="bg-gray-800 rounded-xl p-6">
                         <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
-                          <Search className="h-5 w-5 text-purple-600" />
-                          Eğitim Konuları
+                          <GraduationCap className="h-5 w-5 text-purple-600" />
+                          Uzmanlık Transferi
                         </h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• RF Spektrum Analizi & Yön Bulma</li>
-                          <li>• Drone Tespit ve Anti-Drone Operasyon</li>
-                          <li>• Jammer Kullanımı & Soft-Kill Stratejileri</li>
-                          <li>• Elektro-Optik & Termal Sistemler</li>
-                          <li>• Hard-Kill Silah Sistemleri</li>
-                          <li>• Senaryo Bazlı Simülasyon Eğitimleri</li>
-                        </ul>
+                        <p className="text-sm text-gray-300">
+                          BİSAVUNMA, teslim ettiği sistemlerle birlikte kullanıcılarına uzmanlık transferi yapar. 
+                          Eğitimler, gerçek operasyonel senaryolar üzerinden uygulamalı olarak verilir.
+                        </p>
                       </div>
                       <div className="bg-gray-800 rounded-xl p-6">
                         <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Wrench className="h-5 w-5 text-purple-600" />
                           7/24 Teknik Destek
                         </h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Uzaktan yazılım güncellemeleri</li>
-                          <li>• Arıza tespiti ve hızlı müdahale</li>
-                          <li>• Düzenli bakım ve performans kontrolleri</li>
-                          <li>• Operasyonel danışmanlık hizmetleri</li>
-                        </ul>
+                        <p className="text-sm text-gray-300">
+                          Sistemlerin her zaman en yüksek verimle çalışabilmesi için kapsamlı teknik destek 
+                          ve bakım hizmetleri sunuyoruz.
+                        </p>
                       </div>
                     </div>
                   </ScrollAnimation>
@@ -397,7 +423,8 @@ export default function Hizmetler() {
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
                 Modern savunma mimarisinde donanım kadar yazılım da hayati öneme sahiptir. 
-                BİSAVUNMA&apos;nın geliştirdiği özgün C2 yazılım platformu ile karar üstünlüğü sağlıyoruz.
+                BİSAVUNMA&apos;nın geliştirdiği özgün C2 yazılım platformu, tüm donanımları tek bir 
+                çatı altında toplayarak karar üstünlüğü sağlar.
               </p>
             </ScrollAnimation>
           </div>
@@ -417,14 +444,14 @@ export default function Hizmetler() {
                   </h3>
                       </div>
                       <div className="space-y-4 text-gray-300 leading-relaxed">
-                        <p>
-                          BİSAVUNMA&apos;nın geliştirdiği özgün C2 yazılım platformu, tüm donanımları 
-                          tek bir çatı altında toplayarak karar üstünlüğü sağlar.
-                        </p>
-                        <p>
-                          Yapay zekâ destekli algoritmalar, drone türlerini otomatik sınıflandırır 
-                          ve proaktif savunma altyapısı ile sürü drone saldırılarını önceden tahmin eder.
-                        </p>
+                        <ul className="list-disc list-inside space-y-2 text-sm">
+                          <li>Radar, RF, EO/IR, jammer ve hard-kill sistemlerini tek ekran üzerinde entegre eder.</li>
+                          <li>Gerçek zamanlı RF spektrum analizi ve waterfall görselleştirmeleri sunar.</li>
+                          <li>Yapay zekâ destekli algoritmalar, drone türlerini otomatik sınıflandırır.</li>
+                          <li>Proaktif savunma altyapısı, sürü drone saldırılarını önceden tahmin eder.</li>
+                          <li>Siber güvenlik protokolleri ile dış müdahalelere karşı güvenlik sağlar.</li>
+                          <li>Raporlama & Arşivleme Modülü, tüm operasyonları kayıt altına alır ve analiz raporları üretir.</li>
+                        </ul>
                 </div>
         </div>
             </ScrollAnimation>
@@ -432,30 +459,26 @@ export default function Hizmetler() {
                     <div className="space-y-4">
                       <div className="bg-gray-800 rounded-xl p-6">
                         <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
-                          <Eye className="h-5 w-5 text-orange-600" />
-                          Platform Özellikleri
+                          <Code className="h-5 w-5 text-orange-600" />
+                          Özgün C2 Yazılım Platformu
                         </h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Tek ekran üzerinde entegrasyon</li>
-                          <li>• Gerçek zamanlı RF spektrum analizi</li>
-                          <li>• Yapay zekâ destekli algoritmalar</li>
-                          <li>• Proaktif savunma altyapısı</li>
-                        </ul>
-          </div>
+                        <p className="text-sm text-gray-300">
+                          BİSAVUNMA&apos;nın geliştirdiği özgün C2 yazılım platformu, tüm donanımları 
+                          tek bir çatı altında toplayarak karar üstünlüğü sağlar.
+                        </p>
+                      </div>
                       <div className="bg-gray-800 rounded-xl p-6">
                         <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                           <Shield className="h-5 w-5 text-orange-600" />
-                          Güvenlik & Raporlama
+                          Modern Savunma Mimarisi
                         </h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Siber güvenlik protokolleri</li>
-                          <li>• Dış müdahalelere karşı güvenlik</li>
-                          <li>• Raporlama & Arşivleme Modülü</li>
-                          <li>• Operasyon analiz raporları</li>
-                        </ul>
-                </div>
-        </div>
-            </ScrollAnimation>
+                        <p className="text-sm text-gray-300">
+                          Modern savunma mimarisinde donanım kadar yazılım da hayati öneme sahiptir. 
+                          Kapsamlı entegrasyon ve güvenlik özellikleri ile üstün performans.
+                        </p>
+                      </div>
+                    </div>
+                  </ScrollAnimation>
                 </div>
         </div>
             </ScrollAnimation>
