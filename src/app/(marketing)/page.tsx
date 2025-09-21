@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { ShinyText } from "@/components/ShinyText";
+import HeroSlider from "@/components/HeroSlider";
 import {
   Radio,
   Shield,
@@ -34,7 +35,12 @@ export default function Home() {
   const [expandedService, setExpandedService] = useState<number | null>(null);
 
   const toggleService = (index: number) => {
-    console.log('Toggling service:', index, 'Current expanded:', expandedService);
+    console.log(
+      "Toggling service:",
+      index,
+      "Current expanded:",
+      expandedService
+    );
     setExpandedService(expandedService === index ? null : index);
   };
 
@@ -43,7 +49,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-24 pb-16 md:pt-36 md:pb-0 min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <HeroStaggerContainer className="space-y-10 md:space-y-12" staggerDelay={0.2}>
+          <HeroStaggerContainer
+            className="space-y-10 md:space-y-12"
+            staggerDelay={0.2}
+          >
             {/* Main Headlines */}
             <div className="space-y-8 pt-6 md:pt-16">
               <HeroAnimation direction="fade" delay={0.2}>
@@ -175,11 +184,7 @@ export default function Home() {
                 </span>
                 <div className="overflow-hidden">
                   <h2 className="mt-4 text-3xl md:text-4xl font-poppins-bold tracking-tight text-white">
-                    Neden{" "}
-                    <span className="text-gray-300">
-                      BİSAVUNMA
-                    </span>
-                    ?
+                    Neden <span className="text-gray-300">BİSAVUNMA</span>?
                   </h2>
                 </div>
                 <div className="overflow-hidden">
@@ -298,8 +303,6 @@ export default function Home() {
               <p className="text-lg text-gray-300 max-w-3xl mx-auto font-inter-regular">
                 Savunma sektöründe kapsamlı çözümler sunuyoruz
               </p>
-             
-             
             </div>
           </ScrollAnimation>
 
@@ -308,53 +311,63 @@ export default function Home() {
             staggerDelay={0.1}
           >
             {[
-              { 
-                title: "RF Sistemleri", 
-                summary: "Geniş bant RF çözümleri ile sahada elektromanyetik üstünlük.",
-                description: "BİSAVUNMA'nın RF çözümleri, 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak sinyal toplama, analiz etme ve yön bulma (DF) kabiliyeti sunar. Bu sayede drone kontrol frekanslarından düşman haberleşme sinyallerine kadar tüm elektromanyetik aktiviteler tespit edilir. Gelişmiş spektrum analizi, waterfall ve wrapped spectrum görselleştirmeleri ile tehditler hızlıca teşhis edilir. RF sistemlerimiz sınır güvenliği, üs bölgeleri, enerji altyapısı ve VIP korumada kritik avantaj sağlar.",
-                Icon: Radio 
+              {
+                title: "RF Sistemleri",
+                summary:
+                  "Geniş bant RF çözümleri ile sahada elektromanyetik üstünlük.",
+                description:
+                  "BİSAVUNMA'nın RF çözümleri, 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak sinyal toplama, analiz etme ve yön bulma (DF) kabiliyeti sunar. Bu sayede drone kontrol frekanslarından düşman haberleşme sinyallerine kadar tüm elektromanyetik aktiviteler tespit edilir. Gelişmiş spektrum analizi, waterfall ve wrapped spectrum görselleştirmeleri ile tehditler hızlıca teşhis edilir. RF sistemlerimiz sınır güvenliği, üs bölgeleri, enerji altyapısı ve VIP korumada kritik avantaj sağlar.",
+                Icon: Radio,
               },
-              { 
-                title: "Radar Sistemleri", 
+              {
+                title: "Radar Sistemleri",
                 summary: "360° kapsama, düşük görünürlüklü hedef tespiti.",
-                description: "Radar sistemlerimiz, modern tehditlere karşı tam alan gözetleme sağlar. AESA radarlar ve döner antenli çözümler küçük dronelardan hava araçlarına kadar geniş bir hedef yelpazesini tespit edebilir. Çoklu hedef takibi, dost-düşman tanıma (IFF) ve yüksek çözünürlüklü haritalama kabiliyetiyle üs bölgeleri, havaalanları ve kritik tesislerin güvenliği sağlanır.",
-                Icon: Target 
+                description:
+                  "Radar sistemlerimiz, modern tehditlere karşı tam alan gözetleme sağlar. AESA radarlar ve döner antenli çözümler küçük dronelardan hava araçlarına kadar geniş bir hedef yelpazesini tespit edebilir. Çoklu hedef takibi, dost-düşman tanıma (IFF) ve yüksek çözünürlüklü haritalama kabiliyetiyle üs bölgeleri, havaalanları ve kritik tesislerin güvenliği sağlanır.",
+                Icon: Target,
               },
-              { 
-                title: "Sinyal İstihbarat (SIGINT)", 
-                summary: "Geniş bant sinyal istihbaratı ile düşman haberleşme ağı takibi.",
-                description: "SIGINT çözümlerimiz 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak geniş bant toplama ve çözümleme kapasitesi sunar. Bu sistemler düşman komuta-kontrol sinyallerini analiz eder, yön bulma (DF) ile kaynaklarını konumlandırır ve yapay zekâ destekli tehdit sınıflandırması yapar. Hibrit tehditlere karşı güvenlik güçlerine proaktif üstünlük sağlar.",
-                Icon: Search 
+              {
+                title: "Sinyal İstihbarat (SIGINT)",
+                summary:
+                  "Geniş bant sinyal istihbaratı ile düşman haberleşme ağı takibi.",
+                description:
+                  "SIGINT çözümlerimiz 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak geniş bant toplama ve çözümleme kapasitesi sunar. Bu sistemler düşman komuta-kontrol sinyallerini analiz eder, yön bulma (DF) ile kaynaklarını konumlandırır ve yapay zekâ destekli tehdit sınıflandırması yapar. Hibrit tehditlere karşı güvenlik güçlerine proaktif üstünlük sağlar.",
+                Icon: Search,
               },
-              { 
-                title: "Elektro-Optik & Termal", 
+              {
+                title: "Elektro-Optik & Termal",
                 summary: "Gece-gündüz, her hava koşulunda hedef teşhisi.",
-                description: "EO/IR sistemlerimiz yüksek çözünürlüklü kameralar, termal sensörler ve lazer mesafe ölçerlerle gündüz-gece kesintisiz gözetleme sağlar. Radar ve RF sistemleriyle entegre edilerek hedefin görsel teşhisi yapılır, yanlış alarm riski en aza indirilir. Özellikle sınır güvenliği ve kritik tesislerde etkin kullanılır.",
-                Icon: Eye 
+                description:
+                  "EO/IR sistemlerimiz yüksek çözünürlüklü kameralar, termal sensörler ve lazer mesafe ölçerlerle gündüz-gece kesintisiz gözetleme sağlar. Radar ve RF sistemleriyle entegre edilerek hedefin görsel teşhisi yapılır, yanlış alarm riski en aza indirilir. Özellikle sınır güvenliği ve kritik tesislerde etkin kullanılır.",
+                Icon: Eye,
               },
-              { 
-                title: "Jammer Sistemleri", 
+              {
+                title: "Jammer Sistemleri",
                 summary: "Soft-kill elektronik harp çözümleri.",
-                description: "BİSAVUNMA'nın jammer sistemleri 9 kHz – 8 / 18 / 40 GHz frekans aralığında çalışır. Drone kontrol sinyallerini, GNSS/GPS bağlantılarını ve düşman haberleşme ağlarını etkisiz hale getirir. Sabit, mobil ve taşınabilir modelleri mevcuttur. Tehdit odaklı aktif çalışma prensibi ile enerji verimliliği sağlanır. Radar, RF ve EO/IR entegrasyonu ile çok katmanlı Anti-Drone mimarisi oluşturur.",
-                Icon: Shield 
+                description:
+                  "BİSAVUNMA'nın jammer sistemleri 9 kHz – 8 / 18 / 40 GHz frekans aralığında çalışır. Drone kontrol sinyallerini, GNSS/GPS bağlantılarını ve düşman haberleşme ağlarını etkisiz hale getirir. Sabit, mobil ve taşınabilir modelleri mevcuttur. Tehdit odaklı aktif çalışma prensibi ile enerji verimliliği sağlanır. Radar, RF ve EO/IR entegrasyonu ile çok katmanlı Anti-Drone mimarisi oluşturur.",
+                Icon: Shield,
               },
-              { 
-                title: "DJI Enterprise", 
+              {
+                title: "DJI Enterprise",
                 summary: "Endüstriyel dronelar ile çok boyutlu gözetleme.",
-                description: "DJI Enterprise çözümleri keşif, arama-kurtarma, sınır güvenliği ve kritik altyapı denetimleri için geliştirilmiştir. Termal kameralar, RTK uydu desteği, uzun uçuş süreleri ve yüksek taşıma kapasitesi ile güvenlik güçlerine avantaj sağlar. BİSAVUNMA entegrasyonu ile radar ve RF sistemleriyle tek ekranda yönetilebilir.",
-                Icon: Satellite 
+                description:
+                  "DJI Enterprise çözümleri keşif, arama-kurtarma, sınır güvenliği ve kritik altyapı denetimleri için geliştirilmiştir. Termal kameralar, RTK uydu desteği, uzun uçuş süreleri ve yüksek taşıma kapasitesi ile güvenlik güçlerine avantaj sağlar. BİSAVUNMA entegrasyonu ile radar ve RF sistemleriyle tek ekranda yönetilebilir.",
+                Icon: Satellite,
               },
-              { 
-                title: "Sistem Entegrasyonu", 
+              {
+                title: "Sistem Entegrasyonu",
                 summary: "Tüm sistemler tek bir C2 yazılımında birleşir.",
-                description: "Radar, RF, SIGINT, EO/IR, jammer ve hard-kill sistemleri özel geliştirilmiş C2 komuta kontrol yazılımı üzerinde entegre edilir. Böylece radar tespit eder, RF doğrular, EO/IR teşhis yapar, jammer engeller, hard-kill imha eder. Tüm süreç tek ekrandan yönetilerek karar verme süresi minimuma indirilir.",
-                Icon: Cog 
+                description:
+                  "Radar, RF, SIGINT, EO/IR, jammer ve hard-kill sistemleri özel geliştirilmiş C2 komuta kontrol yazılımı üzerinde entegre edilir. Böylece radar tespit eder, RF doğrular, EO/IR teşhis yapar, jammer engeller, hard-kill imha eder. Tüm süreç tek ekrandan yönetilerek karar verme süresi minimuma indirilir.",
+                Icon: Cog,
               },
-              { 
-                title: "Teknik Destek", 
+              {
+                title: "Teknik Destek",
                 summary: "7/24 destek ve uzun vadeli güven ortaklığı.",
-                description: "BİSAVUNMA, sistemlerin her zaman en yüksek performansla çalışması için 7/24 teknik destek sağlar. Yazılım güncellemeleri, bakım planlamaları, arıza tespiti, hızlı müdahale ve operatör eğitimleri ile müşterilerimiz daima desteklenir.",
-                Icon: Headset 
+                description:
+                  "BİSAVUNMA, sistemlerin her zaman en yüksek performansla çalışması için 7/24 teknik destek sağlar. Yazılım güncellemeleri, bakım planlamaları, arıza tespiti, hızlı müdahale ve operatör eğitimleri ile müşterilerimiz daima desteklenir.",
+                Icon: Headset,
               },
             ].map((svc, index) => (
               <StaggerItem key={svc.title} direction="up">
@@ -394,8 +407,8 @@ export default function Home() {
                   {/* Expandable Content */}
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      expandedService === index 
-                        ? "max-h-96 sm:max-h-80 opacity-100" 
+                      expandedService === index
+                        ? "max-h-96 sm:max-h-80 opacity-100"
                         : "max-h-0 opacity-0"
                     }`}
                   >
@@ -518,11 +531,17 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute left-1/2 top-6 h-px w-2/3 -translate-x-1/2" />
                 <div className="relative aspect-[4/3] rounded-2xl border border-gray-800 bg-black shadow-sm overflow-hidden">
-                  <Image
-                    src="/main/ana-sayfa-hakkimizda.jpeg"
-                    alt="BİSAVUNMA Hakkımızda"
-                    fill
-                    className="object-cover rounded-2xl"
+                  <HeroSlider
+                    images={[
+                      "/main/ana-sayfa-hakkimizda.jpeg",
+                      "/main/anasayfa-alt-1.png",
+                      "/main/anasayfa-alt-2.jpeg",
+                      "/main/anasayfa-alt-3.jpeg",
+                    ]}
+                    autoplay={true}
+                    loop={true}
+                    interval={5000}
+                    priorityFirst={true}
                   />
                 </div>
               </div>
@@ -530,8 +549,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-     
 
       {/* CTA Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">

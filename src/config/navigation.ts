@@ -57,11 +57,11 @@ export const navigationSections: NavSection[] = [
     items: [
       {
         title: "Saha Keşfi & Konumlandırma",
-        href: "/hizmetler/saha-kesfi-ve-konumlandirma",
+        href: "/hizmetler#saha-kesfi",
       },
-      { title: "Kurulum & Entegrasyon", href: "/hizmetler/kurulum-ve-entegrasyon" },
-      { title: "Eğitim & Teknik Destek", href: "/hizmetler/egitim-ve-teknik-destek" },
-      { title: "Yazılım Çözümleri", href: "/hizmetler/yazilim-cozumleri" },
+      { title: "Kurulum & Entegrasyon", href: "/hizmetler#kurulum-entegrasyon" },
+      { title: "Eğitim & Teknik Destek", href: "/hizmetler#egitim-destek" },
+      { title: "Yazılım Çözümleri", href: "/hizmetler#yazilim-cozumleri" },
     ],
   },
   { type: "link", title: "Anket", href: "/anket" },
