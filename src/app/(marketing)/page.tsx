@@ -148,7 +148,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-red-600/10 to-purple-600/10 rounded-xl overflow-hidden p-6 sm:p-12 my-10 md:my-12">
               <div className="relative aspect-video w-full h-60 sm:h-[400px] md:h-[500px] px-3">
                 <LazyVideo
-                  src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                  src="main/bisavunma-anasayfa.webm"
                   autoPlay
                   loop
                   muted
