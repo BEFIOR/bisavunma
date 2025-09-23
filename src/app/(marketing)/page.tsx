@@ -151,7 +151,7 @@ export default function Home() {
                   src="main/bisavunma-anasayfa.webm"
                   autoPlay
                   loop
-                  muted
+                  controls
                   className="absolute inset-0 w-full h-full object-cover rounded-xl"
                 />
               </div>
