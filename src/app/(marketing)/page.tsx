@@ -4,7 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { ShinyText } from "@/components/ShinyText";
-import HeroSlider from "@/components/HeroSlider";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import {
   Radio,
   Shield,
@@ -20,6 +24,8 @@ import {
   ArrowRight,
   ChevronDown,
   ChevronUp,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
 import { LazyVideo } from "@/components/animations/LazyVideo";
@@ -145,8 +151,8 @@ export default function Home() {
             </HeroAnimation>
           </HeroStaggerContainer>
           <HeroAnimation direction="fade" delay={1.2}>
-            <div className="bg-gradient-to-br from-red-600/10 to-purple-600/10 rounded-xl overflow-hidden p-6 sm:p-12 my-10 md:my-12">
-              <div className="relative aspect-video w-full h-60 sm:h-[400px] md:h-[500px] px-3">
+            <div className="rounded-xl overflow-hidden  sm:p-12 my-10 md:my-12">
+              <div className="relative aspect-video w-full h-60 sm:h-[400px] md:h-[700px] px-3">
                 <LazyVideo
                   src="main/bisavunma-anasayfa.webm"
                   autoPlay
@@ -452,7 +458,7 @@ export default function Home() {
       {/* About Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-transparent to-transparent" />
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-1 gap-12 items-center">
           <div>
             <ScrollAnimation direction="up">
               <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-3 py-1 text-xs font-medium text-gray-300">
@@ -529,21 +535,158 @@ export default function Home() {
           <div>
             <ScaleAnimation delay={0.8}>
               <div className="relative">
-                <div className="absolute left-1/2 top-6 h-px w-2/3 -translate-x-1/2" />
-                <div className="relative aspect-[4/3] rounded-2xl border border-gray-800 bg-black shadow-sm overflow-hidden">
-                  <HeroSlider
-                    images={[
-                      "/main/ana-sayfa-hakkimizda.jpeg",
-                      "/main/anasayfa-alt-1.png",
-                      "/main/anasayfa-alt-2.jpeg",
-                      "/main/anasayfa-alt-3.jpeg",
-                    ]}
-                    autoplay={true}
-                    loop={true}
-                    interval={5000}
-                    priorityFirst={true}
-                  />
+                {/* Section Title */}
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-white mb-2">Galeri</h3>
+                  <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
                 </div>
+
+                {/* Modern Gallery Container */}
+                <div className="relative group">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-transparent rounded-3xl pointer-events-none z-10"></div>
+
+                  {/* Main Gallery */}
+                  <div className="relative bg-gradient-to-br from-gray-900/50 to-black/80 backdrop-blur-sm rounded-3xl border border-gray-700/50 shadow-2xl overflow-hidden">
+                    <Swiper
+                      modules={[Navigation, Pagination, Autoplay]}
+                      spaceBetween={20}
+                      slidesPerView={1}
+                      breakpoints={{
+                        640: {
+                          slidesPerView: 2,
+                          spaceBetween: 20,
+                        },
+                        1024: {
+                          slidesPerView: 3,
+                          spaceBetween: 30,
+                        },
+                        1280: {
+                          slidesPerView: 4,
+                          spaceBetween: 30,
+                        },
+                      }}
+                      navigation={{
+                        nextEl: ".swiper-button-next-custom",
+                        prevEl: ".swiper-button-prev-custom",
+                      }}
+                      pagination={{
+                        clickable: true,
+                        el: ".swiper-pagination-custom",
+                        bulletClass: "swiper-pagination-bullet-custom",
+                        bulletActiveClass:
+                          "swiper-pagination-bullet-active-custom",
+                      }}
+                      autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                      }}
+                      loop={true}
+                      className="w-full h-full"
+                    >
+                      {[
+                        "/main/ana-sayfa-hakkimizda.jpeg",
+                        "/main/anasayfa-alt-1.png",
+                        "/main/anasayfa-alt-2.jpeg",
+                        "/main/anasayfa-alt-3.jpeg",
+                        ...Array.from(
+                          { length: 44 },
+                          (_, i) => `/main/alt-slider/alt-${i + 1}.webp`
+                        ),
+                      ].map((image, index) => (
+                        <SwiperSlide key={index}>
+                          <div className="relative group/slide">
+                            {/* Image Container */}
+                            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700/50 shadow-lg transition-all duration-500 group-hover/slide:shadow-2xl group-hover/slide:scale-105 group-hover/slide:border-blue-500/50">
+                              <Image
+                                src={image}
+                                alt={`Galeri Görseli ${index + 1}`}
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                                className="object-cover transition-transform duration-700 group-hover/slide:scale-110"
+                                priority={index < 4}
+                                loading={index < 4 ? "eager" : "lazy"}
+                              />
+
+                              {/* Hover Overlay */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/slide:opacity-100 transition-opacity duration-500"></div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+
+                    {/* Custom Navigation Buttons */}
+                    <button className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-black/50 backdrop-blur-sm text-white rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 hover:bg-black/70 hover:scale-110 hover:border-blue-500/50 group">
+                      <ChevronLeft className="w-6 h-6 transition-transform group-hover:-translate-x-0.5" />
+                    </button>
+
+                    <button className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-black/50 backdrop-blur-sm text-white rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 hover:bg-black/70 hover:scale-110 hover:border-blue-500/50 group">
+                      <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-0.5" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Custom Pagination - Outside the slider */}
+                <div className="swiper-pagination-custom mt-6 flex justify-center items-center space-x-3"></div>
+
+                {/* Custom CSS for pagination bullets */}
+                <style jsx global>{`
+                  .swiper-pagination-custom {
+                    position: static !important;
+                    display: flex !important;
+                    justify-content: center !important;
+                    align-items: center !important;
+                    gap: 12px !important;
+                    margin-top: 0 !important;
+                    width: 100% !important;
+                  }
+
+                  .swiper-pagination-bullet-custom {
+                    width: 10px !important;
+                    height: 10px !important;
+                    background: rgba(255, 255, 255, 0.4) !important;
+                    border-radius: 50% !important;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                    cursor: pointer !important;
+                    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                    opacity: 0.7 !important;
+                    margin: 0 !important;
+                    display: inline-block !important;
+                  }
+
+                  .swiper-pagination-bullet-active-custom {
+                    background: linear-gradient(
+                      135deg,
+                      #3b82f6,
+                      #8b5cf6
+                    ) !important;
+                    transform: scale(1.3) !important;
+                    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6) !important;
+                    opacity: 1 !important;
+                    border-color: rgba(59, 130, 246, 0.5) !important;
+                  }
+
+                  .swiper-pagination-bullet-custom:hover {
+                    background: rgba(255, 255, 255, 0.8) !important;
+                    transform: scale(1.15) !important;
+                    opacity: 1 !important;
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3) !important;
+                  }
+
+                  /* Mobile responsive */
+                  @media (max-width: 640px) {
+                    .swiper-pagination-bullet-custom {
+                      width: 8px !important;
+                      height: 8px !important;
+                    }
+
+                    .swiper-pagination-bullet-active-custom {
+                      transform: scale(1.4) !important;
+                    }
+                  }
+                `}</style>
               </div>
             </ScaleAnimation>
           </div>

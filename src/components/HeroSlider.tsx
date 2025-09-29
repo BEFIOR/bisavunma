@@ -66,14 +66,13 @@ export default function HeroSlider({
   const showControls = totalSlides > 1;
 
   return (
-    <div className={"relative w-full h-full " + (className ?? "")}
+    <div
+      className={"relative w-full h-full " + (className ?? "")}
       aria-roledescription="carousel"
       aria-label="Ürün görsel galerisi"
     >
       {/* Slides */}
-      <div
-        className="relative w-full h-full overflow-hidden rounded-2xl"
-      >
+      <div className="relative w-full h-full overflow-hidden rounded-2xl">
         <div
           className="flex w-full h-full transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${index * 100}%)` }}
@@ -126,7 +125,9 @@ export default function HeroSlider({
               aria-label={`Görsel ${i + 1}`}
               onClick={() => setIndex(i)}
               className={`h-2 rounded-full transition-all ${
-                i === index ? "bg-white w-6" : "bg-white/50 w-2 hover:bg-white/80"
+                i === index
+                  ? "bg-white w-6"
+                  : "bg-white/50 w-2 hover:bg-white/80"
               }`}
             />
           ))}
