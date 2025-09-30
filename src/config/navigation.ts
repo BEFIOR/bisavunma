@@ -64,7 +64,6 @@ export const navigationSections: NavSection[] = [
       { title: "Yazılım Çözümleri", href: "/hizmetler#yazilim-cozumleri" },
     ],
   },
-  { type: "link", title: "Anket", href: "/anket" },
   { type: "link", title: "İletişim", href: "/iletisim" },
 ];
 
