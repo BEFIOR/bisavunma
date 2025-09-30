@@ -72,7 +72,7 @@ export default async function ProductInRf({
               </HeroAnimation>
 
               <HeroAnimation direction="up" delay={0.4}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white notranslate">
                   {product.title}
                 </h1>
               </HeroAnimation>
@@ -106,7 +106,11 @@ export default async function ProductInRf({
                 <div className="absolute inset-0 bg-gradient-to-r from-sky-600/20 to-blue-600/20 rounded-2xl blur-3xl" />
                 <div className="relative z-10 w-full h-full p-4 sm:p-6 md:p-8">
                   <HeroSlider
-                    images={(product.images && product.images.length > 0) ? product.images : [product.image]}
+                    images={
+                      product.images && product.images.length > 0
+                        ? product.images
+                        : [product.image]
+                    }
                     className=""
                     autoplay={false}
                     loop={true}

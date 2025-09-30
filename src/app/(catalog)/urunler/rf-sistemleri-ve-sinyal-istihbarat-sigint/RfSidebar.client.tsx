@@ -96,7 +96,7 @@ export default function RfSidebar({
                         <Link
                           key={`${c.id}-${p.slug}`}
                           href={`${basePath}/${p.slug}`}
-                          className="group flex items-center gap-2 text-sm px-2 py-1 rounded text-gray-300 hover:text-white hover:bg-gray-900"
+                          className="group flex items-center gap-2 text-sm px-2 py-1 rounded text-gray-300 hover:text-white hover:bg-gray-900 notranslate"
                         >
                           <motion.span
                             className="h-0.5 bg-sky-500 rounded"
