@@ -57,7 +57,7 @@ export const radarSystems: RadarSystem[] = [
   },
   {
     slug: "bisavunma-a200-mk2-radar-sistemi",
-    title: "BİSAVUNMA A200 Mk 2 Radar Sistemi",
+    title: "BİSAVUNMA A200 Radar Sistemi",
     description: "4D çok modlu AESA radar sistemi. Eş zamanlı hava, kara ve deniz tespiti yapabilir. Nano-drone tespit menzili 3 km.",
     image: "/products/radar-sistemleri/bisavunma-a200-mk2.webp",
     features: [

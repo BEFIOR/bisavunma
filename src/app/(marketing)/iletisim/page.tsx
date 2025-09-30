@@ -1,6 +1,7 @@
-import { Mail, Phone, Clock, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, Clock, Send, MessageCircle, Map } from "lucide-react";
 import DotGrid from "@/components/DotGrid";
 import { HeroAnimation } from "@/components/animations/ScrollAnimations";
+import Footer from "@/components/Footer";
 
 export default async function Iletisim() {
   return (
@@ -34,10 +35,7 @@ export default async function Iletisim() {
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.4}>
               <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
-                Bizimle{" "}
-                <span className="text-gray-300">
-                  İletişime Geçin
-                </span>
+                Bizimle <span className="text-gray-300">İletişime Geçin</span>
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.6}>
@@ -259,15 +257,26 @@ export default async function Iletisim() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Phone className="h-4 w-4 text-blue-300" />
-                    <span className="text-gray-300">
-                      +90 212 XXX XX XX
-                    </span>
+                    <span className="text-gray-300">+90 212 954 00 36</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-4 w-4 text-blue-300" />
-                    <span className="text-gray-300">
-                      info@bisavunma.com
-                    </span>
+                    <span className="text-gray-300">info@bisavunma.com</span>
+                  </div>
+                  <div className=" items-center gap-3 w-full h-full">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.0717215256745!2d28.657287400000005!3d41.0236868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f6e5020f77b%3A0x80e48bdc17c6a4e!2zQsSwU0FWVU5NQSBHw5xWRU5MxLBLIFZFIFJBREFSIFPEsFNURU1MRVLEsCBTQU5BWcSwIFTEsENBUkVUIEzEsE3EsFRFRCDFnsSwUktFVMSw!5e0!3m2!1sen!2str!4v1759221329033!5m2!1sen!2str"
+                      width="100%"
+                      height="450"
+                      style={{ border: "0" }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                    <h2 className="text-gray-300 mt-2 text-sm">
+                      Yeşilkent Mahallesi Nâzım Hikmet Bulvarı, 2011. Sk. no :
+                      18, 34517 Esenyurt/İstanbul
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -281,35 +290,25 @@ export default async function Iletisim() {
                     <h3 className="text-lg font-semibold text-white">
                       Çalışma Saatleri
                     </h3>
-                    <p className="text-sm text-gray-300">
-                      Pazartesi - Cuma
-                    </p>
+                    <p className="text-sm text-gray-300">Pazartesi - Cuma</p>
                   </div>
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-gray-300">
-                      Pazartesi - Cuma
-                    </span>
+                    <span className="text-gray-300">Pazartesi - Cuma</span>
                     <span className="text-white font-medium">
                       09:00 - 18:00
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-300">
-                      Cumartesi
-                    </span>
+                    <span className="text-gray-300">Cumartesi</span>
                     <span className="text-white font-medium">
-                      10:00 - 16:00
+                      09:00 - 16:00
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-300">
-                      Pazar
-                    </span>
-                    <span className="text-white font-medium">
-                      Kapalı
-                    </span>
+                    <span className="text-gray-300">Pazar</span>
+                    <span className="text-white font-medium">Kapalı</span>
                   </div>
                 </div>
               </div>
@@ -353,96 +352,7 @@ export default async function Iletisim() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative px-4 sm:px-6 lg:px-8 py-14 bg-black text-gray-300 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-gray-900 to-black" />
-        <div className="absolute inset-0 -z-20 bg-[url('data:image/svg+xml,%3Csvg width=\'160\' height=\'160\' viewBox=\'0 0 160 160\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' stroke=\'%23222\' stroke-width=\'0.5\'%3E%3Cpath d=\'M0 80h160M80 0v160\'/%3E%3C/g%3E%3C/svg%3E')] opacity-10" />
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-4">BİSAVUNMA</h3>
-              <p className="text-gray-400">
-                Savunma teknolojilerinde yenilikçi çözümler ve güvenilir
-                sistemler.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4">Ürünler</h4>
-              <ul className="space-y-2">
-                {[
-                  "RF Sistemleri",
-                  "Radar Sistemleri",
-                  "Sinyal İstihbarat",
-                  "Elektro-Optik",
-                ].map((i) => (
-                  <li key={i}>
-                    <a href="#" className="hover:text-white transition-colors">
-                      {i}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4">
-                Hizmetler
-              </h4>
-              <ul className="space-y-2">
-                {[
-                  "Sistem Entegrasyonu",
-                  "Teknik Destek",
-                  "Eğitim",
-                  "Danışmanlık",
-                ].map((i) => (
-                  <li key={i}>
-                    <a href="#" className="hover:text-white transition-colors">
-                      {i}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4">
-                İletişim
-              </h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a
-                    href="mailto:info@bisavunma.com"
-                    className="hover:text-white transition-colors"
-                  >
-                    info@bisavunma.com
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="tel:+90212XXXXXXX"
-                    className="hover:text-white transition-colors"
-                  >
-                    +90 212 XXX XX XX
-                  </a>
-                </li>
-                <li>İstanbul, Türkiye</li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6 text-sm text-gray-400">
-            <p>© 2024 BİSAVUNMA. Tüm hakları saklıdır.</p>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors">
-                KVKK
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Çerezler
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Şartlar
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

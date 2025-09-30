@@ -1,5 +1,7 @@
 "use client";
 
+import Footer from "@/components/Footer";
+
 export default function AnketPage() {
   return (
     <div className="w-full h-full mt-24 bg-black">
@@ -47,6 +49,7 @@ export default function AnketPage() {
           Yükleniyor…
         </iframe>
       </div>
+      <Footer />
     </div>
   );
 }

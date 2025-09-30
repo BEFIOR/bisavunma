@@ -19,6 +19,7 @@ import {
   HeroAnimation,
 } from "@/components/animations/ScrollAnimations";
 import { LazyVideo } from "@/components/animations/LazyVideo";
+import Footer from "@/components/Footer";
 
 export default async function Cozumlerimiz() {
   return (
@@ -52,15 +53,16 @@ export default async function Cozumlerimiz() {
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.4}>
               <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
-                Sistem{" "}
-                <span className="text-gray-300">
-                  Konfigürasyonu
-                </span>
+                Sistem <span className="text-gray-300">Konfigürasyonu</span>
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.6}>
               <p className="mt-6 text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                BİSAVUNMA olarak geliştirdiğimiz çözümler, hava, kara ve deniz kuvvetleri, sahil güvenlik ve sınır güvenliği birimlerinin yanı sıra endüstriyel tesisler, enerji santralleri ve kritik altyapılar için özel olarak tasarlanmakta ve konfigüre edilmektedir.
+                BİSAVUNMA olarak geliştirdiğimiz çözümler, hava, kara ve deniz
+                kuvvetleri, sahil güvenlik ve sınır güvenliği birimlerinin yanı
+                sıra endüstriyel tesisler, enerji santralleri ve kritik
+                altyapılar için özel olarak tasarlanmakta ve konfigüre
+                edilmektedir.
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.8}>
@@ -116,15 +118,14 @@ export default async function Cozumlerimiz() {
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                BİSAVUNMA{" "}
-                <span className="text-blue-300">
-                  Çözümleri
-                </span>
+                BİSAVUNMA <span className="text-blue-300">Çözümleri</span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Sistemlerimiz, farklı görev sahalarının gereksinimlerine uyum sağlayacak şekilde özelleştirilebilir; bu sayede operasyonel etkinlik, her koşulda en üst seviyede tutulur.
+                Sistemlerimiz, farklı görev sahalarının gereksinimlerine uyum
+                sağlayacak şekilde özelleştirilebilir; bu sayede operasyonel
+                etkinlik, her koşulda en üst seviyede tutulur.
               </p>
             </ScrollAnimation>
           </div>
@@ -134,10 +135,18 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="up" delay={0.8}>
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 mb-12">
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  Geliştirdiğimiz araç entegre çözümleri, platformlara RF entegrasyonu, radar sistemleri, elektro-optik (EO/IR) sensörler ve jammer teknolojilerinin eklenmesi ile şekillenir. Bu çok katmanlı yapı sayesinde, ister yüksek hareket kabiliyeti gerektiren sahil güvenlik operasyonları olsun, ister sınır hattında sürekli gözetim gerektiren görevler olsun, her alanda sürdürülebilir güvenlik üstünlüğü sağlanır.
+                  Geliştirdiğimiz araç entegre çözümleri, platformlara RF
+                  entegrasyonu, radar sistemleri, elektro-optik (EO/IR)
+                  sensörler ve jammer teknolojilerinin eklenmesi ile şekillenir.
+                  Bu çok katmanlı yapı sayesinde, ister yüksek hareket
+                  kabiliyeti gerektiren sahil güvenlik operasyonları olsun,
+                  ister sınır hattında sürekli gözetim gerektiren görevler
+                  olsun, her alanda sürdürülebilir güvenlik üstünlüğü sağlanır.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Sistemlerimiz ihtiyaca yönelik olarak her ortama uygun özelleştirilir ve esnek modüler yapısı sayesinde mobil veya sabit konuşlanmalara entegre edilebilir.
+                  Sistemlerimiz ihtiyaca yönelik olarak her ortama uygun
+                  özelleştirilir ve esnek modüler yapısı sayesinde mobil veya
+                  sabit konuşlanmalara entegre edilebilir.
                 </p>
               </div>
             </ScrollAnimation>
@@ -183,9 +192,7 @@ export default async function Cozumlerimiz() {
                     <h3 className="text-lg font-semibold text-white">
                       {s.title}
                     </h3>
-                    <p className="mt-2 text-sm text-gray-300">
-                      {s.desc}
-                    </p>
+                    <p className="mt-2 text-sm text-gray-300">{s.desc}</p>
                     <div
                       className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{
@@ -204,17 +211,16 @@ export default async function Cozumlerimiz() {
           </div>
         </div>
         <div className="relative rounded-xl overflow-hidden bg-neutral-800 my-12 p-12 max-w-5xl mx-auto">
-            <div className="aspect-video w-full">
-              <LazyVideo 
-                src="/cozumler/cozumlerimiz.mp4" 
-                autoPlay 
-                muted 
-                loop 
-                className="w-full h-full rounded-xl object-cover" 
-              />
-            </div>
+          <div className="aspect-video w-full">
+            <LazyVideo
+              src="/cozumler/cozumlerimiz.mp4"
+              autoPlay
+              muted
+              loop
+              className="w-full h-full rounded-xl object-cover"
+            />
           </div>
-      
+        </div>
       </section>
 
       {/* İhtiyaca Yönelik Savunma Çözümleri */}
@@ -234,14 +240,14 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="up" delay={0.4}>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Modern Tehdit{" "}
-                <span className="text-emerald-300">
-                  Ortamında Çözümler
-                </span>
+                <span className="text-emerald-300">Ortamında Çözümler</span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Modern tehdit ortamında her operasyon farklı riskler barındırır. BİSAVUNMA, bu nedenle çözümlerini son kullanıcı isterleri ve saha ihtiyaçları doğrultusunda özelleştirmektedir.
+                Modern tehdit ortamında her operasyon farklı riskler barındırır.
+                BİSAVUNMA, bu nedenle çözümlerini son kullanıcı isterleri ve
+                saha ihtiyaçları doğrultusunda özelleştirmektedir.
               </p>
             </ScrollAnimation>
           </div>
@@ -251,10 +257,19 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="up" delay={0.8}>
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 mb-12">
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  İster yüksek yoğunluklu elektronik harp tehdidiyle karşılaşılan bir bölge, ister deniz trafiği yüksek bir sahil güvenlik hattı, isterse de sabotaj riskinin bulunduğu bir enerji tesisi olsun; çözümlerimiz, her bir görev için özel olarak uyarlanır.
+                  İster yüksek yoğunluklu elektronik harp tehdidiyle
+                  karşılaşılan bir bölge, ister deniz trafiği yüksek bir sahil
+                  güvenlik hattı, isterse de sabotaj riskinin bulunduğu bir
+                  enerji tesisi olsun; çözümlerimiz, her bir görev için özel
+                  olarak uyarlanır.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  RF spektrum yönetiminden radar kapsama optimizasyonuna, elektro-optik sensör hassasiyetinden jammer menzil ayarına kadar tüm kritik parametreler, kullanıcı ihtiyaçlarına göre ölçeklendirilir. Böylece sahadaki birlikler maksimum operasyonel esneklik, kurumlar ise kesintisiz güvenlik elde eder.
+                  RF spektrum yönetiminden radar kapsama optimizasyonuna,
+                  elektro-optik sensör hassasiyetinden jammer menzil ayarına
+                  kadar tüm kritik parametreler, kullanıcı ihtiyaçlarına göre
+                  ölçeklendirilir. Böylece sahadaki birlikler maksimum
+                  operasyonel esneklik, kurumlar ise kesintisiz güvenlik elde
+                  eder.
                 </p>
               </div>
             </ScrollAnimation>
@@ -300,9 +315,7 @@ export default async function Cozumlerimiz() {
                     <h3 className="text-lg font-semibold text-white">
                       {s.title}
                     </h3>
-                    <p className="mt-2 text-sm text-gray-300">
-                      {s.desc}
-                    </p>
+                    <p className="mt-2 text-sm text-gray-300">{s.desc}</p>
                     <div
                       className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{
@@ -321,16 +334,16 @@ export default async function Cozumlerimiz() {
           </div>
         </div>
         <div className="relative rounded-xl overflow-hidden bg-neutral-800 my-12 p-12 max-w-5xl mx-auto">
-            <div className="aspect-video w-full">
-              <LazyVideo 
-                src="/cozumler/cozumler-ihtiyac.mp4" 
-                autoPlay 
-                muted 
-                loop 
-                className="w-full h-full rounded-xl object-cover" 
-              />
-            </div>
+          <div className="aspect-video w-full">
+            <LazyVideo
+              src="/cozumler/cozumler-ihtiyac.mp4"
+              autoPlay
+              muted
+              loop
+              className="w-full h-full rounded-xl object-cover"
+            />
           </div>
+        </div>
       </section>
 
       {/* Entegre Güvenlik Yaklaşımları */}
@@ -350,14 +363,15 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="up" delay={0.4}>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Çok Katmanlı{" "}
-                <span className="text-purple-300">
-                  Güvenlik Mimarisi
-                </span>
+                <span className="text-purple-300">Güvenlik Mimarisi</span>
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Tekil sistemler artık günümüzün karmaşık tehditlerine karşı yeterli değildir. Bu noktada BİSAVUNMA, entegre güvenlik yaklaşımı ile farklı sensörleri ve savunma bileşenlerini tek bir ağ üzerinde birleştirir.
+                Tekil sistemler artık günümüzün karmaşık tehditlerine karşı
+                yeterli değildir. Bu noktada BİSAVUNMA, entegre güvenlik
+                yaklaşımı ile farklı sensörleri ve savunma bileşenlerini tek bir
+                ağ üzerinde birleştirir.
               </p>
             </ScrollAnimation>
           </div>
@@ -367,10 +381,19 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="up" delay={0.8}>
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 mb-12">
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  Radar, RF algılama, elektro-optik/IR ve jammer çözümlerinin koordineli çalışması sayesinde tehditler yalnızca tespit edilmekle kalmaz, aynı zamanda doğru şekilde sınıflandırılır, takip edilir ve etkisiz hale getirilir.
+                  Radar, RF algılama, elektro-optik/IR ve jammer çözümlerinin
+                  koordineli çalışması sayesinde tehditler yalnızca tespit
+                  edilmekle kalmaz, aynı zamanda doğru şekilde sınıflandırılır,
+                  takip edilir ve etkisiz hale getirilir.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Bu entegrasyon, askeri birliklere operasyonel üstünlük kazandırırken, sahil ve sınır güvenliği için durumsal farkındalık oluşturur, kritik altyapı ve enerji sahaları için ise tam koruma sağlar. Sonuç olarak, sistemlerimiz yalnızca bugünün tehditlerine değil, aynı zamanda geleceğin gelişen risklerine karşı da ölçeklenebilir ve sürdürülebilir bir güvenlik çözümü sunar.
+                  Bu entegrasyon, askeri birliklere operasyonel üstünlük
+                  kazandırırken, sahil ve sınır güvenliği için durumsal
+                  farkındalık oluşturur, kritik altyapı ve enerji sahaları için
+                  ise tam koruma sağlar. Sonuç olarak, sistemlerimiz yalnızca
+                  bugünün tehditlerine değil, aynı zamanda geleceğin gelişen
+                  risklerine karşı da ölçeklenebilir ve sürdürülebilir bir
+                  güvenlik çözümü sunar.
                 </p>
               </div>
             </ScrollAnimation>
@@ -416,9 +439,7 @@ export default async function Cozumlerimiz() {
                     <h3 className="text-lg font-semibold text-white">
                       {s.title}
                     </h3>
-                    <p className="mt-2 text-sm text-gray-300">
-                      {s.desc}
-                    </p>
+                    <p className="mt-2 text-sm text-gray-300">{s.desc}</p>
                     <div
                       className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{
@@ -487,96 +508,7 @@ export default async function Cozumlerimiz() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="relative px-4 sm:px-6 lg:px-8 py-14 bg-black text-gray-300 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-gray-900 to-black" />
-        <div className="absolute inset-0 -z-20 bg-[url('data:image/svg+xml,%3Csvg width=\'160\' height=\'160\' viewBox=\'0 0 160 160\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' stroke=\'%23222\' stroke-width=\'0.5\'%3E%3Cpath d=\'M0 80h160M80 0v160\'/%3E%3C/g%3E%3C/svg%3E')] opacity-10" />
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-4">BİSAVUNMA</h3>
-              <p className="text-gray-400">
-                Savunma teknolojilerinde yenilikçi çözümler ve güvenilir
-                sistemler.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4">Ürünler</h4>
-              <ul className="space-y-2">
-                {[
-                  "RF Sistemleri",
-                  "Radar Sistemleri",
-                  "Sinyal İstihbarat",
-                  "Elektro-Optik",
-                ].map((i) => (
-                  <li key={i}>
-                    <a href="#" className="hover:text-white transition-colors">
-                      {i}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4">
-                Hizmetler
-              </h4>
-              <ul className="space-y-2">
-                {[
-                  "Sistem Entegrasyonu",
-                  "Teknik Destek",
-                  "Eğitim",
-                  "Danışmanlık",
-                ].map((i) => (
-                  <li key={i}>
-                    <a href="#" className="hover:text-white transition-colors">
-                      {i}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4">
-                İletişim
-              </h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a
-                    href="mailto:info@bisavunma.com"
-                    className="hover:text-white transition-colors"
-                  >
-                    info@bisavunma.com
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="tel:+90212XXXXXXX"
-                    className="hover:text-white transition-colors"
-                  >
-                    +90 212 XXX XX XX
-                  </a>
-                </li>
-                <li>İstanbul, Türkiye</li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6 text-sm text-gray-400">
-            <p>© 2024 BİSAVUNMA. Tüm hakları saklıdır.</p>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors">
-                KVKK
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Çerezler
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Şartlar
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
