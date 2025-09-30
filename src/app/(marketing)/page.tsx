@@ -20,7 +20,6 @@ import {
   Search,
   Eye,
   Headset,
-  Play,
   ArrowRight,
   ChevronDown,
   ChevronUp,
@@ -144,10 +143,6 @@ export default function Home() {
                   Ürünleri İncele
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <button className="border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white w-full sm:w-auto px-6 sm:px-8 py-4 rounded-lg font-poppins-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
-                  <Play className="w-4 h-4" />
-                  Tanıtım Videosu
-                </button>
               </div>
             </HeroAnimation>
           </HeroStaggerContainer>
