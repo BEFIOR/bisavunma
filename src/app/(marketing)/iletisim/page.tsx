@@ -1,9 +1,69 @@
+"use client";
+
 import { Mail, Phone, Clock, Send, MessageCircle, Map } from "lucide-react";
 import DotGrid from "@/components/DotGrid";
 import { HeroAnimation } from "@/components/animations/ScrollAnimations";
 import Footer from "@/components/Footer";
+import EmailServiceModal from "@/components/EmailServiceModal";
+import { useState } from "react";
 
-export default async function Iletisim() {
+export default function Iletisim() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [emailUrls, setEmailUrls] = useState({ gmail: "", outlook: "" });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get("firstName") as string,
+      lastName: formData.get("lastName") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      company: formData.get("company") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string,
+    };
+
+    // Form verilerini mailto linkine dönüştür
+    const subject = `İletişim Formu - ${data.subject || "Genel"}`;
+    const body = `
+Ad Soyad: ${data.firstName} ${data.lastName}
+E-posta: ${data.email}
+Telefon: ${data.phone}
+Şirket/Kurum: ${data.company}
+Konu: ${data.subject || "Belirtilmemiş"}
+
+Mesaj:
+${data.message}
+    `.trim();
+
+    // Gmail ve Outlook seçenekleri
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@bisavunma.com&su=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=info@bisavunma.com&subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    // URL'leri state'e kaydet ve modal'ı aç
+    setEmailUrls({ gmail: gmailUrl, outlook: outlookUrl });
+    setShowEmailModal(true);
+    setIsSubmitting(false);
+  };
+
+  const handleGmailSelect = () => {
+    // Gmail seçildiğinde yapılacak işlemler (isteğe bağlı)
+    console.log("Gmail seçildi");
+  };
+
+  const handleOutlookSelect = () => {
+    // Outlook seçildiğinde yapılacak işlemler (isteğe bağlı)
+    console.log("Outlook seçildi");
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -105,7 +165,7 @@ export default async function Iletisim() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Form */}
             <div className="bg-gray-900 rounded-2xl border border-gray-800 p-8 shadow-lg">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -230,10 +290,11 @@ export default async function Iletisim() {
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 text-white px-6 py-4 text-base font-semibold hover:bg-black transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 text-white px-6 py-4 text-base font-semibold hover:bg-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="h-5 w-5" />
-                  Mesaj Gönder
+                  {isSubmitting ? "Gönderiliyor..." : "Mesaj Gönder"}
                 </button>
               </form>
             </div>
@@ -353,6 +414,16 @@ export default async function Iletisim() {
       </section>
 
       <Footer />
+
+      {/* Email Service Modal */}
+      <EmailServiceModal
+        isOpen={showEmailModal}
+        onClose={() => setShowEmailModal(false)}
+        onSelectGmail={handleGmailSelect}
+        onSelectOutlook={handleOutlookSelect}
+        gmailUrl={emailUrls.gmail}
+        outlookUrl={emailUrls.outlook}
+      />
     </div>
   );
 }

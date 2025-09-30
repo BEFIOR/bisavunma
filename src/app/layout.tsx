@@ -18,7 +18,7 @@ export default function RootLayout({
       <head>
         <meta
           httpEquiv="Content-Security-Policy"
-          content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com; connect-src 'self' https://translate.googleapis.com https://translate-pa.googleapis.com; frame-src 'self' https://translate.google.com;"
+          content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://maps.googleapis.com https://www.google.com; connect-src 'self' https://translate.googleapis.com https://translate-pa.googleapis.com https://maps.googleapis.com; frame-src 'self' https://translate.google.com https://docs.google.com https://www.google.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https:;"
         />
         <meta name="referrer" content="no-referrer-when-downgrade" />
         <Script src="/assets/lang-config.js" strategy="beforeInteractive" />
