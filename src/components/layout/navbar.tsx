@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { Menu as MenuIcon, X } from "lucide-react";
 import navigationSections from "@/config/navigation";
 import type { NavSection } from "@/types/navigation";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const transition: Transition = {
   type: "spring",
@@ -38,8 +39,8 @@ export const MenuItem = ({
       <motion.div
         transition={{ duration: 0.2, ease: "easeOut" }}
         className={`cursor-pointer tracking-wide font-medium relative group px-3 py-2 rounded-xl transition-all duration-200 ${
-          isCurrentPage 
-            ? "text-white bg-white/10 shadow-lg" 
+          isCurrentPage
+            ? "text-white bg-white/10 shadow-lg"
             : "text-white/85 hover:text-white hover:bg-white/6"
         }`}
         whileHover={{ scale: 1.02 }}
@@ -69,7 +70,7 @@ export const MenuItem = ({
               >
                 {/* Animated background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/8 via-purple-500/8 to-emerald-500/8" />
-                
+
                 <motion.div
                   layout // layout ensures smooth animation
                   className="relative w-max h-full p-4"
@@ -99,10 +100,10 @@ export const Menu = ({
     >
       {/* Animated background gradient */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      
+
       {/* Subtle border glow */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-emerald-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
-      
+
       {children}
     </nav>
   );
@@ -184,7 +185,7 @@ export const Navbar = ({
     <div className="w-full flex items-center justify-center py-5 fixed top-0 left-0 right-0 z-50">
       {/* Mobile top bar */}
       <div className="w-full px-4 lg:hidden">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -192,8 +193,12 @@ export const Navbar = ({
         >
           {/* Animated background gradient */}
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          <Link href="/" onClick={close} className="flex items-center gap-3 relative z-10">
+
+          <Link
+            href="/"
+            onClick={close}
+            className="flex items-center gap-3 relative z-10"
+          >
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -260,10 +265,14 @@ export const Navbar = ({
                 key={s.title}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 + index * 0.1, ease: "easeOut" }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.1 + index * 0.1,
+                  ease: "easeOut",
+                }}
                 className={`cursor-pointer tracking-wide font-medium relative group px-3 py-2 rounded-xl transition-all duration-200 ${
-                  isCurrentPage 
-                    ? "text-white bg-white/10 shadow-lg" 
+                  isCurrentPage
+                    ? "text-white bg-white/10 shadow-lg"
                     : "text-white/85 hover:text-white hover:bg-white/6"
                 }`}
                 whileHover={{ scale: 1.02 }}
@@ -296,8 +305,8 @@ export const Navbar = ({
               >
                 <div className={`flex flex-col space-y-4`}>
                   {s.items.map((item, itemIndex) => (
-                    <motion.div 
-                      key={item.title} 
+                    <motion.div
+                      key={item.title}
                       className="space-y-2"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -319,6 +328,16 @@ export const Navbar = ({
             </motion.div>
           );
         })}
+
+        {/* Language Switcher for Desktop */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="ml-4"
+        >
+          <LanguageSwitcher />
+        </motion.div>
       </Menu>
 
       {/* Mobile drawer + overlay */}
@@ -405,8 +424,8 @@ export const Navbar = ({
                   }
                   const isOpen = openSection === s.title;
                   return (
-                    <motion.div 
-                      key={s.title} 
+                    <motion.div
+                      key={s.title}
                       className="border-b border-white/10"
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -451,12 +470,15 @@ export const Navbar = ({
                           >
                             <div className="pl-4 pb-4 space-y-3">
                               {s.items.map((item, itemIndex) => (
-                                <motion.div 
-                                  key={item.title} 
+                                <motion.div
+                                  key={item.title}
                                   className="space-y-1"
                                   initial={{ opacity: 0, x: 10 }}
                                   animate={{ opacity: 1, x: 0 }}
-                                  transition={{ duration: 0.2, delay: itemIndex * 0.05 }}
+                                  transition={{
+                                    duration: 0.2,
+                                    delay: itemIndex * 0.05,
+                                  }}
                                 >
                                   <Link
                                     href={item.href}
@@ -477,6 +499,18 @@ export const Navbar = ({
                     </motion.div>
                   );
                 })}
+
+                {/* Language Switcher for Mobile */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.5 }}
+                  className="mt-6 pt-6 border-t border-white/10"
+                >
+                  <div className="text-center">
+                    <LanguageSwitcher />
+                  </div>
+                </motion.div>
               </div>
             </motion.aside>
           </>

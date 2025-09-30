@@ -62,10 +62,10 @@ export default function Home() {
             {/* Main Headlines */}
             <div className="space-y-8 pt-6 md:pt-16">
               <HeroAnimation direction="fade" delay={0.2}>
-                <div className="hidden md:block">
+                <div className="hidden md:block notranslate">
                   <TextHoverEffect text="BİSAVUNMA" />
                 </div>
-                <div className="block md:hidden">
+                <div className="block md:hidden notranslate">
                   <ShinyText
                     text="BİSAVUNMA"
                     className="text-[clamp(2.5rem,_12vw,_4rem)] font-poppins-bold"
