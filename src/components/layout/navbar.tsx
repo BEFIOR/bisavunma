@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 import { Menu as MenuIcon, X } from "lucide-react";
 import navigationSections from "@/config/navigation";
 import type { NavSection } from "@/types/navigation";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const transition: Transition = {
   type: "spring",
@@ -328,16 +327,6 @@ export const Navbar = ({
             </motion.div>
           );
         })}
-
-        {/* Language Switcher for Desktop */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="ml-4"
-        >
-          <LanguageSwitcher />
-        </motion.div>
       </Menu>
 
       {/* Mobile drawer + overlay */}
@@ -499,18 +488,6 @@ export const Navbar = ({
                     </motion.div>
                   );
                 })}
-
-                {/* Language Switcher for Mobile */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.5 }}
-                  className="mt-6 pt-6 border-t border-white/10"
-                >
-                  <div className="text-center">
-                    <LanguageSwitcher />
-                  </div>
-                </motion.div>
               </div>
             </motion.aside>
           </>

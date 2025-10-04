@@ -143,19 +143,6 @@ html {
   animation: shine 5s linear infinite;
 }
 
-/* Hide Google Translate Bar */
-.skiptranslate {
-  display: none !important;
-}
-
-/* Additional styling for Google Translate */
-.goog-te-banner-frame {
-  display: none !important;
-}
-
-body {
-  top: 0 !important;
-}
 
 /* Mobile dropdown improvements */
 @media (max-width: 1024px) {

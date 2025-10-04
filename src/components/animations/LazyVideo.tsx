@@ -25,6 +25,8 @@ export function LazyVideo({
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [shouldPlay, setShouldPlay] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -70,8 +72,27 @@ export function LazyVideo({
   // Video yüklendiğinde
   const handleLoadedData = () => {
     setIsLoaded(true);
+    setHasError(false);
     if (autoPlay && isInView) {
       setShouldPlay(true);
+    }
+  };
+
+  // Video yükleme hatası
+  const handleError = () => {
+    console.warn(`Video yüklenemedi: ${src}, Retry: ${retryCount + 1}`);
+    setHasError(true);
+
+    // 3 kez deneme yap
+    if (retryCount < 3) {
+      setTimeout(() => {
+        setRetryCount((prev) => prev + 1);
+        setHasError(false);
+        const video = videoRef.current;
+        if (video) {
+          video.load();
+        }
+      }, 2000 * (retryCount + 1)); // Exponential backoff
     }
   };
 
@@ -118,9 +139,7 @@ export function LazyVideo({
         playsInline
         poster={poster}
         onLoadedData={handleLoadedData}
-        onError={() => {
-          console.warn(`Video yüklenemedi: ${src}`);
-        }}
+        onError={handleError}
         style={{
           position: "absolute",
           top: 0,
@@ -132,13 +151,48 @@ export function LazyVideo({
       />
 
       {/* Loading indicator */}
-      {!isLoaded && (
+      {!isLoaded && !hasError && (
         <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center">
           <motion.div
             className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
+        </div>
+      )}
+
+      {/* Error fallback */}
+      {hasError && retryCount >= 3 && (
+        <div className="absolute inset-0 bg-neutral-800 flex flex-col items-center justify-center text-center p-4">
+          <div className="text-red-400 mb-2">
+            <svg
+              className="w-12 h-12 mx-auto"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 19.5c-.77.833.192 2.5 1.732 2.5z"
+              />
+            </svg>
+          </div>
+          <p className="text-gray-300 text-sm mb-2">Video yüklenemedi</p>
+          <button
+            onClick={() => {
+              setRetryCount(0);
+              setHasError(false);
+              const video = videoRef.current;
+              if (video) {
+                video.load();
+              }
+            }}
+            className="text-cyan-400 hover:text-cyan-300 text-xs underline"
+          >
+            Tekrar Dene
+          </button>
         </div>
       )}
     </motion.div>

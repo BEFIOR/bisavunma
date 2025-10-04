@@ -2,7 +2,6 @@ import Image from "next/image";
 import RfSidebar from "./RfSidebar.client";
 import RfMobileSidebar from "./RfMobileSidebar.client";
 import { getProductsByCategorySlug } from "@/lib/products";
-import GoogleTranslateSync from "@/components/GoogleTranslateSync";
 
 export const revalidate = 60;
 
@@ -16,7 +15,6 @@ export default async function RfLayout({
 
   return (
     <div className="min-h-screen bg-white flex">
-      <GoogleTranslateSync />
       <aside className="hidden lg:block w-72 bg-black text-gray-200 min-h-screen sticky top-0">
         <div className="p-5 border-b border-gray-800">
           <div className="h-16 w-full" />
