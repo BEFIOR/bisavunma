@@ -20,7 +20,7 @@ import {
 } from "@/components/animations/ScrollAnimations";
 import { LazyVideo } from "@/components/animations/LazyVideo";
 import Footer from "@/components/Footer";
-
+import Link from "next/link";
 export default async function Cozumlerimiz() {
   return (
     <div className="min-h-screen">
@@ -67,24 +67,24 @@ export default async function Cozumlerimiz() {
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.8}>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <a
-                  href="#sistem-konfigurasyonu"
+                <Link
+                  href="/cozumlerimiz#sistem-konfigurasyonu"
                   className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
                 >
                   Sistem Konfigürasyonu
-                </a>
-                <a
-                  href="#savunma-cozumleri"
+                </Link>
+                <Link
+                  href="/cozumlerimiz#savunma-cozumleri"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   Savunma Çözümleri
-                </a>
-                <a
-                  href="#entegre-guvenlik"
+                </Link>
+                <Link
+                  href="/cozumlerimiz#entegre-guvenlik"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   Entegre Güvenlik
-                </a>
+                </Link>
               </div>
             </HeroAnimation>
           </div>
@@ -480,18 +480,18 @@ export default async function Cozumlerimiz() {
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.8}>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href="#iletisim"
+              <Link
+                href="/iletisim"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-gray-900 px-6 py-3 text-sm font-semibold hover:bg-gray-100 transition-colors"
               >
                 İletişime Geç
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/iletisim"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20 text-white px-6 py-3 text-sm font-semibold hover:bg-white/10 transition-colors"
               >
                 Teklif Al
-              </a>
+              </Link>
             </div>
           </ScrollAnimation>
         </div>

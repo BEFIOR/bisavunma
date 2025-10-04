@@ -1,15 +1,6 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  // Static file serving configuration
-  experimental: {
-    // Enable static file serving for large files
-    staticGeneration: {
-      // Increase timeout for large static files
-      staticPageGenerationTimeout: 1000,
-    },
-  },
-  // Headers for video files
+const nextConfig: NextConfig = {  
   async headers() {
     return [
       {

@@ -1,4 +1,4 @@
-import { Building, Globe, Target, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import Link from "next/link";
 import Footer from "@/components/Footer";
@@ -27,7 +27,7 @@ export default async function Sektorler() {
                 Anti-Drone ve C-UAS çözümleri ile kapsamlı koruma sağlıyoruz.
               </p>
             </div>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700 delay-300">
               <Link
                 href="/sektorler#askeri-tesisler"
                 className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"

@@ -27,7 +27,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
-import { LazyVideo } from "@/components/animations/LazyVideo";
 import {
   ScrollAnimation,
   StaggerContainer,
@@ -500,18 +499,18 @@ export default function Home() {
 
             <ScrollAnimation direction="up" delay={0.6}>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#"
+                <Link
+                  href="/iletisim"
                   className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-5 py-3 text-sm font-poppins-semibold hover:bg-black transition-colors"
                 >
                   Daha Fazla Bilgi
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/iletisim"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-5 py-3 text-sm font-poppins-semibold text-white hover:bg-gray-800 transition"
                 >
                   İletişime Geç
-                </a>
+                </Link>
               </div>
             </ScrollAnimation>
           </div>
@@ -699,18 +698,18 @@ export default function Home() {
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.6}>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href="#iletisim"
+              <Link
+                href="/iletisim"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-gray-900 px-6 py-3 text-sm font-poppins-semibold hover:bg-gray-100 transition-colors"
               >
                 Hemen Başlayın
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/iletisim"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20 text-white px-6 py-3 text-sm font-poppins-semibold hover:bg-white/10 transition-colors"
               >
                 Demo Talep Et
-              </a>
+              </Link>
             </div>
           </ScrollAnimation>
           <ScrollAnimation direction="fade" delay={0.8}>
