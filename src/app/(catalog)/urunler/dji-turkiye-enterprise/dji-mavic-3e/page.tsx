@@ -227,6 +227,7 @@ export default function DJIMavic3EPage() {
                 <LazyVideo
                   src="/products/dji-enterprise/dji-mavic-3t/odaklan-bul.mp4"
                   className="object-cover w-full h-full rounded-xl"
+                  context="showcase"
                 />
               </div>
             </ScaleAnimation>

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getProductsByCategorySlug, getProductBySlug } from "@/lib/products";
+import { getProductsByCategorySlug } from "@/lib/products";
+import { getCachedProduct } from "@/lib/loaders";
 import HeroSlider from "@/components/HeroSlider";
 import {
   ScrollAnimation,
@@ -10,7 +11,7 @@ import {
 } from "@/components/animations/ScrollAnimations";
 import { Shield, Radio, Zap, ArrowLeft, CheckCircle } from "lucide-react";
 
-export const revalidate = 60;
+export const revalidate = 300; // Cache for 5 minutes
 
 type Params = { slug: string };
 
@@ -28,7 +29,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const product = await getCachedProduct(slug);
   if (!product) return { title: "Jammer Ürünü Bulunamadı" };
   return {
     title: product.title,
@@ -42,7 +43,7 @@ export default async function JammerProductPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const product = await getCachedProduct(slug);
   if (!product) notFound();
 
   const title = product.title;
@@ -124,26 +125,35 @@ export default async function JammerProductPage({
       </section>
 
       {/* Features */}
-      <section id="ozellikler" className="py-20 px-4 border-t border-neutral-900">
+      <section
+        id="ozellikler"
+        className="py-20 px-4 border-t border-neutral-900"
+      >
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation direction="up" className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Öne Çıkan Özellikler</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Öne Çıkan Özellikler
+            </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               {title} ile hava sahasında üstün C‑UAS ve EW koruması
             </p>
           </ScrollAnimation>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(product.features ?? [
-              "Geniş bant kapsama",
-              "Yüksek çıkış gücü",
-              "Seçici bastırma",
-            ]).map((feature, index) => (
+            {(
+              product.features ?? [
+                "Geniş bant kapsama",
+                "Yüksek çıkış gücü",
+                "Seçici bastırma",
+              ]
+            ).map((feature, index) => (
               <StaggerItem key={index}>
                 <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6 hover:border-neutral-700 transition-colors">
                   <div className="flex items-center gap-3 mb-3">
                     <CheckCircle className="w-6 h-6 text-sky-400" />
-                    <h3 className="text-lg font-semibold text-white">Özellik {index + 1}</h3>
+                    <h3 className="text-lg font-semibold text-white">
+                      Özellik {index + 1}
+                    </h3>
                   </div>
                   <p className="text-gray-400">{feature}</p>
                 </div>
@@ -163,7 +173,8 @@ export default async function JammerProductPage({
                 Spektrum Kapsaması
               </div>
               <p className="text-gray-400 text-sm">
-                Geniş bant ISM, GNSS ve haberleşme bantlarında kesintisiz bastırma için optimize edilmiş mimari.
+                Geniş bant ISM, GNSS ve haberleşme bantlarında kesintisiz
+                bastırma için optimize edilmiş mimari.
               </p>
             </div>
             <div className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6">
@@ -172,7 +183,8 @@ export default async function JammerProductPage({
                 Yüksek Çıkış Gücü
               </div>
               <p className="text-gray-400 text-sm">
-                Sektör başına ayarlanabilir güç seviyeleri ile uzun menzilde güvenilir etkisizleştirme.
+                Sektör başına ayarlanabilir güç seviyeleri ile uzun menzilde
+                güvenilir etkisizleştirme.
               </p>
             </div>
             <div className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-6">
@@ -181,7 +193,8 @@ export default async function JammerProductPage({
                 Askeri Dayanıklılık
               </div>
               <p className="text-gray-400 text-sm">
-                IP65/66 koruma, pasif/aktif soğutma ve 7/24 operasyon için sahada kanıtlanmış tasarım.
+                IP65/66 koruma, pasif/aktif soğutma ve 7/24 operasyon için
+                sahada kanıtlanmış tasarım.
               </p>
             </div>
           </div>
@@ -196,7 +209,8 @@ export default async function JammerProductPage({
               {title} Hakkında Daha Fazla Bilgi
             </h2>
             <p className="text-lg text-gray-300 mb-8">
-              Teknik özellikler, fiyatlandırma ve entegrasyon seçenekleri için bizimle iletişime geçin.
+              Teknik özellikler, fiyatlandırma ve entegrasyon seçenekleri için
+              bizimle iletişime geçin.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link

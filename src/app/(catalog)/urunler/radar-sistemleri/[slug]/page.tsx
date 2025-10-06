@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getProductBySlug } from "@/lib/products";
+import { getCachedProduct } from "@/lib/loaders";
 import Image from "next/image";
 import {
   Radar as RadarIcon,
@@ -13,7 +13,7 @@ import {
   Wrench,
 } from "lucide-react";
 
-export const revalidate = 60;
+export const revalidate = 300; // Cache for 5 minutes
 
 type Params = { slug: string };
 
@@ -23,7 +23,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const product = await getCachedProduct(slug);
   if (!product) return { title: "Ürün Bulunamadı" };
   return {
     title: product.title,
@@ -37,7 +37,7 @@ export default async function RadarProductPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const product = await getCachedProduct(slug);
   if (!product) notFound();
 
   const content = getRadarContent(slug);
@@ -70,7 +70,9 @@ export default async function RadarProductPage({
             </div>
             <div className="mt-6 space-y-8">
               <div>
-                <h2 className="text-xl font-semibold text-white mb-2">Genel Bakış</h2>
+                <h2 className="text-xl font-semibold text-white mb-2">
+                  Genel Bakış
+                </h2>
                 <p className="text-gray-300 leading-relaxed">{description}</p>
               </div>
 
@@ -94,8 +96,12 @@ export default async function RadarProductPage({
                           key={it.label}
                           className="rounded-lg border border-neutral-800 bg-neutral-900/40 p-3"
                         >
-                          <div className="text-xs text-gray-400">{it.label}</div>
-                          <div className="text-sm text-gray-200 mt-0.5">{it.value}</div>
+                          <div className="text-xs text-gray-400">
+                            {it.label}
+                          </div>
+                          <div className="text-sm text-gray-200 mt-0.5">
+                            {it.value}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -107,13 +113,18 @@ export default async function RadarProductPage({
 
           <aside className="lg:col-span-1">
             <div className="rounded-lg border border-neutral-800 p-4 bg-neutral-900/40">
-              <h3 className="text-lg font-semibold text-white mb-3">Hızlı Bakış</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">
+                Hızlı Bakış
+              </h3>
               <ul className="space-y-2 text-gray-300">
-                {(content?.highlights ?? product.features ?? [
-                  "Çoklu hedef takibi",
-                  "Gelişmiş sinyal işleme",
-                  "Gerçek zamanlı analiz",
-                ]).map((f) => (
+                {(
+                  content?.highlights ??
+                  product.features ?? [
+                    "Çoklu hedef takibi",
+                    "Gelişmiş sinyal işleme",
+                    "Gerçek zamanlı analiz",
+                  ]
+                ).map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <RadarIcon className="w-4 h-4 text-sky-400" />
                     <span>{f}</span>
@@ -213,7 +224,10 @@ function getRadarContent(slug: string): RadarContent | null {
           icon: <Cpu className="w-5 h-5 text-sky-400" />,
           items: [
             { label: "Bant", value: "Ku (15.4–16.6 GHz)" },
-            { label: "Tip", value: "Yazılım tanımlı bilişsel 4D, Pulse‑Doppler" },
+            {
+              label: "Tip",
+              value: "Yazılım tanımlı bilişsel 4D, Pulse‑Doppler",
+            },
             { label: "Açısal Doğruluk", value: "<0.5° azimut/yükseliş" },
             { label: "İzleme Kapasitesi", value: "Yüzlerce hedef" },
           ],
@@ -272,7 +286,10 @@ function getRadarContent(slug: string): RadarContent | null {
           icon: <Network className="w-5 h-5 text-sky-400" />,
           items: [
             { label: "Kontrol I/O", value: "Gigabit Ethernet" },
-            { label: "Çıkışlar", value: "Harita/tespit/ölçüm/iz veri oranları" },
+            {
+              label: "Çıkışlar",
+              value: "Harita/tespit/ölçüm/iz veri oranları",
+            },
             { label: "Montaj", value: "VESA 75 & 100 mm" },
           ],
         },
@@ -306,7 +323,10 @@ function getRadarContent(slug: string): RadarContent | null {
           items: [
             { label: "Tarama", value: "1–4 Hz (göreve bağlı)" },
             { label: "Açısal Doğruluk", value: "≤0.2° az., ≤0.3° yük." },
-            { label: "Menzi̇ller", value: "Pers. >9 km, Araç >12 km, sUAS >8 km, G2/3 >11 km" },
+            {
+              label: "Menzi̇ller",
+              value: "Pers. >9 km, Araç >12 km, sUAS >8 km, G2/3 >11 km",
+            },
             { label: "İz Kapasitesi", value: "512 hedefe kadar" },
             { label: "Güncelleme", value: "20 Hz sürekli" },
           ],

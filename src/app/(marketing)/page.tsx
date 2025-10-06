@@ -1,14 +1,4 @@
-"use client";
-
-import Image from "next/image";
-import { useState } from "react";
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
-import { ShinyText } from "@/components/ShinyText";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import Link from "next/link";
 import {
   Radio,
   Shield,
@@ -17,16 +7,8 @@ import {
   Zap,
   Satellite,
   Target,
-  Search,
-  Eye,
-  Headset,
   ArrowRight,
-  ChevronDown,
-  ChevronUp,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
-import Link from "next/link";
+} from "@/lib/icons";
 import {
   ScrollAnimation,
   StaggerContainer,
@@ -35,20 +17,13 @@ import {
   HeroAnimation,
   HeroStaggerContainer,
 } from "@/components/animations/ScrollAnimations";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
+import { ShinyText } from "@/components/ShinyText";
 import Footer from "@/components/Footer";
+import ServicesAccordion from "@/components/ServicesAccordion";
+import GallerySlider from "@/components/GallerySlider";
+
 export default function Home() {
-  const [expandedService, setExpandedService] = useState<number | null>(null);
-
-  const toggleService = (index: number) => {
-    console.log(
-      "Toggling service:",
-      index,
-      "Current expanded:",
-      expandedService
-    );
-    setExpandedService(expandedService === index ? null : index);
-  };
-
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
@@ -294,145 +269,69 @@ export default function Home() {
             </div>
           </ScrollAnimation>
 
-          <StaggerContainer
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6"
-            staggerDelay={0.1}
-          >
-            {[
-              {
-                title: "RF Sistemleri",
-                summary:
-                  "Geniş bant RF çözümleri ile sahada elektromanyetik üstünlük.",
-                description:
-                  "BİSAVUNMA'nın RF çözümleri, 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak sinyal toplama, analiz etme ve yön bulma (DF) kabiliyeti sunar. Bu sayede drone kontrol frekanslarından düşman haberleşme sinyallerine kadar tüm elektromanyetik aktiviteler tespit edilir. Gelişmiş spektrum analizi, waterfall ve wrapped spectrum görselleştirmeleri ile tehditler hızlıca teşhis edilir. RF sistemlerimiz sınır güvenliği, üs bölgeleri, enerji altyapısı ve VIP korumada kritik avantaj sağlar.",
-                Icon: Radio,
-              },
-              {
-                title: "Radar Sistemleri",
-                summary: "360° kapsama, düşük görünürlüklü hedef tespiti.",
-                description:
-                  "Radar sistemlerimiz, modern tehditlere karşı tam alan gözetleme sağlar. AESA radarlar ve döner antenli çözümler küçük dronelardan hava araçlarına kadar geniş bir hedef yelpazesini tespit edebilir. Çoklu hedef takibi, dost-düşman tanıma (IFF) ve yüksek çözünürlüklü haritalama kabiliyetiyle üs bölgeleri, havaalanları ve kritik tesislerin güvenliği sağlanır.",
-                Icon: Target,
-              },
-              {
-                title: "Sinyal İstihbarat (SIGINT)",
-                summary:
-                  "Geniş bant sinyal istihbaratı ile düşman haberleşme ağı takibi.",
-                description:
-                  "SIGINT çözümlerimiz 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak geniş bant toplama ve çözümleme kapasitesi sunar. Bu sistemler düşman komuta-kontrol sinyallerini analiz eder, yön bulma (DF) ile kaynaklarını konumlandırır ve yapay zekâ destekli tehdit sınıflandırması yapar. Hibrit tehditlere karşı güvenlik güçlerine proaktif üstünlük sağlar.",
-                Icon: Search,
-              },
-              {
-                title: "Elektro-Optik & Termal",
-                summary: "Gece-gündüz, her hava koşulunda hedef teşhisi.",
-                description:
-                  "EO/IR sistemlerimiz yüksek çözünürlüklü kameralar, termal sensörler ve lazer mesafe ölçerlerle gündüz-gece kesintisiz gözetleme sağlar. Radar ve RF sistemleriyle entegre edilerek hedefin görsel teşhisi yapılır, yanlış alarm riski en aza indirilir. Özellikle sınır güvenliği ve kritik tesislerde etkin kullanılır.",
-                Icon: Eye,
-              },
-              {
-                title: "Jammer Sistemleri",
-                summary: "Soft-kill elektronik harp çözümleri.",
-                description:
-                  "BİSAVUNMA'nın jammer sistemleri 9 kHz – 8 / 18 / 40 GHz frekans aralığında çalışır. Drone kontrol sinyallerini, GNSS/GPS bağlantılarını ve düşman haberleşme ağlarını etkisiz hale getirir. Sabit, mobil ve taşınabilir modelleri mevcuttur. Tehdit odaklı aktif çalışma prensibi ile enerji verimliliği sağlanır. Radar, RF ve EO/IR entegrasyonu ile çok katmanlı Anti-Drone mimarisi oluşturur.",
-                Icon: Shield,
-              },
-              {
-                title: "DJI Enterprise",
-                summary: "Endüstriyel dronelar ile çok boyutlu gözetleme.",
-                description:
-                  "DJI Enterprise çözümleri keşif, arama-kurtarma, sınır güvenliği ve kritik altyapı denetimleri için geliştirilmiştir. Termal kameralar, RTK uydu desteği, uzun uçuş süreleri ve yüksek taşıma kapasitesi ile güvenlik güçlerine avantaj sağlar. BİSAVUNMA entegrasyonu ile radar ve RF sistemleriyle tek ekranda yönetilebilir.",
-                Icon: Satellite,
-              },
-              {
-                title: "Sistem Entegrasyonu",
-                summary: "Tüm sistemler tek bir C2 yazılımında birleşir.",
-                description:
-                  "Radar, RF, SIGINT, EO/IR, jammer ve hard-kill sistemleri özel geliştirilmiş C2 komuta kontrol yazılımı üzerinde entegre edilir. Böylece radar tespit eder, RF doğrular, EO/IR teşhis yapar, jammer engeller, hard-kill imha eder. Tüm süreç tek ekrandan yönetilerek karar verme süresi minimuma indirilir.",
-                Icon: Cog,
-              },
-              {
-                title: "Teknik Destek",
-                summary: "7/24 destek ve uzun vadeli güven ortaklığı.",
-                description:
-                  "BİSAVUNMA, sistemlerin her zaman en yüksek performansla çalışması için 7/24 teknik destek sağlar. Yazılım güncellemeleri, bakım planlamaları, arıza tespiti, hızlı müdahale ve operatör eğitimleri ile müşterilerimiz daima desteklenir.",
-                Icon: Headset,
-              },
-            ].map((svc, index) => (
-              <StaggerItem key={svc.title} direction="up">
-                <div className="group relative rounded-2xl border border-gray-800 bg-gray-900 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
-                  {/* Header - Clickable */}
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      toggleService(index);
-                    }}
-                    className="w-full p-4 sm:p-6 text-left hover:bg-gray-800 transition-colors duration-200 focus:outline-none relative z-10"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3 sm:space-x-4 flex-1 min-w-0">
-                        <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gray-800 text-gray-200 flex-shrink-0">
-                          <svc.Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <h3 className="text-base sm:text-lg font-poppins-semibold text-white truncate">
-                            {svc.title}
-                          </h3>
-                          <p className="mt-1 text-xs sm:text-sm text-gray-300 font-inter-regular line-clamp-2">
-                            {svc.summary}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex-shrink-0 ml-2">
-                        {expandedService === index ? (
-                          <ChevronUp className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 transition-transform duration-200" />
-                        ) : (
-                          <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 transition-transform duration-200" />
-                        )}
-                      </div>
-                    </div>
-                  </button>
-
-                  {/* Expandable Content */}
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      expandedService === index
-                        ? "max-h-96 sm:max-h-80 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                      <div className="border-t border-gray-700 pt-3 sm:pt-4">
-                        <p className="text-xs sm:text-sm text-gray-300 font-inter-regular leading-relaxed">
-                          {svc.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Hover Effects */}
-                  <div
-                    className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
-                    }}
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity z-0"
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0"
-                    style={{
-                      background:
-                        "linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%)",
-                      transform: "translateX(-20%)",
-                    }}
-                  />
-                </div>
-              </StaggerItem>
-            ))}
+          <StaggerContainer className="" staggerDelay={0.1}>
+            <ServicesAccordion
+              services={[
+                {
+                  title: "RF Sistemleri",
+                  summary:
+                    "Geniş bant RF çözümleri ile sahada elektromanyetik üstünlük.",
+                  description:
+                    "BİSAVUNMA'nın RF çözümleri, 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak sinyal toplama, analiz etme ve yön bulma (DF) kabiliyeti sunar. Bu sayede drone kontrol frekanslarından düşman haberleşme sinyallerine kadar tüm elektromanyetik aktiviteler tespit edilir. Gelişmiş spektrum analizi, waterfall ve wrapped spectrum görselleştirmeleri ile tehditler hızlıca teşhis edilir. RF sistemlerimiz sınır güvenliği, üs bölgeleri, enerji altyapısı ve VIP korumada kritik avantaj sağlar.",
+                  iconName: "Radio",
+                },
+                {
+                  title: "Radar Sistemleri",
+                  summary: "360° kapsama, düşük görünürlüklü hedef tespiti.",
+                  description:
+                    "Radar sistemlerimiz, modern tehditlere karşı tam alan gözetleme sağlar. AESA radarlar ve döner antenli çözümler küçük dronelardan hava araçlarına kadar geniş bir hedef yelpazesini tespit edebilir. Çoklu hedef takibi, dost-düşman tanıma (IFF) ve yüksek çözünürlüklü haritalama kabiliyetiyle üs bölgeleri, havaalanları ve kritik tesislerin güvenliği sağlanır.",
+                  iconName: "Target",
+                },
+                {
+                  title: "Sinyal İstihbarat (SIGINT)",
+                  summary:
+                    "Geniş bant sinyal istihbaratı ile düşman haberleşme ağı takibi.",
+                  description:
+                    "SIGINT çözümlerimiz 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak geniş bant toplama ve çözümleme kapasitesi sunar. Bu sistemler düşman komuta-kontrol sinyallerini analiz eder, yön bulma (DF) ile kaynaklarını konumlandırır ve yapay zekâ destekli tehdit sınıflandırması yapar. Hibrit tehditlere karşı güvenlik güçlerine proaktif üstünlük sağlar.",
+                  iconName: "Search",
+                },
+                {
+                  title: "Elektro-Optik & Termal",
+                  summary: "Gece-gündüz, her hava koşulunda hedef teşhisi.",
+                  description:
+                    "EO/IR sistemlerimiz yüksek çözünürlüklü kameralar, termal sensörler ve lazer mesafe ölçerlerle gündüz-gece kesintisiz gözetleme sağlar. Radar ve RF sistemleriyle entegre edilerek hedefin görsel teşhisi yapılır, yanlış alarm riski en aza indirilir. Özellikle sınır güvenliği ve kritik tesislerde etkin kullanılır.",
+                  iconName: "Eye",
+                },
+                {
+                  title: "Jammer Sistemleri",
+                  summary: "Soft-kill elektronik harp çözümleri.",
+                  description:
+                    "BİSAVUNMA'nın jammer sistemleri 9 kHz – 8 / 18 / 40 GHz frekans aralığında çalışır. Drone kontrol sinyallerini, GNSS/GPS bağlantılarını ve düşman haberleşme ağlarını etkisiz hale getirir. Sabit, mobil ve taşınabilir modelleri mevcuttur. Tehdit odaklı aktif çalışma prensibi ile enerji verimliliği sağlanır. Radar, RF ve EO/IR entegrasyonu ile çok katmanlı Anti-Drone mimarisi oluşturur.",
+                  iconName: "Shield",
+                },
+                {
+                  title: "DJI Enterprise",
+                  summary: "Endüstriyel dronelar ile çok boyutlu gözetleme.",
+                  description:
+                    "DJI Enterprise çözümleri keşif, arama-kurtarma, sınır güvenliği ve kritik altyapı denetimleri için geliştirilmiştir. Termal kameralar, RTK uydu desteği, uzun uçuş süreleri ve yüksek taşıma kapasitesi ile güvenlik güçlerine avantaj sağlar. BİSAVUNMA entegrasyonu ile radar ve RF sistemleriyle tek ekranda yönetilebilir.",
+                  iconName: "Satellite",
+                },
+                {
+                  title: "Sistem Entegrasyonu",
+                  summary: "Tüm sistemler tek bir C2 yazılımında birleşir.",
+                  description:
+                    "Radar, RF, SIGINT, EO/IR, jammer ve hard-kill sistemleri özel geliştirilmiş C2 komuta kontrol yazılımı üzerinde entegre edilir. Böylece radar tespit eder, RF doğrular, EO/IR teşhis yapar, jammer engeller, hard-kill imha eder. Tüm süreç tek ekrandan yönetilerek karar verme süresi minimuma indirilir.",
+                  iconName: "Cog",
+                },
+                {
+                  title: "Teknik Destek",
+                  summary: "7/24 destek ve uzun vadeli güven ortaklığı.",
+                  description:
+                    "BİSAVUNMA, sistemlerin her zaman en yüksek performansla çalışması için 7/24 teknik destek sağlar. Yazılım güncellemeleri, bakım planlamaları, arıza tespiti, hızlı müdahale ve operatör eğitimleri ile müşterilerimiz daima desteklenir.",
+                  iconName: "Headset",
+                },
+              ]}
+            />
           </StaggerContainer>
         </div>
       </section>
@@ -523,152 +422,19 @@ export default function Home() {
                   <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
                 </div>
 
-                {/* Modern Gallery Container */}
-                <div className="relative group">
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-transparent rounded-3xl pointer-events-none z-10"></div>
-
-                  {/* Main Gallery */}
-                  <div className="relative bg-gradient-to-br from-gray-900/50 to-black/80 backdrop-blur-sm rounded-3xl border border-gray-700/50 shadow-2xl overflow-hidden">
-                    <Swiper
-                      modules={[Navigation, Pagination, Autoplay]}
-                      spaceBetween={20}
-                      slidesPerView={1}
-                      breakpoints={{
-                        640: {
-                          slidesPerView: 2,
-                          spaceBetween: 20,
-                        },
-                        1024: {
-                          slidesPerView: 3,
-                          spaceBetween: 30,
-                        },
-                        1280: {
-                          slidesPerView: 4,
-                          spaceBetween: 30,
-                        },
-                      }}
-                      navigation={{
-                        nextEl: ".swiper-button-next-custom",
-                        prevEl: ".swiper-button-prev-custom",
-                      }}
-                      pagination={{
-                        clickable: true,
-                        el: ".swiper-pagination-custom",
-                        bulletClass: "swiper-pagination-bullet-custom",
-                        bulletActiveClass:
-                          "swiper-pagination-bullet-active-custom",
-                      }}
-                      autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
-                      }}
-                      loop={true}
-                      className="w-full h-full"
-                    >
-                      {[
-                        "/main/ana-sayfa-hakkimizda.jpeg",
-                        "/main/anasayfa-alt-1.png",
-                        "/main/anasayfa-alt-2.jpeg",
-                        "/main/anasayfa-alt-3.jpeg",
-                        ...Array.from(
-                          { length: 44 },
-                          (_, i) => `/main/alt-slider/alt-${i + 1}.webp`
-                        ),
-                      ].map((image, index) => (
-                        <SwiperSlide key={index}>
-                          <div className="relative group/slide">
-                            {/* Image Container */}
-                            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700/50 shadow-lg transition-all duration-500 group-hover/slide:shadow-2xl group-hover/slide:scale-105 group-hover/slide:border-blue-500/50">
-                              <Image
-                                src={image}
-                                alt={`Galeri Görseli ${index + 1}`}
-                                fill
-                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                                className="object-cover transition-transform duration-700 group-hover/slide:scale-110"
-                                priority={index < 4}
-                                loading={index < 4 ? "eager" : "lazy"}
-                              />
-
-                              {/* Hover Overlay */}
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/slide:opacity-100 transition-opacity duration-500"></div>
-                            </div>
-                          </div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-
-                    {/* Custom Navigation Buttons */}
-                    <button className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-black/50 backdrop-blur-sm text-white rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 hover:bg-black/70 hover:scale-110 hover:border-blue-500/50 group">
-                      <ChevronLeft className="w-6 h-6 transition-transform group-hover:-translate-x-0.5" />
-                    </button>
-
-                    <button className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-black/50 backdrop-blur-sm text-white rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 hover:bg-black/70 hover:scale-110 hover:border-blue-500/50 group">
-                      <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-0.5" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Custom Pagination - Outside the slider */}
-                <div className="swiper-pagination-custom mt-6 flex justify-center items-center space-x-3"></div>
-
-                {/* Custom CSS for pagination bullets */}
-                <style jsx global>{`
-                  .swiper-pagination-custom {
-                    position: static !important;
-                    display: flex !important;
-                    justify-content: center !important;
-                    align-items: center !important;
-                    gap: 12px !important;
-                    margin-top: 0 !important;
-                    width: 100% !important;
-                  }
-
-                  .swiper-pagination-bullet-custom {
-                    width: 10px !important;
-                    height: 10px !important;
-                    background: rgba(255, 255, 255, 0.4) !important;
-                    border-radius: 50% !important;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-                    cursor: pointer !important;
-                    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-                    opacity: 0.7 !important;
-                    margin: 0 !important;
-                    display: inline-block !important;
-                  }
-
-                  .swiper-pagination-bullet-active-custom {
-                    background: linear-gradient(
-                      135deg,
-                      #3b82f6,
-                      #8b5cf6
-                    ) !important;
-                    transform: scale(1.3) !important;
-                    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6) !important;
-                    opacity: 1 !important;
-                    border-color: rgba(59, 130, 246, 0.5) !important;
-                  }
-
-                  .swiper-pagination-bullet-custom:hover {
-                    background: rgba(255, 255, 255, 0.8) !important;
-                    transform: scale(1.15) !important;
-                    opacity: 1 !important;
-                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3) !important;
-                  }
-
-                  /* Mobile responsive */
-                  @media (max-width: 640px) {
-                    .swiper-pagination-bullet-custom {
-                      width: 8px !important;
-                      height: 8px !important;
-                    }
-
-                    .swiper-pagination-bullet-active-custom {
-                      transform: scale(1.4) !important;
-                    }
-                  }
-                `}</style>
+                {/* Lazy-loaded Gallery */}
+                <GallerySlider
+                  images={[
+                    "/main/ana-sayfa-hakkimizda.jpeg",
+                    "/main/anasayfa-alt-1.png",
+                    "/main/anasayfa-alt-2.jpeg",
+                    "/main/anasayfa-alt-3.jpeg",
+                    ...Array.from(
+                      { length: 44 },
+                      (_, i) => `/main/alt-slider/alt-${i + 1}.webp`
+                    ),
+                  ]}
+                />
               </div>
             </ScaleAnimation>
           </div>

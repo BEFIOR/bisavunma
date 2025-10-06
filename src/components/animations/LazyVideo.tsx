@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { generateThumbnailPath, getVideoSettings } from "@/lib/video-utils";
 
 interface LazyVideoProps {
   src: string;
@@ -11,24 +12,79 @@ interface LazyVideoProps {
   muted?: boolean;
   controls?: boolean;
   poster?: string;
+  thumbnail?: string; // Poster thumbnail for better UX
+  preload?: "none" | "metadata" | "auto";
+  bandwidthThreshold?: number; // Mbps threshold for autoplay
+  context?: "showcase" | "background" | "interactive" | "mobile"; // Video context for optimization
 }
 
 export function LazyVideo({
   src,
   className = "",
-  autoPlay = true,
+  autoPlay,
   loop = true,
   muted = true,
-  controls = false,
+  controls,
   poster,
+  thumbnail,
+  preload,
+  bandwidthThreshold,
+  context = "showcase",
 }: LazyVideoProps) {
+  // Get optimized settings based on context
+  const settings = getVideoSettings(context);
+
+  // Use provided props or fall back to optimized settings
+  const finalAutoPlay = autoPlay !== undefined ? autoPlay : settings.autoPlay;
+  const finalControls = controls !== undefined ? controls : settings.controls;
+  const finalPreload = preload || settings.preload;
+  const finalBandwidthThreshold =
+    bandwidthThreshold || settings.bandwidthThreshold;
+
+  // Auto-generate thumbnail if not provided
+  const finalThumbnail = thumbnail || generateThumbnailPath(src);
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [shouldPlay, setShouldPlay] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
+  const [bandwidth, setBandwidth] = useState<number | null>(null);
+  const [showThumbnail, setShowThumbnail] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
+
+  // Bandwidth detection
+  useEffect(() => {
+    const detectBandwidth = async () => {
+      try {
+        // Simple bandwidth test using a small image
+        const startTime = performance.now();
+        const testImage = new Image();
+        testImage.src = `data:image/svg+xml;base64,${btoa(`
+          <svg width="1" height="1" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1" height="1" fill="transparent"/>
+          </svg>
+        `)}`;
+
+        await new Promise((resolve) => {
+          testImage.onload = resolve;
+          testImage.onerror = resolve;
+        });
+
+        const endTime = performance.now();
+        const duration = endTime - startTime;
+        // Rough estimation - in real app, use proper bandwidth testing
+        const estimatedBandwidth = 10 / (duration / 1000); // Rough Mbps estimation
+        setBandwidth(estimatedBandwidth);
+      } catch (error) {
+        console.warn("Bandwidth detection failed:", error);
+        setBandwidth(null);
+      }
+    };
+
+    detectBandwidth();
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -41,13 +97,18 @@ export function LazyVideo({
           if (entry.isIntersecting) {
             setIsInView(true);
             if (!isLoaded) {
-              // Video henüz yüklenmemişse yükle
-              video.src = src;
-              video.load();
+              // Only load video if bandwidth is sufficient or unknown
+              const shouldLoad =
+                bandwidth === null || bandwidth >= finalBandwidthThreshold;
+              if (shouldLoad) {
+                video.src = src;
+                video.load();
+                setShowThumbnail(false);
+              }
             }
           } else {
             setIsInView(false);
-            if (autoPlay && video) {
+            if (finalAutoPlay && video) {
               video.pause();
               setShouldPlay(false);
             }
@@ -55,8 +116,8 @@ export function LazyVideo({
         });
       },
       {
-        threshold: 0.5, // Video %50 görünür olduğunda tetikle
-        rootMargin: "100px", // 100px öncesinden hazırla
+        threshold: 0.3, // Reduced threshold for better performance
+        rootMargin: "50px", // Reduced margin to prevent premature loading
       }
     );
 
@@ -67,13 +128,13 @@ export function LazyVideo({
         observerRef.current.disconnect();
       }
     };
-  }, [src, isLoaded, autoPlay]);
+  }, [src, isLoaded, finalAutoPlay, bandwidth, finalBandwidthThreshold]);
 
   // Video yüklendiğinde
   const handleLoadedData = () => {
     setIsLoaded(true);
     setHasError(false);
-    if (autoPlay && isInView) {
+    if (finalAutoPlay && isInView) {
       setShouldPlay(true);
     }
   };
@@ -101,21 +162,21 @@ export function LazyVideo({
     const video = videoRef.current;
     if (!video || !isLoaded) return;
 
-    if (shouldPlay && isInView && autoPlay) {
+    if (shouldPlay && isInView && finalAutoPlay) {
       video.play().catch(() => {
         // Autoplay engellenmişse sessizce devam et
       });
     } else {
       video.pause();
     }
-  }, [shouldPlay, isInView, autoPlay, isLoaded]);
+  }, [shouldPlay, isInView, finalAutoPlay, isLoaded]);
 
   // Video görünür olduğunda oynatmaya başla
   useEffect(() => {
-    if (isInView && isLoaded && autoPlay) {
+    if (isInView && isLoaded && finalAutoPlay) {
       setShouldPlay(true);
     }
-  }, [isInView, isLoaded, autoPlay]);
+  }, [isInView, isLoaded, finalAutoPlay]);
 
   return (
     <motion.div
@@ -129,15 +190,52 @@ export function LazyVideo({
         height: "100%",
       }}
     >
+      {/* Thumbnail overlay for better UX */}
+      {showThumbnail && (finalThumbnail || poster) && (
+        <div className="absolute inset-0 z-10">
+          <img
+            src={finalThumbnail || poster}
+            alt="Video thumbnail"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          {/* Play button overlay */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+            <motion.button
+              className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                setShowThumbnail(false);
+                const video = videoRef.current;
+                if (video && !isLoaded) {
+                  video.src = src;
+                  video.load();
+                }
+              }}
+            >
+              <svg
+                className="w-6 h-6 text-gray-800 ml-1"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </motion.button>
+          </div>
+        </div>
+      )}
+
       <video
         ref={videoRef}
         className="w-full h-full object-cover"
         autoPlay={false} // Kontrollü oynatma için false
         loop={loop}
         muted={muted}
-        controls={controls}
+        controls={finalControls}
         playsInline
         poster={poster}
+        preload={finalPreload}
         onLoadedData={handleLoadedData}
         onError={handleError}
         style={{
@@ -160,6 +258,48 @@ export function LazyVideo({
           />
         </div>
       )}
+
+      {/* Bandwidth warning for slow connections */}
+      {bandwidth !== null &&
+        bandwidth < finalBandwidthThreshold &&
+        !isLoaded && (
+          <div className="absolute inset-0 bg-neutral-800/90 flex flex-col items-center justify-center text-center p-4">
+            <div className="text-yellow-400 mb-2">
+              <svg
+                className="w-12 h-12 mx-auto"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <p className="text-gray-300 text-sm mb-2">
+              Yavaş bağlantı tespit edildi
+            </p>
+            <p className="text-gray-400 text-xs mb-4">
+              Video otomatik oynatılmayacak
+            </p>
+            <button
+              onClick={() => {
+                const video = videoRef.current;
+                if (video) {
+                  video.src = src;
+                  video.load();
+                  setShowThumbnail(false);
+                }
+              }}
+              className="text-cyan-400 hover:text-cyan-300 text-xs underline"
+            >
+              Yine de Yükle
+            </button>
+          </div>
+        )}
 
       {/* Error fallback */}
       {hasError && retryCount >= 3 && (

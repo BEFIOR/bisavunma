@@ -1,13 +1,13 @@
 import { Navbar } from "@/components/layout/navbar";
 import navigationSections from "@/config/navigation";
 import type { NavSection, NavGroup } from "@/types/navigation";
-import { listCategories } from "@/server/repositories/categories";
+import { getStaticCategories } from "@/lib/categories";
 
-// Ensure Navbar rerenders on each request to reflect latest links
-export const revalidate = 0;
+// Use static categories for better SSG performance
+export const revalidate = 3600; // 1 hour - categories are mostly static
 
 export default async function NavbarServer() {
-  const categories = await listCategories();
+  const categories = getStaticCategories();
   // Map selected categories to custom static pages
   const staticRoutes: Record<string, string> = {
     "rf-sistemleri-ve-sinyal-istihbarat-sigint":

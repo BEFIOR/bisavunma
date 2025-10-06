@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
-import { getProductBySlug, getProductsByCategorySlug } from "@/lib/products";
+import { getProductsByCategorySlug } from "@/lib/products";
+import { getCachedProduct } from "@/lib/loaders";
 import type { DbProduct } from "@/lib/products";
 import Image from "next/image";
 
-export const revalidate = 60;
+export const revalidate = 300; // Cache for 5 minutes
 
 type Params = { slug: string };
 
@@ -18,7 +19,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const product = await getCachedProduct(slug);
   if (!product) return { title: "Ürün Bulunamadı" };
   return {
     title: `${product.title} | DJI Enterprise`,
@@ -32,7 +33,7 @@ export default async function DjiProductPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const product = await getCachedProduct(slug);
   if (!product) notFound();
 
   return (

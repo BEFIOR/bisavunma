@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "slug": "rf-sistemleri-ve-sinyal-istihbarat-sigint",
+    "title": "RF Sistemleri ve Sinyal İstihbarat (SIGINT)",
+    "parentId": null,
+    "position": 1
+  },
+  {
+    "id": 2,
+    "slug": "radar-sistemleri",
+    "title": "Radar Sistemleri",
+    "parentId": null,
+    "position": 2
+  },
+  {
+    "id": 3,
+    "slug": "elektro-optik-ve-termal-sistemler",
+    "title": "Elektro-Optik & Termal Sistemler",
+    "parentId": null,
+    "position": 3
+  },
+  {
+    "id": 4,
+    "slug": "jammer-rf-efektorler",
+    "title": "Jammer & RF Efektörler",
+    "parentId": null,
+    "position": 4
+  },
+  {
+    "id": 5,
+    "slug": "dji-turkiye-enterprise",
+    "title": "DJI Türkiye Enterprise",
+    "parentId": null,
+    "position": 5
+  }
+]
