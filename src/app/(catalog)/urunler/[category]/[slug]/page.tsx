@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getCachedProduct } from "@/lib/loaders";
 import Image from "next/image";
+import ProductTracking from "@/components/ProductTracking";
+import { trackButtonClick } from "@/lib/gtag";
 
 export const revalidate = 300; // Cache for 5 minutes
 
@@ -39,6 +41,7 @@ export default async function ProductInCategory({
 
   return (
     <div className="min-h-screen bg-black text-gray-200">
+      <ProductTracking productName={title} category={category} />
       <section className="pt-28 pb-8 px-4 bg-neutral-950 border-b border-neutral-900">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl font-bold text-white">{title}</h1>
@@ -78,7 +81,15 @@ export default async function ProductInCategory({
                   <li key={f}>{f}</li>
                 ))}
               </ul>
-              <button className="mt-6 w-full bg-sky-600 hover:bg-sky-500 text-white font-medium py-2.5 rounded-md">
+              <button
+                onClick={() =>
+                  trackButtonClick(
+                    "quote_request",
+                    `product_${category}_${slug}`
+                  )
+                }
+                className="mt-6 w-full bg-sky-600 hover:bg-sky-500 text-white font-medium py-2.5 rounded-md"
+              >
                 Teklif Al
               </button>
             </div>

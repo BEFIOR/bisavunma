@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getProductsByCategorySlug } from "@/lib/products";
 import { getCachedProduct } from "@/lib/loaders";
 import HeroSlider from "@/components/HeroSlider";
+import ProductTracking from "@/components/ProductTracking";
 import {
   ScrollAnimation,
   StaggerContainer,
@@ -53,6 +54,7 @@ export default async function JammerProductPage({
 
   return (
     <div className="min-h-screen bg-black text-gray-200">
+      <ProductTracking productName={title} category="jammer-rf-efektorler" />
       {/* Hero */}
       <section className="relative pt-24 overflow-hidden min-h-[70vh]">
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 to-black" />

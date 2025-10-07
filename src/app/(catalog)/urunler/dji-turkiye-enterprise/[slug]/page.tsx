@@ -3,6 +3,7 @@ import { getProductsByCategorySlug } from "@/lib/products";
 import { getCachedProduct } from "@/lib/loaders";
 import type { DbProduct } from "@/lib/products";
 import Image from "next/image";
+import ProductTracking from "@/components/ProductTracking";
 
 export const revalidate = 300; // Cache for 5 minutes
 
@@ -38,6 +39,10 @@ export default async function DjiProductPage({
 
   return (
     <div className="min-h-screen bg-black text-gray-200">
+      <ProductTracking
+        productName={product.title}
+        category="dji-turkiye-enterprise"
+      />
       <Hero title={product.title} image={product.image} />
       <MainContent
         product={product}

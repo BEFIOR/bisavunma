@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getCachedProduct } from "@/lib/loaders";
 import Image from "next/image";
+import ProductTracking from "@/components/ProductTracking";
+import { trackButtonClick } from "@/lib/gtag";
 import {
   Radar as RadarIcon,
   Target,
@@ -49,6 +51,7 @@ export default async function RadarProductPage({
 
   return (
     <div className="min-h-screen bg-black text-gray-200">
+      <ProductTracking productName={title} category="radar-sistemleri" />
       <section className="pt-28 pb-8 px-4 bg-neutral-950 border-b border-neutral-900">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl font-bold text-white">{title}</h1>
@@ -141,7 +144,12 @@ export default async function RadarProductPage({
                   </div>
                 ))}
               </div>
-              <button className="mt-6 w-full bg-sky-600 hover:bg-sky-500 text-white font-medium py-2.5 rounded-md transition-colors">
+              <button
+                onClick={() =>
+                  trackButtonClick("quote_request", `radar_product_${slug}`)
+                }
+                className="mt-6 w-full bg-sky-600 hover:bg-sky-500 text-white font-medium py-2.5 rounded-md transition-colors"
+              >
                 Teklif Al
               </button>
             </div>

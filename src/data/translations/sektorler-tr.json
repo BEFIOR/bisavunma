@@ -1,0 +1,163 @@
+{
+  "sektorler": {
+    "hero": {
+      "badge": "Sektörlerimiz",
+      "title": "Sektörlere Göre",
+      "description": "Her sektörün kendine özgü güvenlik ihtiyaçlarına yönelik Anti-Drone ve C-UAS çözümleri ile kapsamlı koruma sağlıyoruz.",
+      "navigation": {
+        "askeriTesisler": "Askeri Tesisler",
+        "enerjiAltyapi": "Enerji & Altyapı",
+        "limanTersaneler": "Liman & Tersaneler",
+        "sinirGuvenligi": "Sınır Güvenliği"
+      }
+    },
+    "askeriTesisler": {
+      "badge": "Askeri Tesisler",
+      "title": "Askeri Tesisler",
+      "description": "Askeri üsler, harekât merkezleri, radar istasyonları ve havaalanları; bir devletin ulusal güvenlik yapısının omurgasını oluşturur.",
+      "detail": {
+        "title": "Anti-Drone Güvenlik Doktrini",
+        "paragraph1": "Bu kritik tesisler, günümüzde yalnızca konvansiyonel tehditlere değil, aynı zamanda küçük boyutlu dronelar, sürü drone saldırıları ve izinsiz uçak uçuşları gibi modern ve asimetrik tehditlere de maruz kalmaktadır.",
+        "paragraph2": "BİSAVUNMA, bu kritik alanları korumak için Anti-Drone teknolojilerini merkeze alan, çok katmanlı ve entegre bir güvenlik doktrini sunar.",
+        "cta": "Detaylı Bilgi Al"
+      },
+      "systems": [
+        {
+          "title": "Radar Tabanlı Erken Uyarı",
+          "description": "En küçük hedefleri dahi düşük irtifada ve düşük radar kesit alanıyla tespit eder"
+        },
+        {
+          "title": "RF Tespit ve Sinyal İstihbaratı",
+          "description": "Drone ve kumanda arasındaki iletişim linkini belirler, frekans analizi ile operatörün konumunu ortaya çıkarır"
+        },
+        {
+          "title": "Elektro-Optik ve Termal Sistemler",
+          "description": "Gündüz/gece koşullarında görsel teşhis ve doğrulama yapar"
+        },
+        {
+          "title": "Soft-Kill Anti-Drone Çözümleri",
+          "description": "Yalnızca ihtiyaç halinde devreye alınarak hedef droneları yön kaybına uğratır veya güvenli şekilde düşmelerini sağlar"
+        },
+        {
+          "title": "Hard-Kill Anti-Drone Sistemleri",
+          "description": "Otomatik silah entegrasyonları ile tehdit unsurlarını doğrudan imha eder"
+        }
+      ],
+      "integration": "Tüm bu unsurlar, C2 komuta kontrol altyapısı ile entegre çalışır. Radarın belirlediği hedef, RF tespitiyle doğrulanır, elektro-optik sistemlerle teşhis edilir, ardından soft-kill ve hard-kill sistemleriyle etkisiz hale getirilir. Böylece askeri tesisler, 7/24 uçtan uca Anti-Drone ve hava güvenlik sistemi ile korunur."
+    },
+    "enerjiAltyapi": {
+      "badge": "Enerji & Kritik Altyapılar",
+      "title": "Enerji & Kritik Altyapılar",
+      "description": "Enerji santralleri, barajlar, petrol ve doğalgaz altyapıları, nükleer tesisler ve telekomünikasyon merkezleri, bir ülkenin ekonomik ve stratejik güvenliği için hayati öneme sahiptir.",
+      "detail": {
+        "title": "Anti-Drone ve C-UAS Çözümleri",
+        "paragraph1": "Bu alanlara yapılacak bir saldırı ya da sabotaj, yalnızca ulusal değil, küresel ölçekte krizlere yol açabilir.",
+        "paragraph2": "BİSAVUNMA, bu altyapılar için geliştirdiği Anti-Drone ve C-UAS (Counter-Unmanned Aerial Systems) çözümleri ile tesis güvenliğini en üst düzeye çıkarır.",
+        "cta": "Detaylı Bilgi Al"
+      },
+      "systems": [
+        {
+          "title": "Çok Bantlı RF Tespit",
+          "description": "Farklı frekanslarda çalışan droneların tespiti yapılır"
+        },
+        {
+          "title": "Spektrum Analizi",
+          "description": "Wrapped spektrum ve waterfall analizleri, elektromanyetik yoğunluğu anlık ve geçmiş verilerle operatöre sunar"
+        },
+        {
+          "title": "Elektro-Optik & Termal Doğrulama",
+          "description": "Görsel teyit sağlar"
+        },
+        {
+          "title": "Soft-Kill Jammer Çözümleri",
+          "description": "Droneları anında kontrol dışı bırakır"
+        },
+        {
+          "title": "Hard-Kill Entegrasyonu",
+          "description": "Kritik altyapıya yaklaşan dronelar doğrudan imha edilir"
+        }
+      ],
+      "integration": "Tüm bu süreç, mevcut güvenlik altyapısıyla tam uyumlu entegre bir sistem halinde çalışır. Böylece enerji ve kritik altyapılar, Anti-Drone çözümleriyle güçlendirilmiş kesintisiz güvenlik zırhına sahip olur."
+    },
+    "limanTersaneler": {
+      "badge": "Liman & Tersaneler",
+      "title": "Liman & Tersaneler",
+      "description": "Limanlar ve tersaneler, hem uluslararası ticaretin güvenliği hem de askeri deniz gücünün korunması açısından stratejik öneme sahiptir.",
+      "detail": {
+        "title": "Anti-Drone Odaklı Entegre Savunma",
+        "paragraph1": "Bu tesisler, deniz, kara ve hava kaynaklı hibrit tehditlere maruz kalırken; son yıllarda özellikle drone tabanlı istihbarat, sabotaj ve saldırı girişimleri artış göstermektedir.",
+        "paragraph2": "BİSAVUNMA, liman ve tersaneler için Anti-Drone odaklı entegre savunma sistemleri geliştirir.",
+        "cta": "Detaylı Bilgi Al"
+      },
+      "systems": [
+        {
+          "title": "Radar Gözetim Sistemleri",
+          "description": "Hava ve deniz trafiğini eşzamanlı takip eder"
+        },
+        {
+          "title": "RF İstihbarat Çözümleri",
+          "description": "Kontrol sinyallerini analiz ederek tehdit kaynaklarını belirler"
+        },
+        {
+          "title": "Elektro-Optik ve Termal Sensörler",
+          "description": "Droneları görsel olarak teşhis eder"
+        },
+        {
+          "title": "Soft-Kill Jammer Çözümleri",
+          "description": "İzinsiz droneları güvenli bir şekilde devre dışı bırakır"
+        },
+        {
+          "title": "Hard-Kill Anti-Drone Sistemleri",
+          "description": "Yüksek hassasiyetli otomatik silahlarla tehditleri doğrudan imha eder"
+        }
+      ],
+      "integration": "Bu sayede liman sahası, yalnızca klasik tehditlere karşı değil, aynı zamanda drone ve insansız hava aracı saldırılarına karşı da çok katmanlı bir koruma ile emniyet altına alınır."
+    },
+    "sinirGuvenligi": {
+      "badge": "Sınır Güvenliği",
+      "title": "Sınır Güvenliği",
+      "description": "Sınır güvenliği, artık yalnızca kara hattının korunması değil, aynı zamanda hava sahasının kontrol altına alınmasını da gerektirmektedir.",
+      "detail": {
+        "title": "Anti-Drone ve C-UAS Çözümleri",
+        "paragraph1": "Özellikle küçük dronelar, izinsiz uçuş yapan hafif uçaklar ve hibrit tehditler, sınır güvenliğini karmaşık bir hale getirmiştir.",
+        "paragraph2": "BİSAVUNMA, sınır güvenliği için geliştirdiği Anti-Drone ve C-UAS çözümleri ile en ileri seviyede güvenlik sağlar.",
+        "cta": "Detaylı Bilgi Al"
+      },
+      "systems": [
+        {
+          "title": "Radar ve RF Tespit Sistemleri",
+          "description": "Sınır hattı boyunca kesintisiz gözetim sunar"
+        },
+        {
+          "title": "Elektro-Optik & Termal Sistemler",
+          "description": "Sınır bölgesinde tehdit teşhisinde en yüksek doğruluk sağlar"
+        },
+        {
+          "title": "Soft-Kill Jammer Çözümleri",
+          "description": "Droneları ve uçakları anında kontrol dışı bırakır"
+        },
+        {
+          "title": "Hard-Kill Anti-Drone Silah Sistemleri",
+          "description": "Kritik tehditleri imha ederek sınır güvenliğini garanti altına alır"
+        },
+        {
+          "title": "C2 Entegrasyonu",
+          "description": "Radar, RF, jammer, elektro-optik ve hard-kill sistemleri arasında gerçek zamanlı veri paylaşımı yapılır"
+        }
+      ],
+      "integration": "Bu sayede sınır hattı, yalnızca bir gözetim hattı değil; aynı zamanda tam entegre, Anti-Drone odaklı, dinamik bir savunma ekosistemine dönüşür."
+    },
+    "cta": {
+      "title": "Sektörünüze Özel Çözümler",
+      "description": "Askeri tesislerden sınır güvenliğine, enerji altyapısından liman tesislerine kadar her sektör için özelleştirilmiş çözümler sunuyoruz.",
+      "buttons": {
+        "contact": "İletişime Geç",
+        "quote": "Teklif Al"
+      }
+    },
+    "navigation": {
+      "scrollDown": "Aşağı Kaydır"
+    }
+  }
+}
+

@@ -1,0 +1,144 @@
+{
+  "hizmetler": {
+    "hero": {
+      "badge": "Hizmetlerimiz",
+      "title": "Kapsamlı Savunma Çözümleri",
+      "description": "Saha keşfinden yazılım çözümlerine, kurulumdan eğitime kadar savunma teknolojilerinde tam kapsamlı hizmetler sunuyoruz.",
+      "navigation": {
+        "sahaKesfi": "Saha Keşfi",
+        "kurulumEntegrasyon": "Kurulum & Entegrasyon",
+        "egitimDestek": "Eğitim & Destek"
+      }
+    },
+    "sahaKesfi": {
+      "badge": "Saha Keşfi & Konumlandırma",
+      "title": "Stratejik Konumlandırma",
+      "description": "Her operasyon sahası, yalnızca bulunduğu coğrafya ile değil; iklim koşulları, arazi yapısı, elektromanyetik yoğunluğu, çevresel gürültü seviyeleri, sivil yerleşim yakınlığı ve tehdit profilleri açısından da benzersizdir. Bu nedenle, güvenlik sistemlerinin planlanması basit bir \"cihaz yerleştirme\" sürecinden ibaret değildir; çok boyutlu analiz ve mühendislik yaklaşımı gerektirir.",
+      "content": {
+        "title": "Saha Keşfi & Konumlandırma",
+        "paragraph1": "BİSAVUNMA, uzman mühendis ekibiyle sahada gerçekleştirdiği ayrıntılı keşif ve analiz çalışmaları sayesinde, operasyon sahasının tüm güvenlik açıklarını ve potansiyel tehditlerini ortaya koyar. Bu analizler yalnızca mevcut tehlikelere karşı değil, gelecekteki hibrit tehdit senaryolarına karşı da planlama yapılmasını sağlar.",
+        "paragraph2": "Sonuç olarak, BİSAVUNMA'nın saha keşif çalışmaları, kör noktasız 360° kapsama sağlayarak savunma zincirini en güçlü hale getirir."
+      },
+      "features": [
+        {
+          "title": "Radar Yerleşimi",
+          "description": "Her radarın kapsama alanı, menzili, açısal hassasiyeti ve coğrafi engeller dikkate alınarak en verimli noktalar belirlenir. Kör noktaların ortadan kaldırılmasıyla 360° kesintisiz koruma sağlanır."
+        },
+        {
+          "title": "RF Tespit & Sinyal İstihbaratı",
+          "description": "Sahadaki elektromanyetik spektrum analiz edilir, kritik frekans bantları incelenir, düşman iletişim ve kontrol sinyalleri için yön bulma noktaları seçilir."
+        },
+        {
+          "title": "Drone Tespit Sistemleri",
+          "description": "Özellikle sürü drone saldırılarına, alçak irtifa uçuşlarına ve GPS spoofing gibi elektronik harp senaryolarına karşı çok katmanlı bir yerleşim planı hazırlanır."
+        },
+        {
+          "title": "Elektro-Optik & Termal Sensörler",
+          "description": "Gündüz-gece, tüm hava koşullarında net teşhis sağlayacak şekilde stratejik konumlandırma yapılır. Radar ve RF sistemlerini tamamlayıcı bir katman oluşturur."
+        },
+        {
+          "title": "Kritik Altyapı Analizi",
+          "description": "Askeri üs bölgeleri, sınır karakolları, havaalanları, enerji santralleri ve devlet binaları gibi stratejik bölgeler için risk haritaları çıkarılır."
+        }
+      ]
+    },
+    "kurulumEntegrasyon": {
+      "badge": "Kurulum & Entegrasyon",
+      "title": "Birleşik Savunma Ağı",
+      "description": "Kurulum süreci, sadece cihazların montajı değildir; aynı zamanda birleşik bir savunma ağı inşasıdır. BİSAVUNMA, her bir alt sistemi tek bir C2 (Command & Control) yazılım platformunda birleştirerek, kullanıcıya tam entegrasyonlu bir operasyon kabiliyeti kazandırır.",
+      "content": {
+        "title": "Kurulum & Entegrasyon",
+        "integratedSystems": "Entegre edilen sistemler:",
+        "systemsList": [
+          "Radar + RF Tespit + Sinyal İstihbarat Modülleri",
+          "Drone Tespit & Anti-Drone Jammer Çözümleri",
+          "Elektro-Optik & Termal Sensörler",
+          "Hard-Kill Otomatik Silah Sistemleri"
+        ],
+        "paragraph": "Bu sayede BİSAVUNMA'nın çözümleri yalnızca reaktif değil, proaktif savunma yetenekleri sunar."
+      },
+      "benefits": {
+        "title": "Entegrasyonun Sağladığı Faydalar",
+        "items": [
+          "Anlık veri paylaşımı sayesinde, bir sistemin tespit ettiği hedef diğerine otomatik aktarılır.",
+          "Tek ekran üzerinden yönetim: Operatör, tüm tehditleri tek merkezden takip eder.",
+          "Hibrit tehditlere karşı koordinasyon: Örneğin, radar bir hedefi tespit eder, RF sistemleri frekansı doğrular, EO/IR görüntüyle kimlik doğrulaması yapılır, jammer bağlantıyı keser ve gerekirse hard-kill sistem imhayı gerçekleştirir.",
+          "Siber güvenli entegrasyon: Tüm sistemler, şifreli iletişim protokolleriyle dış müdahalelere kapalı şekilde çalışır."
+        ]
+      }
+    },
+    "egitimDestek": {
+      "badge": "Eğitim & Teknik Destek",
+      "title": "Uzmanlık Transferi",
+      "description": "BİSAVUNMA, teslim ettiği sistemlerle birlikte kullanıcılarına uzmanlık transferi yapar. Eğitimler, gerçek operasyonel senaryolar üzerinden uygulamalı olarak verilir. Ayrıca BİSAVUNMA, sistemlerinin her zaman en yüksek verimle çalışabilmesi için 7/24 teknik destek sağlar.",
+      "content": {
+        "title": "Eğitim & Teknik Destek",
+        "trainingDescription": "Eğitimler, gerçek operasyonel senaryolar üzerinden uygulamalı olarak verilir:",
+        "trainingList": [
+          "RF Spektrum Analizi & Yön Bulma (DF)",
+          "Drone Tespit ve Anti-Drone Operasyon Prosedürleri",
+          "Jammer Kullanımı & Soft-Kill Stratejileri",
+          "Elektro-Optik & Termal Sistemlerle Hedef Teşhisi ve takibi",
+          "Hard-Kill Silah Sistemleri Kullanımı",
+          "Senaryo Bazlı Simülasyon Eğitimleri (havaalanı güvenliği, sınır hattı, üs bölgesi vb.)"
+        ],
+        "supportDescription": "Ayrıca BİSAVUNMA, sistemlerinin her zaman en yüksek verimle çalışabilmesi için 7/24 teknik destek sağlar:",
+        "supportList": [
+          "Uzaktan yazılım güncellemeleri,",
+          "Arıza tespiti ve hızlı müdahale,",
+          "Düzenli bakım ve performans kontrolleri,",
+          "Operasyonel danışmanlık hizmetleri."
+        ]
+      },
+      "features": [
+        {
+          "title": "Uzmanlık Transferi",
+          "description": "BİSAVUNMA, teslim ettiği sistemlerle birlikte kullanıcılarına uzmanlık transferi yapar. Eğitimler, gerçek operasyonel senaryolar üzerinden uygulamalı olarak verilir."
+        },
+        {
+          "title": "7/24 Teknik Destek",
+          "description": "Sistemlerin her zaman en yüksek verimle çalışabilmesi için kapsamlı teknik destek ve bakım hizmetleri sunuyoruz."
+        }
+      ]
+    },
+    "yazilimCozumleri": {
+      "badge": "Yazılım Çözümleri",
+      "title": "Özgün C2 Yazılım Platformu",
+      "description": "Modern savunma mimarisinde donanım kadar yazılım da hayati öneme sahiptir. BİSAVUNMA'nın geliştirdiği özgün C2 yazılım platformu, tüm donanımları tek bir çatı altında toplayarak karar üstünlüğü sağlar.",
+      "content": {
+        "title": "Yazılım Çözümleri",
+        "features": [
+          "Radar, RF, EO/IR, jammer ve hard-kill sistemlerini tek ekran üzerinde entegre eder.",
+          "Gerçek zamanlı RF spektrum analizi ve waterfall görselleştirmeleri sunar.",
+          "Yapay zekâ destekli algoritmalar, drone türlerini otomatik sınıflandırır.",
+          "Proaktif savunma altyapısı, sürü drone saldırılarını önceden tahmin eder.",
+          "Siber güvenlik protokolleri ile dış müdahalelere karşı güvenlik sağlar.",
+          "Raporlama & Arşivleme Modülü, tüm operasyonları kayıt altına alır ve analiz raporları üretir."
+        ]
+      },
+      "features": [
+        {
+          "title": "Özgün C2 Yazılım Platformu",
+          "description": "BİSAVUNMA'nın geliştirdiği özgün C2 yazılım platformu, tüm donanımları tek bir çatı altında toplayarak karar üstünlüğü sağlar."
+        },
+        {
+          "title": "Modern Savunma Mimarisi",
+          "description": "Modern savunma mimarisinde donanım kadar yazılım da hayati öneme sahiptir. Kapsamlı entegrasyon ve güvenlik özellikleri ile üstün performans."
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Hizmetlerimiz hakkında",
+      "title": "Kapsamlı savunma çözümleri",
+      "description": "Saha keşfinden yazılım çözümlerine, kurulumdan eğitime kadar savunma teknolojilerinde tam kapsamlı hizmetler sunuyoruz.",
+      "buttons": {
+        "contact": "İletişime Geç",
+        "solutions": "Çözümlerimizi İncele"
+      }
+    },
+    "navigation": {
+      "scrollDown": "Aşağı Kaydır"
+    }
+  }
+}
+

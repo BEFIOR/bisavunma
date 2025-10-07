@@ -1,0 +1,134 @@
+{
+  "home": {
+    "hero": {
+      "title": "BİSAVUNMA",
+      "subtitle": "DÜNYA ÇAPINDA YENİLİKÇİ MODÜLER SAVUNMA SİSTEMLERİ",
+      "experience": "25+ Yıl Deneyim",
+      "service": "Türkiye Geneli Hizmet",
+      "export": "Dünya Çapında İhracat",
+      "description": "1996'dan beri kamera sistemleri sektöründe faaliyet gösteren, 2018'de yeniden yapılanan Bisavunma, optimum çözümler ve nitelikli teknik destek ile müşteri portföyünü genişletmiş ve başarılı projelere imza atmaktadır.",
+      "optimumSolutions": "optimum çözümler",
+      "technicalSupport": "nitelikli teknik destek",
+      "features": {
+        "experience": "25+ Yıl Deneyim",
+        "service": "Türkiye Geneli Hizmet",
+        "export": "Dünya Çapında İhracat",
+        "support": "Nitelikli Teknik Destek"
+      },
+      "cta": "Ürünleri İncele"
+    },
+    "features": {
+      "badge": "Özellikler",
+      "title": "Neden BİSAVUNMA?",
+      "subtitle": "Operasyonel üstünlük için tasarlanmış, yüksek etkili ve güvenilir yetenek seti.",
+      "items": [
+        {
+          "title": "Gerçek Zamanlı İzleme",
+          "description": "Anlık veri akışı ve uyarılar ile sahaya tam hakimiyet."
+        },
+        {
+          "title": "Dayanıklı Mimari",
+          "description": "Zorlu koşullar için test edilmiş güvenilir sistemler."
+        },
+        {
+          "title": "Yapay Zeka Desteği",
+          "description": "Sinyal ve görüntü analizi için ileri AI modelleri."
+        },
+        {
+          "title": "Ölçeklenebilirlik",
+          "description": "İhtiyaca göre büyüyen modüler altyapı."
+        },
+        {
+          "title": "Düşük Gecikme",
+          "description": "Karar anlarında kritik gecikmeleri minimize eder."
+        },
+        {
+          "title": "24/7 Destek",
+          "description": "Operasyonel süreklilik için kesintisiz destek."
+        }
+      ],
+      "tags": ["Hızlı Entegrasyon", "Saha Kanıtı", "Gizlilik Standartları"]
+    },
+    "services": {
+      "title": "Hizmetlerimiz",
+      "subtitle": "Savunma sektöründe kapsamlı çözümler sunuyoruz",
+      "items": [
+        {
+          "title": "RF Sistemleri",
+          "summary": "Geniş bant RF çözümleri ile sahada elektromanyetik üstünlük.",
+          "description": "BİSAVUNMA'nın RF çözümleri, 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak sinyal toplama, analiz etme ve yön bulma (DF) kabiliyeti sunar. Bu sayede drone kontrol frekanslarından düşman haberleşme sinyallerine kadar tüm elektromanyetik aktiviteler tespit edilir. Gelişmiş spektrum analizi, waterfall ve wrapped spectrum görselleştirmeleri ile tehditler hızlıca teşhis edilir. RF sistemlerimiz sınır güvenliği, üs bölgeleri, enerji altyapısı ve VIP korumada kritik avantaj sağlar."
+        },
+        {
+          "title": "Radar Sistemleri",
+          "summary": "360° kapsama, düşük görünürlüklü hedef tespiti.",
+          "description": "Radar sistemlerimiz, modern tehditlere karşı tam alan gözetleme sağlar. AESA radarlar ve döner antenli çözümler küçük dronelardan hava araçlarına kadar geniş bir hedef yelpazesini tespit edebilir. Çoklu hedef takibi, dost-düşman tanıma (IFF) ve yüksek çözünürlüklü haritalama kabiliyetiyle üs bölgeleri, havaalanları ve kritik tesislerin güvenliği sağlanır."
+        },
+        {
+          "title": "Sinyal İstihbarat (SIGINT)",
+          "summary": "Geniş bant sinyal istihbaratı ile düşman haberleşme ağı takibi.",
+          "description": "SIGINT çözümlerimiz 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak geniş bant toplama ve çözümleme kapasitesi sunar. Bu sistemler düşman komuta-kontrol sinyallerini analiz eder, yön bulma (DF) ile kaynaklarını konumlandırır ve yapay zekâ destekli tehdit sınıflandırması yapar. Hibrit tehditlere karşı güvenlik güçlerine proaktif üstünlük sağlar."
+        },
+        {
+          "title": "Elektro-Optik & Termal",
+          "summary": "Gece-gündüz, her hava koşulunda hedef teşhisi.",
+          "description": "EO/IR sistemlerimiz yüksek çözünürlüklü kameralar, termal sensörler ve lazer mesafe ölçerlerle gündüz-gece kesintisiz gözetleme sağlar. Radar ve RF sistemleriyle entegre edilerek hedefin görsel teşhisi yapılır, yanlış alarm riski en aza indirilir. Özellikle sınır güvenliği ve kritik tesislerde etkin kullanılır."
+        },
+        {
+          "title": "Jammer Sistemleri",
+          "summary": "Soft-kill elektronik harp çözümleri.",
+          "description": "BİSAVUNMA'nın jammer sistemleri 9 kHz – 8 / 18 / 40 GHz frekans aralığında çalışır. Drone kontrol sinyallerini, GNSS/GPS bağlantılarını ve düşman haberleşme ağlarını etkisiz hale getirir. Sabit, mobil ve taşınabilir modelleri mevcuttur. Tehdit odaklı aktif çalışma prensibi ile enerji verimliliği sağlanır. Radar, RF ve EO/IR entegrasyonu ile çok katmanlı Anti-Drone mimarisi oluşturur."
+        },
+        {
+          "title": "DJI Enterprise",
+          "summary": "Endüstriyel dronelar ile çok boyutlu gözetleme.",
+          "description": "DJI Enterprise çözümleri keşif, arama-kurtarma, sınır güvenliği ve kritik altyapı denetimleri için geliştirilmiştir. Termal kameralar, RTK uydu desteği, uzun uçuş süreleri ve yüksek taşıma kapasitesi ile güvenlik güçlerine avantaj sağlar. BİSAVUNMA entegrasyonu ile radar ve RF sistemleriyle tek ekranda yönetilebilir."
+        },
+        {
+          "title": "Sistem Entegrasyonu",
+          "summary": "Tüm sistemler tek bir C2 yazılımında birleşir.",
+          "description": "Radar, RF, SIGINT, EO/IR, jammer ve hard-kill sistemleri özel geliştirilmiş C2 komuta kontrol yazılımı üzerinde entegre edilir. Böylece radar tespit eder, RF doğrular, EO/IR teşhis yapar, jammer engeller, hard-kill imha eder. Tüm süreç tek ekrandan yönetilerek karar verme süresi minimuma indirilir."
+        },
+        {
+          "title": "Teknik Destek",
+          "summary": "7/24 destek ve uzun vadeli güven ortaklığı.",
+          "description": "BİSAVUNMA, sistemlerin her zaman en yüksek performansla çalışması için 7/24 teknik destek sağlar. Yazılım güncellemeleri, bakım planlamaları, arıza tespiti, hızlı müdahale ve operatör eğitimleri ile müşterilerimiz daima desteklenir."
+        }
+      ]
+    },
+    "about": {
+      "badge": "Hakkımızda",
+      "title": "Sahada Kanıtlanmış Güvenilir Çözümler",
+      "description": "BİSAVUNMA, savunma teknolojilerinde uzman kadrosu ve mühendislik yetkinlikleriyle kurumların operasyonel üstünlük elde etmesini sağlar.",
+      "values": [
+        {
+          "title": "Güvenlik",
+          "description": "Askeri standartlarda güvenilirlik"
+        },
+        {
+          "title": "Hız",
+          "description": "Düşük gecikme, hızlı reaksiyon"
+        },
+        {
+          "title": "Entegrasyon",
+          "description": "Modüler ve ölçeklenebilir"
+        }
+      ],
+      "gallery": {
+        "title": "Galeri"
+      },
+      "cta": {
+        "moreInfo": "Daha Fazla Bilgi",
+        "contact": "İletişime Geç"
+      }
+    },
+    "cta": {
+      "badge": "Hazır mısınız?",
+      "title": "Savunma Çözümlerinizi Güçlendirin",
+      "description": "Uzman ekibimizle iletişime geçin ve ihtiyaçlarınıza özel çözümler alın.",
+      "buttons": {
+        "start": "Hemen Başlayın",
+        "demo": "Demo Talep Et"
+      }
+    }
+  }
+}

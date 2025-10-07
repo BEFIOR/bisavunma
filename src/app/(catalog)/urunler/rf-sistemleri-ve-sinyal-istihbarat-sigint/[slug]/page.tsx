@@ -11,6 +11,7 @@ import { Radio, ArrowLeft, CheckCircle } from "lucide-react";
 import { getRfSystemBySlug } from "@/data/rf-systems";
 import { getProductsByCategorySlug } from "@/lib/products";
 import HeroSlider from "@/components/HeroSlider";
+import ProductTracking from "@/components/ProductTracking";
 
 export const revalidate = 60;
 
@@ -48,6 +49,10 @@ export default async function ProductInRf({
 
   return (
     <div className="min-h-screen bg-black text-gray-200">
+      <ProductTracking
+        productName={product.title}
+        category="rf-sistemleri-ve-sinyal-istihbarat-sigint"
+      />
       {/* Hero Section */}
       <section className="relative pt-24 overflow-hidden min-h-screen">
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 to-black" />

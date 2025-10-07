@@ -5,6 +5,12 @@ import DotGrid from "@/components/DotGrid";
 import { HeroAnimation } from "@/components/animations/ScrollAnimations";
 import Footer from "@/components/Footer";
 import EmailServiceModal from "@/components/EmailServiceModal";
+import {
+  trackContactForm,
+  trackConversion,
+  trackButtonClick,
+  trackFormSubmission,
+} from "@/lib/gtag";
 import { useState } from "react";
 
 export default function Iletisim() {
@@ -47,6 +53,21 @@ ${data.message}
     const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=info@bisavunma.com&subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
+
+    // Google Ads ve Analytics tracking
+    trackContactForm("contact");
+    trackFormSubmission("contact_form", "contact_page");
+
+    // Google Ads conversion tracking
+    if (
+      process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID &&
+      process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL_CONTACT
+    ) {
+      trackConversion(
+        process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID,
+        process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL_CONTACT
+      );
+    }
 
     // URL'leri state'e kaydet ve modal'ı aç
     setEmailUrls({ gmail: gmailUrl, outlook: outlookUrl });
@@ -291,6 +312,9 @@ ${data.message}
                 <button
                   type="submit"
                   disabled={isSubmitting}
+                  onClick={() =>
+                    trackButtonClick("contact_form_submit", "contact_page")
+                  }
                   className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 text-white px-6 py-4 text-base font-semibold hover:bg-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="h-5 w-5" />

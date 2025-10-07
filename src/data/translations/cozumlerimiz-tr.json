@@ -1,0 +1,131 @@
+{
+  "cozumlerimiz": {
+    "hero": {
+      "badge": "Çözümlerimiz",
+      "title": "Sistem Konfigürasyonu",
+      "description": "BİSAVUNMA olarak geliştirdiğimiz çözümler, hava, kara ve deniz kuvvetleri, sahil güvenlik ve sınır güvenliği birimlerinin yanı sıra endüstriyel tesisler, enerji santralleri ve kritik altyapılar için özel olarak tasarlanmakta ve konfigüre edilmektedir.",
+      "navigation": {
+        "systemConfig": "Sistem Konfigürasyonu",
+        "defenseSolutions": "Savunma Çözümleri",
+        "integratedSecurity": "Entegre Güvenlik"
+      }
+    },
+    "systemConfiguration": {
+      "badge": "Sistem Konfigürasyonu",
+      "title": "BİSAVUNMA Çözümleri",
+      "description": "Sistemlerimiz, farklı görev sahalarının gereksinimlerine uyum sağlayacak şekilde özelleştirilebilir; bu sayede operasyonel etkinlik, her koşulda en üst seviyede tutulur.",
+      "content": {
+        "paragraph1": "Geliştirdiğimiz araç entegre çözümleri, platformlara RF entegrasyonu, radar sistemleri, elektro-optik (EO/IR) sensörler ve jammer teknolojilerinin eklenmesi ile şekillenir. Bu çok katmanlı yapı sayesinde, ister yüksek hareket kabiliyeti gerektiren sahil güvenlik operasyonları olsun, ister sınır hattında sürekli gözetim gerektiren görevler olsun, her alanda sürdürülebilir güvenlik üstünlüğü sağlanır.",
+        "paragraph2": "Sistemlerimiz ihtiyaca yönelik olarak her ortama uygun özelleştirilir ve esnek modüler yapısı sayesinde mobil veya sabit konuşlanmalara entegre edilebilir."
+      },
+      "features": [
+        {
+          "title": "RF Entegrasyonu",
+          "description": "Platformlara RF entegrasyonu ve spektrum yönetimi"
+        },
+        {
+          "title": "Radar Sistemleri",
+          "description": "Durumsal farkındalık ve hedef tespiti"
+        },
+        {
+          "title": "Elektro-Optik Sensörler",
+          "description": "EO/IR sensörler ve görüntüleme sistemleri"
+        },
+        {
+          "title": "Jammer Teknolojileri",
+          "description": "Elektronik harp ve karıştırma sistemleri"
+        },
+        {
+          "title": "Modüler Yapı",
+          "description": "Esnek ve ölçeklenebilir sistem mimarisi"
+        },
+        {
+          "title": "Mobil Entegrasyon",
+          "description": "Sabit ve mobil konuşlanma çözümleri"
+        }
+      ]
+    },
+    "defenseSolutions": {
+      "badge": "İhtiyaca Yönelik Savunma Çözümleri",
+      "title": "Modern Tehdit Ortamında Çözümler",
+      "description": "Modern tehdit ortamında her operasyon farklı riskler barındırır. BİSAVUNMA, bu nedenle çözümlerini son kullanıcı isterleri ve saha ihtiyaçları doğrultusunda özelleştirmektedir.",
+      "content": {
+        "paragraph1": "İster yüksek yoğunluklu elektronik harp tehdidiyle karşılaşılan bir bölge, ister deniz trafiği yüksek bir sahil güvenlik hattı, isterse de sabotaj riskinin bulunduğu bir enerji tesisi olsun; çözümlerimiz, her bir görev için özel olarak uyarlanır.",
+        "paragraph2": "RF spektrum yönetiminden radar kapsama optimizasyonuna, elektro-optik sensör hassasiyetinden jammer menzil ayarına kadar tüm kritik parametreler, kullanıcı ihtiyaçlarına göre ölçeklendirilir. Böylece sahadaki birlikler maksimum operasyonel esneklik, kurumlar ise kesintisiz güvenlik elde eder."
+      },
+      "features": [
+        {
+          "title": "Elektronik Harp Tehdidi",
+          "description": "Yüksek yoğunluklu elektronik harp ortamları için çözümler"
+        },
+        {
+          "title": "Sahil Güvenlik",
+          "description": "Deniz trafiği yüksek bölgeler için özel sistemler"
+        },
+        {
+          "title": "Enerji Tesisleri",
+          "description": "Sabotaj riski bulunan kritik altyapı koruması"
+        },
+        {
+          "title": "RF Spektrum Yönetimi",
+          "description": "Spektrum analizi ve optimizasyon çözümleri"
+        },
+        {
+          "title": "Radar Optimizasyonu",
+          "description": "Kapsama alanı ve hassasiyet optimizasyonu"
+        },
+        {
+          "title": "Sensör Hassasiyeti",
+          "description": "Elektro-optik sensör ayarlama ve kalibrasyon"
+        }
+      ]
+    },
+    "integratedSecurity": {
+      "badge": "Entegre Güvenlik Yaklaşımları",
+      "title": "Çok Katmanlı Güvenlik Mimarisi",
+      "description": "Tekil sistemler artık günümüzün karmaşık tehditlerine karşı yeterli değildir. Bu noktada BİSAVUNMA, entegre güvenlik yaklaşımı ile farklı sensörleri ve savunma bileşenlerini tek bir ağ üzerinde birleştirir.",
+      "content": {
+        "paragraph1": "Radar, RF algılama, elektro-optik/IR ve jammer çözümlerinin koordineli çalışması sayesinde tehditler yalnızca tespit edilmekle kalmaz, aynı zamanda doğru şekilde sınıflandırılır, takip edilir ve etkisiz hale getirilir.",
+        "paragraph2": "Bu entegrasyon, askeri birliklere operasyonel üstünlük kazandırırken, sahil ve sınır güvenliği için durumsal farkındalık oluşturur, kritik altyapı ve enerji sahaları için ise tam koruma sağlar. Sonuç olarak, sistemlerimiz yalnızca bugünün tehditlerine değil, aynı zamanda geleceğin gelişen risklerine karşı da ölçeklenebilir ve sürdürülebilir bir güvenlik çözümü sunar."
+      },
+      "features": [
+        {
+          "title": "Radar Koordinasyonu",
+          "description": "Çoklu radar sistemlerinin entegre çalışması"
+        },
+        {
+          "title": "RF Algılama Ağı",
+          "description": "Spektrum analizi ve sinyal istihbaratı"
+        },
+        {
+          "title": "Elektro-Optik/IR",
+          "description": "Görüntüleme ve termal algılama sistemleri"
+        },
+        {
+          "title": "Jammer Koordinasyonu",
+          "description": "Elektronik karıştırma ve karşı önlemler"
+        },
+        {
+          "title": "Durumsal Farkındalık",
+          "description": "Gerçek zamanlı tehdit değerlendirme"
+        },
+        {
+          "title": "Gelecek Odaklı",
+          "description": "Gelişen tehditlere karşı ölçeklenebilir çözümler"
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Daha fazlası için",
+      "title": "İhtiyacınıza uygun çözümü birlikte tasarlayalım",
+      "description": "Hızlı keşif görüşmesi için bizimle iletişime geçin.",
+      "buttons": {
+        "contact": "İletişime Geç",
+        "quote": "Teklif Al"
+      }
+    },
+    "navigation": {
+      "scrollDown": "Aşağı Kaydır"
+    }
+  }
+}

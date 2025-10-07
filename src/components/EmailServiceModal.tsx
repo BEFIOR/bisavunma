@@ -2,6 +2,7 @@
 
 import { X, Mail, ExternalLink } from "lucide-react";
 import { useEffect } from "react";
+import { trackButtonClick } from "@/lib/gtag";
 
 interface EmailServiceModalProps {
   isOpen: boolean;
@@ -91,7 +92,10 @@ export default function EmailServiceModal({
           <div className="space-y-3">
             {/* Gmail Button */}
             <button
-              onClick={handleGmailClick}
+              onClick={() => {
+                trackButtonClick("email_service_gmail", "contact_modal");
+                handleGmailClick();
+              }}
               className="w-full flex items-center justify-between p-4 bg-red-900/20 hover:bg-red-900/30 border border-red-800 rounded-lg transition-colors group"
             >
               <div className="flex items-center gap-3">
@@ -115,7 +119,10 @@ export default function EmailServiceModal({
 
             {/* Outlook Button */}
             <button
-              onClick={handleOutlookClick}
+              onClick={() => {
+                trackButtonClick("email_service_outlook", "contact_modal");
+                handleOutlookClick();
+              }}
               className="w-full flex items-center justify-between p-4 bg-blue-900/20 hover:bg-blue-900/30 border border-blue-800 rounded-lg transition-colors group"
             >
               <div className="flex items-center gap-3">
