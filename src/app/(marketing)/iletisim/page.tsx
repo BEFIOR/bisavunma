@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, Clock, Send, MessageCircle, Map } from "lucide-react";
+import { Mail, Phone, Clock, Send, MessageCircle } from "lucide-react";
 import DotGrid from "@/components/DotGrid";
 import { HeroAnimation } from "@/components/animations/ScrollAnimations";
 import Footer from "@/components/Footer";

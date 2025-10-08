@@ -2,8 +2,8 @@
 
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
-    dataLayer: any[];
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
   }
 }
 
@@ -40,7 +40,7 @@ export const trackPageView = (url: string, title?: string) => {
 };
 
 // Custom event tracking
-export const trackCustomEvent = (eventName: string, parameters?: Record<string, any>) => {
+export const trackCustomEvent = (eventName: string, parameters?: Record<string, unknown>) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, parameters);
   }

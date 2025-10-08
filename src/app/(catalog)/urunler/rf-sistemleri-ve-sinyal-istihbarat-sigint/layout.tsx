@@ -1,4 +1,3 @@
-import Image from "next/image";
 import RfSidebar from "./RfSidebar.client";
 import RfMobileSidebar from "./RfMobileSidebar.client";
 import { getProductsByCategorySlug } from "@/lib/products";

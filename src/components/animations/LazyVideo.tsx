@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { generateThumbnailPath, getVideoSettings } from "@/lib/video-utils";
-
+import Image from "next/image";
 interface LazyVideoProps {
   src: string;
   className?: string;
@@ -60,7 +60,7 @@ export function LazyVideo({
       try {
         // Simple bandwidth test using a small image
         const startTime = performance.now();
-        const testImage = new Image();
+        const testImage = new window.Image();
         testImage.src = `data:image/svg+xml;base64,${btoa(`
           <svg width="1" height="1" xmlns="http://www.w3.org/2000/svg">
             <rect width="1" height="1" fill="transparent"/>
@@ -193,9 +193,11 @@ export function LazyVideo({
       {/* Thumbnail overlay for better UX */}
       {showThumbnail && (finalThumbnail || poster) && (
         <div className="absolute inset-0 z-10">
-          <img
-            src={finalThumbnail || poster}
+          <Image
+            src={finalThumbnail || poster || ""}
             alt="Video thumbnail"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
             className="w-full h-full object-cover"
             loading="lazy"
           />

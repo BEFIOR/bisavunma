@@ -115,24 +115,26 @@ export default async function Page() {
                   <span className="font-medium text-white">
                     Kapsamlı Ürün Portföyü:
                   </span>{" "}
-                  Gereksinimlerinize en uygun DJI Enterprise drone'unu bulmak
-                  için Bisavunma'nın kapsamlı ürün portföyüne göz atın.
+                  Gereksinimlerinize en uygun DJI Enterprise drone&apos;unu
+                  bulmak için Bisavunma&apos;nın kapsamlı ürün portföyüne göz
+                  atın.
                 </li>
                 <li>
                   <span className="font-medium text-white">
                     Eğitim ve Yazılım Desteği:
                   </span>{" "}
-                  DJI Enterprise drone'larınızı en etkili şekilde kullanmayı
-                  öğrenin. Bisavunma'nın uzman ekibi tarafından sunulan eğitim
-                  ve yazılım desteği ile drone'larınızdan en iyi performansı
-                  elde edin.
+                  DJI Enterprise drone&apos;larınızı en etkili şekilde
+                  kullanmayı öğrenin. Bisavunma&apos;nın uzman ekibi tarafından
+                  sunulan eğitim ve yazılım desteği ile drone&apos;larınızdan en
+                  iyi performansı elde edin.
                 </li>
                 <li>
                   <span className="font-medium text-white">
                     Sürekli Teknik Servis Çözümleri:
                   </span>{" "}
-                  Bisavunma'nın deneyimli teknik servis ekibi, drone'larınızın
-                  her zaman en iyi durumda kalması için sürekli destek sunar.
+                  Bisavunma&apos;nın deneyimli teknik servis ekibi,
+                  drone&apos;larınızın her zaman en iyi durumda kalması için
+                  sürekli destek sunar.
                 </li>
               </ul>
             </HeroAnimation>

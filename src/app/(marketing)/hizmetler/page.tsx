@@ -3,7 +3,6 @@ import {
   Cog,
   GraduationCap,
   Code,
-  Search,
   Target,
   Shield,
   Eye,
@@ -112,9 +111,9 @@ export default function Hizmetler() {
                   iklim koşulları, arazi yapısı, elektromanyetik yoğunluğu,
                   çevresel gürültü seviyeleri, sivil yerleşim yakınlığı ve
                   tehdit profilleri açısından da benzersizdir. Bu nedenle,
-                  güvenlik sistemlerinin planlanması basit bir "cihaz
-                  yerleştirme" sürecinden ibaret değildir; çok boyutlu analiz ve
-                  mühendislik yaklaşımı gerektirir.
+                  güvenlik sistemlerinin planlanması basit bir &quot;cihaz
+                  yerleştirme&quot; sürecinden ibaret değildir; çok boyutlu
+                  analiz ve mühendislik yaklaşımı gerektirir.
                 </p>
               </ScrollAnimation>
             </div>
@@ -146,9 +145,9 @@ export default function Hizmetler() {
                             senaryolarına karşı da planlama yapılmasını sağlar.
                           </p>
                           <p>
-                            Sonuç olarak, BİSAVUNMA'nın saha keşif çalışmaları,
-                            kör noktasız 360° kapsama sağlayarak savunma
-                            zincirini en güçlü hale getirir.
+                            Sonuç olarak, BİSAVUNMA&apos;nın saha keşif
+                            çalışmaları, kör noktasız 360° kapsama sağlayarak
+                            savunma zincirini en güçlü hale getirir.
                           </p>
                         </div>
                       </ScrollAnimation>
