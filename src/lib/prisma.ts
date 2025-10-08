@@ -12,9 +12,11 @@ function buildMySqlUrlFromEnv(): string | undefined {
   const user = process.env.MYSQL_USER;
   const pass = process.env.MYSQL_PASSWORD ?? "";
   const db = process.env.MYSQL_DATABASE || process.env.MYSQL_DB;
+  
   if (!host || !user || !db) return undefined;
+  
   const encodedPass = encodeURIComponent(pass);
-  return `mysql://${user}:${encodedPass}@${host}:${port}/${db}`;
+  return `mysql://${user}:${encodedPass}@${host}:${port}/${db}?sslmode=require`;
 }
 
 const datasourceUrl = process.env.DATABASE_URL || buildMySqlUrlFromEnv();
