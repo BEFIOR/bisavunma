@@ -1,9 +1,13 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import Link from "next/link";
+import { Link } from "@/i18n";
 import Footer from "@/components/Footer";
 
-export default async function Sektorler() {
+export default function Sektorler() {
+  const t = useTranslations("sektorler");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -14,17 +18,16 @@ export default async function Sektorler() {
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
-              Sektörlerimiz
+              {t("hero.badge")}
             </span>
             <div className="overflow-hidden">
               <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700">
-                Sektörlere <span className="text-gray-300">Göre</span>
+                {t("hero.title")}
               </h1>
             </div>
             <div className="overflow-hidden">
               <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700 delay-300">
-                Her sektörün kendine özgü güvenlik ihtiyaçlarına yönelik
-                Anti-Drone ve C-UAS çözümleri ile kapsamlı koruma sağlıyoruz.
+                {t("hero.description")}
               </p>
             </div>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4 will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700 delay-300">
@@ -32,25 +35,25 @@ export default async function Sektorler() {
                 href="/sektorler#askeri-tesisler"
                 className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
               >
-                Askeri Tesisler
+                {t("hero.navigation.askeriTesisler")}
               </Link>
               <Link
                 href="/sektorler#enerji-altyapi"
                 className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
               >
-                Enerji & Altyapı
+                {t("hero.navigation.enerjiAltyapi")}
               </Link>
               <Link
                 href="/sektorler#liman-tersaneler"
                 className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
               >
-                Liman & Tersaneler
+                {t("hero.navigation.limanTersaneler")}
               </Link>
               <Link
                 href="/sektorler#sinir-guvenligi"
                 className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
               >
-                Sınır Güvenliği
+                {t("hero.navigation.sinirGuvenligi")}
               </Link>
             </div>
           </div>
@@ -771,25 +774,21 @@ export default async function Sektorler() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-800 via-transparent to-transparent" />
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Sektörünüze Özel Çözümler
+            {t("cta.title")}
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Askeri tesislerden sınır güvenliğine, enerji altyapısından liman
-            tesislerine kadar her sektör için özelleştirilmiş çözümler
-            sunuyoruz.
-          </p>
+          <p className="text-xl text-gray-300 mb-8">{t("cta.description")}</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/iletisim"
               className="inline-flex items-center justify-center rounded-lg bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-100 transition-colors"
             >
-              İletişime Geç
+              {t("cta.buttons.contact")}
             </Link>
             <Link
               href="/iletisim"
               className="inline-flex items-center justify-center rounded-lg border border-white/20 text-white px-8 py-4 text-base font-semibold hover:bg-white/10 transition-colors"
             >
-              Teklif Al
+              {t("cta.buttons.quote")}
             </Link>
           </div>
         </div>
@@ -800,7 +799,7 @@ export default async function Sektorler() {
         <div
           className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 text-white shadow-lg pointer-events-none"
           style={{ animation: "bounce 2s infinite" }}
-          title="Aşağı Kaydır"
+          title={t("navigation.scrollDown")}
         >
           <ChevronDown className="w-5 h-5" />
         </div>

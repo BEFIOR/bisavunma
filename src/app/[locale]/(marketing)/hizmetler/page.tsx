@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n";
 import {
   MapPin,
   Cog,
@@ -18,6 +22,7 @@ import {
 import Footer from "@/components/Footer";
 
 export default function Hizmetler() {
+  const t = useTranslations("hizmetler");
   return (
     <div className="min-h-screen">
       <div>
@@ -45,19 +50,20 @@ export default function Hizmetler() {
               <HeroAnimation direction="fade" delay={0.2}>
                 <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
-                  Hizmetlerimiz
+                  {t("hero.badge")}
                 </span>
               </HeroAnimation>
               <HeroAnimation direction="up" delay={0.4}>
                 <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
-                  Kapsamlı{" "}
-                  <span className="text-gray-300">Savunma Çözümleri</span>
+                  {t("hero.title")}{" "}
+                  <span className="text-gray-300">
+                    {t("hero.titleHighlight")}
+                  </span>
                 </h1>
               </HeroAnimation>
               <HeroAnimation direction="up" delay={0.6}>
                 <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
-                  Saha keşfinden yazılım çözümlerine, kurulumdan eğitime kadar
-                  savunma teknolojilerinde tam kapsamlı hizmetler sunuyoruz.
+                  {t("hero.description")}
                 </p>
               </HeroAnimation>
               <HeroAnimation direction="up" delay={0.8}>
@@ -66,19 +72,19 @@ export default function Hizmetler() {
                     href="#saha-kesfi"
                     className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
                   >
-                    Saha Keşfi
+                    {t("hero.buttons.fieldSurvey")}
                   </a>
                   <a
                     href="#kurulum-entegrasyon"
                     className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                   >
-                    Kurulum & Entegrasyon
+                    {t("hero.buttons.installation")}
                   </a>
                   <a
                     href="#egitim-destek"
                     className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                   >
-                    Eğitim & Destek
+                    {t("hero.buttons.training")}
                   </a>
                 </div>
               </HeroAnimation>
@@ -97,23 +103,20 @@ export default function Hizmetler() {
               <ScrollAnimation direction="fade" delay={0.2}>
                 <span className="inline-flex items-center gap-2 rounded-full bg-blue-900/20 px-4 py-1.5 text-xs font-medium text-blue-300">
                   <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />{" "}
-                  Saha Keşfi & Konumlandırma
+                  {t("fieldSurvey.badge")}
                 </span>
               </ScrollAnimation>
               <ScrollAnimation direction="up" delay={0.4}>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                  Stratejik <span className="text-blue-300">Konumlandırma</span>
+                  {t("fieldSurvey.title")}{" "}
+                  <span className="text-blue-300">
+                    {t("fieldSurvey.titleHighlight")}
+                  </span>
                 </h2>
               </ScrollAnimation>
               <ScrollAnimation direction="up" delay={0.6}>
                 <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
-                  Her operasyon sahası, yalnızca bulunduğu coğrafya ile değil;
-                  iklim koşulları, arazi yapısı, elektromanyetik yoğunluğu,
-                  çevresel gürültü seviyeleri, sivil yerleşim yakınlığı ve
-                  tehdit profilleri açısından da benzersizdir. Bu nedenle,
-                  güvenlik sistemlerinin planlanması basit bir &quot;cihaz
-                  yerleştirme&quot; sürecinden ibaret değildir; çok boyutlu
-                  analiz ve mühendislik yaklaşımı gerektirir.
+                  {t("fieldSurvey.description")}
                 </p>
               </ScrollAnimation>
             </div>
@@ -129,26 +132,14 @@ export default function Hizmetler() {
                             <MapPin className="h-8 w-8 text-blue-600 dark:text-blue-300 animate-pulse" />
                           </div>
                           <h3 className="text-2xl font-semibold text-white">
-                            Saha Keşfi & Konumlandırma
+                            {t("fieldSurvey.badge")}
                           </h3>
                         </div>
                       </ScrollAnimation>
                       <ScrollAnimation direction="up" delay={1.2}>
                         <div className="space-y-4 text-gray-300 leading-relaxed">
-                          <p>
-                            BİSAVUNMA, uzman mühendis ekibiyle sahada
-                            gerçekleştirdiği ayrıntılı keşif ve analiz
-                            çalışmaları sayesinde, operasyon sahasının tüm
-                            güvenlik açıklarını ve potansiyel tehditlerini
-                            ortaya koyar. Bu analizler yalnızca mevcut
-                            tehlikelere karşı değil, gelecekteki hibrit tehdit
-                            senaryolarına karşı da planlama yapılmasını sağlar.
-                          </p>
-                          <p>
-                            Sonuç olarak, BİSAVUNMA&apos;nın saha keşif
-                            çalışmaları, kör noktasız 360° kapsama sağlayarak
-                            savunma zincirini en güçlü hale getirir.
-                          </p>
+                          <p>{t("fieldSurvey.content.paragraph1")}</p>
+                          <p>{t("fieldSurvey.content.paragraph2")}</p>
                         </div>
                       </ScrollAnimation>
                     </div>
@@ -157,61 +148,50 @@ export default function Hizmetler() {
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <Target className="h-5 w-5 text-blue-600" />
-                            Radar Yerleşimi
+                            {t("fieldSurvey.services.radar.title")}
                           </h4>
                           <p className="text-sm text-gray-300">
-                            Her radarın kapsama alanı, menzili, açısal
-                            hassasiyeti ve coğrafi engeller dikkate alınarak en
-                            verimli noktalar belirlenir. Kör noktaların ortadan
-                            kaldırılmasıyla 360° kesintisiz koruma sağlanır.
+                            {t("fieldSurvey.services.radar.description")}
                           </p>
                         </div>
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <Radio className="h-5 w-5 text-blue-600" />
-                            RF Tespit & Sinyal İstihbaratı
+                            {t("fieldSurvey.services.rf.title")}
                           </h4>
                           <p className="text-sm text-gray-300">
-                            Sahadaki elektromanyetik spektrum analiz edilir,
-                            kritik frekans bantları incelenir, düşman iletişim
-                            ve kontrol sinyalleri için yön bulma noktaları
-                            seçilir.
+                            {t("fieldSurvey.services.rf.description")}
                           </p>
                         </div>
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <Shield className="h-5 w-5 text-blue-600" />
-                            Drone Tespit Sistemleri
+                            {t("fieldSurvey.services.drone.title")}
                           </h4>
                           <p className="text-sm text-gray-300">
-                            Özellikle sürü drone saldırılarına, alçak irtifa
-                            uçuşlarına ve GPS spoofing gibi elektronik harp
-                            senaryolarına karşı çok katmanlı bir yerleşim planı
-                            hazırlanır.
+                            {t("fieldSurvey.services.drone.description")}
                           </p>
                         </div>
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <Eye className="h-5 w-5 text-blue-600" />
-                            Elektro-Optik & Termal Sensörler
+                            {t("fieldSurvey.services.electroOptical.title")}
                           </h4>
                           <p className="text-sm text-gray-300">
-                            Gündüz-gece, tüm hava koşullarında net teşhis
-                            sağlayacak şekilde stratejik konumlandırma yapılır.
-                            Radar ve RF sistemlerini tamamlayıcı bir katman
-                            oluşturur.
+                            {t(
+                              "fieldSurvey.services.electroOptical.description"
+                            )}
                           </p>
                         </div>
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <MapPin className="h-5 w-5 text-blue-600" />
-                            Kritik Altyapı Analizi
+                            {t("fieldSurvey.services.infrastructure.title")}
                           </h4>
                           <p className="text-sm text-gray-300">
-                            Askeri üs bölgeleri, sınır karakolları,
-                            havaalanları, enerji santralleri ve devlet binaları
-                            gibi stratejik bölgeler için risk haritaları
-                            çıkarılır.
+                            {t(
+                              "fieldSurvey.services.infrastructure.description"
+                            )}
                           </p>
                         </div>
                       </div>
@@ -234,21 +214,20 @@ export default function Hizmetler() {
               <ScrollAnimation direction="fade" delay={0.2}>
                 <span className="inline-flex items-center gap-2 rounded-full bg-emerald-900/20 px-4 py-1.5 text-xs font-medium text-emerald-300">
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
-                  Kurulum & Entegrasyon
+                  {t("installation.badge")}
                 </span>
               </ScrollAnimation>
               <ScrollAnimation direction="up" delay={0.4}>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                  Birleşik <span className="text-emerald-300">Savunma Ağı</span>
+                  {t("installation.title")}{" "}
+                  <span className="text-emerald-300">
+                    {t("installation.titleHighlight")}
+                  </span>
                 </h2>
               </ScrollAnimation>
               <ScrollAnimation direction="up" delay={0.6}>
                 <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
-                  Kurulum süreci, sadece cihazların montajı değildir; aynı
-                  zamanda birleşik bir savunma ağı inşasıdır. BİSAVUNMA, her bir
-                  alt sistemi tek bir C2 (Command & Control) yazılım
-                  platformunda birleştirerek, kullanıcıya tam entegrasyonlu bir
-                  operasyon kabiliyeti kazandırır.
+                  {t("installation.description")}
                 </p>
               </ScrollAnimation>
             </div>
@@ -264,23 +243,22 @@ export default function Hizmetler() {
                             <Cog className="h-8 w-8 text-emerald-300 animate-spin" />
                           </div>
                           <h3 className="text-2xl font-semibold text-white">
-                            Kurulum & Entegrasyon
+                            {t("installation.badge")}
                           </h3>
                         </div>
                         <div className="space-y-4 text-gray-300 leading-relaxed">
-                          <p>Entegre edilen sistemler:</p>
+                          <p>{t("installation.content.systemsTitle")}</p>
                           <ul className="list-disc list-inside space-y-1 text-sm">
+                            <li>{t("installation.content.systems.radar")}</li>
+                            <li>{t("installation.content.systems.drone")}</li>
                             <li>
-                              Radar + RF Tespit + Sinyal İstihbarat Modülleri
+                              {t("installation.content.systems.electroOptical")}
                             </li>
-                            <li>Drone Tespit & Anti-Drone Jammer Çözümleri</li>
-                            <li>Elektro-Optik & Termal Sensörler</li>
-                            <li>Hard-Kill Otomatik Silah Sistemleri</li>
+                            <li>
+                              {t("installation.content.systems.hardKill")}
+                            </li>
                           </ul>
-                          <p>
-                            Bu sayede BİSAVUNMA&apos;nın çözümleri yalnızca
-                            reaktif değil, proaktif savunma yetenekleri sunar.
-                          </p>
+                          <p>{t("installation.content.proactive")}</p>
                         </div>
                       </div>
                     </ScrollAnimation>
@@ -289,28 +267,14 @@ export default function Hizmetler() {
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <Target className="h-5 w-5 text-emerald-600" />
-                            Entegrasyonun Sağladığı Faydalar
+                            {t("installation.benefits.title")}
                           </h4>
                           <ul className="text-sm text-gray-300 space-y-1">
+                            <li>• {t("installation.benefits.dataSharing")}</li>
+                            <li>• {t("installation.benefits.singleScreen")}</li>
+                            <li>• {t("installation.benefits.coordination")}</li>
                             <li>
-                              • Anlık veri paylaşımı sayesinde, bir sistemin
-                              tespit ettiği hedef diğerine otomatik aktarılır.
-                            </li>
-                            <li>
-                              • Tek ekran üzerinden yönetim: Operatör, tüm
-                              tehditleri tek merkezden takip eder.
-                            </li>
-                            <li>
-                              • Hibrit tehditlere karşı koordinasyon: Örneğin,
-                              radar bir hedefi tespit eder, RF sistemleri
-                              frekansı doğrular, EO/IR görüntüyle kimlik
-                              doğrulaması yapılır, jammer bağlantıyı keser ve
-                              gerekirse hard-kill sistem imhayı gerçekleştirir.
-                            </li>
-                            <li>
-                              • Siber güvenli entegrasyon: Tüm sistemler,
-                              şifreli iletişim protokolleriyle dış müdahalelere
-                              kapalı şekilde çalışır.
+                              • {t("installation.benefits.cyberSecurity")}
                             </li>
                           </ul>
                         </div>
@@ -334,21 +298,20 @@ export default function Hizmetler() {
               <ScrollAnimation direction="fade" delay={0.2}>
                 <span className="inline-flex items-center gap-2 rounded-full bg-purple-900/20 px-4 py-1.5 text-xs font-medium text-purple-300">
                   <span className="h-2 w-2 rounded-full bg-purple-500 animate-pulse" />{" "}
-                  Eğitim & Teknik Destek
+                  {t("training.badge")}
                 </span>
               </ScrollAnimation>
               <ScrollAnimation direction="up" delay={0.4}>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                  Uzmanlık <span className="text-purple-300">Transferi</span>
+                  {t("training.title")}{" "}
+                  <span className="text-purple-300">
+                    {t("training.titleHighlight")}
+                  </span>
                 </h2>
               </ScrollAnimation>
               <ScrollAnimation direction="up" delay={0.6}>
                 <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
-                  BİSAVUNMA, teslim ettiği sistemlerle birlikte kullanıcılarına
-                  uzmanlık transferi yapar. Eğitimler, gerçek operasyonel
-                  senaryolar üzerinden uygulamalı olarak verilir. Ayrıca
-                  BİSAVUNMA, sistemlerinin her zaman en yüksek verimle
-                  çalışabilmesi için 7/24 teknik destek sağlar.
+                  {t("training.description")}
                 </p>
               </ScrollAnimation>
             </div>
@@ -364,42 +327,35 @@ export default function Hizmetler() {
                             <GraduationCap className="h-8 w-8 text-purple-300 animate-bounce" />
                           </div>
                           <h3 className="text-2xl font-semibold text-white">
-                            Eğitim & Teknik Destek
+                            {t("training.badge")}
                           </h3>
                         </div>
                       </ScrollAnimation>
                       <ScrollAnimation direction="up" delay={1.2}>
                         <div className="space-y-4 text-gray-300 leading-relaxed">
-                          <p>
-                            Eğitimler, gerçek operasyonel senaryolar üzerinden
-                            uygulamalı olarak verilir:
-                          </p>
+                          <p>{t("training.content.trainingTitle")}</p>
                           <ul className="list-disc list-inside space-y-1 text-sm">
-                            <li>RF Spektrum Analizi & Yön Bulma (DF)</li>
+                            <li>{t("training.content.trainings.rf")}</li>
+                            <li>{t("training.content.trainings.drone")}</li>
+                            <li>{t("training.content.trainings.jammer")}</li>
                             <li>
-                              Drone Tespit ve Anti-Drone Operasyon Prosedürleri
+                              {t("training.content.trainings.electroOptical")}
                             </li>
-                            <li>Jammer Kullanımı & Soft-Kill Stratejileri</li>
+                            <li>{t("training.content.trainings.hardKill")}</li>
                             <li>
-                              Elektro-Optik & Termal Sistemlerle Hedef Teşhisi
-                              ve takibi
-                            </li>
-                            <li>Hard-Kill Silah Sistemleri Kullanımı</li>
-                            <li>
-                              Senaryo Bazlı Simülasyon Eğitimleri (havaalanı
-                              güvenliği, sınır hattı, üs bölgesi vb.)
+                              {t("training.content.trainings.simulation")}
                             </li>
                           </ul>
-                          <p>
-                            Ayrıca BİSAVUNMA, sistemlerinin her zaman en yüksek
-                            verimle çalışabilmesi için 7/24 teknik destek
-                            sağlar:
-                          </p>
+                          <p>{t("training.content.supportTitle")}</p>
                           <ul className="list-disc list-inside space-y-1 text-sm">
-                            <li>Uzaktan yazılım güncellemeleri,</li>
-                            <li>Arıza tespiti ve hızlı müdahale,</li>
-                            <li>Düzenli bakım ve performans kontrolleri,</li>
-                            <li>Operasyonel danışmanlık hizmetleri.</li>
+                            <li>{t("training.content.supports.updates")}</li>
+                            <li>
+                              {t("training.content.supports.troubleshooting")}
+                            </li>
+                            <li>
+                              {t("training.content.supports.maintenance")}
+                            </li>
+                            <li>{t("training.content.supports.consulting")}</li>
                           </ul>
                         </div>
                       </ScrollAnimation>
@@ -409,24 +365,23 @@ export default function Hizmetler() {
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <GraduationCap className="h-5 w-5 text-purple-600" />
-                            Uzmanlık Transferi
+                            {t("training.services.expertiseTransfer.title")}
                           </h4>
                           <p className="text-sm text-gray-300">
-                            BİSAVUNMA, teslim ettiği sistemlerle birlikte
-                            kullanıcılarına uzmanlık transferi yapar. Eğitimler,
-                            gerçek operasyonel senaryolar üzerinden uygulamalı
-                            olarak verilir.
+                            {t(
+                              "training.services.expertiseTransfer.description"
+                            )}
                           </p>
                         </div>
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <Wrench className="h-5 w-5 text-purple-600" />
-                            7/24 Teknik Destek
+                            {t("training.services.technicalSupport.title")}
                           </h4>
                           <p className="text-sm text-gray-300">
-                            Sistemlerin her zaman en yüksek verimle
-                            çalışabilmesi için kapsamlı teknik destek ve bakım
-                            hizmetleri sunuyoruz.
+                            {t(
+                              "training.services.technicalSupport.description"
+                            )}
                           </p>
                         </div>
                       </div>
@@ -449,21 +404,20 @@ export default function Hizmetler() {
               <ScrollAnimation direction="fade" delay={0.2}>
                 <span className="inline-flex items-center gap-2 rounded-full bg-orange-900/20 px-4 py-1.5 text-xs font-medium text-orange-300">
                   <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />{" "}
-                  Yazılım Çözümleri
+                  {t("software.badge")}
                 </span>
               </ScrollAnimation>
               <ScrollAnimation direction="up" delay={0.4}>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                  Özgün C2{" "}
-                  <span className="text-orange-300">Yazılım Platformu</span>
+                  {t("software.title")}{" "}
+                  <span className="text-orange-300">
+                    {t("software.titleHighlight")}
+                  </span>
                 </h2>
               </ScrollAnimation>
               <ScrollAnimation direction="up" delay={0.6}>
                 <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
-                  Modern savunma mimarisinde donanım kadar yazılım da hayati
-                  öneme sahiptir. BİSAVUNMA&apos;nın geliştirdiği özgün C2
-                  yazılım platformu, tüm donanımları tek bir çatı altında
-                  toplayarak karar üstünlüğü sağlar.
+                  {t("software.description")}
                 </p>
               </ScrollAnimation>
             </div>
@@ -479,35 +433,21 @@ export default function Hizmetler() {
                             <Code className="h-8 w-8 text-orange-600 dark:text-orange-300 animate-pulse" />
                           </div>
                           <h3 className="text-2xl font-semibold text-white">
-                            Yazılım Çözümleri
+                            {t("software.badge")}
                           </h3>
                         </div>
                         <div className="space-y-4 text-gray-300 leading-relaxed">
                           <ul className="list-disc list-inside space-y-2 text-sm">
                             <li>
-                              Radar, RF, EO/IR, jammer ve hard-kill sistemlerini
-                              tek ekran üzerinde entegre eder.
+                              {t("software.content.features.integration")}
                             </li>
+                            <li>{t("software.content.features.rfAnalysis")}</li>
+                            <li>{t("software.content.features.ai")}</li>
+                            <li>{t("software.content.features.proactive")}</li>
                             <li>
-                              Gerçek zamanlı RF spektrum analizi ve waterfall
-                              görselleştirmeleri sunar.
+                              {t("software.content.features.cyberSecurity")}
                             </li>
-                            <li>
-                              Yapay zekâ destekli algoritmalar, drone türlerini
-                              otomatik sınıflandırır.
-                            </li>
-                            <li>
-                              Proaktif savunma altyapısı, sürü drone
-                              saldırılarını önceden tahmin eder.
-                            </li>
-                            <li>
-                              Siber güvenlik protokolleri ile dış müdahalelere
-                              karşı güvenlik sağlar.
-                            </li>
-                            <li>
-                              Raporlama & Arşivleme Modülü, tüm operasyonları
-                              kayıt altına alır ve analiz raporları üretir.
-                            </li>
+                            <li>{t("software.content.features.reporting")}</li>
                           </ul>
                         </div>
                       </div>
@@ -517,23 +457,21 @@ export default function Hizmetler() {
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <Code className="h-5 w-5 text-orange-600" />
-                            Özgün C2 Yazılım Platformu
+                            {t("software.services.c2Platform.title")}
                           </h4>
                           <p className="text-sm text-gray-300">
-                            BİSAVUNMA&apos;nın geliştirdiği özgün C2 yazılım
-                            platformu, tüm donanımları tek bir çatı altında
-                            toplayarak karar üstünlüğü sağlar.
+                            {t("software.services.c2Platform.description")}
                           </p>
                         </div>
                         <div className="bg-gray-800 rounded-xl p-6">
                           <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
                             <Shield className="h-5 w-5 text-orange-600" />
-                            Modern Savunma Mimarisi
+                            {t("software.services.modernArchitecture.title")}
                           </h4>
                           <p className="text-sm text-gray-300">
-                            Modern savunma mimarisinde donanım kadar yazılım da
-                            hayati öneme sahiptir. Kapsamlı entegrasyon ve
-                            güvenlik özellikleri ile üstün performans.
+                            {t(
+                              "software.services.modernArchitecture.description"
+                            )}
                           </p>
                         </div>
                       </div>
@@ -559,34 +497,33 @@ export default function Hizmetler() {
         <div className="max-w-4xl mx-auto text-center">
           <ScrollAnimation direction="fade" delay={0.2}>
             <span className="inline-flex items-center gap-2 rounded-full bg-emerald-400/10 ring-1 ring-emerald-400/20 px-3 py-1 text-xs font-medium text-emerald-200 hover:bg-emerald-400/20 transition-colors duration-300">
-              Hizmetlerimiz hakkında
+              {t("cta.badge")}
             </span>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.4}>
             <h2 className="mt-4 text-2xl md:text-3xl font-bold tracking-tight text-white hover:text-emerald-200 transition-colors duration-300">
-              Kapsamlı savunma çözümleri
+              {t("cta.title")}
             </h2>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.6}>
             <p className="mt-3 text-gray-300 hover:text-gray-200 transition-colors duration-300">
-              Saha keşfinden yazılım çözümlerine, kurulumdan eğitime kadar
-              savunma teknolojilerinde tam kapsamlı hizmetler sunuyoruz.
+              {t("cta.description")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.8}>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <a
+              <Link
                 href="/iletisim"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-gray-900 px-6 py-3 text-sm font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                İletişime Geç
-              </a>
-              <a
+                {t("cta.buttons.contact")}
+              </Link>
+              <Link
                 href="/cozumlerimiz"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20 text-white px-6 py-3 text-sm font-semibold hover:bg-white/10 hover:scale-105 transition-all duration-300 hover:border-white/40"
               >
-                Çözümlerimizi İncele
-              </a>
+                {t("cta.buttons.explore")}
+              </Link>
             </div>
           </ScrollAnimation>
         </div>
@@ -599,7 +536,7 @@ export default function Hizmetler() {
         <div
           className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 text-white shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group"
           style={{ animation: "bounce 2s infinite" }}
-          title="Aşağı Kaydır"
+          title={t("navigation.scrollDown")}
         >
           <ChevronDown className="w-5 h-5 group-hover:animate-bounce" />
         </div>

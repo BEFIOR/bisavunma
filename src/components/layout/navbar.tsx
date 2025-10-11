@@ -3,11 +3,13 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import type { Transition } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/i18n";
 import { usePathname } from "next/navigation";
 import { Menu as MenuIcon, X } from "lucide-react";
 import navigationSections from "@/config/navigation";
 import type { NavSection } from "@/types/navigation";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 const transition: Transition = {
   type: "spring",
@@ -120,7 +122,7 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <a href={href} className="flex space-x-2">
+    <Link href={href} className="flex space-x-2">
       <Image
         src={src}
         width={140}
@@ -132,18 +134,21 @@ export const ProductItem = ({
         <h4 className="text-xl font-bold mb-1 text-white">{title}</h4>
         <p className="text-neutral-300 text-sm max-w-[10rem]">{description}</p>
       </div>
-    </a>
+    </Link>
   );
 };
 
 export const HoveredLink = ({
   children,
+  href,
   ...rest
-}: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+}: {
   children: React.ReactNode;
-}) => {
+  href: string;
+} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">) => {
   return (
-    <a
+    <Link
+      href={href}
       {...rest}
       className="text-white/80 hover:text-white transition-all duration-300 font-medium hover:translate-x-1 transform group"
     >
@@ -151,7 +156,7 @@ export const HoveredLink = ({
         {children}
         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-300 group-hover:w-full" />
       </span>
-    </a>
+    </Link>
   );
 };
 
@@ -160,6 +165,7 @@ export const Navbar = ({
 }: {
   sections?: NavSection[];
 }) => {
+  const t = useTranslations("nav");
   const [active, setActive] = React.useState<string | null>(null);
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
@@ -212,24 +218,27 @@ export const Navbar = ({
               />
             </motion.div>
           </Link>
-          <motion.button
-            aria-label="Menüyü aç/kapat"
-            onClick={toggle}
-            className="p-2.5 rounded-xl bg-white/10 text-white ring-1 ring-white/15 shadow-lg hover:bg-white/15 transition-all duration-200 relative z-10"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <motion.div
-              animate={{ rotate: open ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
+          <div className="flex items-center gap-3 relative z-10">
+            <LanguageSwitcher />
+            <motion.button
+              aria-label="Menüyü aç/kapat"
+              onClick={toggle}
+              className="p-2.5 rounded-xl bg-white/10 text-white ring-1 ring-white/15 shadow-lg hover:bg-white/15 transition-all duration-200"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              {open ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <MenuIcon className="h-6 w-6" />
-              )}
-            </motion.div>
-          </motion.button>
+              <motion.div
+                animate={{ rotate: open ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {open ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <MenuIcon className="h-6 w-6" />
+                )}
+              </motion.div>
+            </motion.button>
+          </div>
         </motion.div>
       </div>
 
@@ -261,7 +270,7 @@ export const Navbar = ({
             const isCurrentPage = isActive(s.href);
             return (
               <motion.div
-                key={s.title}
+                key={s.key}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -277,7 +286,7 @@ export const Navbar = ({
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Link href={s.href}>{s.title}</Link>
+                <Link href={s.href}>{t(s.key)}</Link>
                 <motion.div
                   className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 rounded-full"
                   initial={{ width: isCurrentPage ? "70%" : "0%" }}
@@ -290,7 +299,7 @@ export const Navbar = ({
           }
           return (
             <motion.div
-              key={s.title}
+              key={s.key}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 + sections.length * 0.1 }}
@@ -298,14 +307,14 @@ export const Navbar = ({
               <MenuItem
                 setActive={setActive}
                 active={active}
-                item={s.title}
+                item={t(`${s.key}._self`)}
                 href={s.href}
                 isCurrentPage={isActive(s.href)}
               >
                 <div className={`flex flex-col space-y-4`}>
                   {s.items.map((item, itemIndex) => (
                     <motion.div
-                      key={item.title}
+                      key={item.key}
                       className="space-y-2"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -316,7 +325,7 @@ export const Navbar = ({
                         className="block text-white/90 hover:text-white font-semibold transition-all duration-300 hover:translate-x-1 transform group relative"
                       >
                         <span className="relative">
-                          {item.title}
+                          {t(`${s.key}.${item.key}`)}
                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-300 group-hover:w-full" />
                         </span>
                       </Link>
@@ -327,6 +336,13 @@ export const Navbar = ({
             </motion.div>
           );
         })}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 + sections.length * 0.1 }}
+        >
+          <LanguageSwitcher />
+        </motion.div>
       </Menu>
 
       {/* Mobile drawer + overlay */}
@@ -388,12 +404,16 @@ export const Navbar = ({
                 </motion.button>
               </div>
 
+              <div className="mb-4 relative z-10">
+                <LanguageSwitcher />
+              </div>
+
               <div className="overflow-y-auto pr-1 relative z-10">
                 {sections.map((s, index) => {
                   if (s.type === "link") {
                     return (
                       <motion.div
-                        key={s.title}
+                        key={s.key}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -404,17 +424,17 @@ export const Navbar = ({
                           className="block py-4 text-lg font-medium text-white/85 hover:text-white border-b border-white/8 transition-all duration-200 hover:translate-x-1 transform group relative"
                         >
                           <span className="relative">
-                            {s.title}
+                            {t(s.key)}
                             <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-200 group-hover:w-full" />
                           </span>
                         </Link>
                       </motion.div>
                     );
                   }
-                  const isOpen = openSection === s.title;
+                  const isOpen = openSection === s.key;
                   return (
                     <motion.div
-                      key={s.title}
+                      key={s.key}
                       className="border-b border-white/10"
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -427,14 +447,14 @@ export const Navbar = ({
                           className="hover:text-white transition-all duration-200 hover:translate-x-1 transform relative"
                         >
                           <span className="relative">
-                            {s.title}
+                            {t(`${s.key}._self`)}
                             <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-200 group-hover:w-full" />
                           </span>
                         </Link>
                         <motion.button
                           aria-label="Alt menüyü aç/kapat"
                           className="p-2 text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all duration-200"
-                          onClick={() => toggleSection(s.title)}
+                          onClick={() => toggleSection(s.key)}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                         >
@@ -460,7 +480,7 @@ export const Navbar = ({
                             <div className="pl-4 pb-4 space-y-3">
                               {s.items.map((item, itemIndex) => (
                                 <motion.div
-                                  key={item.title}
+                                  key={item.key}
                                   className="space-y-1"
                                   initial={{ opacity: 0, x: 10 }}
                                   animate={{ opacity: 1, x: 0 }}
@@ -475,7 +495,7 @@ export const Navbar = ({
                                     className="block text-base text-white/80 hover:text-white transition-all duration-200 hover:translate-x-1 transform group relative"
                                   >
                                     <span className="relative">
-                                      {item.title}
+                                      {t(`${s.key}.${item.key}`)}
                                       <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-200 group-hover:w-full" />
                                     </span>
                                   </Link>

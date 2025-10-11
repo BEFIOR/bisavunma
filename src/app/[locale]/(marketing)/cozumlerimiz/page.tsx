@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import {
   Radio,
   Target,
@@ -20,8 +23,10 @@ import {
 } from "@/components/animations/ScrollAnimations";
 import { LazyVideo } from "@/components/animations/LazyVideo";
 import Footer from "@/components/Footer";
-import Link from "next/link";
-export default async function Cozumlerimiz() {
+import { Link } from "@/i18n";
+
+export default function Cozumlerimiz() {
+  const t = useTranslations("cozumlerimiz");
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -48,21 +53,17 @@ export default async function Cozumlerimiz() {
             <HeroAnimation direction="fade" delay={0.2}>
               <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
-                Çözümlerimiz
+                {t("hero.badge")}
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.4}>
               <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
-                Sistem <span className="text-gray-300">Konfigürasyonu</span>
+                {t("hero.title")}
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.6}>
               <p className="mt-6 text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                BİSAVUNMA olarak geliştirdiğimiz çözümler, hava, kara ve deniz
-                kuvvetleri, sahil güvenlik ve sınır güvenliği birimlerinin yanı
-                sıra endüstriyel tesisler, enerji santralleri ve kritik
-                altyapılar için özel olarak tasarlanmakta ve konfigüre
-                edilmektedir.
+                {t("hero.description")}
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.8}>
@@ -71,19 +72,19 @@ export default async function Cozumlerimiz() {
                   href="/cozumlerimiz#sistem-konfigurasyonu"
                   className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
                 >
-                  Sistem Konfigürasyonu
+                  {t("hero.navigation.systemConfig")}
                 </Link>
                 <Link
                   href="/cozumlerimiz#savunma-cozumleri"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
-                  Savunma Çözümleri
+                  {t("hero.navigation.defenseSolutions")}
                 </Link>
                 <Link
                   href="/cozumlerimiz#entegre-guvenlik"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
-                  Entegre Güvenlik
+                  {t("hero.navigation.integratedSecurity")}
                 </Link>
               </div>
             </HeroAnimation>
@@ -113,19 +114,17 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="fade" delay={0.2}>
               <span className="inline-flex items-center gap-2 rounded-full bg-blue-900/20 px-4 py-1.5 text-xs font-medium text-blue-300">
                 <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />{" "}
-                Sistem Konfigürasyonu
+                {t("systemConfiguration.badge")}
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                BİSAVUNMA <span className="text-blue-300">Çözümleri</span>
+                {t("systemConfiguration.title")}
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Sistemlerimiz, farklı görev sahalarının gereksinimlerine uyum
-                sağlayacak şekilde özelleştirilebilir; bu sayede operasyonel
-                etkinlik, her koşulda en üst seviyede tutulur.
+                {t("systemConfiguration.description")}
               </p>
             </ScrollAnimation>
           </div>
@@ -135,18 +134,10 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="up" delay={0.8}>
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 mb-12">
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  Geliştirdiğimiz araç entegre çözümleri, platformlara RF
-                  entegrasyonu, radar sistemleri, elektro-optik (EO/IR)
-                  sensörler ve jammer teknolojilerinin eklenmesi ile şekillenir.
-                  Bu çok katmanlı yapı sayesinde, ister yüksek hareket
-                  kabiliyeti gerektiren sahil güvenlik operasyonları olsun,
-                  ister sınır hattında sürekli gözetim gerektiren görevler
-                  olsun, her alanda sürdürülebilir güvenlik üstünlüğü sağlanır.
+                  {t("systemConfiguration.content.paragraph1")}
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Sistemlerimiz ihtiyaca yönelik olarak her ortama uygun
-                  özelleştirilir ve esnek modüler yapısı sayesinde mobil veya
-                  sabit konuşlanmalara entegre edilebilir.
+                  {t("systemConfiguration.content.paragraph2")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -154,33 +145,33 @@ export default async function Cozumlerimiz() {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  title: "RF Entegrasyonu",
-                  desc: "Platformlara RF entegrasyonu ve spektrum yönetimi",
+                  title: t("systemConfiguration.features.0.title"),
+                  desc: t("systemConfiguration.features.0.description"),
                   Icon: Radio,
                 },
                 {
-                  title: "Radar Sistemleri",
-                  desc: "Durumsal farkındalık ve hedef tespiti",
+                  title: t("systemConfiguration.features.1.title"),
+                  desc: t("systemConfiguration.features.1.description"),
                   Icon: Target,
                 },
                 {
-                  title: "Elektro-Optik Sensörler",
-                  desc: "EO/IR sensörler ve görüntüleme sistemleri",
+                  title: t("systemConfiguration.features.2.title"),
+                  desc: t("systemConfiguration.features.2.description"),
                   Icon: Eye,
                 },
                 {
-                  title: "Jammer Teknolojileri",
-                  desc: "Elektronik harp ve karıştırma sistemleri",
+                  title: t("systemConfiguration.features.3.title"),
+                  desc: t("systemConfiguration.features.3.description"),
                   Icon: Zap,
                 },
                 {
-                  title: "Modüler Yapı",
-                  desc: "Esnek ve ölçeklenebilir sistem mimarisi",
+                  title: t("systemConfiguration.features.4.title"),
+                  desc: t("systemConfiguration.features.4.description"),
                   Icon: Layers,
                 },
                 {
-                  title: "Mobil Entegrasyon",
-                  desc: "Sabit ve mobil konuşlanma çözümleri",
+                  title: t("systemConfiguration.features.5.title"),
+                  desc: t("systemConfiguration.features.5.description"),
                   Icon: Network,
                 },
               ].map((s) => (
@@ -234,20 +225,17 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="fade" delay={0.2}>
               <span className="inline-flex items-center gap-2 rounded-full bg-emerald-900/20 px-4 py-1.5 text-xs font-medium text-emerald-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
-                İhtiyaca Yönelik Savunma Çözümleri
+                {t("defenseSolutions.badge")}
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Modern Tehdit{" "}
-                <span className="text-emerald-300">Ortamında Çözümler</span>
+                {t("defenseSolutions.title")}
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Modern tehdit ortamında her operasyon farklı riskler barındırır.
-                BİSAVUNMA, bu nedenle çözümlerini son kullanıcı isterleri ve
-                saha ihtiyaçları doğrultusunda özelleştirmektedir.
+                {t("defenseSolutions.description")}
               </p>
             </ScrollAnimation>
           </div>
@@ -257,19 +245,10 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="up" delay={0.8}>
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 mb-12">
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  İster yüksek yoğunluklu elektronik harp tehdidiyle
-                  karşılaşılan bir bölge, ister deniz trafiği yüksek bir sahil
-                  güvenlik hattı, isterse de sabotaj riskinin bulunduğu bir
-                  enerji tesisi olsun; çözümlerimiz, her bir görev için özel
-                  olarak uyarlanır.
+                  {t("defenseSolutions.content.paragraph1")}
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  RF spektrum yönetiminden radar kapsama optimizasyonuna,
-                  elektro-optik sensör hassasiyetinden jammer menzil ayarına
-                  kadar tüm kritik parametreler, kullanıcı ihtiyaçlarına göre
-                  ölçeklendirilir. Böylece sahadaki birlikler maksimum
-                  operasyonel esneklik, kurumlar ise kesintisiz güvenlik elde
-                  eder.
+                  {t("defenseSolutions.content.paragraph2")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -277,33 +256,33 @@ export default async function Cozumlerimiz() {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Elektronik Harp Tehdidi",
-                  desc: "Yüksek yoğunluklu elektronik harp ortamları için çözümler",
+                  title: t("defenseSolutions.features.0.title"),
+                  desc: t("defenseSolutions.features.0.description"),
                   Icon: Shield,
                 },
                 {
-                  title: "Sahil Güvenlik",
-                  desc: "Deniz trafiği yüksek bölgeler için özel sistemler",
+                  title: t("defenseSolutions.features.1.title"),
+                  desc: t("defenseSolutions.features.1.description"),
                   Icon: Satellite,
                 },
                 {
-                  title: "Enerji Tesisleri",
-                  desc: "Sabotaj riski bulunan kritik altyapı koruması",
+                  title: t("defenseSolutions.features.2.title"),
+                  desc: t("defenseSolutions.features.2.description"),
                   Icon: Zap,
                 },
                 {
-                  title: "RF Spektrum Yönetimi",
-                  desc: "Spektrum analizi ve optimizasyon çözümleri",
+                  title: t("defenseSolutions.features.3.title"),
+                  desc: t("defenseSolutions.features.3.description"),
                   Icon: Radio,
                 },
                 {
-                  title: "Radar Optimizasyonu",
-                  desc: "Kapsama alanı ve hassasiyet optimizasyonu",
+                  title: t("defenseSolutions.features.4.title"),
+                  desc: t("defenseSolutions.features.4.description"),
                   Icon: Target,
                 },
                 {
-                  title: "Sensör Hassasiyeti",
-                  desc: "Elektro-optik sensör ayarlama ve kalibrasyon",
+                  title: t("defenseSolutions.features.5.title"),
+                  desc: t("defenseSolutions.features.5.description"),
                   Icon: Eye,
                 },
               ].map((s) => (
@@ -357,21 +336,17 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="fade" delay={0.2}>
               <span className="inline-flex items-center gap-2 rounded-full bg-purple-900/20 px-4 py-1.5 text-xs font-medium text-purple-300">
                 <span className="h-2 w-2 rounded-full bg-purple-500 animate-pulse" />{" "}
-                Entegre Güvenlik Yaklaşımları
+                {t("integratedSecurity.badge")}
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Çok Katmanlı{" "}
-                <span className="text-purple-300">Güvenlik Mimarisi</span>
+                {t("integratedSecurity.title")}
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.6}>
               <p className="mt-4 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Tekil sistemler artık günümüzün karmaşık tehditlerine karşı
-                yeterli değildir. Bu noktada BİSAVUNMA, entegre güvenlik
-                yaklaşımı ile farklı sensörleri ve savunma bileşenlerini tek bir
-                ağ üzerinde birleştirir.
+                {t("integratedSecurity.description")}
               </p>
             </ScrollAnimation>
           </div>
@@ -381,19 +356,10 @@ export default async function Cozumlerimiz() {
             <ScrollAnimation direction="up" delay={0.8}>
               <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 p-8 mb-12">
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  Radar, RF algılama, elektro-optik/IR ve jammer çözümlerinin
-                  koordineli çalışması sayesinde tehditler yalnızca tespit
-                  edilmekle kalmaz, aynı zamanda doğru şekilde sınıflandırılır,
-                  takip edilir ve etkisiz hale getirilir.
+                  {t("integratedSecurity.content.paragraph1")}
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Bu entegrasyon, askeri birliklere operasyonel üstünlük
-                  kazandırırken, sahil ve sınır güvenliği için durumsal
-                  farkındalık oluşturur, kritik altyapı ve enerji sahaları için
-                  ise tam koruma sağlar. Sonuç olarak, sistemlerimiz yalnızca
-                  bugünün tehditlerine değil, aynı zamanda geleceğin gelişen
-                  risklerine karşı da ölçeklenebilir ve sürdürülebilir bir
-                  güvenlik çözümü sunar.
+                  {t("integratedSecurity.content.paragraph2")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -401,33 +367,33 @@ export default async function Cozumlerimiz() {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Radar Koordinasyonu",
-                  desc: "Çoklu radar sistemlerinin entegre çalışması",
+                  title: t("integratedSecurity.features.0.title"),
+                  desc: t("integratedSecurity.features.0.description"),
                   Icon: Target,
                 },
                 {
-                  title: "RF Algılama Ağı",
-                  desc: "Spektrum analizi ve sinyal istihbaratı",
+                  title: t("integratedSecurity.features.1.title"),
+                  desc: t("integratedSecurity.features.1.description"),
                   Icon: Radio,
                 },
                 {
-                  title: "Elektro-Optik/IR",
-                  desc: "Görüntüleme ve termal algılama sistemleri",
+                  title: t("integratedSecurity.features.2.title"),
+                  desc: t("integratedSecurity.features.2.description"),
                   Icon: Eye,
                 },
                 {
-                  title: "Jammer Koordinasyonu",
-                  desc: "Elektronik karıştırma ve karşı önlemler",
+                  title: t("integratedSecurity.features.3.title"),
+                  desc: t("integratedSecurity.features.3.description"),
                   Icon: Zap,
                 },
                 {
-                  title: "Durumsal Farkındalık",
-                  desc: "Gerçek zamanlı tehdit değerlendirme",
+                  title: t("integratedSecurity.features.4.title"),
+                  desc: t("integratedSecurity.features.4.description"),
                   Icon: Activity,
                 },
                 {
-                  title: "Gelecek Odaklı",
-                  desc: "Gelişen tehditlere karşı ölçeklenebilir çözümler",
+                  title: t("integratedSecurity.features.5.title"),
+                  desc: t("integratedSecurity.features.5.description"),
                   Icon: Cpu,
                 },
               ].map((s) => (
@@ -465,18 +431,16 @@ export default async function Cozumlerimiz() {
         <div className="max-w-4xl mx-auto text-center">
           <ScrollAnimation direction="fade" delay={0.2}>
             <span className="inline-flex items-center gap-2 rounded-full bg-emerald-400/10 ring-1 ring-emerald-400/20 px-3 py-1 text-xs font-medium text-emerald-200">
-              Daha fazlası için
+              {t("cta.badge")}
             </span>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.4}>
             <h2 className="mt-4 text-2xl md:text-3xl font-bold tracking-tight text-white">
-              İhtiyacınıza uygun çözümü birlikte tasarlayalım
+              {t("cta.title")}
             </h2>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.6}>
-            <p className="mt-3 text-gray-300">
-              Hızlı keşif görüşmesi için bizimle iletişime geçin.
-            </p>
+            <p className="mt-3 text-gray-300">{t("cta.description")}</p>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.8}>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -484,13 +448,13 @@ export default async function Cozumlerimiz() {
                 href="/iletisim"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-gray-900 px-6 py-3 text-sm font-semibold hover:bg-gray-100 transition-colors"
               >
-                İletişime Geç
+                {t("cta.buttons.contact")}
               </Link>
               <Link
                 href="/iletisim"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20 text-white px-6 py-3 text-sm font-semibold hover:bg-white/10 transition-colors"
               >
-                Teklif Al
+                {t("cta.buttons.quote")}
               </Link>
             </div>
           </ScrollAnimation>
@@ -502,7 +466,7 @@ export default async function Cozumlerimiz() {
         <div
           className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 text-white shadow-lg pointer-events-none"
           style={{ animation: "bounce 2s infinite" }}
-          title="Aşağı Kaydır"
+          title={t("navigation.scrollDown")}
         >
           <ChevronDown className="w-5 h-5" />
         </div>

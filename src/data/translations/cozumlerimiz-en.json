@@ -1,0 +1,131 @@
+{
+  "cozumlerimiz": {
+    "hero": {
+      "badge": "Our Solutions",
+      "title": "System Configuration",
+      "description": "The solutions we develop at BISAVUNMA are specially designed and configured for air, land and naval forces, coast guard and border security units, as well as industrial facilities, power plants and critical infrastructure.",
+      "navigation": {
+        "systemConfig": "System Configuration",
+        "defenseSolutions": "Defense Solutions",
+        "integratedSecurity": "Integrated Security"
+      }
+    },
+    "systemConfiguration": {
+      "badge": "System Configuration",
+      "title": "BISAVUNMA Solutions",
+      "description": "Our systems can be customized to meet the requirements of different mission areas; thus, operational effectiveness is kept at the highest level in all conditions.",
+      "content": {
+        "paragraph1": "The vehicle-integrated solutions we develop are shaped by adding RF integration to platforms, radar systems, electro-optical (EO/IR) sensors and jammer technologies. Thanks to this multi-layered structure, sustainable security superiority is provided in every area, whether it is coast guard operations requiring high mobility or tasks requiring continuous surveillance on the border line.",
+        "paragraph2": "Our systems are customized for every environment according to needs and can be integrated into mobile or fixed deployments thanks to its flexible modular structure."
+      },
+      "features": [
+        {
+          "title": "RF Integration",
+          "description": "RF integration and spectrum management to platforms"
+        },
+        {
+          "title": "Radar Systems",
+          "description": "Situational awareness and target detection"
+        },
+        {
+          "title": "Electro-Optical Sensors",
+          "description": "EO/IR sensors and imaging systems"
+        },
+        {
+          "title": "Jammer Technologies",
+          "description": "Electronic warfare and jamming systems"
+        },
+        {
+          "title": "Modular Structure",
+          "description": "Flexible and scalable system architecture"
+        },
+        {
+          "title": "Mobile Integration",
+          "description": "Fixed and mobile deployment solutions"
+        }
+      ]
+    },
+    "defenseSolutions": {
+      "badge": "Need-Based Defense Solutions",
+      "title": "Solutions in Modern Threat Environment",
+      "description": "In the modern threat environment, each operation carries different risks. BISAVUNMA therefore customizes its solutions according to end-user requirements and field needs.",
+      "content": {
+        "paragraph1": "Whether it is an area faced with high-intensity electronic warfare threats, a coast guard line with high maritime traffic, or a power plant with sabotage risk; our solutions are specially adapted for each mission.",
+        "paragraph2": "All critical parameters from RF spectrum management to radar coverage optimization, from electro-optical sensor sensitivity to jammer range adjustment are scaled according to user needs. Thus, field units gain maximum operational flexibility, while institutions obtain uninterrupted security."
+      },
+      "features": [
+        {
+          "title": "Electronic Warfare Threat",
+          "description": "Solutions for high-intensity electronic warfare environments"
+        },
+        {
+          "title": "Coast Guard",
+          "description": "Special systems for areas with high maritime traffic"
+        },
+        {
+          "title": "Power Plants",
+          "description": "Critical infrastructure protection with sabotage risk"
+        },
+        {
+          "title": "RF Spectrum Management",
+          "description": "Spectrum analysis and optimization solutions"
+        },
+        {
+          "title": "Radar Optimization",
+          "description": "Coverage area and sensitivity optimization"
+        },
+        {
+          "title": "Sensor Sensitivity",
+          "description": "Electro-optical sensor adjustment and calibration"
+        }
+      ]
+    },
+    "integratedSecurity": {
+      "badge": "Integrated Security Approaches",
+      "title": "Multi-Layered Security Architecture",
+      "description": "Individual systems are no longer sufficient against today's complex threats. At this point, BISAVUNMA unites different sensors and defense components on a single network with an integrated security approach.",
+      "content": {
+        "paragraph1": "Thanks to the coordinated operation of radar, RF detection, electro-optical/IR and jammer solutions, threats are not only detected but also correctly classified, tracked and neutralized.",
+        "paragraph2": "This integration provides operational superiority to military units, creates situational awareness for coast and border security, and provides full protection for critical infrastructure and energy sites. As a result, our systems offer a scalable and sustainable security solution not only against today's threats but also against future developing risks."
+      },
+      "features": [
+        {
+          "title": "Radar Coordination",
+          "description": "Integrated operation of multiple radar systems"
+        },
+        {
+          "title": "RF Detection Network",
+          "description": "Spectrum analysis and signal intelligence"
+        },
+        {
+          "title": "Electro-Optical/IR",
+          "description": "Imaging and thermal detection systems"
+        },
+        {
+          "title": "Jammer Coordination",
+          "description": "Electronic jamming and countermeasures"
+        },
+        {
+          "title": "Situational Awareness",
+          "description": "Real-time threat assessment"
+        },
+        {
+          "title": "Future-Oriented",
+          "description": "Scalable solutions against developing threats"
+        }
+      ]
+    },
+    "cta": {
+      "badge": "For more",
+      "title": "Let's design the solution that suits your needs together",
+      "description": "Contact us for a quick discovery meeting.",
+      "buttons": {
+        "contact": "Contact Us",
+        "quote": "Get Quote"
+      }
+    },
+    "navigation": {
+      "scrollDown": "Scroll Down"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "hizmetler": {
+    "hero": {
+      "badge": "Our Services",
+      "title": "Comprehensive",
+      "titleHighlight": "Defense Solutions",
+      "description": "From field reconnaissance to software solutions, from installation to training, we offer full-scope services in defense technologies.",
+      "buttons": {
+        "fieldSurvey": "Field Survey",
+        "installation": "Installation & Integration",
+        "training": "Training & Support"
+      }
+    },
+    "fieldSurvey": {
+      "badge": "Field Survey & Positioning",
+      "title": "Strategic",
+      "titleHighlight": "Positioning",
+      "description": "Every operational area is unique not only in its geography but also in climate conditions, terrain structure, electromagnetic density, environmental noise levels, proximity to civilian settlements, and threat profiles. Therefore, planning security systems is not a simple 'device placement' process; it requires multi-dimensional analysis and engineering approach.",
+      "content": {
+        "paragraph1": "BISAVUNMA, through detailed reconnaissance and analysis work carried out in the field by its expert engineering team, reveals all security vulnerabilities and potential threats of the operational area. These analyses enable planning not only against current dangers but also against future hybrid threat scenarios.",
+        "paragraph2": "As a result, BISAVUNMA's field reconnaissance work strengthens the defense chain by providing 360° coverage without blind spots."
+      },
+      "services": {
+        "radar": {
+          "title": "Radar Placement",
+          "description": "The most efficient points are determined considering each radar's coverage area, range, angular sensitivity, and geographical obstacles. 360° uninterrupted protection is provided by eliminating blind spots."
+        },
+        "rf": {
+          "title": "RF Detection & Signal Intelligence",
+          "description": "The electromagnetic spectrum in the field is analyzed, critical frequency bands are examined, and direction finding points are selected for enemy communication and control signals."
+        },
+        "drone": {
+          "title": "Drone Detection Systems",
+          "description": "A multi-layered placement plan is prepared against swarm drone attacks, low-altitude flights, and electronic warfare scenarios such as GPS spoofing."
+        },
+        "electroOptical": {
+          "title": "Electro-Optical & Thermal Sensors",
+          "description": "Strategic positioning is made to provide clear identification in all weather conditions, day and night. Forms a complementary layer to radar and RF systems."
+        },
+        "infrastructure": {
+          "title": "Critical Infrastructure Analysis",
+          "description": "Risk maps are created for strategic areas such as military bases, border posts, airports, power plants, and government buildings."
+        }
+      }
+    },
+    "installation": {
+      "badge": "Installation & Integration",
+      "title": "Unified",
+      "titleHighlight": "Defense Network",
+      "description": "The installation process is not just the assembly of devices; it is also the construction of a unified defense network. BISAVUNMA unites each subsystem in a single C2 (Command & Control) software platform, providing the user with fully integrated operational capability.",
+      "content": {
+        "systemsTitle": "Integrated systems:",
+        "systems": {
+          "radar": "Radar + RF Detection + Signal Intelligence Modules",
+          "drone": "Drone Detection & Anti-Drone Jammer Solutions",
+          "electroOptical": "Electro-Optical & Thermal Sensors",
+          "hardKill": "Hard-Kill Automatic Weapon Systems"
+        },
+        "proactive": "Thus, BISAVUNMA's solutions offer not only reactive but also proactive defense capabilities."
+      },
+      "benefits": {
+        "title": "Benefits of Integration",
+        "dataSharing": "Thanks to instant data sharing, the target detected by one system is automatically transferred to the other.",
+        "singleScreen": "Single screen management: The operator monitors all threats from a single center.",
+        "coordination": "Coordination against hybrid threats: For example, radar detects a target, RF systems verify the frequency, EO/IR performs identity verification with image, jammer cuts the connection, and if necessary, hard-kill system neutralizes.",
+        "cyberSecurity": "Cyber-secure integration: All systems operate closed to external interference with encrypted communication protocols."
+      }
+    },
+    "training": {
+      "badge": "Training & Technical Support",
+      "title": "Expertise",
+      "titleHighlight": "Transfer",
+      "description": "BISAVUNMA transfers expertise to its users along with the systems it delivers. Training is provided hands-on through real operational scenarios. In addition, BISAVUNMA provides 24/7 technical support to ensure its systems always operate at peak efficiency.",
+      "content": {
+        "trainingTitle": "Training is provided hands-on through real operational scenarios:",
+        "trainings": {
+          "rf": "RF Spectrum Analysis & Direction Finding (DF)",
+          "drone": "Drone Detection and Anti-Drone Operation Procedures",
+          "jammer": "Jammer Use & Soft-Kill Strategies",
+          "electroOptical": "Target Identification and Tracking with Electro-Optical & Thermal Systems",
+          "hardKill": "Hard-Kill Weapon Systems Use",
+          "simulation": "Scenario-Based Simulation Training (airport security, border line, base area, etc.)"
+        },
+        "supportTitle": "In addition, BISAVUNMA provides 24/7 technical support to ensure its systems always operate at peak efficiency:",
+        "supports": {
+          "updates": "Remote software updates,",
+          "troubleshooting": "Fault detection and rapid response,",
+          "maintenance": "Regular maintenance and performance checks,",
+          "consulting": "Operational consulting services."
+        }
+      },
+      "services": {
+        "expertiseTransfer": {
+          "title": "Expertise Transfer",
+          "description": "BISAVUNMA transfers expertise to its users along with the systems it delivers. Training is provided hands-on through real operational scenarios."
+        },
+        "technicalSupport": {
+          "title": "24/7 Technical Support",
+          "description": "We provide comprehensive technical support and maintenance services to ensure systems always operate at peak efficiency."
+        }
+      }
+    },
+    "software": {
+      "badge": "Software Solutions",
+      "title": "Proprietary C2",
+      "titleHighlight": "Software Platform",
+      "description": "In modern defense architecture, software is as vital as hardware. BISAVUNMA's proprietary C2 software platform brings all hardware under one roof, providing decision superiority.",
+      "content": {
+        "features": {
+          "integration": "Integrates radar, RF, EO/IR, jammer, and hard-kill systems on a single screen.",
+          "rfAnalysis": "Provides real-time RF spectrum analysis and waterfall visualizations.",
+          "ai": "AI-supported algorithms automatically classify drone types.",
+          "proactive": "Proactive defense infrastructure predicts swarm drone attacks in advance.",
+          "cyberSecurity": "Provides security against external interference with cybersecurity protocols.",
+          "reporting": "Reporting & Archiving Module records all operations and produces analysis reports."
+        }
+      },
+      "services": {
+        "c2Platform": {
+          "title": "Proprietary C2 Software Platform",
+          "description": "BISAVUNMA's proprietary C2 software platform brings all hardware under one roof, providing decision superiority."
+        },
+        "modernArchitecture": {
+          "title": "Modern Defense Architecture",
+          "description": "In modern defense architecture, software is as vital as hardware. Superior performance with comprehensive integration and security features."
+        }
+      }
+    },
+    "cta": {
+      "badge": "About our services",
+      "title": "Comprehensive defense solutions",
+      "description": "From field reconnaissance to software solutions, from installation to training, we offer full-scope services in defense technologies.",
+      "buttons": {
+        "contact": "Contact Us",
+        "explore": "Explore Our Solutions"
+      }
+    },
+    "navigation": {
+      "scrollDown": "Scroll Down"
+    }
+  }
+}

@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n";
 import {
   Radio,
   Shield,
@@ -24,6 +27,7 @@ import ServicesAccordion from "@/components/ServicesAccordion";
 import GallerySlider from "@/components/GallerySlider";
 
 export default function Home() {
+  const t = useTranslations("home");
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
@@ -48,39 +52,40 @@ export default function Home() {
               </HeroAnimation>
               <HeroAnimation direction="up" delay={0.4}>
                 <h2 className="text-base md:text-2xl text-gray-300 font-poppins-light max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-12">
-                  DÜNYA ÇAPINDA YENİLİKÇİ MODÜLER SAVUNMA SİSTEMLERİ
+                  {t("hero.subtitle")}
                   <br />
                   <span className="text-sky-400 font-poppins-medium">
-                    25+ Yıl Deneyim
+                    {t("hero.features.experience")}
                   </span>{" "}
                   •
                   <span className="text-sky-400 font-poppins-medium">
                     {" "}
-                    Türkiye Geneli Hizmet
+                    {t("hero.features.service")}
                   </span>{" "}
                   •
                   <span className="text-sky-400 font-poppins-medium">
                     {" "}
-                    Dünya Çapında İhracat
+                    {t("hero.features.export")}
                   </span>
                 </h2>
               </HeroAnimation>
 
               <HeroAnimation direction="up" delay={0.6}>
                 <p className="text-sm md:text-lg text-gray-400 max-w-3xl md:max-w-5xl mx-auto leading-relaxed font-inter-regular px-12">
-                  1996&apos;dan beri kamera sistemleri sektöründe faaliyet
-                  gösteren, 2018&apos;de yeniden yapılanan Bisavunma,
-                  <span className="text-sky-400 font-inter-medium">
-                    {" "}
-                    optimum çözümler
-                  </span>{" "}
-                  ve
-                  <span className="text-sky-400 font-inter-medium">
-                    {" "}
-                    nitelikli teknik destek
-                  </span>{" "}
-                  ile müşteri portföyünü genişletmiş ve başarılı projelere imza
-                  atmaktadır.
+                  {t.rich("hero.description", {
+                    optimumSolutions: (chunks) => (
+                      <span className="text-sky-400 font-inter-medium">
+                        {" "}
+                        {chunks}
+                      </span>
+                    ),
+                    technicalSupport: (chunks) => (
+                      <span className="text-sky-400 font-inter-medium">
+                        {" "}
+                        {chunks}
+                      </span>
+                    ),
+                  })}
                 </p>
               </HeroAnimation>
             </div>
@@ -90,19 +95,19 @@ export default function Home() {
               <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-gray-300 font-inter-medium text-sm sm:text-base">
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-sky-400" />
-                  <span>25+ Yıl Deneyim</span>
+                  <span>{t("hero.features.experience")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Target className="w-5 h-5 text-sky-400" />
-                  <span>Türkiye Geneli Hizmet</span>
+                  <span>{t("hero.features.service")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Satellite className="w-5 h-5 text-sky-400" />
-                  <span>Dünya Çapında İhracat</span>
+                  <span>{t("hero.features.export")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Cog className="w-5 h-5 text-sky-400" />
-                  <span>Nitelikli Teknik Destek</span>
+                  <span>{t("hero.features.support")}</span>
                 </div>
               </div>
             </HeroAnimation>
@@ -114,7 +119,7 @@ export default function Home() {
                   href="/urunler"
                   className="bg-sky-600 hover:bg-sky-700 text-white w-full sm:w-auto px-6 sm:px-8 py-4 rounded-lg font-poppins-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                 >
-                  Ürünleri İncele
+                  {t("hero.cta")}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -143,17 +148,16 @@ export default function Home() {
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
-                  Özellikler
+                  {t("features.badge")}
                 </span>
                 <div className="overflow-hidden">
                   <h2 className="mt-4 text-3xl md:text-4xl font-poppins-bold tracking-tight text-white">
-                    Neden <span className="text-gray-300">BİSAVUNMA</span>?
+                    {t("features.title")}
                   </h2>
                 </div>
                 <div className="overflow-hidden">
                   <p className="mt-4 text-gray-300 max-w-2xl mx-auto font-inter-regular">
-                    Operasyonel üstünlük için tasarlanmış, yüksek etkili ve
-                    güvenilir yetenek seti.
+                    {t("features.subtitle")}
                   </p>
                 </div>
               </div>
@@ -166,37 +170,33 @@ export default function Home() {
           >
             {[
               {
-                title: "Gerçek Zamanlı İzleme",
-                description:
-                  "Anlık veri akışı ve uyarılar ile sahaya tam hakimiyet.",
+                title: t("features.items.0.title"),
+                description: t("features.items.0.description"),
                 Icon: Radio,
               },
               {
-                title: "Dayanıklı Mimari",
-                description:
-                  "Zorlu koşullar için test edilmiş güvenilir sistemler.",
+                title: t("features.items.1.title"),
+                description: t("features.items.1.description"),
                 Icon: Shield,
               },
               {
-                title: "Yapay Zeka Desteği",
-                description:
-                  "Sinyal ve görüntü analizi için ileri AI modelleri.",
+                title: t("features.items.2.title"),
+                description: t("features.items.2.description"),
                 Icon: Brain,
               },
               {
-                title: "Ölçeklenebilirlik",
-                description: "İhtiyaca göre büyüyen modüler altyapı.",
+                title: t("features.items.3.title"),
+                description: t("features.items.3.description"),
                 Icon: Cog,
               },
               {
-                title: "Düşük Gecikme",
-                description:
-                  "Karar anlarında kritik gecikmeleri minimize eder.",
+                title: t("features.items.4.title"),
+                description: t("features.items.4.description"),
                 Icon: Zap,
               },
               {
-                title: "24/7 Destek",
-                description: "Operasyonel süreklilik için kesintisiz destek.",
+                title: t("features.items.5.title"),
+                description: t("features.items.5.description"),
                 Icon: Satellite,
               },
             ].map((f) => (
@@ -241,15 +241,17 @@ export default function Home() {
             className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4"
             staggerDelay={0.1}
           >
-            {["Hızlı Entegrasyon", "Saha Kanıtı", "Gizlilik Standartları"].map(
-              (tag) => (
-                <StaggerItem key={tag} direction="up">
-                  <div className="rounded-xl bg-gray-900 text-white px-4 py-3 text-sm text-center hover:scale-105 transition-transform duration-300">
-                    {tag}
-                  </div>
-                </StaggerItem>
-              )
-            )}
+            {[
+              t("features.tags.0"),
+              t("features.tags.1"),
+              t("features.tags.2"),
+            ].map((tag) => (
+              <StaggerItem key={tag} direction="up">
+                <div className="rounded-xl bg-gray-900 text-white px-4 py-3 text-sm text-center hover:scale-105 transition-transform duration-300">
+                  {tag}
+                </div>
+              </StaggerItem>
+            ))}
           </StaggerContainer>
         </div>
       </section>
@@ -261,10 +263,10 @@ export default function Home() {
           <ScrollAnimation direction="up">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-poppins-bold text-white mb-4">
-                Hizmetlerimiz
+                {t("services.title")}
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto font-inter-regular">
-                Savunma sektöründe kapsamlı çözümler sunuyoruz
+                {t("services.subtitle")}
               </p>
             </div>
           </ScrollAnimation>
@@ -273,61 +275,51 @@ export default function Home() {
             <ServicesAccordion
               services={[
                 {
-                  title: "RF Sistemleri",
-                  summary:
-                    "Geniş bant RF çözümleri ile sahada elektromanyetik üstünlük.",
-                  description:
-                    "BİSAVUNMA'nın RF çözümleri, 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak sinyal toplama, analiz etme ve yön bulma (DF) kabiliyeti sunar. Bu sayede drone kontrol frekanslarından düşman haberleşme sinyallerine kadar tüm elektromanyetik aktiviteler tespit edilir. Gelişmiş spektrum analizi, waterfall ve wrapped spectrum görselleştirmeleri ile tehditler hızlıca teşhis edilir. RF sistemlerimiz sınır güvenliği, üs bölgeleri, enerji altyapısı ve VIP korumada kritik avantaj sağlar.",
+                  title: t("services.items.0.title"),
+                  summary: t("services.items.0.summary"),
+                  description: t("services.items.0.description"),
                   iconName: "Radio",
                 },
                 {
-                  title: "Radar Sistemleri",
-                  summary: "360° kapsama, düşük görünürlüklü hedef tespiti.",
-                  description:
-                    "Radar sistemlerimiz, modern tehditlere karşı tam alan gözetleme sağlar. AESA radarlar ve döner antenli çözümler küçük dronelardan hava araçlarına kadar geniş bir hedef yelpazesini tespit edebilir. Çoklu hedef takibi, dost-düşman tanıma (IFF) ve yüksek çözünürlüklü haritalama kabiliyetiyle üs bölgeleri, havaalanları ve kritik tesislerin güvenliği sağlanır.",
+                  title: t("services.items.1.title"),
+                  summary: t("services.items.1.summary"),
+                  description: t("services.items.1.description"),
                   iconName: "Target",
                 },
                 {
-                  title: "Sinyal İstihbarat (SIGINT)",
-                  summary:
-                    "Geniş bant sinyal istihbaratı ile düşman haberleşme ağı takibi.",
-                  description:
-                    "SIGINT çözümlerimiz 9 kHz – 8 / 18 / 40 GHz aralığında çalışarak geniş bant toplama ve çözümleme kapasitesi sunar. Bu sistemler düşman komuta-kontrol sinyallerini analiz eder, yön bulma (DF) ile kaynaklarını konumlandırır ve yapay zekâ destekli tehdit sınıflandırması yapar. Hibrit tehditlere karşı güvenlik güçlerine proaktif üstünlük sağlar.",
+                  title: t("services.items.2.title"),
+                  summary: t("services.items.2.summary"),
+                  description: t("services.items.2.description"),
                   iconName: "Search",
                 },
                 {
-                  title: "Elektro-Optik & Termal",
-                  summary: "Gece-gündüz, her hava koşulunda hedef teşhisi.",
-                  description:
-                    "EO/IR sistemlerimiz yüksek çözünürlüklü kameralar, termal sensörler ve lazer mesafe ölçerlerle gündüz-gece kesintisiz gözetleme sağlar. Radar ve RF sistemleriyle entegre edilerek hedefin görsel teşhisi yapılır, yanlış alarm riski en aza indirilir. Özellikle sınır güvenliği ve kritik tesislerde etkin kullanılır.",
+                  title: t("services.items.3.title"),
+                  summary: t("services.items.3.summary"),
+                  description: t("services.items.3.description"),
                   iconName: "Eye",
                 },
                 {
-                  title: "Jammer Sistemleri",
-                  summary: "Soft-kill elektronik harp çözümleri.",
-                  description:
-                    "BİSAVUNMA'nın jammer sistemleri 9 kHz – 8 / 18 / 40 GHz frekans aralığında çalışır. Drone kontrol sinyallerini, GNSS/GPS bağlantılarını ve düşman haberleşme ağlarını etkisiz hale getirir. Sabit, mobil ve taşınabilir modelleri mevcuttur. Tehdit odaklı aktif çalışma prensibi ile enerji verimliliği sağlanır. Radar, RF ve EO/IR entegrasyonu ile çok katmanlı Anti-Drone mimarisi oluşturur.",
+                  title: t("services.items.4.title"),
+                  summary: t("services.items.4.summary"),
+                  description: t("services.items.4.description"),
                   iconName: "Shield",
                 },
                 {
-                  title: "DJI Enterprise",
-                  summary: "Endüstriyel dronelar ile çok boyutlu gözetleme.",
-                  description:
-                    "DJI Enterprise çözümleri keşif, arama-kurtarma, sınır güvenliği ve kritik altyapı denetimleri için geliştirilmiştir. Termal kameralar, RTK uydu desteği, uzun uçuş süreleri ve yüksek taşıma kapasitesi ile güvenlik güçlerine avantaj sağlar. BİSAVUNMA entegrasyonu ile radar ve RF sistemleriyle tek ekranda yönetilebilir.",
+                  title: t("services.items.5.title"),
+                  summary: t("services.items.5.summary"),
+                  description: t("services.items.5.description"),
                   iconName: "Satellite",
                 },
                 {
-                  title: "Sistem Entegrasyonu",
-                  summary: "Tüm sistemler tek bir C2 yazılımında birleşir.",
-                  description:
-                    "Radar, RF, SIGINT, EO/IR, jammer ve hard-kill sistemleri özel geliştirilmiş C2 komuta kontrol yazılımı üzerinde entegre edilir. Böylece radar tespit eder, RF doğrular, EO/IR teşhis yapar, jammer engeller, hard-kill imha eder. Tüm süreç tek ekrandan yönetilerek karar verme süresi minimuma indirilir.",
+                  title: t("services.items.6.title"),
+                  summary: t("services.items.6.summary"),
+                  description: t("services.items.6.description"),
                   iconName: "Cog",
                 },
                 {
-                  title: "Teknik Destek",
-                  summary: "7/24 destek ve uzun vadeli güven ortaklığı.",
-                  description:
-                    "BİSAVUNMA, sistemlerin her zaman en yüksek performansla çalışması için 7/24 teknik destek sağlar. Yazılım güncellemeleri, bakım planlamaları, arıza tespiti, hızlı müdahale ve operatör eğitimleri ile müşterilerimiz daima desteklenir.",
+                  title: t("services.items.7.title"),
+                  summary: t("services.items.7.summary"),
+                  description: t("services.items.7.description"),
                   iconName: "Headset",
                 },
               ]}
@@ -343,19 +335,17 @@ export default function Home() {
           <div>
             <ScrollAnimation direction="up">
               <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-3 py-1 text-xs font-medium text-gray-300">
-                Hakkımızda
+                {t("about.badge")}
               </span>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.2}>
               <h2 className="mt-4 text-3xl md:text-4xl font-poppins-bold tracking-tight text-white">
-                Sahada Kanıtlanmış Güvenilir Çözümler
+                {t("about.title")}
               </h2>
             </ScrollAnimation>
             <ScrollAnimation direction="up" delay={0.4}>
               <p className="mt-4 text-lg text-gray-300 max-w-2xl font-inter-regular">
-                BİSAVUNMA, savunma teknolojilerinde uzman kadrosu ve mühendislik
-                yetkinlikleriyle kurumların operasyonel üstünlük elde etmesini
-                sağlar.
+                {t("about.description")}
               </p>
             </ScrollAnimation>
 
@@ -365,18 +355,18 @@ export default function Home() {
             >
               {[
                 {
-                  title: "Güvenlik",
-                  desc: "Askeri standartlarda güvenilirlik",
+                  title: t("about.values.0.title"),
+                  desc: t("about.values.0.description"),
                   Icon: Shield,
                 },
                 {
-                  title: "Hız",
-                  desc: "Düşük gecikme, hızlı reaksiyon",
+                  title: t("about.values.1.title"),
+                  desc: t("about.values.1.description"),
                   Icon: Zap,
                 },
                 {
-                  title: "Entegrasyon",
-                  desc: "Modüler ve ölçeklenebilir",
+                  title: t("about.values.2.title"),
+                  desc: t("about.values.2.description"),
                   Icon: Cog,
                 },
               ].map((i) => (
@@ -402,13 +392,13 @@ export default function Home() {
                   href="/iletisim"
                   className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-5 py-3 text-sm font-poppins-semibold hover:bg-black transition-colors"
                 >
-                  Daha Fazla Bilgi
+                  {t("about.cta.moreInfo")}
                 </Link>
                 <Link
                   href="/iletisim"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-5 py-3 text-sm font-poppins-semibold text-white hover:bg-gray-800 transition"
                 >
-                  İletişime Geç
+                  {t("about.cta.contact")}
                 </Link>
               </div>
             </ScrollAnimation>
@@ -418,7 +408,9 @@ export default function Home() {
               <div className="relative">
                 {/* Section Title */}
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">Galeri</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {t("about.gallery.title")}
+                  </h3>
                   <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
                 </div>
 
@@ -448,18 +440,17 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <ScrollAnimation direction="fade">
             <span className="inline-flex items-center gap-2 rounded-full bg-emerald-400/10 ring-1 ring-emerald-400/20 px-3 py-1 text-xs font-medium text-emerald-200">
-              Hazır mısınız?
+              {t("cta.badge")}
             </span>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.2}>
             <h2 className="mt-4 text-3xl md:text-4xl font-poppins-bold tracking-tight text-white">
-              Savunma Çözümlerinizi Güçlendirin
+              {t("cta.title")}
             </h2>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.4}>
             <p className="mt-4 text-lg md:text-xl text-gray-300 font-inter-regular">
-              Uzman ekibimizle iletişime geçin ve ihtiyaçlarınıza özel çözümler
-              alın.
+              {t("cta.description")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation direction="up" delay={0.6}>
@@ -468,13 +459,13 @@ export default function Home() {
                 href="/iletisim"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-gray-900 px-6 py-3 text-sm font-poppins-semibold hover:bg-gray-100 transition-colors"
               >
-                Hemen Başlayın
+                {t("cta.buttons.start")}
               </Link>
               <Link
                 href="/iletisim"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20 text-white px-6 py-3 text-sm font-poppins-semibold hover:bg-white/10 transition-colors"
               >
-                Demo Talep Et
+                {t("cta.buttons.demo")}
               </Link>
             </div>
           </ScrollAnimation>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Mail, Phone, Clock, Send, MessageCircle } from "lucide-react";
 import DotGrid from "@/components/DotGrid";
 import { HeroAnimation } from "@/components/animations/ScrollAnimations";
@@ -14,6 +15,7 @@ import {
 import { useState } from "react";
 
 export default function Iletisim() {
+  const t = useTranslations("iletisim");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
   const [emailUrls, setEmailUrls] = useState({ gmail: "", outlook: "" });
@@ -111,18 +113,20 @@ ${data.message}
             <HeroAnimation direction="fade" delay={0.2}>
               <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
-                İletişim
+                {t("hero.badge")}
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.4}>
               <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
-                Bizimle <span className="text-gray-300">İletişime Geçin</span>
+                {t("hero.title")}{" "}
+                <span className="text-gray-300">
+                  {t("hero.titleHighlight")}
+                </span>
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.6}>
               <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
-                Savunma ve güvenlik çözümleriniz için uzman ekibimizle iletişime
-                geçin. Size en uygun çözümü birlikte bulalım.
+                {t("hero.description")}
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.8}>
@@ -131,19 +135,19 @@ ${data.message}
                   href="#iletisim-formu"
                   className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
                 >
-                  İletişim Formu
+                  {t("hero.buttons.form")}
                 </a>
                 <a
                   href="#iletisim-bilgileri"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
-                  İletişim Bilgileri
+                  {t("hero.buttons.info")}
                 </a>
                 <a
                   href="#ofis-lokasyonlari"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
-                  Ofis Lokasyonları
+                  {t("hero.buttons.locations")}
                 </a>
               </div>
             </HeroAnimation>
@@ -172,14 +176,13 @@ ${data.message}
           <div className="text-center mb-14">
             <span className="inline-flex items-center gap-2 rounded-full bg-blue-900/20 px-4 py-1.5 text-xs font-medium text-blue-300">
               <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />{" "}
-              İletişim Formu
+              {t("form.badge")}
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Projenizi Birlikte Planlayalım
+              {t("form.title")}
             </h2>
             <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-              İhtiyaçlarınızı detaylı olarak paylaşın, size özel çözüm
-              önerilerimizi sunalım.
+              {t("form.description")}
             </p>
           </div>
 
@@ -193,14 +196,14 @@ ${data.message}
                       htmlFor="firstName"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Ad
+                      {t("form.fields.firstName.label")}
                     </label>
                     <input
                       type="text"
                       id="firstName"
                       name="firstName"
                       className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
-                      placeholder="Adınız"
+                      placeholder={t("form.fields.firstName.placeholder")}
                     />
                   </div>
                   <div>
@@ -208,14 +211,14 @@ ${data.message}
                       htmlFor="lastName"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Soyad
+                      {t("form.fields.lastName.label")}
                     </label>
                     <input
                       type="text"
                       id="lastName"
                       name="lastName"
                       className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
-                      placeholder="Soyadınız"
+                      placeholder={t("form.fields.lastName.placeholder")}
                     />
                   </div>
                 </div>
@@ -225,14 +228,14 @@ ${data.message}
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    E-posta
+                    {t("form.fields.email.label")}
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
-                    placeholder="ornek@email.com"
+                    placeholder={t("form.fields.email.placeholder")}
                   />
                 </div>
 
@@ -241,14 +244,14 @@ ${data.message}
                     htmlFor="phone"
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    Telefon
+                    {t("form.fields.phone.label")}
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
                     className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
-                    placeholder="+90 5XX XXX XX XX"
+                    placeholder={t("form.fields.phone.placeholder")}
                   />
                 </div>
 
@@ -257,14 +260,14 @@ ${data.message}
                     htmlFor="company"
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    Şirket/Kurum
+                    {t("form.fields.company.label")}
                   </label>
                   <input
                     type="text"
                     id="company"
                     name="company"
                     className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
-                    placeholder="Şirket veya kurum adınız"
+                    placeholder={t("form.fields.company.placeholder")}
                   />
                 </div>
 
@@ -273,23 +276,37 @@ ${data.message}
                     htmlFor="subject"
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    Konu
+                    {t("form.fields.subject.label")}
                   </label>
                   <select
                     id="subject"
                     name="subject"
                     className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors"
                   >
-                    <option value="">Konu seçiniz</option>
-                    <option value="rf-sistemleri">RF Sistemleri</option>
-                    <option value="elektro-optik">
-                      Elektro-Optik Sistemler
+                    <option value="">
+                      {t("form.fields.subject.placeholder")}
                     </option>
-                    <option value="radar-sistemleri">Radar Sistemleri</option>
-                    <option value="jammer-sistemleri">Jammer Sistemleri</option>
-                    <option value="entegrasyon">Sistem Entegrasyonu</option>
-                    <option value="egitim">Eğitim ve Destek</option>
-                    <option value="diger">Diğer</option>
+                    <option value="rf-sistemleri">
+                      {t("form.fields.subject.options.rf")}
+                    </option>
+                    <option value="elektro-optik">
+                      {t("form.fields.subject.options.electroOptical")}
+                    </option>
+                    <option value="radar-sistemleri">
+                      {t("form.fields.subject.options.radar")}
+                    </option>
+                    <option value="jammer-sistemleri">
+                      {t("form.fields.subject.options.jammer")}
+                    </option>
+                    <option value="entegrasyon">
+                      {t("form.fields.subject.options.integration")}
+                    </option>
+                    <option value="egitim">
+                      {t("form.fields.subject.options.training")}
+                    </option>
+                    <option value="diger">
+                      {t("form.fields.subject.options.other")}
+                    </option>
                   </select>
                 </div>
 
@@ -298,14 +315,14 @@ ${data.message}
                     htmlFor="message"
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    Mesaj
+                    {t("form.fields.message.label")}
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-900 text-white transition-colors resize-none"
-                    placeholder="Projeniz hakkında detaylı bilgi veriniz..."
+                    placeholder={t("form.fields.message.placeholder")}
                   />
                 </div>
 
@@ -318,7 +335,7 @@ ${data.message}
                   className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 text-white px-6 py-4 text-base font-semibold hover:bg-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="h-5 w-5" />
-                  {isSubmitting ? "Gönderiliyor..." : "Mesaj Gönder"}
+                  {isSubmitting ? t("form.submitting") : t("form.submit")}
                 </button>
               </form>
             </div>
@@ -332,10 +349,10 @@ ${data.message}
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-white">
-                      Hızlı İletişim
+                      {t("contactInfo.quickContact.title")}
                     </h3>
                     <p className="text-sm text-gray-300">
-                      7/24 destek hattımız
+                      {t("contactInfo.quickContact.subtitle")}
                     </p>
                   </div>
                 </div>
@@ -359,8 +376,7 @@ ${data.message}
                       referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                     <h2 className="text-gray-300 mt-2 text-sm">
-                      Yeşilkent Mahallesi Nâzım Hikmet Bulvarı, 2011. Sk. no :
-                      18, 34517 Esenyurt/İstanbul
+                      {t("contactInfo.quickContact.address")}
                     </h2>
                   </div>
                 </div>
@@ -373,27 +389,37 @@ ${data.message}
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-white">
-                      Çalışma Saatleri
+                      {t("contactInfo.workingHours.title")}
                     </h3>
-                    <p className="text-sm text-gray-300">Pazartesi - Cuma</p>
+                    <p className="text-sm text-gray-300">
+                      {t("contactInfo.workingHours.subtitle")}
+                    </p>
                   </div>
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-gray-300">Pazartesi - Cuma</span>
+                    <span className="text-gray-300">
+                      {t("contactInfo.workingHours.weekdays")}
+                    </span>
                     <span className="text-white font-medium">
                       09:00 - 18:00
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-300">Cumartesi</span>
+                    <span className="text-gray-300">
+                      {t("contactInfo.workingHours.saturday")}
+                    </span>
                     <span className="text-white font-medium">
                       09:00 - 16:00
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-300">Pazar</span>
-                    <span className="text-white font-medium">Kapalı</span>
+                    <span className="text-gray-300">
+                      {t("contactInfo.workingHours.sunday")}
+                    </span>
+                    <span className="text-white font-medium">
+                      {t("contactInfo.workingHours.closed")}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -409,13 +435,12 @@ ${data.message}
         <div className="max-w-4xl mx-auto text-center">
           <div className="overflow-hidden">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700">
-              Projenizi Hemen Başlatalım
+              {t("cta.title")}
             </h2>
           </div>
           <div className="overflow-hidden">
             <p className="mt-6 text-xl text-gray-300 will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700 delay-300">
-              Uzman ekibimizle iletişime geçin ve savunma çözümlerinizi birlikte
-              hayata geçirelim.
+              {t("cta.description")}
             </p>
           </div>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -424,14 +449,14 @@ ${data.message}
               className="inline-flex items-center justify-center rounded-lg bg-white text-gray-900 px-8 py-4 text-base font-semibold hover:bg-gray-100 transition-colors"
             >
               <Send className="h-5 w-5 mr-2" />
-              Hemen İletişime Geç
+              {t("cta.buttons.contact")}
             </a>
             <a
               href="tel:+90212XXXXXXX"
               className="inline-flex items-center justify-center rounded-lg border border-gray-600 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Hemen Ara
+              {t("cta.buttons.call")}
             </a>
           </div>
         </div>

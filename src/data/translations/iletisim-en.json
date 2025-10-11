@@ -1,0 +1,84 @@
+{
+  "iletisim": {
+    "hero": {
+      "badge": "Contact",
+      "title": "Get in",
+      "titleHighlight": "Touch With Us",
+      "description": "Contact our expert team for your defense and security solutions. Let's find the best solution for you together.",
+      "buttons": {
+        "form": "Contact Form",
+        "info": "Contact Information",
+        "locations": "Office Locations"
+      }
+    },
+    "form": {
+      "badge": "Contact Form",
+      "title": "Let's Plan Your Project Together",
+      "description": "Share your needs in detail, and we'll present our customized solution proposals.",
+      "fields": {
+        "firstName": {
+          "label": "First Name",
+          "placeholder": "Your first name"
+        },
+        "lastName": {
+          "label": "Last Name",
+          "placeholder": "Your last name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "example@email.com"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "+90 5XX XXX XX XX"
+        },
+        "company": {
+          "label": "Company/Organization",
+          "placeholder": "Your company or organization name"
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "Select a subject",
+          "options": {
+            "rf": "RF Systems",
+            "electroOptical": "Electro-Optical Systems",
+            "radar": "Radar Systems",
+            "jammer": "Jammer Systems",
+            "integration": "System Integration",
+            "training": "Training and Support",
+            "other": "Other"
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Provide detailed information about your project..."
+        }
+      },
+      "submit": "Send Message",
+      "submitting": "Sending..."
+    },
+    "contactInfo": {
+      "quickContact": {
+        "title": "Quick Contact",
+        "subtitle": "24/7 support line",
+        "address": "Yeşilkent Mahallesi Nâzım Hikmet Bulvarı, 2011. Sk. no : 18, 34517 Esenyurt/İstanbul"
+      },
+      "workingHours": {
+        "title": "Working Hours",
+        "subtitle": "Monday - Friday",
+        "weekdays": "Monday - Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday",
+        "closed": "Closed"
+      }
+    },
+    "cta": {
+      "title": "Let's Start Your Project Right Away",
+      "description": "Contact our expert team and let's bring your defense solutions to life together.",
+      "buttons": {
+        "contact": "Contact Us Now",
+        "call": "Call Now"
+      }
+    }
+  }
+}

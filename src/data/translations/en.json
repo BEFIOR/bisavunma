@@ -1,0 +1,164 @@
+{
+  "home": {
+    "hero": {
+      "title": "BISAVUNMA",
+      "subtitle": "WORLD-CLASS INNOVATIVE MODULAR DEFENSE SYSTEMS",
+      "experience": "25+ Years Experience",
+      "service": "Nationwide Service",
+      "export": "Worldwide Export",
+      "description": "Operating in the camera systems sector since 1996, Bisavunma, restructured in 2018, has expanded its customer portfolio and delivered successful projects with <optimumSolutions>optimal solutions</optimumSolutions> and <technicalSupport>qualified technical support</technicalSupport>.",
+      "features": {
+        "experience": "25+ Years Experience",
+        "service": "Nationwide Service",
+        "export": "Worldwide Export",
+        "support": "Qualified Technical Support"
+      },
+      "cta": "Explore Products"
+    },
+    "features": {
+      "badge": "Features",
+      "title": "Why BISAVUNMA?",
+      "subtitle": "High-impact and reliable capability set designed for operational superiority.",
+      "items": [
+        {
+          "title": "Real-Time Monitoring",
+          "description": "Complete field control with instant data streams and alerts."
+        },
+        {
+          "title": "Durable Architecture",
+          "description": "Reliable systems tested for harsh conditions."
+        },
+        {
+          "title": "AI Support",
+          "description": "Advanced AI models for signal and image analysis."
+        },
+        {
+          "title": "Scalability",
+          "description": "Modular infrastructure that grows with demand."
+        },
+        {
+          "title": "Low Latency",
+          "description": "Minimizes critical delays in decision moments."
+        },
+        {
+          "title": "24/7 Support",
+          "description": "Uninterrupted support for operational continuity."
+        }
+      ],
+      "tags": ["Fast Integration", "Field Proven", "Privacy Standards"]
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "We provide comprehensive solutions in the defense sector",
+      "items": [
+        {
+          "title": "RF Systems",
+          "summary": "Electromagnetic superiority in the field with broadband RF solutions.",
+          "description": "BISAVUNMA's RF solutions operate in the 9 kHz – 8 / 18 / 40 GHz range, providing signal collection, analysis, and direction finding (DF) capabilities. This detects all electromagnetic activities from drone control frequencies to enemy communication signals. Advanced spectrum analysis, waterfall and wrapped spectrum visualizations enable rapid threat identification. Our RF systems provide critical advantages in border security, base areas, energy infrastructure, and VIP protection."
+        },
+        {
+          "title": "Radar Systems",
+          "summary": "360° coverage, low-visibility target detection.",
+          "description": "Our radar systems provide full area surveillance against modern threats. AESA radars and rotating antenna solutions can detect a wide range of targets from small drones to aircraft. Multi-target tracking, IFF, and high-resolution mapping capabilities secure base areas, airports, and critical facilities."
+        },
+        {
+          "title": "Signal Intelligence (SIGINT)",
+          "summary": "Enemy communication network tracking with broadband signal intelligence.",
+          "description": "Our SIGINT solutions operate in the 9 kHz – 8 / 18 / 40 GHz range, providing broadband collection and analysis capacity. These systems analyze enemy command-control signals, locate sources with direction finding (DF), and perform AI-supported threat classification. Provides proactive superiority to security forces against hybrid threats."
+        },
+        {
+          "title": "Electro-Optical & Thermal",
+          "summary": "Target identification in all weather conditions, day and night.",
+          "description": "Our EO/IR systems provide continuous day-night surveillance with high-resolution cameras, thermal sensors, and laser rangefinders. Integrated with radar and RF systems for visual target identification, minimizing false alarm risk. Particularly effective in border security and critical facilities."
+        },
+        {
+          "title": "Jammer Systems",
+          "summary": "Soft-kill electronic warfare solutions.",
+          "description": "BISAVUNMA's jammer systems operate in the 9 kHz – 8 / 18 / 40 GHz frequency range. Neutralizes drone control signals, GNSS/GPS connections, and enemy communication networks. Fixed, mobile, and portable models available. Energy efficiency achieved through threat-focused active operation principle. Creates multi-layered Anti-Drone architecture with radar, RF, and EO/IR integration."
+        },
+        {
+          "title": "DJI Enterprise",
+          "summary": "Multi-dimensional surveillance with industrial drones.",
+          "description": "DJI Enterprise solutions are developed for reconnaissance, search-rescue, border security, and critical infrastructure inspections. Provides advantages to security forces with thermal cameras, RTK satellite support, long flight times, and high payload capacity. Can be managed on a single screen with BISAVUNMA integration with radar and RF systems."
+        },
+        {
+          "title": "System Integration",
+          "summary": "All systems unite in a single C2 software.",
+          "description": "Radar, RF, SIGINT, EO/IR, jammer, and hard-kill systems are integrated through specially developed C2 command control software. Thus, radar detects, RF verifies, EO/IR identifies, jammer blocks, hard-kill neutralizes. The entire process is managed from a single screen, minimizing decision-making time."
+        },
+        {
+          "title": "Technical Support",
+          "summary": "24/7 support and long-term trust partnership.",
+          "description": "BISAVUNMA provides 24/7 technical support to ensure systems always operate at peak performance. Our customers are always supported with software updates, maintenance planning, fault detection, rapid response, and operator training."
+        }
+      ]
+    },
+    "about": {
+      "badge": "About Us",
+      "title": "Field-Proven Reliable Solutions",
+      "description": "BISAVUNMA enables organizations to achieve operational superiority with its expert staff and engineering competencies in defense technologies.",
+      "values": [
+        {
+          "title": "Security",
+          "description": "Military-grade reliability"
+        },
+        {
+          "title": "Speed",
+          "description": "Low latency, fast reaction"
+        },
+        {
+          "title": "Integration",
+          "description": "Modular and scalable"
+        }
+      ],
+      "gallery": {
+        "title": "Gallery"
+      },
+      "cta": {
+        "moreInfo": "More Information",
+        "contact": "Contact Us"
+      }
+    },
+    "cta": {
+      "badge": "Are you ready?",
+      "title": "Strengthen Your Defense Solutions",
+      "description": "Contact our expert team and get custom solutions for your needs.",
+      "buttons": {
+        "start": "Get Started",
+        "demo": "Request Demo"
+      }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "products": {
+      "_self": "Products",
+      "rf": "RF Systems and Signal Intelligence (SIGINT)",
+      "radar": "Radar Systems",
+      "electroOptical": "Electro-Optical & Thermal Systems",
+      "jammer": "Jammer & RF Effectors",
+      "dji": "DJI Turkey Enterprise"
+    },
+    "solutions": {
+      "_self": "Solutions",
+      "systemConfig": "System Configuration",
+      "defense": "Demand-Oriented Defense Solutions",
+      "integrated": "Integrated Security Approaches"
+    },
+    "sectors": {
+      "_self": "By Sectors",
+      "military": "Military Facilities",
+      "energy": "Energy & Critical Infrastructure",
+      "port": "Port & Shipyards",
+      "border": "Border Security"
+    },
+    "services": {
+      "_self": "Services",
+      "fieldSurvey": "Field Survey & Positioning",
+      "installation": "Installation & Integration",
+      "training": "Training & Technical Support",
+      "software": "Software Solutions"
+    },
+    "contact": "Contact"
+  }
+}

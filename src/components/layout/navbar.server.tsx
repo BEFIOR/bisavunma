@@ -22,10 +22,24 @@ export default async function NavbarServer() {
     "dji-turkiye-enterprise": "/urunler/dji-turkiye-enterprise",
   };
 
-  const dynamicItems = categories.map((c) => ({
-    title: c.title,
-    href: staticRoutes[c.slug] ?? `/urunler/${c.slug}`,
-  }));
+  const dynamicItems = categories.map((c) => {
+    // Map category slugs to translation keys
+    const keyMap: Record<string, string> = {
+      "rf-sistemleri-ve-sinyal-istihbarat-sigint": "rf",
+      "radar-sistemleri": "radar",
+      "elektro-optik-termal-sistemler": "electroOptical",
+      "elektro-optik-ve-termal-sistemler": "electroOptical",
+      "jammer-rf-efektorler": "jammer",
+      "jammer-ve-rf-efektorler": "jammer",
+      "dji-turkiye-enterprise": "dji",
+    };
+
+    return {
+      title: c.title,
+      href: staticRoutes[c.slug] ?? `/urunler/${c.slug}`,
+      key: keyMap[c.slug] ?? c.slug,
+    };
+  });
 
   const sections: NavSection[] = navigationSections.map((s) => {
     if (s.type === "group" && s.title === "Ürünlerimiz") {

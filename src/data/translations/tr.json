@@ -6,9 +6,7 @@
       "experience": "25+ Yıl Deneyim",
       "service": "Türkiye Geneli Hizmet",
       "export": "Dünya Çapında İhracat",
-      "description": "1996'dan beri kamera sistemleri sektöründe faaliyet gösteren, 2018'de yeniden yapılanan Bisavunma, optimum çözümler ve nitelikli teknik destek ile müşteri portföyünü genişletmiş ve başarılı projelere imza atmaktadır.",
-      "optimumSolutions": "optimum çözümler",
-      "technicalSupport": "nitelikli teknik destek",
+      "description": "1996'dan beri kamera sistemleri sektöründe faaliyet gösteren, 2018'de yeniden yapılanan Bisavunma, <optimumSolutions>optimum çözümler</optimumSolutions> ve <technicalSupport>nitelikli teknik destek</technicalSupport> ile müşteri portföyünü genişletmiş ve başarılı projelere imza atmaktadır.",
       "features": {
         "experience": "25+ Yıl Deneyim",
         "service": "Türkiye Geneli Hizmet",
@@ -130,5 +128,37 @@
         "demo": "Demo Talep Et"
       }
     }
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "products": {
+      "_self": "Ürünlerimiz",
+      "rf": "RF Sistemleri ve Sinyal İstihbarat (SIGINT)",
+      "radar": "Radar Sistemleri",
+      "electroOptical": "Elektro-Optik & Termal Sistemler",
+      "jammer": "Jammer & RF Efektörler",
+      "dji": "DJI Türkiye Enterprise"
+    },
+    "solutions": {
+      "_self": "Çözümlerimiz",
+      "systemConfig": "Sistem Konfigürasyonu",
+      "defense": "İhtiyaca Yönelik Savunma Çözümleri",
+      "integrated": "Entegre Güvenlik Yaklaşımları"
+    },
+    "sectors": {
+      "_self": "Sektörlere Göre",
+      "military": "Askeri Tesisler",
+      "energy": "Enerji & Kritik Altyapılar",
+      "port": "Liman & Tersaneler",
+      "border": "Sınır Güvenliği"
+    },
+    "services": {
+      "_self": "Hizmetlerimiz",
+      "fieldSurvey": "Saha Keşfi & Konumlandırma",
+      "installation": "Kurulum & Entegrasyon",
+      "training": "Eğitim & Teknik Destek",
+      "software": "Yazılım Çözümleri"
+    },
+    "contact": "İletişim"
   }
 }

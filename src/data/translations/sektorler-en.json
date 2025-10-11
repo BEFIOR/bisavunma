@@ -1,0 +1,162 @@
+{
+  "sektorler": {
+    "hero": {
+      "badge": "Our Sectors",
+      "title": "By Sectors",
+      "description": "We provide comprehensive protection with Anti-Drone and C-UAS solutions tailored to the unique security needs of each sector.",
+      "navigation": {
+        "askeriTesisler": "Military Facilities",
+        "enerjiAltyapi": "Energy & Infrastructure",
+        "limanTersaneler": "Ports & Shipyards",
+        "sinirGuvenligi": "Border Security"
+      }
+    },
+    "askeriTesisler": {
+      "badge": "Military Facilities",
+      "title": "Military Facilities",
+      "description": "Military bases, operation centers, radar stations and airports form the backbone of a country's national security structure.",
+      "detail": {
+        "title": "Anti-Drone Security Doctrine",
+        "paragraph1": "These critical facilities are now exposed not only to conventional threats but also to modern and asymmetric threats such as small-sized drones, swarm drone attacks and unauthorized aircraft flights.",
+        "paragraph2": "BISAVUNMA offers a multi-layered and integrated security doctrine centered on Anti-Drone technologies to protect these critical areas.",
+        "cta": "Get Detailed Information"
+      },
+      "systems": [
+        {
+          "title": "Radar-Based Early Warning",
+          "description": "Detects even the smallest targets at low altitude and with low radar cross-section"
+        },
+        {
+          "title": "RF Detection and Signal Intelligence",
+          "description": "Determines the communication link between drone and control, reveals the operator's location with frequency analysis"
+        },
+        {
+          "title": "Electro-Optical and Thermal Systems",
+          "description": "Provides visual identification and verification in day/night conditions"
+        },
+        {
+          "title": "Soft-Kill Anti-Drone Solutions",
+          "description": "Only activated when needed, causes target drones to lose direction or makes them fall safely"
+        },
+        {
+          "title": "Hard-Kill Anti-Drone Systems",
+          "description": "Directly neutralizes threat elements with automatic weapon integrations"
+        }
+      ],
+      "integration": "All these elements work integrated with C2 command control infrastructure. The target determined by the radar is verified with RF detection, identified with electro-optical systems, then neutralized with soft-kill and hard-kill systems. Thus, military facilities are protected with a 24/7 end-to-end Anti-Drone and air security system."
+    },
+    "enerjiAltyapi": {
+      "badge": "Energy & Critical Infrastructure",
+      "title": "Energy & Critical Infrastructure",
+      "description": "Power plants, dams, oil and natural gas infrastructure, nuclear facilities and telecommunication centers are vital for a country's economic and strategic security.",
+      "detail": {
+        "title": "Anti-Drone and C-UAS Solutions",
+        "paragraph1": "An attack or sabotage on these areas can lead to crises not only at the national level but also globally.",
+        "paragraph2": "BISAVUNMA maximizes facility security with Anti-Drone and C-UAS (Counter-Unmanned Aerial Systems) solutions developed for these infrastructures.",
+        "cta": "Get Detailed Information"
+      },
+      "systems": [
+        {
+          "title": "Multi-Band RF Detection",
+          "description": "Detection of drones operating at different frequencies is made"
+        },
+        {
+          "title": "Spectrum Analysis",
+          "description": "Wrapped spectrum and waterfall analyses present electromagnetic density to the operator with instant and historical data"
+        },
+        {
+          "title": "Electro-Optical & Thermal Verification",
+          "description": "Provides visual confirmation"
+        },
+        {
+          "title": "Soft-Kill Jammer Solutions",
+          "description": "Instantly disables drones"
+        },
+        {
+          "title": "Hard-Kill Integration",
+          "description": "Drones approaching critical infrastructure are directly neutralized"
+        }
+      ],
+      "integration": "This entire process operates as an integrated system fully compatible with existing security infrastructure. Thus, energy and critical infrastructures have uninterrupted security armor reinforced with Anti-Drone solutions."
+    },
+    "limanTersaneler": {
+      "badge": "Ports & Shipyards",
+      "title": "Ports & Shipyards",
+      "description": "Ports and shipyards are of strategic importance both for the security of international trade and for the protection of naval military power.",
+      "detail": {
+        "title": "Anti-Drone Focused Integrated Defense",
+        "paragraph1": "These facilities are exposed to hybrid threats from sea, land and air sources; in recent years, particularly drone-based intelligence, sabotage and attack attempts have increased.",
+        "paragraph2": "BISAVUNMA develops Anti-Drone focused integrated defense systems for ports and shipyards.",
+        "cta": "Get Detailed Information"
+      },
+      "systems": [
+        {
+          "title": "Radar Surveillance Systems",
+          "description": "Simultaneously tracks air and maritime traffic"
+        },
+        {
+          "title": "RF Intelligence Solutions",
+          "description": "Determines threat sources by analyzing control signals"
+        },
+        {
+          "title": "Electro-Optical and Thermal Sensors",
+          "description": "Visually identifies drones"
+        },
+        {
+          "title": "Soft-Kill Jammer Solutions",
+          "description": "Safely disables unauthorized drones"
+        },
+        {
+          "title": "Hard-Kill Anti-Drone Systems",
+          "description": "Directly neutralizes threats with high-precision automatic weapons"
+        }
+      ],
+      "integration": "In this way, the port area is secured with multi-layered protection not only against classical threats but also against drone and unmanned aerial vehicle attacks."
+    },
+    "sinirGuvenligi": {
+      "badge": "Border Security",
+      "title": "Border Security",
+      "description": "Border security now requires not only the protection of the land line but also the control of airspace.",
+      "detail": {
+        "title": "Anti-Drone and C-UAS Solutions",
+        "paragraph1": "Especially small drones, unauthorized light aircraft flights and hybrid threats have made border security complex.",
+        "paragraph2": "BISAVUNMA provides the most advanced level of security with Anti-Drone and C-UAS solutions developed for border security.",
+        "cta": "Get Detailed Information"
+      },
+      "systems": [
+        {
+          "title": "Radar and RF Detection Systems",
+          "description": "Provides uninterrupted surveillance along the border line"
+        },
+        {
+          "title": "Electro-Optical & Thermal Systems",
+          "description": "Provides the highest accuracy in threat identification in the border area"
+        },
+        {
+          "title": "Soft-Kill Jammer Solutions",
+          "description": "Instantly disables drones and aircraft"
+        },
+        {
+          "title": "Hard-Kill Anti-Drone Weapon Systems",
+          "description": "Guarantees border security by neutralizing critical threats"
+        },
+        {
+          "title": "C2 Integration",
+          "description": "Real-time data sharing is made between radar, RF, jammer, electro-optical and hard-kill systems"
+        }
+      ],
+      "integration": "In this way, the border line becomes not just a surveillance line; but a fully integrated, Anti-Drone focused, dynamic defense ecosystem."
+    },
+    "cta": {
+      "title": "Sector-Specific Solutions",
+      "description": "From military facilities to border security, from energy infrastructure to port facilities, we offer customized solutions for every sector.",
+      "buttons": {
+        "contact": "Contact Us",
+        "quote": "Get Quote"
+      }
+    },
+    "navigation": {
+      "scrollDown": "Scroll Down"
+    }
+  }
+}

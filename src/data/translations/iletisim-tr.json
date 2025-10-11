@@ -2,119 +2,83 @@
   "iletisim": {
     "hero": {
       "badge": "İletişim",
-      "title": "Bizimle İletişime Geçin",
+      "title": "Bizimle",
+      "titleHighlight": "İletişime Geçin",
       "description": "Savunma ve güvenlik çözümleriniz için uzman ekibimizle iletişime geçin. Size en uygun çözümü birlikte bulalım.",
-      "navigation": {
-        "contactForm": "İletişim Formu",
-        "contactInfo": "İletişim Bilgileri",
-        "officeLocations": "Ofis Lokasyonları"
+      "buttons": {
+        "form": "İletişim Formu",
+        "info": "İletişim Bilgileri",
+        "locations": "Ofis Lokasyonları"
       }
     },
-    "contactForm": {
+    "form": {
       "badge": "İletişim Formu",
       "title": "Projenizi Birlikte Planlayalım",
       "description": "İhtiyaçlarınızı detaylı olarak paylaşın, size özel çözüm önerilerimizi sunalım.",
-      "form": {
-        "fields": {
-          "firstName": {
-            "label": "Ad",
-            "placeholder": "Adınız"
-          },
-          "lastName": {
-            "label": "Soyad",
-            "placeholder": "Soyadınız"
-          },
-          "email": {
-            "label": "E-posta",
-            "placeholder": "ornek@email.com"
-          },
-          "phone": {
-            "label": "Telefon",
-            "placeholder": "+90 5XX XXX XX XX"
-          },
-          "company": {
-            "label": "Şirket/Kurum",
-            "placeholder": "Şirket veya kurum adınız"
-          },
-          "subject": {
-            "label": "Konu",
-            "placeholder": "Konu seçiniz",
-            "options": {
-              "rf-sistemleri": "RF Sistemleri",
-              "elektro-optik": "Elektro-Optik Sistemler",
-              "radar-sistemleri": "Radar Sistemleri",
-              "jammer-sistemleri": "Jammer Sistemleri",
-              "entegrasyon": "Sistem Entegrasyonu",
-              "egitim": "Eğitim ve Destek",
-              "diger": "Diğer"
-            }
-          },
-          "message": {
-            "label": "Mesaj",
-            "placeholder": "Projeniz hakkında detaylı bilgi veriniz..."
+      "fields": {
+        "firstName": {
+          "label": "Ad",
+          "placeholder": "Adınız"
+        },
+        "lastName": {
+          "label": "Soyad",
+          "placeholder": "Soyadınız"
+        },
+        "email": {
+          "label": "E-posta",
+          "placeholder": "ornek@email.com"
+        },
+        "phone": {
+          "label": "Telefon",
+          "placeholder": "+90 5XX XXX XX XX"
+        },
+        "company": {
+          "label": "Şirket/Kurum",
+          "placeholder": "Şirket veya kurum adınız"
+        },
+        "subject": {
+          "label": "Konu",
+          "placeholder": "Konu seçiniz",
+          "options": {
+            "rf": "RF Sistemleri",
+            "electroOptical": "Elektro-Optik Sistemler",
+            "radar": "Radar Sistemleri",
+            "jammer": "Jammer Sistemleri",
+            "integration": "Sistem Entegrasyonu",
+            "training": "Eğitim ve Destek",
+            "other": "Diğer"
           }
         },
-        "submit": {
-          "sending": "Gönderiliyor...",
-          "send": "Mesaj Gönder"
+        "message": {
+          "label": "Mesaj",
+          "placeholder": "Projeniz hakkında detaylı bilgi veriniz..."
         }
-      }
+      },
+      "submit": "Mesaj Gönder",
+      "submitting": "Gönderiliyor..."
     },
     "contactInfo": {
       "quickContact": {
         "title": "Hızlı İletişim",
-        "description": "7/24 destek hattımız",
-        "phone": "+90 212 954 00 36",
-        "email": "info@bisavunma.com",
+        "subtitle": "7/24 destek hattımız",
         "address": "Yeşilkent Mahallesi Nâzım Hikmet Bulvarı, 2011. Sk. no : 18, 34517 Esenyurt/İstanbul"
       },
       "workingHours": {
         "title": "Çalışma Saatleri",
-        "description": "Pazartesi - Cuma",
-        "schedule": {
-          "weekdays": {
-            "days": "Pazartesi - Cuma",
-            "hours": "09:00 - 18:00"
-          },
-          "saturday": {
-            "days": "Cumartesi",
-            "hours": "09:00 - 16:00"
-          },
-          "sunday": {
-            "days": "Pazar",
-            "hours": "Kapalı"
-          }
-        }
+        "subtitle": "Pazartesi - Cuma",
+        "weekdays": "Pazartesi - Cuma",
+        "saturday": "Cumartesi",
+        "sunday": "Pazar",
+        "closed": "Kapalı"
       }
     },
     "cta": {
       "title": "Projenizi Hemen Başlatalım",
       "description": "Uzman ekibimizle iletişime geçin ve savunma çözümlerinizi birlikte hayata geçirelim.",
       "buttons": {
-        "contactNow": "Hemen İletişime Geç",
-        "callNow": "Hemen Ara"
-      }
-    },
-    "emailModal": {
-      "title": "E-posta Servisi Seçin",
-      "description": "Mesajınızı göndermek için bir e-posta servisi seçin:",
-      "buttons": {
-        "gmail": "Gmail ile Gönder",
-        "outlook": "Outlook ile Gönder",
-        "close": "Kapat"
-      }
-    },
-    "formData": {
-      "subject": "İletişim Formu - {subject}",
-      "body": {
-        "name": "Ad Soyad: {firstName} {lastName}",
-        "email": "E-posta: {email}",
-        "phone": "Telefon: {phone}",
-        "company": "Şirket/Kurum: {company}",
-        "subject": "Konu: {subject}",
-        "message": "Mesaj:\n{message}"
+        "contact": "Hemen İletişime Geç",
+        "call": "Hemen Ara"
       }
     }
   }
 }
-
