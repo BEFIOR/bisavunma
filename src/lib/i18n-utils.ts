@@ -1,5 +1,3 @@
-import { getRequestConfig } from "next-intl/server";
-
 /**
  * Load additional translation files based on namespace
  * This allows you to split large translation files into smaller, more manageable chunks
@@ -22,7 +20,7 @@ export async function loadTranslations(
             `@/data/translations/${namespace}-${locale}.json`
           );
           return { [namespace]: translations.default[namespace] };
-        } catch (error) {
+        } catch {
           console.warn(
             `Translation file ${namespace}-${locale}.json not found`
           );

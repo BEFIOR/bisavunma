@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Link } from "@/i18n";
 import Footer from "@/components/Footer";
 
@@ -12,8 +11,11 @@ export default function Sektorler() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-24 overflow-hidden min-h-screen bg-gray-950">
-        <BackgroundBeams />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-transparent to-transparent" />
+        {/* Optimized Background - Simple gradient instead of heavy SVG animation */}
+        <div className="absolute inset-0 -z-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
+        </div>
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
@@ -31,30 +33,30 @@ export default function Sektorler() {
               </p>
             </div>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4 will-change-transform animate-in fade-in slide-in-from-bottom-2 duration-700 delay-300">
-              <Link
-                href="/sektorler#askeri-tesisler"
+              <a
+                href="#askeri-tesisler"
                 className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
               >
                 {t("hero.navigation.askeriTesisler")}
-              </Link>
-              <Link
-                href="/sektorler#enerji-altyapi"
+              </a>
+              <a
+                href="#enerji-altyapi"
                 className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
               >
                 {t("hero.navigation.enerjiAltyapi")}
-              </Link>
-              <Link
-                href="/sektorler#liman-tersaneler"
+              </a>
+              <a
+                href="#liman-tersaneler"
                 className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
               >
                 {t("hero.navigation.limanTersaneler")}
-              </Link>
-              <Link
-                href="/sektorler#sinir-guvenligi"
+              </a>
+              <a
+                href="#sinir-guvenligi"
                 className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
               >
                 {t("hero.navigation.sinirGuvenligi")}
-              </Link>
+              </a>
             </div>
           </div>
         </div>

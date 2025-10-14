@@ -4,7 +4,26 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Script from "next/script";
+import { Inter, Poppins } from "next/font/google";
 import "../globals.css";
+
+// Optimize font loading with next/font
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
+  fallback: ["system-ui", "arial"],
+});
+
+const poppins = Poppins({
+  weight: ["400", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  preload: true,
+  fallback: ["system-ui", "arial"],
+});
 
 export const metadata: Metadata = {
   title: "Bisavunma",
@@ -25,7 +44,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as "tr" | "en")) {
     notFound();
   }
 
@@ -84,7 +103,9 @@ export default async function LocaleLayout({
           </>
         )}
       </head>
-      <body className="overflow-x-hidden">
+      <body
+        className={`${inter.variable} ${poppins.variable} overflow-x-hidden`}
+      >
         {/* Google Tag Manager (noscript) */}
         {process.env.NEXT_PUBLIC_GTM_ID && (
           <noscript>

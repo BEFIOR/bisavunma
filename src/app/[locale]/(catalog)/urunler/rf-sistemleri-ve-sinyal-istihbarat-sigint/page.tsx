@@ -18,7 +18,7 @@ export default function RfSystemsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 to-black" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
           <div className="text-center">
-            <HeroAnimation direction="fade" delay={0.2}>
+            <HeroAnimation direction="fade" delay={0}>
               <div className="inline-flex items-center gap-2 text-sm text-gray-400 mb-4">
                 <Radio className="w-4 h-4" />
                 <span>
@@ -26,13 +26,13 @@ export default function RfSystemsPage() {
                 </span>
               </div>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.4}>
+            <HeroAnimation direction="up" delay={0.1}>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
                 Radyo Frekans Algılayıcıları
               </h1>
             </HeroAnimation>
 
-            <HeroAnimation direction="up" delay={0.6}>
+            <HeroAnimation direction="up" delay={0.15}>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 İleri düzey frekans analizi ve elektromanyetik istihbarat
                 çözümleri ile radyo frekans alanınızı mutlak denetim altında

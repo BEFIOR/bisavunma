@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Mail, Phone, Clock, Send, MessageCircle } from "lucide-react";
-import DotGrid from "@/components/DotGrid";
+// Removed DotGrid for performance
 import { HeroAnimation } from "@/components/animations/ScrollAnimations";
 import Footer from "@/components/Footer";
 import EmailServiceModal from "@/components/EmailServiceModal";
@@ -91,18 +91,16 @@ ${data.message}
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-24 overflow-hidden min-h-screen">
-        {/* Background DotGrid - only for hero section */}
+        {/* Optimized Background - Simple gradient instead of heavy GSAP animation */}
         <div className="absolute inset-0 -z-20">
-          <DotGrid
-            dotSize={5}
-            gap={25}
-            baseColor="#3d3d3d"
-            activeColor="#7daaf5"
-            proximity={120}
-            shockRadius={250}
-            shockStrength={5}
-            resistance={750}
-            returnDuration={1.5}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-950/20 via-transparent to-transparent" />
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `radial-gradient(circle, #3d3d3d 1px, transparent 1px)`,
+              backgroundSize: "25px 25px",
+            }}
           />
         </div>
 
@@ -110,13 +108,13 @@ ${data.message}
         <div className="absolute inset-0 -z-10 bg-gray-950/80" />
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <HeroAnimation direction="fade" delay={0.2}>
+            <HeroAnimation direction="fade" delay={0}>
               <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
                 {t("hero.badge")}
               </span>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.4}>
+            <HeroAnimation direction="up" delay={0.1}>
               <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
                 {t("hero.title")}{" "}
                 <span className="text-gray-300">
@@ -124,12 +122,12 @@ ${data.message}
                 </span>
               </h1>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.6}>
+            <HeroAnimation direction="up" delay={0.15}>
               <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
                 {t("hero.description")}
               </p>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.8}>
+            <HeroAnimation direction="up" delay={0.2}>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 <a
                   href="#iletisim-formu"

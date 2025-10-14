@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -47,7 +48,7 @@ export const MenuItem = ({
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        {href ? <Link href={href}>{item}</Link> : item}
+        {href ? <Link href={href as any}>{item}</Link> : item}
         <motion.div
           className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 rounded-full"
           initial={{ width: isCurrentPage ? "70%" : "0%" }}
@@ -122,7 +123,7 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2">
+    <Link href={href as any} className="flex space-x-2">
       <Image
         src={src}
         width={140}
@@ -148,7 +149,7 @@ export const HoveredLink = ({
 } & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">) => {
   return (
     <Link
-      href={href}
+      href={href as any}
       {...rest}
       className="text-white/80 hover:text-white transition-all duration-300 font-medium hover:translate-x-1 transform group"
     >
@@ -286,7 +287,7 @@ export const Navbar = ({
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Link href={s.href}>{t(s.key)}</Link>
+                <Link href={s.href as any}>{t(s.key)}</Link>
                 <motion.div
                   className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 rounded-full"
                   initial={{ width: isCurrentPage ? "70%" : "0%" }}
@@ -321,7 +322,7 @@ export const Navbar = ({
                       transition={{ duration: 0.3, delay: itemIndex * 0.1 }}
                     >
                       <Link
-                        href={item.href}
+                        href={item.href as any}
                         className="block text-white/90 hover:text-white font-semibold transition-all duration-300 hover:translate-x-1 transform group relative"
                       >
                         <span className="relative">
@@ -419,7 +420,7 @@ export const Navbar = ({
                         transition={{ duration: 0.3, delay: index * 0.1 }}
                       >
                         <Link
-                          href={s.href}
+                          href={s.href as any}
                           onClick={close}
                           className="block py-4 text-lg font-medium text-white/85 hover:text-white border-b border-white/8 transition-all duration-200 hover:translate-x-1 transform group relative"
                         >
@@ -442,7 +443,7 @@ export const Navbar = ({
                     >
                       <div className="w-full py-4 text-left text-lg font-medium text-white flex items-center justify-between group">
                         <Link
-                          href={s.href}
+                          href={s.href as any}
                           onClick={close}
                           className="hover:text-white transition-all duration-200 hover:translate-x-1 transform relative"
                         >
@@ -490,7 +491,7 @@ export const Navbar = ({
                                   }}
                                 >
                                   <Link
-                                    href={item.href}
+                                    href={item.href as any}
                                     onClick={close}
                                     className="block text-base text-white/80 hover:text-white transition-all duration-200 hover:translate-x-1 transform group relative"
                                   >

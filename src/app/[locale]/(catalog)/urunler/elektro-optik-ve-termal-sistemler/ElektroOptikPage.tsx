@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { WobbleCard } from "@/components/ui/wobble-card";
+// Removed WobbleCard for performance
 import { ChevronRight, Filter, Camera, Crosshair, Sun } from "lucide-react";
 import {
   HeroAnimation,
@@ -98,13 +98,13 @@ export default function ElektroOptikPage({
                 Çok Bantlı Algılayıcılarla Anlık Durum Bilinci
               </h1>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.1}>
+            <HeroAnimation direction="up" delay={0}>
               <p className="text-gray-300 max-w-3xl leading-relaxed">
                 {categoryDescription ??
                   "Elektro-optik ve termal algılama sistemleriyle düşük görünürlüklü tehditleri algıla, izle ve tanımla."}
               </p>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.2}>
+            <HeroAnimation direction="up" delay={0.1}>
               <div className="flex flex-wrap items-center gap-4">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                   {heroStats.map((stat) => (
@@ -125,7 +125,7 @@ export default function ElektroOptikPage({
             </HeroAnimation>
           </HeroStaggerContainer>
 
-          <HeroAnimation direction="up" delay={0.3}>
+          <HeroAnimation direction="up" delay={0.15}>
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {heroHighlights.map(({ title, description, Icon }) => (
                 <div
@@ -158,7 +158,7 @@ export default function ElektroOptikPage({
             {/* Sidebar */}
             <aside className="lg:w-80 flex-shrink-0">
               <div className="sticky top-32">
-                <ScrollAnimation direction="left" delay={0.1}>
+                <ScrollAnimation direction="left" delay={0}>
                   <div className="bg-neutral-900/50 backdrop-blur border border-neutral-800 rounded-xl p-6">
                     <div className="flex items-center gap-2 mb-6">
                       <Filter className="w-5 h-5 text-sky-400" />
@@ -208,7 +208,7 @@ export default function ElektroOptikPage({
 
             {/* Products Grid */}
             <main className="flex-1">
-              <ScrollAnimation direction="up" delay={0.1}>
+              <ScrollAnimation direction="up" delay={0}>
                 <div className="mb-6">
                   <h2 className="text-xl font-semibold text-white mb-2">
                     {selectedSubcategory === "all"
@@ -233,10 +233,7 @@ export default function ElektroOptikPage({
                     return (
                       <StaggerItem key={product.slug} direction="up">
                         <Link href={href} className="group block h-full">
-                          <WobbleCard
-                            containerClassName="h-full bg-neutral-900 border border-neutral-600"
-                            className="p-4 h-full flex flex-col"
-                          >
+                          <div className="h-full bg-neutral-900 border border-neutral-600 p-4 h-full flex flex-col rounded-xl hover:bg-neutral-800 transition-colors">
                             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-neutral-800 flex items-center justify-center">
                               <Image
                                 src={product.image || "/logo.webp"}
@@ -269,7 +266,7 @@ export default function ElektroOptikPage({
                                 </span>
                               )}
                             </div>
-                          </WobbleCard>
+                          </div>
                         </Link>
                       </StaggerItem>
                     );

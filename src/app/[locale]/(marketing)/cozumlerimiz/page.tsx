@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 import {
   Radio,
   Target,
@@ -14,7 +15,6 @@ import {
   Cpu,
   Activity,
 } from "lucide-react";
-import DotGrid from "@/components/DotGrid";
 import {
   ScrollAnimation,
   StaggerContainer,
@@ -22,8 +22,12 @@ import {
   HeroAnimation,
 } from "@/components/animations/ScrollAnimations";
 import { LazyVideo } from "@/components/animations/LazyVideo";
-import Footer from "@/components/Footer";
 import { Link } from "@/i18n";
+
+// Lazy load Footer
+const Footer = dynamic(() => import("@/components/Footer"), {
+  ssr: true,
+});
 
 export default function Cozumlerimiz() {
   const t = useTranslations("cozumlerimiz");
@@ -31,61 +35,56 @@ export default function Cozumlerimiz() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-24 overflow-hidden min-h-screen">
-        {/* Background DotGrid - only for hero section */}
+        {/* Optimized Background - Simple gradient instead of heavy GSAP animation */}
         <div className="absolute inset-0 -z-20">
-          <DotGrid
-            dotSize={5}
-            gap={25}
-            baseColor="#3d3d3d"
-            activeColor="#7daaf5"
-            proximity={120}
-            shockRadius={250}
-            shockStrength={5}
-            resistance={750}
-            returnDuration={1.5}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-950/20 via-transparent to-transparent" />
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `radial-gradient(circle, #3d3d3d 1px, transparent 1px)`,
+              backgroundSize: "25px 25px",
+            }}
           />
         </div>
-
-        {/* Background Overlay - only for hero section */}
-        <div className="absolute inset-0 -z-10 bg-gray-950/80" />
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <HeroAnimation direction="fade" delay={0.2}>
+            <HeroAnimation direction="fade" delay={0}>
               <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
                 {t("hero.badge")}
               </span>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.4}>
+            <HeroAnimation direction="up" delay={0.1}>
               <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
                 {t("hero.title")}
               </h1>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.6}>
+            <HeroAnimation direction="up" delay={0.15}>
               <p className="mt-6 text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 {t("hero.description")}
               </p>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.8}>
+            <HeroAnimation direction="up" delay={0.2}>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <Link
-                  href="/cozumlerimiz#sistem-konfigurasyonu"
+                <a
+                  href="#sistem-konfigurasyonu"
                   className="inline-flex items-center justify-center rounded-lg bg-gray-900 text-white px-8 py-4 text-base font-semibold hover:bg-black transition-colors"
                 >
                   {t("hero.navigation.systemConfig")}
-                </Link>
-                <Link
-                  href="/cozumlerimiz#savunma-cozumleri"
+                </a>
+                <a
+                  href="#savunma-cozumleri"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   {t("hero.navigation.defenseSolutions")}
-                </Link>
-                <Link
-                  href="/cozumlerimiz#entegre-guvenlik"
+                </a>
+                <a
+                  href="#entegre-guvenlik"
                   className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
                 >
                   {t("hero.navigation.integratedSecurity")}
-                </Link>
+                </a>
               </div>
             </HeroAnimation>
           </div>
@@ -442,7 +441,7 @@ export default function Cozumlerimiz() {
           <ScrollAnimation direction="up" delay={0.6}>
             <p className="mt-3 text-gray-300">{t("cta.description")}</p>
           </ScrollAnimation>
-          <ScrollAnimation direction="up" delay={0.8}>
+          <ScrollAnimation direction="up" delay={0.2}>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/iletisim"

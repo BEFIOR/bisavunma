@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n";
+import dynamic from "next/dynamic";
 import {
   Radio,
   Shield,
@@ -13,18 +14,37 @@ import {
   ArrowRight,
 } from "@/lib/icons";
 import {
-  ScrollAnimation,
   StaggerContainer,
   StaggerItem,
   ScaleAnimation,
   HeroAnimation,
   HeroStaggerContainer,
+  ScrollAnimation,
 } from "@/components/animations/ScrollAnimations";
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
-import { ShinyText } from "@/components/ShinyText";
-import Footer from "@/components/Footer";
-import ServicesAccordion from "@/components/ServicesAccordion";
-import GallerySlider from "@/components/GallerySlider";
+
+// Lazy load heavy components to reduce initial bundle
+const Footer = dynamic(() => import("@/components/Footer"), {
+  ssr: true,
+});
+
+const ServicesAccordion = dynamic(
+  () => import("@/components/ServicesAccordion"),
+  {
+    ssr: true,
+  }
+);
+
+// Lazy load GallerySlider - 48 görsel içerdiği için LCP'yi etkiliyor
+const GallerySlider = dynamic(() => import("@/components/GallerySlider"), {
+  loading: () => (
+    <div className="relative">
+      <div className="aspect-[4/3] bg-gradient-to-br from-gray-800/50 to-gray-900/80 rounded-3xl border border-gray-700/50 shadow-2xl animate-pulse flex items-center justify-center">
+        <div className="text-gray-400 text-sm">Galeri yükleniyor...</div>
+      </div>
+    </div>
+  ),
+  ssr: false,
+});
 
 export default function Home() {
   const t = useTranslations("home");
@@ -35,22 +55,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <HeroStaggerContainer
             className="space-y-10 md:space-y-12"
-            staggerDelay={0.2}
+            staggerDelay={0.05}
           >
             {/* Main Headlines */}
             <div className="space-y-8 pt-6 md:pt-16">
-              <HeroAnimation direction="fade" delay={0.2}>
-                <div className="hidden md:block notranslate">
-                  <TextHoverEffect text="BİSAVUNMA" />
-                </div>
-                <div className="block md:hidden notranslate">
-                  <ShinyText
-                    text="BİSAVUNMA"
-                    className="text-[clamp(2.5rem,_12vw,_4rem)] font-poppins-bold"
-                  />
-                </div>
+              <HeroAnimation direction="fade" delay={0}>
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-poppins-bold text-white notranslate tracking-tight">
+                  BİSAVUNMA
+                </h1>
               </HeroAnimation>
-              <HeroAnimation direction="up" delay={0.4}>
+              <HeroAnimation direction="up" delay={0.1}>
                 <h2 className="text-base md:text-2xl text-gray-300 font-poppins-light max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-12">
                   {t("hero.subtitle")}
                   <br />
@@ -70,7 +84,7 @@ export default function Home() {
                 </h2>
               </HeroAnimation>
 
-              <HeroAnimation direction="up" delay={0.6}>
+              <HeroAnimation direction="up" delay={0.15}>
                 <p className="text-sm md:text-lg text-gray-400 max-w-3xl md:max-w-5xl mx-auto leading-relaxed font-inter-regular px-12">
                   {t.rich("hero.description", {
                     optimumSolutions: (chunks) => (
@@ -91,7 +105,7 @@ export default function Home() {
             </div>
 
             {/* Key Features */}
-            <HeroAnimation direction="up" delay={0.8}>
+            <HeroAnimation direction="up" delay={0.2}>
               <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-gray-300 font-inter-medium text-sm sm:text-base">
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-sky-400" />
@@ -113,7 +127,7 @@ export default function Home() {
             </HeroAnimation>
 
             {/* Call to Action */}
-            <HeroAnimation direction="up" delay={1.0}>
+            <HeroAnimation direction="up" delay={0.25}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 px-12">
                 <Link
                   href="/urunler"
@@ -433,27 +447,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Optimized with CSS animations */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-gray-900 to-black" />
         <div className="absolute inset-0 -z-20 bg-[url('data:image/svg+xml,%3Csvg width=\'160\' height=\'160\' viewBox=\'0 0 160 160\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' stroke=\'%23222\' stroke-width=\'0.5\'%3E%3Cpath d=\'M0 80h160M80 0v160\'/%3E%3C/g%3E%3C/svg%3E')] opacity-10" />
         <div className="max-w-4xl mx-auto text-center">
-          <ScrollAnimation direction="fade">
+          <div className="animate-in fade-in duration-500">
             <span className="inline-flex items-center gap-2 rounded-full bg-emerald-400/10 ring-1 ring-emerald-400/20 px-3 py-1 text-xs font-medium text-emerald-200">
               {t("cta.badge")}
             </span>
-          </ScrollAnimation>
-          <ScrollAnimation direction="up" delay={0.2}>
+          </div>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
             <h2 className="mt-4 text-3xl md:text-4xl font-poppins-bold tracking-tight text-white">
               {t("cta.title")}
             </h2>
-          </ScrollAnimation>
-          <ScrollAnimation direction="up" delay={0.4}>
+          </div>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
             <p className="mt-4 text-lg md:text-xl text-gray-300 font-inter-regular">
               {t("cta.description")}
             </p>
-          </ScrollAnimation>
-          <ScrollAnimation direction="up" delay={0.6}>
+          </div>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/iletisim"
@@ -468,13 +482,13 @@ export default function Home() {
                 {t("cta.buttons.demo")}
               </Link>
             </div>
-          </ScrollAnimation>
-          <ScrollAnimation direction="fade" delay={0.8}>
+          </div>
+          <div className="animate-in fade-in duration-500 delay-700">
             <div
               aria-hidden
               className="mx-auto mt-10 h-px w-2/3 bg-gradient-to-r from-transparent via-emerald-300/40 to-transparent"
             />
-          </ScrollAnimation>
+          </div>
         </div>
       </section>
 

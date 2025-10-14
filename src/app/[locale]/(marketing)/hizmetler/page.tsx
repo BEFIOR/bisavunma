@@ -14,7 +14,7 @@ import {
   Wrench,
   ChevronDown,
 } from "lucide-react";
-import DotGrid from "@/components/DotGrid";
+// Removed DotGrid for performance
 import {
   ScrollAnimation,
   HeroAnimation,
@@ -28,18 +28,16 @@ export default function Hizmetler() {
       <div>
         {/* Hero Section */}
         <section id="hero" className="relative pt-24 overflow-hidden h-screen">
-          {/* Background DotGrid - only for hero section */}
+          {/* Optimized Background - Simple gradient instead of heavy GSAP animation */}
           <div className="absolute inset-0 -z-20">
-            <DotGrid
-              dotSize={5}
-              gap={25}
-              baseColor="#3d3d3d"
-              activeColor="#7daaf5"
-              proximity={120}
-              shockRadius={250}
-              shockStrength={5}
-              resistance={750}
-              returnDuration={1.5}
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-950/20 via-transparent to-transparent" />
+            <div
+              className="absolute inset-0 opacity-30"
+              style={{
+                backgroundImage: `radial-gradient(circle, #3d3d3d 1px, transparent 1px)`,
+                backgroundSize: "25px 25px",
+              }}
             />
           </div>
 
@@ -47,13 +45,13 @@ export default function Hizmetler() {
           <div className="absolute inset-0 -z-10 bg-gray-950/80" />
           <div className="flex items-center justify-center min-h-screen">
             <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-              <HeroAnimation direction="fade" delay={0.2}>
+              <HeroAnimation direction="fade" delay={0}>
                 <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />{" "}
                   {t("hero.badge")}
                 </span>
               </HeroAnimation>
-              <HeroAnimation direction="up" delay={0.4}>
+              <HeroAnimation direction="up" delay={0.1}>
                 <h1 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight text-white">
                   {t("hero.title")}{" "}
                   <span className="text-gray-300">
@@ -61,12 +59,12 @@ export default function Hizmetler() {
                   </span>
                 </h1>
               </HeroAnimation>
-              <HeroAnimation direction="up" delay={0.6}>
+              <HeroAnimation direction="up" delay={0.15}>
                 <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
                   {t("hero.description")}
                 </p>
               </HeroAnimation>
-              <HeroAnimation direction="up" delay={0.8}>
+              <HeroAnimation direction="up" delay={0.2}>
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                   <a
                     href="#saha-kesfi"
@@ -100,13 +98,13 @@ export default function Hizmetler() {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100 via-transparent to-transparent dark:from-gray-900" />
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-14">
-              <ScrollAnimation direction="fade" delay={0.2}>
+              <ScrollAnimation direction="fade" delay={0}>
                 <span className="inline-flex items-center gap-2 rounded-full bg-blue-900/20 px-4 py-1.5 text-xs font-medium text-blue-300">
                   <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />{" "}
                   {t("fieldSurvey.badge")}
                 </span>
               </ScrollAnimation>
-              <ScrollAnimation direction="up" delay={0.4}>
+              <ScrollAnimation direction="up" delay={0.1}>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
                   {t("fieldSurvey.title")}{" "}
                   <span className="text-blue-300">
@@ -114,7 +112,7 @@ export default function Hizmetler() {
                   </span>
                 </h2>
               </ScrollAnimation>
-              <ScrollAnimation direction="up" delay={0.6}>
+              <ScrollAnimation direction="up" delay={0.15}>
                 <p className="mt-4 text-gray-300 max-w-4xl mx-auto">
                   {t("fieldSurvey.description")}
                 </p>

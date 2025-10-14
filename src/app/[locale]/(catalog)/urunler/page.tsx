@@ -1,5 +1,6 @@
 import { listCategories } from "@/server/repositories/categories";
-import FlowingMenu from "@/components/FlowingMenu";
+import Image from "next/image";
+// Removed FlowingMenu for performance
 
 const categories = await listCategories();
 
@@ -27,7 +28,32 @@ export default function Urunler() {
         </div>
       </section>
       <section className="min-h-[70vh]">
-        <FlowingMenu items={items} />
+        {/* Optimized Category Grid - Simple grid instead of heavy GSAP animation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8">
+          {items.map((item) => (
+            <a
+              key={item.link}
+              href={item.link}
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105"
+            >
+              <div className="aspect-video relative overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.text}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-white font-semibold text-lg">
+                    {item.text}
+                  </h3>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </section>
     </div>
   );

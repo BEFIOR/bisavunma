@@ -3,6 +3,7 @@ import { getProductsByCategorySlug } from "@/lib/products";
 import { getCachedProduct } from "@/lib/loaders";
 import type { DbProduct } from "@/lib/products";
 import Image from "next/image";
+import Link from "next/link";
 import ProductTracking from "@/components/ProductTracking";
 
 export const revalidate = 300; // Cache for 5 minutes
@@ -174,17 +175,17 @@ function MainContent({
               DJI Türkiye Enterprise çözümleri için teklif alın ve uzman
               ekibimizden destek isteyin.
             </p>
-            <a
+            <Link
               href="/iletisim"
               className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-sky-600 px-4 py-2.5 text-white font-medium hover:bg-sky-500"
             >
               Teklif Al
-            </a>
+            </Link>
             <div className="mt-4 text-xs text-gray-500">
               Kategori:{" "}
-              <a className="text-sky-400 hover:text-sky-300" href={basePath}>
+              <Link className="text-sky-400 hover:text-sky-300" href={basePath}>
                 DJI Türkiye Enterprise
-              </a>
+              </Link>
             </div>
           </div>
         </aside>

@@ -85,7 +85,7 @@ export default async function Page() {
                 ></iframe>
               </div>
             </HeroScaleAnimation>
-            <HeroAnimation direction="up" delay={0.1}>
+            <HeroAnimation direction="up" delay={0}>
               <div className="flex flex-col items-center gap-3 text-center">
                 <h1 className="text-3xl font-bold text-white">
                   DJI Türkiye Enterprise
@@ -101,7 +101,7 @@ export default async function Page() {
                 </Link>
               </div>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.2}>
+            <HeroAnimation direction="up" delay={0.1}>
               <p className="text-gray-300 max-w-3xl mx-auto">
                 Bisavunma olarak, DJI Enterprise resmi bayisi olmanın
                 güvencesiyle; kapsamlı ürün portföyümüz, eğitim ve yazılım
@@ -109,7 +109,7 @@ export default async function Page() {
                 sektörden firmaya özel sistemler sunuyoruz.
               </p>
             </HeroAnimation>
-            <HeroAnimation direction="up" delay={0.3}>
+            <HeroAnimation direction="up" delay={0.15}>
               <ul className="space-y-2 list-disc pl-6 marker:text-blue-400 text-left text-sm sm:text-base">
                 <li>
                   <span className="font-medium text-white">
@@ -140,7 +140,7 @@ export default async function Page() {
             </HeroAnimation>
           </HeroStaggerContainer>
         </div>
-        <ScrollAnimation direction="up" delay={0.2}>
+        <ScrollAnimation direction="up" delay={0}>
           <div className="-mx-2 overflow-x-auto pb-2 mt-12">
             <StaggerContainer
               className="flex flex-col lg:flex-row gap-4 px-2 justify-center items-center"

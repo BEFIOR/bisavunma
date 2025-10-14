@@ -1,28 +1,29 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Font Variables */
+/* Font Variables - Now using next/font/google optimized fonts */
 :root {
-  --font-poppins-thin: 'Poppins', sans-serif;
-  --font-poppins-extralight: 'Poppins', sans-serif;
-  --font-poppins-light: 'Poppins', sans-serif;
-  --font-poppins-regular: 'Poppins', sans-serif;
-  --font-poppins-medium: 'Poppins', sans-serif;
-  --font-poppins-semibold: 'Poppins', sans-serif;
-  --font-poppins-bold: 'Poppins', sans-serif;
-  --font-poppins-extrabold: 'Poppins', sans-serif;
-  --font-poppins-black: 'Poppins', sans-serif;
+  /* Poppins variants */
+  --font-poppins-thin: var(--font-poppins), sans-serif;
+  --font-poppins-extralight: var(--font-poppins), sans-serif;
+  --font-poppins-light: var(--font-poppins), sans-serif;
+  --font-poppins-regular: var(--font-poppins), sans-serif;
+  --font-poppins-medium: var(--font-poppins), sans-serif;
+  --font-poppins-semibold: var(--font-poppins), sans-serif;
+  --font-poppins-bold: var(--font-poppins), sans-serif;
+  --font-poppins-extrabold: var(--font-poppins), sans-serif;
+  --font-poppins-black: var(--font-poppins), sans-serif;
   
-  --font-inter-thin: 'Inter', sans-serif;
-  --font-inter-extralight: 'Inter', sans-serif;
-  --font-inter-light: 'Inter', sans-serif;
-  --font-inter-regular: 'Inter', sans-serif;
-  --font-inter-medium: 'Inter', sans-serif;
-  --font-inter-semibold: 'Inter', sans-serif;
-  --font-inter-bold: 'Inter', sans-serif;
-  --font-inter-extrabold: 'Inter', sans-serif;
-  --font-inter-black: 'Inter', sans-serif;
+  /* Inter variants */
+  --font-inter-thin: var(--font-inter), sans-serif;
+  --font-inter-extralight: var(--font-inter), sans-serif;
+  --font-inter-light: var(--font-inter), sans-serif;
+  --font-inter-regular: var(--font-inter), sans-serif;
+  --font-inter-medium: var(--font-inter), sans-serif;
+  --font-inter-semibold: var(--font-inter), sans-serif;
+  --font-inter-bold: var(--font-inter), sans-serif;
+  --font-inter-extrabold: var(--font-inter), sans-serif;
+  --font-inter-black: var(--font-inter), sans-serif;
 }
 
 /* Poppins Font Utility Classes */
