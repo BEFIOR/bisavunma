@@ -1,9 +1,8 @@
 "use client";
-
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-// Removed WobbleCard for performance
+import { useTranslations } from "next-intl";
 import { ChevronRight, Filter, Camera, Crosshair, Sun } from "lucide-react";
 import {
   HeroAnimation,
@@ -32,30 +31,31 @@ export default function ElektroOptikPage({
   effectiveSlug,
   categoryDescription,
 }: PageProps) {
+  const t = useTranslations("elektroOptik");
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>("all");
 
   const heroHighlights = [
     {
-      title: "Çok Spektral İzleme",
-      description: "UV'den uzun dalga IR'a kadar geniş bantta keşif.",
+      title: t("highlights.multispectral.title"),
+      description: t("highlights.multispectral.description"),
       Icon: Sun,
     },
     {
-      title: "Uzun Menzil Algılama",
-      description: "Stabilize optikler ve akıllı izleme algoritmaları.",
+      title: t("highlights.longRange.title"),
+      description: t("highlights.longRange.description"),
       Icon: Crosshair,
     },
     {
-      title: "Operasyonel Uyumluluk",
-      description: "Araç, kule ve sabit tesisler için modüler entegrasyon.",
+      title: t("highlights.operational.title"),
+      description: t("highlights.operational.description"),
       Icon: Camera,
     },
   ] as const;
 
   const heroStats = [
-    { label: "Spektral Alan", value: "400 nm – 14 µm" },
-    { label: "Büyütme Oranı", value: "120x hibrit" },
-    { label: "Platform", value: "Sabit & hareketli" },
+    { label: t("stats.spectralRange"), value: "400 nm – 14 µm" },
+    { label: t("stats.magnification"), value: "120x hibrit" },
+    { label: t("stats.platform"), value: "Sabit & hareketli" },
   ] as const;
 
   // Get unique subcategories from products
@@ -64,14 +64,14 @@ export default function ElektroOptikPage({
       new Set(products.map((p) => p.altCategory).filter(Boolean))
     );
     return [
-      { slug: "all", title: "Bütün Ürünler", count: products.length },
+      { slug: "all", title: t("sidebar.allProducts"), count: products.length },
       ...unique.map((sub) => ({
         slug: sub!,
         title: sub!,
         count: products.filter((p) => p.altCategory === sub).length,
       })),
     ];
-  }, [products]);
+  }, [products, t]);
 
   // Filter products based on selected subcategory
   const filteredProducts = useMemo(() => {
@@ -90,18 +90,17 @@ export default function ElektroOptikPage({
           <HeroStaggerContainer className="space-y-6">
             <HeroAnimation direction="fade">
               <span className="inline-flex items-center gap-2 rounded-full border border-sky-500/40 bg-sky-500/10 px-3 py-1 text-xs uppercase tracking-wider text-sky-200">
-                Elektro-Optik Sistem Paketi
+                {t("badge")}
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up">
               <h1 className="text-3xl lg:text-5xl font-bold text-white">
-                Çok Bantlı Algılayıcılarla Anlık Durum Bilinci
+                {t("heroTitle")}
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0}>
               <p className="text-gray-300 max-w-3xl leading-relaxed">
-                {categoryDescription ??
-                  "Elektro-optik ve termal algılama sistemleriyle düşük görünürlüklü tehditleri algıla, izle ve tanımla."}
+                {categoryDescription ?? t("heroDescription")}
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.1}>
@@ -163,7 +162,7 @@ export default function ElektroOptikPage({
                     <div className="flex items-center gap-2 mb-6">
                       <Filter className="w-5 h-5 text-sky-400" />
                       <h2 className="text-lg font-semibold text-white">
-                        Alt Sınıflandırmalar
+                        {t("sidebar.title")}
                       </h2>
                     </div>
 
@@ -212,13 +211,13 @@ export default function ElektroOptikPage({
                 <div className="mb-6">
                   <h2 className="text-xl font-semibold text-white mb-2">
                     {selectedSubcategory === "all"
-                      ? "Bütün Ürünler"
+                      ? t("sidebar.allProducts")
                       : subcategories.find(
                           (s) => s.slug === selectedSubcategory
                         )?.title}
                   </h2>
                   <p className="text-gray-400">
-                    {filteredProducts.length} ürün listeleniyor
+                    {filteredProducts.length} {t("products.listing")}
                   </p>
                 </div>
               </ScrollAnimation>
@@ -233,7 +232,7 @@ export default function ElektroOptikPage({
                     return (
                       <StaggerItem key={product.slug} direction="up">
                         <Link href={href} className="group block h-full">
-                          <div className="h-full bg-neutral-900 border border-neutral-600 p-4 h-full flex flex-col rounded-xl hover:bg-neutral-800 transition-colors">
+                          <div className="h-full bg-neutral-900 border border-neutral-600 p-4 flex flex-col rounded-xl hover:bg-neutral-800 transition-colors">
                             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-neutral-800 flex items-center justify-center">
                               <Image
                                 src={product.image || "/logo.webp"}
@@ -255,7 +254,7 @@ export default function ElektroOptikPage({
                             </div>
                             <div className="mt-4 flex items-center justify-between">
                               <span className="inline-flex items-center text-sm text-sky-400 group-hover:text-sky-300">
-                                Detay
+                                {t("products.detail")}
                                 <span className="ml-1 transition-transform duration-200 group-hover:translate-x-0.5">
                                   →
                                 </span>
@@ -277,12 +276,8 @@ export default function ElektroOptikPage({
                   <div className="text-center py-12">
                     <div className="text-gray-400 mb-4">
                       <Filter className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                      <p className="text-lg">
-                        Bu alt sınıflandırmada ürün mevcut değil.
-                      </p>
-                      <p className="text-sm mt-2">
-                        Başka bir alt sınıflandırma seçmeyi deneyin.
-                      </p>
+                      <p className="text-lg">{t("products.noProducts")}</p>
+                      <p className="text-sm mt-2">{t("products.tryOther")}</p>
                     </div>
                   </div>
                 </ScrollAnimation>

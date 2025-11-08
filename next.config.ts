@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
   output: "standalone",
   outputFileTracingRoot: __dirname,
   
-  // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? {
       exclude: ["error", "warn"],
@@ -18,7 +17,6 @@ const nextConfig: NextConfig = {
   // Modern JavaScript output for better performance
   experimental: {
     optimizePackageImports: [
-      "lucide-react",
       "framer-motion",
       "swiper",
       "@radix-ui/react-slot",
@@ -31,6 +29,13 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000, // 1 year
+    unoptimized: false,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
   
   async headers() {
@@ -78,9 +83,29 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Enable back/forward cache
+      // Admin routes - no cache for security
       {
-        source: '/:path*',
+        source: '/admin/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'private, no-store, no-cache, must-revalidate',
+          },
+        ],
+      },
+      // API routes - no cache
+      {
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'private, no-store, no-cache, must-revalidate',
+          },
+        ],
+      },
+      // Public marketing pages - safe to cache
+      {
+        source: '/((?!admin|api|_next|static|cozumler|products).*)',
         headers: [
           {
             key: 'Cache-Control',

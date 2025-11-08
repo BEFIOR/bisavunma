@@ -1,13 +1,25 @@
 import { getProductsByCategorySlug } from "@/lib/products";
 import { getCategoryBySlug } from "@/server/repositories/categories";
+import { getTranslations } from "next-intl/server";
 import RadarPage from "./RadarPage";
 
-export const metadata = {
-  title: "Radar Sistemleri | Ürünler",
-  description: "Radar sistemleri ve radar tabanlı çözümler için ürün kataloğu.",
-};
+export const dynamic = "force-dynamic";
 
-export const revalidate = 60;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("radar");
+
+  return {
+    title: `${t("title")} | ${locale === "en" ? "Products" : "Ürünler"}`,
+    description: t("description"),
+  };
+}
+
+export const revalidate = 0;
 
 export default async function Page() {
   const slug = "radar-sistemleri";

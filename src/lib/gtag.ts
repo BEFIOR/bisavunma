@@ -7,6 +7,19 @@ declare global {
   }
 }
 
+// Asenkron tracking için yardımcı fonksiyon
+// requestIdleCallback kullanarak ana thread'i bloklamadan tracking yapar
+const scheduleAsync = (callback: () => void) => {
+  if (typeof window === 'undefined') return;
+
+  if (window.requestIdleCallback) {
+    window.requestIdleCallback(callback, { timeout: 2000 });
+  } else {
+    // Fallback: setTimeout ile asenkron yap
+    setTimeout(callback, 0);
+  }
+};
+
 // Google Analytics event tracking
 export const trackEvent = (action: string, category: string, label?: string, value?: number) => {
   if (typeof window !== 'undefined' && window.gtag) {
@@ -29,10 +42,10 @@ export const trackConversion = (conversionId: string, conversionLabel: string, v
   }
 };
 
-// Sayfa görüntüleme tracking
+// Sayfa görüntüleme tracking (Google Analytics kullanılıyorsa)
 export const trackPageView = (url: string, title?: string) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!, {
+  if (typeof window !== 'undefined' && window.gtag && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
+    window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID, {
       page_title: title || document.title,
       page_location: url,
     });
@@ -46,26 +59,34 @@ export const trackCustomEvent = (eventName: string, parameters?: Record<string, 
   }
 };
 
-// Form submission tracking
+// Form submission tracking - asenkron
 export const trackFormSubmission = (formName: string, formType: string) => {
-  trackEvent('form_submit', 'engagement', `${formName}_${formType}`);
+  scheduleAsync(() => {
+    trackEvent('form_submit', 'engagement', `${formName}_${formType}`);
+  });
 };
 
-// Button click tracking
+// Button click tracking - asenkron
 export const trackButtonClick = (buttonName: string, location: string) => {
-  trackEvent('click', 'engagement', `${buttonName}_${location}`);
+  scheduleAsync(() => {
+    trackEvent('click', 'engagement', `${buttonName}_${location}`);
+  });
 };
 
-// Contact form tracking
+// Contact form tracking - asenkron
 export const trackContactForm = (formType: 'contact' | 'newsletter' | 'quote') => {
-  trackEvent('form_submit', 'contact', formType);
+  scheduleAsync(() => {
+    trackEvent('form_submit', 'contact', formType);
+  });
 };
 
-// Product page view tracking
+// Product page view tracking - asenkron
 export const trackProductView = (productName: string, category: string) => {
-  trackEvent('view_item', 'ecommerce', productName);
-  trackCustomEvent('product_view', {
-    product_name: productName,
-    product_category: category,
+  scheduleAsync(() => {
+    trackEvent('view_item', 'ecommerce', productName);
+    trackCustomEvent('product_view', {
+      product_name: productName,
+      product_category: category,
+    });
   });
 };

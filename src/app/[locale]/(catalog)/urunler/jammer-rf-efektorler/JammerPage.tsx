@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import {
   Filter,
   Shield,
@@ -35,68 +36,63 @@ interface PageProps {
   categoryDescription?: string;
 }
 
-const capabilityHighlights = [
-  {
-    title: "Frekans Spektrum Kontrolü",
-    description:
-      "Çok bantlı engelleme, seçici süzme ve uyarlanabilir güç yönetimi ile karmaşık tehditlere anlık tepki.",
-    Icon: Waves,
-  },
-  {
-    title: "Platform Bütünleştirme",
-    description:
-      "Sabit tesislerden hareketli araçlara kadar farklı platformlarda hızlı yerleştirme ve enerji verimliliği.",
-    Icon: Shield,
-  },
-  {
-    title: "Operasyonel Devamlılık",
-    description:
-      "Uzaktan kontrol, durum izleme ve yedekli parçalarla 7/24 hazır güç koruması.",
-    Icon: ShieldCheck,
-  },
-];
-
-const deploymentScenarios = [
-  {
-    title: "Kritik Altyapı",
-    description:
-      "Havalimanı, enerji santrali ve kamu tesislerinde yetkisiz drone etkinliklerine karşı etkili engel.",
-    Icon: WifiOff,
-  },
-  {
-    title: "Hareketli Operasyon",
-    description:
-      "Konvoy, VIP koruma ve taktik birlikler için araç üstü veya sırt çantalı karıştırıcı sistemleri.",
-    Icon: Radio,
-  },
-  {
-    title: "Sınır Güvenliği",
-    description:
-      "Uyarlanabilir anten sistemleriyle uzun menzilde düşman haberleşme ağlarını bozan alan düzenlemeleri.",
-    Icon: Satellite,
-  },
-];
-
 export default function JammerPage({
   products,
   effectiveSlug,
   categoryDescription,
 }: PageProps) {
+  const t = useTranslations("jammer");
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>("all");
+
+  const capabilityHighlights = [
+    {
+      title: t("highlights.spectrumControl.title"),
+      description: t("highlights.spectrumControl.description"),
+      Icon: Waves,
+    },
+    {
+      title: t("highlights.platformIntegration.title"),
+      description: t("highlights.platformIntegration.description"),
+      Icon: Shield,
+    },
+    {
+      title: t("highlights.operationalContinuity.title"),
+      description: t("highlights.operationalContinuity.description"),
+      Icon: ShieldCheck,
+    },
+  ] as const;
+
+  const deploymentScenarios = [
+    {
+      title: t("deploymentScenarios.criticalInfrastructure.title"),
+      description: t("deploymentScenarios.criticalInfrastructure.description"),
+      Icon: WifiOff,
+    },
+    {
+      title: t("deploymentScenarios.mobileOperations.title"),
+      description: t("deploymentScenarios.mobileOperations.description"),
+      Icon: Radio,
+    },
+    {
+      title: t("deploymentScenarios.borderSecurity.title"),
+      description: t("deploymentScenarios.borderSecurity.description"),
+      Icon: Satellite,
+    },
+  ] as const;
 
   const subcategories = useMemo(() => {
     const unique = Array.from(
       new Set(products.map((p) => p.altCategory).filter(Boolean))
     );
     return [
-      { slug: "all", title: "Bütün Ürünler", count: products.length },
+      { slug: "all", title: t("sidebar.allProducts"), count: products.length },
       ...unique.map((sub) => ({
         slug: sub!,
         title: sub!,
         count: products.filter((p) => p.altCategory === sub).length,
       })),
     ];
-  }, [products]);
+  }, [products, t]);
 
   const filteredProducts = useMemo(() => {
     if (selectedSubcategory === "all") return products;
@@ -112,12 +108,12 @@ export default function JammerPage({
           <HeroStaggerContainer staggerDelay={0.2}>
             <HeroAnimation direction="fade" delay={0}>
               <span className="inline-flex items-center gap-2 rounded-full border border-amber-600/30 bg-amber-500/10 px-4 py-1 text-xs uppercase tracking-widest text-amber-300">
-                RF Karşı Önlem
+                {t("badge")}
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.1}>
               <h1 className="mt-6 text-4xl lg:text-5xl font-bold text-white">
-                Karıştırıcı ve RF Etkileyici Sistemleri
+                {t("heroTitle")}
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.2}>
@@ -125,9 +121,7 @@ export default function JammerPage({
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.3}>
               <p className="mt-6 max-w-3xl text-lg text-gray-300 leading-relaxed">
-                Baştan sona elektronik savaş yetenekleri; taktik alanda, kritik
-                altyapıda ve yüksek risk ortamlarında haberleşme ve drone
-                tehditlerini engellemek için geliştirildi.
+                {categoryDescription ?? t("heroDescription")}
               </p>
             </HeroAnimation>
             {categoryDescription && (
@@ -171,7 +165,7 @@ export default function JammerPage({
                   <div className="flex items-center gap-2">
                     <Filter className="w-5 h-5 text-amber-300" />
                     <h2 className="text-lg font-semibold text-white">
-                      Alt Sınıflandırmalar
+                      {t("sidebar.title")}
                     </h2>
                   </div>
                   {selectedSubcategory !== "all" && (
@@ -179,7 +173,7 @@ export default function JammerPage({
                       onClick={() => setSelectedSubcategory("all")}
                       className="text-xs text-gray-400 hover:text-amber-200 underline-offset-2 hover:underline"
                     >
-                      Temizle
+                      {t("sidebar.clear")}
                     </button>
                   )}
                 </div>
@@ -226,17 +220,15 @@ export default function JammerPage({
                   <Sparkles className="h-6 w-6" />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-white">
-                  Operasyon Hazırlığı
+                  {t("operationalReadiness.title")}
                 </h3>
                 <p className="mt-2 text-sm text-gray-400 leading-relaxed">
-                  Sahadaki karıştırıcı düzenlemeleri için keşif, RF spektrum
-                  analizi ve test yayınlarıyla teslimat öncesi doğrulama
-                  sağlıyoruz.
+                  {t("operationalReadiness.description")}
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-gray-300">
-                  <li>• Uyarlanabilir anten ve güç modülleri</li>
-                  <li>• Uzaktan izleme & alarm yönetimi</li>
-                  <li>• Eğitim, sertifikasyon ve saha desteği</li>
+                  <li>• {t("operationalReadiness.features.0")}</li>
+                  <li>• {t("operationalReadiness.features.1")}</li>
+                  <li>• {t("operationalReadiness.features.2")}</li>
                 </ul>
               </div>
             </ScrollAnimation>
@@ -269,18 +261,17 @@ export default function JammerPage({
                 <div>
                   <h2 className="text-2xl font-semibold text-white">
                     {selectedSubcategory === "all"
-                      ? "Bütün Ürünler"
+                      ? t("sidebar.allProducts")
                       : subcategories.find(
                           (s) => s.slug === selectedSubcategory
                         )?.title}
                   </h2>
                   <p className="text-sm text-gray-400">
-                    {filteredProducts.length} ürün listeleniyor
+                    {filteredProducts.length} {t("products.listing")}
                   </p>
                 </div>
                 <p className="text-sm text-gray-500 max-w-2xl">
-                  Elektronik savaş gereksinimlerinize göre bant, güç ve platform
-                  seçimi yapabileceğiniz karıştırıcı portföyümüz.
+                  {t("products.portfolioDescription")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -320,7 +311,7 @@ export default function JammerPage({
                               </div>
                               <div className="mt-4 flex items-center justify-between text-sm">
                                 <span className="inline-flex items-center text-amber-300 group-hover:text-amber-200 transition-transform duration-200 group-hover:translate-x-0.5">
-                                  Detay →
+                                  {t("products.detail")} →
                                 </span>
                                 {product.altCategory && (
                                   <span className="rounded-full border border-neutral-700 px-2 py-0.5 text-[11px] text-gray-400">
@@ -361,11 +352,10 @@ export default function JammerPage({
                 <div className="rounded-2xl border border-neutral-800 bg-neutral-900/60 py-12 text-center">
                   <Filter className="w-12 h-12 mx-auto text-amber-200/60 mb-4" />
                   <p className="text-lg text-gray-300">
-                    Bu alt sınıflandırmada ürün mevcut değil.
+                    {t("products.noProducts")}
                   </p>
                   <p className="mt-2 text-sm text-gray-500">
-                    Başka bir alt sınıflandırma seçmeyi veya filtreyi
-                    temizlemeyi deneyin.
+                    {t("products.tryOther")}
                   </p>
                 </div>
               </ScrollAnimation>

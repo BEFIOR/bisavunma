@@ -12,11 +12,26 @@ export const routing = defineRouting({
   // This is useful when you want to change the URL structure without changing the internal structure
   pathnames: {
     "/": "/",
-    "/hizmetler": "/hizmetler",
-    "/cozumlerimiz": "/cozumlerimiz",
-    "/sektorler": "/sektorler",
-    "/iletisim": "/iletisim",
-    "/urunler": "/urunler",
+    "/hizmetler": {
+      tr: "/hizmetler",
+      en: "/services",
+    },
+    "/cozumlerimiz": {
+      tr: "/cozumlerimiz",
+      en: "/solutions",
+    },
+    "/sektorler": {
+      tr: "/sektorler",
+      en: "/sectors",
+    },
+    "/iletisim": {
+      tr: "/iletisim",
+      en: "/contact",
+    },
+    "/urunler": {
+      tr: "/urunler",
+      en: "/products",
+    },
   },
 });
 

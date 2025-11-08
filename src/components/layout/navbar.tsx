@@ -11,6 +11,7 @@ import navigationSections from "@/config/navigation";
 import type { NavSection } from "@/types/navigation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTranslations } from "next-intl";
+import logoImage from "@/../public/main/logo.webp";
 
 const transition: Transition = {
   type: "spring",
@@ -213,7 +214,7 @@ export const Navbar = ({
               <Image
                 width={100}
                 height={100}
-                src="/logo.webp"
+                src={logoImage}
                 alt="BİSAVUNMA Logo"
                 className="h-9 w-auto rounded-2xl shadow-lg"
               />
@@ -259,7 +260,7 @@ export const Navbar = ({
               <Image
                 width={100}
                 height={100}
-                src="/logo.webp"
+                src={logoImage}
                 alt="BİSAVUNMA Logo"
                 className="h-9 w-auto rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-200"
               />
@@ -383,7 +384,7 @@ export const Navbar = ({
                     <Image
                       width={100}
                       height={100}
-                      src="/logo.webp"
+                      src={logoImage}
                       alt="BİSAVUNMA Logo"
                       className="h-9 w-auto rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-200"
                     />

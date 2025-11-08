@@ -4,6 +4,7 @@ import { getCategoryBySlug } from "@/server/repositories/categories";
 import type { DbProduct } from "@/lib/products";
 import EnterpriseClient from "./_components/EnterpriseClient";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import {
   HeroAnimation,
   HeroScaleAnimation,
@@ -12,10 +13,23 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/animations/ScrollAnimations";
-export const metadata = {
-  title: "DJI Türkiye Enterprise | Ürünler",
-  description: "DJI Enterprise çözümleri ve kurumsal ürünler için kataloğumuz.",
-};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("djiEnterprise");
+
+  return {
+    title: `${t("title")} | ${locale === "en" ? "Products" : "Ürünler"}`,
+    description:
+      locale === "en"
+        ? "DJI Enterprise solutions and corporate products catalog."
+        : "DJI Enterprise çözümleri ve kurumsal ürünler için kataloğumuz.",
+  };
+}
 
 export const revalidate = 60;
 
@@ -23,21 +37,23 @@ export default async function Page() {
   const slug = "dji-turkiye-enterprise";
   const cat = await getCategoryBySlug(slug);
   const products = await getProductsByCategorySlug(cat?.slug ?? slug);
+  const t = await getTranslations("djiEnterprise");
+
   const usageHighlights = [
     {
       src: "/products/dji-enterprise/askeri-kullanim.webp",
       alt: "askeri",
-      label: "Askeri Uygulama",
+      label: t("usageHighlights.military"),
     },
     {
       src: "/products/dji-enterprise/sivil-kullanim.webp",
       alt: "sivil",
-      label: "Kamu Güvenliği",
+      label: t("usageHighlights.civilian"),
     },
     {
       src: "/products/dji-enterprise/denetim-amacli.webp",
       alt: "denetim",
-      label: "Denetim Amaçlı",
+      label: t("usageHighlights.inspection"),
     },
   ] as const;
 
@@ -87,54 +103,42 @@ export default async function Page() {
             </HeroScaleAnimation>
             <HeroAnimation direction="up" delay={0}>
               <div className="flex flex-col items-center gap-3 text-center">
-                <h1 className="text-3xl font-bold text-white">
-                  DJI Türkiye Enterprise
-                </h1>
+                <h1 className="text-3xl font-bold text-white">{t("title")}</h1>
                 <span className="inline-flex items-center rounded-full border border-emerald-600/40 bg-emerald-600/10 px-2.5 py-0.5 text-xs text-emerald-300">
-                  Resmi Bayi
+                  {t("badge")}
                 </span>
                 <Link
                   href="/iletisim"
                   className="inline-flex rounded-lg bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 text-sm font-medium transition-colors"
                 >
-                  Fiyat Al
+                  {t("cta")}
                 </Link>
               </div>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.1}>
               <p className="text-gray-300 max-w-3xl mx-auto">
-                Bisavunma olarak, DJI Enterprise resmi bayisi olmanın
-                güvencesiyle; kapsamlı ürün portföyümüz, eğitim ve yazılım
-                desteğimiz ve sürekli teknik servis çözümlerimiz ile her
-                sektörden firmaya özel sistemler sunuyoruz.
+                {t("description")}
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.15}>
               <ul className="space-y-2 list-disc pl-6 marker:text-blue-400 text-left text-sm sm:text-base">
                 <li>
                   <span className="font-medium text-white">
-                    Kapsamlı Ürün Portföyü:
+                    {t("features.portfolio.title")}
                   </span>{" "}
-                  Gereksinimlerinize en uygun DJI Enterprise drone&apos;unu
-                  bulmak için Bisavunma&apos;nın kapsamlı ürün portföyüne göz
-                  atın.
+                  {t("features.portfolio.description")}
                 </li>
                 <li>
                   <span className="font-medium text-white">
-                    Eğitim ve Yazılım Desteği:
+                    {t("features.training.title")}
                   </span>{" "}
-                  DJI Enterprise drone&apos;larınızı en etkili şekilde
-                  kullanmayı öğrenin. Bisavunma&apos;nın uzman ekibi tarafından
-                  sunulan eğitim ve yazılım desteği ile drone&apos;larınızdan en
-                  iyi performansı elde edin.
+                  {t("features.training.description")}
                 </li>
                 <li>
                   <span className="font-medium text-white">
-                    Sürekli Teknik Servis Çözümleri:
+                    {t("features.support.title")}
                   </span>{" "}
-                  Bisavunma&apos;nın deneyimli teknik servis ekibi,
-                  drone&apos;larınızın her zaman en iyi durumda kalması için
-                  sürekli destek sunar.
+                  {t("features.support.description")}
                 </li>
               </ul>
             </HeroAnimation>
@@ -176,7 +180,7 @@ export default async function Page() {
         />
         {products.length === 0 && (
           <div className="max-w-6xl mx-auto text-gray-400 mt-6">
-            Bu kategoride ürün mevcut değil.
+            {t("noProducts")}
           </div>
         )}
       </section>

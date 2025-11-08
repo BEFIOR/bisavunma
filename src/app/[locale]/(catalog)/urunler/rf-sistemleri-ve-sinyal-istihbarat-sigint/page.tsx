@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import {
   ScrollAnimation,
   StaggerContainer,
@@ -10,7 +12,26 @@ import { Radio, Eye, Settings, ChevronDown } from "lucide-react";
 import { rfSystems } from "@/data/rf-systems";
 import { LazyVideo } from "@/components/animations/LazyVideo";
 
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("rfSystems");
+
+  return {
+    title: `${t("title")} | ${locale === "en" ? "Products" : "Ürünler"}`,
+    description: t("description"),
+  };
+}
+
+export const revalidate = 0;
+
 export default function RfSystemsPage() {
+  const t = useTranslations("rfSystems");
   return (
     <div className="min-h-screen bg-black text-gray-200">
       {/* Hero Section */}
@@ -21,22 +42,18 @@ export default function RfSystemsPage() {
             <HeroAnimation direction="fade" delay={0}>
               <div className="inline-flex items-center gap-2 text-sm text-gray-400 mb-4">
                 <Radio className="w-4 h-4" />
-                <span>
-                  Radyo Frekans Sistemleri ve Elektromanyetik İstihbarat
-                </span>
+                <span>{t("badge")}</span>
               </div>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.1}>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                Radyo Frekans Algılayıcıları
+                {t("heroTitle")}
               </h1>
             </HeroAnimation>
 
             <HeroAnimation direction="up" delay={0.15}>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                İleri düzey frekans analizi ve elektromanyetik istihbarat
-                çözümleri ile radyo frekans alanınızı mutlak denetim altında
-                yönetin.
+                {t("heroDescription")}
               </p>
             </HeroAnimation>
           </div>
@@ -47,11 +64,10 @@ export default function RfSystemsPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation direction="up" className="text-center mb-6">
             <h2 className="text-3xl font-bold text-white mb-4">
-              RFeye Node Ürün Serisi
+              {t("productSeries.title")}
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Çeşitli frekans bantları ve kullanım gereksinimleri için özel
-              olarak tasarlanmış radyo frekans algılayıcı sistemleri
+              {t("productSeries.description")}
             </p>
           </ScrollAnimation>
 
@@ -106,7 +122,7 @@ export default function RfSystemsPage() {
                     </div>
 
                     <div className="mt-4 flex items-center text-sky-400 text-sm font-medium group-hover:gap-2 transition-all">
-                      Ayrıntıları İncele
+                      {t("products.viewDetails")}
                       <ChevronDown className="w-4 h-4 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -122,10 +138,10 @@ export default function RfSystemsPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation direction="up" className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
-              RFeye Node Kabiliyetleri
+              {t("capabilities.title")}
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Uzman seviye frekans analizi için ihtiyaç duyulan tüm fonksiyonlar
+              {t("capabilities.description")}
             </p>
           </ScrollAnimation>
 
@@ -136,11 +152,10 @@ export default function RfSystemsPage() {
                   <Radio className="w-6 h-6 text-sky-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
-                  Kapsamlı Frekans Bandı
+                  {t("features.comprehensiveBand.title")}
                 </h3>
                 <p className="text-gray-400">
-                  100 MHz&apos;den 40 GHz&apos;e kadar geniş frekans
-                  spektrumunda analiz yapabilme
+                  {t("features.comprehensiveBand.description")}
                 </p>
               </div>
             </StaggerItem>
@@ -151,11 +166,10 @@ export default function RfSystemsPage() {
                   <Eye className="w-6 h-6 text-green-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
-                  Anlık Spektrum Takibi
+                  {t("features.realTimeSpectrum.title")}
                 </h3>
                 <p className="text-gray-400">
-                  Kesintisiz frekans spektrumu gözlemi ve otomatik sinyal
-                  algılama
+                  {t("features.realTimeSpectrum.description")}
                 </p>
               </div>
             </StaggerItem>
@@ -166,11 +180,10 @@ export default function RfSystemsPage() {
                   <Settings className="w-6 h-6 text-purple-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
-                  İleri Seviye İşleme
+                  {t("features.advancedProcessing.title")}
                 </h3>
                 <p className="text-gray-400">
-                  Dijital sinyal işleme algoritmaları ve otomatik sinyal
-                  kategorilendirme
+                  {t("features.advancedProcessing.description")}
                 </p>
               </div>
             </StaggerItem>

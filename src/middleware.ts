@@ -8,6 +8,11 @@ const intlMiddleware = createMiddleware(routing);
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
+  // Handle static files in standalone mode
+  if (pathname.startsWith('/main/') || pathname.startsWith('/products/') || pathname.endsWith('.webp') || pathname.endsWith('.png') || pathname.endsWith('.jpg') || pathname.endsWith('.jpeg')) {
+    return NextResponse.next();
+  }
+
   // Check if the request is for admin paths
   const isAdminPath = pathname.startsWith("/admin");
 

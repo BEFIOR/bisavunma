@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n";
 import dynamic from "next/dynamic";
+import GalleryCarousel from "@/components/GalleryCarousel";
 import {
   Radio,
   Shield,
@@ -33,18 +34,6 @@ const ServicesAccordion = dynamic(
     ssr: true,
   }
 );
-
-// Lazy load GallerySlider - 48 görsel içerdiği için LCP'yi etkiliyor
-const GallerySlider = dynamic(() => import("@/components/GallerySlider"), {
-  loading: () => (
-    <div className="relative">
-      <div className="aspect-[4/3] bg-gradient-to-br from-gray-800/50 to-gray-900/80 rounded-3xl border border-gray-700/50 shadow-2xl animate-pulse flex items-center justify-center">
-        <div className="text-gray-400 text-sm">Galeri yükleniyor...</div>
-      </div>
-    </div>
-  ),
-  ssr: false,
-});
 
 export default function Home() {
   const t = useTranslations("home");
@@ -429,17 +418,12 @@ export default function Home() {
                 </div>
 
                 {/* Lazy-loaded Gallery */}
-                <GallerySlider
-                  images={[
-                    "/main/ana-sayfa-hakkimizda.jpeg",
-                    "/main/anasayfa-alt-1.png",
-                    "/main/anasayfa-alt-2.jpeg",
-                    "/main/anasayfa-alt-3.jpeg",
-                    ...Array.from(
-                      { length: 44 },
-                      (_, i) => `/main/alt-slider/alt-${i + 1}.webp`
-                    ),
-                  ]}
+                <GalleryCarousel
+                  images={Array.from(
+                    { length: 44 },
+                    (_, i) => `/main/alt-slider/alt-${i + 1}.webp`
+                  )}
+                  className="max-w-4xl mx-auto"
                 />
               </div>
             </ScaleAnimation>

@@ -1,15 +1,39 @@
 import { listCategories } from "@/server/repositories/categories";
 import Image from "next/image";
+import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 // Removed FlowingMenu for performance
 
-const categories = await listCategories();
-
 const categoryImages: Record<string, string> = {
-  // Example: "rf-sistemleri-ve-sinyal-istihbarat-sigint": "/images/categories/rf.jpg",
-  // Add your own images under /public/images/categories and map here
+  "rf-sistemleri-ve-sinyal-istihbarat-sigint":
+    "/products/rf-sistemleri/rfeye-guard.webp",
+  "radar-sistemleri": "/products/radar-sistemleri/radar.webp",
+  "elektro-optik-ve-termal-sistemler": "/products/elektro-optik/atlas.png",
+  "jammer-rf-efektorler": "/products/jammer-rf-efektorler/bieye-defense.webp",
+  "dji-turkiye-enterprise":
+    "/products/dji-enterprise/dji-istanbul-yetkili-saticisi.webp",
 };
 
-export default function Urunler() {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  return {
+    title:
+      locale === "en" ? "Our Products | BISAVUNMA" : "Ürünlerimiz | BISAVUNMA",
+    description:
+      locale === "en"
+        ? "Explore our defense and security products including RF systems, radar systems, jammers and electro-optical systems."
+        : "RF sistemleri, radar sistemleri, jammer ve elektro-optik sistemler dahil savunma ve güvenlik ürünlerimizi keşfedin.",
+  };
+}
+
+export default async function Urunler() {
+  const categories = await listCategories();
+
   const items = categories
     .filter((c) => !c.parentId)
     .map((c) => ({
@@ -18,12 +42,14 @@ export default function Urunler() {
       image: categoryImages[c.slug] ?? "/logo.webp",
     }));
 
+  const t = await getTranslations("products");
+
   return (
     <div className="min-h-screen bg-black text-gray-200">
       <section className="pt-28 pb-8 px-4 bg-neutral-950 border-b border-neutral-900">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl lg:text-5xl my-5 font-bold text-white text-center">
-            Ürünlerimiz
+            {t("title")}
           </h1>
         </div>
       </section>
@@ -31,7 +57,7 @@ export default function Urunler() {
         {/* Optimized Category Grid - Simple grid instead of heavy GSAP animation */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8">
           {items.map((item) => (
-            <a
+            <Link
               key={item.link}
               href={item.link}
               className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105"
@@ -51,7 +77,7 @@ export default function Urunler() {
                   </h3>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Script from "next/script";
 import { Inter, Poppins } from "next/font/google";
+import { criticalCSS } from "@/lib/critical-css";
 import "../globals.css";
 
 // Optimize font loading with next/font
@@ -25,10 +26,118 @@ const poppins = Poppins({
   fallback: ["system-ui", "arial"],
 });
 
-export const metadata: Metadata = {
-  title: "Bisavunma",
-  description: "Savunma Sanayi",
-};
+// Get site URL from environment or use default
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bisavunma.com";
+
+// Generate metadata based on locale
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home.hero" });
+
+  const title = "BİSAVUNMA";
+  // Clean description by removing HTML tags and placeholders
+  let description = t("description");
+  description = description.replace(/<[^>]*>/g, ""); // Remove HTML tags
+  description = description.replace(/optimumSolutions|technicalSupport/g, ""); // Remove placeholders
+  description = description.replace(/\s+/g, " ").trim(); // Normalize whitespace
+  // Fallback to default if translation is empty
+  if (!description) {
+    description =
+      locale === "tr"
+        ? "1996'dan beri kamera sistemleri sektöründe faaliyet gösteren, 2018'de yeniden yapılanan Bisavunma, optimum çözümler ve nitelikli teknik destek ile müşteri portföyünü genişletmiş ve başarılı projelere imza atmaktadır."
+        : "Operating in the camera systems sector since 1996, Bisavunma, restructured in 2018, has expanded its customer portfolio and delivered successful projects with optimal solutions and qualified technical support.";
+  }
+  const siteName = "BİSAVUNMA";
+  const imageUrl = `${siteUrl}/main/logo.webp`;
+
+  return {
+    title: {
+      default: title,
+      template: `%s | ${title}`,
+    },
+    description,
+    keywords: [
+      "savunma sanayi",
+      "güvenlik sistemleri",
+      "kamera sistemleri",
+      "RF sistemleri",
+      "radar sistemleri",
+      "elektro-optik sistemler",
+      "defense industry",
+      "security systems",
+    ],
+    authors: [{ name: "BİSAVUNMA" }],
+    creator: "BİSAVUNMA",
+    publisher: "BİSAVUNMA",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL(siteUrl),
+    alternates: {
+      canonical: "/",
+      languages: {
+        tr: "/tr",
+        en: "/en",
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "tr" ? "tr_TR" : "en_US",
+      url: siteUrl,
+      siteName,
+      title,
+      description,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
+      creator: "@bisavunma",
+      site: "@bisavunma",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+        { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      ],
+      apple: [
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      ],
+    },
+    manifest: "/site.webmanifest",
+    verification: {
+      // Google Search Console verification can be added here
+      // google: "verification-code",
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -55,17 +164,20 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        {/* Critical CSS - Inline to prevent render-blocking */}
+        <style dangerouslySetInnerHTML={{ __html: criticalCSS }} />
+
         <meta
           httpEquiv="Content-Security-Policy"
           content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://www.google.com https://www.youtube.com https://youtube.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://maps.googleapis.com https://www.youtube.com https://youtube.com https://www.google-analytics.com https://analytics.google.com; frame-src 'self' https://docs.google.com https://www.google.com https://www.youtube.com https://youtube.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https:;"
         />
         <meta name="referrer" content="no-referrer-when-downgrade" />
 
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - Lazy loaded to prevent blocking */}
         {process.env.NEXT_PUBLIC_GTM_ID && (
           <Script
             id="gtm"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             dangerouslySetInnerHTML={{
               __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -78,16 +190,17 @@ export default async function LocaleLayout({
           />
         )}
 
-        {/* Google Analytics & Google Ads */}
+        {/* Google Analytics & Google Ads - Lazy loaded to prevent blocking */}
+        {/* Google Analytics varsa normal şekilde yükle */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
             <Script
               id="gtag"
-              strategy="afterInteractive"
+              strategy="lazyOnload"
               dangerouslySetInnerHTML={{
                 __html: `
                   window.dataLayer = window.dataLayer || [];
@@ -102,6 +215,22 @@ export default async function LocaleLayout({
             />
           </>
         )}
+        {/* Google Analytics yoksa ama Google Ads conversion tracking varsa, gtag.js yükle */}
+        {/* Google Tag Manager zaten yüklü, dataLayer mevcut. Sadece gtag fonksiyonunu tanımla */}
+        {!process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
+          process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID && (
+            <Script
+              id="gtag-init"
+              strategy="lazyOnload"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                `,
+              }}
+            />
+          )}
       </head>
       <body
         className={`${inter.variable} ${poppins.variable} overflow-x-hidden`}

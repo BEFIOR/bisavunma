@@ -160,5 +160,261 @@
       "software": "Yazılım Çözümleri"
     },
     "contact": "İletişim"
+  },
+  "products": {
+    "title": "Ürünlerimiz",
+    "description": "RF sistemleri, radar sistemleri, jammer ve elektro-optik sistemler dahil savunma ve güvenlik ürünlerimizi keşfedin."
+  },
+  "notFound": {
+    "title": "Sayfa Bulunamadı",
+    "description": "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
+    "backHome": "Ana Sayfaya Dön",
+    "searchSuggestion": "Veya aramak istediğiniz ürün/hizmet için",
+    "contactUs": "bizimle iletişime geçin",
+    "nav": {
+      "home": "Ana Sayfa",
+      "products": "Ürünler",
+      "solutions": "Çözümler",
+      "contact": "İletişim"
+    }
+  },
+  "djiEnterprise": {
+    "title": "DJI Türkiye Enterprise",
+    "badge": "Resmi Bayi",
+    "cta": "Fiyat Al",
+    "description": "Bisavunma olarak, DJI Enterprise resmi bayisi olmanın güvencesiyle; kapsamlı ürün portföyümüz, eğitim ve yazılım desteğimiz ve sürekli teknik servis çözümlerimiz ile her sektörden firmaya özel sistemler sunuyoruz.",
+    "features": {
+      "portfolio": {
+        "title": "Kapsamlı Ürün Portföyü:",
+        "description": "Gereksinimlerinize en uygun DJI Enterprise drone'unu bulmak için Bisavunma'nın kapsamlı ürün portföyüne göz atın."
+      },
+      "training": {
+        "title": "Eğitim ve Yazılım Desteği:",
+        "description": "DJI Enterprise drone'larınızı en etkili şekilde kullanmayı öğrenin. Bisavunma'nın uzman ekibi tarafından sunulan eğitim ve yazılım desteği ile drone'larınızdan en iyi performansı elde edin."
+      },
+      "support": {
+        "title": "Sürekli Teknik Servis Çözümleri:",
+        "description": "Bisavunma'nın deneyimli teknik servis ekibi, drone'larınızın her zaman en iyi durumda kalması için sürekli destek sunar."
+      }
+    },
+    "usageHighlights": {
+      "military": "Askeri Uygulama",
+      "civilian": "Kamu Güvenliği",
+      "inspection": "Denetim Amaçlı"
+    },
+    "noProducts": "Bu kategoride ürün mevcut değil."
+  },
+  "catalogNotFound": {
+    "title": "Ürün Bulunamadı",
+    "description": "Aradığınız ürün veya kategori mevcut değil.",
+    "viewAllProducts": "Tüm Ürünleri Görüntüle",
+    "backHome": "Ana Sayfaya Dön",
+    "productCategories": {
+      "rf": "RF Sistemleri",
+      "radar": "Radar",
+      "electroOptical": "Elektro-Optik",
+      "jammer": "Jammer"
+    }
+  },
+  "error": {
+    "title": "Bir Hata Oluştu",
+    "description": "Üzgünüz, bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "tryAgain": "Tekrar Dene",
+    "backHome": "Ana Sayfaya Dön",
+    "helpText": "Sorun devam ederse lütfen bizimle iletişime geçin",
+    "contactPage": "İletişim Sayfası"
+  },
+  "elektroOptik": {
+    "title": "Elektro-Optik & Termal Sistemler",
+    "description": "Elektro-optik ve termal sistemler için gelişmiş sensör ve çözüm ürünleri.",
+    "badge": "Elektro-Optik Sistem Paketi",
+    "heroTitle": "Çok Bantlı Algılayıcılarla Anlık Durum Bilinci",
+    "heroDescription": "Elektro-optik ve termal algılama sistemleriyle düşük görünürlüklü tehditleri algıla, izle ve tanımla.",
+    "stats": {
+      "spectralRange": "Spektral Alan",
+      "magnification": "Büyütme Oranı",
+      "platform": "Platform"
+    },
+    "highlights": {
+      "multispectral": {
+        "title": "Çok Spektral İzleme",
+        "description": "UV'den uzun dalga IR'a kadar geniş bantta keşif."
+      },
+      "longRange": {
+        "title": "Uzun Menzil Algılama",
+        "description": "Stabilize optikler ve akıllı izleme algoritmaları."
+      },
+      "operational": {
+        "title": "Operasyonel Uyumluluk",
+        "description": "Araç, kule ve sabit tesisler için modüler entegrasyon."
+      }
+    },
+    "sidebar": {
+      "title": "Alt Sınıflandırmalar",
+      "allProducts": "Bütün Ürünler"
+    },
+    "products": {
+      "title": "Ürünler",
+      "listing": "ürün listeleniyor",
+      "detail": "Detay",
+      "noProducts": "Bu alt sınıflandırmada ürün mevcut değil.",
+      "tryOther": "Başka bir alt sınıflandırma seçmeyi deneyin."
+    }
+  },
+  "jammer": {
+    "title": "Jammer & RF Efektörler",
+    "description": "Jammer ve RF etkisizleştirme çözümleri için ürün kataloğu.",
+    "badge": "RF Karşı Önlem",
+    "heroTitle": "Karıştırıcı ve RF Etkileyici Sistemleri",
+    "heroDescription": "Baştan sona elektronik savaş yetenekleri; taktik alanda, kritik altyapıda ve yüksek risk ortamlarında haberleşme ve drone tehditlerini engellemek için geliştirildi.",
+    "stats": {
+      "frequencyRange": "Frekans Aralığı",
+      "powerOutput": "Güç Çıkışı",
+      "platform": "Platform"
+    },
+    "highlights": {
+      "spectrumControl": {
+        "title": "Frekans Spektrum Kontrolü",
+        "description": "Çok bantlı engelleme, seçici süzme ve uyarlanabilir güç yönetimi ile karmaşık tehditlere anlık tepki."
+      },
+      "platformIntegration": {
+        "title": "Platform Bütünleştirme",
+        "description": "Sabit tesislerden hareketli araçlara kadar farklı platformlarda hızlı yerleştirme ve enerji verimliliği."
+      },
+      "operationalContinuity": {
+        "title": "Operasyonel Devamlılık",
+        "description": "Uzaktan kontrol, durum izleme ve yedekli parçalarla 7/24 hazır güç koruması."
+      }
+    },
+    "deploymentScenarios": {
+      "criticalInfrastructure": {
+        "title": "Kritik Altyapı",
+        "description": "Havalimanı, enerji santrali ve kamu tesislerinde yetkisiz drone etkinliklerine karşı etkili engel."
+      },
+      "mobileOperations": {
+        "title": "Hareketli Operasyon",
+        "description": "Konvoy, VIP koruma ve taktik birlikler için araç üstü veya sırt çantalı karıştırıcı sistemleri."
+      },
+      "borderSecurity": {
+        "title": "Sınır Güvenliği",
+        "description": "Uyarlanabilir anten sistemleriyle uzun menzilde düşman haberleşme ağlarını bozan alan düzenlemeleri."
+      }
+    },
+    "operationalReadiness": {
+      "title": "Operasyon Hazırlığı",
+      "description": "Sahadaki karıştırıcı düzenlemeleri için keşif, RF spektrum analizi ve test yayınlarıyla teslimat öncesi doğrulama sağlıyoruz.",
+      "features": {
+        "0": "Uyarlanabilir anten ve güç modülleri",
+        "1": "Uzaktan izleme & alarm yönetimi",
+        "2": "Eğitim, sertifikasyon ve saha desteği"
+      }
+    },
+    "sidebar": {
+      "title": "Alt Sınıflandırmalar",
+      "allProducts": "Bütün Ürünler",
+      "clear": "Temizle"
+    },
+    "products": {
+      "title": "Ürünler",
+      "listing": "ürün listeleniyor",
+      "detail": "Detay",
+      "noProducts": "Bu alt sınıflandırmada ürün mevcut değil.",
+      "tryOther": "Başka bir alt sınıflandırma seçmeyi veya filtreyi temizlemeyi deneyin.",
+      "portfolioDescription": "Elektronik savaş gereksinimlerinize göre bant, güç ve platform seçimi yapabileceğiniz karıştırıcı portföyümüz."
+    }
+  },
+  "radar": {
+    "title": "Radar Sistemleri",
+    "description": "Radar sistemleri ve radar tabanlı çözümler için ürün kataloğu.",
+    "badge": "Radar Komuta Sistemi",
+    "heroTitle": "Tüm Hava Koşullarında Önceden Uyarı ve Nesne Algılama",
+    "heroDescription": "Arazide konumlandırılmış taktik radar sistemlerinden stratejik menzile kadar misyon odaklı çözümler sunuyoruz.",
+    "stats": {
+      "maxRange": "Maksimum Uzaklık",
+      "simultaneousTracking": "Eş Zamanlı İzleme",
+      "responseTime": "Yanıt Süresi"
+    },
+    "highlights": {
+      "situationalAwareness": {
+        "title": "360° Durum Bilinci",
+        "description": "Döner anten ve AESA mimarileriyle sürekli kapsama alanı."
+      },
+      "flexibleTracking": {
+        "title": "Esnek Takip Sistemi",
+        "description": "Düşük görünürlüklü nesnelerde bile zeki kategorilendirme."
+      },
+      "networkCentric": {
+        "title": "Ağ Odaklı Operasyon",
+        "description": "Sensör birleştirme ve entegre komuta-kontrol altyapısı."
+      }
+    },
+    "deploymentScenarios": {
+      "militaryBases": {
+        "title": "Askeri Üsler",
+        "description": "Üs bölgeleri, havaalanları ve kritik tesislerin güvenliği için radar koruması."
+      },
+      "borderSecurity": {
+        "title": "Sınır Güvenliği",
+        "description": "Uzun menzilde düşük görünürlüklü hedefleri tespit eden sınır radar sistemleri."
+      },
+      "criticalInfrastructure": {
+        "title": "Kritik Altyapı",
+        "description": "Enerji santralleri, limanlar ve kritik tesisler için radar gözetleme çözümleri."
+      }
+    },
+    "operationalReadiness": {
+      "title": "Operasyon Hazırlığı",
+      "description": "Radar yerleşimi, kapsama optimizasyonu ve sistem entegrasyonu için kapsamlı destek sağlıyoruz.",
+      "features": {
+        "0": "Radar yerleşimi ve kapsama analizi",
+        "1": "Sistem entegrasyonu ve kalibrasyon",
+        "2": "Operatör eğitimi ve teknik destek"
+      }
+    },
+    "sidebar": {
+      "title": "Alt Sınıflandırmalar",
+      "allProducts": "Bütün Ürünler",
+      "clear": "Temizle"
+    },
+    "products": {
+      "title": "Ürünler",
+      "listing": "ürün listeleniyor",
+      "detail": "Detay",
+      "noProducts": "Bu alt sınıflandırmada ürün mevcut değil.",
+      "tryOther": "Başka bir alt sınıflandırma seçmeyi deneyin.",
+      "portfolioDescription": "Farklı operasyonel gereksinimler için çeşitli radar sistemleri ve çözümleri sunuyoruz."
+    }
+  },
+  "rfSystems": {
+    "title": "RF Sistemleri ve Sinyal İstihbarat (SIGINT)",
+    "description": "Radyo frekans sistemleri ve elektromanyetik istihbarat çözümleri için ürün kataloğu.",
+    "badge": "Radyo Frekans Sistemleri ve Elektromanyetik İstihbarat",
+    "heroTitle": "Radyo Frekans Algılayıcıları",
+    "heroDescription": "İleri düzey frekans analizi ve elektromanyetik istihbarat çözümleri ile radyo frekans alanınızı mutlak denetim altında yönetin.",
+    "productSeries": {
+      "title": "RFeye Node Ürün Serisi",
+      "description": "Çeşitli frekans bantları ve kullanım gereksinimleri için özel olarak tasarlanmış radyo frekans algılayıcı sistemleri"
+    },
+    "capabilities": {
+      "title": "RFeye Node Kabiliyetleri",
+      "description": "Uzman seviye frekans analizi için ihtiyaç duyulan tüm fonksiyonlar"
+    },
+    "features": {
+      "comprehensiveBand": {
+        "title": "Kapsamlı Frekans Bandı",
+        "description": "100 MHz'den 40 GHz'e kadar geniş frekans spektrumunda analiz yapabilme"
+      },
+      "realTimeSpectrum": {
+        "title": "Anlık Spektrum Takibi",
+        "description": "Kesintisiz frekans spektrumu gözlemi ve otomatik sinyal algılama"
+      },
+      "advancedProcessing": {
+        "title": "İleri Seviye İşleme",
+        "description": "Dijital sinyal işleme algoritmaları ve otomatik sinyal kategorilendirme"
+      }
+    },
+    "products": {
+      "viewDetails": "Ayrıntıları İncele"
+    }
   }
 }

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getCachedProduct } from "@/lib/loaders";
 import Image from "next/image";
 import ProductTracking from "@/components/ProductTracking";
-import { trackButtonClick } from "@/lib/gtag";
+import QuoteButton from "@/components/QuoteButton";
 
 export const revalidate = 300; // Cache for 5 minutes
 
@@ -81,17 +81,7 @@ export default async function ProductInCategory({
                   <li key={f}>{f}</li>
                 ))}
               </ul>
-              <button
-                onClick={() =>
-                  trackButtonClick(
-                    "quote_request",
-                    `product_${category}_${slug}`
-                  )
-                }
-                className="mt-6 w-full bg-sky-600 hover:bg-sky-500 text-white font-medium py-2.5 rounded-md"
-              >
-                Teklif Al
-              </button>
+              <QuoteButton category={`product_${category}`} slug={slug} />
             </div>
           </aside>
         </div>

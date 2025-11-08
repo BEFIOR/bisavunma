@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Filter, Radar as RadarIcon, Crosshair, Satellite } from "lucide-react";
 import {
   HeroAnimation,
@@ -31,30 +32,31 @@ export default function RadarPage({
   effectiveSlug,
   categoryDescription,
 }: PageProps) {
+  const t = useTranslations("radar");
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>("all");
 
   const heroHighlights = [
     {
-      title: "360° Durum Bilinci",
-      description: "Döner anten ve AESA mimarileriyle sürekli kapsama alanı.",
+      title: t("highlights.situationalAwareness.title"),
+      description: t("highlights.situationalAwareness.description"),
       Icon: RadarIcon,
     },
     {
-      title: "Esnek Takip Sistemi",
-      description: "Düşük görünürlüklü nesnelerde bile zeki kategorilendirme.",
+      title: t("highlights.flexibleTracking.title"),
+      description: t("highlights.flexibleTracking.description"),
       Icon: Crosshair,
     },
     {
-      title: "Ağ Odaklı Operasyon",
-      description: "Sensör birleştirme ve entegre komuta-kontrol altyapısı.",
+      title: t("highlights.networkCentric.title"),
+      description: t("highlights.networkCentric.description"),
       Icon: Satellite,
     },
   ] as const;
 
   const heroStats = [
-    { label: "Maksimum Uzaklık", value: "120 km" },
-    { label: "Eş Zamanlı İzleme", value: "1100 max nesne" },
-    { label: "Yanıt Süresi", value: "< 1 sn" },
+    { label: t("stats.maxRange"), value: "120 km" },
+    { label: t("stats.simultaneousTracking"), value: "1100 max nesne" },
+    { label: t("stats.responseTime"), value: "< 1 sn" },
   ] as const;
 
   const subcategories = useMemo(() => {
@@ -62,14 +64,14 @@ export default function RadarPage({
       new Set(products.map((p) => p.altCategory).filter(Boolean))
     );
     return [
-      { slug: "all", title: "Bütün Ürünler", count: products.length },
+      { slug: "all", title: t("sidebar.allProducts"), count: products.length },
       ...unique.map((sub) => ({
         slug: sub!,
         title: sub!,
         count: products.filter((p) => p.altCategory === sub).length,
       })),
     ];
-  }, [products]);
+  }, [products, t]);
 
   const filteredProducts = useMemo(() => {
     if (selectedSubcategory === "all") return products;
@@ -86,18 +88,17 @@ export default function RadarPage({
           <HeroStaggerContainer staggerDelay={0.15} className="space-y-6">
             <HeroAnimation direction="fade">
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs uppercase tracking-wider text-emerald-200">
-                Radar Komuta Sistemi
+                {t("badge")}
               </span>
             </HeroAnimation>
             <HeroAnimation direction="up">
               <h1 className="text-3xl lg:text-5xl font-bold text-white">
-                Tüm Hava Koşullarında Önceden Uyarı ve Nesne Algılama
+                {t("heroTitle")}
               </h1>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0}>
               <p className="text-gray-300 max-w-3xl leading-relaxed">
-                {categoryDescription ??
-                  "Arazide konumlandırılmış taktik radar sistemlerinden stratejik menzile kadar misyon odaklı çözümler sunuyoruz."}
+                {categoryDescription ?? t("heroDescription")}
               </p>
             </HeroAnimation>
             <HeroAnimation direction="up" delay={0.1}>
@@ -159,7 +160,7 @@ export default function RadarPage({
                     <div className="flex items-center gap-2">
                       <Filter className="w-5 h-5 text-sky-400" />
                       <h2 className="text-lg font-semibold text-white">
-                        Alt Sınıflandırmalar
+                        {t("sidebar.title")}
                       </h2>
                     </div>
                     {selectedSubcategory !== "all" && (
@@ -167,7 +168,7 @@ export default function RadarPage({
                         onClick={() => setSelectedSubcategory("all")}
                         className="text-xs text-gray-400 hover:text-sky-300 underline-offset-2 hover:underline"
                       >
-                        Temizle
+                        {t("sidebar.clear")}
                       </button>
                     )}
                   </div>
@@ -217,12 +218,12 @@ export default function RadarPage({
               <div className="mb-6">
                 <h2 className="text-xl font-semibold text-white mb-2">
                   {selectedSubcategory === "all"
-                    ? "Bütün Ürünler"
+                    ? t("sidebar.allProducts")
                     : subcategories.find((s) => s.slug === selectedSubcategory)
                         ?.title}
                 </h2>
                 <p className="text-gray-400">
-                  {filteredProducts.length} ürün listeleniyor
+                  {filteredProducts.length} {t("products.listing")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -262,7 +263,7 @@ export default function RadarPage({
                               </div>
                               <div className="mt-4 flex items-center justify-between">
                                 <span className="inline-flex items-center text-sm text-sky-400 group-hover:text-sky-300">
-                                  Detay
+                                  {t("products.detail")}
                                   <span className="ml-1 transition-transform duration-200 group-hover:translate-x-0.5">
                                     →
                                   </span>
@@ -306,12 +307,8 @@ export default function RadarPage({
                 <div className="text-center py-12">
                   <div className="text-gray-400 mb-4">
                     <Filter className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                    <p className="text-lg">
-                      Bu alt sınıflandırmada ürün mevcut değil.
-                    </p>
-                    <p className="text-sm mt-2">
-                      Başka bir alt sınıflandırma seçmeyi deneyin.
-                    </p>
+                    <p className="text-lg">{t("products.noProducts")}</p>
+                    <p className="text-sm mt-2">{t("products.tryOther")}</p>
                   </div>
                 </div>
               </ScrollAnimation>

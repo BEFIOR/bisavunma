@@ -249,6 +249,51 @@
         "description": "Modular integration for vehicles, towers and fixed facilities."
       }
     },
+    "jammer": {
+      "title": "Jammer and RF Effector Systems",
+      "description": "End-to-end electronic warfare capabilities; developed to block communication and drone threats in tactical areas, critical infrastructure, and high-risk environments.",
+      "badge": "RF Countermeasures",
+      "capabilities": {
+        "spectrumControl": {
+          "title": "Frequency Spectrum Control",
+          "description": "Instant response to complex threats with multi-band jamming, selective filtering, and adaptive power management."
+        },
+        "platformIntegration": {
+          "title": "Platform Integration",
+          "description": "Rapid deployment and energy efficiency across different platforms from fixed facilities to mobile vehicles."
+        },
+        "operationalContinuity": {
+          "title": "Operational Continuity",
+          "description": "24/7 ready power protection with remote control, status monitoring, and redundant components."
+        }
+      },
+      "deploymentScenarios": {
+        "criticalInfrastructure": {
+          "title": "Critical Infrastructure",
+          "description": "Effective barrier against unauthorized drone activities at airports, power plants, and public facilities."
+        },
+        "mobileOperation": {
+          "title": "Mobile Operation",
+          "description": "Vehicle-mounted or backpack jammer systems for convoy, VIP protection, and tactical units."
+        },
+        "borderSecurity": {
+          "title": "Border Security",
+          "description": "Area arrangements that disrupt enemy communication networks at long range with adaptive antenna systems."
+        }
+      },
+      "operationalReadiness": {
+        "title": "Operational Readiness",
+        "description": "We provide pre-delivery verification with reconnaissance, RF spectrum analysis, and test broadcasts for field jammer arrangements.",
+        "features": [
+          "Adaptive antenna and power modules",
+          "Remote monitoring & alarm management",
+          "Training, certification and field support"
+        ]
+      },
+      "portfolio": {
+        "description": "Our jammer portfolio where you can choose band, power and platform according to your electronic warfare requirements."
+      }
+    },
     "sidebar": {
       "title": "Subcategories",
       "allProducts": "All Products"
@@ -258,163 +303,8 @@
       "listing": "products listed",
       "detail": "Detail",
       "noProducts": "No products available in this subcategory.",
-      "tryOther": "Try selecting another subcategory."
-    }
-  },
-  "jammer": {
-    "title": "Jammer & RF Effectors",
-    "description": "Product catalog for jammer and RF neutralization solutions.",
-    "badge": "RF Countermeasures",
-    "heroTitle": "Jammer and RF Effector Systems",
-    "heroDescription": "End-to-end electronic warfare capabilities; developed to block communication and drone threats in tactical areas, critical infrastructure, and high-risk environments.",
-    "stats": {
-      "frequencyRange": "Frequency Range",
-      "powerOutput": "Power Output",
-      "platform": "Platform"
-    },
-    "highlights": {
-      "spectrumControl": {
-        "title": "Frequency Spectrum Control",
-        "description": "Instant response to complex threats with multi-band jamming, selective filtering, and adaptive power management."
-      },
-      "platformIntegration": {
-        "title": "Platform Integration",
-        "description": "Rapid deployment and energy efficiency across different platforms from fixed facilities to mobile vehicles."
-      },
-      "operationalContinuity": {
-        "title": "Operational Continuity",
-        "description": "24/7 ready power protection with remote control, status monitoring, and redundant components."
-      }
-    },
-    "deploymentScenarios": {
-      "criticalInfrastructure": {
-        "title": "Critical Infrastructure",
-        "description": "Effective barrier against unauthorized drone activities at airports, power plants, and public facilities."
-      },
-      "mobileOperations": {
-        "title": "Mobile Operations",
-        "description": "Vehicle-mounted or backpack jammer systems for convoy, VIP protection, and tactical units."
-      },
-      "borderSecurity": {
-        "title": "Border Security",
-        "description": "Field arrangements that disrupt enemy communication networks at long range with adaptive antenna systems."
-      }
-    },
-    "operationalReadiness": {
-      "title": "Operational Readiness",
-      "description": "We provide pre-delivery verification with reconnaissance, RF spectrum analysis, and test broadcasts for field jammer arrangements.",
-      "features": {
-        "0": "Adaptive antenna and power modules",
-        "1": "Remote monitoring & alarm management",
-        "2": "Training, certification and field support"
-      }
-    },
-    "sidebar": {
-      "title": "Subcategories",
-      "allProducts": "All Products",
-      "clear": "Clear"
-    },
-    "products": {
-      "title": "Products",
-      "listing": "products listed",
-      "detail": "Detail",
-      "noProducts": "No products available in this subcategory.",
-      "tryOther": "Try selecting another subcategory or clearing the filter.",
-      "portfolioDescription": "Our jammer portfolio where you can choose band, power and platform according to your electronic warfare requirements."
-    }
-  },
-  "radar": {
-    "title": "Radar Systems",
-    "description": "Product catalog for radar systems and radar-based solutions.",
-    "badge": "Radar Command System",
-    "heroTitle": "Early Warning and Object Detection in All Weather Conditions",
-    "heroDescription": "We offer mission-focused solutions from tactically positioned radar systems in the field to strategic range.",
-    "stats": {
-      "maxRange": "Maximum Range",
-      "simultaneousTracking": "Simultaneous Tracking",
-      "responseTime": "Response Time"
-    },
-    "highlights": {
-      "situationalAwareness": {
-        "title": "360° Situational Awareness",
-        "description": "Continuous coverage area with rotating antenna and AESA architectures."
-      },
-      "flexibleTracking": {
-        "title": "Flexible Tracking System",
-        "description": "Intelligent categorization even for low-visibility objects."
-      },
-      "networkCentric": {
-        "title": "Network-Centric Operations",
-        "description": "Sensor fusion and integrated command-control infrastructure."
-      }
-    },
-    "deploymentScenarios": {
-      "militaryBases": {
-        "title": "Military Bases",
-        "description": "Radar protection for base areas, airports, and critical facilities."
-      },
-      "borderSecurity": {
-        "title": "Border Security",
-        "description": "Border radar systems detecting low-visibility targets at long range."
-      },
-      "criticalInfrastructure": {
-        "title": "Critical Infrastructure",
-        "description": "Radar surveillance solutions for power plants, ports, and critical facilities."
-      }
-    },
-    "operationalReadiness": {
-      "title": "Operational Readiness",
-      "description": "We provide comprehensive support for radar placement, coverage optimization, and system integration.",
-      "features": {
-        "0": "Radar placement and coverage analysis",
-        "1": "System integration and calibration",
-        "2": "Operator training and technical support"
-      }
-    },
-    "sidebar": {
-      "title": "Subcategories",
-      "allProducts": "All Products",
-      "clear": "Clear"
-    },
-    "products": {
-      "title": "Products",
-      "listing": "products listed",
-      "detail": "Detail",
-      "noProducts": "No products available in this subcategory.",
       "tryOther": "Try selecting another subcategory.",
-      "portfolioDescription": "We offer various radar systems and solutions for different operational requirements."
-    }
-  },
-  "rfSystems": {
-    "title": "RF Systems and Signal Intelligence (SIGINT)",
-    "description": "Product catalog for radio frequency systems and electromagnetic intelligence solutions.",
-    "badge": "Radio Frequency Systems and Electromagnetic Intelligence",
-    "heroTitle": "Radio Frequency Detectors",
-    "heroDescription": "Manage your radio frequency domain with absolute control through advanced frequency analysis and electromagnetic intelligence solutions.",
-    "productSeries": {
-      "title": "RFeye Node Product Series",
-      "description": "Radio frequency detector systems specially designed for various frequency bands and usage requirements"
-    },
-    "capabilities": {
-      "title": "RFeye Node Capabilities",
-      "description": "All functions needed for expert-level frequency analysis"
-    },
-    "features": {
-      "comprehensiveBand": {
-        "title": "Comprehensive Frequency Band",
-        "description": "Analysis capability across wide frequency spectrum from 100 MHz to 40 GHz"
-      },
-      "realTimeSpectrum": {
-        "title": "Real-Time Spectrum Tracking",
-        "description": "Continuous frequency spectrum monitoring and automatic signal detection"
-      },
-      "advancedProcessing": {
-        "title": "Advanced Processing",
-        "description": "Digital signal processing algorithms and automatic signal categorization"
-      }
-    },
-    "products": {
-      "viewDetails": "View Details"
+      "clear": "Clear"
     }
   }
 }
