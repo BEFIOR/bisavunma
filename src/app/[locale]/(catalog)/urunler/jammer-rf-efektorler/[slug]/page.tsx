@@ -16,13 +16,7 @@ export const revalidate = 300; // Cache for 5 minutes
 
 type Params = { slug: string };
 
-export async function generateStaticParams() {
-  const a = await getProductsByCategorySlug("jammer-rf-efektorler");
-  const b = await getProductsByCategorySlug("jammer-ve-rf-efektorler");
-  const uniq = new Map<string, true>();
-  [...a, ...b].forEach((p) => uniq.set(p.slug, true));
-  return Array.from(uniq.keys()).map((slug) => ({ slug }));
-}
+// Removed generateStaticParams to allow build without database
 
 export async function generateMetadata({
   params,

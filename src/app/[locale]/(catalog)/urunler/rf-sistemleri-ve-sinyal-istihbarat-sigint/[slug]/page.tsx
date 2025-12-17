@@ -17,12 +17,7 @@ export const revalidate = 60;
 
 type Params = { slug: string };
 
-export async function generateStaticParams() {
-  const slugs = await getProductsByCategorySlug(
-    "rf-sistemleri-ve-sinyal-istihbarat-sigint"
-  );
-  return slugs.map((product) => ({ slug: product.slug }));
-}
+// Removed generateStaticParams to allow build without database
 
 export async function generateMetadata({
   params,

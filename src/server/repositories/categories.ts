@@ -32,7 +32,7 @@ export async function getProductCategoryIds(productSlug: string): Promise<number
     select: { categoryId: true },
     orderBy: { position: "asc" },
   });
-  return rows.map((r) => r.categoryId);
+  return rows.map((r: { categoryId: number }) => r.categoryId);
 }
 
 export async function getCategoryBySlug(slug: string) {

@@ -39,18 +39,11 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "home.hero" });
 
   const title = "BİSAVUNMA";
-  // Clean description by removing HTML tags and placeholders
-  let description = t("description");
-  description = description.replace(/<[^>]*>/g, ""); // Remove HTML tags
-  description = description.replace(/optimumSolutions|technicalSupport/g, ""); // Remove placeholders
-  description = description.replace(/\s+/g, " ").trim(); // Normalize whitespace
-  // Fallback to default if translation is empty
-  if (!description) {
-    description =
-      locale === "tr"
-        ? "1996'dan beri kamera sistemleri sektöründe faaliyet gösteren, 2018'de yeniden yapılanan Bisavunma, optimum çözümler ve nitelikli teknik destek ile müşteri portföyünü genişletmiş ve başarılı projelere imza atmaktadır."
-        : "Operating in the camera systems sector since 1996, Bisavunma, restructured in 2018, has expanded its customer portfolio and delivered successful projects with optimal solutions and qualified technical support.";
-  }
+  // Get description with rich text variables
+  const description = t.rich("description", {
+    optimumSolutions: (chunks) => chunks,
+    technicalSupport: (chunks) => chunks,
+  }) as string;
   const siteName = "BİSAVUNMA";
   const imageUrl = `${siteUrl}/main/logo.webp`;
 

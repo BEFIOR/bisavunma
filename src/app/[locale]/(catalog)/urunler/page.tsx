@@ -4,6 +4,13 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 // Removed FlowingMenu for performance
 
+type Category = {
+  id: number;
+  slug: string;
+  title: string;
+  parentId: number | null;
+};
+
 const categoryImages: Record<string, string> = {
   "rf-sistemleri-ve-sinyal-istihbarat-sigint":
     "/products/rf-sistemleri/rfeye-guard.webp",
@@ -35,14 +42,20 @@ export default async function Urunler() {
   const categories = await listCategories();
 
   const items = categories
-    .filter((c) => !c.parentId)
-    .map((c) => ({
+    .filter((c: Category) => !c.parentId)
+    .map((c: Category) => ({
       link: `/urunler/${c.slug}`,
       text: c.title,
       image: categoryImages[c.slug] ?? "/logo.webp",
     }));
 
   const t = await getTranslations("products");
+
+  type Item = {
+    link: string;
+    text: string;
+    image: string;
+  };
 
   return (
     <div className="min-h-screen bg-black text-gray-200">
@@ -56,7 +69,7 @@ export default async function Urunler() {
       <section className="min-h-[70vh]">
         {/* Optimized Category Grid - Simple grid instead of heavy GSAP animation */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8">
-          {items.map((item) => (
+          {items.map((item: Item) => (
             <Link
               key={item.link}
               href={item.link}

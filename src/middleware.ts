@@ -60,6 +60,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Apply i18n middleware for non-admin paths
+  // next-intl will automatically redirect "/" to "/tr" because of localePrefix: "always"
   return intlMiddleware(request);
 }
 
@@ -71,4 +72,3 @@ export const config = {
     "/((?!api|_next|_vercel|.*\\..*).*)",
   ],
 };
-

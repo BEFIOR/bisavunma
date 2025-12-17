@@ -11,11 +11,15 @@ export const revalidate = 60;
 
 type Params = { category: string };
 
+type Category = {
+  id: number;
+  slug: string;
+  title: string;
+  parentId: number | null;
+};
+
 export const dynamicParams = true;
-export async function generateStaticParams() {
-  const cats = await listCategories();
-  return cats.map((c) => ({ category: c.slug }));
-}
+// Removed generateStaticParams to allow build without database
 
 export async function generateMetadata({
   params,

@@ -8,6 +8,13 @@ import { requireAdmin } from "@/server/auth/guard";
 
 type Params = { slug: string };
 
+type Category = {
+  id: number;
+  slug: string;
+  title: string;
+  parentId: number | null;
+};
+
 export default async function EditProductPage({ params }: { params: Promise<Params> }) {
   const me = await getCurrentUser();
   if (!me) redirect("/admin/login");
@@ -88,7 +95,7 @@ export default async function EditProductPage({ params }: { params: Promise<Para
           <label className="block text-sm mb-2 text-gray-300">Kategori</label>
           <select name="categoryId" defaultValue={selected ?? ""} className="w-full rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100">
             <option value="">Seçiniz</option>
-            {categories.map((c) => (
+            {categories.map((c: Category) => (
               <option key={c.id} value={c.id}>{c.title}</option>
             ))}
           </select>

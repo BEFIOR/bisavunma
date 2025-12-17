@@ -10,10 +10,7 @@ export const revalidate = 300; // Cache for 5 minutes
 
 type Params = { slug: string };
 
-export async function generateStaticParams() {
-  const products = await getProductsByCategorySlug("dji-turkiye-enterprise");
-  return products.map((p) => ({ slug: p.slug }));
-}
+// Removed generateStaticParams to allow build without database
 
 export async function generateMetadata({
   params,

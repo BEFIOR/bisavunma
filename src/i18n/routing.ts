@@ -7,6 +7,9 @@ export const routing = defineRouting({
 
   // Used when no locale matches
   defaultLocale: "tr",
+  
+  // Always redirect to locale prefix
+  localePrefix: "always",
 
   // The `pathnames` object can be used to map internal pathnames to external pathnames
   // This is useful when you want to change the URL structure without changing the internal structure
@@ -39,4 +42,3 @@ export const routing = defineRouting({
 // that will consider the routing configuration
 export const { Link, redirect, usePathname, useRouter, getPathname } =
   createNavigation(routing);
-

@@ -77,16 +77,49 @@ npx prisma generate  # Client generate
 npx prisma migrate dev  # Migration
 ```
 
-## 🚢 Deployment (Plesk + Supervisor)
+## 🚢 Deployment
 
-**Detaylı rehber:** [PLESK-SUPERVISOR-DEPLOYMENT.md](./PLESK-SUPERVISOR-DEPLOYMENT.md)
+**Detaylı rehber:** [PLESK-DEPLOYMENT.md](./PLESK-DEPLOYMENT.md)
 
-**Hızlı deployment:**
+### PM2 ile Deployment (Önerilen)
 
 ```bash
 # 1. Sunucuya bağlan
 ssh user@your-server.com
-cd /var/www/vhosts/your-domain.com/httpdocs
+cd /var/www/vhosts/bisavunma.com/httpdocs
+
+# 2. PM2 kurulumu
+npm install -g pm2
+
+# 3. Projeyi yükle ve build yap
+git clone https://github.com/your-repo/bisavunma.git .
+npm ci --production=false
+npx prisma generate
+npm run build
+
+# 4. Environment ayarla
+cp env.example .env
+nano .env
+
+# 5. Log dizini oluştur
+mkdir -p logs
+
+# 6. PM2 ile başlat
+pm2 start ecosystem.config.js
+pm2 startup  # Çıkan komutu çalıştırın
+pm2 save
+
+# 7. Durum kontrolü
+pm2 status
+pm2 logs bisavunma
+```
+
+### Supervisor ile Deployment (Alternatif)
+
+```bash
+# 1. Sunucuya bağlan
+ssh user@your-server.com
+cd /var/www/vhosts/bisavunma.com/httpdocs
 
 # 2. Projeyi yükle
 git clone https://github.com/your-repo/bisavunma.git .
@@ -102,7 +135,7 @@ bash deploy.sh
 nano supervisor.conf  # Domain ve user değiştir
 
 # 6. Supervisor'a yükle
-sudo cp supervisor.conf /etc/supervisor/conf.d/bisavunma.conf
+sudo cp supervisor.conf /etc/supervisord.d/bisavunma.ini
 sudo supervisorctl reread
 sudo supervisorctl update
 sudo supervisorctl start bisavunma
@@ -161,7 +194,7 @@ Sonuçlar:
 
 ### DevOps
 
-- **Process Manager:** Supervisor
+- **Process Manager:** PM2 / Supervisor
 - **Server:** Node.js 20.x
 - **Hosting:** Plesk
 - **SSL:** Let's Encrypt
@@ -174,11 +207,23 @@ Sonuçlar:
 
 Sorunlar için:
 
+- PM2 logs: `pm2 logs bisavunma`
 - Supervisor logs: `sudo supervisorctl tail -f bisavunma stdout`
 - Build errors: `npm run build`
 - Database: `npx prisma studio`
 
 ## 🔄 Güncelleme
+
+### PM2 ile:
+
+```bash
+git pull origin main
+npm ci
+npm run build
+pm2 restart bisavunma
+```
+
+### Supervisor ile:
 
 ```bash
 git pull origin main

@@ -9,6 +9,15 @@ export type DbProduct = {
   features?: string[];
 };
 
+type ProductFeature = {
+  feature: string;
+};
+
+type AltCategoryRow = {
+  slug: string;
+  altCategory: string | null;
+};
+
 export async function getProductBySlug(slug: string): Promise<DbProduct | null> {
   const product = await prisma.product.findUnique({
     where: { slug },
@@ -36,7 +45,7 @@ export async function getProductBySlug(slug: string): Promise<DbProduct | null> 
     description: product.description,
     image: product.image,
     altCategory,
-    features: product.features?.map((f) => f.feature) ?? [],
+    features: product.features?.map((f: ProductFeature) => f.feature) ?? [],
   };
 }
 
@@ -52,13 +61,13 @@ export async function getProductsByCategorySlug(categorySlug: string): Promise<D
   });
 
   // Try to enrich with alt_kategori via raw SQL if column exists
-  const slugs = rows.map((r) => r.product.slug);
+  const slugs = rows.map((r: { product: { slug: string } }) => r.product.slug);
   const altMap = new Map<string, string | null>();
   if (slugs.length > 0) {
     try {
       const placeholders = slugs.map(() => "?").join(",");
       const sql = `SELECT slug, alt_kategori AS altCategory FROM products WHERE slug IN (${placeholders})`;
-      const list: Array<{ slug: string; altCategory: string | null }> = await prisma.$queryRawUnsafe(
+      const list: AltCategoryRow[] = await prisma.$queryRawUnsafe(
         sql,
         ...slugs
       );
@@ -68,7 +77,7 @@ export async function getProductsByCategorySlug(categorySlug: string): Promise<D
     }
   }
 
-  return rows.map(({ product }) => ({
+  return rows.map(({ product }: { product: { slug: string; title: string; description: string | null; image: string | null } }) => ({
     slug: product.slug,
     title: product.title,
     description: product.description,
@@ -79,5 +88,5 @@ export async function getProductsByCategorySlug(categorySlug: string): Promise<D
 
 export async function getAllProductSlugs(): Promise<string[]> {
   const rows = await prisma.product.findMany({ select: { slug: true } });
-  return rows.map((r) => r.slug);
+  return rows.map((r: { slug: string }) => r.slug);
 }

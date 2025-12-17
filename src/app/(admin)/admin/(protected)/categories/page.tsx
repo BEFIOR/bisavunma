@@ -4,6 +4,13 @@ import { getCurrentUser } from "@/server/auth/session";
 import { requireAdmin } from "@/server/auth/guard";
 import { listCategories, createCategory, updateCategory, deleteCategory } from "@/server/repositories/categories";
 
+type Category = {
+  id: number;
+  slug: string;
+  title: string;
+  parentId: number | null;
+};
+
 export default async function AdminCategories() {
   const me = await getCurrentUser();
   if (!me) redirect("/admin/login");
@@ -63,7 +70,7 @@ export default async function AdminCategories() {
           <label className="text-sm text-gray-400">Üst Kategori</label>
           <select name="parentId" className="w-64 rounded-lg bg-gray-900 border border-gray-800 px-3 py-2 text-gray-100">
             <option value="">— Yok —</option>
-            {categories.map((c) => (
+            {categories.map((c: Category) => (
               <option key={c.id} value={c.id}>{c.title}</option>
             ))}
           </select>
@@ -72,13 +79,13 @@ export default async function AdminCategories() {
       </form>
 
       <div className="rounded-xl border border-gray-800 divide-y divide-gray-800 bg-gray-950/60">
-        {categories.map((c) => (
+        {categories.map((c: Category) => (
           <div key={c.id} className="flex items-center justify-between gap-3 p-3">
             <div>
               <div className="font-medium">{c.title}</div>
               <div className="text-xs text-gray-500">/{c.slug}</div>
               {c.parentId && (
-                <div className="text-xs text-gray-500">Üst: {categories.find((x) => x.id === c.parentId)?.title}</div>
+                <div className="text-xs text-gray-500">Üst: {categories.find((x: Category) => x.id === c.parentId)?.title}</div>
               )}
             </div>
             <div className="flex items-center gap-3">
@@ -92,7 +99,7 @@ export default async function AdminCategories() {
                 />
                 <select name="parentId" defaultValue={c.parentId ?? ""} className="w-48 rounded-lg bg-gray-900 border border-gray-800 px-2 py-1 text-gray-100">
                   <option value="">— Üst Yok —</option>
-                  {categories.filter((x) => x.id !== c.id).map((x) => (
+                  {categories.filter((x: Category) => x.id !== c.id).map((x: Category) => (
                     <option key={x.id} value={x.id}>{x.title}</option>
                   ))}
                 </select>

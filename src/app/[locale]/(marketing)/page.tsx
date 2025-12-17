@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n";
 import dynamic from "next/dynamic";
 import GalleryCarousel from "@/components/GalleryCarousel";
+import ShinyText from "@/components/ShinyText";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import {
   Radio,
   Shield,
@@ -49,9 +51,15 @@ export default function Home() {
             {/* Main Headlines */}
             <div className="space-y-8 pt-6 md:pt-16">
               <HeroAnimation direction="fade" delay={0}>
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-poppins-bold text-white notranslate tracking-tight">
-                  BİSAVUNMA
-                </h1>
+               <div className="hidden md:block notranslate">
+                  <TextHoverEffect text="BİSAVUNMA" />
+                </div>
+                <div className="block md:hidden notranslate">
+                  <ShinyText
+                    text="BİSAVUNMA"
+                    className="text-[clamp(2.5rem,_12vw,_4rem)] font-poppins-bold"
+                  />
+                </div>
               </HeroAnimation>
               <HeroAnimation direction="up" delay={0.1}>
                 <h2 className="text-base md:text-2xl text-gray-300 font-poppins-light max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-12">

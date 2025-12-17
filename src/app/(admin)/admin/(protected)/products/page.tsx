@@ -4,6 +4,13 @@ import { revalidatePath } from "next/cache";
 import { getCurrentUser } from "@/server/auth/session";
 import { requireAdmin } from "@/server/auth/guard";
 
+type Product = {
+  slug: string;
+  title: string;
+  description: string | null;
+  image: string | null;
+};
+
 export default async function AdminProducts({ searchParams }: { searchParams?: Promise<{ q?: string }> }) {
   const me = await getCurrentUser();
   if (!me) return null;
@@ -42,7 +49,7 @@ export default async function AdminProducts({ searchParams }: { searchParams?: P
       </form>
 
       <div className="rounded-xl border border-gray-800 divide-y divide-gray-800 bg-gray-950/60">
-        {products.map((p) => (
+        {products.map((p: Product) => (
           <div key={p.slug} className="flex items-center justify-between gap-3 p-3">
             <div>
               <div className="font-medium">{p.title}</div>
