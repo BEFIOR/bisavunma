@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
 import { Link } from "@/i18n";
 import Footer from "@/components/Footer";
+import DotGrid from "@/components/DotGrid";
+
 
 interface SystemItem {
   title: string;
@@ -15,11 +17,20 @@ export default function Sektorler() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-24 overflow-hidden min-h-screen bg-gray-950">
-        <div className="absolute inset-0 -z-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
+      <section className="relative pt-24 overflow-hidden min-h-screen bg-gray-950/60">
+        {/* DotGrid Background */}
+        <div className="absolute inset-0 -z-10">
+          <DotGrid
+            dotSize={8}
+            gap={54}
+            baseColor="#1e3a5f55"
+            activeColor="#38bdf8"
+            proximity={180}
+            className="opacity-60"
+          />
         </div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 -z-5 bg-gradient-to-b from-transparent via-gray-950/50 to-gray-950" />
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-800 px-4 py-1.5 text-xs font-medium text-gray-300">

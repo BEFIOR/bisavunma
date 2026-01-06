@@ -175,239 +175,179 @@ type RadarContent = {
 
 function getRadarContent(slug: string): RadarContent | null {
   const map: Record<string, RadarContent> = {
-    "mgr-1200-radar-sistemi": {
-      title: "MGR-1200 Radar Sistemi",
+    "trueview-r40-radar": {
+      title: "TrueView R40 Radar",
       overview:
-        "MGR-1200; Ku-band (15.4–16.6 GHz) çalışan, orta menzilli, yazılım tanımlı, darbe‑Doppler tabanlı bilişsel 4D radar sistemidir. Yoğun Tx/Rx hücre yapısı ile yüksek konumsal doğruluk sunar ve sensör füzyonu/C2 altyapılarına sorunsuz entegre olur.",
+        "TrueView R40/R40i, iyi korunan bir hava sahasının sembolüdür. 256 alıcı eleman, 16 dijital kanal, çok kanallı dijital hüzme oluşturma, eşzamanlı analog hüzme yönlendirme ve üstün anten verimliliğine sahip yüksek performanslı, gerçek AESA (Aktif Elektronik Taramalı Dizi) radardır. Yapay zeka ve 5.5 teraflop GPU ile güçlendirilmiş olup, uygun maliyetli bir pakette güvenilir drone savunması için ölçüt belirler.",
       highlights: [
-        "<0.5° açısal doğruluk",
-        "Yüzlerce hedefin eşzamanlı takibi",
-        "Misyon setiyle hızlı görev optimizasyonu",
+        "256 alıcı elemanlı gerçek AESA",
+        "16 dijital kanal",
+        "5.5 teraflop GPU",
+        "AI destekli hedef sınıflandırma",
+        "Düşük yanlış alarm oranı",
       ],
-      badges: ["Ku-band", "4D", "Cognitive", "Pulse-Doppler"],
+      badges: ["AESA", "AI/ML", "Edge Computing", "360° Kapsama"],
       sections: [
         {
-          title: "Ana Performans Parametreleri",
+          title: "Temel Özellikler",
           type: "bullets",
           icon: <Gauge className="w-5 h-5 text-sky-400" />,
           items: [
-            "Açısal doğruluk: azimut ve yükselişte <0.5°",
-            "Takip (güncel): Grup 3 UAV ~13 km, insan ~13 km, araç ~16 km",
-            "Yoğun Tx/Rx hücreleri ile yüksek çözünürlüklü konumlandırma",
+            "Tam 3D tespit ve takip hassasiyeti",
+            "Metrelerce yakınlıktaki nesneleri bile ayırt edebilme",
+            "Düşük hızlarda bile (<0.1 m/s) tespit yeteneği",
+            "Geniş alan koruması için mükemmel hüzme genişliği",
           ],
         },
         {
-          title: "Görev Setleri",
-          type: "bullets",
-          icon: <Layers className="w-5 h-5 text-sky-400" />,
-          items: [
-            "C‑UAS: 9 km angajman bölgesinde düşük irtifa drone tespiti",
-            "C‑UAS 2: Büyük UAV'lerde hassasiyet, ~16 km'ye kadar",
-            "Dismount: Sınır/çevre gözetleme; insan ~13 km, araç ~16 km",
-            "Coastal: Kıyı ve küçük deniz hedeflerinin izlenmesi",
-            "Airspace Management: Uçuş sahası yönetimi ve kılavuzlama",
-            "OTM C‑UAS: Seyir halinde kara/deniz platformlarında C‑UAS",
-          ],
-        },
-        {
-          title: "Yazılım ve Destek",
-          type: "bullets",
-          icon: <Wrench className="w-5 h-5 text-sky-400" />,
-          items: [
-            "Sürekli yazılım güncellemeleri ve sınıflandırma iyileştirmeleri",
-            "Öncelikli teknik destek ve entegrasyon danışmanlığı",
-            "24/7 kullanıcı portalı, dokümantasyon ve eğitim kaynakları",
-          ],
-        },
-        {
-          title: "Teknik Özellikler (Özet)",
-          type: "kv",
-          icon: <Cpu className="w-5 h-5 text-sky-400" />,
-          items: [
-            { label: "Bant", value: "Ku (15.4–16.6 GHz)" },
-            {
-              label: "Tip",
-              value: "Yazılım tanımlı bilişsel 4D, Pulse‑Doppler",
-            },
-            { label: "Açısal Doğruluk", value: "<0.5° azimut/yükseliş" },
-            { label: "İzleme Kapasitesi", value: "Yüzlerce hedef" },
-          ],
-        },
-      ],
-    },
-    "mgr-600-radar-sistemi": {
-      title: "MGR-600 Radar Sistemi",
-      overview:
-        "MGR-600; kısa menzilli, yazılım tanımlı, katı hâl 4D radar sistemidir. Elektronik taramalı dizi mimarisi ile kompakt yapıda yüksek performans sunar.",
-      highlights: [
-        "6 km enstrümanlı menzil",
-        "120°×80° görüş alanı",
-        "20 eşzamanlı iz takibi",
-      ],
-      badges: ["K‑band", "4D", "ESA", "Kompakt"],
-      sections: [
-        {
-          title: "Radar Performansı",
-          type: "kv",
-          icon: <RadarIcon className="w-5 h-5 text-sky-400" />,
-          items: [
-            { label: "Bant", value: "K (24.05–24.65 GHz)" },
-            { label: "FoV", value: "120° azimut × 80° yükseliş" },
-            { label: "Doğruluk", value: "<1° azimut, <1.5° yükseliş" },
-            { label: "Güncelleme", value: "10 Hz" },
-            { label: "Kapasite", value: "20 eşzamanlı iz" },
-            { label: "Enstr. Menzil", value: "6 km" },
-          ],
-        },
-        {
-          title: "Tespit Menzilleri",
-          type: "bullets",
-          icon: <Target className="w-5 h-5 text-sky-400" />,
-          items: [
-            "Küçük UAV (Phantom 4): >1 km",
-            "Büyük UAV (Matrice 600): >1.4 km",
-            "Araç: >3.5 km, İnsan: >2.2 km",
-          ],
-        },
-        {
-          title: "SWaP ve Dayanım",
-          type: "kv",
-          icon: <Shield className="w-5 h-5 text-sky-400" />,
-          items: [
-            { label: "Boyut", value: "16.3×20.3×5.7 cm" },
-            { label: "Ağırlık", value: "1.25 kg" },
-            { label: "Güç", value: "+15…+28 VDC, 50 W (çalışma)" },
-            { label: "Sıcaklık", value: "−40 °C … +75 °C" },
-            { label: "Koruma", value: "IP67" },
-          ],
-        },
-        {
-          title: "Entegrasyon ve Veri",
-          type: "kv",
-          icon: <Network className="w-5 h-5 text-sky-400" />,
-          items: [
-            { label: "Kontrol I/O", value: "Gigabit Ethernet" },
-            {
-              label: "Çıkışlar",
-              value: "Harita/tespit/ölçüm/iz veri oranları",
-            },
-            { label: "Montaj", value: "VESA 75 & 100 mm" },
-          ],
-        },
-        {
-          title: "Yazılım ve Destek",
-          type: "bullets",
-          icon: <Wrench className="w-5 h-5 text-sky-400" />,
-          items: [
-            "Sürekli yazılım güncellemeleri ve görselleştirme araçları",
-            "Öncelikli teknik destek ve entegrasyon rehberi",
-            "24/7 portal ve kullanıcı topluluğu",
-          ],
-        },
-      ],
-    },
-    "mgr-a600-advanced-radar-sistemi": {
-      title: "MGR-A600 Advanced+ Radar Sistemi",
-      overview:
-        "MGR‑A600 Advanced+; kısa menzilde yeni nesil 4D gözetleme radarıdır. X‑band, AESA/MESA hibrit mimarisiyle 360°×90° adaptif kapsama ve yüksek hassasiyet sunar.",
-      highlights: [
-        "≤0.2°/≤0.3° açısal doğruluk",
-        "512 eşzamanlı hedef",
-        "AI/ML sınıflandırma, gelişmiş parazit reddi",
-      ],
-      badges: ["X‑band", "AESA/MESA", "360×90", "AI/ML"],
-      sections: [
-        {
-          title: "Performans (Yükseltilmiş)",
-          type: "kv",
-          icon: <Gauge className="w-5 h-5 text-sky-400" />,
-          items: [
-            { label: "Tarama", value: "1–4 Hz (göreve bağlı)" },
-            { label: "Açısal Doğruluk", value: "≤0.2° az., ≤0.3° yük." },
-            {
-              label: "Menzi̇ller",
-              value: "Pers. >9 km, Araç >12 km, sUAS >8 km, G2/3 >11 km",
-            },
-            { label: "İz Kapasitesi", value: "512 hedefe kadar" },
-            { label: "Güncelleme", value: "20 Hz sürekli" },
-          ],
-        },
-        {
-          title: "Boyut ve Dayanım",
-          type: "kv",
-          icon: <Shield className="w-5 h-5 text-sky-400" />,
-          items: [
-            { label: "Ağırlık", value: "≤9 kg (tek kişi taşınabilir)" },
-            { label: "Güç", value: "18–36 VDC, ≤65 W çalışma, <5 W bekleme" },
-            { label: "Sıcaklık", value: "−50 °C … +85 °C" },
-            { label: "Koruma", value: "IP68, MIL‑STD‑810H" },
-          ],
-        },
-        {
-          title: "Ağ ve Entegrasyon",
-          type: "bullets",
-          icon: <Network className="w-5 h-5 text-sky-400" />,
-          items: [
-            "Gigabit Ethernet/fiber, opsiyonel taktik 5G",
-            "C2: NATO STANAG, Link‑16/22 uyumluluğu",
-            "Sensör füzyonu: EO/IR, RF, jammer ve kinetik sistemlerle",
-          ],
-        },
-        {
-          title: "Yazılım ve Görev Özellikleri",
+          title: "AI ve Edge Computing",
           type: "bullets",
           icon: <Cpu className="w-5 h-5 text-sky-400" />,
           items: [
-            "Bilişsel radar motoru, görev seti optimizasyonu",
-            "3D gerçek zamanlı radar resmi ve otomatik hedef devri",
-            "Önceliklendirme, alarm bölgeleri, otonom cueing",
+            "Radar üzerinde yerleşik GPU ile gerçek zamanlı analiz",
+            "10 yılı aşkın makine öğrenimi deneyimi",
+            "Mikro-doppler imza analizi ile sınıflandırma",
+            "Kuş/drone ayrımında yüksek doğruluk",
           ],
         },
-      ],
-    },
-    "bisavunma-a200-mk2-radar-sistemi": {
-      title: "BİSAVUNMA A200 Mk 2 Radar Sistemi",
-      overview:
-        "A200 Mk 2; aynı anda hava, kara ve deniz hedeflerini algılayabilen 4D Çok Modlu AESA radardır. LSS (Low‑Slow‑Small) tehditlerine karşı optimize edilmiş, TRL‑9 saha başarımına sahip bir çözüm sunar.",
-      highlights: [
-        "Çok modlu eşzamanlı gözetleme",
-        "700 hedef/scan'e kadar yoğun hedef ortamı",
-        "AI destekli sınıflandırma ve düşük yanlış alarm",
-      ],
-      badges: ["4D", "AESA", "Çok Modlu", "TRL‑9"],
-      sections: [
         {
-          title: "Temel Kabiliyetler",
+          title: "Entegrasyon",
           type: "bullets",
-          icon: <Activity className="w-5 h-5 text-sky-400" />,
+          icon: <Network className="w-5 h-5 text-sky-400" />,
           items: [
-            "Eşzamanlı hava/kara/deniz gözetleme",
-            "Nano‑drone: 3 km, Kanatlı drone: 7 km",
-            "4D konumlama (menzil, azimut, yükseklik, hız)",
-            "AI tabanlı sınıflandırma, mikro‑Doppler analiz",
+            "TrueView kamera sistemleri ile tam entegrasyon",
+            "SkyDome Manager C2 yazılımı uyumluluğu",
+            "360° kapsama için çoklu radar ağ oluşturma",
+            "STAP (Uzay-Zaman Uyarlamalı İşleme) desteği",
           ],
         },
         {
           title: "Teknik Özellikler",
           type: "kv",
-          icon: <Cpu className="w-5 h-5 text-sky-400" />,
+          icon: <RadarIcon className="w-5 h-5 text-sky-400" />,
           items: [
-            { label: "Mimari", value: "4D Çok Modlu FMCW Doppler AESA" },
-            { label: "Bant", value: "Ku (15.7–17.2 GHz)" },
-            { label: "Tarama", value: "90° sektör 1 s, spotlight 0.25 s" },
-            { label: "Kapsama", value: "Azimut 90°, Yükseliş 40°" },
-            { label: "Arayüz", value: "TLS 1.3 GB Ethernet, RS‑232/422, IO" },
+            { label: "Mimari", value: "Gerçek AESA (Aktif Elektronik Taramalı Dizi)" },
+            { label: "Alıcı Elemanlar", value: "256 adet" },
+            { label: "Dijital Kanallar", value: "16 adet" },
+            { label: "İşlemci", value: "5.5 teraflop GPU" },
+          ],
+        },
+      ],
+    },
+    "trueview-r30-radar": {
+      title: "TrueView R30 Radar",
+      overview:
+        "R30, iyi korunan bir hava sahasının sembolüdür. 256 alıcı eleman, 16 dijital kanal, çok kanallı dijital hüzme oluşturma, eşzamanlı analog hüzme yönlendirme ve üstün anten verimliliğine sahip yüksek performanslı, gerçek AESA radardır. Yerleşik grafik işlemcisi (GPU) ile R30, rakip radarların sunabileceğinden çok daha doğru ve kapsamlı istihbarat sağlar.",
+      highlights: [
+        "Tam 3D tespit hassasiyeti",
+        "Düşük SWaP-C tasarımı",
+        "7 kg'dan hafif",
+        "38W güç tüketimi",
+        "AI destekli sınıflandırma",
+      ],
+      badges: ["AESA", "Düşük SWaP-C", "Edge AI", "Ölçeklenebilir"],
+      sections: [
+        {
+          title: "Temel Özellikler",
+          type: "bullets",
+          icon: <RadarIcon className="w-5 h-5 text-sky-400" />,
+          items: [
+            "Tam 3D tespit ile yüksek hassasiyet",
+            "Metrelerce yakınlıktaki nesneleri ayırt edebilme",
+            "Düşük hızlarda (<0.1 m/s) drone tespiti",
+            "TrueView kamera ile radar güdümlü pan, tilt, zoom",
           ],
         },
         {
-          title: "Çevresel ve Güç",
+          title: "Düşük SWaP-C",
           type: "kv",
           icon: <Shield className="w-5 h-5 text-sky-400" />,
           items: [
-            { label: "Güç", value: "24–28 VDC, 130 W nom." },
-            { label: "Sıcaklık", value: "−32 °C … +65 °C" },
-            { label: "Koruma", value: "IP66, MIL‑STD‑1275E" },
-            { label: "Boyut/Ağırlık", value: "600×550×270 mm, ~25 kg" },
+            { label: "Ağırlık", value: "< 7 kg (15.5 lbs)" },
+            { label: "Güç Tüketimi", value: "38 watt" },
+            { label: "Taşınabilirlik", value: "Tek kişi tarafından taşınabilir" },
+            { label: "Kurulum", value: "Hızlı sabit veya taşınabilir kurulum" },
+          ],
+        },
+        {
+          title: "360° Kapsama",
+          type: "bullets",
+          icon: <Target className="w-5 h-5 text-sky-400" />,
+          items: [
+            "Üstün 3D tespit ile kör nokta yok",
+            "Çoklu birim ile ağ oluşturma yeteneği",
+            "Yüksek veya alçak uçan droneları tespit",
+            "Yoğun şehir alanlarında bile etkili",
+          ],
+        },
+        {
+          title: "AI at the Edge",
+          type: "bullets",
+          icon: <Cpu className="w-5 h-5 text-sky-400" />,
+          items: [
+            "Radar üzerinde yoğun hesaplama",
+            "CNN tabanlı uyarlamalı makine öğrenimi",
+            "Mikro-doppler imza, hareket paterni, boyut analizi",
+            "Çoklu nesne eşzamanlı değerlendirme",
+          ],
+        },
+      ],
+    },
+    "trueview-r20-radar": {
+      title: "TrueView R20 Radar",
+      overview:
+        "Sadece 206 mm (8.1 inç) boyutunda, R20 sınıfında gerçek AESA teknolojisine sahip tek radardır. Etkileyici performansı, küçük form faktörü ve olağanüstü enerji verimliliği, R20'nin düşük SWaP-C (boyut, ağırlık, güç ve maliyet) değerlerine katkıda bulunarak askeri uygulamalar için ideal hale getirir. Hava platformu varyantı R20i, DroneHunter UAV'larda standart ekipman olarak kullanılır.",
+      highlights: [
+        "206 mm ultra kompakt boyut",
+        "Havadan havaya radar yeteneği",
+        "38 watt güç tüketimi",
+        "DroneHunter entegrasyonu",
+        "Askeri SWaP-C uyumlu",
+      ],
+      badges: ["AESA", "Ultra Kompakt", "Hava-Hava", "DroneHunter"],
+      sections: [
+        {
+          title: "Temel Özellikler",
+          type: "bullets",
+          icon: <RadarIcon className="w-5 h-5 text-sky-400" />,
+          items: [
+            "Tam 3D tespit hassasiyeti",
+            "Düşük hızda (<0.1 m/s) drone takibi",
+            "TrueView kamera entegrasyonu",
+            "Hızlı kurulum ve kolay kullanım",
+          ],
+        },
+        {
+          title: "Düşük SWaP-C",
+          type: "kv",
+          icon: <Gauge className="w-5 h-5 text-sky-400" />,
+          items: [
+            { label: "Boyut", value: "206 mm (8.1 inç)" },
+            { label: "Ağırlık", value: "< 7 kg" },
+            { label: "Güç Tüketimi", value: "38 watt" },
+            { label: "Mimari", value: "Gerçek AESA" },
+          ],
+        },
+        {
+          title: "Hava-Hava Yeteneği",
+          type: "bullets",
+          icon: <Target className="w-5 h-5 text-sky-400" />,
+          items: [
+            "Yer radarlarından veri alarak hedefleme",
+            "DroneHunter UAV üzerinde standart ekipman",
+            "Otonom hedef takibi ve kilitleme",
+            "Navigasyon desteği",
+          ],
+        },
+        {
+          title: "Ölçeklenebilirlik",
+          type: "bullets",
+          icon: <Network className="w-5 h-5 text-sky-400" />,
+          items: [
+            "Birimler arası doğrudan bağlantı",
+            "Sınırsız ölçekte TrueView ağı",
+            "Küçük ve büyük ölçekli kurulumlar",
+            "Yoğun şehir alanlarında bile 360° kapsama",
           ],
         },
       ],

@@ -11,64 +11,54 @@ export interface RadarSystem {
 
 export const radarSystems: RadarSystem[] = [
   {
-    slug: "mgr-1200-radar-sistemi",
-    title: "MGR-1200 Radar Sistemi",
-    description: "Orta menzilli, yazılım tanımlı 4D (Ku-band) radar sistemi. İnsan tespit menzili yaklaşık 13 km, araç tespit menzili yaklaşık 16 km.",
-    image: "/products/radar-sistemleri/mgr-1200.webp",
+    slug: "trueview-r40-radar",
+    title: "TrueView R40 Radar",
+    description: "Yüksek performanslı, gerçek AESA (Aktif Elektronik Taramalı Dizi) radar. 256 alıcı eleman, 16 dijital kanal, çok kanallı dijital hüzme oluşturma ve eşzamanlı analog hüzme yönlendirme özelliklerine sahip. Yapay zeka ve 5.5 teraflop GPU ile güçlendirilmiş.",
+    image: "/products/radar-sistemleri/trueview-r40.webp",
     features: [
-      "Ku-band 4D radar teknolojisi",
-      "13 km insan tespit menzili",
-      "16 km araç tespit menzili",
-      "Yazılım tanımlı mimari"
+      "256 alıcı elemanlı gerçek AESA teknolojisi",
+      "16 dijital kanal ile çok kanallı hüzme oluşturma",
+      "5.5 teraflop GPU ile yapay zeka desteği",
+      "Düşük yanlış alarm oranı",
+      "Drone tespiti için özel tasarım",
+      "STAP (Uzay-Zaman Uyarlamalı İşleme) özellikli"
     ],
     borderColor: "#4F46E5",
     gradient: "linear-gradient(145deg,#4F46E5,#000)",
-    url: "/urunler/radar-sistemleri/mgr-1200-radar-sistemi"
+    url: "/urunler/radar-sistemleri/trueview-r40-radar"
   },
   {
-    slug: "mgr-600-radar-sistemi",
-    title: "MGR-600 Radar Sistemi",
-    description: "Kısa menzilli 4D radar (K-band) sistemi. 6 km enstrümanlı menzil ve 120°×80° görüş alanı özelliklerine sahip.",
-    image: "/products/radar-sistemleri/mgr-600.webp",
+    slug: "trueview-r30-radar",
+    title: "TrueView R30 Radar",
+    description: "Yüksek performanslı AESA radar sistemi. 256 alıcı eleman, 16 dijital kanal ve üstün anten verimliliği ile drone savunmasında güvenilir çözüm sunar. Edge AI teknolojisi ile donatılmış.",
+    image: "/products/radar-sistemleri/trueview-r30.webp",
     features: [
-      "K-band 4D radar teknolojisi",
-      "6 km enstrümanlı menzil",
-      "120°×80° görüş alanı",
-      "Kısa menzil optimizasyonu"
+      "Gerçek 3D tespit ve takip",
+      "Düşük SWaP-C (Boyut, Ağırlık, Güç, Maliyet)",
+      "Geniş alan koruması",
+      "Yapay zeka destekli mikro-doppler sınıflandırma",
+      "7 kg'dan hafif, 38W güç tüketimi",
+      "360° kapsama için ağ oluşturma yeteneği"
     ],
     borderColor: "#10B981",
     gradient: "linear-gradient(210deg,#10B981,#000)",
-    url: "/urunler/radar-sistemleri/mgr-600-radar-sistemi"
+    url: "/urunler/radar-sistemleri/trueview-r30-radar"
   },
   {
-    slug: "mgr-a600-advanced-radar-sistemi",
-    title: "MGR-A600 Advanced+ Radar Sistemi",
-    description: "Yeni nesil kısa menzilli 4D radar (X-band, AESA/MESA) sistemi. 360°×90° görüş alanı ile gelişmiş tespit yetenekleri.",
-    image: "/products/radar-sistemleri/mgr-a600-advanced.webp",
+    slug: "trueview-r20-radar",
+    title: "TrueView R20 Radar",
+    description: "206 mm boyutunda, sınıfındaki tek gerçek AESA teknolojisine sahip kompakt radar. Hem yer hem de hava platformlarında kullanılabilir. DroneHunter UAV'larında standart ekipman olarak kullanılır.",
+    image: "/products/radar-sistemleri/trueview-r20.webp",
     features: [
-      "X-band AESA/MESA teknolojisi",
-      "360°×90° görüş alanı",
-      "Yeni nesil 4D radar",
-      "Gelişmiş tespit algoritmaları"
+      "206 mm ultra kompakt tasarım",
+      "Havadan havaya radar yeteneği",
+      "38 watt düşük güç tüketimi",
+      "Tam 3D tespit hassasiyeti",
+      "DroneHunter entegrasyonu",
+      "Askeri uygulamalar için ideal SWaP-C"
     ],
     borderColor: "#F59E0B",
     gradient: "linear-gradient(165deg,#F59E0B,#000)",
-    url: "/urunler/radar-sistemleri/mgr-a600-advanced-radar-sistemi"
-  },
-  {
-    slug: "bisavunma-a200-mk2-radar-sistemi",
-    title: "BİSAVUNMA A200 Radar Sistemi",
-    description: "4D çok modlu AESA radar sistemi. Eş zamanlı hava, kara ve deniz tespiti yapabilir. Nano-drone tespit menzili 3 km.",
-    image: "/products/radar-sistemleri/bisavunma-a200-mk2.webp",
-    features: [
-      "4D çok modlu AESA radar",
-      "Eş zamanlı hava/kara/deniz tespiti",
-      "3 km nano-drone tespit menzili",
-      "Kanatlı drone tespit yeteneği"
-    ],
-    borderColor: "#EF4444",
-    gradient: "linear-gradient(195deg,#EF4444,#000)",
-    url: "/urunler/radar-sistemleri/bisavunma-a200-mk2-radar-sistemi"
+    url: "/urunler/radar-sistemleri/trueview-r20-radar"
   }
 ];
-

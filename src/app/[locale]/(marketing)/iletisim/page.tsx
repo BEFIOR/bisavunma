@@ -6,6 +6,7 @@ import { Mail, Phone, Clock, Send, MessageCircle } from "lucide-react";
 import { HeroAnimation } from "@/components/animations/ScrollAnimations";
 import Footer from "@/components/Footer";
 import EmailServiceModal from "@/components/EmailServiceModal";
+import DotGrid from "@/components/DotGrid";
 import {
   trackContactForm,
   trackConversion,
@@ -103,7 +104,16 @@ ${data.message}
             }}
           />
         </div>
-
+ <div className="absolute inset-0 -z-10">
+          <DotGrid
+            dotSize={8}
+            gap={54}
+            baseColor="#1e3a5fff"
+            activeColor="#38bdf8"
+            proximity={180}
+            className="opacity-60"
+          />
+        </div>
         {/* Background Overlay - only for hero section */}
         <div className="absolute inset-0 -z-10 bg-gray-950/80" />
         <div className="flex items-center justify-center min-h-screen">

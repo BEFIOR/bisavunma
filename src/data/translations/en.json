@@ -137,6 +137,7 @@
       "radar": "Radar Systems",
       "electroOptical": "Electro-Optical & Thermal Systems",
       "jammer": "Jammer & RF Effectors",
+      "counterUAS": "Integrated Counter-UAS & C2",
       "dji": "DJI Turkey Enterprise"
     },
     "solutions": {
@@ -383,6 +384,43 @@
       "noProducts": "No products available in this subcategory.",
       "tryOther": "Try selecting another subcategory.",
       "portfolioDescription": "We offer various radar systems and solutions for different operational requirements."
+    }
+  },
+  "counterUAS": {
+    "title": "Integrated Counter-UAS & C2",
+    "description": "Integrated drone defense and command control systems. Comprehensive airspace protection with DroneHunter interceptor UAVs, SkyDome Manager C2 software and Edge Fusion System.",
+    "badge": "Counter-UAS Defense",
+    "heroTitle": "Integrated Counter-UAS and Command Control Systems",
+    "heroDescription": "Comprehensive airspace protection with DroneHunter interceptor UAVs, SkyDome Manager C2 software and Edge Fusion System. Autonomous detection, tracking and neutralization solutions.",
+    "stats": {
+      "droneCaptures": "Drone Captures",
+      "responseTime": "Response Time",
+      "coverage": "Coverage"
+    },
+    "highlights": {
+      "autonomousIntercept": {
+        "title": "Autonomous Interception",
+        "description": "Fully autonomous drone capture and neutralization with radar-guided DroneHunter UAVs."
+      },
+      "aiPowered": {
+        "title": "AI-Powered Analysis",
+        "description": "Intelligent threat classification and prioritization with ThreatAware risk assessment."
+      },
+      "integratedC2": {
+        "title": "Integrated C2",
+        "description": "Management of all sensors and effectors from a single screen with SkyDome Manager."
+      }
+    },
+    "sidebar": {
+      "title": "Product Categories",
+      "allProducts": "All Products",
+      "clear": "Clear"
+    },
+    "products": {
+      "listing": "products listed",
+      "detail": "Detail",
+      "noProducts": "No products available in this category.",
+      "tryOther": "Try selecting another category."
     }
   },
   "rfSystems": {

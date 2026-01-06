@@ -1,0 +1,1088 @@
+<!DOCTYPE html><html lang=" en"><head>
+		<!-- Google Tag Manager -->
+		<script>
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-P6W6P5R');
+		</script>
+		<!-- End Google Tag Manager -->
+		<!-- meta -->
+		<meta charset="utf-8">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Error | Fortem Technologies</title>
+<meta content="Jekyll v4.1.1" name="generator">
+<meta content="Error" property="og:title">
+<meta content="en_US" property="og:locale">
+<meta content="Airspace Awareness Safety &amp; Security" name="description">
+<meta content="Airspace Awareness Safety &amp; Security" property="og:description">
+<link href="https://www.fortemtech.com/404.html" rel="canonical">
+<meta content="https://www.fortemtech.com/404.html" property="og:url">
+<meta content="Fortem Technologies" property="og:site_name">
+<meta content="website" property="og:type">
+<meta content="summary" name="twitter:card">
+<meta content="Error" property="twitter:title">
+<meta content="@" name="twitter:site">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Airspace Awareness Safety &amp; Security","headline":"Error","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.fortemtech.com/assets/img/logo/logo.svg"}},"url":"https://www.fortemtech.com/404.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+		
+		<!-- Favicon -->
+		<link data-cms-original-href="/favicon.png" href="/favicon.png?_cchid=ed8b6b4427775b5bca2cc9c3fa7693bf" rel="icon" sizes="32x32" type="image/png">
+		<link data-cms-original-href="/favicon.svg" href="/favicon.svg?_cchid=2850f7002e005679bf3ba7b97ef5c244" rel="icon" type="image/svg+xml">
+		<!-- All css here -->
+		<!-- bootstrap 5.0 css -->
+		<link data-cms-original-href="/assets/css/bootstrap.min.css" href="/assets/css/bootstrap.min.css?_cchid=94994c66fec8c3468b269dc0cc242151" rel="stylesheet">
+		<!-- TSC grid extensions -->
+		<link data-cms-original-href="/assets/css/grid-extensions.css" href="/assets/css/grid-extensions.css?_cchid=4ab9ad1f4855a621c0abe700e7610e1d" rel="stylesheet">
+		<!-- owl.carousel css -->
+		<link data-cms-original-href="/assets/css/owl.carousel.min.css" href="/assets/css/owl.carousel.min.css?_cchid=f461246bec64824302b860ca85fb83e3" rel="stylesheet">
+		<!-- Animate css -->
+		<link data-cms-original-href="/assets/css/animate.min.css" href="/assets/css/animate.min.css?_cchid=80b62242af4a31a69384c3933179bea9" rel="stylesheet">
+		<!-- meanmenu css -->
+		<link data-cms-original-href="/assets/css/meanmenu.min.css" href="/assets/css/meanmenu.min.css?_cchid=95a40be4b8dab44a8ec6648a85837c08" rel="stylesheet">
+		<!-- Icon font css -->
+		<link data-cms-original-href="/assets/css/font-awesome.min.css" href="/assets/css/font-awesome.min.css?_cchid=63b8831145babdb0b3a016b8370047c6" rel="stylesheet">
+		<link data-cms-original-href="/assets/css/themify-icons.css" href="/assets/css/themify-icons.css?_cchid=96066b6cfa4e7c81bbc11aa9da1feb57" rel="stylesheet">
+		<!-- style css -->
+		<link data-cms-original-href="/style.css" href="/style.css?_cchid=e2ed47307666fb410d6c98fda9ca9123" rel="stylesheet">
+		<!-- responsive css -->
+		<link data-cms-original-href="/assets/css/responsive.css" href="/assets/css/responsive.css?_cchid=18296950dd130ce405424b3318fee629" rel="stylesheet">
+		<!-- cloudcannon editor css -->
+		<link data-cms-original-href="/assets/css/editor.css" href="/assets/css/editor.css?_cchid=769e87fe53753ea0f94f786e6c14f72f" rel="stylesheet">
+		<!-- enable scss and bookshop scss -->
+		<link data-cms-original-href="/assets/css/main.css" href="/assets/css/main.css?_cchid=2e69063601113cb60bacb9520c7c30d0" rel="stylesheet">
+		<link href="https://www.fortemtech.com/index.xml" rel="alternate" title="Fortem Technologies" type="application/atom+xml">
+		
+			<script async="" defer="" src="https://www.google.com/recaptcha/api.js"></script>
+		
+		
+			<script>function setCookie(cname, cvalue, exdays) {
+		const d = new Date();
+		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		let expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+	function getCookie(cname) {
+		let name = cname + "=";
+		let ca = document.cookie.split(';');
+		for(let i = 0; i < ca.length; i++) {
+			let c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+	const cooTags = getCookie("content_tags");
+	const oldTags = cooTags.trim().split(',');
+	const newTags = [];
+	const allTags = oldTags.concat(newTags);
+	unqTags = allTags.filter(function(item, pos, self) {
+		return self.indexOf(item) == pos;
+	});
+	setCookie("content_tags", unqTags, "14");
+	
+</script>
+		
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6W6P5R" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<!-- preloader  -->
+		
+			<style class="conditional-styles">
+	#preloader {
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 99999;
+		width: 100%;
+		height: 100%;
+		overflow: visible;
+		background: #fff;
+	}
+	#fortem-hourglass {
+			position: absolute;
+			width: 140px;
+			height: 140px;
+			left: calc(50% - 75px);
+			top: calc(50% - 75px);
+	}
+	#fortem-hourglass g {
+		transform-origin: center;
+		fill: var(--color_text_muted);
+	}
+	#fortem-hourglass #ftwave-1 {
+		animation: fortem-hourglass-spin 1.2s 1;
+	}
+	#fortem-hourglass #ftwave-2 {
+		animation: fortem-hourglass-spin 0.8s 1;
+	}
+	#fortem-hourglass #ftwave-3 {
+		animation: fortem-hourglass-spin 0.6s 1;
+	}
+	@keyframes fortem-hourglass-spin {
+		100% {
+			transform: rotate(360deg);
+			-moz-transform: rotate(360deg);
+			-webkit-transform: rotate(360deg);
+		}
+	}
+</style>
+<div id="preloader">
+	<!--?xml version="1.0" encoding="UTF-8"?--><svg id="fortem-hourglass" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><g id="ft-outer"><path d="M59.99,114.01c-29.8,0-54-24.2-54-54,0-14.3,5.7-28.1,15.8-38.2C42.89,.71,77.09,.71,98.19,21.81s21.1,55.3,0,76.4h0c-10.1,10.1-23.8,15.8-38.2,15.8m0-103.7c-27.5,0-49.7,22.2-49.7,49.7,0,13.2,5.2,25.8,14.6,35.1,19.4,19.4,50.9,19.4,70.3,0s19.4-50.8,0-70.2c-9.3-9.4-22-14.6-35.2-14.6"></path></g><g id="ftwave-3"><path d="M89.59,91.71c-1.2,0-2.2-1-2.2-2.2,0-.6,.2-1.1,.6-1.5,7.4-7.4,11.6-17.5,11.6-28,0-21.8-17.8-39.6-39.6-39.6-10.5,0-20.6,4.2-28,11.6-.9,.8-2.3,.7-3.1-.2-.7-.8-.7-2.1,0-2.9,8.2-8.3,19.4-12.9,31.1-12.9,24.2,0,43.9,19.7,43.9,43.9,0,11.6-4.6,22.8-12.9,31.1-.3,.4-.9,.7-1.4,.7"></path></g><g id="ftwave-2"><path d="M81.99,84.11c-1.2,0-2.2-1-2.2-2.2,0-.6,.2-1.1,.6-1.5,11.3-11.3,11.4-29.6,.1-40.9s-29.5-11.4-40.8-.1l-.1,.1c-.9,.8-2.3,.7-3.1-.2-.7-.8-.7-2.1,0-2.9,12.8-13.2,33.9-13.4,47.1-.6s13.4,33.9,.6,47.1l-.6,.6c-.4,.4-1,.6-1.6,.6"></path></g><g id="ftwave-1"><path d="M74.59,76.71c-1.2,0-2.2-1-2.2-2.2,0-.6,.2-1.1,.6-1.5,7.2-7.2,7.2-18.9,0-26-7.2-7.2-18.9-7.2-26.1,0h0c-.9,.8-2.3,.7-3.1-.2-.7-.8-.7-2.1,0-2.9,8.9-8.9,23.3-8.9,32.2,0s8.9,23.3,0,32.2c-.3,.4-.8,.6-1.4,.6"></path></g></svg>
+</div>
+		
+		
+
+
+<!-- Start header -->
+
+<header class="header-one">
+	
+	<div class="header-menu-area header-area  stick" id="sticker">
+		<div class="container" style="position: relative;">
+			<div class="row  ">
+				<div class="col-xl-2 col-lg-2 col-md-3 d-flex align-items-center">
+					
+
+
+<div class="logo">
+    
+    <a href="/"> <img alt="Fortem Technologies" data-cms-original-src="/assets/img/logo/logo.svg" src="/assets/img/logo/logo.svg?_cchid=3327da28b33ac1f405cdfa25f9c516ef"> </a>
+    
+</div>
+
+				</div>
+				<div class="col-xl-10 col-lg-10 col-md-9">
+					<div class="header-right">
+						
+						<a class="btn ga4_cta" data-bs-target="#inquiry-form" data-bs-toggle="modal" href="#">New Inquiry</a>
+					</div>
+					<div class="header_menu f-right">
+						<nav id="mobile-menu">
+							<ul class="main-menu">
+	<li class="menu-item-has-children">
+		<a href="/solutions/">Solutions</a>
+		<ul class="submenu">
+			
+			
+			<li><a href="/solutions/advanced-airspace-awareness/">Advanced Airspace Awareness </a></li>
+			
+			<li><a href="/solutions/airports/">Airports</a></li>
+			
+			<li><a href="/solutions/energy-industrial/">Energy</a></li>
+			
+			<li><a href="/solutions/law-enforcement/">Law Enforcement</a></li>
+			
+			<li><a href="/solutions/military-defense/">Defense</a></li>
+			
+			<li><a href="/solutions/prison-compounds/">Prisons</a></li>
+			
+			<li><a href="/solutions/public-venues/">Public Venues</a></li>
+			
+		</ul>
+	</li>
+	<li class="menu-item-has-children">
+		<a href="/products/">Products</a>
+		<ul class="submenu">
+			
+			
+				<li><a href="/products/trueview-r40-radar/">TrueView® R40 Radar</a></li>
+			
+				<li><a href="/products/trueview-r30/">TrueView® R30 Radar</a></li>
+			
+				<li><a href="/products/trueview-r20/">TrueView® R20 Radar</a></li>
+			
+				<li><a href="/products/trueview-c30/">TrueView® C30 Camera System</a></li>
+			
+				<li><a href="/products/dronehunter-f700/">DroneHunter® F700</a></li>
+			
+				<li><a href="/products/dronehangar/">DroneHangar™</a></li>
+			
+				<li><a href="/products/skydome-manager/">SkyDome® Manager</a></li>
+			
+				<li><a href="/products/edge-fusion-system/">Edge Fusion System</a></li>
+			
+		</ul>
+	</li>
+	
+	<li class="menu-item-has-children"><a href="/blog/">Thought Leadership</a>
+		
+			<ul class="submenu">
+				
+				<li><a href="/blog/">Articles</a></li>
+				
+				<li><a href="/webinars/">Live Webinars</a></li>
+				
+			</ul>
+		
+	</li>
+	
+	<li class="menu-item-has-children"><a href="/press-releases/">Media</a>
+		
+			<ul class="submenu">
+				
+				<li><a href="/press-releases/">Press Releases</a></li>
+				
+				<li><a href="/media-coverage/">Fortem in the News</a></li>
+				
+			</ul>
+		
+	</li>
+	
+	<li class="menu-item-has-children"><a href="/about/">Company</a>
+		
+			<ul class="submenu">
+				
+				<li><a href="/about/">About Us</a></li>
+				
+				<li><a href="/leadership/">Leadership</a></li>
+				
+			</ul>
+		
+	</li>
+	
+	<li><a class="d-md-none ga4_cta" data-bs-target="#inquiry-form" data-bs-toggle="modal" href="#">New Inquiry</a></li>
+</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="mobile-menu"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- End header area -->
+
+<!-- Search Modal -->
+<div aria-hidden="true" aria-labelledby="redron-searchLabel" class="modal modal-search-form fade" id="redron-search" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form action="" class="search-form" method="post">
+				<input class="form-control" id="search-input" name="q" placeholder="Search..." type="text">
+				<i class="fa fa-search"></i>
+			</form>
+			<div id="results-container"></div>
+		</div>
+	</div>
+</div>
+
+<!-- Inquiry Modal -->
+<div aria-hidden="true" aria-labelledby="inquiry-formLabel" class="modal modal-search-form fade" id="inquiry-form" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content text-center">
+			<h2>Request More Information</h2>
+			<p>Use this form to open dialogue with us. You'll be contacted by a real specialist, operating in the United States, who can discuss your specific needs and answer your questions. Please allow 5-7 business days for the right person to get in touch with you.</p>
+			
+			<form action="/submit" class="contact-form ga4_inq" method="POST" name="modal">
+	<div class="row">
+		<div class="col-md-6">
+			<input class="form-control" data-error="Please enter your first name" id="inquiry-first" name="first_name" pattern="^[a-zA-Z]+" placeholder="First Name" required="" type="text">
+			<div class="help-block with-errors"></div>
+		</div>
+		<div class="col-md-6">
+			<input class="form-control" data-error="Please enter your last name" id="inquiry-last" name="last_name" pattern="^[a-zA-Z]+" placeholder="Last Name" required="" type="text">
+			<div class="help-block with-errors"></div>
+		</div>
+		<div class="col-md-6">
+			<input class="form-control" data-error="Please enter your email address" id="inquiry-email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email Address" required="" type="email">
+			<div class="help-block with-errors"></div>
+		</div>
+		<div class="col-md-6">
+			<input class="form-control" data-error="Please enter a valid phone number or omit" id="inquiry-phone" name="phone" placeholder="Phone Number (Optional)" title="Please enter a valid phone number or omit" type="tel">
+			<div class="help-block with-errors"></div>
+		</div>
+		
+			<div class="col-md-6">
+				<input class="form-control" data-error="Please enter the name of your organization" id="inquiry-org" name="organization" placeholder="Organization" required="" type="text">
+				<div class="help-block with-errors"></div>
+			</div>
+			<div class="col-md-6">
+				
+					<select class="form-control" id="inquiry-source" name="declared_source">
+						<option value="">How'd you hear about us? (Optional)</option>
+						<option value="seo">Web Search</option>
+						<option value="social">Social Media</option>
+						<option value="paid">Advertisement</option>
+						<option value="paid">News Outlet</option>
+						<option value="event">Trade Show or Event</option>
+						<option value="friend">Friend or Colleague</option>
+						<option value="other">Other</option>
+					</select>
+					<input class="form-control mt-2" id="inquiry-other-source" name="other_source" placeholder="Please specify how you heard about us" style="display:none;" type="text">
+				
+				<div class="help-block with-errors"></div>
+			</div>
+			<div class="col-12">
+				<select class="form-control" id="inquiry-country" name="country" required="">
+					<option value="">Country</option>
+					
+						<option value="Afghanistan">Afghanistan</option>
+					
+						<option value="Albania">Albania</option>
+					
+						<option value="Algeria">Algeria</option>
+					
+						<option value="Andorra">Andorra</option>
+					
+						<option value="Angola">Angola</option>
+					
+						<option value="Antigua &amp; Deps">Antigua &amp; Deps</option>
+					
+						<option value="Argentina">Argentina</option>
+					
+						<option value="Armenia">Armenia</option>
+					
+						<option value="Australia">Australia</option>
+					
+						<option value="Austria">Austria</option>
+					
+						<option value="Azerbaijan">Azerbaijan</option>
+					
+						<option value="Bahamas">Bahamas</option>
+					
+						<option value="Bahrain">Bahrain</option>
+					
+						<option value="Bangladesh">Bangladesh</option>
+					
+						<option value="Barbados">Barbados</option>
+					
+						<option value="Belarus">Belarus</option>
+					
+						<option value="Belgium">Belgium</option>
+					
+						<option value="Belize">Belize</option>
+					
+						<option value="Benin">Benin</option>
+					
+						<option value="Bhutan">Bhutan</option>
+					
+						<option value="Bolivia">Bolivia</option>
+					
+						<option value="Bosnia Herzegovina">Bosnia Herzegovina</option>
+					
+						<option value="Botswana">Botswana</option>
+					
+						<option value="Brazil">Brazil</option>
+					
+						<option value="Brunei">Brunei</option>
+					
+						<option value="Bulgaria">Bulgaria</option>
+					
+						<option value="Burkina">Burkina</option>
+					
+						<option value="Burundi">Burundi</option>
+					
+						<option value="Cambodia">Cambodia</option>
+					
+						<option value="Cameroon">Cameroon</option>
+					
+						<option value="Canada">Canada</option>
+					
+						<option value="Cape Verde">Cape Verde</option>
+					
+						<option value="Central African Rep">Central African Rep</option>
+					
+						<option value="Chad">Chad</option>
+					
+						<option value="Chile">Chile</option>
+					
+						<option value="China">China</option>
+					
+						<option value="Colombia">Colombia</option>
+					
+						<option value="Comoros">Comoros</option>
+					
+						<option value="Congo">Congo</option>
+					
+						<option value="Congo (Democratic Rep)">Congo (Democratic Rep)</option>
+					
+						<option value="Costa Rica">Costa Rica</option>
+					
+						<option value="Croatia">Croatia</option>
+					
+						<option value="Cuba">Cuba</option>
+					
+						<option value="Cyprus">Cyprus</option>
+					
+						<option value="Czech Republic">Czech Republic</option>
+					
+						<option value="Denmark">Denmark</option>
+					
+						<option value="Djibouti">Djibouti</option>
+					
+						<option value="Dominica">Dominica</option>
+					
+						<option value="Dominican Republic">Dominican Republic</option>
+					
+						<option value="East Timor">East Timor</option>
+					
+						<option value="Ecuador">Ecuador</option>
+					
+						<option value="Egypt">Egypt</option>
+					
+						<option value="El Salvador">El Salvador</option>
+					
+						<option value="Equatorial Guinea">Equatorial Guinea</option>
+					
+						<option value="Eritrea">Eritrea</option>
+					
+						<option value="Estonia">Estonia</option>
+					
+						<option value="Ethiopia">Ethiopia</option>
+					
+						<option value="Fiji">Fiji</option>
+					
+						<option value="Finland">Finland</option>
+					
+						<option value="France">France</option>
+					
+						<option value="Gabon">Gabon</option>
+					
+						<option value="Gambia">Gambia</option>
+					
+						<option value="Georgia">Georgia</option>
+					
+						<option value="Germany">Germany</option>
+					
+						<option value="Ghana">Ghana</option>
+					
+						<option value="Greece">Greece</option>
+					
+						<option value="Grenada">Grenada</option>
+					
+						<option value="Guatemala">Guatemala</option>
+					
+						<option value="Guinea">Guinea</option>
+					
+						<option value="Guinea-Bissau">Guinea-Bissau</option>
+					
+						<option value="Guyana">Guyana</option>
+					
+						<option value="Haiti">Haiti</option>
+					
+						<option value="Honduras">Honduras</option>
+					
+						<option value="Hungary">Hungary</option>
+					
+						<option value="Iceland">Iceland</option>
+					
+						<option value="India">India</option>
+					
+						<option value="Indonesia">Indonesia</option>
+					
+						<option value="Iran">Iran</option>
+					
+						<option value="Iraq">Iraq</option>
+					
+						<option value="Ireland (Republic)">Ireland (Republic)</option>
+					
+						<option value="Israel">Israel</option>
+					
+						<option value="Italy">Italy</option>
+					
+						<option value="Ivory Coast">Ivory Coast</option>
+					
+						<option value="Jamaica">Jamaica</option>
+					
+						<option value="Japan">Japan</option>
+					
+						<option value="Jordan">Jordan</option>
+					
+						<option value="Kazakhstan">Kazakhstan</option>
+					
+						<option value="Kenya">Kenya</option>
+					
+						<option value="Kiribati">Kiribati</option>
+					
+						<option value="Korea North">Korea North</option>
+					
+						<option value="Korea South">Korea South</option>
+					
+						<option value="Kosovo">Kosovo</option>
+					
+						<option value="Kuwait">Kuwait</option>
+					
+						<option value="Kyrgyzstan">Kyrgyzstan</option>
+					
+						<option value="Laos">Laos</option>
+					
+						<option value="Latvia">Latvia</option>
+					
+						<option value="Lebanon">Lebanon</option>
+					
+						<option value="Lesotho">Lesotho</option>
+					
+						<option value="Liberia">Liberia</option>
+					
+						<option value="Libya">Libya</option>
+					
+						<option value="Liechtenstein">Liechtenstein</option>
+					
+						<option value="Lithuania">Lithuania</option>
+					
+						<option value="Luxembourg">Luxembourg</option>
+					
+						<option value="Macedonia">Macedonia</option>
+					
+						<option value="Madagascar">Madagascar</option>
+					
+						<option value="Malawi">Malawi</option>
+					
+						<option value="Malaysia">Malaysia</option>
+					
+						<option value="Maldives">Maldives</option>
+					
+						<option value="Mali">Mali</option>
+					
+						<option value="Malta">Malta</option>
+					
+						<option value="Marshall Islands">Marshall Islands</option>
+					
+						<option value="Mauritania">Mauritania</option>
+					
+						<option value="Mauritius">Mauritius</option>
+					
+						<option value="Mexico">Mexico</option>
+					
+						<option value="Micronesia">Micronesia</option>
+					
+						<option value="Moldova">Moldova</option>
+					
+						<option value="Monaco">Monaco</option>
+					
+						<option value="Mongolia">Mongolia</option>
+					
+						<option value="Montenegro">Montenegro</option>
+					
+						<option value="Morocco">Morocco</option>
+					
+						<option value="Mozambique">Mozambique</option>
+					
+						<option value="Myanmar, (Burma)">Myanmar, (Burma)</option>
+					
+						<option value="Namibia">Namibia</option>
+					
+						<option value="Nauru">Nauru</option>
+					
+						<option value="Nepal">Nepal</option>
+					
+						<option value="Netherlands">Netherlands</option>
+					
+						<option value="New Zealand">New Zealand</option>
+					
+						<option value="Nicaragua">Nicaragua</option>
+					
+						<option value="Niger">Niger</option>
+					
+						<option value="Nigeria">Nigeria</option>
+					
+						<option value="Norway">Norway</option>
+					
+						<option value="Oman">Oman</option>
+					
+						<option value="Pakistan">Pakistan</option>
+					
+						<option value="Palau">Palau</option>
+					
+						<option value="Panama">Panama</option>
+					
+						<option value="Papua New Guinea">Papua New Guinea</option>
+					
+						<option value="Paraguay">Paraguay</option>
+					
+						<option value="Peru">Peru</option>
+					
+						<option value="Philippines">Philippines</option>
+					
+						<option value="Poland">Poland</option>
+					
+						<option value="Portugal">Portugal</option>
+					
+						<option value="Qatar">Qatar</option>
+					
+						<option value="Romania">Romania</option>
+					
+						<option value="Russian Federation">Russian Federation</option>
+					
+						<option value="Rwanda">Rwanda</option>
+					
+						<option value="St Kitts &amp; Nevis">St Kitts &amp; Nevis</option>
+					
+						<option value="St Lucia">St Lucia</option>
+					
+						<option value="Saint Vincent &amp; the Grenadines">Saint Vincent &amp; the Grenadines</option>
+					
+						<option value="Samoa">Samoa</option>
+					
+						<option value="San Marino">San Marino</option>
+					
+						<option value="Sao Tome &amp; Principe">Sao Tome &amp; Principe</option>
+					
+						<option value="Saudi Arabia">Saudi Arabia</option>
+					
+						<option value="Senegal">Senegal</option>
+					
+						<option value="Serbia">Serbia</option>
+					
+						<option value="Seychelles">Seychelles</option>
+					
+						<option value="Sierra Leone">Sierra Leone</option>
+					
+						<option value="Singapore">Singapore</option>
+					
+						<option value="Slovakia">Slovakia</option>
+					
+						<option value="Slovenia">Slovenia</option>
+					
+						<option value="Solomon Islands">Solomon Islands</option>
+					
+						<option value="Somalia">Somalia</option>
+					
+						<option value="South Africa">South Africa</option>
+					
+						<option value="South Sudan">South Sudan</option>
+					
+						<option value="Spain">Spain</option>
+					
+						<option value="Sri Lanka">Sri Lanka</option>
+					
+						<option value="Sudan">Sudan</option>
+					
+						<option value="Suriname">Suriname</option>
+					
+						<option value="Swaziland">Swaziland</option>
+					
+						<option value="Sweden">Sweden</option>
+					
+						<option value="Switzerland">Switzerland</option>
+					
+						<option value="Syria">Syria</option>
+					
+						<option value="Taiwan">Taiwan</option>
+					
+						<option value="Tajikistan">Tajikistan</option>
+					
+						<option value="Tanzania">Tanzania</option>
+					
+						<option value="Thailand">Thailand</option>
+					
+						<option value="Togo">Togo</option>
+					
+						<option value="Tonga">Tonga</option>
+					
+						<option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
+					
+						<option value="Tunisia">Tunisia</option>
+					
+						<option value="Turkey">Turkey</option>
+					
+						<option value="Turkmenistan">Turkmenistan</option>
+					
+						<option value="Tuvalu">Tuvalu</option>
+					
+						<option value="Uganda">Uganda</option>
+					
+						<option value="Ukraine">Ukraine</option>
+					
+						<option value="United Arab Emirates">United Arab Emirates</option>
+					
+						<option value="United Kingdom">United Kingdom</option>
+					
+						<option value="United States">United States</option>
+					
+						<option value="Uruguay">Uruguay</option>
+					
+						<option value="Uzbekistan">Uzbekistan</option>
+					
+						<option value="Vanuatu">Vanuatu</option>
+					
+						<option value="Vatican City">Vatican City</option>
+					
+						<option value="Venezuela">Venezuela</option>
+					
+						<option value="Vietnam">Vietnam</option>
+					
+						<option value="Yemen">Yemen</option>
+					
+						<option value="Zambia">Zambia</option>
+					
+						<option value="Zimbabwe">Zimbabwe</option>
+					
+				</select>
+				<div class="help-block with-errors"></div>
+			</div>
+		
+		<div class="col-12">
+			<textarea class="form-control" data-error="Write your message" id="inquiry-message" name="message" placeholder="How can we assist you?" required="" rows="7"></textarea>
+			<div class="help-block with-errors"></div>
+		</div>
+		
+			<div class="col-lg-6">
+				<div class="form-captcha">
+					<div class="g-recaptcha" data-sitekey="6Lfg3zskAAAAAPh5EMpcirA0V4kJZMsf_p8qF1Yw"></div>
+				</div>
+			</div>
+		
+		
+			<div class="col-12 d-flex align-items-center justify-content-center">
+				<span class="form-subscribe">
+					<label>
+						<input checked="" id="inquiry-subscribe" name="subscribe" title="Check this box if you want to receive regular updates" type="checkbox">
+						Subscribe to updates via email
+					</label>
+				</span>
+			</div>
+		
+		
+			<input id="inquiry-tags" name="content_tags" type="hidden" value="">
+			<script>document.getElementById('inquiry-tags').value=unqTags;</script>
+			<input id="inquiry-conv" name="conversion_page" type="hidden" value="/404.html">
+		
+		<input name="form_name" type="hidden" value="modal">
+		<div class="col-12">
+			<button class="btn btn-wide" id="submit" type="submit">Submit</button>
+			<div class="h3 text-center hidden" id="msgSubmit"></div>
+			
+				<small class="form-disclaimer std-links">
+					By checking the 'subscribe' box above, you agree to receive periodic emails containing news and marketing communications. You may withdraw your consent at any time by using the 'unsubscribe' link located at the bottom of these emails. You may also request permanent data deletion by contacting our support team at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0d8d5dcc0f0d6dfc2c4d5ddc4d5d3d89ed3dfdd">[email&#160;protected]</a>. For more details, see our <a href="/policies/privacy-policy/">Privacy Policy.</a>
+				</small>
+			
+		</div>
+	</div>
+</form>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+    var sourceSelect = document.getElementById('inquiry-source');
+    var otherInput = document.getElementById('inquiry-other-source');
+    if (sourceSelect && otherInput) {
+        sourceSelect.addEventListener('change', function() {
+            if (this.value === 'other') {
+                otherInput.style.display = 'block';
+                otherInput.required = true;
+            } else {
+                otherInput.style.display = 'none';
+                otherInput.required = false;
+                otherInput.value = '';
+            }
+        });
+    }
+});
+</script>
+		</div>
+	</div>
+</div>
+		<main>
+	<div class="page-head bg-color-xs area-padding-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 col-md-12">
+					<div class="error-page">
+						<div class="error-main-text text-center">
+							<h1 class="high-text">4<span> <img alt="Error" data-cms-original-src="/assets/img/about/e1.png" src="/assets/img/about/e1.png?_cchid=136d56d8693e186535a92238b2b7ff48"></span>4</h1>
+							<h2 class="error-easy-text">Page Not Found</h2>
+							<h3 class="error-bot">Oops, the page you are looking for does not exist.</h3>
+							<a class="btn" href="/">Go to Home Page</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</main>
+		<!-- Start Footer Area -->
+<footer class="footer1">
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-2 col-6 order-xl-2">
+					<div class="footer-content">
+						<div class="footer-head">
+							<h4>Company</h4>
+							<ul class="footer-list">
+								
+									<li><a href="/about/">About Us</a></li>
+								
+									<li><a href="https://www.linkedin.com/jobs/search/?currentJobId=2980017271&amp;f_C=10640207&amp;geoId=92000000" target="_blank">Careers</a></li>
+								
+									<li><a href="/leadership/">Leadership</a></li>
+								
+									<li><a href="/media-coverage/">Fortem in the News</a></li>
+								
+							</ul>
+						</div>
+						<div class="footer-head">
+							<h4>Quick Links</h4>
+							<ul class="footer-list">
+								
+									<li><a href="/solutions/">Solutions</a></li>
+								
+									<li><a href="/products/">Products</a></li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-2 col-6 order-xl-2">
+					<div class="footer-content">
+						<div class="footer-head">
+							<h4>Customers</h4>
+							<ul class="footer-list">
+								
+									<li><a href="https://fortemtechnologies-experiences.force.com/customersuccess/s/login/" target="_blank">Support Portal</a></li>
+								
+							</ul>
+						</div>
+						<div class="footer-head">
+							<h4>Partners</h4>
+							<ul class="footer-list">
+								
+									<li><a href="/library/" target="_blank">Asset Library</a></li>
+								
+							</ul>
+						</div>
+						<div class="footer-head">
+							<h4>Legal</h4>
+							<ul class="footer-list">
+								
+									<li><a href="/policies/terms-of-use/">Terms of Use</a></li>
+								
+									<li><a href="/policies/privacy-policy/">Privacy Policy</a></li>
+								
+									<li><a href="/policies/vendor-supplier-terms/">Vendor &amp; Supplier Terms</a></li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 order-xl-2">
+					<div class="footer-content last-content">
+						<div class="footer-head">
+							<h4>Latest News</h4>
+							<div class="pressrelease-widget">
+	
+	
+		<a class="single-pressrelease" href="/press-releases/2025-12-10-fortem-technologies-welcomes-ndaa-provisions-expanding-counter-uas-authorities/">
+	<div class="blog-meta">
+		
+
+
+<!-- Start viewer-facing meta properties -->
+
+		<span class="date-type">
+			<i class="ti-calendar"></i>
+			Dec 10, 2025
+		</span>
+		<span class="date-type">
+			<i class="ti-location-pin"></i>Lindon, UT</span>
+		<span class="date-type">
+				<i class="ti-flag-alt"></i>Important
+				</span>
+	
+<!-- End viewer-facing meta properties -->
+	</div>
+	<span>Fortem Technologies Welcomes NDAA Provisions Expanding Counter-UAS Authorities</span>
+</a>
+	
+		<a class="single-pressrelease" href="/press-releases/2025-12-04-fortem-technologies-partners-with-southern-states-llc-to-protect-u-s-power-grid-from-drone-threats/">
+	<div class="blog-meta">
+		
+
+
+<!-- Start viewer-facing meta properties -->
+
+		<span class="date-type">
+			<i class="ti-calendar"></i>
+			Dec 04, 2025
+		</span>
+		<span class="date-type">
+			<i class="ti-location-pin"></i>LINDON, Uta...</span>
+		<span class="date-type">
+				<i class="ti-flag-alt"></i>Important
+				</span>
+	
+<!-- End viewer-facing meta properties -->
+	</div>
+	<span>Fortem Technologies Partners with Southern States LLC to Protect U.S. Power Grid from Drone Threats</span>
+</a>
+	
+		<a class="single-pressrelease" href="/press-releases/2025-11-21-fortem-technologies-among-first-defense-companies-selected-for-u-s-army-s-new-g-tead-marketplace/">
+	<div class="blog-meta">
+		
+
+
+<!-- Start viewer-facing meta properties -->
+
+		<span class="date-type">
+			<i class="ti-calendar"></i>
+			Nov 21, 2025
+		</span>
+		<span class="date-type">
+			<i class="ti-location-pin"></i>Lindon, UT</span>
+		<span class="date-type">
+				<i class="ti-flag-alt"></i>Important
+				</span>
+	
+<!-- End viewer-facing meta properties -->
+	</div>
+	<span>Fortem Technologies Among First Defense Companies Selected for U.S. Army’s New G-TEAD Marketplace</span>
+</a>
+	
+</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 order-xl-1 mt-5 mt-xl-0">
+					<div class="footer-content logo-footer">
+						<div class="footer-head">
+							<div class="footer-logo">
+								<a href="/"><img alt="Fortem Technologies" data-cms-original-src="/assets/img/logo/logo.svg" src="/assets/img/logo/logo.svg?_cchid=3327da28b33ac1f405cdfa25f9c516ef"></a>
+							</div>
+							<hr>
+							<p>Fortem Technologies is the leader in airspace awareness, security, and defense for detecting and defeating dangerous drones.</p>
+							<div class="subs-fields">
+								<form action="" class="subscribe-input ga4_sub" method="post" name="subscription">
+									<input class="form-control" data-error="Please enter your email address" id="subscription-email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email Address" required="" type="email">
+									<input name="subscribe" type="hidden" value="on">
+									<button class="btn" id="sus_submit" type="submit">Subscribe</button>
+								</form>
+							</div>
+							<div class="footer-icons">
+								<!-- Start social media link buttons -->
+<ul>
+    
+    <li>
+        <a href="https://www.facebook.com/FortemTechnologies/" rel="external" target="_blank">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://www.linkedin.com/company/fortem-technologies" rel="external" target="_blank">
+            <i class="fa fa-linkedin"></i>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://twitter.com/FortemTech" rel="external" target="_blank">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+    
+    
+    
+    <li>
+        <a href="https://www.instagram.com/fortemtech/" rel="external" target="_blank">
+            <i class="fa fa-instagram"></i>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://www.youtube.com/channel/UCe_KW3k17jzh4N26_csZ7GA" rel="external" target="_blank">
+            <i class="fa fa-youtube"></i>
+        </a>
+    </li>
+    
+</ul>
+<!-- End social media link buttons -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Start Footer Bottom Area -->
+	<div class="footer-area-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-6 col-md-6">
+					<div class="copyright">
+						<p class="copyright-text m-0">
+							©&nbsp;<script>document.write(new Date().getFullYear())</script>&nbsp;Fortem Technologies.&nbsp;All rights reserved.
+						</p>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6">
+					<div class="footer-menu">
+						<ul>
+							<li><a href="#top">Return to Top</a></li>
+							<li><a href="/">Return to Home</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Footer Bottom Area -->
+</footer>
+<!-- End Footer Area -->
+		<!-- All JS here -->
+		<!-- modernizr JS -->
+		<!-- <script src="/assets/js/modernizr.min.js"></script> -->
+		<script defer="" src="//unpkg.com/alpinejs"></script>
+		
+		<!-- jquery latest version -->
+		<script data-cms-original-src="/assets/js/jquery.min.js" src="/assets/js/jquery.min.js?_cchid=8fb8fee4fcc3cc86ff6c724154c49c42"></script>
+		<!-- Youtube modal -->
+		
+		<!-- bootstrap js (popper disabled until needed)-->
+		<!-- <script src="/assets/js/popper.min.js"></script> -->
+		<script data-cms-original-src="/assets/js/bootstrap.min.js" src="/assets/js/bootstrap.min.js?_cchid=259e416ef6833be43801b8b68a93b008"></script>
+		<!-- jekyll search -->
+		<script data-cms-original-src="/assets/js/simple-jekyll-search.min.js" src="/assets/js/simple-jekyll-search.min.js?_cchid=dee75b71ef8bdb9af60ac9718bb41af3"></script>
+		<!-- owl.carousel js -->
+		<script data-cms-original-src="/assets/js/owl.carousel.min.js" src="/assets/js/owl.carousel.min.js?_cchid=47c357c05cb99cedbac2874840319818"></script>
+		<!-- meanmenu js -->
+		<script data-cms-original-src="/assets/js/jquery.meanmenu.js" src="/assets/js/jquery.meanmenu.js?_cchid=a374307f8540208bae15f4e4c5eeb15b"></script>
+		<!-- wow js -->
+		<script data-cms-original-src="/assets/js/wow.min.js" src="/assets/js/wow.min.js?_cchid=e1f1ff6897992a9165e8ce009b4039e3"></script>
+		<!-- plugins js -->
+		<script data-cms-original-src="/assets/js/plugins.js" src="/assets/js/plugins.js?_cchid=c947749af41dc66fbdeb15a440a42ff9"></script>
+		<!-- jekyll Loadmore -->
+		<!-- <script src="/assets/js/infinite-scroll.pkgd.min.js"></script> -->
+		<!-- main js -->
+		<script data-cms-original-src="/assets/js/app.js" src="/assets/js/app.js?_cchid=840031ad0236ed0d869f696f94d90acc"></script>
+		<!--ihavecookies-->
+		
+			<script data-cms-original-src="/assets/js/jquery.ihavecookies.min.js" src="/assets/js/jquery.ihavecookies.min.js?_cchid=d2680cd2a3e27d709acd2150f62014f2"></script>
+			<script>
+				var options = {
+					title: "Friendly cookies inbound",
+					message: "We use cookies to enhance user experience, analyze our site traffic, and improve communication with our customers.",
+					moreInfoLabel: "Privacy Policy",
+					acceptBtnLabel: "Accept",
+					advancedBtnLabel: "Settings",
+					cookieTypesTitle: "Customize your cookie settings",
+					fixedCookieTypeLabel: "Necessary",
+					delay: 1000,
+					link: "/policies/privacy-policy",
+					expires: "365",
+					uncheckBoxes: false
+				}
+				$('body').ihavecookies(options);
+				$('.cookie_settings').click(function(){
+					$('body').ihavecookies(options, 'reinit');
+				});
+			</script>
+		
+	
+</body></html>

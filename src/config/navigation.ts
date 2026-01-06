@@ -20,6 +20,7 @@ export const navigationSections: NavSection[] = [
         key: "electroOptical",
       },
       { title: "Jammer & RF Efektörler", href: "/urunler/jammer-rf-efektorler", key: "jammer" },
+      { title: "Integrated Counter-UAS & C2", href: "/urunler/integrated-counter-uas-c2", key: "counterUAS" },
       { title: "DJI Türkiye Enterprise", href: "/urunler/dji-turkiye-enterprise", key: "dji" },
     ],
   },

@@ -23,6 +23,7 @@ import {
 } from "@/components/animations/ScrollAnimations";
 import { LazyVideo } from "@/components/animations/LazyVideo";
 import { Link } from "@/i18n";
+import FaultyTerminal from "@/components/FaultyTerminal";
 
 // Lazy load Footer
 const Footer = dynamic(() => import("@/components/Footer"), {
@@ -35,18 +36,19 @@ export default function Cozumlerimiz() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-24 overflow-hidden min-h-screen">
-        {/* Optimized Background - Simple gradient instead of heavy GSAP animation */}
-        <div className="absolute inset-0 -z-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-950/20 via-transparent to-transparent" />
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: `radial-gradient(circle, #3d3d3d 1px, transparent 1px)`,
-              backgroundSize: "25px 25px",
-            }}
+        {/* FaultyTerminal Background */}
+        <div className="absolute inset-0 -z-10">
+          <FaultyTerminal
+            scale={1.5}
+            brightness={0.3}
+            tint="#38bdf8"
+            mouseReact={true}
+            mouseStrength={0.3}
+            className="opacity-70"
           />
         </div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 -z-5 bg-gradient-to-b from-transparent via-gray-950/50 to-gray-950" />
         <div className="flex items-center justify-center min-h-screen">
           <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <HeroAnimation direction="fade" delay={0}>

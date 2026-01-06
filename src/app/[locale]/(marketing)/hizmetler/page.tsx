@@ -14,7 +14,7 @@ import {
   Wrench,
   ChevronDown,
 } from "lucide-react";
-// Removed DotGrid for performance
+import FaultyTerminal from "@/components/FaultyTerminal";
 import {
   ScrollAnimation,
   HeroAnimation,
@@ -28,21 +28,20 @@ export default function Hizmetler() {
       <div>
         {/* Hero Section */}
         <section id="hero" className="relative pt-24 overflow-hidden h-screen">
-          {/* Optimized Background - Simple gradient instead of heavy GSAP animation */}
-          <div className="absolute inset-0 -z-20">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-950/20 via-transparent to-transparent" />
-            <div
-              className="absolute inset-0 opacity-30"
-              style={{
-                backgroundImage: `radial-gradient(circle, #3d3d3d 1px, transparent 1px)`,
-                backgroundSize: "25px 25px",
-              }}
+          {/* FaultyTerminal Background */}
+          <div className="absolute inset-0 -z-10">
+            <FaultyTerminal
+              scale={1.5}
+              brightness={0.3}
+              tint="#38bdf8"
+              mouseReact={true}
+              mouseStrength={0.3}
+              className="opacity-70"
             />
           </div>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 -z-5 bg-gradient-to-b from-transparent via-gray-950/50 to-gray-950" />
 
-          {/* Background Overlay - only for hero section */}
-          <div className="absolute inset-0 -z-10 bg-gray-950/80" />
           <div className="flex items-center justify-center min-h-screen">
             <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
               <HeroAnimation direction="fade" delay={0}>

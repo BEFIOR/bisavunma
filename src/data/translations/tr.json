@@ -137,6 +137,7 @@
       "radar": "Radar Sistemleri",
       "electroOptical": "Elektro-Optik & Termal Sistemler",
       "jammer": "Jammer & RF Efektörler",
+      "counterUAS": "Integrated Counter-UAS & C2",
       "dji": "DJI Türkiye Enterprise"
     },
     "solutions": {
@@ -383,6 +384,43 @@
       "noProducts": "Bu alt sınıflandırmada ürün mevcut değil.",
       "tryOther": "Başka bir alt sınıflandırma seçmeyi deneyin.",
       "portfolioDescription": "Farklı operasyonel gereksinimler için çeşitli radar sistemleri ve çözümleri sunuyoruz."
+    }
+  },
+  "counterUAS": {
+    "title": "Integrated Counter-UAS & C2",
+    "description": "Entegre drone savunma ve komuta kontrol sistemleri. DroneHunter önleme İHA'ları, SkyDome Manager C2 yazılımı ve Edge Fusion System ile kapsamlı hava sahası koruması.",
+    "badge": "Counter-UAS Savunma",
+    "heroTitle": "Entegre Karşı-İHA ve Komuta Kontrol Sistemleri",
+    "heroDescription": "DroneHunter önleme İHA'ları, SkyDome Manager C2 yazılımı ve Edge Fusion System ile kapsamlı hava sahası koruması. Otonom tespit, takip ve etkisiz hale getirme çözümleri.",
+    "stats": {
+      "droneCaptures": "Drone Yakalama",
+      "responseTime": "Tepki Süresi",
+      "coverage": "Kapsama"
+    },
+    "highlights": {
+      "autonomousIntercept": {
+        "title": "Otonom Önleme",
+        "description": "Radar güdümlü DroneHunter İHA'ları ile tamamen otonom drone yakalama ve etkisiz hale getirme."
+      },
+      "aiPowered": {
+        "title": "AI Destekli Analiz",
+        "description": "ThreatAware risk değerlendirmesi ile akıllı tehdit sınıflandırma ve önceliklendirme."
+      },
+      "integratedC2": {
+        "title": "Entegre C2",
+        "description": "SkyDome Manager ile tüm sensör ve efektörlerin tek ekrandan yönetimi."
+      }
+    },
+    "sidebar": {
+      "title": "Ürün Kategorileri",
+      "allProducts": "Tüm Ürünler",
+      "clear": "Temizle"
+    },
+    "products": {
+      "listing": "ürün listeleniyor",
+      "detail": "Detay",
+      "noProducts": "Bu kategoride ürün mevcut değil.",
+      "tryOther": "Başka bir kategori seçmeyi deneyin."
     }
   },
   "rfSystems": {
