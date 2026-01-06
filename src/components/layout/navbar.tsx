@@ -11,7 +11,7 @@ import navigationSections from "@/config/navigation";
 import type { NavSection } from "@/types/navigation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTranslations } from "next-intl";
-import logoImage from "@/../public/main/logo.webp";
+const logoImage = "/main/logo.webp";
 
 const transition: Transition = {
   type: "spring",

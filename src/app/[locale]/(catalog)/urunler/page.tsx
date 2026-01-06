@@ -19,6 +19,8 @@ const categoryImages: Record<string, string> = {
   "jammer-rf-efektorler": "/products/jammer-rf-efektorler/bieye-defense.webp",
   "dji-turkiye-enterprise":
     "/products/dji-enterprise/dji-istanbul-yetkili-saticisi.webp",
+  "integrated-counter-uas-c2":
+    "/products/counter-uas/dronehunter-f700.webp",
 };
 
 export async function generateMetadata({
@@ -46,7 +48,7 @@ export default async function Urunler() {
     .map((c: Category) => ({
       link: `/urunler/${c.slug}`,
       text: c.title,
-      image: categoryImages[c.slug] ?? "/logo.webp",
+      image: categoryImages[c.slug] ?? "/main/logo.webp",
     }));
 
   const t = await getTranslations("products");
