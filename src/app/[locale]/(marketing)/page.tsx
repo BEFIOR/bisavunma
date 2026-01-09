@@ -3,9 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n";
 import dynamic from "next/dynamic";
-import GalleryCarousel from "@/components/GalleryCarousel";
 import ShinyText from "@/components/ShinyText";
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import {
   Radio,
   Shield,
@@ -20,8 +18,6 @@ import {
   StaggerContainer,
   StaggerItem,
   ScaleAnimation,
-  HeroAnimation,
-  HeroStaggerContainer,
   ScrollAnimation,
 } from "@/components/animations/ScrollAnimations";
 
@@ -37,20 +33,41 @@ const ServicesAccordion = dynamic(
   }
 );
 
+// Lazy load TextHoverEffect - it's heavy and not needed for LCP
+const TextHoverEffect = dynamic(
+  () => import("@/components/ui/text-hover-effect").then(mod => ({ default: mod.TextHoverEffect })),
+  {
+    ssr: false,
+    loading: () => (
+      <h1 className="text-6xl md:text-7xl lg:text-8xl font-poppins-bold text-white/50 tracking-tight">
+        BİSAVUNMA
+      </h1>
+    ),
+  }
+);
+
+// Lazy load GalleryCarousel - it's below the fold
+const GalleryCarousel = dynamic(
+  () => import("@/components/GalleryCarousel"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-64 bg-gray-800/50 rounded-lg animate-pulse" />
+    ),
+  }
+);
+
 export default function Home() {
   const t = useTranslations("home");
   return (
     <div className="min-h-screen ">
-      {/* Hero Section */}
+      {/* Hero Section - Optimized for LCP */}
       <section className="pt-24 pb-16 md:pt-36 md:pb-0 min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <HeroStaggerContainer
-            className="space-y-10 md:space-y-12"
-            staggerDelay={0.05}
-          >
-            {/* Main Headlines */}
+          <div className="space-y-10 md:space-y-12">
+            {/* Main Headlines - No animation delays for LCP */}
             <div className="space-y-8 pt-6 md:pt-16">
-              <HeroAnimation direction="fade" delay={0}>
+              <div className="animate-in fade-in duration-300">
                <div className="hidden md:block notranslate">
                   <TextHoverEffect text="BİSAVUNMA" />
                 </div>
@@ -60,8 +77,8 @@ export default function Home() {
                     className="text-[clamp(2.5rem,_12vw,_4rem)] font-poppins-bold"
                   />
                 </div>
-              </HeroAnimation>
-              <HeroAnimation direction="up" delay={0.1}>
+              </div>
+              <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <h2 className="text-base md:text-2xl text-gray-300 font-poppins-light max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-12">
                   {t("hero.subtitle")}
                   <br />
@@ -79,30 +96,29 @@ export default function Home() {
                     {t("hero.features.export")}
                   </span>
                 </h2>
-              </HeroAnimation>
+              </div>
 
-              <HeroAnimation direction="up" delay={0.15}>
-                <p className="text-sm md:text-lg text-gray-400 max-w-3xl md:max-w-5xl mx-auto leading-relaxed font-inter-regular px-12">
-                  {t.rich("hero.description", {
-                    optimumSolutions: (chunks) => (
-                      <span className="text-sky-400 font-inter-medium">
-                        {" "}
-                        {chunks}
-                      </span>
-                    ),
-                    technicalSupport: (chunks) => (
-                      <span className="text-sky-400 font-inter-medium">
-                        {" "}
-                        {chunks}
-                      </span>
-                    ),
-                  })}
-                </p>
-              </HeroAnimation>
+              {/* LCP Element - No animation, immediately visible */}
+              <p className="text-sm md:text-lg text-gray-400 max-w-3xl md:max-w-5xl mx-auto leading-relaxed font-inter-regular px-12">
+                {t.rich("hero.description", {
+                  optimumSolutions: (chunks) => (
+                    <span className="text-sky-400 font-inter-medium">
+                      {" "}
+                      {chunks}
+                    </span>
+                  ),
+                  technicalSupport: (chunks) => (
+                    <span className="text-sky-400 font-inter-medium">
+                      {" "}
+                      {chunks}
+                    </span>
+                  ),
+                })}
+              </p>
             </div>
 
             {/* Key Features */}
-            <HeroAnimation direction="up" delay={0.2}>
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-150">
               <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-gray-300 font-inter-medium text-sm sm:text-base">
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-sky-400" />
@@ -121,10 +137,10 @@ export default function Home() {
                   <span>{t("hero.features.support")}</span>
                 </div>
               </div>
-            </HeroAnimation>
+            </div>
 
             {/* Call to Action */}
-            <HeroAnimation direction="up" delay={0.25}>
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 px-12">
                 <Link
                   href="/urunler"
@@ -134,8 +150,8 @@ export default function Home() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </HeroAnimation>
-          </HeroStaggerContainer>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -21,6 +21,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/animations/ScrollAnimations";
+import { TiltCard } from "@/components/ui/tilt-card";
 
 interface Product {
   slug: string;
@@ -288,8 +289,11 @@ export default function JammerPage({
                         className="h-full"
                       >
                         <Link href={href} className="group block h-full">
-                          <div className="relative h-full overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 backdrop-blur-sm transition-all duration-300 hover:border-amber-500/40 hover:bg-neutral-900 hover:shadow-md hover:-translate-y-1 will-change-transform">
-                            <div className="p-4 h-full flex flex-col">
+                          <TiltCard
+                            containerClassName="h-full"
+                            className="h-full overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 backdrop-blur-sm transition-colors duration-300 hover:border-amber-500/40 hover:bg-neutral-900"
+                          >
+                            <div className="p-4 h-full flex flex-col relative z-10">
                               <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-800 flex items-center justify-center">
                                 <Image
                                   src={product.image || "/logo.webp"}
@@ -321,26 +325,10 @@ export default function JammerPage({
                               </div>
                             </div>
                             <div
-                              className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                              style={{
-                                boxShadow:
-                                  "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
-                              }}
-                            />
-                            <div
                               aria-hidden
-                              className="absolute -inset-px rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 opacity-0 group-hover:opacity-10 transition-opacity"
+                              className="absolute -inset-px rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none"
                             />
-                            <div
-                              aria-hidden
-                              className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                              style={{
-                                background:
-                                  "linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%)",
-                                transform: "translateX(-20%)",
-                              }}
-                            />
-                          </div>
+                          </TiltCard>
                         </Link>
                       </StaggerItem>
                     );

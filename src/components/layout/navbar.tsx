@@ -69,10 +69,11 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-xl text-white rounded-2xl overflow-hidden ring-1 ring-white/20 shadow-xl border border-white/10"
+                className="bg-black/70 backdrop-saturate-150 text-white rounded-2xl overflow-hidden ring-1 ring-white/20 shadow-2xl "
+                
               >
                 {/* Animated background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/8 via-purple-500/8 to-emerald-500/8" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-emerald-500/10" />
 
                 <motion.div
                   layout // layout ensures smooth animation

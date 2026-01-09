@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import SpotlightCard from "@/components/SpotlightCard";
+import { MagneticCard } from "@/components/ui/magnetic-card";
 import type { DbProduct } from "@/lib/products";
 
 type Group = { key: string; items: DbProduct[] };
@@ -117,14 +117,17 @@ export default function EnterpriseClient({
                   className="group block"
                   aria-label={`${p.title} ürününü incele`}
                 >
-                  <SpotlightCard className="h-full p-4 hover:shadow-lg transition-shadow">
+                  <MagneticCard
+                    containerClassName="h-full"
+                    className="h-full p-4 overflow-hidden"
+                  >
                     <div className="w-full aspect-[4/3] relative rounded-xl overflow-hidden bg-neutral-950 ring-1 ring-neutral-800">
                       <Image
                         src={p.image ?? "/logo.webp"}
                         alt={p.title}
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover object-center"
+                        className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
                         priority={false}
                       />
                     </div>
@@ -134,10 +137,10 @@ export default function EnterpriseClient({
                     <p className="text-sm text-gray-400 line-clamp-2 mt-2">
                       {p.description}
                     </p>
-                    <div className="mt-3 text-sky-400 group-hover:text-sky-300 font-medium">
+                    <div className="mt-3 text-sky-400 group-hover:text-sky-300 font-medium transition-transform duration-200 group-hover:translate-x-0.5">
                       İncele →
                     </div>
-                  </SpotlightCard>
+                  </MagneticCard>
                 </Link>
               ))}
             </div>

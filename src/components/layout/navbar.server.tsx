@@ -19,6 +19,7 @@ export default async function NavbarServer() {
       "/urunler/elektro-optik-ve-termal-sistemler",
     "jammer-rf-efektorler": "/urunler/jammer-rf-efektorler",
     "jammer-ve-rf-efektorler": "/urunler/jammer-rf-efektorler",
+    "integrated-counter-uas-c2": "/urunler/integrated-counter-uas-c2",
     "dji-turkiye-enterprise": "/urunler/dji-turkiye-enterprise",
   };
 
@@ -31,6 +32,7 @@ export default async function NavbarServer() {
       "elektro-optik-ve-termal-sistemler": "electroOptical",
       "jammer-rf-efektorler": "jammer",
       "jammer-ve-rf-efektorler": "jammer",
+      "integrated-counter-uas-c2": "counterUAS",
       "dji-turkiye-enterprise": "dji",
     };
 

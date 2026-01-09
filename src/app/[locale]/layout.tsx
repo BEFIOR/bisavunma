@@ -116,10 +116,14 @@ export async function generateMetadata({
     },
     icons: {
       icon: [
-        { url: "/icon.png", type: "image/png" },
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+        { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+        { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
       ],
       apple: [
-        { url: "/icon.png", type: "image/png" },
+        { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
       ],
     },
     manifest: "/site.webmanifest",
@@ -164,11 +168,11 @@ export default async function LocaleLayout({
         />
         <meta name="referrer" content="no-referrer-when-downgrade" />
 
-        {/* Google Tag Manager - Lazy loaded to prevent blocking */}
+        {/* Google Tag Manager - Load as early as possible for tracking */}
         {process.env.NEXT_PUBLIC_GTM_ID && (
           <Script
             id="gtm"
-            strategy="lazyOnload"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

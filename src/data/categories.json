@@ -29,9 +29,16 @@
   },
   {
     "id": 5,
+    "slug": "integrated-counter-uas-c2",
+    "title": "Integrated Counter-UAS & C2",
+    "parentId": null,
+    "position": 5
+  },
+  {
+    "id": 6,
     "slug": "dji-turkiye-enterprise",
     "title": "DJI Türkiye Enterprise",
     "parentId": null,
-    "position": 5
+    "position": 6
   }
 ]

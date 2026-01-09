@@ -12,6 +12,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/animations/ScrollAnimations";
+import { WobbleCard } from "@/components/ui/wobble-card";
 
 interface Product {
   slug: string;
@@ -240,8 +241,11 @@ export default function RadarPage({
                         className="h-full"
                       >
                         <Link href={href} className="block group h-full">
-                          <div className="rounded-2xl border border-gray-800 bg-gray-900 p-6 shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-1 will-change-transform overflow-hidden hover:bg-neutral-900">
-                            <div className="p-4 h-full flex flex-col">
+                          <WobbleCard
+                            containerClassName="h-full bg-neutral-900 border border-gray-800 hover:border-emerald-500/30"
+                            className="p-0 flex flex-col h-full"
+                          >
+                            <div className="p-4 h-full flex flex-col relative z-10">
                               <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-800 flex items-center justify-center">
                                 <Image
                                   src={product.image || "/logo.webp"}
@@ -276,26 +280,10 @@ export default function RadarPage({
                               </div>
                             </div>
                             <div
-                              className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                              style={{
-                                boxShadow:
-                                  "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
-                              }}
-                            />
-                            <div
                               aria-hidden
-                              className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity"
+                              className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none"
                             />
-                            <div
-                              aria-hidden
-                              className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                              style={{
-                                background:
-                                  "linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%)",
-                                transform: "translateX(-20%)",
-                              }}
-                            />
-                          </div>
+                          </WobbleCard>
                         </Link>
                       </StaggerItem>
                     );

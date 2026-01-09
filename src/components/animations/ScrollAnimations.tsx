@@ -167,13 +167,14 @@ export function ScaleAnimation({
   );
 }
 
-// Hero section için immediate animasyonlar
+// Hero section için immediate animasyonlar - LCP optimized
 interface HeroAnimationProps {
   children: ReactNode;
   className?: string;
   delay?: number;
   duration?: number;
   direction?: "up" | "down" | "left" | "right" | "fade";
+  isLCP?: boolean; // LCP elementi için animasyonu devre dışı bırak
 }
 
 export function HeroAnimation({
@@ -182,7 +183,13 @@ export function HeroAnimation({
   delay = 0,
   duration = 0.6,
   direction = "up",
+  isLCP = false,
 }: HeroAnimationProps) {
+  // LCP elementi için animasyon yok - hemen görünür
+  if (isLCP) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
