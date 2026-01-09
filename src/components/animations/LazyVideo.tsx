@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { generateThumbnailPath, getVideoSettings } from "@/lib/video-utils";
+import { getVideoSettings } from "@/lib/video-utils";
 import Image from "next/image";
 interface LazyVideoProps {
   src: string;
@@ -41,8 +41,8 @@ export function LazyVideo({
   const finalBandwidthThreshold =
     bandwidthThreshold || settings.bandwidthThreshold;
 
-  // Auto-generate thumbnail if not provided
-  const finalThumbnail = thumbnail || generateThumbnailPath(src);
+  // Only use thumbnail if explicitly provided (don't auto-generate)
+  const finalThumbnail = thumbnail || null;
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
@@ -50,7 +50,7 @@ export function LazyVideo({
   const [hasError, setHasError] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
   const [bandwidth, setBandwidth] = useState<number | null>(null);
-  const [showThumbnail, setShowThumbnail] = useState(true);
+  const [showThumbnail, setShowThumbnail] = useState(!!thumbnail || !!poster);
   const videoRef = useRef<HTMLVideoElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
