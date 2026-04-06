@@ -74,7 +74,6 @@ export default function DJIMatrice30TPage() {
                     <div className="text-sm text-gray-400">
                       Maksimum Uçuş Süresi
                     </div>
-                    https://www.istinye.edu.tr/tr/duyurular/mevcut-ogrencilerimiz-icin-2025-2026-kayit-yenileme
                   </div>
                 </StaggerItem>
                 <StaggerItem>

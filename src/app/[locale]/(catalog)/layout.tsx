@@ -1,4 +1,5 @@
 import NavbarServer from "@/components/layout/navbar.server";
+import Footer from "@/components/Footer";
 
 export default function CatalogLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,6 +8,7 @@ export default function CatalogLayout({ children }: { children: React.ReactNode 
         <NavbarServer />
       </header>
       <main>{children}</main>
+      <Footer />
     </>
   );
 }

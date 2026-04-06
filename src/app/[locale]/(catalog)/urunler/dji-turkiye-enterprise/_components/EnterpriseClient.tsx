@@ -27,7 +27,7 @@ export default function EnterpriseClient({
         key: g.key,
         items: g.items.filter(
           (p) =>
-            normalized(p.title).includes(query) ||
+            normalized(getDisplayTitle(p)).includes(query) ||
             (p.description ? normalized(p.description).includes(query) : false)
         ),
       }))
@@ -110,13 +110,12 @@ export default function EnterpriseClient({
               <div className="h-px flex-1 ml-6 bg-neutral-800" />
             </div>
             <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-6">
-              {g.items.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`${basePath}/${p.slug}`}
-                  className="group block"
-                  aria-label={`${p.title} ürününü incele`}
-                >
+              {g.items.map((p) => {
+                const isExternal = /^https?:\/\//.test(p.slug);
+                const href = isExternal ? p.slug : `${basePath}/${p.slug}`;
+                const title = getDisplayTitle(p);
+
+                const card = (
                   <MagneticCard
                     containerClassName="h-full"
                     className="h-full p-4 overflow-hidden"
@@ -124,7 +123,7 @@ export default function EnterpriseClient({
                     <div className="w-full aspect-[4/3] relative rounded-xl overflow-hidden bg-neutral-950 ring-1 ring-neutral-800">
                       <Image
                         src={p.image ?? "/logo.webp"}
-                        alt={p.title}
+                        alt={title}
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
@@ -132,17 +131,43 @@ export default function EnterpriseClient({
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-white group-hover:text-white mt-4">
-                      {p.title}
+                      {title}
                     </h3>
                     <p className="text-sm text-gray-400 line-clamp-2 mt-2">
                       {p.description}
                     </p>
                     <div className="mt-3 text-sky-400 group-hover:text-sky-300 font-medium transition-transform duration-200 group-hover:translate-x-0.5">
-                      İncele →
+                      {isExternal ? "Resmi sayfa →" : "İncele →"}
                     </div>
                   </MagneticCard>
-                </Link>
-              ))}
+                );
+
+                if (isExternal) {
+                  return (
+                    <a
+                      key={p.slug}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block"
+                      aria-label={`${title} resmi sayfasını aç`}
+                    >
+                      {card}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={p.slug}
+                    href={href}
+                    className="group block"
+                    aria-label={`${title} ürününü incele`}
+                  >
+                    {card}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         );
@@ -157,4 +182,12 @@ function toId(s: string) {
     .toLowerCase()
     .replace(/\s+/g, "-")
     .replace(/[^a-z0-9-ğüşöçı]/g, "");
+}
+
+function getDisplayTitle(product: DbProduct) {
+  if (product.slug === "dji-matrice-4td") {
+    return "DJI Matrice 4T";
+  }
+
+  return product.title;
 }

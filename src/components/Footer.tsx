@@ -1,4 +1,29 @@
+import Link from "next/link";
+
 export default function Footer() {
+  const productLinks = [
+    {
+      label: "RF Sistemleri",
+      href: "/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint",
+    },
+    { label: "Radar Sistemleri", href: "/urunler/radar-sistemleri" },
+    {
+      label: "Sinyal İstihbarat",
+      href: "/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint",
+    },
+    {
+      label: "Elektro-Optik",
+      href: "/urunler/elektro-optik-ve-termal-sistemler",
+    },
+  ];
+
+  const serviceLinks = [
+    { label: "Sistem Entegrasyonu", href: "/hizmetler#kurulum-entegrasyon" },
+    { label: "Teknik Destek", href: "/hizmetler#egitim-destek" },
+    { label: "Eğitim", href: "/hizmetler#egitim-destek" },
+    { label: "Danışmanlık", href: "/hizmetler#saha-kesfi" },
+  ];
+
   return (
     <footer className="relative px-4 sm:px-6 lg:px-8 py-14 bg-black text-gray-300 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-gray-900 to-black" />
@@ -19,16 +44,14 @@ export default function Footer() {
               Ürünler
             </h4>
             <ul className="space-y-2">
-              {[
-                "RF Sistemleri",
-                "Radar Sistemleri",
-                "Sinyal İstihbarat",
-                "Elektro-Optik",
-              ].map((i) => (
-                <li key={i}>
-                  <a href="#" className="hover:text-white transition-colors">
-                    {i}
-                  </a>
+              {productLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -38,16 +61,14 @@ export default function Footer() {
               Hizmetler
             </h4>
             <ul className="space-y-2">
-              {[
-                "Sistem Entegrasyonu",
-                "Teknik Destek",
-                "Eğitim",
-                "Danışmanlık",
-              ].map((i) => (
-                <li key={i}>
-                  <a href="#" className="hover:text-white transition-colors">
-                    {i}
-                  </a>
+              {serviceLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,7 +88,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+90 212 954 00 36"
+                  href="tel:+902129540036"
                   className="hover:text-white transition-colors"
                 >
                   +90 212 954 00 36
@@ -78,17 +99,26 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6 text-sm text-gray-400 font-inter-regular">
-          <p>© 2024 BİSAVUNMA. Tüm hakları saklıdır.</p>
+          <p>© {new Date().getFullYear()} BİSAVUNMA. Tüm hakları saklıdır.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link
+              href="/kvkk-aydinlatma-metni"
+              className="hover:text-white transition-colors"
+            >
               KVKK
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link
+              href="/cerez-politikasi"
+              className="hover:text-white transition-colors"
+            >
               Çerezler
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Şartlar
-            </a>
+            </Link>
+            <Link
+              href="/kullanim-kosullari"
+              className="hover:text-white transition-colors"
+            >
+              Şartlar/Kullanım Koşulları
+            </Link>
           </div>
         </div>
       </div>

@@ -31,12 +31,14 @@ export default function CTASection() {
             >
               {t("cta.buttons.start")}
             </Link>
-            <Link
-              href="/iletisim"
+            <a
+              href="https://wa.me/902129540036"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-lg border border-white/20 text-white px-6 py-3 text-sm font-poppins-semibold hover:bg-white/10 transition-colors"
             >
               {t("cta.buttons.demo")}
-            </Link>
+            </a>
           </div>
         </div>
         <div className="animate-in fade-in duration-500 delay-700">

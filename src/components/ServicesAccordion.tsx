@@ -51,7 +51,7 @@ export default function ServicesAccordion({
       {services.map((svc, index) => (
         <div
           key={svc.title}
-          className="group relative rounded-2xl border border-gray-800 bg-gray-900 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+          className="relative rounded-2xl border border-gray-800 bg-gray-900 shadow-sm transition-all duration-300 overflow-hidden"
         >
           {/* Header - Clickable */}
           <button
@@ -59,7 +59,7 @@ export default function ServicesAccordion({
               e.preventDefault();
               toggleService(index);
             }}
-            className="w-full p-4 sm:p-6 text-left hover:bg-gray-800 transition-colors duration-200 focus:outline-none relative z-10"
+            className="w-full p-4 sm:p-6 text-left hover:bg-gray-800 transition-colors duration-200 focus:outline-none relative z-10 group"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3 sm:space-x-4 flex-1 min-w-0">
@@ -104,27 +104,6 @@ export default function ServicesAccordion({
             </div>
           </div>
 
-          {/* Hover Effects */}
-          <div
-            className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
-            style={{
-              boxShadow:
-                "0 0 0 1px rgba(17,24,39,0.06), 0 12px 40px rgba(17,24,39,0.12)",
-            }}
-          />
-          <div
-            aria-hidden
-            className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity z-0"
-          />
-          <div
-            aria-hidden
-            className="absolute -inset-1 opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-0"
-            style={{
-              background:
-                "linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%)",
-              transform: "translateX(-20%)",
-            }}
-          />
         </div>
       ))}
     </div>

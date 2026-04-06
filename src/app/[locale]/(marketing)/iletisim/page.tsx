@@ -350,7 +350,10 @@ ${data.message}
 
             {/* Contact Info Cards */}
             <div className="space-y-6">
-              <div className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 rounded-2xl border border-blue-800 p-8">
+              <div
+                id="iletisim-bilgileri"
+                className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 rounded-2xl border border-blue-800 p-8 scroll-mt-28"
+              >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-blue-900/20 rounded-xl">
                     <MessageCircle className="h-6 w-6 text-blue-300" />
@@ -367,13 +370,26 @@ ${data.message}
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Phone className="h-4 w-4 text-blue-300" />
-                    <span className="text-gray-300">+90 212 954 00 36</span>
+                    <a
+                      href="tel:+902129540036"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      +90 212 954 00 36
+                    </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-4 w-4 text-blue-300" />
-                    <span className="text-gray-300">info@bisavunma.com</span>
+                    <a
+                      href="mailto:info@bisavunma.com"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      info@bisavunma.com
+                    </a>
                   </div>
-                  <div className=" items-center gap-3 w-full h-full">
+                  <div
+                    id="ofis-lokasyonlari"
+                    className="items-center gap-3 w-full h-full scroll-mt-28"
+                  >
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.0717215256745!2d28.657287400000005!3d41.0236868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f6e5020f77b%3A0x80e48bdc17c6a4e!2zQsSwU0FWVU5NQSBHw5xWRU5MxLBLIFZFIFJBREFSIFPEsFNURU1MRVLEsCBTQU5BWcSwIFTEsENBUkVUIEzEsE3EsFRFRCDFnsSwUktFVMSw!5e0!3m2!1sen!2str!4v1759221329033!5m2!1sen!2str"
                       width="100%"
@@ -460,7 +476,7 @@ ${data.message}
               {t("cta.buttons.contact")}
             </a>
             <a
-              href="tel:+90212XXXXXXX"
+              href="tel:+902129540036"
               className="inline-flex items-center justify-center rounded-lg border border-gray-600 px-8 py-4 text-base font-semibold text-white hover:bg-gray-800 transition"
             >
               <Phone className="h-5 w-5 mr-2" />

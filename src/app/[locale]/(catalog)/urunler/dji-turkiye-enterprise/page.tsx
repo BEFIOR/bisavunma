@@ -39,6 +39,45 @@ export default async function Page() {
   const products = await getProductsByCategorySlug(cat?.slug ?? slug);
   const t = await getTranslations("djiEnterprise");
 
+  const supplementalProducts: DbProduct[] = [
+    {
+      slug: "dji-matrice-400",
+      title: "DJI Matrice 400",
+      description: "Yeni nesil kurumsal drone platformu",
+      image:
+        "https://www-cdn.djiits.com/cms/uploads/3c9712c308bac3e36007c3a9ded88d9d@374*374.png",
+      altCategory: "DJİ PROFESYONEL İHA",
+    },
+    {
+      slug: "dji-flycart-100",
+      title: "DJI FlyCart 100",
+      description: "Ağır yük hava lojistiği için yeni teslimat platformu",
+      image:
+        "https://www-cdn.djiits.com/cms/uploads/9358904a6d5a4182e2bcd9a0db8be35a@374*374.png",
+      altCategory: "DJİ PROFESYONEL İHA",
+    },
+    {
+      slug: "dji-dock-3",
+      title: "DJI Dock 3",
+      description: "7/24 uzaktan operasyon için otonom dock çözümü",
+      image:
+        "https://www-cdn.djiits.com/cms/uploads/596a276ec8d8577111cfa9bc19f147dd@374*374.png",
+      altCategory: "DJİ PROFESYONEL İHA",
+    },
+    {
+      slug: "dji-flycart-30",
+      title: "DJI FlyCart 30",
+      description: "Endüstriyel hava taşımacılığı için güvenli teslimat sistemi",
+      image:
+        "https://www-cdn.djiits.com/cms/uploads/6309da752b25bee607f0c785de57085e@374*374.png",
+      altCategory: "DJİ PROFESYONEL İHA",
+    },
+  ];
+
+  const mergedProducts = Array.from(
+    new Map([...products, ...supplementalProducts].map((product) => [product.slug, product])).values()
+  );
+
   const usageHighlights = [
     {
       src: "/products/dji-enterprise/askeri-kullanim.webp",
@@ -59,7 +98,7 @@ export default async function Page() {
 
   // Group products by altCategory (fallback to "Diğer")
   const groups = new Map<string, DbProduct[]>();
-  for (const p of products) {
+  for (const p of mergedProducts) {
     const key = (p.altCategory ?? "Diğer").trim();
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key)!.push(p);
@@ -178,7 +217,7 @@ export default async function Page() {
           groups={orderedKeys.map((k) => ({ key: k, items: groups.get(k)! }))}
           basePath={`/urunler/${slug}`}
         />
-        {products.length === 0 && (
+        {mergedProducts.length === 0 && (
           <div className="max-w-6xl mx-auto text-gray-400 mt-6">
             {t("noProducts")}
           </div>

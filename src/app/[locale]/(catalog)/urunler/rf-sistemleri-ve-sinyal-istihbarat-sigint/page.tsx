@@ -32,6 +32,14 @@ export const revalidate = 0;
 
 export default function RfSystemsPage() {
   const t = useTranslations("rfSystems");
+  const hiddenProductSlugs = new Set([
+    "software-support-updates-service",
+    "software-releases",
+  ]);
+  const visibleRfSystems = rfSystems.filter(
+    (product) => !hiddenProductSlugs.has(product.slug)
+  );
+
   return (
     <div className="min-h-screen bg-black text-gray-200">
       {/* Hero Section */}
@@ -85,7 +93,7 @@ export default function RfSystemsPage() {
             </div>
           </StaggerContainer>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {rfSystems.map((product) => (
+            {visibleRfSystems.map((product) => (
               <StaggerItem key={product.slug}>
                 <Link
                   href={`/urunler/rf-sistemleri-ve-sinyal-istihbarat-sigint/${product.slug}`}

@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { access } from "node:fs/promises";
+import path from "node:path";
 import {
   ScrollAnimation,
   StaggerContainer,
@@ -16,6 +18,22 @@ import ProductTracking from "@/components/ProductTracking";
 export const revalidate = 60;
 
 type Params = { slug: string };
+
+async function publicAssetExists(assetPath?: string) {
+  if (!assetPath) return false;
+
+  const normalizedPath = assetPath.replace(/^\/+/, "");
+  if (normalizedPath.includes("..")) return false;
+
+  const absolutePath = path.join(process.cwd(), "public", normalizedPath);
+
+  try {
+    await access(absolutePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 // Removed generateStaticParams to allow build without database
 
@@ -41,6 +59,13 @@ export default async function ProductInRf({
   const { slug } = await params;
   const product = await getRfSystemBySlug(slug);
   if (!product) notFound();
+
+  const [hasSection1Image, hasSection2Image, hasSection3Image] =
+    await Promise.all([
+      publicAssetExists(product.section1.image),
+      publicAssetExists(product.section2.image),
+      publicAssetExists(product.section3.image),
+    ]);
 
   return (
     <div className="min-h-screen bg-black text-gray-200">
@@ -158,21 +183,27 @@ export default async function ProductInRf({
       {/* Section 1 */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <ScrollAnimation direction="left">
-              <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-600/10 to-blue-600/10" />
-                <Image
-                  src={product.section1.image}
-                  alt={product.section1.title}
-                  width={600}
-                  height={400}
-                  className="object-contain max-w-full max-h-full rounded-xl relative z-10"
-                />
-              </div>
-            </ScrollAnimation>
+          <div
+            className={`grid grid-cols-1 ${
+              hasSection1Image ? "lg:grid-cols-2 gap-12 items-center" : ""
+            }`}
+          >
+            {hasSection1Image && (
+              <ScrollAnimation direction="left">
+                <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-sky-600/10 to-blue-600/10" />
+                  <Image
+                    src={product.section1.image}
+                    alt={product.section1.title}
+                    width={600}
+                    height={400}
+                    className="object-contain max-w-full max-h-full rounded-xl relative z-10"
+                  />
+                </div>
+              </ScrollAnimation>
+            )}
 
-            <div className="space-y-6">
+            <div className={`space-y-6 ${hasSection1Image ? "" : "max-w-4xl mx-auto"}`}>
               <ScrollAnimation direction="right">
                 <h2 className="text-3xl font-bold text-white">
                   {product.section1.title}
@@ -193,8 +224,16 @@ export default async function ProductInRf({
       {/* Section 2 */}
       <section className="py-20 px-4 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 order-2 lg:order-1">
+          <div
+            className={`grid grid-cols-1 ${
+              hasSection2Image ? "lg:grid-cols-2 gap-12 items-center" : ""
+            }`}
+          >
+            <div
+              className={`space-y-6 ${
+                hasSection2Image ? "order-2 lg:order-1" : "max-w-4xl mx-auto"
+              }`}
+            >
               <ScrollAnimation direction="left">
                 <h2 className="text-3xl font-bold text-white">
                   {product.section2.title}
@@ -209,18 +248,20 @@ export default async function ProductInRf({
               </ScrollAnimation>
             </div>
 
-            <ScrollAnimation direction="right" className="order-1 lg:order-2">
-              <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
-                <Image
-                  src={product.section2.image}
-                  alt={product.section2.title}
-                  width={600}
-                  height={400}
-                  className="object-contain max-w-full max-h-full rounded-xl relative z-10"
-                />
-              </div>
-            </ScrollAnimation>
+            {hasSection2Image && (
+              <ScrollAnimation direction="right" className="order-1 lg:order-2">
+                <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10" />
+                  <Image
+                    src={product.section2.image}
+                    alt={product.section2.title}
+                    width={600}
+                    height={400}
+                    className="object-contain max-w-full max-h-full rounded-xl relative z-10"
+                  />
+                </div>
+              </ScrollAnimation>
+            )}
           </div>
         </div>
       </section>
@@ -228,21 +269,27 @@ export default async function ProductInRf({
       {/* Section 3 */}
       <section className="py-20 px-4 bg-neutral-950 border-t border-neutral-900">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <ScrollAnimation direction="left">
-              <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10" />
-                <Image
-                  src={product.section3.image}
-                  alt={product.section3.title}
-                  width={600}
-                  height={400}
-                  className="object-contain max-w-full max-h-full rounded-xl relative z-10"
-                />
-              </div>
-            </ScrollAnimation>
+          <div
+            className={`grid grid-cols-1 ${
+              hasSection3Image ? "lg:grid-cols-2 gap-12 items-center" : ""
+            }`}
+          >
+            {hasSection3Image && (
+              <ScrollAnimation direction="left">
+                <div className="relative h-[400px] rounded-xl overflow-hidden bg-neutral-800 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10" />
+                  <Image
+                    src={product.section3.image}
+                    alt={product.section3.title}
+                    width={600}
+                    height={400}
+                    className="object-contain max-w-full max-h-full rounded-xl relative z-10"
+                  />
+                </div>
+              </ScrollAnimation>
+            )}
 
-            <div className="space-y-6">
+            <div className={`space-y-6 ${hasSection3Image ? "" : "max-w-4xl mx-auto"}`}>
               <ScrollAnimation direction="right">
                 <h2 className="text-3xl font-bold text-white">
                   {product.section3.title}
